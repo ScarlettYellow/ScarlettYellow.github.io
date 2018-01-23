@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Medium Study," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：最强大脑节目社会评议数据分析。广电概论的大作业 ~">
+<meta name="keywords" content="Medium Study">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最强大脑节目社会评议数据分析">
+<meta property="og:url" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：最强大脑节目社会评议数据分析。广电概论的大作业 ~">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/zqdn4%E6%94%B6%E8%A7%86%E7%8E%87.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/weibo_overall_trend.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/toutiao_zqdn_heattrend.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/%E5%B3%B0%E5%80%BC%E8%AF%B4%E6%98%8E-1.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/sex_permeability.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/age_permeability.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/age.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/area_osmolity.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/area_osmolity_citymark.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/user_interest_categories.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/emotion1.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/%E8%AF%84%E8%AE%BA%E5%85%B3%E9%94%AE%E8%AF%8D.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/%E6%B0%B4%E5%93%A5%E5%BE%AE%E5%8D%9A.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/%E8%BD%AC%E5%8F%91%E8%AF%84%E8%AE%BA%E8%B6%8B%E5%8A%BF%E5%9B%BE.png">
+<meta property="og:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/%E8%BD%AC%E8%AF%84%E8%A1%A8%E6%83%85%E5%88%86%E6%9E%90.png">
+<meta property="og:updated_time" content="2018-01-23T10:43:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="最强大脑节目社会评议数据分析">
+<meta name="twitter:description" content="Abstract：最强大脑节目社会评议数据分析。广电概论的大作业 ~">
+<meta name="twitter:image" content="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/media/zqdn4%E6%94%B6%E8%A7%86%E7%8E%87.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/"/>
+
+
+
+
+
+  <title>最强大脑节目社会评议数据分析 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/07/最强大脑节目社会评议数据分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">最强大脑节目社会评议数据分析</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-07T17:11:58+08:00">
+                2018-01-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Communication-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Communication Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Communication-Science/Medium-Study/" itemprop="url" rel="index">
+                    <span itemprop="name">Medium Study</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：最强大脑节目社会评议数据分析。广电概论的大作业 ~ </p>
+<a id="more"></a>
+<h1 id="1-电视收视率与网站播放量概况"><a href="#1-电视收视率与网站播放量概况" class="headerlink" title="1 电视收视率与网站播放量概况"></a>1 电视收视率与网站播放量概况</h1><h2 id="1-1-电视收视情况"><a href="#1-1-电视收视情况" class="headerlink" title="1.1 电视收视情况"></a>1.1 电视收视情况</h2><blockquote>
+<p>电视收视率（Rtg%）是指某一时段内收看某电视频道（或某电视节目）的人数（或家户数）占电视观众总人数（或家户数）的百分比。作为“注意力经济”时代的重要量化指标，它是深入分析电视收视市场的科学基础，是节目制作、编排及调整的重要参考，是节目评估的主要指标，是制定与评估媒介计划、提高广告投放效益的有力工具[1]。</p>
+</blockquote>
+<p><img src="media/zqdn4%E6%94%B6%E8%A7%86%E7%8E%87.png" alt="zqdn4收视率"></p>
+<p>上表是最强大脑第四季的收视情况表 [2]. 由表可知：<strong>第四季从第1期到第13期的CSM52城市网收视率排名一直高居前三名，其中第7、9、10、12期为同时段收视率第一；整体收视成上升趋势，观众收视热度不减反增</strong>；其中为可见此节目的受欢迎程度之高。</p>
+<h2 id="1-2-视频网站播放量"><a href="#1-2-视频网站播放量" class="headerlink" title="1.2 视频网站播放量"></a>1.2 视频网站播放量</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>视频网站</th>
+<th>总播放数</th>
+<th>总评论数</th>
+<th>总评分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>优酷</td>
+<td>198, 737, 396</td>
+<td>61，796</td>
+<td>9.1</td>
+</tr>
+<tr>
+<td>乐视</td>
+<td>9404.9万</td>
+<td>1.4万</td>
+<td>9.4</td>
+</tr>
+<tr>
+<td>搜狐</td>
+<td>61, 350, 553</td>
+<td>\</td>
+<td>7.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>上表数据来源于优酷、乐视、搜狐三大视频网站 [3][4][5]。其中优酷的播放量最大，接近20亿次，可见<strong>最强大脑在视频网站上的热度也很高</strong>。</p>
+<h1 id="2-媒体热度分析"><a href="#2-媒体热度分析" class="headerlink" title="2 媒体热度分析"></a>2 媒体热度分析</h1><blockquote>
+<p>下面的媒体数据分析均选取2017.1.03—2017.4.10即最强大脑第四季的完整播出时间区间（为更好展示变化趋势，故选取前后延展了3天的时间区间）。</p>
+</blockquote>
+<h2 id="2-1-微博热度趋势-6"><a href="#2-1-微博热度趋势-6" class="headerlink" title="2.1 微博热度趋势[6]"></a>2.1 微博热度趋势[6]</h2><p><img src="media/weibo_overall_trend.png" alt="weibo_overall_trend"></p>
+<p>由上图可见，<strong>最强大脑的微博热度很高，在每期播出的前后几天热度达到峰值，可见每期都在微博上引起了不小的热议和关注</strong>。其中<strong>第5期的热度最高，原因是“水哥”王昱珩退赛引发很大争议</strong>。</p>
+<h2 id="2-2-今日头条热度趋势-7"><a href="#2-2-今日头条热度趋势-7" class="headerlink" title="2.2 今日头条热度趋势 [7]"></a>2.2 今日头条热度趋势 [7]</h2><blockquote>
+<p>热度指数：根据今日头条热度指数模型，将用户的阅读、分享、评论等行为的数量加权求和得出相应事件、文章或关键词的热度值。以天为单位制成趋势图，表现热度随时间的变化情况。</p>
+</blockquote>
+<p>图1：今日头条热度趋势</p>
+<p><img src="media/toutiao_zqdn_heattrend.png" alt="toutiao_zqdn_heattrend"></p>
+<p>图2：热度峰值分析</p>
+<p><img src="media/%E5%B3%B0%E5%80%BC%E8%AF%B4%E6%98%8E-1.png" alt="峰值说明"></p>
+<p>图1是最强大脑的今日头条热度趋势图，图2是引发各峰值的文章。可见<strong>头条热度呈波动趋势，其中出现5个高峰</strong>。引起①-⑤峰值的话题分别是：水哥输给百度AI，水哥退赛，节目组取消魔方国际赛，黑幕争议，脑王争霸赛剧透。由此可见，<strong>核心人物退赛、节目黑幕、赛程变动或剧透、人机大战等事件容易引起网民大量关注，易制造话题性、提高节目曝光度，这也不失为节目的一种话题营销手段。同时可见第四季播出期间引发了一些负面舆论争议，对节目形象或有损伤</strong>。</p>
+<h1 id="3-网民画像分析-7"><a href="#3-网民画像分析-7" class="headerlink" title="3 网民画像分析 [7]"></a>3 网民画像分析 [7]</h1><blockquote>
+<p>5.3 数据来源于今日头条。</p>
+</blockquote>
+<h2 id="3-1-性别渗透率"><a href="#3-1-性别渗透率" class="headerlink" title="3.1 性别渗透率"></a>3.1 性别渗透率</h2><blockquote>
+<p>渗透率:表示用户对特定事件关注度的比例.<br>性别渗透率 = 某性别用户对关键词的关注度／该性别用户总关注度.        </p>
+</blockquote>
+<p><img src="media/sex_permeability.png" alt="sex_permeability"></p>
+<p>由上图可知，头条上关注“最强大脑” 的用户中女性渗透率高于男性。可见<strong>女性网民对最强大脑的关注度更高</strong>。</p>
+<h2 id="3-2-年龄渗透率"><a href="#3-2-年龄渗透率" class="headerlink" title="3.2 年龄渗透率"></a>3.2 年龄渗透率</h2><blockquote>
+<p>性别渗透率 = 某年龄段用户对关键词的关注度／该年龄段用户总关注度. </p>
+</blockquote>
+<p>图1：年龄渗透率（头条用户）</p>
+<p><img src="media/age_permeability.png" alt="age_permeability"></p>
+<p>由上图可知，各年龄层的头条用户均对最强大脑有一定比例的关注度，可见其赢得了多年龄层用户的喜爱。其中24-30岁的头条用户对“最强大脑”的关注度最高，31-40岁次之，18-23岁再次。可见<strong>青壮年网民对最强大脑的关注度高于中老年网民</strong>。</p>
+<p>图2：最强大脑用户年龄结构对比（电视观众与微博）</p>
+<p><img src="media/age.png" alt="age"></p>
+<p>区别于纯娱乐类综艺节目，最强大脑将科学与娱乐有机结合，丰富精美道具的使用，世界级超强脑力选手比拼，各国战队的较量等令节目紧张而富有趣味性，赢得了多年龄层观众的喜爱。其<strong>电视观众年龄层分布较均匀，各年龄层差距不明显</strong>。其中70后及以上观众占比超过6成(62.02%)，<strong>中老年人群成为该节目的主力观众，这与节目的科学与智力性有很大关系</strong>。而微博端关注该节目的用户仍以90后、00后为主，比例达63.36%，可见<strong>微博依然是年轻人的主场</strong>。[10]</p>
+<h2 id="3-3-地域渗透率"><a href="#3-3-地域渗透率" class="headerlink" title="3.3 地域渗透率"></a>3.3 地域渗透率</h2><blockquote>
+<p>地域渗透率 = 某省份或城市用户对包含特定关键词文章的关注度/该省份或城市产生的总关注度.</p>
+</blockquote>
+<p>图1：关注“最强大脑”网民的省份分布（注：颜色由深到浅表示网民渗透率由高到低）</p>
+<p><img src="media/area_osmolity.png" alt="area_osmolity"></p>
+<p>由上图可见，在全国所有省份中，<strong>广东的地域渗透率（19237）最高</strong>，Top5的还有：江苏、北京、山东、浙江。互联网发达、网民数量众多可能是广东的渗透率最高的原因之一；<strong>最强大脑节目由江苏卫视打造，这应该是江苏地域渗透率次高的原因</strong>。</p>
+<p>图2：关注“最强大脑”网民的城市分布</p>
+<p><img src="media/area_osmolity_citymark.png" alt="area_osmolity_citymark"></p>
+<p>由上图可见，在全国所有城市中，<strong>北京的地域渗透率（14695）最高</strong>，Top5的还有：上海、深圳、广州、武汉。</p>
+<p>TOP5省份与城市均为经济较为发达的地区，可见<strong>经济发达地区的头条用户对最强大脑的关注度相对较高，这可能与此节目的科学益智性要求受众有一定的受教育程度有关</strong>。</p>
+<h2 id="3-4-网民兴趣分布"><a href="#3-4-网民兴趣分布" class="headerlink" title="3.4 网民兴趣分布"></a>3.4 网民兴趣分布</h2><p><img src="media/user_interest_categories.png" alt="user_interest_categories"></p>
+<p>上图是关注“最强大脑”网民的兴趣统计。由图可知，<strong>头条上关注“最强大脑” 的用户的兴趣中“育儿”占比最大(0.68%)，其余Top5为：时尚(0.50%)，科技(0.46%)，娱乐(0.40%)，游戏(0.37%)</strong>。</p>
+<h1 id="4-社会评议与典型意见挖掘"><a href="#4-社会评议与典型意见挖掘" class="headerlink" title="4 社会评议与典型意见挖掘"></a>4 社会评议与典型意见挖掘</h1><h2 id="4-1-豆瓣评分-8"><a href="#4-1-豆瓣评分-8" class="headerlink" title="4.1 豆瓣评分[8]"></a>4.1 豆瓣评分[8]</h2><p>图1：四季评分对比</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>第1季评分</th>
+<th>第2季评分</th>
+<th>第3季评分</th>
+<th>第4季评分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8.0</td>
+<td>8.1</td>
+<td>7.8</td>
+<td>6.1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>图2：第四季评分</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>豆瓣评分</th>
+<th>参评人数</th>
+<th>5星比例</th>
+<th>4星比例</th>
+<th>3星比例</th>
+<th>2星比例</th>
+<th>1星比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6.1</td>
+<td>2883</td>
+<td>12.2%</td>
+<td>26.0%</td>
+<td>33.0%</td>
+<td>14.3%</td>
+<td>14.5%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>由图1可见，<strong>网民对最强大脑第四季的评价远低于前三季。但第四季的收视率仍然高居同时段Top3，可见豆瓣评分与其综艺热度并没有必然联系</strong>。</p>
+<p>图2显示，第四季的三星及以下评分占比高达61.8%，可见<strong>网民对其负面评价偏多</strong>。</p>
+<h2 id="4-2-网民情感极性分析-11"><a href="#4-2-网民情感极性分析-11" class="headerlink" title="4.2 网民情感极性分析 [11]"></a>4.2 网民情感极性分析 [11]</h2><p><img src="media/emotion1.jpg" alt="emotion1"></p>
+<p>上图来源于清博大数据，<strong>网民对第四季的情感倾向中负面情感占比高达39.79%，正面情感只占18.39%，可见第四季具有很大的舆论争议性</strong>。</p>
+<ul>
+<li>这可能与其爆出的“<strong>节目组黑幕</strong>”有关。可见这档旨在“让科学流行起来”的脑力竞技真人秀，显然遭遇了前所未有的<strong>信任危机</strong>。</li>
+<li>第四季增加了许多“撕逼大战”的情节，赛前叫板对手、赛后炮轰节目成固定套路，为这场基于脑力的PK平添了不少戾气，这种故意设置的<strong>“撕来撕去的口水乱战”可能是导致其负面评价多的原因之一</strong>。</li>
+</ul>
+<h2 id="4-3-今日头条评论分析"><a href="#4-3-今日头条评论分析" class="headerlink" title="4.3 今日头条评论分析"></a>4.3 今日头条评论分析</h2><p>图1：头条评论关键词  [7] </p>
+<p><img src="media/%E8%AF%84%E8%AE%BA%E5%85%B3%E9%94%AE%E8%AF%8D.png" alt="评论关键词"></p>
+<p>上图显示的是今日头条上与“最强大脑”相关的评论中出现频率最高的10个关键词。可见对于最强大脑，<strong>头条用户最感兴趣的是：项目难度（记忆难度，盲拧魔方），节目组黑幕（“钻空子”，“不配”，“鲍云”），选手真实实力（“余不配”）等话题</strong>。</p>
+<p>图2：头条用户热门评论</p>
+<p><img src="media/1.png" alt="1"></p>
+<p><img src="media/2.png" alt="2"></p>
+<p>上图是今日头条上与“最强大脑”相关的最热门评论（图右的数值表示点赞数），<strong>热门评论可反映出网民对哪些观点最赞同，且它们都评论于2篇以“退赛事件”为主题的文章</strong>。由此可见，<strong>网民对水哥退赛的支持和崇拜、对最强大脑节目组黑幕的批判</strong>。</p>
+<h1 id="5-热点舆论事件挖掘——“王昱珩退赛-节目组黑幕”-9"><a href="#5-热点舆论事件挖掘——“王昱珩退赛-节目组黑幕”-9" class="headerlink" title="5 热点舆论事件挖掘——“王昱珩退赛/节目组黑幕” [9]"></a>5 热点舆论事件挖掘——“王昱珩退赛/节目组黑幕” [9]</h1><blockquote>
+<p>在第四季播出期间，王昱珩退赛/节目组黑幕引起了最强烈的舆论争议，下面我们对这个热点事件进行深入挖掘。我们以事件的关键人物——王昱珩发表的一条微博（与“最强大脑”相关的最热门微博）为例，分析此条微博的传播、转评背后反映出的问题。</p>
+</blockquote>
+<h2 id="5-1-微博详情"><a href="#5-1-微博详情" class="headerlink" title="5.1 微博详情"></a>5.1 微博详情</h2><p><img src="media/%E6%B0%B4%E5%93%A5%E5%BE%AE%E5%8D%9A.png" alt="水哥微博"></p>
+<p>@闲人王昱珩 的微博共收获转发数15,120次（其中有效转发12,671次）、 评论数45,380条，点赞数135,534个，覆盖人次14,021,904人。体现出此条微博的<strong>覆盖范围之广</strong>，以及网民对王昱珩退赛的支持。</p>
+<h2 id="5-2-转发评论趋势"><a href="#5-2-转发评论趋势" class="headerlink" title="5.2 转发评论趋势"></a>5.2 转发评论趋势</h2><p><img src="media/%E8%BD%AC%E5%8F%91%E8%AF%84%E8%AE%BA%E8%B6%8B%E5%8A%BF%E5%9B%BE.png" alt="转发评论趋势图"></p>
+<p>该微博于03-03 21:46发布后，于03-04 00:00（发布后2个多小时）达到转发、评论高峰，转发峰值5280条、评论峰值12871条，此后微博传播速度逐渐降低。由此可见，该<strong>微博传播速率之快，一发布即迅速引起了网民的大量关注</strong>。</p>
+<h2 id="5-3-转评表情分析"><a href="#5-3-转评表情分析" class="headerlink" title="5.3 转评表情分析"></a>5.3 转评表情分析</h2><p><img src="media/%E8%BD%AC%E8%AF%84%E8%A1%A8%E6%83%85%E5%88%86%E6%9E%90.png" alt="转评表情分析"></p>
+<p>转发评论的表情以爱心、哭泣、无奈、赞许为主，表达了<strong>网民对王昱珩的宽慰和赞许、对其不继续参赛的失落难过，对节目组黑幕的讽刺无奈</strong>。可见舆论主要站在王昱珩这边。</p>
+<h1 id="6-总结"><a href="#6-总结" class="headerlink" title="6 总结"></a>6 总结</h1><p>总体来说，最强大脑第四季收视率稳居高位，无论是电视平台、网络视频平台还是媒体平台上的热度都很高。电视观看用户年龄段分布均匀，以中老年为主力观众；而网络媒体平台的关注用户则以青壮年为主。性别上，女性普遍比男性更关注最强大脑；地域上，广东、北京、上海、深圳、江苏等经济发达地区用户对其关注度更高。</p>
+<p>尽管节目热度很高，但从其豆瓣评分反映出网民对其评价较前三季偏低，且负面评价占比较大。主要原因是播出期间爆出的“王昱珩退赛, 节目组黑幕”的负面新闻，这在媒体平台上引起了广泛的热议，舆论一边倒偏向王昱珩，而最强大脑节目组遭到了网民的“声讨”，负面评价很多。</p>
+<p>我们认为：最强大脑作为一档科学益智类节目，可以为了节目效果添加一定的娱乐属性，但过度综艺化、导演“黑幕”或虚假做作的口水乱战等情节有违此节目的科学精神，故其招致了网民的大量负面舆论评价。这种情节不应再次发生，希望最强大脑第五季能秉持科学精神，回归纯粹。</p>
+<h1 id="7-Reference"><a href="#7-Reference" class="headerlink" title="7 Reference"></a>7 Reference</h1><p>[1] CSM.电视收视率 <a href="http://www.csm.com.cn/cpfw/ds/" target="_blank" rel="noopener">http://www.csm.com.cn/cpfw/ds/</a></p>
+<p>[2] 百度百科.最强大脑第四季 <a href="https://baike.baidu.com/item/%E6%9C%80%E5%BC%BA%E5%A4%A7%E8%84%91%E7%AC%AC%E5%9B%9B%E5%AD%A3#6" target="_blank" rel="noopener">https://baike.baidu.com/item/%E6%9C%80%E5%BC%BA%E5%A4%A7%E8%84%91%E7%AC%AC%E5%9B%9B%E5%AD%A3#6</a></p>
+<p>[3] 优酷.最强大脑第四季 <a href="https://list.youku.com/show/id_zc0193db8cdc411e6acec.html" target="_blank" rel="noopener">https://list.youku.com/show/id_zc0193db8cdc411e6acec.html</a></p>
+<p>[4] 乐视综艺.最强大脑第四季 <a href="http://www.le.com/zongyi/10033500.html" target="_blank" rel="noopener">http://www.le.com/zongyi/10033500.html</a></p>
+<p>[5] 搜狐视频.最强大脑第四季 <a href="http://tv.sohu.com/s2016/jswszqdndsj/" target="_blank" rel="noopener">http://tv.sohu.com/s2016/jswszqdndsj/</a></p>
+<p>[6] 微指数.最强大脑 <a href="http://data.weibo.com/index" target="_blank" rel="noopener">http://data.weibo.com/index</a></p>
+<p>[7] 今日头条 <a href="https://www.toutiao.com/" target="_blank" rel="noopener">https://www.toutiao.com/</a></p>
+<p>[8] 豆瓣电影.最强大脑第四季 <a href="https://movie.douban.com/subject/26950044/" target="_blank" rel="noopener">https://movie.douban.com/subject/26950044/</a></p>
+<p>[9] 新浪微博.闲人王昱珩 <a href="https://weibo.com/5400369364/Ey7Ojl9Lb?from=page_1005055400369364_profile&amp;wvr=6&amp;mod=weibotime&amp;type=comment" target="_blank" rel="noopener">https://weibo.com/5400369364/Ey7Ojl9Lb?from=page_1005055400369364_profile&amp;wvr=6&amp;mod=weibotime&amp;type=comment</a></p>
+<p>[10] 微博.季播综艺节目时移收视与微博指数浅析 <a href="https://weibo.com/ttarticle/p/show?id=2309403990982931697724" target="_blank" rel="noopener">https://weibo.com/ttarticle/p/show?id=2309403990982931697724</a></p>
+<p>[11] 界面.一季度综艺排行榜看节目品牌正负舆情 <a href="https://m.jiemian.com/article/1153555_yidian.html" target="_blank" rel="noopener">https://m.jiemian.com/article/1153555_yidian.html</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Medium-Study/" rel="tag"># Medium Study</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/05/数据库系统概论复习笔记/" rel="next" title="数据库系统概论复习笔记">
+                <i class="fa fa-chevron-left"></i> 数据库系统概论复习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/14/广播电视概论知识点总结/" rel="prev" title="广播电视概论知识点总结">
+                广播电视概论知识点总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">131</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-电视收视率与网站播放量概况"><span class="nav-number">1.</span> <span class="nav-text">1 电视收视率与网站播放量概况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-电视收视情况"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 电视收视情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-视频网站播放量"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 视频网站播放量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-媒体热度分析"><span class="nav-number">2.</span> <span class="nav-text">2 媒体热度分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-微博热度趋势-6"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 微博热度趋势[6]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-今日头条热度趋势-7"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 今日头条热度趋势 [7]</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-网民画像分析-7"><span class="nav-number">3.</span> <span class="nav-text">3 网民画像分析 [7]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-性别渗透率"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 性别渗透率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-年龄渗透率"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 年龄渗透率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-地域渗透率"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 地域渗透率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-网民兴趣分布"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 网民兴趣分布</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-社会评议与典型意见挖掘"><span class="nav-number">4.</span> <span class="nav-text">4 社会评议与典型意见挖掘</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-豆瓣评分-8"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 豆瓣评分[8]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-网民情感极性分析-11"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 网民情感极性分析 [11]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-今日头条评论分析"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 今日头条评论分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-热点舆论事件挖掘——“王昱珩退赛-节目组黑幕”-9"><span class="nav-number">5.</span> <span class="nav-text">5 热点舆论事件挖掘——“王昱珩退赛/节目组黑幕” [9]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-微博详情"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 微博详情</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-转发评论趋势"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 转发评论趋势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-转评表情分析"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 转评表情分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-总结"><span class="nav-number">6.</span> <span class="nav-text">6 总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Reference"><span class="nav-number">7.</span> <span class="nav-text">7 Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

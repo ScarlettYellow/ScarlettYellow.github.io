@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Data Structure," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：线性表。">
+<meta name="keywords" content="Data Structure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构第二章：线性表">
+<meta property="og:url" content="http://yoursite.com/2017/12/09/数据结构第二章：线性表/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：线性表。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022212113Q11.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222121610M3.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222121H2Z9.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222121U9338.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022212205D18.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222134953245.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222135151U0.jpg">
+<meta property="og:image" content="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=f56b157cdeca7bcb6976cf7ddf600006/b2de9c82d158ccbfebe4998510d8bc3eb1354130.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222135F3H0.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222135R3349.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222135R3349.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222141350236.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222141635649.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022214240EV.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222142520I4.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222142520I4.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022214261QL.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222143AE25.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222143K5J2.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222144032R3.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222144211158.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022214440V36.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222144435363.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222145005J6.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222145J02V.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222145R44S.jpg">
+<meta property="og:updated_time" content="2018-01-23T10:42:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构第二章：线性表">
+<meta name="twitter:description" content="Abstract：线性表。">
+<meta name="twitter:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022212113Q11.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/09/数据结构第二章：线性表/"/>
+
+
+
+
+
+  <title>数据结构第二章：线性表 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/09/数据结构第二章：线性表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构第二章：线性表</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-09T16:52:37+08:00">
+                2017-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Data-Structure/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Structure</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：线性表。<br><a id="more"></a></p>
+<h1 id="线性结构"><a href="#线性结构" class="headerlink" title="线性结构"></a>线性结构</h1><p>1.特点：</p>
+<ul>
+<li>存在唯一的首位元素a1</li>
+<li>存在唯一的末位元素an</li>
+<li>除第一个元素外，每个元素有且仅有一个直接前驱</li>
+<li>除最后一个元素外，每个元素有且仅有一个直接后继</li>
+</ul>
+<h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><h2 id="2-1-线性表的逻辑结构"><a href="#2-1-线性表的逻辑结构" class="headerlink" title="2.1 线性表的逻辑结构"></a>2.1 线性表的逻辑结构</h2><p>1.线性表：由n(n&gt;=0)个类型相同的数据元素（a1，a2,…,an）构成的有限序列。记作L = （a1，a2,…,an）。   </p>
+<ul>
+<li>同一类型的数据元素构成的线性结构</li>
+<li>两种存储结构：顺序存储 &amp; 链式存储</li>
+<li>基本操作：插入，删除，检索</li>
+<li>数据元素之间是一种线性关系，数据元素“一个接一个的排列”</li>
+</ul>
+<p>2.表长（表的长度）：线性表中数据元素的数目。<br>3.空表：不含数据元素的线性表。</p>
+<p>线性表的特点</p>
+<ul>
+<li>有限性，元素个数有限，n &gt; = 0</li>
+<li>元素具有逻辑上的顺序性，在序列中各元素排列有先后次序（但不必按大小排列）</li>
+<li>元素都是数据元素，每个表元素都是单个元素</li>
+<li>元素的数据类型相同，意味着每个表元素占有相同数量的存储空间</li>
+<li>元素具有抽象性：我们仅关注元素间的逻辑关系，不考虑元素表示什么内容</li>
+</ul>
+<p>线性表、顺序表、链表的本质区别：<strong>线性表是一种**</strong>逻辑结构<strong>，表示元素之间一对一的相邻关系。</strong>顺序表和链表是指存储结构**，两者属于不同层面的概念，因此不要将其混淆。</p>
+<h3 id="抽象数据类型的线性表"><a href="#抽象数据类型的线性表" class="headerlink" title="抽象数据类型的线性表"></a>抽象数据类型的线性表</h3><ul>
+<li>ADT：三元组，包括数据对象，数据关系，基本操作。<blockquote>
+<p>ADT List<br>{ 数据对象：D={ai|ai∈ElemSet,i=1,2,,…n,n&gt;=0}<br>数据关系：R1={<ai-1,ai>| ai-1,ai∈D,i=2,,…n}<br>基本操作：<br>1.IniList(&amp;L)                     //构造空表L。<br>2.DestroyList(&amp;L)           //销毁线性表L<br>3.ClearList(&amp;L)             //置L为空表<br>4.ListEmpty(L)              //判断L是否为空表。若L为空表，则返回true,否则返回false。<br>5.ListLength(L)             //求表L的长度<br>6.GetElem(L,i,&amp;e)           //取元素ai,由e返回ai<br>7.LocateElem(L,e,compare()) //查找符合条件的元素<br>8.ListInsert(&amp;L,i,e)        //元素ai之前插入新元素e<br>9.ListDelete(&amp;L,i,&amp;e)       //删除第i个元素<br>10.DeleteElem(&amp;L,x)        //删除元素值为x的元素  </ai-1,ai></p>
+<pre><code>      … …     }ADT List   
+</code></pre></blockquote>
+</li>
+</ul>
+<blockquote>
+<p>为什么有的在L前加了&amp;而有的没加：当操作对线性表或其中的元素作了修改，则是&amp;L；若无修改，则为L。</p>
+</blockquote>
+<ul>
+<li>定义：一个数学模型以及定义在该模型上的一组操作。</li>
+<li>作用：抽象数据类型可以使我们更容易描述现实世界。</li>
+<li>关键：使用它的人可以只关心它的逻辑特征，不需要了解它的存储方式。定义它的人同样不必要关心它如何存储。</li>
+</ul>
+<h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><ul>
+<li>基本操作</li>
+<li>可利用基本操作组成更复杂的操作<blockquote>
+<p>EG.将线性表Lb中的且不在线性表La中的数据元素合并到La中。    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//算法：判断两个线性表的长度——用循环结构将符合条件的元素插入La中（判断Lb中的每个元素是否在La中，不在的话就插入）        </span><br><span class="line">void union(List &amp;La, List &amp;Lb) //合并线性表 </span><br><span class="line">&#123;</span><br><span class="line">    La_len = ListLength(La); </span><br><span class="line">    Lb_len = ListLength(Lb);    </span><br><span class="line">    for (i=1;i&lt;=Lb_len;i++) </span><br><span class="line">    &#123;</span><br><span class="line">        GetElem(Lb,i,e) //取Lb的第i个数据元素赋给e；即依次取出所有Lb中的元素    </span><br><span class="line">        if(!LocateElem(La,e,equal)) </span><br><span class="line">          ListInsert(La,++La_len,e); //判断e在La中是否存在，不存在则插入</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h2 id="2-2-线性表的顺序存储及运算（顺序表）"><a href="#2-2-线性表的顺序存储及运算（顺序表）" class="headerlink" title="2.2 线性表的顺序存储及运算（顺序表）"></a>2.2 线性表的顺序存储及运算（顺序表）</h2><h3 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h3><ul>
+<li>顺序分配：将线性表中的元素<strong>依次存放</strong>到计算机存储器中<strong>一组连续地址的存储单元</strong>中，这种分配方式称为顺序分配或顺序映像。由此得到的存储结构称为顺序存储结构或向量(一维数组）。 逻辑上相邻的两个元素在物理位置上也相邻，但物理相邻不一定逻辑相邻。</li>
+</ul>
+<blockquote>
+<p>一般形式：i——an——存储地址：LOC(i) = a1+（i-1）<em> d   （1&lt;=i&lt;=n）<br>a1：表的首地址/元素a1的地址；<br>d：1个数据元素所占存储单元的数目；<br>maxleng：最大长度，为某个常数   [序号maxleng——存储地址：b+(maxleng-1)</em>p]</p>
+<p>只要知道顺序表首地址和每个数据元素所占地址单元的个数就可求出第i个数据元素的地址来，这也是顺序表具有<strong>按数据元素的序号随机存取</strong>的特点。<br>需用一个变量last 记录当前线性表中最后一个元素在数组中的位置，即<strong>last 起一个指针的作用，始终指向线性表中最后一个元素</strong>，因此，表空时last=-1.<br>线性表中元素的位序是从1开始的，而数组中元素的下标是从0开始的。<br>假设表L的起始位置为LOC(A)，sizeof(ElemType)是每个数据元素所占用存储空间的大小。</p>
+</blockquote>
+<ul>
+<li>顺序访问</li>
+<li>随机访问</li>
+</ul>
+<p>从结构性上考虑，通常将data 和last 封装成一个结构作为顺序表的类型：</p>
+<pre><code>typedef struct
+{ datatype data[MAXSIZE];
+   int last;
+} SeqList;
+</code></pre><blockquote>
+<p>定义一个顺序表：SeqList L ; <strong>表长＝L.last+1</strong>，线性表中的数据元素a1至an分别存放在L.data[0]至L.data[L.last]中;<br>有时定义一个指向SeqList 类型的指针更为方便：<br>SeqList <em>L ；<strong>L是一个指针变量</strong>，线性表的存储空间通过L=malloc(sizeof(SeqList)) 操作来获得,<strong> L中存放的是顺序表的地址</strong>.  表长表示为（</em>L）.last或L－＞last+1，线性表的存储区域为L-&gt;data ，线性表中数据元素的存储空间为：<br>L－＞data[0] ~ L－＞data[L－＞last]。</p>
+</blockquote>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022212113Q11.jpg" alt="线性表的顺序存储图"></p>
+<ul>
+<li>线性表顺序结构在C语言中的定义（静态分配）?</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#define maxleng 100    </span><br><span class="line">typedef struct         </span><br><span class="line">  &#123; ElemType elem[maxleng]；//下标:0,1,...,maxleng-1   </span><br><span class="line">    int length；            //表长 </span><br><span class="line">   &#125; SqList；  </span><br><span class="line">  SqList La；  </span><br><span class="line">   ..........  </span><br><span class="line"> 其中：typedef---别名定义，SqList----结构类型名    </span><br><span class="line">       La----结构类型变量名    </span><br><span class="line">       La.length---表长    </span><br><span class="line">       La.elem[0]----a1    </span><br><span class="line">       La.elem[La.length-1]---an</span><br></pre></td></tr></table></figure>
+<ul>
+<li>线性表顺序结构在C语言中的定义（动态分配）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> #define LIST_INIT_SIZE 100 </span><br><span class="line"> #define LISTINCREMENT 10       </span><br><span class="line"> typedef struct         </span><br><span class="line">   &#123; ElemType *elem；//存储空间基地址   </span><br><span class="line">     int length；    //表长 </span><br><span class="line">     int listsize;   //当前分配的存储容量   </span><br><span class="line">                     //（以sizeof(ElemType)为单位   </span><br><span class="line">    &#125; SqList；  </span><br><span class="line">   SqList Lb；  </span><br><span class="line">其中：   typedef--别名定义，   SqList---结构类型名          </span><br><span class="line">         Lb---结构类型变量名   Lb.length---表长     </span><br><span class="line">         Lb.elem[0]---a1       Lb.elem[Lb.length-1]--an</span><br></pre></td></tr></table></figure>
+<h3 id="顺序表上的基本运算"><a href="#顺序表上的基本运算" class="headerlink" title="顺序表上的基本运算"></a>顺序表上的基本运算</h3><h4 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1.初始化"></a>1.初始化</h4><p>即构造一个空表；<strong>将L设为指针参数</strong>，首先动态分配存储空间，然后，<strong>将表中last 指针置为－1，表示表中没有数据元素</strong>。</p>
+<pre><code>SeqList *init_SeqList( )
+{ SeqList *L;
+L=malloc(sizeof(SeqList));
+L-&gt;last=-1; return L;
+}
+</code></pre><h4 id="2-插入运算"><a href="#2-插入运算" class="headerlink" title="2.插入运算"></a>2.插入运算</h4><p>在表的第i个位置上插入一个值为x 的新元素，插入后使原表长为n的表:(a1，a2，… ，ai-1，ai，ai+1，… ，an)成为表长为n+1 表：(a1，a2，…，ai-1，x，ai，ai+1，…，an ) ，1&lt;=i&lt;=n+1。</p>
+<p>步骤：移-让-放-改</p>
+<ul>
+<li>(1) 将ai～an 顺序向下移动，为新元素让出位置；</li>
+<li>(2) 将x 置入空出的第i个位置；</li>
+<li>(3) 修改last 指针(相当于修改表长)，使之仍指向最后一个元素。</li>
+</ul>
+<blockquote>
+<p>表长Maxsize = L.last+1；L.last = Maxsize -1;<br>若L.last = Maxsize -1，则表满</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int Insert_SeqList(SeqList *L，int i，datatype x)</span><br><span class="line">&#123; int j;</span><br><span class="line">if (L-&gt;last==MAXSIZE－1)</span><br><span class="line">&#123; printf(＂表满＂); return(-1); &#125; /*表空间已满，不能插入*/</span><br><span class="line">if (i&lt;1 || i&gt;L-&gt;last+2) /*检查插入位置的正确性*/</span><br><span class="line">&#123; printf(＂位置错＂);return(0); &#125;</span><br><span class="line">for(j=L-&gt;last;j&gt;=i-1;j--)</span><br><span class="line">L-&gt;data[j+1]=L-&gt;data[j]; /* 结点移动*/</span><br><span class="line">L-&gt;data[i-1]=x; /*新元素插入*/</span><br><span class="line">L-&gt;last++; /*last仍指向最后元素*/</span><br><span class="line">return (1); /*插入成功，返回*/</span><br><span class="line">&#125;</span><br><span class="line">//先处理异常情况，再处理循环</span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<ul>
+<li>(1) 顺序表中数据区域有MAXSIZE个存储单元，所以在向顺序表中做插入时先检查表空间是否满了，在表满的情况下不能再做插入，否则产生溢出错误。</li>
+<li>(2) 要检验插入位置的有效性，这里i 的有效范围是：1&lt;=i&lt;=n+1，其中n 为原表长。</li>
+<li>(3) 注意数据的移动方向。</li>
+</ul>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222121610M3.jpg" alt="顺序表中的插入"></p>
+<p>插入算法的时间性能分析：顺序表上的插入运算，时间主要消耗在了数据的移动上，在第i个位置上插入x ，从ai 到an 都要向下移动一个位置，共需要移动n－i＋1个元素，而i 的取值范围为：1&lt;= i&lt;= n+1，即有n＋1个位置可以插入。设在第i个位置上作插入的概率为Pi，则平均移动数据元素的次数：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222121H2Z9.jpg" alt="平均移动元素次数"></p>
+<p>在顺序表上做插入操作<strong>需移动表中一半的数据元素</strong>。显然<strong>时间复杂度为Ｏ(n)</strong></p>
+<h4 id="3-删除运算DeleteList-L-i"><a href="#3-删除运算DeleteList-L-i" class="headerlink" title="3. 删除运算DeleteList(L,i)"></a>3. 删除运算DeleteList(L,i)</h4><p>将表中第i 个元素从线性表中去掉，删除后使原表长为n 的线性表：<br>(a1，a2，… ，ai-1，ai，ai+1，…，an)成为表长为n－1 的线性表：(a1，a2，… ，ai-1， ai+1，… ，an)。i 的取值范围为：1&lt;=i&lt;=n 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//算法：先判断元素ai的合法性——若不合法则返回Error/若合法则继续——定位ai元素（在第i-1号地址）并赋给变量e——用循环结构将ai后的所有元素往前挪一位（共L.length-1个元素；赋值法）</span><br><span class="line">int ListDelete_Sq(SqList  &amp;L,int I,ElemType &amp;e)     </span><br><span class="line">&#123;if (i&lt;1 || i&gt;L.length)     </span><br><span class="line">          return ERROR; </span><br><span class="line"> e=L.elem[i-1]; </span><br><span class="line"> for(j=i;j&lt;=L.length-1;j++) </span><br><span class="line">	 L.elem[j-1]=L.elem[j]; </span><br><span class="line"> L.length--;  return OK;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>步骤：</p>
+<ul>
+<li>将ai+1～an 顺序向上移动。</li>
+<li>修改last指针(相当于修改表长)使之仍指向最后一个元素。</li>
+</ul>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222121U9338.jpg" alt="顺序表中的删除"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int Delete_SeqList(*SeqList *L, int i)</span><br><span class="line">&#123;int j;</span><br><span class="line">if (i &lt; 1 || i &gt; L-&gt;last+1) /*检查空表及删除位置的合法性*/</span><br><span class="line">&#123;print (&quot;不存在第i个元素&quot;), return(0);&#125;</span><br><span class="line">for(j=i;j&lt;=L-&gt;last;j++)</span><br><span class="line">L-&gt;data[j-1]=L-&gt;data[j]; /*向上移动*/</span><br><span class="line">L-&gt;last--;</span><br><span class="line">return(1); /*删除成功*/&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<ul>
+<li>（1）删除第i个元素，i的取值为1&lt;=i&lt;=n ,否则第i个元素不存在，因此，要检查删除位置的有效性。</li>
+<li>（2）当表空时不能做删除，因表空时L-&gt;last的值为-1，条件（i<1 ||="" i="">L-&gt;last+1）也包括了对表空的检查。</1></li>
+<li>（3）删除ai 之后，该数据已不存在，如果需要，先取出ai ，再做删除。</li>
+</ul>
+<p>删除算法的时间性能分析：与插入运算相同，其时间主要消耗在了移动表中元素上，删除第i个元素时，其后面的元素ai+1～an 都要向上移动一个位置，共移动了n-i 个元素，所以平均移动数据元素的次数：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022212205D18.jpg" alt="平均移动元素次数"></p>
+<p>顺序表上作删除运算时大约需要移动表中一半的元素，显然该算法的时间复杂度为Ｏ(n)。</p>
+<h4 id="4-按值查找"><a href="#4-按值查找" class="headerlink" title="4.按值查找"></a>4.按值查找</h4><p>线性表中的按值查找是指在线性表中查找与给定值x相等的数据元素。在顺序表中完成该运算最简单的方法是：从第一个元素a1 起依次和x比较，直到找到一个与x相等的数据元素，则返回它在顺序表中的存储下标或序号（二者差一）；或者查遍整个表都没有找到与x 相等的元素，返回-1。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int Location_SeqList(SeqList *L, datatype x)</span><br><span class="line">&#123; int i=0;</span><br><span class="line">while(i&lt;=L.last &amp;&amp; L-&gt;data[i]!= x)</span><br><span class="line">i++;</span><br><span class="line">if (i&gt;L-&gt;last) return -1;</span><br><span class="line">else return i; /*返回的是存储位置*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>主要运算是比较。显然比较的次数与x在表中的位置有关，也与表长有关。当a1=x 时，比较一次成功。当an=x 时比较n 次成功。平均比较次数为（n+1）/2，时间性能为O(n)。</p>
+<h3 id="顺序表应用举例"><a href="#顺序表应用举例" class="headerlink" title="顺序表应用举例"></a>顺序表应用举例</h3><h4 id="1-顺序表的划分"><a href="#1-顺序表的划分" class="headerlink" title="1.顺序表的划分"></a>1.顺序表的划分</h4><p>Q：将顺序表(a1，a2，… ，an) 重新排列为以a1 为界的两部分：a1 前面的值均比a1 小，a1 后面的值都比a1 大(这里假设数据元素的类型具有可比性, 不妨设为整型)，这一操作称为划分。a1 也称为基准。</p>
+<p>思路：从第二个元素开始到最后一个元素，逐一向后扫描：</p>
+<ul>
+<li>（1）当前数据元素aI 比a1 大时，表明它已经在a1 的后面，不必改变它与a1 之间的位置，继续比较下一个。</li>
+<li>（2）当前结点若比a1 小，说明它应该在a1 的前面，此时将它上面的元素都依次向下移动一个位置，然后将它置入最上方。</li>
+</ul>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222134953245.jpg" alt="顺序表的划分"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123; int i,j;</span><br><span class="line">datatype x,y;</span><br><span class="line">x=L-&gt;data[0]; /* 将基准置入x 中*/</span><br><span class="line">for(i=1;i&lt;=L-&gt;last;i++)</span><br><span class="line">if(L-&gt;data[i]&lt;x) /*当前元素小于基准*/</span><br><span class="line">&#123; y = L-&gt;data[i];</span><br><span class="line">for(j=i-1;j&gt;=0;j--) /*移动*/</span><br><span class="line">L－&gt;data[j+1]=L-&gt;data[j];</span><br><span class="line">L-&gt;data[0]=y;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>本算法中，有两重循环，外循环执行n－1次，内循环中移动元素的次数与当前数据的大小有关，当第ｉ个元素小于a1 时，要移动它上面的i-1个元素，再加上当前结点的保存及置入，所以移动i-1+2次，在最坏情况下，a1 后面的结点都小于a1 ，故总的移动次数为：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222135151U0.jpg" alt="平均移动元素次数"></p>
+<p>最坏情况下移动数据时间性能为Ｏ(ｎ２)</p>
+<h4 id="2-合并顺序表并按顺序排列"><a href="#2-合并顺序表并按顺序排列" class="headerlink" title="2.合并顺序表并按顺序排列"></a>2.合并顺序表并按顺序排列</h4><p>Q：有顺序表A和B，其元素均按从小到大的升序排列，编写一个算法将它们合并成一个顺序表C，要求C的元素也是从小到大的升序排列。</p>
+<p>算法思路：依次扫描通过A和B的元素，比较当前的元素的值，将较小值的元素赋给C，如此直到一个线性表扫描完毕，然后将未完的那个顺序表中余下部分赋给C即可。C的容量要能够容纳A、B两个线性表相加的长度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">void merge(SeqList A, SeqList B, SeqList *C)</span><br><span class="line">&#123; int i,j,k;</span><br><span class="line">i=0;j=0;k=0;</span><br><span class="line">while ( i&lt;=A.last &amp;&amp; j&lt;=B.last )</span><br><span class="line">if (A.date[i]&lt;B.date[j])</span><br><span class="line">C-&gt;data[k++]=A.data[i++];</span><br><span class="line">else C-&gt;data[k++]=B.data[j++];</span><br><span class="line">while (i&lt;=A.last )</span><br><span class="line">C-&gt;data[k++]= A.data[i++];</span><br><span class="line">while (j&lt;=B.last )</span><br><span class="line">C-&gt;data[k++]=B.data[j++];</span><br><span class="line">C-&gt;last=k-1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>算法的时间性能是O(m+n)，其中m是A的表长，n是B的表长。</p>
+<h4 id="3-比较两个线性表的大小"><a href="#3-比较两个线性表的大小" class="headerlink" title="3.比较两个线性表的大小"></a>3.比较两个线性表的大小</h4><p>Q：比较两个线性表的大小。两个线性表的比较依据下列方法：设A、B是两个线性表，均用向量表示，表长分别为m和n。A′和B′分别为A 和B 中除去最大共同前缀后的子表。</p>
+<p>例如A=(x,y,y,z,x,z)， B=(x,y,y,z,y,x,x,z)，两表最大共同前缀为(x,y,y,z) 。则A′=（x,z）， B′=（y,x,x,z），若A′=B′= 空表，则A=B；若A′=空表且B′≠空表，或两者均不空且A′首元素小于B′首元素，则A<b；否则，a>B。</b；否则，a></p>
+<p>算法思路：首先找出A、B的最大共同前缀；然后求出A′和B′，之后在按比较规则进行比较，A&gt;B 函数返回1；A=B返回0；A&lt;B返回-1。算法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int compare( A,B,m,n)</span><br><span class="line">int A[],B[];</span><br><span class="line">int m,n;</span><br><span class="line">&#123; int i=0,j,AS[],BS[],ms=0,ns=0; /*AS,BS作为A′,B′*/</span><br><span class="line">while (A[i]==B[i]) i++; /*找最大共同前缀*/</span><br><span class="line">for (j=i;j&lt;m;j++)</span><br><span class="line">&#123; AS[j-i]=A[j];ms++; &#125; /*求A′,ms为A′的长度*/</span><br><span class="line">for (j=i;j&lt;n;j++)</span><br><span class="line">&#123; BS[j-i]=B[j];ns++; &#125; /*求B′,ms为B′的长度*/</span><br><span class="line">if (ms==ns&amp;&amp;ms==0) return 0;</span><br><span class="line">else if (ms==0&amp;&amp;ns&gt;0 || ms&gt;0 &amp;&amp; ns&gt;0 &amp;&amp; AS[0]&lt;BS[0]) return –1;</span><br><span class="line">else return 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>算法的时间性能是O( m+n )</p>
+<h3 id="顺序结构的评价"><a href="#顺序结构的评价" class="headerlink" title="顺序结构的评价"></a>顺序结构的评价</h3><p>优点：  </p>
+<ul>
+<li>随机存取结构，存取任何元素的时间都是一个常数，速度快</li>
+<li>结构简单，元素逻辑相邻也物理相邻</li>
+<li>不适用指针，节省存储空间</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>插入和删除元素需要移动大量元素，消耗时间</li>
+<li>需要一个<strong>连续</strong>的存储空间</li>
+<li>插入元素可能发生“<strong>溢出</strong>”</li>
+<li>自由区中的存储空间不能被其他数据占用/共享</li>
+</ul>
+<h2 id="2-3-线性表的链式存储结构及运算"><a href="#2-3-线性表的链式存储结构及运算" class="headerlink" title="2.3 线性表的链式存储结构及运算"></a>2.3 线性表的链式存储结构及运算</h2><p><img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=f56b157cdeca7bcb6976cf7ddf600006/b2de9c82d158ccbfebe4998510d8bc3eb1354130.jpg" alt="单链表逻辑结构">   </p>
+<ul>
+<li>顺序表：存贮特点是用物理上的相邻实现了逻辑上的相邻，要求<strong>用连续的存储单元</strong>顺序存储线性表中各元素，因此，对顺序表插入、删除时需要通过移动数据元素来实现，影响了运行效率。</li>
+<li>链表：<strong>用地址连续的存储单元来实现</strong>，因为它不要求逻辑上相邻的两个数据元素物理上也相邻，它是通过“链”建立起数据元素之间的逻辑关系来，因此对线性表的插入、删除不需要移动数据元素。</li>
+</ul>
+<h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><p>链表：通过一组任意的存储单元来存储线性表中的数据元素</p>
+<p>为建立起数据元素之间的线性关系，对每个数据元素ai，除了存放数据元素的自身的信息ai 之外，还需要和ai一起存放其后继ai+1 所在的存贮单元的地址，这两部分信息<strong>组成一个“结点”</strong>。</p>
+<ul>
+<li><strong>data：存放ai自身的信息</strong></li>
+<li><strong>next：存放ai的直接后继ai+1的地址（用指针存储地址；*next）</strong></li>
+</ul>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222135F3H0.jpg" alt="单链表结点结构"></p>
+<ul>
+<li>数据域：存放数据元素信息</li>
+<li>指针域：存放其后继地址</li>
+</ul>
+<p>链表：n个元素的线性表通过每个结点的指针域拉成了一个“链子”；链表由一个个结点构成。</p>
+<p>单链表：每个结点只有一个指向后继的指针的链表</p>
+<pre><code>typedef struct node
+{ datatype data;
+struct node *next;
+} LNode，*LinkList；
+
+//定义头指针变量：
+LinkList H；
+</code></pre><p>注意：</p>
+<ul>
+<li>LNode是结点的类型，LinkList是指向Lnode类型结点的指针类型</li>
+<li><strong>最后一个结点没有后继, 其指针域必需置空</strong></li>
+<li>我们<strong>关心的是结点间的逻辑结构，而对每个结点的实际地址并不关心</strong></li>
+<li>通常我们用“头指针”来标识一个单链表，如单链表L、单链表H等，是指某链表的第一个结点的地址放在了指针变量L、H 中， 头指针为“NULL”则表示一个空表</li>
+<li><p>通常将标识一个链表的头指针说明为LinkList类型的变量，如LinkList L ; 当L有定义时，值要么为NULL，则表示一个空表；要么为第一个结点的地址，即链表的头指针；将操作中用到指向某结点的指针变量说明为LNode <em>类型，如LNode </em>p， 则语句：</p>
+<pre><code>    p=malloc(sizeof(LNode))；
+</code></pre></li>
+</ul>
+<p>则完成了申请一块Lnode 类型的存储单元的操作，并将其地址赋值给变量p。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222135R3349.jpg" alt="申请一个结点"></p>
+<p>P所指的结点为<em>p，</em>p的类型为LNode型，所以该结点的数据域为(<em>p).data 或p-&gt;data，指针域为(</em>p).next 或p-&gt;next。free(p)则表示释放p 所指的结点。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222135R3349.jpg" alt="链表示意图"></p>
+<h3 id="单链表基本运算"><a href="#单链表基本运算" class="headerlink" title="单链表基本运算"></a>单链表基本运算</h3><h4 id="1-建立单链表"><a href="#1-建立单链表" class="headerlink" title="1.建立单链表"></a>1.建立单链表</h4><p>(1)在链表的头部插入结点建立单链表：</p>
+<p>链表：<strong>动态管理的存储结构</strong>；链<strong>表中的每个结点占用的存储空间不是预先分配，而是运行时系统根据需求而生成</strong>的，因此建立单链表从空表开始，<strong>每读入一个数据元素则申请一个结点，然后插在链表的头部</strong>。</p>
+<p>因为是在链表的头部插入，故读入数据的顺序和线性表中的逻辑顺序是相反的。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222141350236.jpg" alt="头部插入单链表"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">LinkList Creat_LinkList1( )</span><br><span class="line">&#123; LinkList L=NULL；/*空表*/</span><br><span class="line">Lnode *s;</span><br><span class="line">int x; /*设数据元素的类型为int*/</span><br><span class="line">scanf(＂%d＂,&amp;x);</span><br><span class="line">while (x!=flag)</span><br><span class="line">&#123; s=malloc(sizeof(LNode));</span><br><span class="line">s-&gt;data=x;</span><br><span class="line">s-&gt;next=L; L=s;</span><br><span class="line">Scanf (＂%d＂,&amp;x);</span><br><span class="line">&#125;</span><br><span class="line">return L;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(2)在单链表的尾部插入结点建立单链表：</p>
+<ul>
+<li>头插入与尾插入的区别：<ul>
+<li>头插入：读入数据元素的顺序与生成链表中的元素顺序相反</li>
+<li><strong>尾插入</strong>：使词序一致；每次将新结点插入到链表的尾部，所以需<strong>加入一个指针r 用来始终指向链表中的尾结点</strong>，以便能够将新结点插入到链表的尾部</li>
+</ul>
+</li>
+</ul>
+<p>算法思路：</p>
+<p>初始状态：头指针H=NULL，尾指针r=NULL; 按线性表中元素的顺序依次读入数据元素，不是结束标志时，申请结点，将新结点插入到r 所指结点的后面，然后r 指向新结点。H=NULL r=NULL /<em>初始状态</em>/</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222141635649.jpg" alt="在尾部插入建立单链表"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">LinkList Creat_LinkList2( )</span><br><span class="line">&#123; LinkList L=NULL;</span><br><span class="line">Lnode *s,*r=NULL;</span><br><span class="line">int x; /*设数据元素的类型为int*/</span><br><span class="line">scanf(＂%d＂,&amp;x);</span><br><span class="line">while (x!=flag)</span><br><span class="line">&#123; s=malloc(sizeof(LNode)); s-&gt;data=x;</span><br><span class="line">if (L==NULL) L=s; /*第一个结点的处理*/</span><br><span class="line">else r-&gt;next=s; /*其它结点的处理*/</span><br><span class="line">r=s; /*r 指向新的尾结点*/</span><br><span class="line">scanf(＂%d＂,&amp;x);</span><br><span class="line">&#125;</span><br><span class="line">if ( r!=NULL) r-&gt;next=NULL; /*对于非空表，最后结点的指针域放空指针*/</span><br><span class="line">return L;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>算法解释：</p>
+<ul>
+<li>第一个结点的处理和其它结点不同，原因是第一个结点加入时链表为空，它没有直接前驱结点，它的地址就是整个链表的指针， 需要放在链表的头指针变量中；而其它结点有直接前驱结点，其地址放入直接前驱结点的指针域。</li>
+<li>“第一个结点”的问题在很多操作中都会遇到，如在链表中插入结点时，将结点插在第一个位置和其它位置是不同的，在链表中删除结点时，删除第一个结点和其它结点的处理也是不同的</li>
+<li>头结点的加入使得“第一个结点”的问题不再存在，也使得“空表”和“非空表”的处理成为一致</li>
+<li><strong>头结点：数据域无定义，指针域中存放的是第一个数据结点的地址，空表时为空</strong></li>
+</ul>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022214240EV.jpg" alt="带头结点的单链表"></p>
+<h4 id="2-求表长"><a href="#2-求表长" class="headerlink" title="2.求表长"></a>2.求表长</h4><p>算法思路：设一个移动指针ｐ和计数器ｊ，初始化后，ｐ所指结点后面若还有结点，ｐ向后移动，计数器加1。</p>
+<p>(1)设L是带头结点的单链表(线性表的长度不包括头结点):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int Length_LinkList1 (LinkList L)</span><br><span class="line">&#123; Lnode * p=L; /* p指向头结点*/</span><br><span class="line">int j=0;</span><br><span class="line">while (p-&gt;next)</span><br><span class="line">&#123; p=p-&gt;next; j++ &#125; /* p所指的是第j 个结点*/</span><br><span class="line">return j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(2)设L是不带头结点的单链表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int Length_LinkList2 (LinkList L)</span><br><span class="line">&#123; Lnode * p=L;</span><br><span class="line">int j;</span><br><span class="line">if (p==NULL) return 0; /*空表的情况*/</span><br><span class="line">j=1; /*在非空表的情况下，p所指的是第一个结点*/;</span><br><span class="line">while (p-&gt;next )</span><br><span class="line">&#123; p=p-&gt;next; j++ &#125;</span><br><span class="line">return j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>不带头结点的单链表空表情况要单独处理</strong>，而带上头结点之后则不用。</p>
+<p>时间复杂度均为O(n)。</p>
+<h4 id="3-查找操作"><a href="#3-查找操作" class="headerlink" title="3.查找操作"></a>3.查找操作</h4><p>(1) 按序号查找Get_Linklist(L,i)：<br>算法思路：从链表的第一个元素结点起，判断当前结点是否是第i个，若是，则返回该结点的指针，否则继续后一个，表结束为止。没有第ｉ个结点时返回空。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Lnode * Get_LinkList(LinkList L, Int i);</span><br><span class="line">/*在单链表L中查找第i个元素结点，找到返回其指针，否则返回空*/</span><br><span class="line">&#123; Lnode * p=L;</span><br><span class="line">int j=0;</span><br><span class="line">while (p-&gt;next !=NULL &amp;&amp; j&lt;i )</span><br><span class="line">&#123; p=p-&gt;next; j++; &#125;</span><br><span class="line">if (j==i) return p;</span><br><span class="line">else return NULL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(2) 按值查找即定位Locate_LinkList(L,x)</p>
+<p>算法思路：从链表的第一个元素结点起，判断当前结点其值是否等于x，若是，返回该结点的指针，否则继续后一个，表结束为止。找不到时返回空。算法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Lnode * Locate_LinkList( LinkList L, datatype x)</span><br><span class="line">/*在单链表L中查找值为x的结点，找到后返回其指针，否则返回空*/</span><br><span class="line">&#123; Lnode * p=L-&gt;next;</span><br><span class="line">while ( p!=NULL &amp;&amp; p-&gt;data != x)</span><br><span class="line">p=p-&gt;next;</span><br><span class="line">return p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-插入"><a href="#4-插入" class="headerlink" title="4.插入"></a>4.插入</h4><p>(1)后插结点：</p>
+<p>设p指向单链表中某结点，s指向待插入的值为x的新结点，将<em>s插入到</em>p的后面，插入示意图如图2.13。操作如下：</p>
+<p>①s-&gt;next=p-&gt;next;<br>②p-&gt;next=s;</p>
+<p>注意：两个指针的操作顺序不能交换。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222142520I4.jpg" alt="在*p后插入*s"></p>
+<p>(2)前插结点：</p>
+<p>设<strong>ｐ指向链表中某结点，ｓ指向待插入的值为x的新结点，将<em>s插入到</em>p的前面</strong>，插入示意图如图，与后插不同的是：首先要找到<em>p的前驱</em>q，然后再完成在<em>q之后插入</em>s，设单链表头指针为L，操作如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">q=L;</span><br><span class="line">while (q-&gt;next!=p)</span><br><span class="line">q=q-&gt;next; /*找*p的直接前驱*/</span><br><span class="line">s-&gt;next=q-&gt;next;</span><br><span class="line">q-&gt;next=s;</span><br></pre></td></tr></table></figure>
+<p>后插操作的<strong>时间复杂性为O(1)，</strong>前插操作因为要找<em>p 的前驱，时间性能为O(n)；其实我们关心的更是数据元素之间的逻辑关系，所以仍然可以将</em>s 插入到*p 的后面，然后将ｐ-&gt;data与s-&gt;data交换即可，这样即满足了逻辑关系，也能使得时间复杂性为O(1)。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222142520I4.jpg" alt="在*p前插入*s"></p>
+<p>(3)插入运算Insert_LinkList(L,i,x)</p>
+<p>算法思路：<br>1.找到第i-1个结点；若存在继续2，否则结束<br>2.申请、填装新结点；<br>3.将新结点插入。结束。</p>
+<p>算法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int Insert_LinkList( LinkList L, int i, datatype x)</span><br><span class="line">/*在单链表L的第i个位置上插入值为x的元素*/</span><br><span class="line">&#123; Lnode * p,*s;</span><br><span class="line">p=Get_LinkList(L,i-1); /*查找第i-1个结点*/</span><br><span class="line">if (p==NULL)</span><br><span class="line">&#123; printf(＂参数i错＂);return 0; &#125; /*第i-1个不存在不能插入*/</span><br><span class="line">else &#123;</span><br><span class="line">s=malloc(sizeof(LNode)); /*申请、填装结点*/</span><br><span class="line">s-&gt;data=x;</span><br><span class="line">s-&gt;next=p-&gt;next; /*新结点插入在第i-1个结点的后面*/</span><br><span class="line">p-&gt;next=s</span><br><span class="line">return 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-删除"><a href="#5-删除" class="headerlink" title="5. 删除"></a>5. 删除</h4><p>(1)删除结点：</p>
+<p>设p指向单链表中某结点，删除*p。操作示意图如图所示。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022214261QL.jpg" alt="删除*p"></p>
+<p>通过示意图可见，要实现对结点<em>p的删除，首先要找到</em>p的前驱结点*q，然后完成指针的操作即可。指针的操作由下列语句实现：</p>
+<pre><code>q-&gt;next=p-&gt;next;
+free(p);
+</code></pre><p>显然找<em>p前驱的时间复杂性为O(n)。若要删除</em>p的后继结点(假设存在)，则可以直接完成：</p>
+<pre><code>s=p-&gt;next;
+p-&gt;next=s-&gt;next;
+free(s);
+</code></pre><p>该操作的时间复杂性为O(1) 。</p>
+<p>(2)删除运算：Del_LinkList(L,i)</p>
+<p>算法思路：<br>1.找到第i-1个结点；若存在继续2，否则结束；<br>2.若存在第i个结点则继续3，否则结束；<br>3.删除第i个结点，结束。</p>
+<p>算法如下：<br>int Del_LinkList(LinkList L，int i)<br>/<em>删除单链表L上的第i个数据结点</em>/<br>{ LinkList p,s;<br>p=Get_LinkList(L,i-1); /<em>查找第i-1个结点</em>/<br>if (p==NULL)</p>
+<p>{ printf(＂第i-1个结点不存在＂);return -1; }<br>else { if (p-&gt;next==NULL)<br>{ printf(＂第i个结点不存在＂);return 0; }<br>else<br>{ s=p-&gt;next; /<em>s指向第i个结点</em>/<br>p-&gt;next=s-&gt;next; /<em>从链表中删除</em>/<br>free(s); /<em>释放</em>s */<br>return 1;<br>}<br>算法2.13。算法2.13的时间复杂度为O(n)。</p>
+<p>通过上面的基本操作我们得知：</p>
+<ul>
+<li>(1) 在单链表上插入、删除一个结点，必须知道其前驱结点。</li>
+<li>(2) 单链表不具有按序号随机访问的特点，只能从头指针开始一个个顺序进行。</li>
+</ul>
+<h3 id="顺序表和链表的比较"><a href="#顺序表和链表的比较" class="headerlink" title="顺序表和链表的比较"></a>顺序表和链表的比较</h3><p>顺序存储有三个优点：</p>
+<p>(1) <strong>方法简单</strong>，各种高级语言中都有数组，容易实现。<br>(2) 不用为表示结点间的逻辑关系而增加额外的存储开销。<br>(3) 顺序表具有<strong>按元素序号随机访问</strong>的特点。<br>(4)顺序表存储密度大</p>
+<p>两个缺点：</p>
+<p>(1) 在顺序表中做插入删除操作时，平均移动大约表中一半的元素，因此对n较大的顺序表<strong>效率低</strong>。<br>(2) <strong>需要预先分配足够大的存储空间</strong>，估计过大，可能会导致顺序表后部<strong>大量闲置</strong>；预先分配过小，又会造成<strong>溢出</strong>。</p>
+<p>如何选取存储结构：</p>
+<ul>
+<li>基于存储的考虑</li>
+</ul>
+<blockquote>
+<p>顺序表容易实现，任何高级语言中都有数组类型，链表的操作是基于指针的，相对来讲前者简单些，也是用户考虑的一个因素。<br>顺序表的存储空间是静态分配的，在程序执行之前必须明确规定它的存储规模，也就是说事先对＂MAXSIZE＂要有合适的设定，过大造成浪费，过小造成溢出。可见对线性表的长度或存储规模难以估计时，不宜采用顺序表；链表不用事先估计存储规模，但链表的存储密度较低，存储密度是指一个结点中数据元素所占的存储单元和整个结点所占的存储单元之比。显然链式存储结构的存储密度是小于１的。</p>
+</blockquote>
+<ul>
+<li>基于运算的考虑</li>
+</ul>
+<blockquote>
+<p>在顺序表中按序号访问ai的时间性能时O(1)，而链表中按序号访问的时间性能O(n)，所以如果经常做的运算是按序号访问数据元素，显然顺序表优于链表；而在顺序表中做插入、删除时平均移动表中一半的元素，当数据元素的信息量较大且表较长时，这一点是不应忽视的；在链表中作插入、删除，虽然也要找插入位置，但操作主要是比较操作，从这个角度考虑显然后者优于前者。</p>
+</blockquote>
+<ul>
+<li>基于环境的考虑</li>
+</ul>
+<blockquote>
+<p>顺序表容易实现，任何高级语言中都有数组类型，链表的操作是基于指针的，相对来讲前者简单些，也是用户考虑的一个因素。</p>
+</blockquote>
+<h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3><p>单循环链表：最后一个结点的指针域是空指针，若<strong>将该链表头指针置入该指针域，则使链表头尾结点相连</strong>，即构成单循环链表。（头尾相连，尾指针域指向头结点地址）</p>
+<p>单循环链表上的操作基本上与非循环链表相同，<strong>只是将原来判断指针是否为NULL变为是否是头指针而已</strong>，没有其它较大的变化。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222143AE25.jpg" alt="带头结点的单循环链表"></p>
+<ul>
+<li>对于单链表只能从头结点开始遍历整个链表，而对于单循环链表则可以<strong>从表中任意结点开始遍历整个链表</strong></li>
+<li>有时对链表常做的操作是在<strong>表尾、表头进行</strong>，此时可以改变一下链表的标识方法，不用头指针而<strong>用一个指向尾结点的指针R 来标识</strong>，可以使得操作效率得以提高</li>
+</ul>
+<p>例如：对两个单循环链表H1 、H2 的连接操作，是将H2 的第一个数据结点接到H1 的尾结点，如用头指针标识，则需要找到第一个链表的尾结点，其时间复杂性为O(n)，而链表若用尾指针R1 、R2 来标识，则时间性能为O(1)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p= R1 –&gt;next; /*保存R1 的头结点指针*/</span><br><span class="line">R1-&gt;next=R2-&gt;next-&gt;next; /*头尾连接*/</span><br><span class="line">free(R2-&gt;next); /*释放第二个表的头结点（因为一个链表只能有一个头结点，而头结点本身作用在于存放第一个结点数据域的地址）*/</span><br><span class="line">R2-&gt;next=p; /*组成循环链表*/</span><br></pre></td></tr></table></figure>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222143K5J2.jpg" alt="两个用尾指针标识的单循环链表的连接"></p>
+<h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><ul>
+<li><strong>单链表的结点只有一个指向后继结点的指针域</strong>，因此若已知某结点的指针为p，其后继结点的指针则为p-&gt;next ，而找其前驱则只能从该链表的头指针开始，顺着各结点的next域进行，也就是说<strong>找后继的时间性能是O(1)，找前驱的时间性能是O(n)，如果也希望找前驱的时间性能达到O(1)，则只能付出空间的代价</strong>：<strong>每个结点再加一个指向前驱的指针域</strong>，结点的结构为如图所示，<strong>用这种结点组成的链表称为双向链表</strong></li>
+</ul>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222144032R3.jpg" alt="双向链表"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typedef struct dlnode</span><br><span class="line">&#123; datatype data;</span><br><span class="line">struct dlnode *prior,*next;</span><br><span class="line">&#125;DLNode,*DLinkList;</span><br></pre></td></tr></table></figure>
+<p>和单链表类似，双向链表通常也是用头指针标识，也可以带头结点和做成循环结构。</p>
+<p>设p 指向双向循环链表中的某一结点，即p 中是该结点的指针，则p-&gt;prior-&gt;next 表示的是<em>p 结点之前驱结点的后继结点的指针，即与p 相等；类似，p-&gt;next-&gt;prior 表示的是</em>p 结点之后继结点的前驱结点的指针，也与p 相等，所以有以下等式：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222144211158.jpg" alt="带头结点的双循环链表"></p>
+<p><strong>双向链表中结点的插入</strong>：设p 指向双向链表中某结点，s 指向待插入的值为x 的新结点，将<em>s 插入到</em>p 的前面，插入示意图如图所示。操作如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 s-&gt;prior=p-&gt;prior;</span><br><span class="line">2 p-&gt;prior-&gt;next=s;</span><br><span class="line">3 s-&gt;next=p;</span><br><span class="line">4 p-&gt;prior=s;</span><br></pre></td></tr></table></figure>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022214440V36.jpg" alt="双向链表中的结点插入"></p>
+<p>双向链表中结点的删除：<br>设p 指向双向链表中某结点，删除*p。<br>操作如下：<br>①p-&gt;prior-&gt;next=p-&gt;next;<br>②p-&gt;next-&gt;prior=p-&gt;prior;<br>free(p);</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222144435363.jpg" alt="双向链表中删除结点"></p>
+<h3 id="静态链表"><a href="#静态链表" class="headerlink" title="静态链表"></a>静态链表</h3><p>优点：采用静态空间分配方式，且插入和删除操作时不需要移动元素</p>
+<p>规模较大的结构数组sd[MAXSIZE] 中有两个链表:</p>
+<p>其中链表SL是一个<strong>带头结点的单链表</strong>，表示了线性表(a1, a2, a3, a4, a5)，而另一个单链表AV是将<strong>当前sd 中的空结点组成的链表</strong>。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222145005J6.jpg" alt="静态链表"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#define MAXSIZE … /*足够大的数*/</span><br><span class="line">typedef struct</span><br><span class="line">&#123;datatype data;</span><br><span class="line">int next;</span><br><span class="line">&#125;SNode; /*结点类型*/</span><br><span class="line">SNode sd[MAXSIZE];</span><br><span class="line">int SL,AV; /*两个头指针变量*/</span><br></pre></td></tr></table></figure>
+<p>这种链表的结点中也有数据域data和指针域next，与前面所讲的链表中的指针不同的是，<strong>这里的指针是结点的相对地址(数组的下标)</strong>，称之为<strong>静态指针</strong>，这种链表称之为<strong>静态链表</strong>，空指针用-1表示，因为上面定义的数组中没有下标为-1的单元。</p>
+<p>SL是用户的线性表，AV模拟的是系统存储池中空闲结点组成的链表，<strong>当用户需要结点时，例如向线性表中插入一个元素，需自己向AV申请，而不能用系统函数malloc来申请</strong>，相关的语句为：</p>
+<pre><code> if(AV!=-1)
+{ t=AV;
+AV=sd[AV].next;
+}
+</code></pre><p>所得到的结点地址(下标)存入了t 中；不难看出当AV表非空时，摘下了第一个结点给用户。当用户不再需要某个结点时，需通过该结点的相对地址t 将它还给AV，相关语句为： sd[t].next=AV;AV=t;而不能调用系统的free 函数。交给AV表的结点链在了AV的头部。</p>
+<p>下面通过线性表插入这个例子看静态链表操作</p>
+<p>在带头结点的静态链表SL的第i个结点之前插入一个值为x的新结点。设静态链表的存储区域sd为全局变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">int Insert_SList( int SL, datatype x, int i)</span><br><span class="line">&#123; int p,s;</span><br><span class="line">p=SL; j=0;</span><br><span class="line">while(sd[p].next!=-1 &amp;&amp; j&lt;i-1)</span><br><span class="line">&#123;p=sd[p].next;j++;&#125; /*找第i-1个结点*/</span><br><span class="line">if(j==i-1)</span><br><span class="line">&#123; if(AV!=-1) /*若AV表还有结点可用*/</span><br><span class="line">&#123;t=AV;</span><br><span class="line">AV=sd[AV].next; /*申请、填装新结点*/</span><br><span class="line">sd[t].data=x;</span><br><span class="line">sd[t].next=sd[p].next; /*插入*/</span><br><span class="line">sd[p].next=t;</span><br><span class="line">return 1; /*正常插入成功返回*/</span><br><span class="line">&#125;</span><br><span class="line">else&#123;printf(＂存储池无结点＂);return 0;&#125;</span><br><span class="line">/*未申请到结点，插入失败*/</span><br><span class="line">else&#123;printf(＂插入的位置错误＂);return -1;&#125;</span><br><span class="line">/*插入位置不正确，插入失败*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="单链表应用举例"><a href="#单链表应用举例" class="headerlink" title="单链表应用举例"></a>单链表应用举例</h3><p>1.已知单链表H，写一算法将其倒置。即实现如图操作。(a)为倒置前，(b)为倒置后。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222145J02V.jpg" alt="单链表的倒置"></p>
+<p>算法思路：从右往左依次取原链表中的每个结点，将其作为第一个结点插入新链表，指针p用来指向当前结点，p为空时结束。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void reverse (Linklist H)</span><br><span class="line">&#123; LNode *p;</span><br><span class="line">p=H-&gt;next; /*p指向第一个数据结点*/</span><br><span class="line">H-&gt;next=NULL; /*将原链表置为空表H*/</span><br><span class="line">while (p)</span><br><span class="line">&#123; q=p; p=p-&gt;next;</span><br><span class="line">q-&gt;next=H-&gt;next; /*将当前结点插到头结点的后面*/</span><br><span class="line">H-&gt;next=q;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该算法只是对链表中顺序扫描一边即完成了倒置，所以时间性能为O(n)。</p>
+<p>2.已知单链表L，写一算法，<strong>删除其重复结点</strong>，即实现如图操作。(a)为删除前，(b)为删除后。</p>
+<p>算法思路：用指针p 指向第一个数据结点，从它的后继结点开始到表的结束，找与其值相同的结点并删除之；p 指向下一个；依此类推，p 指向最后结点时算法结束。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222145R44S.jpg" alt="删除重复结点"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">void pur_LinkList( LinkList H )</span><br><span class="line">&#123;</span><br><span class="line">	LNode *p, *q, *r;</span><br><span class="line">	p = H-&gt;next;                                    /*p指向第一个结点*/</span><br><span class="line">	if ( p == NULL )</span><br><span class="line">		return;</span><br><span class="line">	while ( p-&gt;next )</span><br><span class="line">	&#123;</span><br><span class="line">		q = p;</span><br><span class="line">		while ( q-&gt;next )                       /* 从*p的后继开始找重复结点*/</span><br><span class="line">		&#123;</span><br><span class="line">			if ( q-&gt;next-&gt;data == p-&gt;data )</span><br><span class="line">			&#123;</span><br><span class="line">				r	= q-&gt;next;      /*找到重复结点，用r指向，删除*r */</span><br><span class="line">				q-&gt;next = r-&gt;next; </span><br><span class="line">				free( r );</span><br><span class="line">			&#125; /*if*/</span><br><span class="line">			else q = q-&gt;next;</span><br><span class="line">		&#125; /*while(q-&gt;next)*/</span><br><span class="line">		p = p-&gt;next;                            /*p指向下一个，继续*/</span><br><span class="line">	&#125; /*while(p-&gt;next)*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该算法的时间性能为O(n2)</p>
+<p>3.设有两个单链表A、B，其中元素递增有序，编写算法将A、B归并成一个按元素值递减（允许有相同值）有序的链表C，要求用A、B中的原结点形成，不能重新申请结点。</p>
+<p>算法思路：利用A、B两表有序的特点，依次进行比较，将当前值较小者摘下，插入到C表的头部，得到的C表则为递减有序的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">LinkList merge( LinkList A, LinkList B )</span><br><span class="line">/*设A、B均为带头结点的单链表*/</span><br><span class="line">&#123;</span><br><span class="line">	LinkList C; LNode *p, *q;</span><br><span class="line">	p	= A-&gt;next; q = B-&gt;next;</span><br><span class="line">	C	= A; /*C表的头结点*/</span><br><span class="line">	C-&gt;next = NULL;</span><br><span class="line">	free( B );</span><br><span class="line">	while ( p &amp;&amp; q )</span><br><span class="line">	&#123;</span><br><span class="line">		if ( p-&gt;data &lt; q-&gt;data )</span><br><span class="line">		&#123;</span><br><span class="line">			s = p; p = p-&gt;next;</span><br><span class="line">		&#125;else                   &#123; s = q; q = q-&gt;next; &#125; /*从原AB表上摘下较小者*/</span><br><span class="line">		s-&gt;next = C-&gt;next; /*插入到C表的头部*/</span><br><span class="line">		C-&gt;next = s;</span><br><span class="line">	&#125;                                                       /*while */</span><br><span class="line">	if ( p == NULL )</span><br><span class="line">		p = q;</span><br><span class="line">	while ( p ) /* 将剩余的结点一个个摘下，插入到C表的头部*/</span><br><span class="line">	&#123;</span><br><span class="line">		s	= p; p = p-&gt;next;</span><br><span class="line">		s-&gt;next = C-&gt;next;</span><br><span class="line">		C-&gt;next = s;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该算法的时间性能为O(m+n)</p>
+<h1 id="纠错"><a href="#纠错" class="headerlink" title="纠错"></a>纠错</h1><p>p = H -&gt; next :指向H表的首结点</p>
+<p>前后之分：next方向是后，prior方向是前。</p>
+<p>在单链表中，增加一个头节点的目的是为了方便运算的实现。</p>
+<p>将长度为m的单链表链接在长度为n的单链表之后的算法时间复杂度为 <strong>O(n)<em>_</em></strong>。</p>
+<p>在一个长度为n（n&gt;1）的带头节点的单链表上，另设有尾指针r（指向尾节点），执行<strong><em>删除单链表的尾节点_</em></strong>操作与链表的长度有关。</p>
+<p>已知一个长度为n的单链表中所有节点是递增有序的，找最小值节点的算法的时间复杂度为 O(1).</p>
+<p>带表头结点的双循环链表L为空表的条件是 :L -&gt; next == L  </p>
+<p>某线性表最常用的操作是在尾元素之后插入一个元素和删除尾元素，则采用 <strong><em>循环双链表_</em></strong> 存储方式最节省运算时间</p>
+<p>如果对含有n（n&gt;1）个元素的线性表的运算只有4种，即删除第一个元素、删除尾元素、在第一个元素前面插入新元素、在尾元素的后面插入新元素，则最好使用<strong><em>只有开始数据节点指针没有尾节点指针的循环双链表_</em></strong>。</p>
+<p>在长度为n的 <strong>只有表头指针的不带表头节点的循环单链表<em>_</em></strong> 上，删除第一个元素，其算法的时间复杂度为O(n)。</p>
+<p>在单链表中，要删除某一指定的节点，必须找到该节点的 <strong><em>_前驱</em></strong> 节点。</p>
+<p>求一个单链表长度的算法的时间复杂度为  <strong><em>O(n)_</em></strong>。</p>
+<h1 id="疑问？"><a href="#疑问？" class="headerlink" title="疑问？"></a>疑问？</h1><p>循环单链表与循环双链表的区别？</p>
+<p>双链表的插入删除操作算法？</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/08/数据结构第一章：绪论/" rel="next" title="数据结构第一章：绪论">
+                <i class="fa fa-chevron-left"></i> 数据结构第一章：绪论
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/10/数据结构第五章：数组/" rel="prev" title="数据结构第五章：数组">
+                数据结构第五章：数组 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">131</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性结构"><span class="nav-number">1.</span> <span class="nav-text">线性结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性表"><span class="nav-number">2.</span> <span class="nav-text">线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-线性表的逻辑结构"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 线性表的逻辑结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象数据类型的线性表"><span class="nav-number">2.1.1.</span> <span class="nav-text">抽象数据类型的线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#操作"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-线性表的顺序存储及运算（顺序表）"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 线性表的顺序存储及运算（顺序表）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序表"><span class="nav-number">2.2.1.</span> <span class="nav-text">顺序表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序表上的基本运算"><span class="nav-number">2.2.2.</span> <span class="nav-text">顺序表上的基本运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-初始化"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">1.初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-插入运算"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">2.插入运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-删除运算DeleteList-L-i"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">3. 删除运算DeleteList(L,i)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-按值查找"><span class="nav-number">2.2.2.4.</span> <span class="nav-text">4.按值查找</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序表应用举例"><span class="nav-number">2.2.3.</span> <span class="nav-text">顺序表应用举例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-顺序表的划分"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">1.顺序表的划分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-合并顺序表并按顺序排列"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">2.合并顺序表并按顺序排列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-比较两个线性表的大小"><span class="nav-number">2.2.3.3.</span> <span class="nav-text">3.比较两个线性表的大小</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序结构的评价"><span class="nav-number">2.2.4.</span> <span class="nav-text">顺序结构的评价</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-线性表的链式存储结构及运算"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 线性表的链式存储结构及运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表"><span class="nav-number">2.3.1.</span> <span class="nav-text">单链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表基本运算"><span class="nav-number">2.3.2.</span> <span class="nav-text">单链表基本运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-建立单链表"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">1.建立单链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-求表长"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">2.求表长</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-查找操作"><span class="nav-number">2.3.2.3.</span> <span class="nav-text">3.查找操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-插入"><span class="nav-number">2.3.2.4.</span> <span class="nav-text">4.插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-删除"><span class="nav-number">2.3.2.5.</span> <span class="nav-text">5. 删除</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序表和链表的比较"><span class="nav-number">2.3.3.</span> <span class="nav-text">顺序表和链表的比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环链表"><span class="nav-number">2.3.4.</span> <span class="nav-text">循环链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双向链表"><span class="nav-number">2.3.5.</span> <span class="nav-text">双向链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态链表"><span class="nav-number">2.3.6.</span> <span class="nav-text">静态链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表应用举例"><span class="nav-number">2.3.7.</span> <span class="nav-text">单链表应用举例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#纠错"><span class="nav-number">3.</span> <span class="nav-text">纠错</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#疑问？"><span class="nav-number">4.</span> <span class="nav-text">疑问？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
