@@ -14,6 +14,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -481,9 +488,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Product/" rel="tag"># Product</a>
+            <a href="/tags/Product/" rel="tag"><i class="fa fa-tag"></i> Product</a>
           
-            <a href="/tags/New-Retail/" rel="tag"># New Retail</a>
+            <a href="/tags/New-Retail/" rel="tag"><i class="fa fa-tag"></i> New Retail</a>
           
         </div>
       
@@ -745,6 +752,9 @@
         <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
 <div class="copyright" >
   
   &copy;  2017.07 &mdash; 
@@ -758,11 +768,12 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
 
   <span class="post-meta-divider">|</span>
 
   <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
 
 <div class="theme-info">
   <div class="powered-by"></div>
@@ -781,8 +792,6 @@
     本站访客数<span id="busuanzi_value_site_uv"></span>人次
   </span>
 
-<%- partial('totop') %>
-<script src="<%- config.root %>js/totop.js"></script>
 
 
         
@@ -829,10 +838,10 @@
 
 
 
-  
-  
 
 
+  
+  
 
 
 
@@ -860,7 +869,7 @@
   <script type="text/javascript" src="/lib/three/three.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
 
 
   
@@ -1267,6 +1276,7 @@
   
 
   
+
 
 </body>
 </html>
