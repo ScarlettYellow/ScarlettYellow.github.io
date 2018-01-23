@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Artificial Intelligence,AI Application," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：现阶段对民众来说，使用AI非强需求，但尝鲜AI是强需求。教育领域AI可应用的方向有如自动作业批改，个性化学习，智能辅导，互动学习，仿真教育，教学反馈和评测等。自适应学习应该是教育者最想实现的应用，但目前由于教育体制的固化以及AI自适应学习引擎的效果没有对学生的学习效果产生颠覆性的变化，故短期内不大可能有大发展。">
+<meta name="keywords" content="Artificial Intelligence,AI Application">
+<meta property="og:type" content="article">
+<meta property="og:title" content="教育+ AI 目前行业应用">
+<meta property="og:url" content="http://yoursite.com/2017/10/31/教育-AI-目前行业应用/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：现阶段对民众来说，使用AI非强需求，但尝鲜AI是强需求。教育领域AI可应用的方向有如自动作业批改，个性化学习，智能辅导，互动学习，仿真教育，教学反馈和评测等。自适应学习应该是教育者最想实现的应用，但目前由于教育体制的固化以及AI自适应学习引擎的效果没有对学生的学习效果产生颠覆性的变化，故短期内不大可能有大发展。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-31T01:36:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="教育+ AI 目前行业应用">
+<meta name="twitter:description" content="Abstract：现阶段对民众来说，使用AI非强需求，但尝鲜AI是强需求。教育领域AI可应用的方向有如自动作业批改，个性化学习，智能辅导，互动学习，仿真教育，教学反馈和评测等。自适应学习应该是教育者最想实现的应用，但目前由于教育体制的固化以及AI自适应学习引擎的效果没有对学生的学习效果产生颠覆性的变化，故短期内不大可能有大发展。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/31/教育-AI-目前行业应用/"/>
+
+
+
+
+
+  <title>教育+ AI 目前行业应用 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/教育-AI-目前行业应用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">教育+ AI 目前行业应用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T09:33:56+08:00">
+                2017-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/AI-Application/" itemprop="url" rel="index">
+                    <span itemprop="name">AI Application</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：现阶段对民众来说，使用AI非强需求，但尝鲜AI是强需求。教育领域AI可应用的方向有如自动作业批改，个性化学习，智能辅导，互动学习，仿真教育，教学反馈和评测等。自适应学习应该是教育者最想实现的应用，但目前由于教育体制的固化以及AI自适应学习引擎的效果没有对学生的学习效果产生颠覆性的变化，故短期内不大可能有大发展。</p>
+<a id="more"></a>
+<h1 id="自适应学习（因材施教）"><a href="#自适应学习（因材施教）" class="headerlink" title="自适应学习（因材施教）"></a>自适应学习（因材施教）</h1><p><strong>自适应学习：因材施教，个性化AI教学：根据学生的不同需求推荐不同的学习方案</strong></p>
+<ul>
+<li>短期内不大可能有好效果：应试教育短期内难以改变</li>
+</ul>
+<blockquote>
+<p>目前教育系统本质是应试教育，考核标准是知识点的掌握数量和质量，且传统教育知识更新速度非常慢；因此若学生最终需掌握的知识数量太少，通过应教就能起到较好效果，则短期内AI不会发挥颠覆性的优势；而如果没有颠覆性的优势，是无法替代用户习惯和行业解决方案的。</p>
+</blockquote>
+<ul>
+<li>核心理论：知识空间</li>
+</ul>
+<blockquote>
+<p>知识空间：本质是双曲线（负曲率，能容纳无穷多结点）<br>知识存在层级结构；子领域会随着举例快速分割（隔行如隔山）；知识快速膨胀（任何教学方案都可能在几年内过时）。  </p>
+</blockquote>
+<ul>
+<li><p><strong>自适应学习引擎：类似大脑，以先验知识和学生大数据为基础，通过后台算法为学生制定最个性化和高效的学习方案，推荐最有价值的知识点、教程和习题。关键在于机器学习在推送背后的应用</strong>。</p>
+</li>
+<li><p>将自适应学习用到K12：乂学教育，KNEWTON，declara，kidaptive</p>
+</li>
+</ul>
+<blockquote>
+<p>乂学教育:专注于K12领域智能个性化辅导的智适应教育,与斯坦福研究中心（SRI）成立人工智能联合实验室，成功开发了国内第一个拥有完整自主知识产权、以高级算法为核心的自适应学习引擎。</p>
+</blockquote>
+<ul>
+<li>自适应学习与MOOC的区别：MOOC用互联网方案解决课程的可获得性（随时随地）和可支付性（边际成本为0），但未解决<strong>互动性</strong>；而自适应教育采用自适应学习系统和名师教学内容，通过线上与线下有机结合的教学模式和培养学习社区，创造高度互动的学习环境，最大限度提升学习效果。</li>
+</ul>
+<h1 id="用户需求"><a href="#用户需求" class="headerlink" title="用户需求"></a>用户需求</h1><p>使用AI非强需求，但尝鲜AI是强需求。</p>
+<h1 id="教育-AI的应用方向"><a href="#教育-AI的应用方向" class="headerlink" title="教育 + AI的应用方向"></a>教育 + AI的应用方向</h1><p>1.PR —&gt; 提高付费转化率</p>
+<ul>
+<li>PR价值：打造品牌知名度，如AlphaGo使Deepmind路人皆知</li>
+<li>提高付费转化率：使家长知道A公司用到AI技术，觉得A公司很高大上、不一般，从而更愿付费</li>
+</ul>
+<p>2.<strong>感知层AI技术</strong>的应用：</p>
+<ul>
+<li>语音评测：学生语音—&gt;机器评测，如流利说，一起作业，讯飞等语言学习类产品</li>
+<li>动作纠正类的技能教育：如体育、武术、舞蹈</li>
+</ul>
+<p>3.<strong>智力类细分领域的教育系统</strong>：</p>
+<ul>
+<li>如跟AlphaGo学下围棋</li>
+</ul>
+<p>4.<strong>发现需求场景</strong>，寻找新的商机</p>
+<p>如现在中小学用微信群“做作业”很普遍，学生朗读课文发到大群，老师彻夜听；其实这是低效的方式，是否可开发出机器评测朗读质量的服务以给老师减负呢？</p>
+<p>5.实体或虚拟AI助教</p>
+<p>6.作文批改：NLP</p>
+<h1 id="行业切入点"><a href="#行业切入点" class="headerlink" title="行业切入点"></a>行业切入点</h1><ul>
+<li>自动作业批改</li>
+<li>个性化学习</li>
+<li>智能辅导</li>
+<li>互动学习</li>
+<li>仿真教育</li>
+<li>教学反馈和评测</li>
+<li>智能招生、课堂和课后</li>
+</ul>
+<h1 id="My-Puzzles"><a href="#My-Puzzles" class="headerlink" title="My Puzzles"></a>My Puzzles</h1><ul>
+<li>自适应学习引擎的内部原理？</li>
+<li>它如何能解决MOOC所无法解决的交互性？它的解决方案是MOOC所无法实现的吗？</li>
+<li>教育+AI还有哪些应用场景？（从生活中发现？）</li>
+</ul>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="wu">教育行业应用AI的风险和短期机会</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Artificial-Intelligence/" rel="tag"># Artificial Intelligence</a>
+          
+            <a href="/tags/AI-Application/" rel="tag"># AI Application</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/31/实际业务场景中的监督学习流程以及PM的工作/" rel="next" title="实际业务场景中的监督学习流程以及PM的工作">
+                <i class="fa fa-chevron-left"></i> 实际业务场景中的监督学习流程以及PM的工作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/06/TTS语音合成技术综述/" rel="prev" title="TTS语音合成技术综述">
+                TTS语音合成技术综述 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">131</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#自适应学习（因材施教）"><span class="nav-number">1.</span> <span class="nav-text">自适应学习（因材施教）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户需求"><span class="nav-number">2.</span> <span class="nav-text">用户需求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#教育-AI的应用方向"><span class="nav-number">3.</span> <span class="nav-text">教育 + AI的应用方向</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#行业切入点"><span class="nav-number">4.</span> <span class="nav-text">行业切入点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#My-Puzzles"><span class="nav-number">5.</span> <span class="nav-text">My Puzzles</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

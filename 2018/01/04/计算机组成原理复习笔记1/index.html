@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Computer Science,Basis of Computer Engineering," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract: 计算机组成原理期末复习知识点总结 （一版）~">
+<meta name="keywords" content="Computer Science,Basis of Computer Engineering">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成原理复习笔记1">
+<meta property="og:url" content="http://yoursite.com/2018/01/04/计算机组成原理复习笔记1/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract: 计算机组成原理期末复习知识点总结 （一版）~">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/387401/2012062221462127.jpg">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/387401/2012062222292451.png">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/387401/2012062222300016.jpg">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/387401/2012062221505414.jpg">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/387401/2012062222005993.png">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/387401/2012062222125240.jpg">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/387401/2012062222092267.png">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/387401/2012062222163033.png">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/387401/2012062222164092.jpg">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/387401/2012062222290479.jpg">
+<meta property="og:updated_time" content="2018-01-23T09:30:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机组成原理复习笔记1">
+<meta name="twitter:description" content="Abstract: 计算机组成原理期末复习知识点总结 （一版）~">
+<meta name="twitter:image" content="https://pic002.cnblogs.com/images/2012/387401/2012062221462127.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/04/计算机组成原理复习笔记1/"/>
+
+
+
+
+
+  <title>计算机组成原理复习笔记1 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/04/计算机组成原理复习笔记1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机组成原理复习笔记1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-04T16:29:23+08:00">
+                2018-01-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Basis-of-Computer-Engineering/" itemprop="url" rel="index">
+                    <span itemprop="name">Basis of Computer Engineering</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract: 计算机组成原理期末复习知识点总结 （一版）~<br><a id="more"></a></p>
+<h1 id="1-计算机概述"><a href="#1-计算机概述" class="headerlink" title="1.计算机概述"></a>1.计算机概述</h1><p>基本组成：</p>
+<ul>
+<li>存储器:　实现<strong>记忆功能</strong>的部件用来存放计算程序及参与运算的各种<strong>数据</strong></li>
+<li>运算器:　负责数据的<strong>算术运算和逻辑运算</strong>即<strong>数据的加工处理</strong></li>
+<li>控制器: 负责<strong>对程序规定的控制信息进行分析,控制并协调输入,输出操作或内存访问</strong></li>
+<li>输入设备:实现计算程序和原始数据的输入</li>
+<li>输出设备:实现计算结果输出</li>
+</ul>
+<p><img src="https://pic002.cnblogs.com/images/2012/387401/2012062221462127.jpg" alt="计算机组成框架"></p>
+<p>计算机的工作过程:</p>
+<ul>
+<li>用户打开程序</li>
+<li>系统把程序代码段和数据段送入计算机的内存</li>
+<li>取指令：<strong>控制器从存储器中取指令</strong></li>
+<li>执行指令：<strong>控制器分析,执行指令</strong>,为取下一条指令做准备</li>
+<li>取下一条指令,分析执行,如此重复操作,直至执行完程序中全部指令,便可获得全部指令</li>
+</ul>
+<p>冯·诺依曼机制:</p>
+<ul>
+<li>程序存储</li>
+<li>采用2进制</li>
+</ul>
+<p>计算机系统体系结构：</p>
+<p><img src="https://pic002.cnblogs.com/images/2012/387401/2012062222292451.png" alt="计算机系统体系结构"></p>
+<p>内存储器：</p>
+<ul>
+<li>RAM:随机存储器</li>
+<li>ROM：只读型存储器</li>
+</ul>
+<p><img src="https://pic002.cnblogs.com/images/2012/387401/2012062222300016.jpg" alt="用户-计算机"></p>
+<h1 id="2-数据概述"><a href="#2-数据概述" class="headerlink" title="2.数据概述"></a>2.数据概述</h1><p>数据信息的两种基本方法:</p>
+<ul>
+<li>按值表示:　　要求在选定的进位制中正确表示出数值，包括数字符号，小数点正负号</li>
+<li>按形表示:　　按一定的编码方法表示数据</li>
+</ul>
+<p>信息的存储单位:</p>
+<ul>
+<li>1KB=2^10B=1024Byte</li>
+<li>1MB=2^20B=1024KB</li>
+<li>1GB=2^30B=1o24MB</li>
+<li>1TB=2^40B=1024GB</li>
+<li>1024：byte——kb——MB——GB——TB</li>
+</ul>
+<p>浮点表示法</p>
+<p>R进制表示法:</p>
+<p>进位制　　　　二进制　　　　八进制　　　　十进制　　　　十六进制　　</p>
+<p>规则　　　　 　 逢二进一　　　 逢八进一　　    逢十进一　　    逢十六进一<br>基数　　　　  　R=2　　　　　 R=8　　　　　 R=10　　　　 R=16<br>数码　　　　　  0、1　　　　   0…7　　　　　 0…9　　　　 　0…F<br>权　　　　　 　 2^i　　　　　  8^i　　　　　  10^i　　　　   16^i<br>形式表示　　　  B　　　　　　  Q　　　　　　  D　　　　   　 H</p>
+<p>十进制与R进制转换:</p>
+<ul>
+<li><p>十进制转R进制:</p>
+<ul>
+<li>整数的转化:　“采用<strong>除R取余法</strong>”，从最后一次除得余数读取.</li>
+<li>小数部分的转化:“采用<strong>乘R取整数</strong>”将所得小数从第一次乘得整数读起，就是这个十进制小数所对应的R进制小数（直到小数部分为0；结果顺取）
+　　</li>
+</ul>
+</li>
+<li>R进制转十进制:<strong>使用权相加，即将各位进制数码与它对应的权相乘</strong>，其积相加，和数即为该R进制数相对应的十进制数</li>
+</ul>
+<p>二进制，八进制，十六进制转化:</p>
+<p> （二进制 八进制）“三位并一位”<br>（八进制 二进制）“一位拆三位”<br>（二进制 十六进制）“四位并一位”<br>（十六进制 二进制）“一位拆四位”<br>（十六进制 八进制）“一位拆两位”<br>（八进制 十六进制）“二位并一位”</p>
+<p>原码,反码,补码,BCD码:</p>
+<p>二进制的原码,反码及补码:</p>
+<ul>
+<li>真值:　　一个数的正号用“+”表示,负号用“—”表示,即为该数真值</li>
+<li>机器数:　　以0表示正数的符号,用1表示负数的符号,并且每一位数值也用0,1表示,这样的数叫机器数也叫机器码</li>
+<li>原码:　　数的原码表示在机器中用符号位的0和1表示数的正负号,而其余表示其数本身</li>
+<li>反码:<ul>
+<li>正数：反码=原码</li>
+<li>负数:反码 = 原码的符号位不变数值各位取反即0变1,1变0</li>
+</ul>
+</li>
+<li>补码:<ul>
+<li>正数:其补码与原码相同</li>
+<li>负数:原码的符号位不变,数值各位取反,末尾加1</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://pic002.cnblogs.com/images/2012/387401/2012062221505414.jpg" alt="码"></p>
+<p>BCD码:</p>
+<p>(二→十进制) 用思维二进制代码对一位十进制数进行编码<br>例：(931)10=(1001 0011 0001)2</p>
+<p>运算公式:</p>
+<ul>
+<li>【X】补+【Y】补=【X+Y】补</li>
+<li>【X-Y】补=【X+(-Y)】补=【X】补+【-Y】补</li>
+</ul>
+<p>逻辑运算:</p>
+<ul>
+<li>定义:　　实现了逻辑变量之间的运算</li>
+<li>分类:逻辑加法 (‘或’运算)；逻辑乘法 (‘与’运算)；逻辑否定 (‘非’运算)</li>
+</ul>
+<p>异或运算：相同为0，不同为1</p>
+<p>逻辑代数常用公式</p>
+<ul>
+<li>0-1律:　　　    　A+0=A;　　A*0=0</li>
+<li>重叠律:　　　　   A+1=1;　　A<em>1=A;　　A+A=1;　　A</em>A=A</li>
+<li>互补律:　　　　   A*(!A)=0;　　A+(!A)=1</li>
+<li>又拾律:　　　   　!(!A)=A</li>
+<li>交换律:　　　　   A+B=B+A;　　A<em>B=B</em>A</li>
+<li>结合律:　　　   　A+(B+C)=(A+B)+C;　　A<em>(B</em>C)=(A<em>B)</em>C</li>
+<li>分配率:　　　　   A<em>(B+C)=A</em>B+A<em>C;　　A+(B</em>C)=(A+B)*(A+C)</li>
+<li>摩尔定律:　　　　!(A+B)=(!A)<em>(!B);　　!(A</em>B)=(!A)+(!B)</li>
+</ul>
+<h1 id="3-总线"><a href="#3-总线" class="headerlink" title="3.总线"></a>3.总线</h1><p>定义:　　连接计算机各部件之间或各计算机直接的一束公共信息线,它是计算机中传送信息代码的公共途径</p>
+<p>特点:</p>
+<ul>
+<li>同一组总线在同一时刻只能接受一个发送源,否则会发生冲突</li>
+<li>信息的发送则可同时发送给一个或多个目的地</li>
+</ul>
+<p>分类:</p>
+<ul>
+<li><p>传送分类</p>
+<ul>
+<li>串行总线　　二进制各位在一条线上是一位一位传送的</li>
+<li>并行总线　　一次能同时传送多个二进制位数的总线</li>
+</ul>
+</li>
+<li><p>信息分类</p>
+<ul>
+<li>数据总线　　在中央处理器与内存或I/0设备之间传送数据</li>
+<li>地址总线　　用来传送单元或I/O设备接口信息</li>
+<li>控制总线　　负责在中央处理器或内存或外设之间传送信息</li>
+</ul>
+</li>
+<li><p>对象位置分类</p>
+<ul>
+<li>片内总线　　指计算机各芯片内部传送信息的通道<i^2c总线,spl总线,sci总线></i^2c总线,spl总线,sci总线></li>
+<li>外部总线　　微机和外部设备之间总线用了插件板一级互连<isa总线,eisa总线,pci总线></isa总线,eisa总线,pci总线></li>
+<li>系统总线　　微机中各插件与系统板<usb总线,ieee-488总线,rs-485总线,rs-232-c总线></usb总线,ieee-488总线,rs-485总线,rs-232-c总线></li>
+</ul>
+</li>
+</ul>
+<p>总线标准依据:物理尺寸,引线数组,信号含义,功能和时序,工作频率,总线协议。</p>
+<h1 id="4-中央处理器"><a href="#4-中央处理器" class="headerlink" title="4.中央处理器"></a>4.中央处理器</h1><p>运算器组成:</p>
+<ul>
+<li>算术逻辑单元(ALU)</li>
+<li>通用寄存器组(R1 ~Rn)</li>
+<li>多路选择器(Mn)</li>
+<li>标志寄存器(FR)</li>
+</ul>
+<p>控制器组成:</p>
+<ul>
+<li>时标发生器(TGU)</li>
+<li>主脉冲振荡器(MF)</li>
+<li>地址形成器(AGU)</li>
+<li>程序计数器(PC)</li>
+<li>指令寄存器(IR)</li>
+<li>指令译码器(ID)</li>
+</ul>
+<p>总线:</p>
+<ul>
+<li>数据总线(DBUS)</li>
+<li>地址总线(ABUS)</li>
+<li>控制总线(CBUS)</li>
+</ul>
+<p><img src="https://pic002.cnblogs.com/images/2012/387401/2012062222005993.png" alt="cpu运行原理图"></p>
+<p>CPU主要性能指标:</p>
+<ul>
+<li>主频:CPU内部工作的时钟频率,是CPU运算时工作频率</li>
+<li>外频:主板上提供一个基准节拍供各部件使用,主板提供的节拍成为外频</li>
+<li>信频:CPU作频率以外频的若干倍工作,CPU主频是外频的倍数成为CPU的信频,这CPU工作频率=信频*外频</li>
+<li>基本字长:CPU一次处理的二进制数的位数</li>
+<li>地址总线宽度:地址总线宽度(地址总线的位数)决定了CPU可以访问的存储器的容量,不同型号的CPU总线宽度不同,因而使用的内存的最大容量也不一样</li>
+<li>数据总线宽度:数据总线宽度决定了CPU与内存输入∕输出设备之间一次</li>
+<li>数据传输的信息量</li>
+</ul>
+<h1 id="5-存储器"><a href="#5-存储器" class="headerlink" title="5.存储器"></a>5.存储器</h1><p>定义:　　计算机存储是存放数据和程序的设备</p>
+<p>分类:</p>
+<ul>
+<li><strong>主存储器:也称内存,存储直接与CPU交换信息,由半导体存储器组成</strong></li>
+<li>辅助存储器:　也称外存,存放当前不立即使用的信息,它<strong>与主存储器批量交换信息,由磁带机,磁带盘及光盘组成</strong></li>
+</ul>
+<p><img src="https://pic002.cnblogs.com/images/2012/387401/2012062222125240.jpg" alt="存储层次"></p>
+<p>主存:</p>
+<ul>
+<li>功能: 主存储器是能<strong>由CPU直接编写程序访问</strong>的存储器,它<strong>存放需要执行的程序与需要处理的数据,只能临时存放数据</strong>，不能长久保存数据</li>
+<li>组成:<ul>
+<li>存储体(MPS): 由<strong>存储单元</strong>组成（每个单元包含若干个储存元件,每个元件可存一位二进制数）且每<strong>个单元有一个编号,称为存储单元地址（地址）,通常一个存储单元由8个存储元件组成</strong></li>
+<li>地址寄存器(MAR):　　<strong>由若干个触发器组成</strong>,用来<strong>存放访问寄存器的地址</strong>,且地址寄存器长度与寄存器容量相匹配（即容量为1K,长度无2^10=1K）</li>
+<li>地址译码器和驱动器</li>
+<li>数据寄存器(MDR):　　<strong>数据寄存器由若干个触发器组成</strong>,用来<strong>存放存储单元中读出的数据,或暂时存放从数据总线来的即将写入存储单元的数据</strong>【数据存储器的宽度（w）应与存储单元长度相匹配】</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://pic002.cnblogs.com/images/2012/387401/2012062222092267.png" alt="主存构成"></p>
+<p>主要技术指标:</p>
+<ul>
+<li>存储容量:　　一般指存储体所包含的存储单元数量（N）</li>
+<li>存取时间(TA):　　指存储器从接受命令到读出∕写入数据并稳定在数据寄存器（MDP）输出端</li>
+<li>存储周期(TMC):　　两次独立的存取操作之间所需的最短时间,通常TMC比TA长</li>
+<li>存取速率:　　单位时间内主存与外部（如CPU）之间交换信息的总位数</li>
+<li>可靠性:　　用平均故障间隔时间MTBF来描述,即两次故障之间的平均时间间隔</li>
+</ul>
+<p>高速缓冲存储器Cache：</p>
+<ul>
+<li>定义：由存取速率较快的电路组成小容量存储单元,即在内存的基础上,再增加一层称为高速缓冲存储器</li>
+<li>特点:　　比主存快5 ~10倍</li>
+<li>虚拟存储器:　　它是<strong>建立在主存-辅存物理结构基础之上,由附加硬件装置及操作系统存储管理软件组成的一种存储体系</strong>,它<strong>将主存与辅存的地址空间统一编址,形成一个庞大的存储空间</strong>,因为实“际上CPU只能执行调入主存的程序,所以这样的存储体系成为“虚拟存储器”</li>
+</ul>
+<p>ROM与RAM：</p>
+<ul>
+<li>RAM：随机存储器，<strong>可读出可写入，随机存取</strong>；断电；意味着存取任一单元所需的时间相同,<strong>当断电后,存储内容立即消失</strong>,称为易失性</li>
+<li>ROM：只读存储器；一旦有了信息,<strong>信息不易改变,结构简单,所以密度比可读写存储器高,具有易失性</strong>；分类:<ul>
+<li>固定掩模型ROM（不能再修改）</li>
+<li>PROM可编程之读存储器（由用户写入,但只允许编程一次）</li>
+<li>EPROM可擦除可编程只读存储器(可用紫外线照射擦除里面内容)</li>
+<li>E2PROM电擦除可编程只读存储器（由电便可擦除里面内容）</li>
+</ul>
+</li>
+</ul>
+<p>辅存（硬盘）：</p>
+<ul>
+<li>说明:　　是以铝合金圆盘为基片,上下两面涂有磁性材料而制成的磁盘</li>
+<li>优点:　　体积小,重量轻,防尘性好,可靠性高,<strong>存储量大,存取速度快</strong>,但多数它们<strong>固定于主机箱内,故不便携带,价格也高于软盘</strong></li>
+<li>性能指标:　　转速,超频性能,缓存,单碟容量,传输模式,发热量,容量,平均等待时间</li>
+</ul>
+<blockquote>
+<p>在整颗磁碟的第一个磁区特别的重要,因为他记录了整颗磁碟的重要资讯.<br>扇区(Sector)为最小的物理储存单位，每个扇区为 512 bytes；<br>将扇区组成一个圆，那就是磁柱(Cylinder)，磁柱是分割槽(partition)的最小单位；<br>第一个扇区最重要，里面有：(1)主要启动区(Master boot record, MBR)及分割表(partition table)， 其中 MBR 占有 446 bytes，而 partition table 则占有 64 bytes。</p>
+</blockquote>
+<h1 id="6-输入输出设备"><a href="#6-输入输出设备" class="headerlink" title="6.输入输出设备"></a>6.输入输出设备</h1><p>输入设备分类:</p>
+<ul>
+<li>字符:　　键盘</li>
+<li>图形:　　鼠标器 , 操纵杆 , 光笔</li>
+<li>模拟:　　语音 , 模数转化</li>
+<li>图像:　　摄影机 , 扫描仪 , 传真机</li>
+<li>光学阅读:　　光学标记阅读机 , 光学字符阅读机</li>
+</ul>
+<p>键盘分类(以接口类型):</p>
+<ul>
+<li>PS∕2接口的</li>
+<li>USB接口的</li>
+<li>无线的</li>
+</ul>
+<p>鼠标分类:</p>
+<ul>
+<li>PS∕2接口 , USB接口 ( 以接口类型 )</li>
+<li>机械式鼠标 , 光电式鼠标 ( 以内部构造 )</li>
+<li>两键鼠标 , 三键鼠标 ( 以按键数 )</li>
+<li>语音输入设备: 主要部分:　　输入器 , 模数转换器 , 语音识别器</li>
+</ul>
+<p>输出设备</p>
+<p>打印机:</p>
+<ul>
+<li>分类:<ul>
+<li>击打式打印机<ul>
+<li>原理:　　利用机械动作打击‘字体’使色带和打印纸相撞</li>
+<li>分类:　　活字式打印 , 点阵式打印</li>
+<li>特点:　　结构简单，价格便宜</li>
+</ul>
+</li>
+<li>非击打式打印机<ul>
+<li>原理:　　用各种物理或化学的方法印刷字符</li>
+<li>分类:　　激光打印机 , 喷墨式打印</li>
+<li>特点:　　速度快，质量高，无噪声，但价格高<ul>
+<li>主要性能指标:　　分辨率 , 接口类型 , 打印速度</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>显示器:</p>
+<ul>
+<li>显示器分辨率:　　屏幕上光栅的行数和列数</li>
+<li>分类:　　阴极射线管显示器;  液晶显示器;  等离子显示器</li>
+<li>主要技术指标:　　像素 , 分辨率 , 屏幕尺寸 , 刷新频率 , 点距 , 像素色彩</li>
+</ul>
+<p>输入输出设备接口和控制方式</p>
+<p>输入输出设备接口:</p>
+<ul>
+<li>数据传送:　　串行口;  并行口;  程序型接口;  DMA型接口</li>
+<li>通用性:　　通用接口;   专用接口</li>
+<li>功能选择:　　可编程接口;  不可编程接口</li>
+</ul>
+<p>输入输出控制方式:</p>
+<ul>
+<li>程序查询方式 :</li>
+</ul>
+<p><img src="https://pic002.cnblogs.com/images/2012/387401/2012062222163033.png" alt="程序查询方式"></p>
+<ul>
+<li>中断控制方式:</li>
+</ul>
+<p><img src="https://pic002.cnblogs.com/images/2012/387401/2012062222164092.jpg" alt="中断控制方式:"></p>
+<ul>
+<li>直接存储器存取方式</li>
+<li>输入输出处理机方式</li>
+</ul>
+<h1 id="7-计算机的时标系统"><a href="#7-计算机的时标系统" class="headerlink" title="7.计算机的时标系统"></a>7.计算机的时标系统</h1><p>时序控制方式:</p>
+<p><strong>同步控制方式</strong>:</p>
+<ul>
+<li>定义    将操作时间划分为许多<strong>时钟周期,周期长度固定,每个时间周期完成一步操作,各页操作应在规定时钟周期内完成</strong></li>
+<li>优缺点<ul>
+<li>优点：时序关系比较简单,控制部件在结构上易于集中,设计方便</li>
+<li>缺点：<strong>在时间安排利用上不经济</strong></li>
+</ul>
+</li>
+<li>在同步控制方式中,都有<strong>统一的时钟信号</strong>,各种微操作都是在这一时钟信息的同步下完成的,称<strong>这一时钟信号为计算机主频,其周期称为时钟周期,称完成一个基本操作所需要的时间为机器周期</strong></li>
+</ul>
+<p>异步控制方式:</p>
+<ul>
+<li>定义：各项操作按其需要选择不同的时间,<strong>不受统一时钟周期的约束,各步操作间的衔接与各部件之间信息交换,采取应答的方式</strong></li>
+<li>优缺点:<ul>
+<li>优点：时间紧凑,能<strong>按不同部件,设备实际需求分配时间</strong></li>
+<li>缺点：是实际<strong>异步应答所需控制比较复杂</strong></li>
+</ul>
+</li>
+</ul>
+<p>三级时标系统:</p>
+<ul>
+<li>指令周期3：完成一个指令</li>
+<li>机器周期2：完成一个基本操作</li>
+<li>时钟周期1：完成一步操作</li>
+</ul>
+<p><img src="https://pic002.cnblogs.com/images/2012/387401/2012062222290479.jpg" alt="三级时标系统"></p>
+<p>指令周期公式: 指令周期 = 时钟周期<em>组成一个机械周期所需T的个数</em>组成一个指令周期所需M个数</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Computer-Science/" rel="tag"># Computer Science</a>
+          
+            <a href="/tags/Basis-of-Computer-Engineering/" rel="tag"># Basis of Computer Engineering</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/02/“中印边境事件”舆情分析报告/" rel="next" title="“中印边境事件”舆情分析报告">
+                <i class="fa fa-chevron-left"></i> “中印边境事件”舆情分析报告
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/05/计算机组成原理复习笔记2/" rel="prev" title="计算机组成原理复习笔记2">
+                计算机组成原理复习笔记2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">131</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-计算机概述"><span class="nav-number">1.</span> <span class="nav-text">1.计算机概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-数据概述"><span class="nav-number">2.</span> <span class="nav-text">2.数据概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-总线"><span class="nav-number">3.</span> <span class="nav-text">3.总线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-中央处理器"><span class="nav-number">4.</span> <span class="nav-text">4.中央处理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-存储器"><span class="nav-number">5.</span> <span class="nav-text">5.存储器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-输入输出设备"><span class="nav-number">6.</span> <span class="nav-text">6.输入输出设备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-计算机的时标系统"><span class="nav-number">7.</span> <span class="nav-text">7.计算机的时标系统</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

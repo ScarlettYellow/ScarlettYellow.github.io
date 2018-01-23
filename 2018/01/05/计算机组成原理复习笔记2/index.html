@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Computer Science,Basis of Computer Engineering," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract: 计算机组成原理期末复习知识点总结 （1.1）~">
+<meta name="keywords" content="Computer Science,Basis of Computer Engineering">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成原理复习笔记2">
+<meta property="og:url" content="http://yoursite.com/2018/01/05/计算机组成原理复习笔记2/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract: 计算机组成原理期末复习知识点总结 （1.1）~">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=8c58a476fbf2b211e02e824cfa816511/ae51f3deb48f8c54088e072a3a292df5e0fe7f52.jpg">
+<meta property="og:image" content="http://7xktmz.com1.z0.glb.clouddn.com/%E4%B8%8E%E9%9D%9E%E9%97%A8.jpg">
+<meta property="og:image" content="http://7xktmz.com1.z0.glb.clouddn.com/MARIE%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.jpg">
+<meta property="og:image" content="http://7xktmz.com1.z0.glb.clouddn.com/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E8%BF%9E%E6%8E%A5.jpg">
+<meta property="og:image" content="http://7xktmz.com1.z0.glb.clouddn.com/%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.jpg">
+<meta property="og:image" content="http://7xktmz.com1.z0.glb.clouddn.com/%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://img6.ph.126.net/bCmlnBuNPF44-NHcFmIyIQ==/1155454779414503176.jpg">
+<meta property="og:image" content="http://img9.ph.126.net/KdczjwxFAsETsQo6YiBbwQ==/576460752320678209.jpg">
+<meta property="og:image" content="http://img6.ph.126.net/HR1Hu5F5cbTLMrIDcsWZoA==/1543890247275213996.jpg">
+<meta property="og:image" content="http://7xktmz.com1.z0.glb.clouddn.com/%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%B0%84%E7%9A%84%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98.png">
+<meta property="og:image" content="http://img7.ph.126.net/aaYQFzFn2RcZ8IfuPZ1k-Q==/1175158027784254797.jpg">
+<meta property="og:image" content="http://img6.ph.126.net/XMQMZM78_NYTTqCXSE20Pw==/1555430721320348296.jpg">
+<meta property="og:image" content="http://img.voidcn.com/vcimg/000/006/438/288_b59_eb3.jpg">
+<meta property="og:image" content="http://img.voidcn.com/vcimg/000/006/438/289_739_166.jpg">
+<meta property="og:updated_time" content="2018-01-23T09:30:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机组成原理复习笔记2">
+<meta name="twitter:description" content="Abstract: 计算机组成原理期末复习知识点总结 （1.1）~">
+<meta name="twitter:image" content="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=8c58a476fbf2b211e02e824cfa816511/ae51f3deb48f8c54088e072a3a292df5e0fe7f52.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/05/计算机组成原理复习笔记2/"/>
+
+
+
+
+
+  <title>计算机组成原理复习笔记2 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/05/计算机组成原理复习笔记2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机组成原理复习笔记2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-05T16:33:37+08:00">
+                2018-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Basis-of-Computer-Engineering/" itemprop="url" rel="index">
+                    <span itemprop="name">Basis of Computer Engineering</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract: 计算机组成原理期末复习知识点总结 （1.1）~<br><a id="more"></a></p>
+<h1 id="1-基础概念"><a href="#1-基础概念" class="headerlink" title="1.基础概念"></a>1.基础概念</h1><p>硬件和软件等效原理：</p>
+<ul>
+<li>任何可以利用软件实现的工作可以利用硬件来实现，反之，任何可以通过硬件来实现的事件也同样可以利用软件来实现。此原理说明，可以用不同的选择来实现相同的计算机功能</li>
+<li>如对于微波炉的控制系统，一个简单的嵌入式系统会比一个复杂的计算机程序性能好的多。</li>
+</ul>
+<p>计算机体系结构：硬件系统 + 指令集体系结构（ISA）</p>
+<ul>
+<li>ISA: 在机器上运行的所有<strong>软件</strong>和执行这些软件的硬件之间的协定<strong>接口</strong>，<strong>实现人机对话</strong>。</li>
+</ul>
+<p>系统时钟：</p>
+<ul>
+<li>系统时钟在每秒钟内发射的脉冲数目是时钟的频率，单位赫兹。</li>
+<li>每条计算机指令的<strong>执行需要若干个固定的时钟周期</strong>，大多数指令需要的时间都多于一个时钟周期。</li>
+<li>一个微处理器每秒钟实际执行的指令数目与微处理器的系统时钟的速度成正比。</li>
+</ul>
+<p>摩尔定律：硅芯片的密度每18个月翻一番（—— Intel公司奠基人Gordon Moore）。</p>
+<p>计算机分层组织结构：假设计算机按不同层次结构建造，每个层级具有某项特定功能并有一个特定的假想机器与之对应</p>
+<ul>
+<li>第0层：数字逻辑电路——电子线路、逻辑门等</li>
+<li>第1层：控制系统——微代码或硬导线连接</li>
+<li>第2层：机器——指令集体系结构ISA</li>
+<li>第3层：系统软件——操作系统、库代码</li>
+<li>第4层：汇编语言——汇编语言代码</li>
+<li>第5层：高级语言——C++，JAVA等</li>
+<li>第6层：用户——执行的程序</li>
+</ul>
+<p><strong>取指-译码-执行周期：</strong>控制单元从存储器取指令——PC程序计数器决定指令所在位置——对指令译码以变成ALU可理解的语言——从存储器中取出执行指令所需的各种操作数数据并放入CPU的寄存器——ALU执行指令并将执行结果放入寄存器或存储器。</p>
+<p>ALU：算术逻辑单元，中央处理器的执行单元。</p>
+<p>系统总线模型：</p>
+<ul>
+<li>数据总线：将数据从主存传输到CPU的寄存器</li>
+<li>地址总线：保持数据总线正在访问的数据地址</li>
+<li>控制总线：传输各种必要的控制信号，以指定信息传输发生的方式</li>
+</ul>
+<h1 id="2-数据表示方法"><a href="#2-数据表示方法" class="headerlink" title="2.数据表示方法"></a>2.数据表示方法</h1><p>位：1 bit，一个二进制数</p>
+<p>字节：1 byte，2个或多个相邻字节构成</p>
+<p>浮点运算：</p>
+<ul>
+<li>IEEE754：单精度标准；8位指数，23位有效数，偏移量127，当指数为255时表示正负无穷大或NaN</li>
+<li>双精度标准采用11位指数和52位有效数字，偏移量1023，指数为2047时表示NaN</li>
+<li>无论单双精度都有两种表示0的方法，当指数部分和有效数都为0时，无论正负符号位都是0。</li>
+</ul>
+<h1 id="3-错误检测与校正"><a href="#3-错误检测与校正" class="headerlink" title="3.错误检测与校正"></a>3.错误检测与校正</h1><h2 id="CRC循环冗余码校验"><a href="#CRC循环冗余码校验" class="headerlink" title="CRC循环冗余码校验"></a>CRC循环冗余码校验</h2><ul>
+<li>可以决定在一大块或者一长串信息字中是否出现一个错误，要检测的数据字块的规模越大，要求的校验和就越大，并且需要对求校验和的方法提供某种适当的保护，求校验和的方法以及CRC方法都是一种系统性的误差检测（systematic error detection）方案，即将错误校验位夹在原始信息数据位的后面</li>
+<li>CRC采用模2算术，假设信息字节为I = 1001011（可以是任意大小的字节），发送器和接收器都对某个任意的二进制位组合模式达成协议，如P=1011（如该位组合模式的开始和结束位都是1则效果最好），记P的位数为n = 4，将I左移n-1位，并用新的I作为被除数，P作为除数进行模2除法，得到余数r，将余数r加到移位后的I上，组成要发送的信息M。在本例中，r = 100，I + r = M = 1001011100。</li>
+</ul>
+<p>模2运算：</p>
+<ul>
+<li>模2加法</li>
+<li>模2减法</li>
+<li>模2乘法：只有1x1 = 1，其他都=0</li>
+<li>模2除法：0÷1＝0    ,1÷1＝1. 与算术除法类似，但每一位除的结果不影响其它位，即<strong>不向上一位借位</strong>，所以实际上就是异或。<strong>一直做到余数的位数小于除数时，该余数就是最终余数</strong>。 </li>
+</ul>
+<p><img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=8c58a476fbf2b211e02e824cfa816511/ae51f3deb48f8c54088e072a3a292df5e0fe7f52.jpg" alt="模2除法"></p>
+<p>算术左移：末位补0；算术右移：首位补1</p>
+<p>逻辑左移：末位补0；逻辑右移：首位补0</p>
+<h2 id="海明码"><a href="#海明码" class="headerlink" title="海明码"></a>海明码</h2><ul>
+<li>可校正错误</li>
+<li>采用奇偶校验</li>
+<li>普通的奇偶校验只能检错（且无法检测双位出错）无法纠错。通常使用在随机错误最可能发生的情形（假定每一位出错的几率都是固定的，与其他位的出错没有关联）。</li>
+<li><p>海明编码的<strong>奇偶校验位（冗余位）根据信息字本身的位数决定</strong>。最后形成的编码字由m位信息字本身和r位校验位组成，满足m + r + 1 &lt;= 2^r。两个编码字之间不同的位的位置数目称为两个编码字的海明距离，对于一种编码方法中任意一对编码的最小海明距离（minimum Hamming distance），用D（min）表示。海明编码可以检测出D（min）-1个单位错误，能够纠正[（D（min）-1）/2]个错误。因此如果要纠正k个错误，最小海明距离必须大于2k+1。</p>
+</li>
+<li><p>创建海明编码的方法：首先根据公式确定编码所需的校验位数目r，算出编码字的位长度n = m + r，从右向左从1开始编号。位数是2的指数幂的位设置为奇偶校验位，其他位为数据位。对于各个编码位置，第b位编码由满足b = b1 + b2 + … + bj的奇偶校验位b1，b2，…，bj检测。</p>
+</li>
+<li>例如：对ASCII字符K编码，K为01001011，m=8，r=4。从1开始从右向左编号，第1，2，4，8位为奇偶校验位，1 = 1，2 = 2，3 = 2 + 1，4 = 4，5 = 4 + 1，6 = 4 + 2，……，10 = 8 + 2，11 = 8 + 2 + 1，12 = 8 + 4。因为第1、3、5、7、9、11位的求和表达式中含有1，所以第一位（最低位）的奇偶校验位将检测这几个位置的奇偶特性，同理，第2位对2、3、6、7、10、11位作用，第4位对4、5、6、7、12位作用，第8位对8、9、10、11、12作用。分别对各自对应的位数奇偶校验，产生编码字010011010110。假如在传递编码字的过程中发生了一个错误，如发生在第9位，则接收到的为010111010110。接受端可以发现第1位、第8位的奇偶校验位出错，而第2位、第4位没有出错。因此可以推测出出错的码位是1 + 8 = 9位。取反即可。海明编码在出错率非常低的正常情况非常有效，但如果发生成块的错误（相邻数据位），则无效。</li>
+</ul>
+<h1 id="4-布尔代数"><a href="#4-布尔代数" class="headerlink" title="4.布尔代数"></a>4.布尔代数</h1><p>通用门电路：</p>
+<ul>
+<li>与非门（可构建所有数字电路）和或非门</li>
+</ul>
+<p><img src="http://7xktmz.com1.z0.glb.clouddn.com/%E4%B8%8E%E9%9D%9E%E9%97%A8.jpg" alt="与非门和或非门"></p>
+<p>布尔表达式：</p>
+<ul>
+<li>变量与算符组合</li>
+<li>算符：AND，OR，NOT</li>
+<li>德摩根律：    ~（x · y） = ~x + ~y</li>
+</ul>
+<p>组合逻辑电路：可以用来构建包含基本布尔算符，输入输出的数字电路，组合逻辑的<strong>输出完全取决于给定的输入值</strong>。</p>
+<p>数字集成电路：</p>
+<ul>
+<li>特点：体积小，可靠性高，功耗低，集成度高</li>
+<li>数字电路实现的逻辑功能都是以集成电路（IC）形式体现的</li>
+<li>目前广泛采用CMOS电路和TTL电路两种类型；</li>
+<li>CMOS已成为主导技术并有可能取代TTL。二者相比，前者功耗小，集成度高，后者速度快，但集成度不如CMOS。</li>
+<li>CMOS系列：金属氧化物半导体晶体管作为开关元件的门电路叫MOS电路</li>
+<li>集成电路使用特性：负载能力；延迟特性；功耗特性；未使用的输入端引脚要接到一个固定的逻辑电平</li>
+</ul>
+<h1 id="5-计算机微观体系结构"><a href="#5-计算机微观体系结构" class="headerlink" title="5.计算机微观体系结构"></a>5.计算机微观体系结构</h1><h2 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h2><ul>
+<li>取指-译码-执行指令</li>
+<li>= 数据通路 + 控制单元</li>
+<li>数据通路datapath：由存储单元（寄存器）和算术逻辑单元（ALU）组成的网络，组件通过总线连接，利用时钟控制时间</li>
+<li>控制单元control unit：负责对各种操作进行排序并保证各种正确的数据适时地出现在所需的地方。</li>
+</ul>
+<p>寄存器register：位于CPU内；存储二进制数据；</p>
+<ul>
+<li>通用大小：16bit，32bit，64bit</li>
+<li>寄存器的编址与存储器不同，每一存储器字都有一个唯一的二进制地址，这些地址从0开始编码，而仅存次则由CPU内部控制单元进行编址。</li>
+</ul>
+<p>ALU：在程序执行过程中执行逻辑和算术原酸</p>
+<ul>
+<li>2个数据输入，1个数据输出</li>
+<li>操作会影响状态寄存器（SR）的某些数据位的数值</li>
+<li>控制器发出的信号控制ALU执行运算</li>
+</ul>
+<p>控制单元：监视所有指令的执行和各种信息的传送过程</p>
+<ul>
+<li>功能：从内存取指——对指令译码——确保数据适时出现在正确的地方，负责通知ALU应该使用哪个寄存器，执行哪些中断服务程序；使用PC寄存器来寻找下一条指令的位置，使用SR存放某些特殊操作的状态</li>
+</ul>
+<h2 id="总线Bus"><a href="#总线Bus" class="headerlink" title="总线Bus"></a>总线Bus</h2><ul>
+<li>一组导电线路的组合，一个<strong>共享公用的数据通道将系统内的各个子系统连接到一起</strong>，由<strong>多条线路构成</strong>，<strong>允许多位数据并行传递</strong></li>
+<li>在任何时刻只能有一个设备（如寄存器、ALU、内存或其他某个设备）使用总线</li>
+<li>总线的速度受到总线长度和共享总线的设备数目的影响。</li>
+<li>典型计算机总线包含<strong>数据总线、地址总线、控制总线和电源线</strong>：数据总线（data bus）传递必须在计算机不同位置之间移动的实际信息；控制总线（control line）提示哪个设备允许使用总线和使用的目的，也用来传递有关总线请求、中断和时钟同步信号的响应；地址总线（address line）指出数据读写位置。</li>
+<li>各种信息的传递都发生在一个<strong>总线周期</strong>（bus cycle）内，总线周期是完成总线信息传送所需的时间脉冲间的时间间隔。<br>-<strong> 同步</strong>（synchronous）<strong>总线</strong>由时钟控制，各种事件只有在时钟脉冲到来时才会发生。<strong>总线周期与时钟频率成反比</strong>，要通过时钟控制事件的发生，因此任何时钟脉冲产生的相位漂移（clock skew）都不能过大，即<strong>总线周期时间不能短于信息在总线上传输所需要的时间，因此总线长度对总线的时钟频率和周期时间有一定限</strong>制。</li>
+<li><strong>异步（asynchronous）总线</strong>负责协调计算机各种操作，采用握手协议强制实现计算机其他操作同步。</li>
+<li><p><strong>总线仲裁</strong>（bus arbitration）：对于配备不止有一个主控设备的系统需要主线仲裁，<strong>为主控设备制定优先级别</strong>，保证各个主控设备都有机会使用总线。</p>
+<ul>
+<li>菊花链仲裁方式：使用一条“出让总线”的控制线将总线使用权依次由最高级别向最低级别传递，简单但不能保证仲裁公平性。</li>
+<li>集中式平行仲裁方式：每个设备有一个总线请求控制线，通过一个总线仲裁器选择设备。会导致使用过程中出现瓶颈效应。</li>
+<li>自选择的分配式仲裁方式：由设备自己决定那个设备具有使用的最高优先级。</li>
+<li>冲突检测的分配式仲裁方式：每个设备都允许发出总线使用请求，如果有冲突则这些设备都必须重新发出另一个使用请求。以太网采用这种方式。</li>
+</ul>
+</li>
+</ul>
+<p>课本上只分2种：集中式仲裁 ，分散式仲裁</p>
+<h2 id="时钟"><a href="#时钟" class="headerlink" title="时钟"></a>时钟</h2><p>用于对系统各个部件协调同步，CPU的每条指令执行都是使用固定的时钟脉冲数目。计算机采用<strong>时钟周期量度系统指令的性能</strong>。</p>
+<p>多数计算机系统都是同步计算机：</p>
+<ul>
+<li>计算机只有一个主控时钟信号，按照规定的时间间隔发生脉动，各个寄存器必须等待时钟脉冲发生跃变才能输入新的数据。</li>
+<li><strong>最小的时钟周期时间至少应大于数据从每组寄存器的输出到下一组寄存器的输入所需要的传递时间，即电路的最大传输延迟时间</strong>。可以通过在输出寄存器和对应的输入寄存器之间<strong>增加寄存器的方法减小传输延迟</strong>，增加额外的寄存器等价于增加该条指令所需的时钟周期的数目。一般的，<strong>乘法比加法操作、浮点运算比整数运算要更多的时钟周期</strong>。</li>
+</ul>
+<p>某些总线结构有自己的时钟，总线时钟通常比CPU时钟慢，造成了系统的瓶颈问题。有时会为了达到目的超越某些技术限制，如超频（over-clocking）使部件超出规定给出的时间频率或总线速度上限，CPU是最流行的超频组件（许多部件都可以超频运行）。<strong>对系统总线的超频可以大幅度改善系统性能，但同样可能损害与总线相连的各种部件</strong>。</p>
+<h2 id="存储器组成和寻址方式"><a href="#存储器组成和寻址方式" class="headerlink" title="存储器组成和寻址方式"></a>存储器组成和寻址方式</h2><p>可以把存储器设想成一个数据位的方阵，方阵的每一行的位长度通常是机器的字大小。物理上通过<strong>一个寄存器实现存储器方阵的一行的数据存储</strong>。**每个寄存器（存储单元）都有一个唯一的地址编号。</p>
+<p>存储器地址几乎都为无符号整数<strong>，正常情况下（目前流行的大部分）存储器采用</strong>按字节编址<strong>（byte-addressable），即</strong>每个字节有一个唯一的地址<strong>。有的机器的字大小超过一个字节（32位系统的每个字都是4个字节），可以采用</strong>按字编址（word-addressable），每个机器字有一个自己唯一的地址<strong>。</strong>字是计算机指令使用的基本单位，即使是按字节编址的计算机也可以从内存中直接读出一个字或将一个字写入存储器**。</p>
+<p><strong>存储器（内存）由随机访问存储器（RAM）芯片构成</strong>，使用符号L×W（长×宽）表示，如<strong>4M×16存储器表示存储器有4M（2^22个字）长和16位宽（每个字都是16位）。要对该存储器编址需要2^22个不同的地址，即22位二进制数。</strong>主存储器使用的RAM芯片数目大于1,通常利用多块芯片拼接成一定要求的单一存储器模块。单一共享存储器模块可能引起存储器访问上的顺序问题，存储器交叉存储技术从多个存储器模块中分离存储单元，低位交叉存储使用地址的低位选择存储器组，把连续的存储器地址分配到不同的存储器模块中，高位交叉存储使用地址的高位选择存储器组，把地址直接分配给具有连续地址的存储器模块。</p>
+<p>1M = 2^20 byte</p>
+<h2 id="中断和输入输出子系统"><a href="#中断和输入输出子系统" class="headerlink" title="中断和输入输出子系统"></a>中断和输入输出子系统</h2><p>输入/输出是各种外围设备和主存储器（内存）之间的数据交换。中断（interrput）是<strong>改变或中断系统正常流程的各种事件</strong>。</p>
+<p><strong>输入/输出设备通常不与CPU直接相连，而采用某种接口（interface）来处理数据交换，接口将信号转化为总线和外设都可以接受的形式。</strong></p>
+<p><strong>CPU通过输入输出寄存器和外设交流</strong>，有两种工作方式：</p>
+<ul>
+<li>1）内存映射的输入输出（memory-mapped I/O），接口中的寄存器地址就在内存地址的分配表中，此时CPU对I/O设备的访问和对内存的访问完全相同，速度很快但要占用系统内存空间；</li>
+<li>2）指令实现的输入输出（instruction-based I/O），CPU有专门的指令实现输入输出操作。</li>
+</ul>
+<p>中断：</p>
+<ul>
+<li>多种原因可以触发中断：I/O请求，算术错误，算术下溢或上溢，硬件故障，用户定义的中断点（如程序调试），页面错误，非法指令等。<br>-不同中断类型的中断处理方法不同。由用户或系统发出（启动）的中断请求可以是屏蔽（maskable）中断（可以被禁止或忽略）或非屏蔽（maskable）中断（高优先级别的中断，不能被禁止，必须响应）。</li>
+<li>计算机中有三种类型的中断：由外部事件（输入/输出，电源掉电等） 产生的<strong>外部中断</strong>；由于程序中的一些异常（被0除，堆栈溢出，保护系统侵犯等）产生的<strong>内部中断</strong>以及执行程序中的某条指令（例如，要求程序的执行从一种运行环境如用户层，转到另一个运行环境如内核层等）所引起的<strong>软件中断</strong>。</li>
+</ul>
+<h2 id="MARIE"><a href="#MARIE" class="headerlink" title="MARIE"></a>MARIE</h2><p>MARIE包含一个实际的工作计算机具备的全部功能部件，包括存储器和CPU。</p>
+<h3 id="体系结构、寄存器和总线"><a href="#体系结构、寄存器和总线" class="headerlink" title="体系结构、寄存器和总线"></a>体系结构、寄存器和总线</h3><p>特点：</p>
+<ul>
+<li>使用二进制数和补码表示法</li>
+<li>按字编址</li>
+<li>主存：容量4K字，16bit数据，16bit指令，4bit操作码，12bit地址</li>
+<li>16bit累加器（AC），16bit指令寄存器（IR），16bit存储缓冲寄存器（MBR），12bit程序计数器（PC），12bit存储器地址寄存器（MAR），8bit输入寄存器，8bit输出寄存器</li>
+</ul>
+<p><img src="http://7xktmz.com1.z0.glb.clouddn.com/MARIE%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.jpg" alt="MARIE体系结构"></p>
+<p>MARIE的7种寄存器</p>
+<ul>
+<li>AC：累加器（accumalator）用来保持数据值，是通用寄存器。</li>
+<li>MAR：存储器地址寄存器（memory address register），用来保持被引用数据存储器地址。</li>
+<li>MBR：存储器缓冲寄存器（memory buffer register），用来保持刚从存储器中读取或者将要写入存储器的数据。</li>
+<li>PC：程序计数器（program counter），用来保持程序将要执行的下一条指令的地址。</li>
+<li>IR：指令寄存器（instruction register），用来保持要执行的下一条指令。</li>
+<li>InREG：输入寄存器（input register），用来保持来自输入设备的数据。</li>
+<li>OutREG：输出寄存器（output register），用来保持将要输出到输出设备的数据。</li>
+<li>其中，MAR、MBR、PC和IR寄存器为专用寄存器，不能作除上述规定外的其他目的。另外有一个状态或标志寄存器（status），保持显示各种状态信息。</li>
+</ul>
+<p><img src="http://7xktmz.com1.z0.glb.clouddn.com/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E8%BF%9E%E6%8E%A5.jpg" alt="MARIE数据通路"></p>
+<h2 id="指令系统体系结构"><a href="#指令系统体系结构" class="headerlink" title="指令系统体系结构"></a>指令系统体系结构</h2><p>指令系统体系结构（instruction set architecture，ISA）规定了计算机可以执行的每条指令和其格式。</p>
+<p>MARIE的每条指令<strong>由16位二进制数构成</strong>，<strong>最左边（12～15）4位组成操作码，右边12位（0～11）形成地址</strong>。</p>
+<p>实际操作中，数据先从源寄存器送到总线，然后脱离总线到达目的寄存器。下面叙述中没有包括总线的传送过程。</p>
+<p>Load X    MAR&lt;——X，MBR&lt;——M[MAR]，AC&lt;——MBR</p>
+<p>Store X    MAR&lt;——X，MBR&lt;——AC，M[MAR]&lt;——MBR</p>
+<p>Add X    MAR&lt;——X，MBR&lt;——M[MAR]，AC&lt;——AC+MBR</p>
+<p>Subt X    MAR&lt;——X，MBR&lt;——M[MAR]，AC&lt;——AC-MBR</p>
+<p>Input    AC&lt;——InREG</p>
+<p>Output    OutREG&lt;——AC</p>
+<p>Halt    无</p>
+<p>Jump X    PC&lt;——X</p>
+<p>指令执行过程：取指-译码-执行</p>
+<ul>
+<li>将PC中的内容复制到MAR：MAR&lt;——PC。</li>
+<li>CPU转向主存储器，提取由MAR给出的地址单元中的指令，并将指令放入指令寄存器IR，同时PC自动加1（MARIE按字编址，PC加一实际效果是下一个字的地址占据PC寄存器，如果MARIE按字节编制，则PC需要增量2,因为每条16位指令占据两个字节宽度），此时PC指向下一条指令：IR&lt;——M[MAR]，PC&lt;——PC+1。</li>
+<li>IR最右边的12位地址复制到MAR，对IR最左边4位译码：MAR&lt;——IR[11-0]，IR[15-12]。</li>
+<li>若需要，则CPU使用MAR中的地址转向存储器提取数据，并将数据放入MAR（可能是AC）中，然后执行指令。</li>
+</ul>
+<p><img src="http://7xktmz.com1.z0.glb.clouddn.com/%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.jpg" alt="指令执行流程"></p>
+<h1 id="6-指令系统"><a href="#6-指令系统" class="headerlink" title="6.指令系统"></a>6.指令系统</h1><p>每条计算机指令均有一个操作码和0或多个操作数。前章的MARIE指令长度为16位，至多只有一个操作数。根据ISA的不同，指令使用的二进制位数也可能不同（16位，32位，64位），每条指令允许使用的操作数的个数可能不同，指令类型和指令处理的操作数的类型也可能不同。具体在特征上可能存在以下差别：</p>
+<ul>
+<li>1）操作数在CPU中的存储方式（堆栈结构或寄存器）；</li>
+<li>2）指令直接作用的操作数数目（常用的操作数个数为0，1，2，3）；</li>
+<li>3）操作数的位置（寄存器-寄存器，寄存器-存储器，存储器-存储器）；</li>
+<li>4）操作（操作类型，指令是否可以访问存储器）；</li>
+<li>5）操作数的类型和长度。</li>
+</ul>
+<h2 id="衡量标准"><a href="#衡量标准" class="headerlink" title="衡量标准"></a>衡量标准</h2><p>ISA效能的衡量因素：</p>
+<ul>
+<li>程序执行指令时占用内存空间的大小</li>
+<li>指令系统复杂程度，主要指指令执行所需的译码数量和指令所执行任务的复杂性</li>
+<li>指令长度</li>
+<li>指令系统中指令的总数目</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>指令越短越好，占用空间就越少，提取速度越快；但短指令会闲置指令数量和操作数大小及数量</li>
+<li>固定长度的指令的译码容易但浪费空间，但固定长度的指令系统不表示必须使用固定数量的操作数，可以设计一个指令总长度固定的ISA，但可以允许其操作数域的位数根据需要改变，称为拓展操作码（expanding opcode）</li>
+<li>存储器的组成形势会影响指令的格式。如果存储器为16或32位字，如果不是按字节编址则很难访问到一个单一字符，因此有些16/32/64位机器也是按照字节编址。</li>
+<li>存在多种不同类型的寻址方法；字节存储的小端大端位序问题；ISA需要多少寄存器并如何组织这些寄存器。</li>
+</ul>
+<h2 id="小端和大端位序问题"><a href="#小端和大端位序问题" class="headerlink" title="小端和大端位序问题"></a>小端和大端位序问题</h2><p><strong>位端（endian）</strong>指的是计算机体系结构中的“位序”（byte order），即计算机存储一个多字节数据时，多个字节的排列方式。</p>
+<p>当今所有的计算机体系结构都是按字节编址，对于存储一个2字节整数，将低位的字节首先存放到低位地址，高位字节存放到高位地址，此时较低地址的字节就是数据的低位，这种方式称为<strong>小端</strong>（little-endian）；对于低位地址存放高位数据的方式称为<strong>大端</strong>（big-endian）。</p>
+<p><strong>大端位序存储方式更自然，便于阅读16进制编写的程序端</strong>。可以通过检查最高位的符号位判读数字正负，而小端需要知道数值长度，再跳过中间字节找到最高位。大端位序的机器存储整数和字符串采用相同次序，在某些字符串操作时更快。大部分位图映射格式图像都采用“最高位在字符串左边”的变换方法，即对于像素大于一个字节的数据可以直接按照大端位序处理，因此对于小端位序在处理较大图形对象时可能会性能受限。当对采用例如赫夫曼和LZW这类编码的压缩数据译码时，若数据采用大端位序存储，则实际的编码字可以被当作进入到某个查询表中的一个索引使用。</p>
+<p><strong>小端位序在高精度算术运算上速度更快更方便</strong>。大部分采用大端位序的体系结构都不允许计算机字按照非字地址边界的方法写数据字，例如一个字由2或4字节组成，写数据字时必须从偶数编号的字节地址开始，浪费空间。小端机器允许进行奇数地址的读写。</p>
+<p><strong>计算机网络都采用大端位序的体系结构</strong>。如果小端位序的机器要将整数数据（如网络设备地址）传送到网络上，必须将数据转换成网络要求的字节次序，从网络上接收数据时也需要将这些数据转换成本地表示形式。BMP图形格式是小端位序，如果在大端位序机器上查看BMP图形必须先反转数据位序。Adobe Photoshop采用大端格式，GIF是小端格式，JPEG是大端格式，Macpaint使用大端格式，PC Paintbrush是小端格式，RTP使用小端位序，Sun光栅文件是大端格式。WAV、AVI、TIFF、XWD等同时支持两种格式。</p>
+<h2 id="堆栈和寄存器"><a href="#堆栈和寄存器" class="headerlink" title="堆栈和寄存器"></a>堆栈和寄存器</h2><p>CPU数据存储方式：区分不同指令系统体系结构的最基本方法，包含堆栈体系结构，累加器体系结构，通用寄存器体系结构。</p>
+<p>堆栈体系结构（stack architecture）的计算机使用一个堆栈来执行各种指令，指令的操作数隐含的存放在堆栈顶部。按照堆栈体系结构设计的机器通常具有好的编码密度和一个简单的表达式估值模型。但因为不能对堆栈进行随机访问，使得采用堆栈结构的机器很难产生高效率的编码。如果存储器速度快，使用堆栈体系结构较好。</p>
+<p>累加器体系结构（Accumulator architecture）计算机，如MARIE，将其中一个操作数隐含在累加器中，最大限度地降低机器内部复杂性，并且允许使用非常短的指令。由于累加器只是临时存储，需要对存储器的访问非常频繁。</p>
+<p>通用寄存器体系结构（general purpose register architecture）计算机，采用多个通用寄存器组，是当今计算机体系结构最广泛的模型。寄存器组的访问速度比存储器快得多，也方便编译器处理。由于硬件价格急剧下降，现在可以以较小成本增加大量数目的寄存器。如果存储器速度较慢，通常采用通用寄存器体系结构。但由于所有操作数必须加以命名，因此使用寄存器结构会产生较长指令，导致较长的取指和译码时间。对ISA设计人员来说，实现短指令是一个非常重要的目标。</p>
+<ul>
+<li>存储器-存储器（memory-memory）体系结构可以有两个或三个操作数位于存储器内，允许有一条执行某种操作而不需要有任何操作数的指令存放在某个寄存器中。</li>
+<li>寄存器-存储器（register-memory）体系结构采用混合方式，要求至少有一个操作数在寄存器中和一个操作数在存储器中。</li>
+<li>装入-存储（load-store）体系结构需要在任何对数据的操作前把数据装入寄存器中。</li>
+</ul>
+<p>Intel和Motorola的计算机属于寄存器-存储器体系结构，数字仪器公司的VAX计算机体系结构实行的是存储器-存储器操作，SPARC、MIPS、ALPHA和PowerPC都是装入-存储式体系结构计算机。</p>
+<h2 id="操作数的数目和指令长度"><a href="#操作数的数目和指令长度" class="headerlink" title="操作数的数目和指令长度"></a>操作数的数目和指令长度</h2><p>MARIE采用<strong>固定长度的指令</strong>，包括<strong>4位操作码和12位操作数</strong>。在现在的计算机体系结构中，指令构成的格式有固定长度和可变长度两种。</p>
+<ul>
+<li>固定长度（fixed length）：会浪费一定存储空间，但执行速度更快。在采用指令层次的流水线结构时性能更好。</li>
+<li>可变长度（variable length）：译码复杂，但节省存储空间。</li>
+</ul>
+<blockquote>
+<p>实际设计中，通常会采用两到三种不同的指令长度，这样可以有不同的位的指令组合形式，便于简化指令的区分和译码。指令的长度必须配合机器字的长度，如果指令的长度严格等于机器字的长度，则将指令存储到主存储器时，指令间的对齐问题就会非常完美。因为存储器要编址，因此采用实际机器字长度的1/4，1/2，2倍或3倍长度的指令会浪费不少的存储空间。可变长度的指令同样也会造成存储空间的浪费。</p>
+</blockquote>
+<ul>
+<li>最常用的指令格式包括0，1，2或3个操作数。通常情况下，算术运算或逻辑运算需要2个操作数，如果将累加器作为一个隐藏的操作数，则两个操作数的操作可以按照一个操作数指令的方式执行。同理，使用一个堆栈结构可以允许有不带操作数的指令。</li>
+</ul>
+<p>只有操作码           0地址<br>操作码+1个地址    通常只有一个存储器地址<br>操作码+2个地址    通常两个寄存器地址，或一个寄存器地址加上一个存储器地址<br>操作码+3个地址    通常是三个寄存器地址或寄存器和存储器的某种组合</p>
+<h2 id="指令类型"><a href="#指令类型" class="headerlink" title="指令类型"></a>指令类型</h2><ul>
+<li>数据移动：不同数据移动指令，MOVE，ADD</li>
+<li>算术运算：整数和浮点运算的各种指令</li>
+<li>布尔逻辑运算：逻辑与非或、异或</li>
+<li>位操作：移位和循环换位</li>
+<li>输入输出：程序控制的I/O，中断驱动的I/O，直接存储器访问（DMA）</li>
+<li>控制转移：分支转移（branch）、跳过（skip）、进程调用（procedure call）</li>
+<li>专门用途：如字符串处理指令，高级语言支持指令，保护和标志位控制指令，高速缓存指令等</li>
+</ul>
+<h2 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h2><p>址方式是指定指令中操作数位置的方法。实际操作数的位置称为操作数的有效地址。</p>
+<ul>
+<li>立即寻址（immediate addressing）：指令中操作码后的数值会被立刻引用，例如Load 008会直接将数值8装入累加器AC中。不灵活。</li>
+<li>直接寻址（direct addressing）：指令之直接指定要饮用的数值的存储器地址，如Load 008将存储器地址为008的存储单元中的数值作为操作数装入累加器AC。</li>
+<li>寄存器寻址（register addressing）：采用寄存器而不是存储器指定操作数，指令的地址域包含一个寄存器的引用。</li>
+<li>间接寻址（indirect addressing）：地址域中的二进制数指定一个存储器地址，将该地址中的内容作为一个指针。例如Load 008，该操作表示在存储器地址为008的存储单元中存放的数值实际上是要用到的操作数的有效地址。如果008单元存放的数值是2A0，则2A0是真实地址，操作将地址为2A0的存储器单元中的内容装入AC。间接寻址也可用做寄存器。</li>
+<li>变址寻址和基址寻址（indexed addressing）：一个变址寄存器用于存储一个偏移量，将这个偏移量与操作数相加，产生实际的有效地址。如Load X中的操作数X采用变址寻址方式，假定R1为变址寄存器，如果R1中存放着1，则Load X寻找到的有效地址是X+1。基址寻址与变址寻址类似，但基址寻址使用基地址寄存器而不是变址寄存器，操作数域中的内容表示的是偏移量。这两种寻址方式在访问数组元素和字符串中字符时非常有效，大部分汇编语言都提供专门的变址寄存器。</li>
+<li>堆栈寻址（stack addressing）：操作数假定放在堆栈中。<br>其他寻址方式：间接变址寻址（同时采用变址和间接寻址），基址/偏移量寻址（先将一个偏移量加到某个特定的基址寄存器中，再于指定的操作数相加产生有效地址），自动增/减量寻址等。</li>
+</ul>
+<p>下表对于不同寻址方式给出实际装入累加器AC的值。</p>
+<p>寻址方式    获取操作数方法    装入AC的值<br>立即寻址    操作数数值直接包含在指令中   800<br>直接寻址    指令的地址域是操作数的有效地址  900<br>间接寻址    地址域的内容是实际操作数的地址  1000<br>变址寻址    地址域数值与寄存器中数值相加产生有效地址  700      </p>
+<h2 id="ISA体系结构案例"><a href="#ISA体系结构案例" class="headerlink" title="ISA体系结构案例"></a>ISA体系结构案例</h2><p>Intel体系结构：Intel使用的是小端、双地址的体系结构，采用可变长度指令系统，寄存器-存储器结构，操作数句长度可以是1，2，4字节。</p>
+<p>MIPS体系结构：小端、按字编址、3地址、采用固定长度，是装入/存储式体系结构。MIPS限制只有固定长度的操作，操作数句必须具有相同的字节数。</p>
+<h1 id="7-存储系统"><a href="#7-存储系统" class="headerlink" title="7.存储系统"></a>7.存储系统</h1><h2 id="存储器类型"><a href="#存储器类型" class="headerlink" title="存储器类型"></a>存储器类型</h2><p>高速缓存Cache：小容量，高速度，高价格；在频繁存取数据的过程中充当一个缓冲器，高性能的高速缓存存储器会掩盖掉较慢速度的存储器系统的作用。使用SRAM。</p>
+<p>随机存储器RAM：</p>
+<ul>
+<li>主存储器（primary memory），在执行程序时用来存储程序或数据。RAM是易失性存储器，存储器系统掉点时RAM中信息会全部丢失。现代计算机系统通常采用静态随机存储器（SRAM）和动态随机存储器（DRAM）存储器芯片来构造大规模RAM存储器。</li>
+<li><strong>SRAM速度比DRAM更快，价格更高</strong>。但<strong>DRAM的存储密度更高（单块芯片存储更多的位数），消耗功耗更低</strong>，比SRAM产生的热量小得多。通常将两种技术组合，<strong>DRAM用作主存储器，SRAM用作高速缓存存储器</strong>。</li>
+</ul>
+<p>只读存储器（read-only memory，ROM）：ROM为<strong>非易失性存储器，采用硬连线，可长久保持所存放的数据</strong>，也可应用于嵌入式系统、计算机外围设备等，如激光打印机采用ROM保存打印字符点阵。</p>
+<h2 id="存储器层次结构"><a href="#存储器层次结构" class="headerlink" title="存储器层次结构"></a>存储器层次结构</h2><p>采用存储器的分层组织结构，使<strong>不同层次的存储器具有不同的访问速度和存储容量</strong>。存储器分层结构系统基本类型包括：<strong>寄存器、高速缓存、主存储器、辅助存储器（硬盘、可移动存储介质等）</strong>。</p>
+<p>名词解释：</p>
+<ul>
+<li>命中（hit）：<strong>CPU请求的数据驻留在要访问的存储器层中</strong>。通常只在存储器的较高层才关注命中率问题。</li>
+<li>缺失（miss）：<strong>CPU请求的数据不在要访问的存储器层</strong>。</li>
+<li>命中率（hit rate）：<strong>访问某个特定存储器层，CPU找到所需数据的百分比</strong>。</li>
+<li>缺失率（miss rate）：1 - 命中率。</li>
+<li>命中时间（hit time）：<strong>在某个特定的存储器层，CPU取得所请求信息所需要的时间</strong>。</li>
+<li>缺失损失（miss penalty）：<strong>CPU处理一次缺失时间所需要的时间</strong>，包括利用新数据块取代上层某个数据块所需要的时间、所需数据传递给处理器需要的附加时间。通常处理一次缺失事件花费的时间要比命中事件更多。</li>
+</ul>
+<p><img src="http://7xktmz.com1.z0.glb.clouddn.com/%E5%AD%98%E5%82%A8%E5%99%A8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png" alt="存储器体系结构"></p>
+<p>注：对于任何给定数据，处理器将访问数据请求传送给存储器中速度最快、规模最小的最高层，<strong>通常是高速缓存而不是寄存器，因为寄存器有专用用途</strong>。</p>
+<p>局部性：</p>
+<ul>
+<li>时间局部性：最近访问过的内容在不久的将来可能再次被访问。</li>
+<li>空间局部性（Spatial locality）：对存储器地址空间的访问形成团簇的集中倾向（如数组或循环操作）。</li>
+<li>顺序局部性（Sequential locality）：访问存储器的指令倾向于按顺序执行。</li>
+</ul>
+<p>总结：<strong>局部性原理使系统在任意给定时刻只需要访问整个存储空间中非常小的部分，而且存储在该位置的数值会被重复读取。将大量信息存储在巨大的低成本的存储器中，再将部分数据复制到容量小、速度快的高层存储器中，就可以获得与高层存储器几乎相同的访问速度</strong>。</p>
+<h2 id="高速缓存"><a href="#高速缓存" class="headerlink" title="高速缓存"></a>高速缓存</h2><p>同计算机的高速缓存容量有较大差别，通常PC机的L2大小为256或512KB，位于CPU和主存储器之间。L1为32KB（以i74790为例），集成在CPU中，分数据缓存和指令缓存。<strong>高速缓存存储器不通过地址访问，而是按照内容进行存取</strong>，因此又称<strong>按内容寻址的存储器</strong>（content addressable memory，CAM）。</p>
+<h3 id="映射模式和数据访问过程"><a href="#映射模式和数据访问过程" class="headerlink" title="映射模式和数据访问过程"></a>映射模式和数据访问过程</h3><ul>
+<li>主存储器块远多于高速缓存块，主存储器块需要竞争才能获取高速缓存中的对应位置。通过对主存储器地址的各个位划分并规定特殊意义来实现地址转换，将地址的二进制位分为不同的组（2～3个地址域）。主要有直接映射、全关联、组关联等。</li>
+<li>数据访问过程：主存和高速缓存的存储空间都会被划分成相同大小的字块，当生成一个存储器地址时，CPU首先搜索高速缓存存储器判断需求的数据块是否存在，找不到则将主存储器中该字所在的整个块装入高速缓存。</li>
+</ul>
+<p>cache的地址映射</p>
+<ul>
+<li>全相联映射：内存 + cache = 主存</li>
+</ul>
+<p>主存中任一块都可以映射到Cache中任一块；例如，设Cache共有2C块，主存共有2M块，当主存的某一块j需调进Cache中时，它可以存入Cache的块0、块1、…、块i、… 或块2C -1的任意一块上。</p>
+<p><img src="http://img6.ph.126.net/bCmlnBuNPF44-NHcFmIyIQ==/1155454779414503176.jpg" alt="全相联"></p>
+<p><img src="http://img9.ph.126.net/KdczjwxFAsETsQo6YiBbwQ==/576460752320678209.jpg" alt="1"></p>
+<p><img src="http://img6.ph.126.net/HR1Hu5F5cbTLMrIDcsWZoA==/1543890247275213996.jpg" alt="2"></p>
+<p>在全相联映射下，CPU访主存地址如图。M——主存块号，W——块内地址。C——Cache块号。</p>
+<p>当 一个主存块调入Cache中时，会同时在一个存储主存块号和Cache块号映射表的相联存储器中进行登记。CPU访存时，首先，根据主存地址中的主存块号 M在相联存储器中查找Cache块号，若找到，则本次访Cache命中，于是将对应的Cache块号取出，并送访Cache地址的块号C字段；紧接着将主 存地址的块内字号W直接送Cache地址的块内字号W字段，从而形成一个访Cache的地址；最后根据该地址完成对Cache单元的访问.</p>
+<p>优点是Cache的空间利用率高，但缺点是相联存储器庞大，比较电路复杂，因此只适合于小容量的Cache之用。 </p>
+<ul>
+<li>直接映射：主存按Cache容量分区</li>
+</ul>
+<p><img src="http://7xktmz.com1.z0.glb.clouddn.com/%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%B0%84%E7%9A%84%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98.png" alt="直接映射"></p>
+<p>直接相联映射方式是指主存的某块j只能映射到满足如下特定关系的Cache块i中：如i＝j mod 2C </p>
+<p><img src="http://img7.ph.126.net/aaYQFzFn2RcZ8IfuPZ1k-Q==/1175158027784254797.jpg" alt="CPU访主存"></p>
+<p>T ——标志号，C——Cache块号，W——块内地址。一般来讲，主存的块数是Cache的块数的整数倍，也就是说主存的块数2M和Cache的块数2C满足关系式：2M＝n·2C</p>
+<p>当一个主存块调入 Cache中时，会同时将主存地址的T标志存入Cache块的标志字段中。当CPU送来一个访存地址时，首先，根据该主存地址的C字段找到Cache的相 应块，然后将该块标志字段中存放的标志与主存地址的T标志进行比较，若相符，说明主存的块目前已调入该Cache块中，则命中，于是使用主存地址的W字段 访问该Cache块的相应字单元；若不相符，则未命中，于是使用主存地址直接访主存。</p>
+<p> 直接相联映射方式的优点 是比较电路最简单，但缺点是Cache块冲突率较高，从而降低了Cache的利用率。由于主存的每一块只能映射到Cache的一个特定块上，当主存的某块 需调入Cache时，如果对应的Cache特定块已被占用，而Cache中的其它块即使空闲，主存的块也只能通过替换的方式调入特定块的位置，不能放置到 其它块的位置上。</p>
+<p>全相联映射方式来说为优点的恰是直接相联映射方式的缺点，而对于全相联映射方式来说为缺点的 恰是直接相联映射方式的优点。</p>
+<ul>
+<li>组相联高速缓存：组内全相联，组间直接相联</li>
+</ul>
+<p>将Cache分成2u组，每组包含2v块。主存的块与Cache的组之间采用直接相联映射，而与组内的各块则采用全相联映射。也就是说，<strong>主存的某块只能映射到Cache的特定组中的任意一块</strong>。</p>
+<p>主存的某块j与Cache的组k之间满足如下关系：k＝j mod 2u   </p>
+<p>设主存共有2s×2u块（即M＝s+u），则它们的映射关系如下图：</p>
+<p><img src="http://img6.ph.126.net/XMQMZM78_NYTTqCXSE20Pw==/1555430721320348296.jpg" alt="组相联"></p>
+<p>主存的块0、2u、2u＋1、…、(2s-1)2u可以映射到Cache的第0组的任意一块，主存的块1、2u+1、2u＋1+1、…、(2s-1)2u+1可以映射到Cache的第1组的任意一块，… … ，主存的块2u-1、2u＋1-1、…、2M-1可以映射到Cache的第2u-1组的任意一块。</p>
+<p>对主存地址的划分：主存组号（f）+组内块号（r）+组内地址（w）</p>
+<p>其实，全相联映射和直接相联映射可以看成是组相联映射的两个极端情况。若u＝0，v＝C，则Cache只包含1组，此即全相联映射方式；若u＝C，v＝0，则组内的块数等于1，此即直接相联映射。</p>
+<p>在实际应用中，相联映射方式每组的块数一般取值较小，典型值为2、4、8、16等，分别称为两路组相联、四路组相 联等。</p>
+<h3 id="置换策略"><a href="#置换策略" class="headerlink" title="置换策略"></a>置换策略</h3><p>最佳算法的目标是替换掉在未来最长时间段内不再使用的高速缓存块。</p>
+<p><strong>LRU（least recently used）算法：最近最少使用</strong>；</p>
+<ul>
+<li>思想：如果数据最近被访问过，那么将来被访问的几率也很高</li>
+<li>标准：根据使用时间差异</li>
+<li>实现：链表</li>
+<li>保护新数据</li>
+<li>O(n)</li>
+</ul>
+<p><img src="http://img.voidcn.com/vcimg/000/006/438/288_b59_eb3.jpg" alt="1"></p>
+<p>1.新数据插入到链表头部；       </p>
+<ol>
+<li><strong>每当缓存命中</strong>（即缓存数据被访问），则将数据移到链表头部；     </li>
+<li>当链表满的时候，将链表尾部的数据丢弃。</li>
+</ol>
+<p><strong>FIFO：First In First Out，先进先出</strong>；</p>
+<ul>
+<li>类似队列</li>
+<li>新访问的数据插入FIFO队列尾部，数据在FIFO队列中顺序移动；淘汰FIFO队列头部的数据；</li>
+<li>如果一个数据最先进入缓存中，则应该最早淘汰掉。</li>
+</ul>
+<p><strong>LFU：Least Frequently Used，最不经常使用 </strong></p>
+<ul>
+<li>根据使用次数差异</li>
+<li>如果数据过去被访问多次，那么将来被访问的频率也更高</li>
+<li>根据在一段时间里数据项被使用的次数选择出最少使用的数据项</li>
+<li>对新数据保护不够</li>
+<li>O(n)</li>
+</ul>
+<p><img src="http://img.voidcn.com/vcimg/000/006/438/289_739_166.jpg" alt="结构"></p>
+<ol>
+<li>新加入数据插入到队列尾部（因为引用计数为1）；      </li>
+<li>队列中的<strong>数据被访问后，引用计数增加，队列重新排序</strong>；        </li>
+<li>当需要淘汰数据时，将已经排序的列表最后的数据块删除。</li>
+</ol>
+<h1 id="写策略"><a href="#写策略" class="headerlink" title="写策略"></a>写策略</h1><ul>
+<li>写通：在<strong>每次对高速缓存的写操作时，处理器同步更新主存储器中对应的数据块</strong>。写通策略速度比回写速度满，但可以保证高速缓存与主存储器的数据始终一致。实际应用中，因为大多数存储器访问都是读操作，因此可以忽略写通策略对主存储器的写操作带来的系统速度减慢。</li>
+<li>回写策略指<strong>只有某个高速缓存块被选择为牺牲块而必须从高速缓存移出时，处理器才更新主存储器中对应的数据块</strong>。缺点在于两者数值的不同步，如果某个进程在回写主存储器之前发生中断（或崩溃），则高速缓存中数据可能丢失。</li>
+</ul>
+<h1 id="8-输入输出"><a href="#8-输入输出" class="headerlink" title="8.输入输出"></a>8.输入输出</h1><p>协议：握手协议</p>
+<ul>
+<li>在发送设备和接收设备之间交换的各种信号的具体形式和信号所代表的意义，包括命令信号、状态信号、数据传递信号。</li>
+<li><strong>接收设备对命令和发送来的数据做出应答的协议交换</strong>称为握手</li>
+</ul>
+<h2 id="I-O-控制方法"><a href="#I-O-控制方法" class="headerlink" title="I/O 控制方法"></a>I/O 控制方法</h2><p>1.程序控制IO</p>
+<ul>
+<li>轮询：系统为每个I/O设备至少分配一个专用的寄存器，CPU持续不断的监视每个寄存器，等待数据到达；一旦CPU检测到某个“数据就绪”的条件，就为该寄存器准备指令执行等操作。</li>
+<li>优点在于：可以通过编程控制每个外部设备的行为，改变程序就可以调整系统所控制的外部设备的数目和类型，以及轮询的权限和时间间隔。</li>
+<li>缺点在于：不<strong>断对寄存器轮询使得CPU持续处于繁忙等待循环</strong>中，直到开始服务某个I/O请求。</li>
+<li>如果没有任何I/O任务要处理，CPU就无法从事任何有用的操作。因此程序控制的I/O最适合用于自动提款机等一些用来控制或监视外部事件的系统</li>
+</ul>
+<p>2.中断控制IO</p>
+<ul>
+<li>在<strong>有数据发送需求时由外部设备通知CPU，如果没有外部设备发出服务请求来中断CPU，则CPU继续执行其他任务</strong>。</li>
+<li>通常使用CPU的标志寄存器中的一个二进制位表示中断信号，该位称为中断标志。一旦中断标志置位，操作系统就会中断正在执行的程序，并保存该程序的状态和各种可变的信息，提取请求中断的I/O设备的地址矢量。在完成I/O操作后CPU会完全恢复到中断前状态并继续执行。</li>
+<li>该方法和程序控制I/O的相似之处为：都可以对I/O服务程序进行修改以适应外部硬件的改变。许多主流操作系统均使用中断控制的I/O，为防止病毒制造者修改I/O设备地址矢量指向恶意代码，操作系统均提供了保护机制防止这类操作。</li>
+</ul>
+<p>3.直接存储器存取（DMA）：</p>
+<ul>
+<li><strong>无论何种中断控制的I/O，CPU都需要从I/O设备移入和移出数据</strong>。</li>
+<li>DMA方法是<strong>面向数据块的I/O处理方式</strong>，只在一组字节的传输结束后才中断CPU。当DMA发出I/O完成的信号后，CPU会给出下一个要读取或写入的内存地址，而传输失败时，CPU会独自做出适当的相应，因此<strong>DMA的I/O需要很少的CPU参与</strong>。</li>
+<li>程序控制的I/O每次传输一个字节，中断控制的I/O每次可以按字节或小数据块形式传输，具体取决于I/O设备。</li>
+</ul>
+<h2 id="磁盘技术"><a href="#磁盘技术" class="headerlink" title="磁盘技术"></a>磁盘技术</h2><p>磁盘驱动器：RAM</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Computer-Science/" rel="tag"># Computer Science</a>
+          
+            <a href="/tags/Basis-of-Computer-Engineering/" rel="tag"># Basis of Computer Engineering</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/04/计算机组成原理复习笔记1/" rel="next" title="计算机组成原理复习笔记1">
+                <i class="fa fa-chevron-left"></i> 计算机组成原理复习笔记1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/14/广播电视概论知识点总结/" rel="prev" title="广播电视概论知识点总结">
+                广播电视概论知识点总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">131</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-基础概念"><span class="nav-number">1.</span> <span class="nav-text">1.基础概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-数据表示方法"><span class="nav-number">2.</span> <span class="nav-text">2.数据表示方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-错误检测与校正"><span class="nav-number">3.</span> <span class="nav-text">3.错误检测与校正</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CRC循环冗余码校验"><span class="nav-number">3.1.</span> <span class="nav-text">CRC循环冗余码校验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#海明码"><span class="nav-number">3.2.</span> <span class="nav-text">海明码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-布尔代数"><span class="nav-number">4.</span> <span class="nav-text">4.布尔代数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-计算机微观体系结构"><span class="nav-number">5.</span> <span class="nav-text">5.计算机微观体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU"><span class="nav-number">5.1.</span> <span class="nav-text">CPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总线Bus"><span class="nav-number">5.2.</span> <span class="nav-text">总线Bus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时钟"><span class="nav-number">5.3.</span> <span class="nav-text">时钟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储器组成和寻址方式"><span class="nav-number">5.4.</span> <span class="nav-text">存储器组成和寻址方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中断和输入输出子系统"><span class="nav-number">5.5.</span> <span class="nav-text">中断和输入输出子系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MARIE"><span class="nav-number">5.6.</span> <span class="nav-text">MARIE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#体系结构、寄存器和总线"><span class="nav-number">5.6.1.</span> <span class="nav-text">体系结构、寄存器和总线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令系统体系结构"><span class="nav-number">5.7.</span> <span class="nav-text">指令系统体系结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-指令系统"><span class="nav-number">6.</span> <span class="nav-text">6.指令系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#衡量标准"><span class="nav-number">6.1.</span> <span class="nav-text">衡量标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小端和大端位序问题"><span class="nav-number">6.2.</span> <span class="nav-text">小端和大端位序问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆栈和寄存器"><span class="nav-number">6.3.</span> <span class="nav-text">堆栈和寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作数的数目和指令长度"><span class="nav-number">6.4.</span> <span class="nav-text">操作数的数目和指令长度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令类型"><span class="nav-number">6.5.</span> <span class="nav-text">指令类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寻址方式"><span class="nav-number">6.6.</span> <span class="nav-text">寻址方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ISA体系结构案例"><span class="nav-number">6.7.</span> <span class="nav-text">ISA体系结构案例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-存储系统"><span class="nav-number">7.</span> <span class="nav-text">7.存储系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#存储器类型"><span class="nav-number">7.1.</span> <span class="nav-text">存储器类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储器层次结构"><span class="nav-number">7.2.</span> <span class="nav-text">存储器层次结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高速缓存"><span class="nav-number">7.3.</span> <span class="nav-text">高速缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#映射模式和数据访问过程"><span class="nav-number">7.3.1.</span> <span class="nav-text">映射模式和数据访问过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#置换策略"><span class="nav-number">7.3.2.</span> <span class="nav-text">置换策略</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写策略"><span class="nav-number">8.</span> <span class="nav-text">写策略</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-输入输出"><span class="nav-number">9.</span> <span class="nav-text">8.输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#I-O-控制方法"><span class="nav-number">9.1.</span> <span class="nav-text">I/O 控制方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#磁盘技术"><span class="nav-number">9.2.</span> <span class="nav-text">磁盘技术</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

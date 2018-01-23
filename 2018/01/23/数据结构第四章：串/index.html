@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Data Structure," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：串。">
+<meta name="keywords" content="Data Structure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构第四章：串">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/数据结构第四章：串/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：串。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022216093cX.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022216103JH.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222161221209.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222161621D4.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222161R0216.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222163319327.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222163355527.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222163501959.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222163Aa20.jpg">
+<meta property="og:updated_time" content="2018-01-23T09:31:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构第四章：串">
+<meta name="twitter:description" content="Abstract：串。">
+<meta name="twitter:image" content="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022216093cX.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/23/数据结构第四章：串/"/>
+
+
+
+
+
+  <title>数据结构第四章：串 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/数据结构第四章：串/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构第四章：串</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-23T16:55:31+08:00">
+                2018-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Data-Structure/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Structure</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：串。<br><a id="more"></a></p>
+<h1 id="4-1-串及其基本运算"><a href="#4-1-串及其基本运算" class="headerlink" title="4.1 串及其基本运算"></a>4.1 串及其基本运算</h1><h2 id="4-1-1-串的基本概念"><a href="#4-1-1-串的基本概念" class="headerlink" title="4.1.1 串的基本概念"></a>4.1.1 串的基本概念</h2><p>1.串的定义</p>
+<p>串：由0个或N个任意字符组成的字符序列，记作：s=”s1,s2,..,sn＂＂</p>
+<ul>
+<li>数据元素类型为字符型的线性表</li>
+<li>特点：字符的特殊性，字符串经常作为一个整体来处理</li>
+<li>s：串名</li>
+<li>双引号:串的定界符，引号引起来的字符序列为串值，引号本身不属于串的内容</li>
+<li>ai（1&lt;=i&lt;=n）：任意字符，是串的元素，构成串的基本单位；i是它在整个串中的序号，n为串的长度（表示包含的字符个数）</li>
+<li>n=0时，为空串，记为Φ</li>
+<li>子串与主串：串中任意连续的字符组成的子序列为子串；包含子串的串为主串</li>
+<li>子串的位置：子串的第一个字符在主串中的序号称为子串的位置。</li>
+<li><strong>串相等</strong>：称两个串是相等的，是指<strong>两个串的长度相等且对应字符都相等</strong>。</li>
+</ul>
+<h2 id="4-2-串的基本运算"><a href="#4-2-串的基本运算" class="headerlink" title="4.2 串的基本运算"></a>4.2 串的基本运算</h2><p> 1.求串长：StrLength(s)</p>
+<ul>
+<li>操作条件：串s存在</li>
+<li><p>结果：求出串s的长度</p>
+<p>2.串赋值StrAssign(s1,s2)</p>
+</li>
+<li><p>操作条件： s1 是一个串变量，s2 或者是一个串常量，或者是一个串变量（通常s2 是一个串常量时称为串赋值，是一个串变量称为串拷贝）。</p>
+<ul>
+<li>操作结果：将s2 的串值赋值给s1， s1 原来的值被覆盖掉。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>s1一定是串变量，s2可常可变</p>
+</blockquote>
+<p>3.连接操作：StrConcat(s1, s2, s)或StrConcat(s1, s2)</p>
+<ul>
+<li>操作条件：串s1,s2 存在。</li>
+<li>操作结果：两个串的联接就是将一个串的串值紧接着放在另一个串的后面，连接成一个串。前者是产生新串s，s1 和s2 不改变; 后者是在s1 的后面联接s2 的串值，s1 改变， s2不改变。</li>
+<li>例如： s1=＂he＂，s2=＂ bei＂，前者操作结果是s=＂he bei＂；后者操作结果是s1=＂he bei＂。</li>
+</ul>
+<blockquote>
+<p>区别：前者的结果是s，后者结果是s1</p>
+</blockquote>
+<p>4.求子串SubStr(s, i, len)</p>
+<ul>
+<li>操作条件：串s 存在，1≤i≤StrLength(s)，0≤len≤StrLength(s)-i+1。</li>
+<li>操作结果：返回从串s 的第i 个字符开始的长度为len 的子串。len=0 得到的是空串。</li>
+<li>例如：SubStr(＂abcdefghi＂,3,4)= ＂cdef＂</li>
+</ul>
+<p>5.串比较StrCmp(s1, s2)</p>
+<p>操作条件：串s1,s2 存在。<br>操作结果：若s1==s2，操作返回值为0；若s1<s2, 返回值<0；若s1="">s2, 返回值&gt;0。</s2,></p>
+<p>6.子串定位StrIndex(s, t): 找子串t在主串s中首次出现的位置</p>
+<ul>
+<li>操作条件：串s,t 存在。</li>
+<li>操作结果：若t∈s，则操作返回t 在s 中首次出现的位置，否则返回值为-1。<br>如：StrIndex(＂abcdebda＂,＂bc＂)=2<br>StrIndex(＂abcdebda＂,＂ba＂)=-1</li>
+</ul>
+<p>7.串插入StrInsert(s, i, t)</p>
+<ul>
+<li>操作条件：串s,t 存在，1≤i≤StrLength(s)+1。</li>
+<li>操作结果：将串t 插入到串s 的第i 个字符位置上，s 的串值发生改变。</li>
+</ul>
+<p>8.串删除StrDelete(s, i, len)</p>
+<ul>
+<li>操作条件：串s 存在，1≤i≤StrLength(s)，0≤len≤StrLength(s)-i+1。</li>
+<li>操作结果：删除串s 中从第i 个字符开始的长度为len 的子串，s 的串值改变。</li>
+</ul>
+<p>9.串替换StrRep(s,t,r)</p>
+<ul>
+<li>操作条件：串s,t,r 存在，t 不为空。</li>
+<li>操作结果：用串r 替换串s 中出现的所有与串t 相等的不重叠的子串，s 的串值改变。以上是串的几个基本操作。其中前５个操作是最为基本的，它们不能用其他的操作来合成，因此通常将这５个基本操作称为最小操作集。</li>
+</ul>
+<h1 id="4-2-串的定长顺序存储和基本运算"><a href="#4-2-串的定长顺序存储和基本运算" class="headerlink" title="4.2 串的定长顺序存储和基本运算"></a>4.2 串的定长顺序存储和基本运算</h1><h2 id="4-2-1-串的定长顺序存储"><a href="#4-2-1-串的定长顺序存储" class="headerlink" title="4.2.1 串的定长顺序存储"></a>4.2.1 串的定长顺序存储</h2><p>顺序存储：用一组地址连续的存储单元存储串值中的字符序列，所谓定长是指按预定义的大小，为每一个串变量分配一个固定长度的存储区，如：</p>
+<pre><code>#define MAXSIZE 256
+char s[MAXSIZE];//串的最大长度不能超过256
+</code></pre><p>如何标识实际长度？</p>
+<ol>
+<li><p>类似顺序表，<strong>用一个指针来指向最后一个字符</strong>：</p>
+<pre><code>   typedef struct
+     {
+       char data[MAXSIZE];
+       int curlen;
+       }SeqString;
+</code></pre></li>
+</ol>
+<p><strong>定义一个串变量：SeqString s</strong>。这种存储方式可以<strong>直接得到串的长度：s.curlen+1</strong>。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022216093cX.jpg" alt="串的顺序存储"></p>
+<ol>
+<li><strong>在串尾存储一个不会在串中出现的特殊字符作为串的终结符</strong>，以此表示串的结尾。</li>
+</ol>
+<blockquote>
+<p>比如C 语言中处理定长串的方法就是这样的，它是用’\0’来表示串的结束。这种存储方法不能直接得到串的长度，是<strong>用判断当前字符是否是’\0’来确定串是否结束，从而求得串的长度</strong>。</p>
+</blockquote>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-12022216103JH.jpg" alt="串的顺序存储方式"></p>
+<p>3.<strong>设定长串存储空间：char s[MAXSIZE+1];</strong> 用s[0]存放串的实际长度，串值存放在s[1]~s[MAXSIZE]，<strong>字符的序号和存储位置一致</strong>，应用更为方便。</p>
+<h2 id="4-2-2-定长顺序串的基本运算"><a href="#4-2-2-定长顺序串的基本运算" class="headerlink" title="4.2.2 定长顺序串的基本运算"></a>4.2.2 定长顺序串的基本运算</h2><p>设串结束用＇\0＇来标识。</p>
+<p>1.串连接：把两个串s1 和s2 首尾连接成一个新串s ，即：s&lt;=s1+s2（小于是因为可能有重合）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int StrConcat1(s1,s2,s)</span><br><span class="line">char s1[],s2[],s[];</span><br><span class="line">&#123; int i=0 , j, len1, len2;</span><br><span class="line">len1= StrLength(s1); len2= StrLength(s2)</span><br><span class="line">if (len1+ len2&gt;MAXSIZE-1) return 0 ; /* s 长度不够*/</span><br><span class="line">j=0;</span><br><span class="line">while(s1[j]!=’\0’) &#123; s[i]=s1[j];i++; j++; &#125;</span><br><span class="line">j=0;</span><br><span class="line">while(s2[j]!=’\0’) &#123; s[i]=s2[j];i++; j++; &#125;</span><br><span class="line">s[i]=’\0’; return 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.求子串：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int StrSub (char *t, char *s, int i, int len)</span><br><span class="line">/* 用t 返回串s 中第个i 字符开始的长度为len 的子串1≤i≤串长*/</span><br><span class="line">&#123; int slen;</span><br><span class="line">slen=StrLength(s);</span><br><span class="line">if ( i&lt;1 || i&gt;slen || len&lt;0 || len&gt;slen-i+1)</span><br><span class="line">&#123; printf(＂参数不对＂); return 0; &#125;</span><br><span class="line">for (j=0; j&lt;len; j++)</span><br><span class="line">t[j]=s[i+j-1];</span><br><span class="line">t[j]=’\0’;</span><br><span class="line">return 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.串比较：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int StrComp(char *s1, char *s2)</span><br><span class="line">&#123; int i=0;</span><br><span class="line">while (s1[i]==s2[i] &amp;&amp; s1[i]!=’\0’) i++;</span><br><span class="line">return (s1[i]-s2[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-3-模式匹配"><a href="#4-2-3-模式匹配" class="headerlink" title="4.2.3 模式匹配"></a>4.2.3 模式匹配</h3><p><strong>串的模式匹配即子串定位</strong>是一种重要的串运算。设s 和t 是给定的两个串，<strong>在主串s中找到等于子串t 的过程称为模式匹配，如果在s 中找到等于t 的子串，则称匹配成功，函数返回t 在s 中的首次出现的存储位置(或序号)，否则匹配失败，返回-1</strong>。<strong>t 也称为模式</strong>。<strong>为了运算方便，设字符串的长度存放在0 号单元，串值从1 号单元存放，这样字符序号与存储位置一致</strong>。</p>
+<p> 1.简单的模式匹配算法：</p>
+<p> 算法：首先将s1 与t1 进行比较，若不同，就将s2 与t1 进行比较，…，直到s的某一个字符si 和t1 相同，再将它们之后的字符进行比较，若也相同，则如此继续往下比较，当s 的某一个字符si 与t 的字符tj 不同时，则s 返回到本趟开始字符的下一个字符，即si-j+2，t 返回到t1，继续开始下一趟的比较，重复上述过程。若t 中的字符全部比完，则说明本趟匹配成功，本趟的起始位置是i-j+1 或i-t[0]，否则，匹配失败。设主串s=＂ababcabcacbab＂，模式t=＂abcac＂，匹配过程如图 所示。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222161221209.jpg" alt="简单的模式匹配"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//BF算法</span><br><span class="line"></span><br><span class="line">int StrIndex_BF (char *s,char *t)</span><br><span class="line">/*从串s 的第一个字符开始找首次与串t 相等的子串*/</span><br><span class="line">&#123; int i=1,j=1;</span><br><span class="line">while (i&lt;=s[0] &amp;&amp; j&lt;=t[0] ) /*都没遇到结束符*/</span><br><span class="line">if (s[i]==t[j])</span><br><span class="line">&#123; i++;j++; &#125; /*继续*/</span><br><span class="line">else</span><br><span class="line">&#123;i=i-j+2; j=1; &#125; /*回溯*/</span><br><span class="line">if (j&gt;t[0]) return (i-t[0]); /*匹配成功，返回存储位置*/</span><br><span class="line">else return –1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度：</p>
+<ul>
+<li>在最好情况下，每趟不成功的匹配都发生在第一对字符比较时：<br>例如：s=＂aaaaaaaaaabc＂，t=＂bc＂，时间复杂度是O(n+m)。</li>
+<li>在最坏情况下，每趟不成功的匹配都发生在t 的最后一个字符：例如：s=＂aaaaaaaaaaab＂，t=＂aaab＂，时间复杂度是O(n*m)。</li>
+</ul>
+<p>2.改进后的模式匹配算法：</p>
+<p>（1）KMP 算法：BF 算法简单但效率较低，KMP是一种对BF 算法做了很大改进的模式匹配算法。</p>
+<ul>
+<li>造成BF 算法速度慢的原因是回溯，即在某趟的匹配过程失败后，对于s 串要回到本趟开始字符的下一个字符，t 串要回到第一个字符。而这些回溯并不是必要的。</li>
+<li>如上图所示的匹配过程，在第三趟匹配过程中，s3 ~ s6 和t1~ t4 是匹配成功的，s7≠t5 匹配失败，因此有了第四趟，其实这一趟是不必要的：由图可看出，因为在第三趟中有s4=t2，而t 1≠t2，肯定有t1≠s4 。同理第五趟也是没有必要的，所以从第三趟之后可以直接到第六趟，进一步分析第六趟中的第一对字符s 6 和t1 的比较也是多余的，因为第三趟中已经比过了s6 和t4，并且s6=t4，而t 1=t4，必有s 6=t1，因此第六趟的比较可以从第二对字符s7 和t2 开始进行，这就是说，第三趟匹配失败后，指针i 不动，而是将模式串t向右“滑动”，用t2 “对准” s 7 继续进行，依此类推。这样的处理方法指针i 是无回溯的。</li>
+<li><p>综上所述，希望某趟在si 和tj 匹配失败后，指针i 不回溯，模式t 向右“滑动”至某个位置上，使得tk 对准s i 继续向右进行。显然，现在问题的关键是串t“滑动”到哪个位置上？不妨设位置为k，即si 和tj 匹配失败后，指针i 不动，模式t 向右“滑动”，使tk 和si对准继续向右进行比较，要满足这一假设，就要有如下关系成立：</p>
+<pre><code>  ＂t1 t2 … tk-1 ＂ =＂si-k+1 si-k+2 … si-1 ＂ (4.1)
+</code></pre></li>
+</ul>
+<p>(4.1)式左边是tk 前面的k-1 个字符，右边是si 前面的k-1 个字符。而本趟匹配失败是在si 和tj 之处，已经得到的部分匹配结果是：</p>
+<pre><code>    ＂t1 t2 … tj-1 ＂ =＂si-j+1 si-j+2 … si-1 ＂ (4.2)
+</code></pre><p>因为k&lt;j，所以有：</p>
+<pre><code>    ＂tj-k+1 tj-k+2 … tj-1 ＂ =＂si-k+1 si-k+2 … si-1 ＂ (4.3)
+</code></pre><p>(4.3)式左边是tj 前面的k-1 个字符，右边是si 前面的k-1 个字符，通过(4.1)和(4.3)得到关系：</p>
+<pre><code>    ＂t1 t2 … tk-1 ＂ =＂tj-k+1 tj-k+2 … tj-1 ＂ (4.4)
+</code></pre><ul>
+<li>结论：某趟在si 和tj 匹配失败后，如果模式串中有满足关系(4)的子串存在，即：模式中的前k-1 个字符与模式中tj 字符前面的k-1 个字符相等时，模式t 就可以向右“滑动”至使tk 和si 对准，继续向右进行比较即可。</li>
+</ul>
+<p>（2）next 函数</p>
+<p><strong>模式中的每一个tj都对应一个k值</strong>，由(4.4)式可知，<strong>这个k 值仅依赖与模式t 本身字符序列的构成，而与主串s 无关</strong>。我们用next[j]表示tj 对应的k 值，根据以上分析，next函数有如下性质：</p>
+<p>① next[j]是一个整数，且0≤next[j]&lt;j<br>② 为了使t 的右移不丢失任何匹配成功的可能，当存在多个满足(4.4)式的k 值时，应取最大的，这样向右“滑动”的距离最短，“滑动”的字符为j-next[j]个。<br>③ 如果在tj 前不存在满足(4.4)式的子串，此时若t1≠tj，则k=1; 若t1=tj，则k=0; 这时“滑动”的最远，为j-1 个字符即用t1 和sj+1 继续比较。</p>
+<p>因此，next 函数定义如下：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222161621D4.jpg" alt="next函数"></p>
+<p>(3) KMP 算法</p>
+<p>在求得模式的next 函数之后，匹配可如下进行：假设以指针i 和j 分别指示主串和模式中的比较字符，令i 的初值为pos，j 的初值为1。若在匹配过程中si≠tj，则i 和j 分别增１，若si≠tj 匹配失败后，则i 不变，j 退到next[j]位置再比较，若相等，则指针各自增１，否则j 再退到下一个next 值的位置，依此类推。直至下列两种情况：一种是j 退到某个next值时字符比较相等，则i 和j 分别增１继续进行匹配; 另一种是j 退到值为零（即模式的第一个字符失配），则此时i 和j 也要分别增１，表明从主串的下一个字符起和模式重新开始匹配。</p>
+<p>设主串s=＂acabaabaabcacaabc＂，子串t=＂abaabcac＂，图4.4 是一个利用next 函数进行匹配的过程示意图。在假设已有next 函数情况下，KMP 算法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int StrIndex_KMP(char *s,char *t,int pos)</span><br><span class="line">/*从串s 的第pos 个字符开始找首次与串t 相等的子串*/</span><br><span class="line">&#123; int i=pos,j=1,slen,tlen;</span><br><span class="line">while (i&lt;=s[0] &amp;&amp; j&lt;=t[0] ) /*都没遇到结束符*/</span><br><span class="line">if (j==0||s[i]==t[j]) &#123; i++; j++; &#125;</span><br><span class="line">else j=next[j]; /*回溯*/</span><br><span class="line">if (j&gt;t[0]) return i-t[0]; /*匹配成功，返回存储位置*/</span><br><span class="line">else return –1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222161R0216.jpg" alt="KMP"></p>
+<p>(4)如何求next 函数</p>
+<p>由以上讨论知，<strong>next 函数值仅取决于模式本身而和主串无关</strong>。我们可以<strong>从分析next 函数的定义出发用递推的方法求得next 函数值</strong>。由定义知：next[1]=0 (4.5)</p>
+<p>设next[j]=k，即有：<br>＂t1 t2 … tk-1 ＂ =＂tj-k+1 tj-k+2 … tj-1 ＂ (4.6)<br>next[j+1]=? 可能有两种情况：</p>
+<p>第一种情况：若tk ＝tj 则表明在模式串中<br>＂t1 t2 … tk ＂ =＂tj-k+1 tj-k+2 … tj ＂ (4.7)<br>这就是说next[j+1]=k+1，即<br>next[j＋１]=next[j]+1 (4.8)<br>第二种情况：若tk ≠tj 则表明在模式串中</p>
+<pre><code>        ＂t1 t2 … tk ＂≠＂tj-k+1 tj-k+2 … tj ＂ (4.9)
+</code></pre><p>此时可把求next 函数值的问题看成是一个模式匹配问题，整个模式串既是主串又是模式，而当前在匹配的过程中，已有(4.6)式成立，则当tk ≠tj 时应将模式向右滑动，使得第next[k]个字符和“主串”中的第j 个字符相比较。若next[k]=k′，且t k′＝tj，则说明在主串中第j+1 个字符之前存在一个最大长度为k′的子串，使得</p>
+<pre><code>    ＂t1 t2 … t k′ ＂=＂tj-k′+1 tj- k′+2 … tj ＂ (4.10)
+</code></pre><p>因此： next[j+1]=next[k]+1 (4.11)</p>
+<p>同理若t k′ ≠tj，则将模式继续向右滑动至使第next[k′]个字符和tj 对齐，依此类推，直至tj 和模式中的某个字符匹配成功或者不存在任何k′(1&lt; k′&lt;k &lt;…&lt;j)满足(4.10)，此时若t1≠tj+1 ， 则有：</p>
+<pre><code>    next[j+1]=1 (4.12)
+</code></pre><p>否则若t1=tj+1 ，则有：</p>
+<pre><code>    next[j+1]=0 (4.13)
+</code></pre><p>综上所述，求next 函数值过程的算法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void GetNext(char *t,int next[ ])</span><br><span class="line">/*求模式t 的next 值并寸入next 数组中*/</span><br><span class="line">｛ int i=1,j=0;</span><br><span class="line">next[1]=0;</span><br><span class="line">while (i&lt;t[0])</span><br><span class="line">&#123; while (j&gt;0&amp;&amp;t[i]!=t[j]) j=next[j];</span><br><span class="line">i++; j++;</span><br><span class="line">if (t[i]==t[j]) next[i]=next[j];</span><br><span class="line">else next[i]=j;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度分析：</p>
+<ul>
+<li>KMP 算法：时间复杂度是O(m)</li>
+<li>从分析next 函数的定义出发用递推的方法求得next 函数值：O(n*m)，但在一般情况下，实际的执行时间是O(n+m)</li>
+</ul>
+<h1 id="4-3-串的堆存储结构"><a href="#4-3-串的堆存储结构" class="headerlink" title="4.3 串的堆存储结构"></a>4.3 串的堆存储结构</h1><h2 id="串名的存储映象"><a href="#串名的存储映象" class="headerlink" title="串名的存储映象"></a>串名的存储映象</h2><p><strong>串名的存储映象是串名－串值内存分配对照表，也称为索引表</strong>。表的形式有多种表示，如设s1=＂abcdef＂，s2=＂hij＂，<strong>常见的串名－串值存储映象索引表</strong>有如下几种：</p>
+<ol>
+<li>带串长度的索引表：</li>
+</ol>
+<p>如图，索引项的结点类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">typedef struct</span><br><span class="line">&#123; char name[MAXNAME]; /*串名*/</span><br><span class="line">int length; /*串长*/</span><br><span class="line">char *stradr; /*起始地址*/</span><br><span class="line">&#125; LNode;</span><br></pre></td></tr></table></figure>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222163319327.jpg" alt="带长度的索引表"></p>
+<p>2.末尾指针的索引表</p>
+<p>如图所示，索引项的结点类型为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typedef struct</span><br><span class="line">&#123; char name[MAXNAME]; /*串名*/</span><br><span class="line">char *stradr,*enadr; /*起始地址，末尾地址*/</span><br><span class="line">&#125; ENode;</span><br></pre></td></tr></table></figure>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222163355527.jpg" alt="带末尾指针的索引表"></p>
+<ol>
+<li>带特征位的索引表</li>
+</ol>
+<p>当一个串的存储空间不超过一个指针的存储空间时，可以直接将该串存在索引项的指针域，这样即节约了存储空间，又提高查找速度，但这时要加一个特征位tag 以指出指针域存放的是指针还是串。</p>
+<p>如图所示，索引项的结点类型为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">typedef struct</span><br><span class="line">&#123; char name[MAXNAME];</span><br><span class="line">int tag; /*特征位*/</span><br><span class="line">union /*起始地址或串值*/</span><br><span class="line">&#123;char *stradr;</span><br><span class="line">char value[4];</span><br><span class="line">&#125;uval;</span><br><span class="line">&#125; TNode;</span><br></pre></td></tr></table></figure>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222163501959.jpg" alt="带特征位的索引表"></p>
+<h2 id="串的堆存储结构—堆存储结构"><a href="#串的堆存储结构—堆存储结构" class="headerlink" title="串的堆存储结构—堆存储结构"></a>串的堆存储结构—堆存储结构</h2><p>解决问题：在应用程序中，<strong>参与运算的串变量之间的长度与相差较大</strong>，且<strong>操作中串值的长度变化较大</strong>，因此<strong>为串变量预分配固定大小的空间不合理</strong>。</p>
+<p>基本思想：<strong>在内存中开辟能存储足够多的串、地址连续的存储空间作为应用程序中所有串的可利用存储空间，称为堆空间</strong>，如设store[SMAX+1]; <strong>根据每个串的长度，动态的为每个串在堆空间里申请相应大小的存储区域</strong>，这个串顺序存储在所申请的存储区域中，<strong>当操作过程中若原空间不够了，可以根据串的实际长度重新申请，拷贝原串值后再释放原空间</strong>。</p>
+<p>如图：是一个堆结构示意图。阴影部分是已经为存在的串分配过的，free 为未分配部分的起始地址，每当向store 中存放一个串时，要填上该串的索引项。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-120222163Aa20.jpg" alt="堆结构"></p>
+<h2 id="基于堆结构的基本运算"><a href="#基于堆结构的基本运算" class="headerlink" title="基于堆结构的基本运算"></a>基于堆结构的基本运算</h2><p>堆结构上的串运算：基于字符序列的复制进行。</p>
+<p>基本思想：当需要产生一个新串时，要判断堆空间中是否还有存储空间，若有，则从free指针开始划出相应大小的区域为该串的存储区，然后根据运算求出串值，最后建立起该串存储映像索引信息，并修改free指针。</p>
+<p>设堆空间：char store[SMAX+1];<br>自由区指针：int free;</p>
+<p>串的存储映像类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typedef struct</span><br><span class="line">&#123;</span><br><span class="line">int length;</span><br><span class="line">int stradr;&#125;HString;</span><br></pre></td></tr></table></figure>
+<p>基本运算：</p>
+<p>1.串常量赋值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">void StrAssign(HString *s1,char *s2)</span><br><span class="line">/*将一个字符型数组s2 中的字符串送入堆store 中,free 是自由区的指针*/</span><br><span class="line">&#123; int i=0,len;</span><br><span class="line">len=StrLength(s2);</span><br><span class="line">if (len&lt;0||free+len-1＞SMAX)</span><br><span class="line">return 0;</span><br><span class="line">else &#123;for (i=0;i&lt;len;i++)</span><br><span class="line">store[frre+i] =s2[i];</span><br><span class="line">s1.stradr=free;</span><br><span class="line">s1.len.=len;</span><br><span class="line">free=free+len;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.赋值一个串：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void StrCopy(Hstring *s1,Hstring s2)</span><br><span class="line">/*该运算将堆store 中的一个串s2 复制到一个新串s1 中*/</span><br><span class="line">&#123; int i;</span><br><span class="line">if (free+s2.length-1&gt;SMAX) return error ;</span><br><span class="line">else &#123; for(i=0; i&lt;s2.length;i++)</span><br><span class="line">store[free+i]=store[s2.atradr+i];</span><br><span class="line">s1-&gt;length=s2.length;</span><br><span class="line">s1-&gt;stradr=free;</span><br><span class="line">free=free+s2.length;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.求子串：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void StrSub(Hstring *t, Hstring s,int i,int len)</span><br><span class="line">/*该运算将串s 中第i 个字符开始的长度为len 的子串送到一个新串t 中*/</span><br><span class="line">&#123; int i;</span><br><span class="line">if (i&lt;0 || len&lt;0 || len&gt;s.len-i+1) return error ;</span><br><span class="line">else &#123; t-&gt;length=len;</span><br><span class="line">t-&gt;stradr=s.stradr+i-1;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.串联接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void Concat(s1,s2,s)</span><br><span class="line">HString s1,s2;</span><br><span class="line">HString *s;</span><br><span class="line">&#123; HString t;</span><br><span class="line">StrCopy (s,s1);</span><br><span class="line">StrCopy (&amp;t,s2);</span><br><span class="line">s-&gt;length=s1.length+s2.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/23/数据结构第三章：栈/" rel="next" title="数据结构第三章：栈">
+                <i class="fa fa-chevron-left"></i> 数据结构第三章：栈
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/23/数据结构第五章：数组/" rel="prev" title="数据结构第五章：数组">
+                数据结构第五章：数组 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">131</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#4-1-串及其基本运算"><span class="nav-number">1.</span> <span class="nav-text">4.1 串及其基本运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-1-串的基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">4.1.1 串的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-串的基本运算"><span class="nav-number">1.2.</span> <span class="nav-text">4.2 串的基本运算</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-2-串的定长顺序存储和基本运算"><span class="nav-number">2.</span> <span class="nav-text">4.2 串的定长顺序存储和基本运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-1-串的定长顺序存储"><span class="nav-number">2.1.</span> <span class="nav-text">4.2.1 串的定长顺序存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-2-定长顺序串的基本运算"><span class="nav-number">2.2.</span> <span class="nav-text">4.2.2 定长顺序串的基本运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-3-模式匹配"><span class="nav-number">2.2.1.</span> <span class="nav-text">4.2.3 模式匹配</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-3-串的堆存储结构"><span class="nav-number">3.</span> <span class="nav-text">4.3 串的堆存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#串名的存储映象"><span class="nav-number">3.1.</span> <span class="nav-text">串名的存储映象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#串的堆存储结构—堆存储结构"><span class="nav-number">3.2.</span> <span class="nav-text">串的堆存储结构—堆存储结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于堆结构的基本运算"><span class="nav-number">3.3.</span> <span class="nav-text">基于堆结构的基本运算</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

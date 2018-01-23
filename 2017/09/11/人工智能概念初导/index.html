@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Artificial Intelligence," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="本文阐述了人工智能的内涵和外延，从概念到层次到技术体系到应用领域，以及顺带提了下机器学习和深度学习。">
+<meta name="keywords" content="Artificial Intelligence">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人工智能概念初导">
+<meta property="og:url" content="http://yoursite.com/2017/09/11/人工智能概念初导/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="本文阐述了人工智能的内涵和外延，从概念到层次到技术体系到应用领域，以及顺带提了下机器学习和深度学习。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-09-17T02:05:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="人工智能概念初导">
+<meta name="twitter:description" content="本文阐述了人工智能的内涵和外延，从概念到层次到技术体系到应用领域，以及顺带提了下机器学习和深度学习。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/11/人工智能概念初导/"/>
+
+
+
+
+
+  <title>人工智能概念初导 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/11/人工智能概念初导/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">人工智能概念初导</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-11T00:04:04+08:00">
+                2017-09-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文阐述了人工智能的内涵和外延，从概念到层次到技术体系到应用领域，以及顺带提了下机器学习和深度学习。</p>
+<a id="more"></a>
+<h1 id="内涵和外延"><a href="#内涵和外延" class="headerlink" title="内涵和外延"></a>内涵和外延</h1><h2 id="什么是人工智能"><a href="#什么是人工智能" class="headerlink" title="什么是人工智能"></a>什么是人工智能</h2><ul>
+<li>与人类大脑的生物学近似性，与人类思考逻辑的近似性，与人类行为的近似性；</li>
+<li>实用主义定义：研究、开发用于模拟、延伸和扩展人的智能理论、方法、技术及应用系统的一门新的技术科学，是计算机科学的一个分支；</li>
+<li>教科书定义：人工智能科学的主旨是研究和开发出智能实体；是一门综合学科，数学、逻辑学、归纳学、系统学、控制学、工程学、计算机科学、哲学、心理学、生物学、神经科学、仿生学、经济学、语言学；</li>
+</ul>
+<h2 id="人工智能的层次"><a href="#人工智能的层次" class="headerlink" title="人工智能的层次"></a>人工智能的层次</h2><ul>
+<li>弱人工智能：擅长于单个方面，如Alphago；</li>
+<li>强人工智能：各方面可与人类比肩；能进行思考、计划、解决问题、抽象思维、理解复杂理念、快速学习和从经验中学习等；</li>
+<li>超人工智能：超越人类智慧；</li>
+</ul>
+<h2 id="未来学"><a href="#未来学" class="headerlink" title="未来学"></a>未来学</h2><ul>
+<li>阿西莫夫机器人三定律</li>
+<li>人类命运与费米悖论：宇宙中智慧生命存在的必然可能性与至今未发现智慧生命的悖论；</li>
+<li>人类与机器的关系：伦理学；</li>
+<li>智慧的本质：哲学；</li>
+<li>宇宙的命运：物理宇宙学；</li>
+</ul>
+<h2 id="对社会经济的影响"><a href="#对社会经济的影响" class="headerlink" title="对社会经济的影响"></a>对社会经济的影响</h2><ul>
+<li>产业变革</li>
+<li>失业和社会保障</li>
+<li>贫富差距</li>
+<li>地区发展不平衡：高科技产业的地域性；</li>
+<li>产业结构调整：人与机器的分工；</li>
+<li>服务业</li>
+<li>教育、职业培训、再教育：对Ai不擅长的领域进行针对性培训；</li>
+<li>对个人影响：失业和社保；心理层面（人类的自我价值，自我实现，人机协同时代的人类心理学）；个人教育；择业；</li>
+</ul>
+<h2 id="技术体系"><a href="#技术体系" class="headerlink" title="技术体系"></a>技术体系</h2><ul>
+<li>数学基础：微积分，线代，概率论，信息论，集合论和图论，博弈论；</li>
+<li>技术机基础：计算机原理，程序设计语言，操作系统，分布式系统，算法基础；</li>
+<li>机器学习算法：机器学习基础（估计方法，特征方程），线性模型（线性回归），逻辑回归，决策树模型（GBDT），支持向量机，贝叶斯分类器，神经网络（深度学习——MLP，CNN，RNN，GAN），聚类算法（K均值算法）；</li>
+<li>机器学习分类：监督学习（分类任务，回归任务），无监督学习（聚类任务），迁移学习，强化学习；</li>
+<li>问题领域：语言识别，字符识别（手写识别），机器视觉，自然语言处理（机器翻译），自然语言理解，知识推理；自动控制，游戏理论和人机对弈；数据挖掘；</li>
+<li>机器学习架构：加速芯片（CPU，GPU，FPGA，ASIC），虚拟化（容器-Decker），分布式结构（Spark），库和计算框架（TensorFlow，Caffe，MXNET，Torch，Microsoft CNTK，scikt-learn）；可视化解决方案，云服务（Amazon ML，Google Cloud ML，Microsoft Azure ML，阿里云ML）；</li>
+<li>数据集和竞赛：ImageNet，MSCOCC，Kaggle，阿里天池；</li>
+<li>其他相关技术：知识图谱，统计语言模型，专家系统，遗传算法，博弈算法（纳什均衡）；</li>
+</ul>
+<h2 id="应用领域"><a href="#应用领域" class="headerlink" title="应用领域"></a>应用领域</h2><ul>
+<li>互联网和移动互联网：搜索引擎，内容推荐引擎，精准营销，语音和自然语言交互，图像和视频内容理解、检索，用户画像，反欺诈；</li>
+<li>自动驾驶、智慧交通、物流、共享出行：自动驾驶汽车（传感器、感知、规划、控制、整车集成、车联网、高精度地图、模拟器），智慧公路网络和交通标志，共享出行，自动物流车辆和物流机器人，智慧物流规划；</li>
+<li>智能金融：银行业（风控和反欺诈、精准营销、投资决策、智能客服），保险业（风控和反欺诈，精准营销，智能理赔，智能客服），证券、基金、投行（量化交易，智能投顾）；</li>
+<li>智慧医疗：医疗影响识别，辅助诊断，病例理解和检索，康复智能设备，智能制药；</li>
+<li>家用机器人和服务机器人：智能家居，老幼伴侣，生活服务；</li>
+<li>智能制造业：工业机器人，智能生产系统；</li>
+<li>人工智能辅助教育：智慧课堂，学习机器人；</li>
+<li>智慧农业：智慧农业管理系统，智慧农业设备；</li>
+<li>智慧新闻写作：写稿机器人，收集资料机器人；</li>
+<li>机器翻译：文字翻译，声音翻译；</li>
+<li>机器仿生：动物仿生，器官仿生；</li>
+<li>智能律师助理：智慧法律咨询，案例数据库机器人；</li>
+<li>人工智能驱动的娱乐业；</li>
+<li>人工智能艺术创作；</li>
+<li>智能客服；</li>
+</ul>
+<h1 id="ML-amp-DL"><a href="#ML-amp-DL" class="headerlink" title="ML &amp; DL"></a>ML &amp; DL</h1><p>1.机器学习：研究计算机怎样模拟或实现人类的学习行为，以获取新的知识或技能，重新组织已有的知识结构使之不断改善自身的性能；    </p>
+<p>2.深度学习：    </p>
+<ul>
+<li><p>通过组合低层特征形成更加抽象的高层表示属性类别或特征，以发现数据的分布式特征表示；    </p>
+</li>
+<li><p>强化学习、迁移学习、生成对抗网络等新技术的发展；</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Artificial-Intelligence/" rel="tag"># Artificial Intelligence</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/10/UI-设计规范/" rel="next" title="UI 设计规范">
+                <i class="fa fa-chevron-left"></i> UI 设计规范
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/11/阅读笔记《漫谈人工智能》/" rel="prev" title="阅读笔记《漫谈人工智能》">
+                阅读笔记《漫谈人工智能》 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">131</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#内涵和外延"><span class="nav-number">1.</span> <span class="nav-text">内涵和外延</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是人工智能"><span class="nav-number">1.1.</span> <span class="nav-text">什么是人工智能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人工智能的层次"><span class="nav-number">1.2.</span> <span class="nav-text">人工智能的层次</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未来学"><span class="nav-number">1.3.</span> <span class="nav-text">未来学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对社会经济的影响"><span class="nav-number">1.4.</span> <span class="nav-text">对社会经济的影响</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术体系"><span class="nav-number">1.5.</span> <span class="nav-text">技术体系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用领域"><span class="nav-number">1.6.</span> <span class="nav-text">应用领域</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ML-amp-DL"><span class="nav-number">2.</span> <span class="nav-text">ML &amp; DL</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Data Structure," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：查找。">
+<meta name="keywords" content="Data Structure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构第九章：查找">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/数据结构第九章：查找/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：查找。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030111360a92.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301113P35M.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301113ZJ56.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030111433L55.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030111443H63.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301114603R8.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301115116330.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-1203011152455I.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301115I0607.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301115J0Q6.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030112001H29.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301120233S0.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030112052K35.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301121525912.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301121633335.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301121S1c0.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301121931112.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-1203011309224L.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301131350506.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301131543C2.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301131I95K.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301131SR55.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030113233S19.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301132459147.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030113255c46.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301133135620.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-1203011332415W.jpg">
+<meta property="og:updated_time" content="2018-01-23T09:30:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构第九章：查找">
+<meta name="twitter:description" content="Abstract：查找。">
+<meta name="twitter:image" content="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030111360a92.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/23/数据结构第九章：查找/"/>
+
+
+
+
+
+  <title>数据结构第九章：查找 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/数据结构第九章：查找/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构第九章：查找</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-23T17:00:33+08:00">
+                2018-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Data-Structure/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Structure</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：查找。</p>
+<a id="more"></a>
+<h1 id="9-1-查找的基本概念与术语"><a href="#9-1-查找的基本概念与术语" class="headerlink" title="9.1 查找的基本概念与术语"></a>9.1 查找的基本概念与术语</h1><p>查找表：用于查找操作的数据结构。由同类型数据元素组成的集合。</p>
+<ul>
+<li>在查找表中查找某个具体的数据元素；</li>
+<li>在查找表中插入数据元素；</li>
+<li>从查找表中删除数据元素；</li>
+</ul>
+<p>静态查找表：只做查找操作，不改动表中数据元素。</p>
+<p>动态查找表：在做查找操作的同事，进行插入、删除操作。</p>
+<p>关键字：属性</p>
+<ul>
+<li>主关键字：即主码。唯一标识符。</li>
+<li>次关键字：不具有唯一性</li>
+</ul>
+<p>静态查找表是数据元素的线性表，可以是基于数组的顺序存储或以线性链表存储。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/* 顺序存储结构*/</span><br><span class="line">typedef struct&#123;</span><br><span class="line">ElemType *elem； /* 数组基址*/</span><br><span class="line">int length； /* 表长度*/</span><br><span class="line">&#125;S_TBL；</span><br><span class="line"></span><br><span class="line">/* 链式存储结构结点类型*/</span><br><span class="line">typedef struct NODE&#123;</span><br><span class="line">ElemType elem； /* 结点的值域*/</span><br><span class="line">struct NODE *next； /* 下一个结点指针域*/</span><br><span class="line">&#125;NodeType；</span><br></pre></td></tr></table></figure>
+<h1 id="9-2-静态查找表—顺序查找"><a href="#9-2-静态查找表—顺序查找" class="headerlink" title="9.2 静态查找表—顺序查找"></a>9.2 静态查找表—顺序查找</h1><p>查找过程：<strong>顺序查找又称线性查找</strong>，是最基本的查找方法之一。其查找方法为：从表的一端开始，向另一端逐个按给定值kx 与关键码进行比较，若找到，查找成功，并给出数据元素在表中的位置；若整个表检测完，仍未找到与kx 相同的关键码，则查找失败，给出失败信息。</p>
+<p>【算法9.1】以顺序存储为例，数据元素从下标为1 的数组单元开始存放，0 号单元留空。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int s_search( S_TBL tbl KeyType kx )</span><br><span class="line">&#123;                               /*在表tbl 中查找关键码为kx 的数据元素，若找到返回该元素在数组中的下标，否则返回0 */</span><br><span class="line">	tbl.elem[0].key = kx ；  /* 存放监测，这样在从后向前查找失败时，不必判表是否检测完， */</span><br><span class="line">/* 从而达到算法统一*/</span><br><span class="line">			  for ( i = tbl.length; tbl.elem[i].key &lt; &gt; kx ； i-- )</span><br><span class="line">		；               /* 从标尾端向前找*/</span><br><span class="line">		return i ；</span><br><span class="line">		       &#125;</span><br></pre></td></tr></table></figure>
+<p>性能分析：</p>
+<ul>
+<li>分析查找算法的效率，通常用平均查找长度ASL 来衡量。</li>
+<li>定义：在查找成功时，平均查找长度ASL 是指为确定数据元素在表中的位置所进行的关键码比较次数的期望值。</li>
+</ul>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030111360a92.jpg" alt="ASL"></p>
+<blockquote>
+<p>其中：Pi 为表中第i 个数据元素的查找概率，<br>Ci 为表中第i 个数据元素的关键码与给定值kx 相等时，按算法定位时关键码的比较次数。显然，不同的查找方法，Ci 可以不同。</p>
+</blockquote>
+<p>就上述算法而言，对于n 个数据元素的表，给定值kx 与表中第i 个元素关键码相等，即定位第i 个记录时，需进行n-i+1 次关键码比较，即Ci=n-i+1。则查找成功时，顺序查找的平均查找长度为：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301113P35M.jpg" alt="success"></p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301113ZJ56.jpg" alt="ASL"></p>
+<p>查找不成功时，关键码的比较次数总是n+1 次。</p>
+<p>算法中的基本工作就是关键码的比较，因此，<strong>查找长度的量级就是查找算法的时间复杂度，其为O(n)</strong>.</p>
+<p>许多情况下，查找表中数据元素的查找概率是不相等的。为了提高查找效率，查找表需依据查找概率越高，比较次数越少；查找概率越低，比较次数就较多的原则来存储数据元素。</p>
+<p>顺序查找缺点是<strong>当n 很大时，平均查找长度较大，效率低；优点是对表中数据元素的存储没有要求</strong>。另外，<strong>对于线性链表，只能进行顺序查找</strong>。</p>
+<h1 id="9-2-静态查找表—有序表的折半查找"><a href="#9-2-静态查找表—有序表的折半查找" class="headerlink" title="9.2 静态查找表—有序表的折半查找"></a>9.2 静态查找表—有序表的折半查找</h1><p>有序表即是表中数据元素按关键码升序或降序排列。</p>
+<p>折半查找的思想为：在有序表中，取中间元素作为比较对象，若给定值与中间元素的关键码相等，则查找成功；若给定值小于中间元素的关键码，则在中间元素的左半区继续查找；若给定值大于中间元素的关键码，则在中间元素的右半区继续查找。不断重复上述查找过程，直到查找成功，或所查找的区域无数据元素，查找失败。</p>
+<p>【步骤】<br>① low=1；high=length； // 设置初始区间<br>② 当low&gt;high 时，返回查找失败信息// 表空，查找失败<br>③ low≤high，mid=(low+high)/2; // 取中点<br>      a. 若kx<tbl.elem[mid].key，high=mid-1；转② 查找在左半区进行="" b.="" 若kx="">tbl.elem[mid].key，low=mid+1；转② // 查找在右半区进行<br>      c. 若kx=tbl.elem[mid].key，返回数据元素在表中位置// 查找成功</tbl.elem[mid].key，high=mid-1；转②></p>
+<p>【例9.１】有序表按关键码排列如下：<br>7，14，18，21，23，29，31，35，38，42，46，49，52<br>在表中查找关键码为14 和22 的数据元素。</p>
+<p>⑴ 查找关键码为14 的过程</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030111433L55.jpg" alt="查找关键码为14 的过程"></p>
+<p>【算法9.2】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int Binary_Search( S_TBL tbl KEY kx )</span><br><span class="line">&#123;                                                               /* 在表tbl 中查找关键码为kx 的数据元素，若找到返回该元素在表中的位置，否则，返回0 */</span><br><span class="line">	int mid flag = 0 ；</span><br><span class="line">		       low = 1 ； high = length ；                /* ①设置初始区间*/</span><br><span class="line">					while ( low &lt;= high )   /* ②表空测试*/</span><br><span class="line">	&#123;                                                       /* 非空，进行比较测试*/</span><br><span class="line">		mid = (low + high) / 2 ；                        /* ③得到中点*/</span><br><span class="line">		      if ( kx &lt; tbl.elem[mid].key )</span><br><span class="line">			high = mid - 1 ；                        /* 调整到左半区*/</span><br><span class="line">			       else if ( kx &gt; tbl.elem[mid].key )</span><br><span class="line">				low = mid + 1 ；                 /* 调整到右半区*/</span><br><span class="line">				      else &#123; flag = mid ； break ； &#125;</span><br><span class="line">		                                                /* 查找成功，元素位置设置到flag 中*/</span><br><span class="line">	&#125;</span><br><span class="line">	return(flag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>性能分析】<br>从折半查找过程看，以表的中点为比较对象，并以中点将表分割为两个子表，对定位到的子表继续这种操作。所以，对表中每个数据元素的查找过程，可用二叉树来描述，称这个描述查找过程的二叉树为判定树。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030111443H63.jpg" alt="二叉判定树"></p>
+<p>可以看到，查找表中任一元素的过程，即是判定树中从根到该元素结点路径上各结点关键码的比较次数，也即该元素结点在树中的层次数。对于n 个结点的判定树，树高为k，则有2k-1 -1&lt;n≤2k-1，即k-1&lt;log2(n+1)≤k，所以k= 。因此，折半查找在查找成功时，所进行的关键码比较次数至多为。</p>
+<p>接下来讨论折半查找的平均查找长度。为便于讨论，以树高为k 的满二叉树(n=2k-1)为例。假设表中每个元素的查找是等概率的，即Pi= ，则树的第i 层有2i-1 个结点，因此，折半查找的平均查找长度为：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301114603R8.jpg" alt="ASL"></p>
+<p>所以，<strong>折半查找的时间效率为O(log2n)</strong>。</p>
+<h1 id="9-2-静态查找表—有序表的插值查找和斐波那契查找"><a href="#9-2-静态查找表—有序表的插值查找和斐波那契查找" class="headerlink" title="9.2 静态查找表—有序表的插值查找和斐波那契查找"></a>9.2 静态查找表—有序表的插值查找和斐波那契查找</h1><h2 id="1-插值查找"><a href="#1-插值查找" class="headerlink" title="1.插值查找"></a>1.插值查找</h2><p>插值查找通过下列公式</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301115116330.jpg" alt="插值查找"></p>
+<p>求取中点，其中low 和high 分别为表的两个端点下标，kx 为给定值。<br>若kx<tbl.elem[mid].key，则high=mid-1，继续左半区查找； 若kx="">tbl.elem[mid].key，则low=mid+1，继续右半区查找；<br>若kx=tbl.elem[mid].key，查找成功。</tbl.elem[mid].key，则high=mid-1，继续左半区查找；></p>
+<p><strong>插值查找是平均性能最好的查找方法，但只适合于关键码均匀分布的表，其时间效率依然是O(log2n)</strong>。</p>
+<h2 id="2-斐波那契查找"><a href="#2-斐波那契查找" class="headerlink" title="2.斐波那契查找"></a>2.斐波那契查找</h2><p>斐波那契查找通过斐波那契数列对有序表进行分割，查找区间的两个端点和中点都与斐波那契数有关。斐波那契数列定义如下：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-1203011152455I.jpg" alt="斐波那契数列定义"></p>
+<p><strong>设n 个数据元素的有序表，且n 正好是某个斐波那契数-1，即n=F(k)-1 时，可用此查找方法</strong>。</p>
+<p><strong>斐波那契查找分割的思想为：对于表长为F(i)-1 的有序表，以相对low 偏移量F(i-1)-1 取中点，即mid=low+F(i-1)-1，对表进行分割，则左子表表长为F(i-1)-1，右子表表长为F(i)-1-[F(i-1)-1]-1=F(i-2)-1。可见，两个子表表长也都是某个斐波那契数-1，因而，可以对子表继续分割</strong>。</p>
+<p>【算法9.3】<br>① low=1；high=F(k)-1； // 设置初始区间<br>F=F(k)-1；f=F(k-1)-1； // F 为表长，f 为取中点的相对偏移量<br>② 当low&gt;high 时，返回查找失败信息// 表空，查找失败<br>③ low≤high，mid=low+f; // 取中点<br>a. 若kx<tbl.elem[mid].key，则 p="f；f=F-f-1；" 计算取中点的相对偏移量="" f="p；" 调整表长f="" high="mid-1；转②" 查找在左半区进行="" b.="" 若kx="">tbl.elem[mid].key，则<br>    F=F-f-1； // 调整表长F<br>    f=f-F-1； // 计算取中点的相对偏移量<br>    low=mid+1；转② // 查找在右半区进行<br>c. 若kx=tbl.elem[mid].key，返回数据元素在表中位置// 查找成功</tbl.elem[mid].key，则></p>
+<p><strong>当n 很大时，该查找方法称为黄金分割法，其平均性能比折半查找好，但其时间效率仍为O(log2n)</strong>，而且，在<strong>最坏情况下比折半查找差，优点是计算中点仅作加、减运算</strong>。</p>
+<h1 id="9-2-静态查找表—分块查找"><a href="#9-2-静态查找表—分块查找" class="headerlink" title="9.2 静态查找表—分块查找"></a>9.2 静态查找表—分块查找</h1><p>分块查找：索引顺序查找，是对顺序查找的改进。</p>
+<p>分块查找要求将查找表分成 若干个子表，并对子表建立索引表，查找表的每一个子表由索引表中的索引项确定。索引 项包括两个字段：关键码字段(存放对应子表中的最大关键码值) ；指针字段(存放指向对 应子表的指针) ，并且要求索引项按关键码字段有序。查找时，先用给定值kx 在索引表中 检测索引项，以确定所要进行的查找在查找表中的查找分块(由于索引项按关键码字段有序，可用顺序查找或折半查找) ，然后，再对该分块进行顺序查找。</p>
+<p>【例9.2】关键码集合为：<br>88，43，14，31，78，8，62，49，35，71，22，83，18，52</p>
+<p>按关键码值31，62，88 分为三块建立的查找表及其索引表如下：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301115I0607.jpg" alt="分块查找"></p>
+<p>【性能分析】<img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301115J0Q6.jpg" alt="性能分析"></p>
+<h1 id="9-3-动态查找表—二叉排序树（Binary-Sort-Tree）"><a href="#9-3-动态查找表—二叉排序树（Binary-Sort-Tree）" class="headerlink" title="9.3 动态查找表—二叉排序树（Binary Sort Tree）"></a>9.3 动态查找表—二叉排序树（Binary Sort Tree）</h1><p>1.二叉排序树定义：或者是一棵空树；或者是具有下列性质的二叉树：</p>
+<ul>
+<li>若左子树不空，则左子树上所有结点的值均小于根结点的值；若右子树不空，则右子树上所有结点的值均大于根结点的值。</li>
+<li>左右子树也都是二叉排序树。</li>
+</ul>
+<p>由图9.4 可以看出，对二叉排序树进行中序遍历，便可得到一个按关键码有序的序列，因此，一个无序序列，可通过构一棵二叉排序树而成为有序序列。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030112001H29.jpg" alt="二叉排序树示例"></p>
+<p>2.查找过程：</p>
+<p>从其定义可见，二叉排序树的查找过程为：</p>
+<ul>
+<li>若查找树为空，查找失败。</li>
+<li>查找树非空，将给定值kx 与查找树的根结点关键码比较。</li>
+<li>若相等，查找成功，结束查找过程，否则，<ul>
+<li>a．当给kx 小于根结点关键码，查找将在以左子女为根的子树上继续进行，转①</li>
+<li>b．当给kx 大于根结点关键码，查找将在以右子女为根的子树上继续进行，转①</li>
+</ul>
+</li>
+</ul>
+<p>以二叉链表作为二叉排序树的存储结构，则查找过程算法程序描述如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typedef struct NODE</span><br><span class="line">&#123; ElemType elem; /*数据元素字段*/</span><br><span class="line">struct NODE *lc,*rc; /*左、右指针字段*/</span><br><span class="line">&#125;NodeType; /*二叉树结点类型*/</span><br></pre></td></tr></table></figure>
+<p>【算法9.4】<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">int SearchElem( NodeType *t, NodeType **p, NodeType **q, KeyType kx )</span><br><span class="line">&#123;                                                               /*在二叉排序树t 上查找关键码为kx 的元素，若找到，返回1，且q 指向该结点，p 指向其父结点；*/</span><br><span class="line">/*否则，返回0，且p 指向查找失败的最后一个结点*/ int flag = 0; *q = t; while ( *q )  /*从根结点开始</span><br><span class="line">	                                                         * 查找*/</span><br><span class="line">	&#123;</span><br><span class="line">		if ( kx &gt; (*q)-&gt;elem.key )                      /*kx 大于当前结点*q 的元素关键码*/</span><br><span class="line">		&#123;</span><br><span class="line">			*p = *q; *q = (*q)-&gt;rc;</span><br><span class="line">		&#125;                                               /*将当前结点*q 的右子女置为新根*/</span><br><span class="line">		else&#123; if ( kx &lt; (*q)-&gt;elem.key )                /*kx 小于当前结点*q 的元素关键码*/</span><br><span class="line">		      &#123;</span><br><span class="line">			      *p = *q; *q = (*q)-&gt;lc;</span><br><span class="line">		      &#125; /*将当前结点*q 的左子女置为新根*/</span><br><span class="line">		      else &#123; flag = 1; break; &#125; /*查找成功，返回*/</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; /*while*/</span><br><span class="line">	return(flag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.插入操作和构造一棵二叉排序树</p>
+<p>先讨论向二叉排序树中插入一个结点的过程：设待插入结点的关键码为kx，为将其插入，先要在二叉排序树中进行查找，若查找成功，按二叉排序树定义，待插入结点已存在，不用插入；查找不成功时，则插入之。因此，<strong>新插入结点一定是作为叶子结点添加上去的</strong>。</p>
+<p>构造一棵二叉排序树则是逐个插入结点的过程。</p>
+<p>【例9.3】记录的关键码序列为：63，90，70，55，67，42，98，83，10，45，58，则构造一棵二叉排序树的过程如下：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301120233S0.jpg" alt="从空树开始建立二叉排序树的过程"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int InsertNode( NodeType **t, KeyType kx )</span><br><span class="line">&#123;                                                                       /*在二叉排序树*t 上插入关键码为kx 的结点*/</span><br><span class="line">	NodeType *p = *t, *q, *s; int flag = 0;</span><br><span class="line">	if ( !SearchElem( *t, &amp;p, &amp;q, kx ) )</span><br><span class="line">		;                                                       /*在*t 为根的子树上查找*/</span><br><span class="line">	&#123; s		= (NodeType *) )malloc( sizeof(NodeType) );     /*申请结点，并赋值*/</span><br><span class="line">	  s-&gt;elem.key	= kx; s-&gt;lc = NULL; s-&gt;rc = NULL;</span><br><span class="line">	  flag		= 1;                                            /*设置插入成功标志*/</span><br><span class="line">	  if ( !p )</span><br><span class="line">		  t = s;                                                /*向空树中插入时*/</span><br><span class="line">	  else&#123; if ( kx &gt; p-&gt;elem.key )</span><br><span class="line">			p-&gt;rc = s;                                      /*插入结点为p 的右子女*/</span><br><span class="line">		else p-&gt;lc = s;                                         /*插入结点为p 的左子女*/</span><br><span class="line">	  &#125; &#125;</span><br><span class="line">	return(flag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.删除操作</p>
+<p>从二叉排序树中删除一个结点之后，使其仍能保持二叉排序树的特性即可。设待删结点为<em>p（p 为指向待删结点的指针），其双亲结点为</em>f，以下分三种情况进行讨论。<br><em>p 结点为叶结点，由于删去叶结点后不影响整棵树的特性，所以，只需将被删结点的双亲结点相应指针域改为空指针。如图9.6。
+</em>p 结点只有右子树pr 或只有左子树pl，此时，只需将pr 或pl 替换<em>f 结点的</em>p 子树即可。如图9.7。<br><em>p 结点既有左子树Pl 又有右子树Pr，可按中序遍历保持有序进行调整。<br>设删除</em>p 结点前，中序遍历序列为：<br>P 为F 的左子女时有：…，Pl 子树，P，Pj ，S 子树，Pk，Sk子树，…，P2，S2子树，P1，S1子树，F，…<br>P 为F 的右子女时有：…，F，Pl 子树，P，Pj ，S 子树，Pk，Sk子树，…，P2，S2子树，P1，S1子树，…<br>则删除*p 结点后，中序遍历序列应为：<br>P 为F 的左子女时有：…，Pl 子树，Pj ，S 子树，Pk，Sk子树，…，P2，S2子树，P1，S1子树，F，…<br>P 为F 的右子女时有：…，F，Pl 子树，Pj ，S 子树，Pk，Sk子树，…，P2，S2子树，P1，S1子树，…</p>
+<p>有两种调整方法：<br>直接令pl 为<em>f 相应的子树，以pr 为pl 中序遍历的最后一个结点pk 的右子树；<br>令</em>p 结点的直接前驱Pr 或直接后继（对Pl子树中序遍历的最后一个结点Pk）替换<em>p 结点，再按⒉的方法删去Pr 或Pk。图9.8 所示的就是以</em>p 结点的直接前驱Pr 替换*p。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030112052K35.jpg" alt="删除操作"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">int DeleteNode( NodeType **t, KeyType kx )</span><br><span class="line">&#123;</span><br><span class="line">	NodeType	*p	= *t, *q, *s, **f;</span><br><span class="line">	int		flag	= 0;</span><br><span class="line">	if ( SearchElem( *t, &amp;p, &amp;q, kx ) )</span><br><span class="line">		;</span><br><span class="line">	&#123; flag = 1;                                     /*查找成功，置删除成功标志*/</span><br><span class="line">	  if ( p = = q )</span><br><span class="line">		  f = &amp;(*t);                            /*待删结点为根结点时*/</span><br><span class="line">	  else&#123;                                         /*待删结点非根结点时*/</span><br><span class="line">		  f = &amp;(p-&gt;lc); if ( kx &gt; p-&gt;elem.key )</span><br><span class="line">			  f = &amp;(p-&gt;rc);</span><br><span class="line">	  &#125; /*f 指向待删结点的父结点的相应指针域*/</span><br><span class="line">	  if ( !q-&gt;rc )</span><br><span class="line">		  *f = q-&gt;lc;                           /*若待删结点无右子树，以左子树替换待删结点*/</span><br><span class="line">	  else&#123; if ( !q-&gt;lc )</span><br><span class="line">			*f = q-&gt;rc;                     /*若待删结点无左子树，以右子树替换待删结点*/</span><br><span class="line">		else&#123;                                   /*既有左子树又有右子树*/</span><br><span class="line">			p = q-&gt;rc; s = p;</span><br><span class="line">			while ( p-&gt;lc )</span><br><span class="line">			&#123;</span><br><span class="line">				s = p; p = p-&gt;lc;</span><br><span class="line">			&#125;  /*在右子树上搜索待删结点的前驱p*/</span><br><span class="line">			*f = p; p-&gt;lc = q-&gt;lc;          /*替换待删结点q，重接左子树*/</span><br><span class="line">			if ( s != p )</span><br><span class="line">			&#123;</span><br><span class="line">				s-&gt;lc	= p-&gt;rc;        /*待删结点的右子女有左子树时，还要重接右子树*/</span><br><span class="line">				p-&gt;rc	= q-&gt;rc;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; &#125;</span><br><span class="line">	  free( q ); &#125;</span><br><span class="line">	return(flag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对给定序列建立二叉排序树，若左右子树均匀分布，则其查找过程类似于有序表的折半查找。但若给定序列原本有序，则建立的二叉排序树就蜕化为单链表，其查找效率同顺序查找一样。因此，对均匀的二叉排序树进行插入或删除结点后，应对其调整，使其依然保持均匀。</p>
+<h1 id="9-3-动态查找表—平衡二叉树-AVL树"><a href="#9-3-动态查找表—平衡二叉树-AVL树" class="headerlink" title="9.3 动态查找表—平衡二叉树(AVL树)"></a>9.3 动态查找表—平衡二叉树(AVL树)</h1><p>平衡二叉树或者是一棵空树，或者是具有下列性质的二叉排序树：<strong>它的左子树和右子树都是平衡二叉树，且左子树和右子树高度之差的绝对值不超过1</strong>。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301121525912.jpg" alt="平衡和非平衡二叉树"></p>
+<p>图9.9 给出了两棵二叉排序树，每个结点旁边所注数字是以该结点为根的树中，左子树与右子树高度之差，这个数字称为结点的平衡因子。由平衡二叉树定义，所有结点的平衡因子只能取-1，0，1 三个值之一。若二叉排序树中存在这样的结点，其平衡因子的绝对值大于1，这棵树就不是平衡二叉树。如图9.9 （a）所示的二叉排序树。</p>
+<p>在平衡二叉树上插入或删除结点后，可能使树失去平衡，因此，需要对失去平衡的树进行平衡化调整。设a 结点为失去平衡的最小子树根结点，对该子树进行平衡化调整归纳起来有以下四种情况：</p>
+<p>一. 左单旋转</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301121633335.jpg" alt="左单旋转"></p>
+<p>如图9.10 的图(a)为插入前的子树。其中，B 为结点a 的左子树，D、E 分别为结点c的左右子树，B、D、E 三棵子树的高均为h。图(a)所示的子树是平衡二叉树。在图(a)所示的树上插入结点x，如图(b)所示。结点x 插入在结点c 的右子树E 上，导致结点a 的平衡因子绝对值大于1，以结点a 为根的子树失去平衡。</p>
+<p>【调整策略】<br>调整后的子树除了各结点的平衡因子绝对值不超过1，还必须是二叉排序树。由于结点c 的左子树D 可作为结点a 的右子树，将结点a 为根的子树调整为左子树是B，右子树是D，再将结点a 为根的子树调整为结点c 的左子树，结点c 为新的根结点，如图(c)。</p>
+<p>【平衡化调整操作判定】<br>沿插入路径检查三个点a、c、E，若它们处于“\”直线上的同一个方向，则要作左单<br>旋转，即以结点c 为轴逆时针旋转。</p>
+<p>二、右单旋转</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301121S1c0.jpg" alt="右单旋转"></p>
+<p>右单旋转与左单旋转类似，沿插入路径检查三个点a、c、E，若它们处于“/”直线上的同一个方向，则要作右单旋转，即以结点c 为轴顺时针旋转，如图9.11 所示。</p>
+<p>三. 先左后右双向旋转</p>
+<p>如图9.12 为插入前的子树，根结点a 的左子树比右子树高度高1，待插入结点x 将插入到结点b 的右子树上，并使结点b 的右子树高度增1，从而使结点a 的平衡因子的绝对值大于1，导致结点a 为根的子树平衡被破坏，如图9.13(a)、9.14(d)所示。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301121931112.jpg" alt="先左后右双向旋转"></p>
+<p>沿插入路径检查三个点a、b、c，若它们呈“&lt;”字形，需要进行先左后右双向旋转：</p>
+<ul>
+<li>首先，对结点b 为根的子树，以结点c 为轴，向左逆时针旋转，结点c 成为该子树的新根，如图(b、e)；</li>
+<li>由于旋转后，待插入结点x 相当于插入到结点b 为根的子树上，这样a、c、b 三点处于“/”直线上的同一个方向，则要作右单旋转，即以结点c 为轴顺时针旋转，如图(c、f)。</li>
+</ul>
+<p>在平衡的二叉排序树T 上插入一个关键码为kx 的新元素，递归算法可描述如下：</p>
+<ul>
+<li>若T 为空树，则插入一个数据元素为kx 的新结点作为T 的根结点，树的深度增1；</li>
+<li>若kx 和T 的根结点关键码相等，则不进行插入；</li>
+<li>若kx 小于T 的根结点关键码，而且在T 的左子树中不存在与kx 有相同关键码的结点， 则将新元素插入在T 的左子树上，并且当插入之后的左子树深度增加1 时，分别就下列情况进行处理：</li>
+</ul>
+<p>① T 的根结点平衡因子为-1(右子树的深度大于左子树的深度)，则将根结点的平衡因子更改为0，T 的深度不变；<br>② T 的根结点平衡因子为0(左、右子树的深度相等)，则将根结点的平衡因子更改为1，T 的深度增加1；<br>③ T 的根结点平衡因子为1(左子树的深度大于右子树的深度)，则若T 的左子树根结点的平衡因子为1，需进行单向右旋平衡处理，并且在右旋处理之后，将根结点和其右子树根结点的平衡因子更改为0，树的深度不变；若T 的左子树根结点平衡因子为-1，需进行先左后右双向旋转平衡处理，并且在旋转处理之后，修改根结点和其左、右子树根结点的平衡因子，树的深度不变。</p>
+<ul>
+<li>若kx 大于T 的根结点关键码，而且在T 的右子树中不存在与kx 有相同关键码的结点，则将新元素插入在T 的右子树上，并且当插入之后的右子树深度增加1 时，分别就不同情况处理之。其处理操作和(3.) 中所述相对称，读者可自行补充整理。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">typedef struct NODE &#123;</span><br><span class="line">	ElemType	elem;                                                   /*数据元素*/</span><br><span class="line">	int		bf;                                                     /*平衡因子*/</span><br><span class="line">	struct NODE	*lc, *rc;                                               /*左右子女指针*/</span><br><span class="line">&#125;NodeType;                                                                      /*结点类型*/</span><br><span class="line">void R_Rotate( NodeType **p )</span><br><span class="line">&#123;                                                                               /*对以*p 指向的结点为根的子树，作右单旋转处理，处理之后，*p 指向的结点为子树的新根*/</span><br><span class="line">	lp		= (*p)-&gt;lc;                                             /*lp 指向*p 左子树根结点*/</span><br><span class="line">	(*p)-&gt;lc	= lp-&gt;rc;                                               /*lp 的右子树挂接*p 的左子树*/</span><br><span class="line">	lp-&gt;rc		= *p; *p = lp;                                          /* *p 指向新的根结点*/</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void L_Rotate( NodeType **p )</span><br><span class="line">&#123;                                                                               /*对以*p 指向的结点为根的子树，作左单旋转处理，处理之后，*p 指向的结点为子树的新根*/</span><br><span class="line">	lp		= (*p)-&gt;rc;                                             /*lp 指向*p 右子树根结点*/</span><br><span class="line">	(*p)-&gt;rc	= lp-&gt;lc;                                               /*lp 的左子树挂接*p 的右子树*/</span><br><span class="line">	lp-&gt;lc		= *p; *p = lp;                                          /* *p 指向新的根结点*/</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#define LH	1                                                               /* 左高*/</span><br><span class="line">#define EH	0                                                               /* 等高*/</span><br><span class="line">#define RH	1                                                               /* 右高*/</span><br><span class="line">void LeftBalance ( (NodeType * *p)</span><br><span class="line">		   &#123;                                                            /*对以*p 指向的结点为根的子树，作左平衡旋转处理，处理之后，*p 指向的结点为子树的新根*/</span><br><span class="line">			   lp = (*p)-&gt;lc;                                       /*lp 指向*p 左子树根结点*/</span><br><span class="line">			   switch ( (*p)-&gt;bf )                                  /*检查*p 平衡度，并作相应处理*/</span><br><span class="line">			   &#123;</span><br><span class="line">			   case LH:                                             /*新结点插在*p 左子女的左子树上，需作单右旋转处理*/</span><br><span class="line">				   (*p)-&gt;bf = lp-&gt;bf = EH; R_Rotate( p ); break;</span><br><span class="line">			   case EH:                                             /*原本左、右子树等高，因左子树增高使树增高*/</span><br><span class="line">				   (*p)-&gt;bf = LH; *paller = TRUE; break;</span><br><span class="line">			   case RH:                                             /*新结点插在*p 左子女的右子树上，需作先左后右双旋处理*/</span><br><span class="line">				   rd = lp-&gt;rc;                                 /*rd 指向*p 左子女的右子树根结点*/</span><br><span class="line">				   switch ( rd-&gt;bf )                            /*修正*p 及其左子女的平衡因子*/</span><br><span class="line">				   &#123;</span><br><span class="line">				   case LH: (*p)-&gt;bf = RH; lp-&gt;bf = EH; break;</span><br><span class="line">				   case EH: (*p)-&gt;bf = lp-&gt;bf = EH; break;</span><br><span class="line">				   case RH: (*p)-&gt;bf = EH; lp-&gt;bf = LH; break;</span><br><span class="line">				   &#125; /*switch(rd-&gt;bf)*/</span><br><span class="line">				   rd-&gt;bf = EH; L_Rotate( &amp;( (*p)-&gt;lc) );       /*对*p 的左子树作左旋转处理*/</span><br><span class="line">				   R_Rotate( p );                               /*对*t 作右旋转处理*/</span><br><span class="line">			   &#125; /*switch((*p)-&gt;bf)*/</span><br><span class="line">		   &#125; /*LeftBalance*/</span><br><span class="line">		   int InsertAVL( NodeType **t, ElemType e, Boolean *taller )</span><br><span class="line">		   &#123;                                                            /*若在平衡的二叉排序树t 中不存在和e 有相同关键码的结点，则插入一个数据元素为e 的*/</span><br><span class="line">/*新结点，并反回1，否则反回0。若因插入而使二叉排序树失去平衡，则作平衡旋转处理，*/</span><br><span class="line">/*布尔型变量taller 反映t 长高与否*/</span><br><span class="line">			   if ( !(*t) )                                         /*插入新结点，树“长高”，置taller 为TURE*/</span><br><span class="line">			   &#123;</span><br><span class="line">				   *t = (NodeType *) malloc( sizeof(NodeType) ); (*T)-&gt;elem = e;</span><br><span class="line">				   (*t)-&gt;lc = (*t)-&gt;rc = NULL; (*t)-&gt;bf = EH; *taller = TRUE;</span><br><span class="line">			   &#125; /*if*/</span><br><span class="line">			   else&#123; if ( e.key == (*t)-&gt;elem.key )                 /*树中存在和e 有相同关键码的结点，不插入*/</span><br><span class="line">				 &#123;</span><br><span class="line">					 taller = FALSE; return(0);</span><br><span class="line">				 &#125;</span><br><span class="line">				 if ( e.key &lt; (*t)-&gt;elem.key )</span><br><span class="line">				 &#123;                                              /*应继续在*t 的左子树上进行*/</span><br><span class="line">					 if ( !InsertAVL( &amp;( (*t)-&gt;lc) ), e, &amp;taller )</span><br><span class="line">						 ) return(0);                   /*未插入*/</span><br><span class="line">					 if ( *taller )                         /*已插入到(*t)的左子树中，且左子树增高*/</span><br><span class="line">						 switch ( (*t)-&gt;bf )            /*检查*t 平衡度*/</span><br><span class="line">						 &#123;</span><br><span class="line">						 case LH:                       /*原本左子树高，需作左平衡处理*/</span><br><span class="line">							 LeftBalance( t ); *taller = FALSE; break;</span><br><span class="line">						 case EH:                       /*原本左、右子树等高，因左子树增高使树增高*/</span><br><span class="line">							 (*t)-&gt;bf = LH; *taller = TRUE; break;</span><br><span class="line">						 case RH:                       /*原本右子树高，使左、右子树等高*/</span><br><span class="line">							 (*t)-&gt;bf = EH; *taller = FALSE; break;</span><br><span class="line">						 &#125;</span><br><span class="line">				 &#125; /*if*/</span><br><span class="line">				 else&#123;                                          /*应继续在*t 的右子树上进行*/</span><br><span class="line">					 if ( !InsertAVL( &amp;( (*t)-&gt;rc) ), e, &amp;taller )</span><br><span class="line">						 ) return(0);                   /*未插入*/</span><br><span class="line">					 if ( *taller )                         /*已插入到(*t)的左子树中，且左子树增高*/</span><br><span class="line">						 switch ( (*t)-&gt;bf )            /*检查*t 平衡度*/</span><br><span class="line">						 &#123;</span><br><span class="line">						 case LH:                       /*原本左子树高，使左、右子树等高*/</span><br><span class="line">							 (*t)-&gt;bf = EH; *taller = FALSE; break;</span><br><span class="line">						 case EH:                       /*原本左、右子树等高，因右子树增高使树增高*/</span><br><span class="line">							 (*t)-&gt;bf = RH; *taller = TRUE; break;</span><br><span class="line">						 case RH:                       /*原本右子树高，需作右平衡处理*/</span><br><span class="line">							 RightBalance( t ); *taller = FALSE; break;</span><br><span class="line">						 &#125;</span><br><span class="line">				 &#125; /*else*/</span><br><span class="line">			   &#125; /*else*/</span><br><span class="line">			   return(1);</span><br><span class="line">		   &#125; /*InsertAVL*/</span><br></pre></td></tr></table></figure>
+<p>【平衡树的查找分析】<br><strong>在平衡树上进行查找的过程和二叉排序树相同</strong>，因此，<strong>在查找过程中和给定值进行比较的关键码个数不超过树的深度</strong>。那么，含有n 个关键码的平衡树的最大深度是多少呢？</p>
+<p>为解答这个问题，我们先分析深度为h 的平衡树所具有的最少结点数。假设以Nh 表示深度为h 的平衡树中含有的最少结点数。显然，N0=0，N1=1，N2=2，并且Nh=Nh-1+Nh-2+1。这个关系和斐波那契序列极为相似。利用归纳法容易证明：<strong>当h≥0间复杂度为O(logn)</strong>。</p>
+<p>上述对二叉排序树和二叉平衡树的查找性能的讨论都是在等概率的提前下进行的。</p>
+<h1 id="9-3-动态查找表—B-树和B-树"><a href="#9-3-动态查找表—B-树和B-树" class="headerlink" title="9.3 动态查找表—B-树和B+树"></a>9.3 动态查找表—B-树和B+树</h1><h2 id="一-B-树及其查找"><a href="#一-B-树及其查找" class="headerlink" title="一.B-树及其查找"></a>一.B-树及其查找</h2><p>B-树是一种平衡的多路查找树，它在文件系统中很有用。</p>
+<h2 id="二-B-树的插入和删除"><a href="#二-B-树的插入和删除" class="headerlink" title="二.B-树的插入和删除"></a>二.B-树的插入和删除</h2><h2 id="三-B-树"><a href="#三-B-树" class="headerlink" title="三. B+树"></a>三. B+树</h2><p>B+树是应文件系统所需而产生的一种B-树的变形树。</p>
+<h1 id="9-4-哈希表查找-杂凑法-—哈希表与哈希方法"><a href="#9-4-哈希表查找-杂凑法-—哈希表与哈希方法" class="headerlink" title="9.4 哈希表查找(杂凑法)—哈希表与哈希方法"></a>9.4 哈希表查找(杂凑法)—哈希表与哈希方法</h1><p>前述查找法：由于数据元素的存储位置与关键码之间不存在确定的关系，因此，查找时，需要进行一系列对关键码的查找比较，即“查找算法”是建立在比较的基础上的，查找效率由比较一次缩小的查找范围决定。</p>
+<p>哈希查找：依据关键码直接得到其对应的数据元素位置，即<strong>要求关键码与数据元素间存在一一对应关系</strong>，<strong>通过这个关系，能很快地由关键码得到对应的数据元素位置</strong>。</p>
+<p>例9.6】11 个元素的关键码分别为18，27，1，20，22，6，10，13，41，15，25。选取关键码与元素位置间的函数为f(key)=key mod 11</p>
+<ol>
+<li>通过这个函数对11 个元素建立查找表如下：</li>
+</ol>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-1203011309224L.jpg" alt="建立查找表"></p>
+<ol>
+<li>查找时，对给定值kx 依然通过这个函数计算出地址，再将kx 与该地址单元中元素的关键码比较，若相等，查找成功。</li>
+</ol>
+<p><strong>哈希表与哈希方法</strong>：<strong>选取某个函数，依该函数按关键码计算元素的存储位置，并按此存放；查找时，由同一个函数对给定值kx 计算地址，将kx 与地址单元中元素关键码进行比，确定查找是否成功，这就是哈希方法</strong>(杂凑法)；<strong>哈希方法中使用的转换函数称为哈希函数</strong>(杂凑函数)；按这个思想构造的表称为哈希表(杂凑表)。</p>
+<p>对于n 个数据元素的集合，总能找到关键码与存放地址一一对应的函数。若最大关键为m，可以分配m 个数据元素存放单元，选取函数f(key)=key 即可，但这样会造成存储空间的很大浪费，甚至不可能分配这么大的存储空间。通常关键码的集合比哈希地址集合大得多，因而经过哈希函数变换后，可能将不同的关键码映射到同一个哈希地址上，这种现象称为冲突(Collision)，映射到同一哈希地址上的关键码称为同义词。可以说，冲突不可能避免，只能尽可能减少。所以，哈希方法需要解决以下两个问题：</p>
+<p>1.构造好的哈希函数<br>（1）所选函数尽可能简单，以便提高转换速度。<br>（2）所选函数对关键码计算出的地址，应在哈希地址集中大致均匀分布，以减少空间浪费。</p>
+<p>2.制定解决冲突的方案。</p>
+<h1 id="9-4-哈希表查找-杂凑法-—常用的哈希函数"><a href="#9-4-哈希表查找-杂凑法-—常用的哈希函数" class="headerlink" title="9.4 哈希表查找(杂凑法)—常用的哈希函数"></a>9.4 哈希表查找(杂凑法)—常用的哈希函数</h1><h2 id="1-直接定址法"><a href="#1-直接定址法" class="headerlink" title="1.直接定址法"></a>1.直接定址法</h2><p>Hash(key) = a.key + b（a，b为常数）</p>
+<p>即取关键码的某个线性函数值为哈希地址，这类函数是一一对应函数，不会产生冲突，但要求地址集合与关键码集合大小相同，因此，对于较大的关键码集合不适用。</p>
+<p>【例9.7】关键码集合为{100，300，500，700，800，900}，选取哈希函数为Hash(key)=key/100，则存放如下：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301131350506.jpg" alt="例9.7"></p>
+<h2 id="2-除留余数法"><a href="#2-除留余数法" class="headerlink" title="2.除留余数法"></a>2.除留余数法</h2><p>Hash(key) = key mod p （p是一个整数）</p>
+<p>即取关键码除以p 的余数作为哈希地址。使用除留余数法，选取合适的p 很重要，若哈希表表长为m，则要求p≤m，且接近m 或等于m。p 一般选取质数，也可以是不包含小于20 质因子的合数。</p>
+<h2 id="3-乘余取整法"><a href="#3-乘余取整法" class="headerlink" title="3.乘余取整法"></a>3.乘余取整法</h2><p>Hash(key)= ⎣B<em>(A</em>key mod 1)⎦ (A、B 均为常数，且0&lt;A&lt;1，B 为整数)以关键码key 乘以A，取其小数部分(A<em>key mod 1 就是取A</em>key 的小数部分)，之后再用整数B 乘以这个值，取结果的整数部分作为哈希地址。</p>
+<p>该方法B 取什么值并不关键，但A 的选择却很重要，最佳的选择依赖于关键码集合的特征。一般取A=<img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301131543C2.jpg" alt=""> 较为理想。</p>
+<h2 id="4-数字分析法"><a href="#4-数字分析法" class="headerlink" title="4.数字分析法"></a>4.数字分析法</h2><p>设关键码集合中，每个关键码均由m 位组成，每位上可能有r 种不同的符号。<br>【例9.8】若关键码是4 位十进制数，则每位上可能有十个不同的数符0～9，所以r=10。<br>【例9.9】若关键码是仅由英文字母组成的字符串，不考虑大小写，则每位上可能有26 种不同的字母，所以r=26。</p>
+<p>数字分析法根据r 种不同的符号，在各位上的分布情况，选取某几位，组合成哈希地址。所选的位应是各种符号在该位上出现的频率大致相同。</p>
+<p>【例9.10】有一组关键码如下：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301131I95K.jpg" alt="数字分析法"></p>
+<h2 id="5-平方取中法"><a href="#5-平方取中法" class="headerlink" title="5.平方取中法"></a>5.平方取中法</h2><p>对关键码平方后，按哈希表大小，取中间的若干位作为哈希地址。</p>
+<h2 id="6-折叠法Folding"><a href="#6-折叠法Folding" class="headerlink" title="6.折叠法Folding"></a>6.折叠法Folding</h2><p>此方法将关键码自左到右分成位数相等的几部分，最后一部分位数可以短些，然后将这几部分叠加求和，并按哈希表表长，取后几位作为哈希地址。这种方法称为折叠法。</p>
+<p>有两种叠加方法：</p>
+<ul>
+<li>移位法── 将各部分的最后一位对齐相加。</li>
+<li>间界叠加法── 从一端向另一端沿各部分分界来回折叠后，最后一位对齐相加。</li>
+</ul>
+<p>【例9.11】关键码为key=05326248725，设哈希表长为三位数，则可对关键码每三位一部分来分割。</p>
+<p>关键码分割为如下四组： 253 463 587 05</p>
+<p>用上述方法计算哈希地址对于位数很多的关键码，且每一位上符号分布较均匀时，可采用此方法求得哈希地址。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301131SR55.jpg" alt="折叠法"></p>
+<h1 id="9-4-哈希表查找-杂凑法-—处理冲突的方法"><a href="#9-4-哈希表查找-杂凑法-—处理冲突的方法" class="headerlink" title="9.4 哈希表查找(杂凑法)—处理冲突的方法"></a>9.4 哈希表查找(杂凑法)—处理冲突的方法</h1><h2 id="1-开放定址法"><a href="#1-开放定址法" class="headerlink" title="1.开放定址法"></a>1.开放定址法</h2><p>开放定址法：由关键码得到的哈希地址产生冲突，即改地址已存放了数据元素，则去寻找下一个空哈希地址，并存入。</p>
+<p>下面介绍找空哈希地址的方法：</p>
+<p>1.线性探测法</p>
+<p>Hi=(Hash(key)+di) mod m ( 1≤i &lt; m )<br>其中：<br>Hash(key)为哈希函数<br>m 为哈希表长度<br>di 为增量序列1，2，……，m-1，且di=i</p>
+<p>【例9.12】关键码集为{47，7，29，11，16，92，22，8，3}，哈希表表长为11，Hash(key)=key mod 11，用线性探测法处理冲突，建表如下：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030113233S19.jpg" alt="建表"></p>
+<p>2.二次探测法</p>
+<p>Hi=(Hash(key)±di) mod m<br>其中：<br>Hash(key)为哈希函数<br>m 为哈希表长度，m 要求是某个4k+3 的质数(k 是整数)<br>di 为增量序列12，-12，22，-22，……，q2，-q2 且q≤1/2 (m-1)</p>
+<p>仍以上例用二次探测法处理冲突，建表如下：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301132459147.jpg" alt="建表"></p>
+<p>对关键码寻找空的哈希地址只有3 这个关键码与上例不同，<br>Hash(3)=3，哈希地址上冲突，由<br>H1=(Hash(3)+12) mod 11=4 仍然冲突；<br>H2=(Hash(3)-12) mod 11=2 找到空的哈希地址，存入。</p>
+<ol>
+<li>双哈希函数探测法<br>Hi=(Hash(key)+i*ReHash(key)) mod m (i=1，2，……，m-1)<br>其中：<br>Hash(key)，ReHash(key)是两个哈希函数，<br>m 为哈希表长度</li>
+</ol>
+<p>双哈希函数探测法，先用第一个函数Hash(key)对关键码计算哈希地址，一旦产生地址冲突，再用第二个函数ReHash(key)确定移动的步长因子，最后，通过步长因子序列由探测函数寻找空的哈希地址。</p>
+<p>比如，Hash(key)=a 时产生地址冲突，就计算ReHash(key)=b，则探测的地址序列为<br>H1=(a+b) mod m，H2=(a+2b) mod m，……，Hm-1=(a+(m-1)b) mod m</p>
+<h2 id="2-拉链法"><a href="#2-拉链法" class="headerlink" title="2. 拉链法"></a>2. 拉链法</h2><p>设哈希函数得到的哈希地址域在区间[0，m-1]上，以每个哈希地址作为一个指针，指向一个链，即分配指针数组ElemType <em>eptr[m]；建立m 个空链表，由哈希函数对关键码转换后，映射到同一哈希地址i 的同义词均加入到</em>eptr[i]指向的链表中。</p>
+<p>【例9.l3】关键码序列为47,7,29,11,16,92,22,8,3,50,37,89,94,21，哈希函数为Hash(key)=key mod 11</p>
+<p>用拉链法处理冲突，建表如图9.21。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-12030113255c46.jpg" alt="拉链法"></p>
+<h2 id="3-建立一个公共溢出区"><a href="#3-建立一个公共溢出区" class="headerlink" title="3. 建立一个公共溢出区"></a>3. 建立一个公共溢出区</h2><p>设哈希函数产生的哈希地址集为[0，m-1]，则分配两个表：<br>一个基本表ElemType base_tbl[m]；每个单元只能存放一个元素；<br>一个溢出表ElemType over_tbl[k]；只要关键码对应的哈希地址在基本表上产生冲突，则所有这样的元素一律存入该表中。查找时，对给定值kx 通过哈希函数计算出哈希地址i，先与基本表的base_tbl[i]单元比较，若相等，查找成功；否则，再到溢出表中进行查找。</p>
+<h1 id="9-4-哈希表查找-杂凑法-—哈希表的查找分析"><a href="#9-4-哈希表查找-杂凑法-—哈希表的查找分析" class="headerlink" title="9.4 哈希表查找(杂凑法)—哈希表的查找分析"></a>9.4 哈希表查找(杂凑法)—哈希表的查找分析</h1><p><strong>哈希表的查找过程基本上和造表过程相同</strong>。<strong>一些关键码可通过哈希函数转换的地址直接找到，另一些关键码在哈希函数得到的地址上产生了冲突，需要按处理冲突的方法进行查找</strong>。在介绍的三种处理冲突的方法中，<strong>产生冲突后的查找仍然是给定值与关键码进行比较的过程</strong>。所以，<strong>对哈希表查找效率的量度，依然用平均查找长度来衡量</strong>。</p>
+<p>查找过程中，关键码的比较次数，取决于产生冲突的多少，产生的冲突少，查找效率就高，产生的冲突多，查找效率就低。因此，影响产生冲突多少的因素，也就是影响查找效率的因素。影响产生冲突多少有以下三个因素：</p>
+<ul>
+<li>哈希函数是否均匀</li>
+<li>处理冲突的方法</li>
+<li>哈希表的装填因子</li>
+</ul>
+<p>分析这三个因素，尽管哈希函数的“好坏”直接影响冲突产生的频度，但一般情况下，我们总认为所选的哈希函数是“均匀的”，因此，可不考虑哈希函数对平均查找长度的影响。</p>
+<p>就线性探测法和二次探测法处理冲突的例子看，相同的关键码集合、同样的哈希函数，但在数据元素查找等概率情况下，它们的平均查找长度却不同：</p>
+<p>线性探测法的平均查找长度ASL=(5×1+3×2+1×4)/9=5/3<br>二次探测法的平均查找长度ASL=(5×1+3×2+1×2)/9=13/9</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-120301133135620.jpg" alt="哈希表装填因子"></p>
+<p>α是哈希表装满程度的标志因子。由于表长是定值，α与“填入表中的元素个数”成正比，所以，α越大，填入表中的元素较多，产生冲突的可能性就越大；α越小，填入表中的元素较少，产生冲突的可能性就越小。</p>
+<p>实际上，哈希表的平均查找长度是装填因子α的函数，只是不同处理冲突的方法有不同的函数。以下给出几种不同处理冲突方法的平均查找长度：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120301/1-1203011332415W.jpg" alt="ASL "></p>
+<p>哈希方法存取速度快，也较节省空间，静态查找、动态查找均适用，但由于存取是随机的，因此，不便于顺序查找。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/23/数据结构第八章：图/" rel="next" title="数据结构第八章：图">
+                <i class="fa fa-chevron-left"></i> 数据结构第八章：图
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/23/数据结构第十章：排序/" rel="prev" title="数据结构第十章：排序">
+                数据结构第十章：排序 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">131</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#9-1-查找的基本概念与术语"><span class="nav-number">1.</span> <span class="nav-text">9.1 查找的基本概念与术语</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-2-静态查找表—顺序查找"><span class="nav-number">2.</span> <span class="nav-text">9.2 静态查找表—顺序查找</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-2-静态查找表—有序表的折半查找"><span class="nav-number">3.</span> <span class="nav-text">9.2 静态查找表—有序表的折半查找</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-2-静态查找表—有序表的插值查找和斐波那契查找"><span class="nav-number">4.</span> <span class="nav-text">9.2 静态查找表—有序表的插值查找和斐波那契查找</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-插值查找"><span class="nav-number">4.1.</span> <span class="nav-text">1.插值查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-斐波那契查找"><span class="nav-number">4.2.</span> <span class="nav-text">2.斐波那契查找</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-2-静态查找表—分块查找"><span class="nav-number">5.</span> <span class="nav-text">9.2 静态查找表—分块查找</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-3-动态查找表—二叉排序树（Binary-Sort-Tree）"><span class="nav-number">6.</span> <span class="nav-text">9.3 动态查找表—二叉排序树（Binary Sort Tree）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-3-动态查找表—平衡二叉树-AVL树"><span class="nav-number">7.</span> <span class="nav-text">9.3 动态查找表—平衡二叉树(AVL树)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-3-动态查找表—B-树和B-树"><span class="nav-number">8.</span> <span class="nav-text">9.3 动态查找表—B-树和B+树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-B-树及其查找"><span class="nav-number">8.1.</span> <span class="nav-text">一.B-树及其查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-B-树的插入和删除"><span class="nav-number">8.2.</span> <span class="nav-text">二.B-树的插入和删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-B-树"><span class="nav-number">8.3.</span> <span class="nav-text">三. B+树</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-4-哈希表查找-杂凑法-—哈希表与哈希方法"><span class="nav-number">9.</span> <span class="nav-text">9.4 哈希表查找(杂凑法)—哈希表与哈希方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-4-哈希表查找-杂凑法-—常用的哈希函数"><span class="nav-number">10.</span> <span class="nav-text">9.4 哈希表查找(杂凑法)—常用的哈希函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-直接定址法"><span class="nav-number">10.1.</span> <span class="nav-text">1.直接定址法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-除留余数法"><span class="nav-number">10.2.</span> <span class="nav-text">2.除留余数法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-乘余取整法"><span class="nav-number">10.3.</span> <span class="nav-text">3.乘余取整法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-数字分析法"><span class="nav-number">10.4.</span> <span class="nav-text">4.数字分析法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-平方取中法"><span class="nav-number">10.5.</span> <span class="nav-text">5.平方取中法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-折叠法Folding"><span class="nav-number">10.6.</span> <span class="nav-text">6.折叠法Folding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-4-哈希表查找-杂凑法-—处理冲突的方法"><span class="nav-number">11.</span> <span class="nav-text">9.4 哈希表查找(杂凑法)—处理冲突的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-开放定址法"><span class="nav-number">11.1.</span> <span class="nav-text">1.开放定址法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-拉链法"><span class="nav-number">11.2.</span> <span class="nav-text">2. 拉链法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-建立一个公共溢出区"><span class="nav-number">11.3.</span> <span class="nav-text">3. 建立一个公共溢出区</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-4-哈希表查找-杂凑法-—哈希表的查找分析"><span class="nav-number">12.</span> <span class="nav-text">9.4 哈希表查找(杂凑法)—哈希表的查找分析</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

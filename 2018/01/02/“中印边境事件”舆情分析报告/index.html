@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Public Opinion Analysis," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="摘要：北京时间6月18日印度边防人员非法越界进入中国洞朗地区，引发中印边境局势持续紧张。本报告围绕“中印边境事件”，对2017年6月18日到2017年8月28日期间，互联网上采集到的1522740条信息进行了全方位的全网舆情分析。主要分析全网舆情特点、各大媒体平台舆情特点、微博舆情和传播特点、事件整体舆情特点，并对政府的舆情控制给出建议。其中关键使用LSTM深度学习模型对微博内容进行情感分析，以及">
+<meta name="keywords" content="Public Opinion Analysis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="“中印边境事件”舆情分析报告">
+<meta property="og:url" content="http://yoursite.com/2018/01/02/“中印边境事件”舆情分析报告/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="摘要：北京时间6月18日印度边防人员非法越界进入中国洞朗地区，引发中印边境局势持续紧张。本报告围绕“中印边境事件”，对2017年6月18日到2017年8月28日期间，互联网上采集到的1522740条信息进行了全方位的全网舆情分析。主要分析全网舆情特点、各大媒体平台舆情特点、微博舆情和传播特点、事件整体舆情特点，并对政府的舆情控制给出建议。其中关键使用LSTM深度学习模型对微博内容进行情感分析，以及">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/4abhDL7yEwG3yoiUIN7J7iOfyg.BKThC8Md1.HCG894!/b/dPMAAAAAAAAA&bo=tgSwBLYEsAQDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V13JePQz0UURGN/egOvD9vuSNTWZFMx*W*ziNvDhCaQB.6J2EGRHtHB*Ik!/b/dPIAAAAAAAAA&bo=sAEgAQAAAAADB7I!&rf=viewer_4">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V13JePQz0UURGN/9ixxnxuwVtX3DS2YNa3*xdHRjVbBCmt*Z9lufyaT9K4!/b/dPIAAAAAAAAA&bo=YAUgAgAAAAADB2U!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/szifkYV3Sk79E8bCbBVSgxQdczAh7iOOEGoOSIDKWGg!/b/dPMAAAAAAAAA&bo=sAEgAQAAAAADB7I!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/Os4w.SuJ61YzTzYGT*Ad4jUQXS9hfp0pQBpmP.zan1k!/b/dPMAAAAAAAAA&bo=uAL9AAAAAAADB2U!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/PJCm66GxRGuCCugmWZ3OBK5w4t*5RIOHQdRz7XnC2.A!/b/dPMAAAAAAAAA&bo=LAIqAQAAAAADByc!&rf=viewer_4">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V13JePQz0UURGN/Nc.aBtHhc5.XaL8Ww8obSQHxaJoxCqOKnrNN*sT60kg!/b/dFsBAAAAAAAA&bo=2gLZAdoC2QERBzA!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/EtcCvgy3THlSvVi7B81Feafm*.U4Nt91I4ygIkYb6PA!/b/dPMAAAAAAAAA&bo=FAIyAQAAAAADAAA!&rf=viewer_4">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V13JePQz0UURGN/HoH1IkbwpMyZt4bN48qTAaCxy62LgmeZ84QKHRWub4Y!/b/dPIAAAAAAAAA&bo=OwOAAgAAAAADB5g!&rf=viewer_4">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V13JePQz0UURGN/.6ygOu.jx50FU1q8DBs.L8Rg6qhCbZ.PG*hUI.BVQJg!/b/dPIAAAAAAAAA&bo=kwSKA5MEigMDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/ZrEz*Fhoe0tv4QpGlBijYZjCAI2vlmp88K3lOPlafj4!/b/dPMAAAAAAAAA&bo=kwSKA5MEigMDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/g5W7FXouXH9x2jVZQcnl4IU1RgNBwDWzDBOqB*kBv*E!/b/dPMAAAAAAAAA&bo=sAEgAQAAAAADB7I!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/4FuLWtyrrfQSeMTgtYTbdSBfy1xz2PKXrwnQsEEo4tk!/b/dPMAAAAAAAAA&bo=sAEgAbABIAERBzA!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/ras9e*s92zzUDBCUl0zZW.5RnC4hC0YiivSlSXj7xdo!/b/dPMAAAAAAAAA&bo=kwSKA5MEigMDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V13JePQz0UURGN/PcfLH8q69KCcGQAL4hKF2KYGJ32i4TXvBA08xn0HFLo!/b/dPIAAAAAAAAA&bo=kwSKA5MEigMDACU!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V13JePQz0UURGN/IM*7GJyBAZ7KptncdKMRJZOzYhewbAguf0kijb*arWM!/b/dPIAAAAAAAAA&bo=QgNXAkIDVwIDByI!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/Hp1ZGEhcFGO42iDYnGnkC*VjADgUNHY3Grh1kUiz*R4!/b/dPMAAAAAAAAA&bo=3gPOAt4DzgIDByI!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/5kkT..HRQxWqiHMWhDwgER.NQWR5nwY5vDnCFkoUtKw!/b/dPMAAAAAAAAA&bo=4gPKAuIDygIDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/lhseNAFE51GP7LRRBbG*nJNkmegAhViWT2BOCZ*GT4M!/b/dPMAAAAAAAAA&bo=ugN2A7oDdgMDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V13JePQz0UURGN/OTE1fqIU36wPwjGYd9z88oct8WJkOWsX0d1Zqllvu6A!/b/dPIAAAAAAAAA&bo=YQKiAQAAAAADB.I!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/ETjlsGBL7jsCbOPWaZPjIecx3GOow55ExsFM22cerck!/b/dPMAAAAAAAAA&bo=8wN2AgAAAAARB7Q!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V13JePQz0UURGN/UxaZZzTnVcqiIywidRTxFm.7.fckLvlge1PQessmKAs!/b/dPIAAAAAAAAA&bo=YQKiAWECogEDByI!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/hXZ7c0upH3P3lbWmo5w8.6Hy04cYP7zQUdA*1waAnws!/b/dPMAAAAAAAAA&bo=kwSKA5MEigMDByI!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/evQ*2mK8z3dqy0p4bom4nUOfUEn7FvgzXkmnCVyrnek!/b/dPMAAAAAAAAA&bo=kwSKA5MEigMDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V13JePQz0UURGN/GrixFzbGnmuymcrTBBk6dDLhraCfhJ5R5RH6rFJ6p2o!/b/dPIAAAAAAAAA&bo=pgNcAqYDXAIDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V13JePQz0UURGN/HSNH.8NIQH9w6xyexid9otWSPjNNDlWz4RXmNS86M1U!/b/dPIAAAAAAAAA&bo=oQNZAqEDWQIDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/*bLBuztwh*M07O.k37VewmMojW6NQsfuBZkjQzuMGEo!/b/dGsBAAAAAAAA&bo=IAOQASADkAEDByI!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/ecG.dU0**JqEQ1ltWOq8blXz3xOUkrq1Kdp6Cycu82s!/b/dPMAAAAAAAAA&bo=IAOQASADkAEDByI!&rf=viewer_4">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V13JePQz0UURGN/cjjXfVRXmQbUxGxab9R3ZwEXHpJu7M4TaFGXlark0CE!/b/dFsBAAAAAAAA&bo=IAOQASADkAEDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/*fscCXfhihAbEADvizruN0.jTsRULy34rIrg*6ufhVA!/b/dPMAAAAAAAAA&bo=IAOQASADkAEDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/d4yI.WNr0K3IXDC5kJdMABQJLtcnHGtPJOrUAISfqyE!/b/dGsBAAAAAAAA&bo=IAOQASADkAEDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/Bip.3Kd*O.FGGtNDLyBFrx0Ovo0WHm5yaFJursaG1Wc!/b/dPMAAAAAAAAA&bo=IAOQASADkAEDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/nHxybZ1ueaD*ccCC9edbJ8bDNlQJzZEoA8OZ8z.He9c!/b/dPMAAAAAAAAA&bo=IAOQASADkAEDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/jS3fP1gM96SlyIi1mv.4ktgBPHedYMTvyZ.oZlsH*p4!/b/dPMAAAAAAAAA&bo=IAOQASADkAEDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a2.qpic.cn/psb?/V13JePQz0UURGN/RT68X9.KcVCz7FU1eSodK9IlqCCinQeZsASIHi1DtA4!/b/dD8BAAAAAAAA&bo=IAOQASADkAEDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/R0VNS.eR0gNMh4dWnlQx*tmTtYmOzY3i2rjCnbwSzfU!/b/dPMAAAAAAAAA&bo=IAOQASADkAEDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/ekV.eX43sxyWSeD2MtK0IPlF2ZkE1jbPNr7hlwer0QQ!/b/dPMAAAAAAAAA&bo=IAOQASADkAEDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V13JePQz0UURGN/RlY9O1LLMsgDWtGevJPi3x75N1BIZ1m8ikJaqI3FkRA!/b/dPIAAAAAAAAA&bo=IAOQASADkAEDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/pWyqLrTjy9BPMJFJZTLJaoA9ZzzclIQJBGj42o1ikn8!/b/dPMAAAAAAAAA&bo=IAOQASADkAEDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/TtPbvRE*XRySVBgzTPfbw0KVfuV0iHoG7MNiNLWz.DI!/b/dPMAAAAAAAAA&bo=YQKiAWECogEDACU!&rf=viewer_4">
+<meta property="og:updated_time" content="2018-01-23T09:29:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="“中印边境事件”舆情分析报告">
+<meta name="twitter:description" content="摘要：北京时间6月18日印度边防人员非法越界进入中国洞朗地区，引发中印边境局势持续紧张。本报告围绕“中印边境事件”，对2017年6月18日到2017年8月28日期间，互联网上采集到的1522740条信息进行了全方位的全网舆情分析。主要分析全网舆情特点、各大媒体平台舆情特点、微博舆情和传播特点、事件整体舆情特点，并对政府的舆情控制给出建议。其中关键使用LSTM深度学习模型对微博内容进行情感分析，以及">
+<meta name="twitter:image" content="http://a1.qpic.cn/psb?/V13JePQz0UURGN/4abhDL7yEwG3yoiUIN7J7iOfyg.BKThC8Md1.HCG894!/b/dPMAAAAAAAAA&bo=tgSwBLYEsAQDACU!&rf=viewer_4">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/02/“中印边境事件”舆情分析报告/"/>
+
+
+
+
+
+  <title>“中印边境事件”舆情分析报告 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/02/“中印边境事件”舆情分析报告/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">“中印边境事件”舆情分析报告</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-02T15:22:17+08:00">
+                2018-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Communication-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Communication Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Communication-Science/Public-Opinion-Analysis/" itemprop="url" rel="index">
+                    <span itemprop="name">Public Opinion Analysis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>摘要</strong>：北京时间6月18日印度边防人员非法越界进入中国洞朗地区，引发中印边境局势持续紧张。本报告围绕“中印边境事件”，对2017年6月18日到2017年8月28日期间，互联网上采集到的1522740条信息进行了全方位的全网舆情分析。主要分析全网舆情特点、各大媒体平台舆情特点、微博舆情和传播特点、事件整体舆情特点，并对政府的舆情控制给出建议。其中关键使用LSTM深度学习模型对微博内容进行情感分析，以及使用LDA主题概论模型对微博、今日头条、微信公众号和知乎的事件相关数据进行文本聚类与典型意见挖掘。</p>
+<p><strong>关键词</strong>：热点事件发现，中印边境对峙，LSTM模型，LDA主题模型，Word2vec词向量分析，情感极性分析，文本聚类，典型意见挖掘，微博传播分析，政府舆情控制</p>
+<a id="more"></a>
+<h1 id="1-事件简介及走势"><a href="#1-事件简介及走势" class="headerlink" title="1 事件简介及走势"></a>1 事件简介及走势</h1><h2 id="1-1-事件简介"><a href="#1-1-事件简介" class="headerlink" title="1.1 事件简介"></a>1.1 事件简介</h2><p><strong>2017中印军队洞朗对峙事件[1]是中华人民共和国与印度共和国的边防部队于2017年6月18日至8月28日在洞朗地区进行的军事对峙，起因是印度边防人员非法越界进入中国洞朗地区</strong>。</p>
+<blockquote>
+<p>2017年6月16日，中方在洞朗地区施工时，遭到印军越线阻拦，印方公然派军队越过双方承认的边界线进入中国境内，严重损害中国领土主权。期间中印双方多次交涉无果，在国内和国际上都引发了广泛热议，相关舆情量在7月5日达到顶峰。8月28日印方将越界人员和设备全部撤回，至此中印边境冲突平息。</p>
+</blockquote>
+<h2 id="1-2-事件走势回顾"><a href="#1-2-事件走势回顾" class="headerlink" title="1.2 事件走势回顾"></a>1.2 事件走势回顾</h2><p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/4abhDL7yEwG3yoiUIN7J7iOfyg.BKThC8Md1.HCG894!/b/dPMAAAAAAAAA&amp;bo=tgSwBLYEsAQDACU!&amp;rf=viewer_4" alt="事件走势回顾图"></p>
+<p>上图是利用LSI(Latent Semantic Index)文本相似度索引算法、基于微博数据得到的事件走势回顾图，以时间轴顺序完整展示“中印边境事件”从发生到平息的各个节点的典型微博及其相同文章数量。</p>
+<h1 id="2-爬取数据说明"><a href="#2-爬取数据说明" class="headerlink" title="2 爬取数据说明"></a>2 爬取数据说明</h1><h2 id="2-1-爬取数据说明"><a href="#2-1-爬取数据说明" class="headerlink" title="2.1 爬取数据说明"></a>2.1 爬取数据说明</h2><p>我们爬取了2017年6月18日至8月28日期间新浪微博、知乎、微信公众号、今日头条这四大主流社交媒体平台上与“中印边境事件”相关的的数据，数据分类及条数见下表：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数据分类</th>
+<th style="text-align:center">数据条数</th>
+<th style="text-align:center">数据分类</th>
+<th style="text-align:center">数据条数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">微博</td>
+<td style="text-align:center">63837</td>
+<td style="text-align:center">知乎评论</td>
+<td style="text-align:center">20033</td>
+</tr>
+<tr>
+<td style="text-align:center">微博评论</td>
+<td style="text-align:center">535050</td>
+<td style="text-align:center">知乎用户</td>
+<td style="text-align:center">30667</td>
+</tr>
+<tr>
+<td style="text-align:center">微博转发</td>
+<td style="text-align:center">322383</td>
+<td style="text-align:center">微信文章</td>
+<td style="text-align:center">557</td>
+</tr>
+<tr>
+<td style="text-align:center">微博用户</td>
+<td style="text-align:center">459301</td>
+<td style="text-align:center">头条文章</td>
+<td style="text-align:center">161</td>
+</tr>
+<tr>
+<td style="text-align:center">知乎提问</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">头条评论</td>
+<td style="text-align:center">43118</td>
+</tr>
+<tr>
+<td style="text-align:center">知乎回答</td>
+<td style="text-align:center">2439</td>
+<td style="text-align:center">头条回复</td>
+<td style="text-align:center">5171</td>
+</tr>
+<tr>
+<td style="text-align:center">知乎专栏</td>
+<td style="text-align:center">38</td>
+<td style="text-align:center">头条用户</td>
+<td style="text-align:center">39885</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>每一条数据都有独一无二的 id 字段，相关数据之间通过外键关联在一起，保持了数据之间的关联结构。</p>
+</blockquote>
+<p>下面是对所有爬取数据文件的具体说明。</p>
+<h2 id="2-2-微博数据"><a href="#2-2-微博数据" class="headerlink" title="2.2 微博数据"></a>2.2 微博数据</h2><p>(1)微博用户 <code>weibo_user.csv</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">用户 id</td>
+</tr>
+<tr>
+<td style="text-align:center">url</td>
+<td style="text-align:center">用户主页url</td>
+</tr>
+<tr>
+<td style="text-align:center">name</td>
+<td style="text-align:center">用户昵称</td>
+</tr>
+<tr>
+<td style="text-align:center">gender</td>
+<td style="text-align:center">用户性别，1～男，0～女，-1～未知</td>
+</tr>
+<tr>
+<td style="text-align:center">location</td>
+<td style="text-align:center">用户所在地</td>
+</tr>
+<tr>
+<td style="text-align:center">description</td>
+<td style="text-align:center">用户简介</td>
+</tr>
+<tr>
+<td style="text-align:center">verified_reason</td>
+<td style="text-align:center">认证信息，为空表示没有认证</td>
+</tr>
+<tr>
+<td style="text-align:center">follow_count</td>
+<td style="text-align:center">关注人数</td>
+</tr>
+<tr>
+<td style="text-align:center">follower_count</td>
+<td style="text-align:center">粉丝数</td>
+</tr>
+<tr>
+<td style="text-align:center">status_count</td>
+<td style="text-align:center">发表的微博数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>(2)微博 <code>weibo_post.csv</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">微博 id</td>
+</tr>
+<tr>
+<td style="text-align:center">url</td>
+<td style="text-align:center">微博 url</td>
+</tr>
+<tr>
+<td style="text-align:center">content</td>
+<td style="text-align:center">微博内容</td>
+</tr>
+<tr>
+<td style="text-align:center">time</td>
+<td style="text-align:center">微博发布时间，用 UTC 时间戳表示</td>
+</tr>
+<tr>
+<td style="text-align:center">author</td>
+<td style="text-align:center">发表这篇微博的用户的 id</td>
+</tr>
+<tr>
+<td style="text-align:center">comments_count</td>
+<td style="text-align:center">微博评论数</td>
+</tr>
+<tr>
+<td style="text-align:center">reposts_count</td>
+<td style="text-align:center">微博转发</td>
+</tr>
+<tr>
+<td style="text-align:center">likes_count</td>
+<td style="text-align:center">微博点赞数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>(3)微博评论 <code>weibo_comment.csv</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">评论 id</td>
+</tr>
+<tr>
+<td style="text-align:center">content</td>
+<td style="text-align:center">评论内容</td>
+</tr>
+<tr>
+<td style="text-align:center">user</td>
+<td style="text-align:center">发表评论的用户的 id</td>
+</tr>
+<tr>
+<td style="text-align:center">time</td>
+<td style="text-align:center">评论发表时间，用 UTC 时间戳表示</td>
+</tr>
+<tr>
+<td style="text-align:center">like</td>
+<td style="text-align:center">点赞数</td>
+</tr>
+<tr>
+<td style="text-align:center">target_type</td>
+<td style="text-align:center">评论对象的类型，一种是 “weibo_post”，表示针对原微博的评论，一种是 “weibo_comment”，表示回复某一个评论的评论</td>
+</tr>
+<tr>
+<td style="text-align:center">target_id</td>
+<td style="text-align:center">如果 target_type 是 “weibo_post”，则表示微博 id，如果 target_type 是 “weibo_comment”，则表示评论 id</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>(4)微博转发 <code>weibo_repost.csv</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">转发 id</td>
+</tr>
+<tr>
+<td style="text-align:center">content</td>
+<td style="text-align:center">转发时发表的内容</td>
+</tr>
+<tr>
+<td style="text-align:center">like</td>
+<td style="text-align:center">点赞数</td>
+</tr>
+<tr>
+<td style="text-align:center">user</td>
+<td style="text-align:center">转发微博的用户的 id</td>
+</tr>
+<tr>
+<td style="text-align:center">time</td>
+<td style="text-align:center">转发时间，用 UTC 时间戳表示</td>
+</tr>
+<tr>
+<td style="text-align:center">origin_post</td>
+<td style="text-align:center">原微博的 id</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="2-3-知乎数据"><a href="#2-3-知乎数据" class="headerlink" title="2.3 知乎数据"></a>2.3 知乎数据</h2><p>(1) 知乎用户 <code>zhihu_user.csv</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">字段</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">用户 id</td>
+<td style="text-align:center">articles_count</td>
+<td style="text-align:center">文章数</td>
+</tr>
+<tr>
+<td style="text-align:center">url_token</td>
+<td style="text-align:center">可以唯一标识用户的一个字符串</td>
+<td style="text-align:center">question_count</td>
+<td style="text-align:center">提问数</td>
+</tr>
+<tr>
+<td style="text-align:center">url</td>
+<td style="text-align:center">用户主页 url</td>
+<td style="text-align:center">columns_count</td>
+<td style="text-align:center">专栏数</td>
+</tr>
+<tr>
+<td style="text-align:center">name</td>
+<td style="text-align:center">用户名</td>
+<td style="text-align:center">logs_count</td>
+<td style="text-align:center">参与公共编辑次数</td>
+</tr>
+<tr>
+<td style="text-align:center">gender</td>
+<td style="text-align:center">用户性别，1～男，0～女，-1～未知</td>
+<td style="text-align:center">voteup_count</td>
+<td style="text-align:center">用户获得的赞同数</td>
+</tr>
+<tr>
+<td style="text-align:center">locations</td>
+<td style="text-align:center">用户所在地</td>
+<td style="text-align:center">thanked_count</td>
+<td style="text-align:center">用户获得的感谢次数</td>
+</tr>
+<tr>
+<td style="text-align:center">educations</td>
+<td style="text-align:center">用户教育经历</td>
+<td style="text-align:center">follower_cont</td>
+<td style="text-align:center">粉丝数</td>
+</tr>
+<tr>
+<td style="text-align:center">employments</td>
+<td style="text-align:center">用户职业经历</td>
+<td style="text-align:center">following_count</td>
+<td style="text-align:center">关注的人数</td>
+</tr>
+<tr>
+<td style="text-align:center">headline</td>
+<td style="text-align:center">用户个性签名</td>
+<td style="text-align:center">favorite_count</td>
+<td style="text-align:center">收藏数</td>
+</tr>
+<tr>
+<td style="text-align:center">answer_count</td>
+<td style="text-align:center">回答数</td>
+<td style="text-align:center">favorited_count</td>
+<td style="text-align:center">被收藏数 </td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>(2) 知乎专栏 <code>zhihu_zhuanlan.csv</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">专栏 id</td>
+</tr>
+<tr>
+<td style="text-align:center">author</td>
+<td style="text-align:center">作者的 url_token</td>
+</tr>
+<tr>
+<td style="text-align:center">title</td>
+<td style="text-align:center">专栏标题</td>
+</tr>
+<tr>
+<td style="text-align:center">content</td>
+<td style="text-align:center">专栏内容</td>
+</tr>
+<tr>
+<td style="text-align:center">url</td>
+<td style="text-align:center">专栏 url</td>
+</tr>
+<tr>
+<td style="text-align:center">time</td>
+<td style="text-align:center">专栏发表时间，用 UTC 时间戳表示</td>
+</tr>
+<tr>
+<td style="text-align:center">like</td>
+<td style="text-align:center">点赞数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>(3) 知乎提问 <code>zhihu_question.csv</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">问题 id</td>
+</tr>
+<tr>
+<td style="text-align:center">author</td>
+<td style="text-align:center">提问者的 url_token</td>
+</tr>
+<tr>
+<td style="text-align:center">title</td>
+<td style="text-align:center">问题标题</td>
+</tr>
+<tr>
+<td style="text-align:center">content</td>
+<td style="text-align:center">问题详细</td>
+</tr>
+<tr>
+<td style="text-align:center">time</td>
+<td style="text-align:center">提问时间，用 UTC 时间戳表示</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>(4) 知乎回答 <code>zhihu_answer.csv</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">用户 id</td>
+</tr>
+<tr>
+<td style="text-align:center">url</td>
+<td style="text-align:center">回答 url</td>
+</tr>
+<tr>
+<td style="text-align:center">author</td>
+<td style="text-align:center">回答者的 url_token</td>
+</tr>
+<tr>
+<td style="text-align:center">content</td>
+<td style="text-align:center">回答内容</td>
+</tr>
+<tr>
+<td style="text-align:center">time</td>
+<td style="text-align:center">回答时间，用 UTC 时间戳表示</td>
+</tr>
+<tr>
+<td style="text-align:center">upvote</td>
+<td style="text-align:center">赞同数</td>
+</tr>
+<tr>
+<td style="text-align:center">target_type</td>
+<td style="text-align:center">回答对象类型，”question” 表示对问题的回答，”answer” 表示对某个回答的回答</td>
+</tr>
+<tr>
+<td style="text-align:center">target_id</td>
+<td style="text-align:center">如果 target_type 是 “question” 则表示问题 id，如果 target_type 是 “answer” 则表示回答 id</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="2-4-微信数据"><a href="#2-4-微信数据" class="headerlink" title="2.4 微信数据"></a>2.4 微信数据</h2><p>公众号文章 <code>weixin_articles.csv</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">文章 id</td>
+</tr>
+<tr>
+<td style="text-align:center">author</td>
+<td style="text-align:center">公众号名称</td>
+</tr>
+<tr>
+<td style="text-align:center">url</td>
+<td style="text-align:center">文章 url</td>
+</tr>
+<tr>
+<td style="text-align:center">title</td>
+<td style="text-align:center">文章标题</td>
+</tr>
+<tr>
+<td style="text-align:center">content</td>
+<td style="text-align:center">文章内容</td>
+</tr>
+<tr>
+<td style="text-align:center">time</td>
+<td style="text-align:center">发表时间</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="2-5-头条数据"><a href="#2-5-头条数据" class="headerlink" title="2.5 头条数据"></a>2.5 头条数据</h2><p>(1) 头条用户 <code>toutiao_users.csv</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">用户 id</td>
+</tr>
+<tr>
+<td style="text-align:center">name</td>
+<td style="text-align:center">用户名</td>
+</tr>
+<tr>
+<td style="text-align:center">followers_count</td>
+<td style="text-align:center">粉丝数</td>
+</tr>
+<tr>
+<td style="text-align:center">followings_count</td>
+<td style="text-align:center">关注人数</td>
+</tr>
+<tr>
+<td style="text-align:center">verified_count</td>
+<td style="text-align:center">认证信息</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>(2) 头条文章 <code>toutiao_articles.csv</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">文章 id</td>
+</tr>
+<tr>
+<td style="text-align:center">media_name</td>
+<td style="text-align:center">媒体名称</td>
+</tr>
+<tr>
+<td style="text-align:center">title</td>
+<td style="text-align:center">文章标题</td>
+</tr>
+<tr>
+<td style="text-align:center">content</td>
+<td style="text-align:center">文章内容</td>
+</tr>
+<tr>
+<td style="text-align:center">datetime</td>
+<td style="text-align:center">发表时间</td>
+</tr>
+<tr>
+<td style="text-align:center">comments_count</td>
+<td style="text-align:center">评论数</td>
+</tr>
+<tr>
+<td style="text-align:center">digg_count</td>
+<td style="text-align:center">点赞数</td>
+</tr>
+<tr>
+<td style="text-align:center">bury_count</td>
+<td style="text-align:center">踩数</td>
+</tr>
+<tr>
+<td style="text-align:center">favorite_count</td>
+<td style="text-align:center">收藏数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>(3) 头条评论　<code>toutiao_comments.csv</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">评论 id</td>
+</tr>
+<tr>
+<td style="text-align:center">article_id</td>
+<td style="text-align:center">文章 id</td>
+</tr>
+<tr>
+<td style="text-align:center">user_id</td>
+<td style="text-align:center">发表评论的用户 id</td>
+</tr>
+<tr>
+<td style="text-align:center">user_name</td>
+<td style="text-align:center">发表评论的用户名</td>
+</tr>
+<tr>
+<td style="text-align:center">text</td>
+<td style="text-align:center">评论内容</td>
+</tr>
+<tr>
+<td style="text-align:center">score</td>
+<td style="text-align:center">头条提供的影响力分数</td>
+</tr>
+<tr>
+<td style="text-align:center">digg_count</td>
+<td style="text-align:center">点赞数</td>
+</tr>
+<tr>
+<td style="text-align:center">bury_count</td>
+<td style="text-align:center">踩数</td>
+</tr>
+<tr>
+<td style="text-align:center">reply_count</td>
+<td style="text-align:center">回复数</td>
+</tr>
+<tr>
+<td style="text-align:center">create_time</td>
+<td style="text-align:center">评论时间</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>(4) 头条回复 <code>toutiao_replies.csv</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">评论 id</td>
+</tr>
+<tr>
+<td style="text-align:center">reply_id</td>
+<td style="text-align:center">回复 id</td>
+</tr>
+<tr>
+<td style="text-align:center">text</td>
+<td style="text-align:center">回复内容</td>
+</tr>
+<tr>
+<td style="text-align:center">name</td>
+<td style="text-align:center">发表回复的用户名</td>
+</tr>
+<tr>
+<td style="text-align:center">user_id</td>
+<td style="text-align:center">发表回复的用户 id</td>
+</tr>
+<tr>
+<td style="text-align:center">digg_count</td>
+<td style="text-align:center">点赞数</td>
+</tr>
+<tr>
+<td style="text-align:center">create_time</td>
+<td style="text-align:center">回复时间</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="3-关键技术"><a href="#3-关键技术" class="headerlink" title="3 关键技术"></a>3 关键技术</h1><h2 id="3-1-基于Gibbs采样算法的LDA主题分类模型"><a href="#3-1-基于Gibbs采样算法的LDA主题分类模型" class="headerlink" title="3.1 基于Gibbs采样算法的LDA主题分类模型"></a>3.1 基于Gibbs采样算法的LDA主题分类模型</h2><h3 id="3-1-1-模型介绍"><a href="#3-1-1-模型介绍" class="headerlink" title="3.1.1 模型介绍"></a>3.1.1 模型介绍</h3><p>LDA是一种<strong>非监督机器学习技术</strong>，本报告利用该模型<strong>识别</strong>微博、微信、今日头条和知乎四大媒体平台上的文章和评论中<strong>潜藏的主题信息，并将文章与评论进行分类，并分别用若干个关键词来描述每个主题，从中提取出舆情的主流观点</strong>。</p>
+<blockquote>
+<p>LDA是一种典型的无监督、基于统计学习的词袋模型，一种文档主题生成模型，也称为一个三层贝叶斯概率模型。生成模型即我们认为一篇文章的每个词都是通过“以一定概率选择了某个主题，并从这个主题中以一定概率选择某个词语”。<br>LDA模型包含词、主题和文档三层结构。即它认为一篇文档是由一组词构成的一个集合，词与词之间没有顺序以及先后的关系；一篇文档可以包含多个主题，文档中每一个词都由其中的一个主题生成。主题模型通过分析文本中的词来发现文档中的主题、主题之间的联系方式和主题的发展，通过主题模型可以使我们组织和总结无法人工标注的海量电子文档。</p>
+</blockquote>
+<h3 id="3-1-2-模型建立"><a href="#3-1-2-模型建立" class="headerlink" title="3.1.2 模型建立"></a>3.1.2 模型建立</h3><p>LDA模型基于贝叶斯网络结构，在LDA模型中一篇文档生成的方式如下:</p>
+<ul>
+<li><p>从狄利克雷分布中取样生成文档i的主题分布<script type="math/tex">\theta_{i}</script></p>
+</li>
+<li><p>从主题的多项式分布中取样生成文档i第j个词的主题<script type="math/tex">Z_{i,j}</script></p>
+</li>
+<li><p>从狄利克雷分布中取样生成主题的词语分布<script type="math/tex">\phi_{i,j}</script></p>
+</li>
+<li><p>从词语的多项式分布<script type="math/tex">\phi_{i,j}</script>中采样最终生成词语<script type="math/tex">w_{i,j}</script></p>
+</li>
+</ul>
+<h3 id="3-1-3-算法求解"><a href="#3-1-3-算法求解" class="headerlink" title="3.1.3 算法求解"></a>3.1.3 算法求解</h3><p>整个模型中所有可见变量以及隐藏变量的联合分布是:</p>
+<script type="math/tex; mode=display">P(w_{i}, z_{i}, \theta_{i},\Phi | \alpha, \beta) = \prod_{j=1}^{N}P(\theta _{i}|\alpha)P(z_{i,j}|\theta _{i})P(\Phi|\beta)P(w_{i,j}|\theta_{z_{i,j}})</script><p>最终一篇文档的单词分布的最大似然估计可以通过将上式的以及进行积分和对进行求和得到:</p>
+<script type="math/tex; mode=display">P(w_{i}|\alpha, \beta) = \iint\sum_{z_{i}}P(w_{i}, z_{i}, \theta_{i}, \Phi|\alpha,\beta)</script><p>根据上述<script type="math/tex">p(w_{i,j}|α,β)</script>的最大似然估计，通过吉布斯采样方法估计出模型中的参数，具体过程如下：</p>
+<ul>
+<li><p>首先对所有文档中的词遍历一遍，为其都随机分配一个主题，<script type="math/tex">z_{m,n} = k\sim Mult\frac{1}{K}</script>，其中m表示第m篇文档，n表示文档中的第n个词，k表示主题，K表示主题的总数；<script type="math/tex">n_{m}^{(k)}+1,n_{m}+1,n_{k}^{(t)}+1,n_{k}+1</script>分别表示m文档中k主题出现的次数，m文档中主题数量的和，k主题对应的t词的次数，k主题对应的总次数</p>
+</li>
+<li><p>对下述操作进行重复迭代。</p>
+</li>
+<li><p>对所有文档中的所有词进行遍历，假如当前文档m的词t对应主题为k，则<script type="math/tex">n_{m}^{(k)}-1,n_{m}-1,n_{k}^{(t)}-1,n_{k}-1</script>, 即先拿出当前词，之后根据LDA中topic sample的概率分布采样出新主题，在对应的<script type="math/tex">n_{m}^{(k)},n_{m},n_{k}^{(t)},n_{k}</script>上分别+1.</p>
+</li>
+</ul>
+<script type="math/tex; mode=display">P(z_{i} = k|z_{-i}, w) \varpropto (n_{k,-i}^{(t)} + \beta_{t})(n_{m,-i}^{(k)} + \alpha_{k}) / \sum_{t=1}^{V}n_{k,-i}^{(t)} + \beta_{t}</script><ul>
+<li>迭代完成后输出主题-词参数矩阵和文档-主题矩阵θ</li>
+</ul>
+<p>主题k中词t的概率分布：<script type="math/tex">\phi_{k,t} = (n_{k}^{(t)} + \beta_{t})/(n_{k} + \beta_{t})</script></p>
+<p>文档m中主题k的概率分布：<script type="math/tex">\theta _{m,k} = (n_{m}^{(k)} + \alpha_{k})/(n_{m} + \alpha_{k})</script></p>
+<h3 id="3-2-基于LSTM模型的情感分析"><a href="#3-2-基于LSTM模型的情感分析" class="headerlink" title="3.2 基于LSTM模型的情感分析"></a>3.2 基于LSTM模型的情感分析</h3><p><strong>LSTM(长短期记忆神经网络)是RNN网络的拓展，具有时序建模的作用</strong>。LSTM通过输入门，遗忘门， 输出门保持和更新细胞状态，可以判断哪些信息是有用的，哪些是没用的，并把有用的信息在LSTM中保存。</p>
+<blockquote>
+<p>传统情感分析方法需要提前建立好情感词典，而情感词典的建立不仅需要数据专家，而且需要语言学家的参与，这就带来了很大的问题。并且情感词典只是具有普适性，针对于特定问题并没有很好的效果。机器学习方法例如SVM，则不需要建立情感词典，但是它在分析句子时会把各个词语当成独立的单元去处理，并没有上下文关系，显然我们在语言中是需要上下文的。语言数据属于时间序列数据，每个词语的出现都依赖于它的前一个词语和后一个词语。由于这种依赖的存在，我们使用LSTM（长短期记忆网络）来进行情感分析。</p>
+</blockquote>
+<h3 id="3-2-1-数据标注"><a href="#3-2-1-数据标注" class="headerlink" title="3.2.1 数据标注"></a>3.2.1 数据标注</h3><p>由于国内暂时无法找到此类政治/军事事件的情感标注数据集，并且尝试其他领域情感标注数据集之后发现效果并不是很好，与预期相差较大，故我们决定进行对爬取的微博数据构建人工标注数据集。由于微博文章存在多种多样的情感较难使用语言描述，我们<strong>将其划分为4个情感等级，分别为0, 1, 2, 3，从0到3情感依次从平和到愤慨</strong>。我们人工标注了6000条左右的数据。</p>
+<h3 id="3-2-2-数据处理"><a href="#3-2-2-数据处理" class="headerlink" title="3.2.2 数据处理"></a>3.2.2 数据处理</h3><p>微博爬取到的数据有很大一部分与中印对峙无关，比如我们爬取数据时使用的“中印”关键词会爬到如“莞中印象”等无关数据。首先，我们采用标注好的数据中词频较多的关键词来进行粗筛，比如“中印“、“对峙”、”边境“、”战争“、”洞朗“等。之后我们采用TF-IDF进行词频统计，并进行停用词过滤，将与标注数据相似的文章提取出来。大概可以筛掉一半以上的数据，大大减小了噪声和训练成本。</p>
+<h3 id="3-2-3-基于LSTM模型的情感分析"><a href="#3-2-3-基于LSTM模型的情感分析" class="headerlink" title="3.2.3 基于LSTM模型的情感分析"></a>3.2.3 基于LSTM模型的情感分析</h3><p>本报告的情感分析框架如下：</p>
+<p>(1) 数据分析</p>
+<p>我们可视化人工标注的微博情感数据：</p>
+<p><img src="http://a3.qpic.cn/psb?/V13JePQz0UURGN/egOvD9vuSNTWZFMx*W*ziNvDhCaQB.6J2EGRHtHB*Ik!/b/dPIAAAAAAAAA&amp;bo=sAEgAQAAAAADB7I!&amp;rf=viewer_4" alt="微博情感强度柱状图"></p>
+<p>通过柱状图可知，中印对峙微博评论情感较为强烈。</p>
+<p>(2) 模型选择</p>
+<p>在文本向量化部分，我们选择了<strong>word2vec模型</strong>。情感是和上下文相关的，word2vec模型可以很好的根据上下文语境推断出每个词的词向量，如果两个个词在上下文的语境中，可以被互相替换，那么这两个词的距离就非常近。</p>
+<p>在情感分类模型部分，我们采用了LSTM模型来训练。LSTM(长短期记忆神经网络)是RNN网络的拓展，具有时序建模的作用。LSTM通过输入门，遗忘门， 输出门保持和更新细胞状态，可以判断哪些信息是有用的，哪些是没用的，并把有用的信息在LSTM中保存。LSTM单元如下所示：</p>
+<p><img src="http://a3.qpic.cn/psb?/V13JePQz0UURGN/9ixxnxuwVtX3DS2YNa3*xdHRjVbBCmt*Z9lufyaT9K4!/b/dPIAAAAAAAAA&amp;bo=YAUgAgAAAAADB2U!&amp;rf=viewer_4" alt="LSTM单元">  </p>
+<p>(3) 模型训练与结果</p>
+<p>我们采用jieba分词，对微博训练样本进行分割，并采用Google开源的Word2Vec训练，将分词词语表示为词向量，之后将每个微博样本向量化作为LSTM网络的输入。我们统计了每个微博样本的单词数：</p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/szifkYV3Sk79E8bCbBVSgxQdczAh7iOOEGoOSIDKWGg!/b/dPMAAAAAAAAA&amp;bo=sAEgAQAAAAADB7I!&amp;rf=viewer_4" alt="微博内容的词语数量直方图"></p>
+<p>根据直方图，我们选择将句子最大长度设置为85，之后我们将数据转化为索引矩阵，得到我们的输入数据，转换流程如下图：</p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/Os4w.SuJ61YzTzYGT*Ad4jUQXS9hfp0pQBpmP.zan1k!/b/dPMAAAAAAAAA&amp;bo=uAL9AAAAAAADB2U!&amp;rf=viewer_4" alt="生成输入数据示意图"> </p>
+<p>首先，我们尝试进行二分类情感分析：即将标注数据的0,1归为一类，2,3 归为一类，放入如下的神经网络中进行训练：</p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/PJCm66GxRGuCCugmWZ3OBK5w4t*5RIOHQdRz7XnC2.A!/b/dPMAAAAAAAAA&amp;bo=LAIqAQAAAAADByc!&amp;rf=viewer_4" alt="二分类的LSTM神经网络模型"> </p>
+<p>单个GTX960显卡大概需要5分钟左右时间完成训练，训练准确率约为99%，测试集准确率约为90%：</p>
+<p><img src="http://a3.qpic.cn/psb?/V13JePQz0UURGN/Nc.aBtHhc5.XaL8Ww8obSQHxaJoxCqOKnrNN*sT60kg!/b/dFsBAAAAAAAA&amp;bo=2gLZAdoC2QERBzA!&amp;rf=viewer_4" alt="训练集与测试集准确率变化图Acuuracy over 30 Epochs">    </p>
+<p>之后我们进行多程度情感分析：将4种情感强弱类别作为输出，训练网络为：</p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/EtcCvgy3THlSvVi7B81Feafm*.U4Nt91I4ygIkYb6PA!/b/dPMAAAAAAAAA&amp;bo=FAIyAQAAAAADAAA!&amp;rf=viewer_4" alt="多分类的LSTM神经网络模型"> </p>
+<p>我们<strong>最终得到训练集准确率在83%左右，测试集准确率在77%左右</strong>，效果不算很好。但是通过比对，测试集真实值与预测值在情感程度划分上差别较小，可能与数据标注的误差有关系。我们最终选择了使用多分类的情感模型。</p>
+<h3 id="3-3-其他算法"><a href="#3-3-其他算法" class="headerlink" title="3.3 其他算法"></a>3.3 其他算法</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>分析对象</th>
+<th>算法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关联词分析</td>
+<td>Word2vec词向量分析</td>
+</tr>
+<tr>
+<td>全网事件走势回顾(相同主题文章数量分析)</td>
+<td>LSI(Latent Semantic Index)文本相似度索引算法</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="4-全网舆情分析"><a href="#4-全网舆情分析" class="headerlink" title="4 全网舆情分析"></a>4 全网舆情分析</h1><h2 id="4-1-全网关注度概况"><a href="#4-1-全网关注度概况" class="headerlink" title="4.1 全网关注度概况"></a>4.1 全网关注度概况</h2><h3 id="1-全网热度走势"><a href="#1-全网热度走势" class="headerlink" title="(1) 全网热度走势"></a>(1) 全网热度走势</h3><p><img src="http://a3.qpic.cn/psb?/V13JePQz0UURGN/HoH1IkbwpMyZt4bN48qTAaCxy62LgmeZ84QKHRWub4Y!/b/dPIAAAAAAAAA&amp;bo=OwOAAgAAAAADB5g!&amp;rf=viewer_4" alt="全网热度走势"></p>
+<p>上图是“中印边境事件”在整个周期内的全网热度走势图。<strong>自事件发生起，其全网热度总体呈波动上升趋势，出现十余个大小峰值，且在8月11日达到最高峰</strong>。对比本报告1.2节中的「事件走势回顾图」，易发现<strong>全网热度峰值时间点与此事件的每一步进展的时间点紧密吻合，说明此事件的热度增减与事件进展紧密相关</strong>。每当此事件相关新闻出现都会引发网民的舆论热议，由此可见<strong>网民对此类涉及国家安全和领土完整的政治问题是长期密切关注和参与的</strong>。</p>
+<p><strong>8月4日热度达次高峰</strong>，是由于“8月3日上午至4日凌晨，新华社 、解放军报、外交部、国防部、中国驻印度大使馆以及人民日报这中国6个国家部委和机构先后就印方越界事件发声，披露印方非法越界的性质，并强调中国将采取一切必要措施维护自己的正当合法权益”。由此可知，中方对待此事件的强硬态度引起网民巨大的舆论热议，可见网民的爱国之心被广泛激发。说明<strong>国家在面对国家领土和主权问题时态度强硬、立场坚定，能广泛振奋人心、给民众以信心和力量，激发民众的爱国之心</strong>。</p>
+<p><strong>8月11日热度达最高峰</strong>，是由于“印军进入高等级战备状态”的新闻爆出，这似乎是印度战争部署的预警。由此可见，<strong>中印边境事件紧张局势的进一步升级刺激到网民的敏感神经，引发了整个周期中最大的舆论热议，这体现网民在国家安全可能受战争威胁下的群体不安和“舆论骚动”</strong>。</p>
+<p><strong>8月28日热度达第二次高峰</strong>，是由于“印方将越界人员和设备全部撤回，中印边境冲突平息”。由此可见，<strong>政治事件的和平解决也会引发大量舆论关注</strong>。</p>
+<h3 id="2-全网文章和评论热度随时间变化"><a href="#2-全网文章和评论热度随时间变化" class="headerlink" title="(2) 全网文章和评论热度随时间变化"></a>(2) 全网文章和评论热度随时间变化</h3><p>①  全网文章热度随时间变化</p>
+<p><img src="http://a3.qpic.cn/psb?/V13JePQz0UURGN/.6ygOu.jx50FU1q8DBs.L8Rg6qhCbZ.PG*hUI.BVQJg!/b/dPIAAAAAAAAA&amp;bo=kwSKA5MEigMDACU!&amp;rf=viewer_4" alt="全网文章热度随时间变化"></p>
+<p>② 全网评论热度随时间变化</p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/ZrEz*Fhoe0tv4QpGlBijYZjCAI2vlmp88K3lOPlafj4!/b/dPMAAAAAAAAA&amp;bo=kwSKA5MEigMDACU!&amp;rf=viewer_4" alt="全网评论热度随时间变化"></p>
+<p>对比「全网文章热度随时间变化」「全网评论热度随时间变化」与「全网热度走势」三图，易发现<strong>三图的整体趋势十分相似，但全网评论的热度峰值时间点比全网文章的更接近于全网热度峰值时间点</strong>，这可能一是由于<strong>全网评论主要来源于微博，而微博相较于其他媒体平台及时性更高</strong>，二是相较于UGC特征强的微博，<strong>新闻文章从采编到发布到被阅读有较长的时间差，故导致全网文章的热度峰值普遍略迟</strong>。</p>
+<h3 id="3-全网关注度来源分布比例"><a href="#3-全网关注度来源分布比例" class="headerlink" title="(3) 全网关注度来源分布比例"></a>(3) 全网关注度来源分布比例</h3><p>① 全网关注度来源分布比例</p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/g5W7FXouXH9x2jVZQcnl4IU1RgNBwDWzDBOqB*kBv*E!/b/dPMAAAAAAAAA&amp;bo=sAEgAQAAAAADB7I!&amp;rf=viewer_4" alt="全网关注度来源分布比例">  </p>
+<p>上图显示在全网对此事件的关注度来源中微博占比高达93.9%，而来自其他媒体平台的信息量只占6.1%, 可见<strong>基于微博庞大的用户量(能产生庞大的UGC内容)和不断凸显的社交媒体平台属性，微博至少在新闻舆论方面保持绝对影响力</strong>。</p>
+<p>② 除微博外其他媒体平台的报道量比例</p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/4FuLWtyrrfQSeMTgtYTbdSBfy1xz2PKXrwnQsEEo4tk!/b/dPMAAAAAAAAA&amp;bo=sAEgAbABIAERBzA!&amp;rf=viewer_4" alt="除微博外其他媒体平台的报道量比例"></p>
+<p>由上图可看出，<strong>除微博外，微信和今日头条对此事件的信息量贡献最多</strong>。    </p>
+<p><strong>微信的信息量大</strong>，一是<strong>基于微信庞大的公众号内容生产体系</strong>，二是得益于微信在今年新增的「搜索资讯」功能，使用户能够主动搜索关键词，浏览热点资讯、好友关注的资讯以及自己感兴趣的文章。这体现<strong>微信在社会化媒体内容生产方面的重要性日渐突出</strong>。    </p>
+<p><strong>今日头条的信息量大</strong>，一是由于其<strong>强大的数据挖掘能力源源不断为平台输送内容</strong>，二是由于其<strong>庞大的用户基量产生巨大的资讯阅读需求和评论回复信息量</strong>(《2016移动资讯行业细分报告》[2]显示：截止2016年12月底，今日头条用户量达7.0亿，日活跃用户量达7800万)。</p>
+<h3 id="4-微博热度随时间变化"><a href="#4-微博热度随时间变化" class="headerlink" title="(4) 微博热度随时间变化"></a>(4) 微博热度随时间变化</h3><p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/ras9e*s92zzUDBCUl0zZW.5RnC4hC0YiivSlSXj7xdo!/b/dPMAAAAAAAAA&amp;bo=kwSKA5MEigMDACU!&amp;rf=viewer_4" alt="微博热度随时间变化"></p>
+<p>对比「微博热度随时间变化」与「全网热度变化」，易发现二者走势极为相似，这是由于此事件的微博信息量在全网信息量中占比极大，反映<strong>微博平台的强大舆论影响力</strong>。</p>
+<h3 id="5-除微博外媒体热度随时间变化"><a href="#5-除微博外媒体热度随时间变化" class="headerlink" title="(5) 除微博外媒体热度随时间变化"></a>(5) 除微博外媒体热度随时间变化</h3><p><img src="http://a3.qpic.cn/psb?/V13JePQz0UURGN/PcfLH8q69KCcGQAL4hKF2KYGJ32i4TXvBA08xn0HFLo!/b/dPIAAAAAAAAA&amp;bo=kwSKA5MEigMDACU!&amp;rf=viewer_4" alt="除微博外媒体热度随时间变化"></p>
+<p>对比「除微博外媒体热度随时间变化」与「微博热度随时间变化」可发现：二者的热度最高峰不同。<strong>在此事件中微博的热度最高峰在8月11日(印军进入高等级战备状态)，而除微博外的媒体平台的热度最高峰在8月20-21日(“中方士兵在中印士兵肢体冲突中受伤)</strong>。</p>
+<p>造成这种差异的原因可能与<strong>微博与其他平台的内容性质差异有关</strong>，<strong>微博是短文本、快餐式阅读</strong>，“印军进入高等级战备状态”这种信息量较小、事实明了又极易引起关注的新闻较容易在微博平台上引起广泛传播；而<strong>今日头条、微信公众号、知乎更偏向于长文本、较深层次阅读</strong>，“中方士兵在中印士兵肢体冲突中受伤”<strong>这种信息量较大(有文本有视频)、事实尚不明了且具话题性和争议性的新闻对它们来说更有内容创作的发挥空间</strong>。</p>
+<h2 id="4-2-全网关注点分析"><a href="#4-2-全网关注点分析" class="headerlink" title="4.2 全网关注点分析"></a>4.2 全网关注点分析</h2><h3 id="1-全网关键词词云"><a href="#1-全网关键词词云" class="headerlink" title="(1) 全网关键词词云"></a>(1) 全网关键词词云</h3><p><img src="http://m.qpic.cn/psb?/V13JePQz0UURGN/IM*7GJyBAZ7KptncdKMRJZOzYhewbAguf0kijb*arWM!/b/dPIAAAAAAAAA&amp;bo=QgNXAkIDVwIDByI!&amp;rf=viewer_4" alt="全网关键词词云"></p>
+<p>上图显示，国家、美国、哈哈哈、世界、战争、经济、越南、日本、不丹等词是与“中印边境事件”相关的全网信息中的高频词汇，<strong>反映网民在此事件上的关注焦点</strong>。下面是对部分词的高频原因的分析：</p>
+<p>“美国”：中印对峙期间，莫迪政府与美国开展“军事进购大单”、“幕后外交斡旋”、“双边及多边联合军演”等活动，反映美国可能存在拉拢印度以抗衡中国的意图以及印度可能存在寻求美国合作/援助的意图。<strong>若美印联手，则必将加剧中印边境冲突的紧张局势</strong>。</p>
+<p>“日本”：事件期间<strong>据部分印媒报道日本政府支持印度立场。但日本驻印度大使馆随即否认了相关报道内容</strong>。<strong>因历史、领土争端等因素，中日关系素来易引起中国网民的关注</strong>。而此次中印边境事件亦涉及领土主权问题，故易让人联想到日本。</p>
+<p>“越南”：中印边境争端持续之际，<strong>印度和同样与中国存在领土争端的越南越走越近</strong>(越南总理访问印度)。很难不让网民猜测其用意。</p>
+<p>“不丹”：因为<strong>印度称自己在这场对峙中代表的是不丹</strong>。故在“中印对峙事件”中不丹的态度可能影响中、印、不丹三国关系。</p>
+<p>“台湾”：<strong>因“中印对峙波及台湾，台两学生被印拒绝入境”新闻，触动中国网民关于台湾问题这一“历史遗留问题”的敏感神经</strong>。</p>
+<p>“经济”：可能是<strong>担心中印冲突会影响两国经济合作</strong>，以及若发生战争会影响中国的经济建设和国家整体发展。</p>
+<p>以上关键词反映此事件牵涉的相关主体和网民关注的焦点。可以看出，<strong>网民对事件背后的国家间博弈以及事件可能对本国经济造成的影响尤为关注</strong>。</p>
+<h3 id="2-全网关联词分析"><a href="#2-全网关联词分析" class="headerlink" title="(2) 全网关联词分析"></a>(2) 全网关联词分析</h3><blockquote>
+<p>关联分析：与主题相关的关联词分析，即与核心词共现频率(相关度)最高的词。<br>关键词A 和 关键词B的相关度 = 同时包含关键词A和关键词B的文章的阅读数/包含关键词A的文章的阅读数</p>
+</blockquote>
+<p>下面是分别对核心词“中印”和“中国”的关联词分析</p>
+<p>①  核心词“中印”的关联词分析</p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/Hp1ZGEhcFGO42iDYnGnkC*VjADgUNHY3Grh1kUiz*R4!/b/dPMAAAAAAAAA&amp;bo=3gPOAt4DzgIDByI!&amp;rf=viewer_4" alt="关联词-中印"></p>
+<p>上表显示与核心词“中印”相关度最高的词语为：持续时间(41.3%)、中朝(38.8%)、退却(37.2%)、持久战(37.0%)。反映<strong>网民舆论较为关注中印对峙已经和将要持续的时间，且网民已有打“持久战”的猜测或心理准备</strong>。</p>
+<p>其中“中朝”与“中印”相关度高是由于<strong>中印对峙期间中国突然增兵朝鲜边境</strong>，故<strong>引发网民舆论热议讨论</strong>。中国突然增兵朝鲜边境行为背后的含义其一可能是警告美国，显示出中国军事维护半岛“无战、无乱、无核”的原则和决心；其二可能是防止万一中印开战美军搞突然袭击。</p>
+<p>② 核心词“中国”的关联词分析</p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/5kkT..HRQxWqiHMWhDwgER.NQWR5nwY5vDnCFkoUtKw!/b/dPMAAAAAAAAA&amp;bo=4gPKAuIDygIDACU!&amp;rf=viewer_4" alt="关联词-中国"></p>
+<p>上表显示与核心词“中国”相关度最高的词语为：印度(45.2%)、扩张(45.1%)、中国政府(39.2%)、武力(38.7%)、出兵(38.1%)、威胁(38.0%)、入侵者(37.6%)、安全隐患(37.4%)。反映媒体报道和网民舆论十分关注中印关系，<strong>认为“中印边境事件”反映作为“入侵者”的印度扩张边境的野心，以及担忧其可能对我国西南边境造成安全隐患，并可能进行了是否使用武力解决冲突的讨论</strong>。</p>
+<h1 id="5-微博舆情分析"><a href="#5-微博舆情分析" class="headerlink" title="5 微博舆情分析"></a>5 微博舆情分析</h1><h2 id="5-1-微博传播分析"><a href="#5-1-微博传播分析" class="headerlink" title="5.1 微博传播分析"></a>5.1 微博传播分析</h2><p>(1) 核心传播用户    </p>
+<p>核心传播用户：机构/媒体人/网民</p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/lhseNAFE51GP7LRRBbG*nJNkmegAhViWT2BOCZ*GT4M!/b/dPMAAAAAAAAA&amp;bo=ugN2A7oDdgMDACU!&amp;rf=viewer_4" alt="核心传播用户"></p>
+<p>上表是在此事件中的微博核心传播用户。</p>
+<p>核心传播机构中头条新闻的核心传播作用可能由于其庞大的用户基量，而紫光阁、环球时报、人民日报等机构则可能由于其官媒属性强，以及因有国家颁发的新闻采写资格证而掌握稀少的新闻采写资源。两个核心传播媒体人则主要因其军事视频自媒体的内容属性。核心传播用户中局座召忠也是军事报道与分析的自媒体。由此可见，<strong>在这类政治军事事件中的核心传播用户的共同特点是擅长军事属性内容创作或是有官方属性</strong>。</p>
+<p>(2) 核心传播用户的影响力排名</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>影响力排名表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>局座召忠</td>
+<td></td>
+</tr>
+<tr>
+<td>头条新闻</td>
+<td></td>
+</tr>
+<tr>
+<td>人民日报</td>
+<td></td>
+</tr>
+<tr>
+<td>环球时报</td>
+<td></td>
+</tr>
+<tr>
+<td>防务君</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>从上表中可看出，<strong>局座召忠作为一个专注于军事内容创作的自媒体，在“中印边境事件”中的传播影响力最强</strong>。</p>
+<h2 id="5-2-微博网民群体画像分析"><a href="#5-2-微博网民群体画像分析" class="headerlink" title="5.2 微博网民群体画像分析"></a>5.2 微博网民群体画像分析</h2><p>针对关注和参与“中印边境事件”的微博网民的用户画像，本报告从性别、国内地域分布、海内外参与比例三个数据维度进行分析，分析用户的不同群体特征对他们在舆论事件中的关注和参与度的影响。</p>
+<h3 id="1-微博关注用户的性别渗透率"><a href="#1-微博关注用户的性别渗透率" class="headerlink" title="(1) 微博关注用户的性别渗透率"></a>(1) 微博关注用户的性别渗透率</h3><p><img src="http://a3.qpic.cn/psb?/V13JePQz0UURGN/OTE1fqIU36wPwjGYd9z88oct8WJkOWsX0d1Zqllvu6A!/b/dPIAAAAAAAAA&amp;bo=YQKiAQAAAAADB.I!&amp;rf=viewer_4" alt="微博关注用户的性别渗透率"></p>
+<blockquote>
+<p>渗透率:表示用户对特定事件关注度的比例.<br>性别渗透率 = 某性别用户对关键词的关注度／该性别用户总关注度<br>地域渗透率 = 某省份或城市用户对包含特定关键词文章的关注度/该省份或城市产生的总关注度</p>
+</blockquote>
+<p>上图数据显示，微博关注此事件的男性网民与女性网民比例是71%：29%，可看出：<strong>男性网民对此事件的关注度远远高于女性网民</strong>。而根据微博数据中心发布的《2016微博用户发展报告》，2016年微博活跃用户中男性用户以55.5%：44.5%略高于女性用户，可知男性用户比例本身只是略高于女性用户。导致关注此事件的男性网民比例超出寻常地高于女性用户，可能是由于<strong>不同性别网民的兴趣差异，因为通常来说男性网民对“中印边境事件”这类国际、军事、时政、历史等性质的话题的关注度要远高于女性网民</strong>。</p>
+<h3 id="2-微博关注用户的地域渗透率"><a href="#2-微博关注用户的地域渗透率" class="headerlink" title="(2) 微博关注用户的地域渗透率"></a>(2) 微博关注用户的地域渗透率</h3><p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/ETjlsGBL7jsCbOPWaZPjIecx3GOow55ExsFM22cerck!/b/dPMAAAAAAAAA&amp;bo=8wN2AgAAAAARB7Q!&amp;rf=viewer_4" alt="微博关注用户的地域渗透率"></p>
+<p>由上图可看出，<strong>北京和广东的微博网民对话题的关注度最高，其次是江苏、上海、山东、河南、云南等</strong>。    </p>
+<p>北京经济发达，人口众多，网民数量多，且作为我国政治中心，<strong>网民对政治事件的关注度和敏感度较高</strong>，故北京微博网民对“中印边境事件”的关注度最高。        </p>
+<p>广东省是<strong>中国的经济大省和改革开放前沿阵地，与印度的经贸合作一直十分紧密</strong>(去年粤印贸易总额达144亿美元，占中印贸易总额的1/5)；对印度来说广东的经济地位也十分突出，广东省与印度的古吉拉特邦已缔结友好省邦协议;再加上因互通贸易、人员流通等因素，广东省与印度文化上也有很大的渊源;且随中印双方更加紧密的发展伙伴关系的构建和“一带一路”建设的深入推进，广东和印度的经贸合作在未来会有更大的发展。所以<strong>担心“中印边境事件”会影响广东与印度的经济合作</strong>，可能是导致广东的微博网民对此事件的关注度最高的重要因素之一。  </p>
+<p>云南省作为中国通往南亚、东南亚开放的前沿省份，是<strong>中国面向印度的陆路窗口</strong>，与印度有地缘政治下的区域经济合作优势，且改革开放以来云南与印度的经济合作总体处于较快发展状态；以及在“一带一路”倡议和建设面向南亚、东南亚辐射中心的利好条件下，云南与印度的经济合作发展前景广阔。而且地域毗邻下若中印发生军事冲突，会首先影响到云南。故可以推测，<strong>担心中印边境冲突可能会影响云南的安定以及其与印度的经济合作</strong>，可能是导致云南的微博网民的对此事件关注度次高的重要因素之一。  </p>
+<p>据相关报道可知，<strong>河南为兵员大省</strong>，所以其微博网民对此事有较高的关注度。</p>
+<h3 id="3-微博海内外关注用户的参与统计"><a href="#3-微博海内外关注用户的参与统计" class="headerlink" title="(3) 微博海内外关注用户的参与统计"></a>(3) 微博海内外关注用户的参与统计</h3><p><img src="http://m.qpic.cn/psb?/V13JePQz0UURGN/UxaZZzTnVcqiIywidRTxFm.7.fckLvlge1PQessmKAs!/b/dPIAAAAAAAAA&amp;bo=YQKiAWECogEDByI!&amp;rf=viewer_4" alt="微博海内外关注用户的参与统计"></p>
+<p>根据微博数据中心发布的《2016微博用户发展报告》[3]，港澳台及海外的微博用户占全体微博用户的2%。而上图显示，微博海内外关注用户中海外用户占比4.8%，高于2%。这说明海外微博用户对此事件较为关注。这可能是由于<strong>“中印边境事件”的国际属性，以及其事件本身在国际上就引起了较大的舆论争议</strong>。</p>
+<h2 id="5-3-微博内容情感分析"><a href="#5-3-微博内容情感分析" class="headerlink" title="5.3 微博内容情感分析"></a>5.3 微博内容情感分析</h2><p>本报告利用LSTM模型对事件相关的微博内容进行情感分析，将情感强度划分为四个情感等级，分别为0， 1， 2， 3，从0到3情感依次从平和到愤慨。</p>
+<h3 id="5-3-1-微博内容的情感极性时间变化图"><a href="#5-3-1-微博内容的情感极性时间变化图" class="headerlink" title="5.3.1 微博内容的情感极性时间变化图"></a>5.3.1 微博内容的情感极性时间变化图</h3><p>(1) 微博文章的情感极性时间变化图</p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/hXZ7c0upH3P3lbWmo5w8.6Hy04cYP7zQUdA*1waAnws!/b/dPMAAAAAAAAA&amp;bo=kwSKA5MEigMDByI!&amp;rf=viewer_4" alt="微博文章的情感极性时间变化图"></p>
+<p>对比上图与本报告1.1节的「事件走势回顾图」，易发现<strong>微博文章的情感极性峰值和谷值时间点与整个事件进展的关键时间节点十分吻合</strong>。分析上图可知：</p>
+<ul>
+<li>1.事件进展的最新新闻(无论正面还是负面新闻)极易调动微博网民情绪；</li>
+<li>2.事件周期内微博网民绝大部分时候处于愤慨情绪状态；</li>
+<li>2.此事件中负面新闻(如：6月26日前印军阻挠中国边防部队在洞朗地区的正常活动 ；6月29日外交部展示印度边防人员非法越过中印边境进入中国领土照片)的爆出一次次刺激网民的敏感神经，接连不断引发网民的愤慨情绪峰值；</li>
+<li>3.正面新闻的报道则会引发网民平和情绪谷值。</li>
+</ul>
+<p>(2) 微博评论的情感极性时间变化图</p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/evQ*2mK8z3dqy0p4bom4nUOfUEn7FvgzXkmnCVyrnek!/b/dPMAAAAAAAAA&amp;bo=kwSKA5MEigMDACU!&amp;rf=viewer_4" alt="微博评论的情感极性时间变化图"></p>
+<p>对比上面两图，易发现微博评论的情感极性变化走势与微博文章十分相似，但波动幅度比微博文章小，峰值谷值没那么明显，且绝大部分时候处于愤慨情绪状态。</p>
+<h3 id="5-3-2-微博内容的情感地域分布"><a href="#5-3-2-微博内容的情感地域分布" class="headerlink" title="5.3.2 微博内容的情感地域分布"></a>5.3.2 微博内容的情感地域分布</h3><p>(1) 微博文章的情感地域分布</p>
+<p><img src="http://a3.qpic.cn/psb?/V13JePQz0UURGN/GrixFzbGnmuymcrTBBk6dDLhraCfhJ5R5RH6rFJ6p2o!/b/dPIAAAAAAAAA&amp;bo=pgNcAqYDXAIDACU!&amp;rf=viewer_4" alt="微博文章的情感地域分布"></p>
+<p>上表显示“中印边境事件”下微博文章的情感强度的地域分布。由图可看出，新疆网民的微博文章的情感强度最高，表明最愤慨，其次是西藏、江西、云南等。</p>
+<p>云南：由于印度、云南地域毗邻，故若中印发生军事冲突可能会首先影响到云南。故可以推测，担心中印边境冲突影响云南安定可能是云南微博网民较为愤慨的原因。</p>
+<p>新疆：与此次事件争议的位于西藏的锡金段类似，绝大部分属于新疆管辖的阿克塞钦地区也是中印边界争议地区，且历史上中印多次边界冲突事件都牵涉到此地区。故<strong>印度与中国新疆的边界争议和曾爆发的多次冲突可能是引起新疆微博网民较为愤慨的原因</strong>。</p>
+<p>(2) 微博评论的情感地域分布</p>
+<p><img src="http://a3.qpic.cn/psb?/V13JePQz0UURGN/HSNH.8NIQH9w6xyexid9otWSPjNNDlWz4RXmNS86M1U!/b/dPIAAAAAAAAA&amp;bo=oQNZAqEDWQIDACU!&amp;rf=viewer_4" alt="微博评论的情感地域分布"></p>
+<p>上表显示此事件下微博网民评论的情感强度的地域分布。由图可看出，北京和重庆的微博网民的微博评论的情感强度最高，表明最愤慨，其次是辽宁、湖南、宁夏等。其中，<strong>由于北京首都和全国政治中心的性质，故北京微博网民对这类政治事件的敏感度相较更高、反应更为强烈</strong>，这可能是导致北京微博网民评论体现出最为愤慨的情感的原因。</p>
+<p>通过对比上面两表，易发现二者特征差异很大。比如：微博文章的情感地域分布中，沿中印边界线的省份的微博网民情绪较为愤慨；而微博评论的情感地域分布中，中国中部和北方地区、东北地区的微博网民情绪较为愤慨，沿中印边界线的省份的微博网民情绪反而较为平和。</p>
+<h1 id="6-主流媒体平台的舆情特点对比分析"><a href="#6-主流媒体平台的舆情特点对比分析" class="headerlink" title="6 主流媒体平台的舆情特点对比分析"></a>6 主流媒体平台的舆情特点对比分析</h1><h2 id="6-1-主流媒体平台热度-声量大小-的变化趋势对比"><a href="#6-1-主流媒体平台热度-声量大小-的变化趋势对比" class="headerlink" title="6.1 主流媒体平台热度(声量大小)的变化趋势对比"></a>6.1 主流媒体平台热度(声量大小)的变化趋势对比</h2><p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/*bLBuztwh*M07O.k37VewmMojW6NQsfuBZkjQzuMGEo!/b/dGsBAAAAAAAA&amp;bo=IAOQASADkAEDByI!&amp;rf=viewer_4" alt="微博POST热度分析"></p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/ecG.dU0**JqEQ1ltWOq8blXz3xOUkrq1Kdp6Cycu82s!/b/dPMAAAAAAAAA&amp;bo=IAOQASADkAEDByI!&amp;rf=viewer_4" alt="微博评论热度分析"></p>
+<p><img src="http://a3.qpic.cn/psb?/V13JePQz0UURGN/cjjXfVRXmQbUxGxab9R3ZwEXHpJu7M4TaFGXlark0CE!/b/dFsBAAAAAAAA&amp;bo=IAOQASADkAEDACU!&amp;rf=viewer_4" alt="今日头条文章热度分析"></p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/*fscCXfhihAbEADvizruN0.jTsRULy34rIrg*6ufhVA!/b/dPMAAAAAAAAA&amp;bo=IAOQASADkAEDACU!&amp;rf=viewer_4" alt="今日头条评论热度分析"></p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/d4yI.WNr0K3IXDC5kJdMABQJLtcnHGtPJOrUAISfqyE!/b/dGsBAAAAAAAA&amp;bo=IAOQASADkAEDACU!&amp;rf=viewer_4" alt="微信文章热度分析"></p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/Bip.3Kd*O.FGGtNDLyBFrx0Ovo0WHm5yaFJursaG1Wc!/b/dPMAAAAAAAAA&amp;bo=IAOQASADkAEDACU!&amp;rf=viewer_4" alt="知乎回答热度分析"></p>
+<p><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/nHxybZ1ueaD*ccCC9edbJ8bDNlQJzZEoA8OZ8z.He9c!/b/dPMAAAAAAAAA&amp;bo=IAOQASADkAEDACU!&amp;rf=viewer_4" alt="知乎评论热度分析"></p>
+<p>分析上面7张图表可知，在“中印边境事件”中：</p>
+<ul>
+<li><strong>舆论热度大小比较：微博 &gt; 今日头条 &gt; 微信 &gt; 知乎</strong></li>
+<li><strong>舆论热度的波动大小比较：今日头条 &gt; 微博 &gt; 微信 ≈ 知乎</strong></li>
+<li>微博舆论热度最高，声量最大，其中微博评论热度要远高于其文章热度</li>
+<li>微博文章与微博评论、头条文章与头条评论、知乎回答与知乎评论这三对的热度变化趋势各自十分相似</li>
+<li>今日头条与微博的舆论热度变化趋势较为相似，且波动都较大；而微信和知乎热度总体波动较小</li>
+<li>四个媒体平台的热度最高峰出现的时间段不同，今日头条与微博的最高峰都是在8月11日(报道：印军进入高等级战备状态)，而微信和知乎的最高峰都是在8月03-04日(报道：中国六大部门集体就印方越界事件发声)。</li>
+</ul>
+<p>由上可总结：在此事件中，<strong>微博与今日头条的舆论热度特征相似，微信与知乎的舆论热度特征相似</strong>。原因可推测：可能由于<strong>今日头条与微博的新闻即时性、社交化媒体属性、信息传播性更强，且内容都偏向于快餐式</strong>，故二者舆论热度特征相似；而<strong>微信和微博相对来说新闻即时性、社交化媒体属性、信息传播性偏弱，且内容都偏向于深层次</strong>，故二者舆论热度特征相似。</p>
+<p>而热度最高峰的时间点的差异，<strong>实质上反映出这四个媒体平台对同一事件的关注点以及同一事件不同阶段进展的关注程度不同</strong>。头条和微博上“印军进入高等级战备状态”热度最高，可能是因它涉及国家安全，极具争议性和传播性，易在这两个平台上引起广泛传播和全民讨论；而微信和知乎上“中国六大部门集体就印方越界事件发声”热度最高，可能是由于它展现出中国对待这一事件不同以往的强硬态度和坚定立场，值得深入挖掘和讨论。</p>
+<h2 id="6-2-主流媒体平台的典型意见挖掘——基于LDA主题模型"><a href="#6-2-主流媒体平台的典型意见挖掘——基于LDA主题模型" class="headerlink" title="6.2 主流媒体平台的典型意见挖掘——基于LDA主题模型"></a>6.2 主流媒体平台的典型意见挖掘——基于LDA主题模型</h2><p>LDA是一种非监督机器学习技术，本报告利用该模型识别微博、微信、今日头条和知乎四大媒体平台上的文章和评论中潜藏的主题信息，并将文章与评论进行分类，并分别用若干个关键词来描述每个主题，从中提取出舆情的主流观点。</p>
+<p>下列主题排名顺序表中：主题即反映主流观点；主题得分越高，说明其意见占比越大。</p>
+<h3 id="6-2-1-媒体平台文章的主流观点对比"><a href="#6-2-1-媒体平台文章的主流观点对比" class="headerlink" title="6.2.1 媒体平台文章的主流观点对比"></a>6.2.1 媒体平台文章的主流观点对比</h3><p>(1) 微博文档主题排名顺序<br><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/jS3fP1gM96SlyIi1mv.4ktgBPHedYMTvyZ.oZlsH*p4!/b/dPMAAAAAAAAA&amp;bo=IAOQASADkAEDACU!&amp;rf=viewer_4" alt="微博文档主题排名顺序"></p>
+<p>上图显示“中印边境事件”中微博文档的主流观点，其中{“印方”，“中方”，“越界”，“领土”，“边界”，“外交部”}主题得分最高(3800分)。由此可知，<strong>微博文档倾向于报道中印洞朗边界冲突发展状况，和中国外交部的多次回应</strong>。</p>
+<p>这反映微博网民和媒体密切关注中印边境事件的最新进展。而密切关注中国外交部对此类政治敏感事件的表态，可能一是因为一般来说国家外交部对政治敏感事件的表态直接反映出国家解决事件的对策倾向，二是网民很在意且希望国家表现出强硬和坚定的维护国家主权的立场，这可给国民增加民族自信心和底气。</p>
+<p>此外，微博文档还倾向于印度撤军、中国军事阅兵、尼泊尔立场等主题。</p>
+<p>(2) 今日头条文章主题排名顺序<br><img src="http://a2.qpic.cn/psb?/V13JePQz0UURGN/RT68X9.KcVCz7FU1eSodK9IlqCCinQeZsASIHi1DtA4!/b/dD8BAAAAAAAA&amp;bo=IAOQASADkAEDACU!&amp;rf=viewer_4" alt="今日头条文章主题排名顺序"></p>
+<p>上图显示此事件中今日头条文章的主流观点，其中{“印度”，“不丹”，“中国”，“对峙”，“边界”，“领土”}主题得分最高(12800分)。由此可知，<strong>今日头条文章倾向于报道中印对峙暴露出的中、印、不丹三国领土边界争议，反映出今日头条文章在此事件中对这一历史遗留问题(边界争议)的关注</strong>。这可能是由于头条的文章普遍倾向于分析“中印边境事件”背后反映出的历史因素。</p>
+<p>此外，今日头条文章还倾向于关注中印对峙下的中印经济合作问题等。</p>
+<p>(3) 微信文章主题排名顺序<br><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/R0VNS.eR0gNMh4dWnlQx*tmTtYmOzY3i2rjCnbwSzfU!/b/dPMAAAAAAAAA&amp;bo=IAOQASADkAEDACU!&amp;rf=viewer_4" alt="微信文章主题排名顺序"></p>
+<p>上图显示此事件中微信文章的主流观点，其中{“锡金”，“尼泊尔”，“边界”，“独立”，“地区”，“高原”，“对峙”}主题得分最高(110000分)。由此可知，<strong>微信文章倾向于关注中印锡金段边界对峙、尼泊尔立场、英国立场</strong>。其中<strong>英国立场</strong>受较大关注的可能原因，一是历史上印度与英国曾是殖民地与宗主国的关系，且印度现为英联邦成员国；二是英国表态不会介入中印争端。</p>
+<p>此外，微信文章还倾向于分析在此事件中美国、日本、朝鲜、台湾、不丹、孟加拉国的态度和立场，解放军的力量，印军的亚东军事部署，中兴等中国手机公司在印度市场受影响等主题。这反映出<strong>微信文章将关注焦点更多聚焦于中印事件背后的国际政治关系博弈，以及事件对中印经济贸易的影响</strong>。</p>
+<p>其中<strong>中兴等中国手机公司在印度市场受影响</strong>的主要原因，一是由于近年中兴、小米等中国手机品牌集体出征印度市场，印度市场对这些公司的海外市场战略很重要；二是由于事件期间印度国民出现的反华情绪和抵制“中国货”运动可能为这些中国手机厂商增加了变数。</p>
+<p>(4) 知乎回答主题排名顺序<br><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/ekV.eX43sxyWSeD2MtK0IPlF2ZkE1jbPNr7hlwer0QQ!/b/dPMAAAAAAAAA&amp;bo=IAOQASADkAEDACU!&amp;rf=viewer_4" alt="知乎回答主题排名顺序"></p>
+<p>上图显示此事件中知乎回答的主流观点，其中{“印度”，“中国”，“国家”，“强硬”，“战争”，“经济”}主题得分最高(28000分)。由此可知，<strong>知乎回答的主流观点是：对印态度要强硬，中印经济发展，是否诉诸战争</strong>。</p>
+<p>此外，知乎回答还倾向于谈论在中印边境事件中美国、不丹、朝鲜、南海的角色，中国的战略优劣势(后勤补给、海军、军队部署)等主题。由此可见，<strong>知乎回答更倾向于分析战争、军事战略层面，反映网民对此事件下国际多方立场的关注，对中国是否该诉诸武力、以及若发生战争中国的战略优劣势的思考</strong>。</p>
+<h3 id="6-2-2-媒体平台网民评论的主流观点对比"><a href="#6-2-2-媒体平台网民评论的主流观点对比" class="headerlink" title="6.2.2 媒体平台网民评论的主流观点对比"></a>6.2.2 媒体平台网民评论的主流观点对比</h3><p>(1) 微博评论主题排名顺序<br><img src="http://a3.qpic.cn/psb?/V13JePQz0UURGN/RlY9O1LLMsgDWtGevJPi3x75N1BIZ1m8ikJaqI3FkRA!/b/dPIAAAAAAAAA&amp;bo=IAOQASADkAEDACU!&amp;rf=viewer_4" alt="微博评论主题排名顺序"></p>
+<p>上图显示“中印边境事件”中微博网民评论的主流观点，其中{“印度”，“中国”，“美国”，“日本”，“边境”，“士兵”}主题得分最高(18700分)。由此可知，<strong>微博网民评论更倾向于讨论中印边境事件中中、印、美、日各方的国际关系</strong>。</p>
+<p>此外，微博评论还倾向于传播和平解决中印争端、印度非法入侵、小粉红、主战打印等主题。</p>
+<p>以下是对“小粉红[4]”受到较大关注的分析：</p>
+<p>小粉红是中国大陆自由派社交网络用户用以贬低中国大陆民族主义社交网络用户的负面标签。这部分群体具有简单粗暴的爱国主义情感和执行简单粗暴的爱国主义行为，如“抵制日货运动”。媒体对其历来褒贬不一。此次“中印边境事件”亦出现大量“主战派”“小粉红”，他们不满中国政府迟迟不肯开战，将印军入侵称为“非法越界”，主张诉诸武力捍卫国格与军威。</p>
+<blockquote>
+<p>如：网友@透过本质看真相：别国的部队都过界了，平时那么强硬的媒体砖家还有爱国的小粉红去哪里了？</p>
+</blockquote>
+<p>但与以前不同，此次网上并未有对其的大量贬低、讽刺之声。由此可推测，<strong>对这类国家领土被非法入侵和国家安全受威胁的政治事件，诉诸武力是网民的考虑选项之一，支持者不在少数，而不是被看做“小粉红式“的“简单粗暴的爱国主义想法”</strong>。</p>
+<p>(2) 今日头条评论主题排名顺序<br><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/pWyqLrTjy9BPMJFJZTLJaoA9ZzzclIQJBGj42o1ikn8!/b/dPMAAAAAAAAA&amp;bo=IAOQASADkAEDACU!&amp;rf=viewer_4" alt="今日头条评论主题排名顺序"></p>
+<p>上图显示此事件中今日头条网民评论的主流观点，其中{“印度”，“中国”，“美国”，“不丹”}主题得分最高(44000分)。由此可知，<strong>今日头条网民评论更倾向于谈论此事件下中、印、美、不丹四国的立场</strong>。</p>
+<p>此外，今日头条评论还倾向于谈论印度抵制中国货，致敬中国解放军，印度非法入侵中国领土等主题。</p>
+<p>(3) 知乎评论主题排名顺序<br><img src="http://a1.qpic.cn/psb?/V13JePQz0UURGN/TtPbvRE*XRySVBgzTPfbw0KVfuV0iHoG7MNiNLWz.DI!/b/dPMAAAAAAAAA&amp;bo=YQKiAWECogEDACU!&amp;rf=viewer_4" alt="知乎评论主题排名顺序"></p>
+<p>上图显示此事件中知乎网民评论的主流观点，其中{“中国”，“印度”，“国家”，“发展”，“经济”，“美国”}主题得分最高(34000分)。由此可知，知乎评论更倾向于谈论此事件下中印国家关系和中印经济发展等主题，这反映<strong>知乎网民评论中对此事件对中印国家关系和经济发展、经贸往来的影响的思考</strong>。</p>
+<p>此外，知乎网民评论还倾向于分析此事件下中、美、朝、日、南海五者的角色和关系，以及所涉台湾问题(因中印冲突，台两学生被印拒绝入境)。</p>
+<h1 id="7-舆情总结与启示"><a href="#7-舆情总结与启示" class="headerlink" title="7 舆情总结与启示"></a>7 舆情总结与启示</h1><h2 id="7-1-事件分析"><a href="#7-1-事件分析" class="headerlink" title="7.1 事件分析"></a>7.1 事件分析</h2><p>1.印度为何态度如此强硬？</p>
+<p>印度态度如此强硬，背后必然有着更深层次的原因。</p>
+<ul>
+<li>一方面印度外债高筑，经济发展形势并不乐观，政府有无法掌控局势的趋势，这时候挑起与中国的冲突能有效转移国内矛盾;</li>
+<li>另一方面，随着中国“一带一路”的推进，势必会改变沿线地区的地缘政治形势，并与其他大国的利益发生冲突，中东这里就有美国的核心利益石油；而“中巴经济走廊”项目将通过克什米尔地区更是让印度痛心疾首，在围堵中国的共同利益下，印度必然得到以美国为首的相关国家大力支持，更加有恃无恐。</li>
+</ul>
+<p>2.印度最终为何选择和解？</p>
+<ul>
+<li>一是印度军事实力弱于中国;</li>
+<li>二是印度现今经济情况不容乐观，经济情况可能无法承受战争的负担。</li>
+</ul>
+<p>3.国际各国对此事件的态度是怎样的？</p>
+<p>各国均表示希望中印双方和解。</p>
+<p>4.中国的态度？</p>
+<p>中国希望和平崛起，但在涉及领土的核心利益上，也决不会做任何妥协。从长远来看，军事冲突的代价对于双方都是难以承受，双方如果开战，伤亡在所难免，在谈判桌上和平解决争端是最好的选择。中国的在整次事件中的做法是在保证足够军事威慑的基础上，和平解决此次边境问题。</p>
+<h2 id="7-2-舆情整体特点总结"><a href="#7-2-舆情整体特点总结" class="headerlink" title="7.2 舆情整体特点总结"></a>7.2 舆情整体特点总结</h2><p>基于对微博、微信公众号、今日头条和知乎四大媒体平台的事件相关数据的分析，我发现了此事件有如下舆论特点。</p>
+<ul>
+<li>1.全网热度峰值时间点与此事件的每一步进展的时间点基本上紧密吻合，不同平台有所差别。</li>
+<li>2.微博的舆论声量最大，今日头条、微信、知乎分别为第二、三、四。微博对信息量的贡献占绝大部分，可以说是中国第一大“社会公共舆论场”。</li>
+<li>3.网民关注的焦点主要是：事件进展、中国外交部的回应、事件背后的国际政治关系博弈、战争对中国经济的影响、军事战略等，不同平台用户的关注焦点有所差别。- - 4.微博关注网民以男性居多，主流情感是愤怒，主战派声量较大且受到很多网友的赞同。微博的事件核心传播用户基本上都是官媒或军事自媒体背景，传播层级和覆盖面非常广，且传播周期短、效率高。</li>
+</ul>
+<h2 id="7-3-政府启示"><a href="#7-3-政府启示" class="headerlink" title="7.3 政府启示"></a>7.3 政府启示</h2><blockquote>
+<p>微博是中国第一大“社会公共舆论场”，网民首选且重要的舆论参与平台。微博的每一部移动终端和微博空间的每一个网民，在其本质上都演绎成整个民间公共信息系统的释放点、采集点、延伸点、链接点；微博是网民在日常社交过程中通过碎片化传播随时随地参与完成对政府社会治理、公共事务和公共服务评议的“融合讯息通道”。</p>
+</blockquote>
+<p>政府可以从这次舆情事件分析中得到什么启示？下次类似舆情事件发生，政府该如何应对？</p>
+<ul>
+<li>1.充分发挥微博大V的舆论影响力，借助相关大V来助力舆论引导，如利用官媒和军事自媒体的舆论影响力为官方舆论服务；</li>
+<li>2.快速响应：热门微博的传播有时效性，政府需要密切关注原创发出的后几小时；</li>
+<li>3.建立网络舆情预警机制，防止恶性信息的进一步扩散和传播，将负面舆情第一时间扼杀在摇篮中，及时疏导网络舆情，做到对其的有效应对；</li>
+<li>4.创新正能量传播，多账号“抱团”垂直行业内部主动策划舆论传播，形成一定传播声量；</li>
+<li>5.建立常态互动机制：主动回应舆情，从单向管理转向双向互动。</li>
+</ul>
+<p>注释</p>
+<p>[1] 维基百科.2017年中印军队洞朗对峙事件 <a href="https://zh.wikipedia.org/wiki/2017%E5%B9%B4%E4%B8%AD%E5%8D%B0%E5%86%9B%E9%98%9F%E6%B4%9E%E6%9C%97%E5%AF%B9%E5%B3%99%E4%BA%8B%E4%BB%B6" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/2017%E5%B9%B4%E4%B8%AD%E5%8D%B0%E5%86%9B%E9%98%9F%E6%B4%9E%E6%9C%97%E5%AF%B9%E5%B3%99%E4%BA%8B%E4%BB%B6</a> </p>
+<p>[2] 今日头条算数中心.2016移动资讯行业细分报告 <a href="http://www.199it.com/archives/559343.html" target="_blank" rel="noopener">http://www.199it.com/archives/559343.html</a></p>
+<p>[3] 微博数据中心.2016微博用户发展报告 <a href="http://data.weibo.com/report/reportDetail?id=346" target="_blank" rel="noopener">http://data.weibo.com/report/reportDetail?id=346</a></p>
+<p>[4] 维基百科.小粉红 <a href="https://zh.wikipedia.org/wiki/%E5%B0%8F%E7%B2%89%E7%B4%85" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E5%B0%8F%E7%B2%89%E7%B4%85</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Public-Opinion-Analysis/" rel="tag"># Public Opinion Analysis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/01/品牌广告活动分析报告-2017网易考拉海购H5/" rel="next" title="品牌广告活动分析报告|2017网易考拉海购H5">
+                <i class="fa fa-chevron-left"></i> 品牌广告活动分析报告|2017网易考拉海购H5
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/04/计算机组成原理复习笔记1/" rel="prev" title="计算机组成原理复习笔记1">
+                计算机组成原理复习笔记1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">131</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-事件简介及走势"><span class="nav-number">1.</span> <span class="nav-text">1 事件简介及走势</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-事件简介"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 事件简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-事件走势回顾"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 事件走势回顾</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-爬取数据说明"><span class="nav-number">2.</span> <span class="nav-text">2 爬取数据说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-爬取数据说明"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 爬取数据说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-微博数据"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 微博数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-知乎数据"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 知乎数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-微信数据"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 微信数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-头条数据"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 头条数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-关键技术"><span class="nav-number">3.</span> <span class="nav-text">3 关键技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-基于Gibbs采样算法的LDA主题分类模型"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 基于Gibbs采样算法的LDA主题分类模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-模型介绍"><span class="nav-number">3.1.1.</span> <span class="nav-text">3.1.1 模型介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-模型建立"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.1.2 模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-3-算法求解"><span class="nav-number">3.1.3.</span> <span class="nav-text">3.1.3 算法求解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-基于LSTM模型的情感分析"><span class="nav-number">3.1.4.</span> <span class="nav-text">3.2 基于LSTM模型的情感分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-数据标注"><span class="nav-number">3.1.5.</span> <span class="nav-text">3.2.1 数据标注</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-数据处理"><span class="nav-number">3.1.6.</span> <span class="nav-text">3.2.2 数据处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3-基于LSTM模型的情感分析"><span class="nav-number">3.1.7.</span> <span class="nav-text">3.2.3 基于LSTM模型的情感分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-其他算法"><span class="nav-number">3.1.8.</span> <span class="nav-text">3.3 其他算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-全网舆情分析"><span class="nav-number">4.</span> <span class="nav-text">4 全网舆情分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-全网关注度概况"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 全网关注度概况</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-全网热度走势"><span class="nav-number">4.1.1.</span> <span class="nav-text">(1) 全网热度走势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-全网文章和评论热度随时间变化"><span class="nav-number">4.1.2.</span> <span class="nav-text">(2) 全网文章和评论热度随时间变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-全网关注度来源分布比例"><span class="nav-number">4.1.3.</span> <span class="nav-text">(3) 全网关注度来源分布比例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-微博热度随时间变化"><span class="nav-number">4.1.4.</span> <span class="nav-text">(4) 微博热度随时间变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-除微博外媒体热度随时间变化"><span class="nav-number">4.1.5.</span> <span class="nav-text">(5) 除微博外媒体热度随时间变化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-全网关注点分析"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 全网关注点分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-全网关键词词云"><span class="nav-number">4.2.1.</span> <span class="nav-text">(1) 全网关键词词云</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-全网关联词分析"><span class="nav-number">4.2.2.</span> <span class="nav-text">(2) 全网关联词分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-微博舆情分析"><span class="nav-number">5.</span> <span class="nav-text">5 微博舆情分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-微博传播分析"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 微博传播分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-微博网民群体画像分析"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 微博网民群体画像分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-微博关注用户的性别渗透率"><span class="nav-number">5.2.1.</span> <span class="nav-text">(1) 微博关注用户的性别渗透率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-微博关注用户的地域渗透率"><span class="nav-number">5.2.2.</span> <span class="nav-text">(2) 微博关注用户的地域渗透率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-微博海内外关注用户的参与统计"><span class="nav-number">5.2.3.</span> <span class="nav-text">(3) 微博海内外关注用户的参与统计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-微博内容情感分析"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 微博内容情感分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-1-微博内容的情感极性时间变化图"><span class="nav-number">5.3.1.</span> <span class="nav-text">5.3.1 微博内容的情感极性时间变化图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-2-微博内容的情感地域分布"><span class="nav-number">5.3.2.</span> <span class="nav-text">5.3.2 微博内容的情感地域分布</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-主流媒体平台的舆情特点对比分析"><span class="nav-number">6.</span> <span class="nav-text">6 主流媒体平台的舆情特点对比分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-主流媒体平台热度-声量大小-的变化趋势对比"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 主流媒体平台热度(声量大小)的变化趋势对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-主流媒体平台的典型意见挖掘——基于LDA主题模型"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 主流媒体平台的典型意见挖掘——基于LDA主题模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-1-媒体平台文章的主流观点对比"><span class="nav-number">6.2.1.</span> <span class="nav-text">6.2.1 媒体平台文章的主流观点对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-2-媒体平台网民评论的主流观点对比"><span class="nav-number">6.2.2.</span> <span class="nav-text">6.2.2 媒体平台网民评论的主流观点对比</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-舆情总结与启示"><span class="nav-number">7.</span> <span class="nav-text">7 舆情总结与启示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-事件分析"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 事件分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-舆情整体特点总结"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 舆情整体特点总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-政府启示"><span class="nav-number">7.3.</span> <span class="nav-text">7.3 政府启示</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

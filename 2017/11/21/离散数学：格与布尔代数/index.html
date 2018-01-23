@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Math,Discrete Mathematics," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：逻辑代数实质是符号逻辑，布尔代数即逻辑代数，核心是类的演算。偏序关系是格的先修知识。当偏序集里的所有子集都有最大下界和最小上界时，称为格。其中有补分配格称为布尔代数（有补，分配，有界）。">
+<meta name="keywords" content="Math,Discrete Mathematics">
+<meta property="og:type" content="article">
+<meta property="og:title" content="离散数学：格与布尔代数">
+<meta property="og:url" content="http://yoursite.com/2017/11/21/离散数学：格与布尔代数/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：逻辑代数实质是符号逻辑，布尔代数即逻辑代数，核心是类的演算。偏序关系是格的先修知识。当偏序集里的所有子集都有最大下界和最小上界时，称为格。其中有补分配格称为布尔代数（有补，分配，有界）。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://pic3.zhimg.com/50/v2-20faf8bf1d9cb03d8475470f3330c51e_hd.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/50/v2-e347547e4731f61a4e4192a7ce725568_hd.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/50/v2-e347547e4731f61a4e4192a7ce725568_hd.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/50/v2-0648dcd454212cc49317190c7288e435_hd.jpg">
+<meta property="og:updated_time" content="2017-11-21T11:15:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="离散数学：格与布尔代数">
+<meta name="twitter:description" content="Abstract：逻辑代数实质是符号逻辑，布尔代数即逻辑代数，核心是类的演算。偏序关系是格的先修知识。当偏序集里的所有子集都有最大下界和最小上界时，称为格。其中有补分配格称为布尔代数（有补，分配，有界）。">
+<meta name="twitter:image" content="https://pic3.zhimg.com/50/v2-20faf8bf1d9cb03d8475470f3330c51e_hd.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/21/离散数学：格与布尔代数/"/>
+
+
+
+
+
+  <title>离散数学：格与布尔代数 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/21/离散数学：格与布尔代数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">离散数学：格与布尔代数</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-21T19:13:44+08:00">
+                2017-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Math/" itemprop="url" rel="index">
+                    <span itemprop="name">Math</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Math/Discrete-Mathematics/" itemprop="url" rel="index">
+                    <span itemprop="name">Discrete Mathematics</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：逻辑代数实质是符号逻辑，布尔代数即逻辑代数，核心是类的演算。偏序关系是格的先修知识。当<p, ≤="">偏序集里的所有子集都有最大下界和最小上界时，称<p, ≤="">为格。其中有补分配格称为布尔代数（有补，分配，有界）。</p,></p,></p>
+<a id="more"></a>
+<h1 id="布尔代数初导"><a href="#布尔代数初导" class="headerlink" title="布尔代数初导"></a>布尔代数初导</h1><p>逻辑代数实质是符号逻辑，德摩根与布尔算是逻辑代数的创始人，布尔代数即逻辑代数。</p>
+<h2 id="德摩根定律："><a href="#德摩根定律：" class="headerlink" title="德摩根定律："></a>德摩根定律：</h2><p>德摩根定律：一个组(aggregate)的反面(contrary)是各个组的反面的复合(compound)；一个复合的反面是各成分的反面的组合。</p>
+<script type="math/tex; mode=display">1-(x+y)=(1-x)(1-y)</script><script type="math/tex; mode=display">1-xy=(1-x)+(1-y)</script><h2 id="布尔代数"><a href="#布尔代数" class="headerlink" title="布尔代数"></a>布尔代数</h2><p>外延逻辑extensional logic：类(class)的逻辑</p>
+<ul>
+<li>用小写字母表示类或集合，用大写字母表述个体元素</li>
+<li>1:万有类，0：空类或零类</li>
+<li>xy：x，y中共有元素的集合；x + y：所有元素的集合；1 - x：x的补集；x - y：由不是y的x组成的类；xy = x：x包含在y中(x的外延小于y)；等号：表示两个类的同一性</li>
+</ul>
+<p>矛盾律：$x（1+x）= 0$，即A不能既是A又是B</p>
+<script type="math/tex; mode=display">xy=yx</script><script type="math/tex; mode=display">xx=x</script><script type="math/tex; mode=display">x+y=y+x</script><script type="math/tex; mode=display">x(u+v)=xu+xv</script><p>排中律：$x+(1-x)=1$，即任何东西不是A就是非A</p>
+<script type="math/tex; mode=display">1x=x</script><script type="math/tex; mode=display">0x=0</script><h2 id="布尔：延伸—命题逻辑"><a href="#布尔：延伸—命题逻辑" class="headerlink" title="布尔：延伸—命题逻辑"></a>布尔：延伸—命题逻辑</h2><p><strong>类的演算可以解释为命题的演算:</strong></p>
+<p>若x与y不是类而是命题，则xy是x与y的同时肯定；而x+y是x或y或两者的肯定；x=1表示命题x为真，x=0表示命题x为假，1-x表示x的否定。</p>
+<h1 id="格与布尔代数"><a href="#格与布尔代数" class="headerlink" title="格与布尔代数"></a>格与布尔代数</h1><h2 id="偏序关系（偏序是格的先修知识）"><a href="#偏序关系（偏序是格的先修知识）" class="headerlink" title="偏序关系（偏序是格的先修知识）"></a>偏序关系（偏序是格的先修知识）</h2><p>偏序：设R为非空集合A上的关系，若R是自反的，反对称的，可传递的，则称R为A上的偏序关系，简称偏序。记作$≤$。如{1,2,4,8}是偏序关系。</p>
+<p>常见的偏序关系：</p>
+<ul>
+<li>整数集合R上的小于等于、大于等于关系</li>
+<li>幂集（所有子集）中的包含关系</li>
+<li>正整数的整除和整倍数关系</li>
+</ul>
+<p>注：一个偏序的逆关系也是偏序。</p>
+<p>偏序集：<a; ≤="">，即集合A与A上的偏序关系</a;></p>
+<p>覆盖：<a,≤>是一个偏序集，如果对任何x, y ∈ A, 有x≤y且x≠y, 不存在其他的元素z∈A, 能够让x≤z且z小于等于y即$x\leq y\wedge x\ne y\wedge \left( x\leq z\leq y\Rightarrow x=z\vee z=y \right)$成立，则称元素y覆盖x。</a,≤></p>
+<blockquote>
+<p>如：{1，2，4，8}中，8覆盖4，但8不能覆盖2（因为存在4∈A, 使x∈4且4≤8）</p>
+</blockquote>
+<p>哈斯图：表示偏序关系的图。以小圈表示元素，如果有x, y∈A, x≤y且x≠y, 则把x的小圈画在y的小圈下面。而且如果y能够覆盖x的话，便在中间连上一条线（这条线的方向默认是从下往上的，所以不需要标注方向）。如：</p>
+<p><img src="https://pic3.zhimg.com/50/v2-20faf8bf1d9cb03d8475470f3330c51e_hd.jpg" alt="哈斯图例子1"></p>
+<p><img src="https://pic1.zhimg.com/50/v2-e347547e4731f61a4e4192a7ce725568_hd.jpg" alt="哈斯图例子2:整除关系"></p>
+<h2 id="偏序的重要概念"><a href="#偏序的重要概念" class="headerlink" title="偏序的重要概念"></a>偏序的重要概念</h2><p>偏序与格的概念联系非常紧密</p>
+<p>1.设<p,≤>是一个偏序集合，且有Q⊆，y∈Q。</p,≤></p>
+<p>最小元： 对任意x（x∈Q）有y≤x，则y为Q的最小元，通常记作0</p>
+<p>最大元： 对任意x（x∈Q）有x≤y，则y为Q的最大元，通常记作1</p>
+<p>极小元： 对任意x（x∈Q）且x≤y，<strong>有x=y成立</strong>，则y为Q的极小元</p>
+<p>极大元： 对任意x（x∈Q）且y≤x，<strong>有x=y成立</strong>，则y为Q的极大元</p>
+<p>2.设<p, ≤="">是一个偏序集合，并有Q⊆P，y∈P</p,></p>
+<p>上界：对任意x（x∈Q）有x≤y，则y为Q的上界，不一定唯一，注意y只是集合中的一个元素</p>
+<p>下界：对任意x（x∈Q）有y≤x，则y为Q的下界，不一定唯一，注意y只是集合中的一个元素</p>
+<p>最小上界：因为上界不一定唯一，那么Q中所有的上界中最小元即为最小上界</p>
+<p>最大下界：因为下界不一定唯一，那么Q中所有的下界中最大元即为最大下界</p>
+<p>注意：<strong>若某子集有N个“貌似最大下界”，且它们不在一条偏序路径上，则它们不具有可比性，因此没有最大下界</strong>。</p>
+<p><img src="https://pic1.zhimg.com/50/v2-e347547e4731f61a4e4192a7ce725568_hd.jpg" alt="整除关系无最小元例子"></p>
+<p>如上图，A = {2,3}无最大下界！最小上界是6.</p>
+<h2 id="格与布尔代数的概念"><a href="#格与布尔代数的概念" class="headerlink" title="格与布尔代数的概念"></a>格与布尔代数的概念</h2><h3 id="1-格的第一种概念：（用偏序理解）"><a href="#1-格的第一种概念：（用偏序理解）" class="headerlink" title="1.格的第一种概念：（用偏序理解）"></a>1.格的第一种概念：（用偏序理解）</h3><p>设<p, ≤="">是一个偏序集，对P中<strong>任意元素x和y，{x，y}组成的集合都有最大下界和最小上界</strong>，则<p, ≤="">称为格。</p,></p,></p>
+<blockquote>
+<p>即，所有子集都有最大下界和最小上界。<br>attention:判断格里的子集都是二元的，{x，y}， 不能是{x, y, z}.<br>判断是否为格：当发现找不到两个元素, 使他们没有最大上界和最小上界, 则为格.</p>
+</blockquote>
+<p>反例：下图中{b,c}无最大下界，因为d，e不具有可比性。</p>
+<p><img src="https://pic2.zhimg.com/50/v2-0648dcd454212cc49317190c7288e435_hd.jpg" alt="非格反例"></p>
+<p>格的二元运算符号：</p>
+<ul>
+<li>x∧y: x与y最大下界（向上开口就是最大嘛）</li>
+<li>x∨y: x与y最小上界（向下开口就是最小嘛）</li>
+</ul>
+<p>格的二元运算满足的运算定律：</p>
+<ul>
+<li>交换律，结合律，等幂律，吸收率，无分配律</li>
+<li>如果对该格有 a∧(b∨c) = (a∧c)∨(a∧b), 即<strong>满足分配律的话, 就是分配格</strong>。</li>
+</ul>
+<h3 id="2-格的第二种概念：（用代数系统理解）"><a href="#2-格的第二种概念：（用代数系统理解）" class="headerlink" title="2.格的第二种概念：（用代数系统理解）"></a>2.格的第二种概念：（用代数系统理解）</h3><p>概念：对具有两个二元计算的代数系统<s, *,="" +="">，如果<em>和+满足交换律，结合律，吸收率（但是不一定要</em>对+满足分配率），那么这个代数系统构成一个格。</s,></p>
+<p>子格： 设<s, ∧,="" ∨="">构成格, L是S的非空子集, 如果L关于格中的运算∨和∧仍然能够构成格, 那么L就是S的子格。<br>完全格：格的每个非空子集均有上下确界，则成为完全格。</s,></p>
+<p>有界格：若格<l, ≤="">有最小元0和最小元1(不记得了的话往上翻), 则成为有界格, 记作<l, 1="" ≤,="" 0,="">, 完全格必然有最小元和最大元。</l,></l,></p>
+<p>补元：有界格<l, 1="" ≤,="" 0,="">中, 对任意元素a∈L, 若存在b∈L, 并且a∧b = 0, a∨b = 1, 则称b是a的补元，补元不一定唯一。</l,></p>
+<p>有补格：有界格中，每一个元素都有补元，则称为有补格。</p>
+<h3 id="布尔代数："><a href="#布尔代数：" class="headerlink" title="布尔代数："></a><strong>布尔代数：</strong></h3><ul>
+<li>定义1：如果一个格是有补分配格，那么称为布尔代数。</li>
+<li>定义2：设<s, *,="" +="">是含有两个二元运算的代数系统, +和<em>满足交换律, 分配率, 同一律, 补元律, 那么就是一个布尔代数。同一律即a </em> 1 = a , b + 0 = b。 补元律即a * a’ = 0, b + b’ = 1。</s,></li>
+</ul>
+<p><strong>布尔代数——有补分配格：满足以下3个条件的格</strong></p>
+<ul>
+<li><strong>满足分配律</strong></li>
+<li><strong>有最小元和最大元</strong></li>
+<li><strong>每个元素都有补元</strong></li>
+</ul>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zhuanlan.zhihu.com/p/24338970" target="_blank" rel="noopener">格与布尔代数</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Math/" rel="tag"># Math</a>
+          
+            <a href="/tags/Discrete-Mathematics/" rel="tag"># Discrete Mathematics</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/21/Machine-Vision-vs-Computer-Vision/" rel="next" title="Machine Vision vs Computer Vision">
+                <i class="fa fa-chevron-left"></i> Machine Vision vs Computer Vision
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/21/离散数学：理解图论/" rel="prev" title="离散数学：理解图论">
+                离散数学：理解图论 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">131</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#布尔代数初导"><span class="nav-number">1.</span> <span class="nav-text">布尔代数初导</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#德摩根定律："><span class="nav-number">1.1.</span> <span class="nav-text">德摩根定律：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#布尔代数"><span class="nav-number">1.2.</span> <span class="nav-text">布尔代数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#布尔：延伸—命题逻辑"><span class="nav-number">1.3.</span> <span class="nav-text">布尔：延伸—命题逻辑</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#格与布尔代数"><span class="nav-number">2.</span> <span class="nav-text">格与布尔代数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#偏序关系（偏序是格的先修知识）"><span class="nav-number">2.1.</span> <span class="nav-text">偏序关系（偏序是格的先修知识）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偏序的重要概念"><span class="nav-number">2.2.</span> <span class="nav-text">偏序的重要概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格与布尔代数的概念"><span class="nav-number">2.3.</span> <span class="nav-text">格与布尔代数的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-格的第一种概念：（用偏序理解）"><span class="nav-number">2.3.1.</span> <span class="nav-text">1.格的第一种概念：（用偏序理解）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-格的第二种概念：（用代数系统理解）"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.格的第二种概念：（用代数系统理解）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔代数："><span class="nav-number">2.3.3.</span> <span class="nav-text">布尔代数：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

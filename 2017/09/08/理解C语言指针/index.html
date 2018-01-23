@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Computer Science,C#," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="数据、指令和内存 程序的数据和指令存放在同一内存空间 虚拟存储空间的两个关键要素：内存地址+类型 指针是对内存区域的抽象：指针变量存放目标对象的内存地址">
+<meta name="keywords" content="Computer Science,C#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解C语言指针">
+<meta property="og:url" content="http://yoursite.com/2017/09/08/理解C语言指针/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="数据、指令和内存 程序的数据和指令存放在同一内存空间 虚拟存储空间的两个关键要素：内存地址+类型 指针是对内存区域的抽象：指针变量存放目标对象的内存地址">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-14T01:07:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="理解C语言指针">
+<meta name="twitter:description" content="数据、指令和内存 程序的数据和指令存放在同一内存空间 虚拟存储空间的两个关键要素：内存地址+类型 指针是对内存区域的抽象：指针变量存放目标对象的内存地址">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/08/理解C语言指针/"/>
+
+
+
+
+
+  <title>理解C语言指针 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/08/理解C语言指针/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">理解C语言指针</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-08T00:58:20+08:00">
+                2017-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C#</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="数据、指令和内存"><a href="#数据、指令和内存" class="headerlink" title="数据、指令和内存"></a>数据、指令和内存</h1><ul>
+<li>程序的数据和指令存放在同一内存空间</li>
+<li>虚拟存储空间的两个关键要素：内存地址+类型</li>
+<li>指针是对内存区域的抽象：指针变量存放目标对象的内存地址<a id="more"></a>   
+<h1 id="定义和使用指针"><a href="#定义和使用指针" class="headerlink" title="定义和使用指针"></a>定义和使用指针</h1><h2 id="指针的定义"><a href="#指针的定义" class="headerlink" title="指针的定义"></a>指针的定义</h2></li>
+<li>使用* 标记指针，定义方式与定义变量一样</li>
+<li><p>在同一个变量定义语句中，基本数据类型只能有一个，但是可以有多个形式相同或不同的声明符。这也就是说，同一个语句可以定义出不同类型的变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int *ip1, *ip2;         // ip1 和 ip2 都是指向 int 类型变量的指针变量</span><br><span class="line">double d, *dp;          // d 是 double 类型变量，dp 是指向 double 类型变量的指针变量</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以定义一个指向这一指针的指针</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int val = 1024</span><br><span class="line">int *p = &amp;val</span><br><span class="line">int **pp = &amp;p</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>pp 是一个指向指向 int 类型变量的指针的指针。</p>
+<h2 id="获取对象的地址"><a href="#获取对象的地址" class="headerlink" title="获取对象的地址"></a>获取对象的地址</h2><ul>
+<li>用&amp;取地址符号来获取对象地址</li>
+<li>指针的类型和对象的类型需要严格匹配<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int val = 42;</span><br><span class="line">int *p  = &amp;val;     // &amp;val 返回变量 val 的地址，记录在指向 int 类型变量的指针里</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="访问指针指向的对象"><a href="#访问指针指向的对象" class="headerlink" title="访问指针指向的对象"></a>访问指针指向的对象</h2><ul>
+<li>通过解引用指针 p 来访问变量 val<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int val = 1004</span><br><span class="line">int *p = &amp;val</span><br><span class="line">cout &lt;&lt; *p &lt;&lt; endl</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="空指针和空类型的指针"><a href="#空指针和空类型的指针" class="headerlink" title="空指针和空类型的指针"></a>空指针和空类型的指针</h2><ul>
+<li>空指针是不指向任何对象的指针,字面值是 NULL，它定义在 stdlib 当中</li>
+<li>空类型的指针，指的是形如 void *pv 的指针。这是一类特殊的指针；这里的空类型，不是说没有类型，而是说空类型的指针，可以用于存储任意类型对象的地址。</li>
+<li>由于空类型的指针可以接受任意类型对象的地址，所以，当编译器拿到一个空类型的指针的时候，它无法知道应该按照何种方式解释和使用指针中记录地址中的内容。因此，空类型指针能够做的事情非常有限：做指针之间的比较、作为函数的输入或输出、赋值给另外一个空类型指针。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int *p1 = NULL;         // C 风格的空指针初始化</span><br><span class="line">int *p2 = nullptr;      // C++ 风格的空指针初始化</span><br><span class="line">int *p3 = 0;            // 使用字面值常量 0 初始化空指针</span><br><span class="line"></span><br><span class="line">if (nullptr == p1) &#123;    // 思考一下为什么不是 p1 == nullptr</span><br><span class="line">    ; // do something</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">double pi = 3.14;</span><br><span class="line">void *pv = &amp;pi;     // 使用 void * 存放了一个 double 类型对象的地址</span><br><span class="line">double *pd = &amp;pi;</span><br><span class="line">pd = pv;            // 错误：不能将空类型的指针赋值给其他类型的指针</span><br><span class="line">pv = pd;            // 正确：空类型的指针可以接受任意类型的指针赋值</span><br><span class="line">pd = (double *)pv;  // 正确：C 风格的强制类型转换</span><br><span class="line">pd = reinterpret_cast&lt;double *&gt;(pv); // 正确：C++ 风格的强制类型转换</span><br></pre></td></tr></table></figure>
+<h2 id="const与指针"><a href="#const与指针" class="headerlink" title="const与指针"></a>const与指针</h2><ul>
+<li>定义常量，只需要在基本类型前，加上 const 关键字即可</li>
+<li>常量的值在生存期内不允许改变</li>
+<li>const与指针连用有4种情况：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">int val = 0;                // int 型变量</span><br><span class="line">const int cnst = 1;         // int 型常量</span><br><span class="line"></span><br><span class="line">int *pi = &amp;val;             // pi 本身是变量，通过 pi 访问的也是变量</span><br><span class="line">                            // 正确：将变量地址赋值给变量的指针</span><br><span class="line">pi = &amp;cnst;                 // 错误：不允许将常量的地址赋值给变量的指针</span><br><span class="line"></span><br><span class="line">const int *pci = &amp;cnst;     // pci 本身是变量，通过 pci 访问的是常量 (point to const)</span><br><span class="line">                            // 正确：将常量地址赋值给常量的指针</span><br><span class="line">pci = &amp;val;                 // 正确：允许将变量地址赋值给常量的指针</span><br><span class="line"></span><br><span class="line">int *const cpi = &amp;val;      // cpi 本身是常量，通过 cpi 访问的是变量</span><br><span class="line">                            // 正确：允许将变量地址赋值给变量的指针</span><br><span class="line">int fake = 2;               // int 型变量</span><br><span class="line">cpi = &amp;fake;                // 错误：cpi 本身是常量，不能在定义之外赋值</span><br><span class="line"></span><br><span class="line">const int *const cpci = &amp;val;</span><br><span class="line">                            // cpci 本身是常量，通过 cpci 访问的也是常量</span><br><span class="line">                            // 正确：允许将变量地址赋值给常量的指针</span><br><span class="line">cpci = &amp;fake;               // 错误：cpci 本身是常量，不能在定义之外赋值</span><br><span class="line">cpci = &amp;cnst;               // 错误：cpci 本身是常量，不能在定义之外赋值，哪怕是常量的地址</span><br></pre></td></tr></table></figure>
+<ul>
+<li>变量可以是常量，而指针本身也可以是常量。因此在变量和指针两个维度，都可以选择是否为常量</li>
+<li>为了区分这两个维度，我们引入顶层 const 和底层 const 的概念：<blockquote>
+<p>顶层 const：指针本身是常量。此时，指针在定义初始化之外，不能被赋值修改。称指针为指针常量。<br>底层 const：指针指向的变量是常量。此时，不能通过解引用指针的方式，修改变量的值。称指针为常量的指针。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="指针与数组"><a href="#指针与数组" class="headerlink" title="指针与数组"></a>指针与数组</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int nums[] = &#123;1, 2, 3&#125;;</span><br><span class="line">int *p = &amp;(nums[0]);</span><br><span class="line">if (p == nums) &#123;</span><br><span class="line">    printf(&quot;true!\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line">size_t i = 0;</span><br><span class="line">for (i = 0; i != 3; ++i) &#123;</span><br><span class="line">    printf(&quot;%d\n&quot;, p[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>数组指针可自增，可加减运算</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int nums[] = &#123;0,1,2,3,4,5&#125;;</span><br><span class="line">size_t len = sizeof(nums) / sizeof(nums[0]);</span><br><span class="line">int *iter, end = nums[len];     // end 是尾后指针</span><br><span class="line">for (iter = nums; iter != end; ++iter) &#123;</span><br><span class="line">    printf(&quot;%d\n&quot;, *iter);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>两个指针如果指向同一个数组中的元素，那么它们可以做差    </p>
+</li>
+<li>数组指针与整数的加减，实际是将指针沿着数组进行移动，得到的结果还是一个指针。既然结果是指针，那么就可以解引用，访问数组中的元素  </li>
+</ul>
+<h2 id="函数与指针"><a href="#函数与指针" class="headerlink" title="函数与指针"></a>函数与指针</h2><h3 id="让函数返回一个数组的指针"><a href="#让函数返回一个数组的指针" class="headerlink" title="让函数返回一个数组的指针"></a>让函数返回一个数组的指针</h3><ul>
+<li>函数在返回时会对返回值拷贝</li>
+<li>数组不能被拷贝，函数无法直接返回数组，但可返回数组的指针</li>
+<li>如何定义一个返回数组指针的函数：element_type </li>
+</ul>
+<p>(*func(param_list))[dimension]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int arr[10]</span><br><span class="line">int *parr[10]   //    parr 是一个数组，长度是 10，元素类型是 int *，也就是数组中存的是指针</span><br><span class="line">int (*p)[10]=&amp;arr</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int (*func(param_list))[10];</span><br><span class="line">                    // 正确：func 是一个函数，param_list 是它的参数</span><br><span class="line">                    // 它返回的是一个指针</span><br><span class="line">                    // 这个指针指向了一个长度为 10 元素类型是 int 型的数组</span><br></pre></td></tr></table></figure>
+<h3 id="函数的指针"><a href="#函数的指针" class="headerlink" title="函数的指针"></a>函数的指针</h3><ul>
+<li>一个函数的类型，取决于它的输入和输出。这也就是说，一个函数的类型，应当包含它的返回值类型和参数列表</li>
+<li><p>定义一个指向某类型的函数指针</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bool isEqual(int, int);</span><br><span class="line">bool (*pfunc)(int, int) = &amp;isEqual;     // 定义了一个函数指针，指向 isEqual</span><br><span class="line">bool (*pfunc)(int, int) = isEqual;      // 一个等价定义</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pfunc 就是一个函数指针，它指向一个 bool (int, int) 类型的函数。也就是说，这类函数接收两个 int 型的参数，并返回一个 bool 类型的值。</p>
+</li>
+<li>当函数名字作为值使用时，它会自动地转换成指针（有点像数组名字，不是吗）。因此，在函数指针的初始化或者复制的过程中，取值运算符是可选的。于是，上述两个定义语句是等价的。另一方面，函数指针作为函数调用使用时，它会自动转换成函数名（有点像数组指针，不是吗）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">bool isEqual(int, int);</span><br><span class="line">bool (*pfunc)(int, int) = isEqual;</span><br><span class="line"></span><br><span class="line">bool res1 = isEqual(1, 2);  // 通过原函数名调用</span><br><span class="line">bool res2 = (*pfunc)(1, 2); // 一个等价调用：通过函数指针，解引用调用</span><br><span class="line">bool res3 = pfunc(1, 2);    // 另一个等价调用：函数指针自动转换成函数名</span><br></pre></td></tr></table></figure>
+<h2 id="将函数指针作为参数传入另一个函数"><a href="#将函数指针作为参数传入另一个函数" class="headerlink" title="将函数指针作为参数传入另一个函数"></a>将函数指针作为参数传入另一个函数</h2><ul>
+<li>函数不能拷贝，但函数指针可以<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void addIfEqual(int lhs, int rhs, bool pfunc(int, int));</span><br><span class="line">                            // addIfEqual 的第三个参数是一个函数定义</span><br><span class="line">                            // 它会自动地转换成一个函数指针的参数</span><br><span class="line">void addIfEqual(int lhs, int rhs, bool (*pfunc)(int, int));</span><br><span class="line">                            // 一个等价定义：显式地注明第三个参数是函数指针</span><br><span class="line">&gt;&gt;addIfEqual(1, 1, isEqual);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="让函数返回一个函数的指针"><a href="#让函数返回一个函数的指针" class="headerlink" title="让函数返回一个函数的指针"></a>让函数返回一个函数的指针</h3><ul>
+<li>outer_return_type (*func(param_list))(outer_param_list)</li>
+<li>func(param_list) 是当前需要定义的函数；outer_return_type 和 outer_param_list 分别是当前定义的函数返回的函数指针对应函数的返回值类型和参数列表。</li>
+</ul>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ul>
+<li>(<em>(void(</em>)())0)()：访问内存地址 0，将它作为一个参数列表和返回类型均为空的函数，并执行函数调用</li>
+<li>void(*pfunc)(); 定义了一个函数指针 pfunc，它指向的函数参数列表为空、返回值类型也为空</li>
+<li>类型强制转换符：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(double) c;     // 将变量 c 强制转换为 double 类型</span><br><span class="line">(double *) d;   // 将变量 d 强制转换为 double * 类型</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Computer-Science/" rel="tag"># Computer Science</a>
+          
+            <a href="/tags/C/" rel="tag"># C#</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/08/理解内存地址/" rel="next" title="理解内存地址">
+                <i class="fa fa-chevron-left"></i> 理解内存地址
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/08/结巴分词及其使用/" rel="prev" title="结巴分词及其使用">
+                结巴分词及其使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">131</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据、指令和内存"><span class="nav-number">1.</span> <span class="nav-text">数据、指令和内存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义和使用指针"><span class="nav-number">2.</span> <span class="nav-text">定义和使用指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#指针的定义"><span class="nav-number">2.1.</span> <span class="nav-text">指针的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取对象的地址"><span class="nav-number">2.2.</span> <span class="nav-text">获取对象的地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问指针指向的对象"><span class="nav-number">2.3.</span> <span class="nav-text">访问指针指向的对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空指针和空类型的指针"><span class="nav-number">2.4.</span> <span class="nav-text">空指针和空类型的指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const与指针"><span class="nav-number">2.5.</span> <span class="nav-text">const与指针</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针与数组"><span class="nav-number">3.</span> <span class="nav-text">指针与数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数与指针"><span class="nav-number">3.1.</span> <span class="nav-text">函数与指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#让函数返回一个数组的指针"><span class="nav-number">3.1.1.</span> <span class="nav-text">让函数返回一个数组的指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的指针"><span class="nav-number">3.1.2.</span> <span class="nav-text">函数的指针</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将函数指针作为参数传入另一个函数"><span class="nav-number">3.2.</span> <span class="nav-text">将函数指针作为参数传入另一个函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#让函数返回一个函数的指针"><span class="nav-number">3.2.1.</span> <span class="nav-text">让函数返回一个函数的指针</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

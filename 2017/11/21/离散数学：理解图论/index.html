@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Math,Discrete Mathematics," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract: 机器学习中我们希望从数据中挖掘隐含信息或模型，若将图中的结点作为随机变量，连接作为相关性关系，那么我们就能构造出图模型，并期望解决这一问题。而构造这样的概率图模型需要一定的图论知识。本文就总结了图论的基本概念、以及与ML的关系。 图论：以图为研究对象，描述某些事物间的特定关系。由结点与边组成，G = {V，E}。有向边与无向边。有向图与无向图。 树型结构：树是图的一种；从根节点">
+<meta name="keywords" content="Math,Discrete Mathematics">
+<meta property="og:type" content="article">
+<meta property="og:title" content="离散数学：理解图论">
+<meta property="og:url" content="http://yoursite.com/2017/11/21/离散数学：理解图论/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract: 机器学习中我们希望从数据中挖掘隐含信息或模型，若将图中的结点作为随机变量，连接作为相关性关系，那么我们就能构造出图模型，并期望解决这一问题。而构造这样的概率图模型需要一定的图论知识。本文就总结了图论的基本概念、以及与ML的关系。 图论：以图为研究对象，描述某些事物间的特定关系。由结点与边组成，G = {V，E}。有向边与无向边。有向图与无向图。 树型结构：树是图的一种；从根节点">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://pic4.zhimg.com/50/v2-1ea0d8d4a1f18aca108f0800ec16d11f_hd.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/50/v2-b3960183ef4cebcfcee002399a3eb0fc_hd.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/50/v2-5f5d4456d1c25ac34a7ed9a559e6ee3a_hd.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/50/v2-1e09b417c7d1864a129e27fd2cb3d522_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/50/v2-bb7679e8e8b50624a9b27defeeb1af27_hd.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/50/v2-30f20e5ba8d5640dd0f84b4e87803cb9_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/50/v2-8effb49d2130d279d9e811e6aff04997_hd.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/50/v2-6a4f39f08248567ce27e6bf8de484b89_hd.jpg">
+<meta property="og:updated_time" content="2017-11-21T14:03:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="离散数学：理解图论">
+<meta name="twitter:description" content="Abstract: 机器学习中我们希望从数据中挖掘隐含信息或模型，若将图中的结点作为随机变量，连接作为相关性关系，那么我们就能构造出图模型，并期望解决这一问题。而构造这样的概率图模型需要一定的图论知识。本文就总结了图论的基本概念、以及与ML的关系。 图论：以图为研究对象，描述某些事物间的特定关系。由结点与边组成，G = {V，E}。有向边与无向边。有向图与无向图。 树型结构：树是图的一种；从根节点">
+<meta name="twitter:image" content="https://pic4.zhimg.com/50/v2-1ea0d8d4a1f18aca108f0800ec16d11f_hd.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/21/离散数学：理解图论/"/>
+
+
+
+
+
+  <title>离散数学：理解图论 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/21/离散数学：理解图论/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">离散数学：理解图论</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-21T19:16:23+08:00">
+                2017-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Math/" itemprop="url" rel="index">
+                    <span itemprop="name">Math</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Math/Discrete-Mathematics/" itemprop="url" rel="index">
+                    <span itemprop="name">Discrete Mathematics</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract: 机器学习中我们希望从数据中挖掘隐含信息或模型，若将图中的结点作为随机变量，连接作为相关性关系，那么我们就能构造出图模型，并期望解决这一问题。而构造这样的概率图模型需要一定的图论知识。本文就总结了图论的基本概念、以及与ML的关系。</p>
+<p>图论：以图为研究对象，描述某些事物间的特定关系。由结点与边组成，G = {V，E}。有向边与无向边。有向图与无向图。</p>
+<p>树型结构：树是图的一种；从根节点开始，并能和其他结点相连接的图；有向性</p>
+<p>ML X 图论：决策树；概率图模型</p>
+<p>//马上要考离散了，紧张复习ing… 把离散中的图论与ML结合起来复习，感觉还行 ~<br><a id="more"></a></p>
+<h1 id="图论-Graph-Theory"><a href="#图论-Graph-Theory" class="headerlink" title="图论 Graph Theory"></a>图论 Graph Theory</h1><p>关键图：</p>
+<ul>
+<li>路：开路，回路，真路，链，闭链</li>
+<li>连通图，连通子图，分图</li>
+<li>欧拉图，哈密顿图</li>
+<li>树，生成树，最小生成树，有向树</li>
+<li>二部图</li>
+<li>平面图</li>
+</ul>
+<h1 id="机器学习与图论"><a href="#机器学习与图论" class="headerlink" title="机器学习与图论"></a>机器学习与图论</h1><p>ML:从数据中挖掘隐含信息与模型</p>
+<ul>
+<li>将图中的结点作为随机变量，边（连接）作为相关性关系，则可构造出图模型。</li>
+<li>概率图模型（概率论+图论）是实现这一任务的重要手段</li>
+</ul>
+<p>决策树：可表示为给定特征条件下类的条件概率分布。</p>
+<ul>
+<li>结点：由表示特征的内部结点和表示类的叶节点构成</li>
+<li>决策树的学习包括特征的选择、决策树的生成和决策树的剪枝</li>
+<li>树型：包含于图论</li>
+</ul>
+<p>图论</p>
+<ul>
+<li>数学的分支</li>
+<li>以图为研究对象，研究顶点和边组成的图形</li>
+<li>图数据结构或树型算法：来源于图论</li>
+</ul>
+<h1 id="Loosey–goosey图"><a href="#Loosey–goosey图" class="headerlink" title="Loosey–goosey图"></a>Loosey–goosey图</h1><p>非线性结构：</p>
+<ul>
+<li>最基础特征：数据不遵循特有顺序（至少无明显数值关系），类似数组和链表</li>
+</ul>
+<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><ul>
+<li><strong>树型结构：从根节点开始，并能和其他结点相连接</strong>；</li>
+<li>树由一组规则定义而成：即一个根结点可能连接或不连接到其他结点，但最终所有叶结点或内部结点都能追溯到这个特定的位置。</li>
+<li>一些树有更多的特定规则，如二叉搜索树，该树在任意时间内每个结点都只和两个子结点相连</li>
+<li>机器学习常用的决策树：可以看成是 IF-THEN 规则的集合；即由决策树的根结点到叶结点的每一条路径构建一条规则，路径上内部结点的特征对应着规则的条件，而叶结点的类对应着规则的结论。</li>
+<li><strong>树的有向性</strong>：一棵树只能朝一个方向传播，即树型是由有向边（directed edge）构成的；每棵树都是由根节点开始，向下往子节点或叶节点传播；每条路径唯一，且路径上所有子节点有且仅有一个父节点；故树型结构一定不会存在循环结构或链路</li>
+</ul>
+<p><img src="https://pic4.zhimg.com/50/v2-1ea0d8d4a1f18aca108f0800ec16d11f_hd.jpg" alt="Tree—graph"></p>
+<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><p>不存在根节点、叶节点、单向边等概念，图中结点可连接多个子节点和多个父节点，路径可有向或无向</p>
+<p>有向图（directed graphs）和无向图（undirected graphs）</p>
+<ul>
+<li>图的基本原则：有且至少有1个单结点（才能被看做是图啊）</li>
+<li>结点和结点之间的连接并没有确切的规则，边（有时候也称为链接）能以任何方式连接结点</li>
+</ul>
+<p><img src="https://pic1.zhimg.com/50/v2-b3960183ef4cebcfcee002399a3eb0fc_hd.jpg" alt="边能以任何方式连接结点"></p>
+<ul>
+<li><strong>边的类型（大多数情况下：有向/无向）是图之间最大、最明显的区别之一</strong>。</li>
+<li>有向边：规定两结点间只有单一方向，origin——&gt;destination</li>
+</ul>
+<p><img src="https://pic3.zhimg.com/50/v2-5f5d4456d1c25ac34a7ed9a559e6ee3a_hd.jpg" alt="有向边"></p>
+<ul>
+<li>无向边：两结点间路径双向互通，未固定起始结点和目标结点</li>
+<li>有向图：所有边都是有向边；无向图：所有边都是无向边</li>
+</ul>
+<p><img src="https://pic3.zhimg.com/50/v2-1e09b417c7d1864a129e27fd2cb3d522_hd.jpg" alt="有向图&amp;无向图"></p>
+<h1 id="图（如何定义图？）"><a href="#图（如何定义图？）" class="headerlink" title="图（如何定义图？）"></a>图（如何定义图？）</h1><p>图：一种正式表征网络的结构，基本上是所有互连对象的集合；结点无层次结构</p>
+<p><strong>图与函数的一致性</strong>：</p>
+<ul>
+<li>函数：二维坐标轴上分布的有序对（x，y）集合</li>
+<li>图：（x，y）=（点vertices，边edges）/（v，e）；图的正式数学定义即为：<strong>G=（V，E）</strong></li>
+<li><strong>有序对（V，E）：由2组对象组成，一组结点，一组边</strong></li>
+</ul>
+<p><img src="https://pic4.zhimg.com/50/v2-bb7679e8e8b50624a9b27defeeb1af27_hd.jpg" alt="Function and Graph"></p>
+<p>下图是无向图G={8，12}</p>
+<p><img src="https://pic2.zhimg.com/50/v2-30f20e5ba8d5640dd0f84b4e87803cb9_hd.jpg" alt="无向图"></p>
+<p>下图是有向图G={3，3}</p>
+<p><img src="https://pic4.zhimg.com/50/v2-8effb49d2130d279d9e811e6aff04997_hd.jpg" alt="有向图"></p>
+<h1 id="图论的应用"><a href="#图论的应用" class="headerlink" title="图论的应用"></a>图论的应用</h1><p>1.网络是巨大的图结构</p>
+<ul>
+<li>互联网——边、终端——结点、用户——在图中切换（如点击URL来回浏览）</li>
+</ul>
+<blockquote>
+<p>以网页间的切换为例：有向边——只能从一个网页转到另一个；无向边——可在两网页间来回切换</p>
+</blockquote>
+<p>2.社交网络是图结构</p>
+<p>微信：大型无向图</p>
+<ul>
+<li>微信本身是一个庞大的社交网络图</li>
+<li>结点：用户；边：用户间的沟通联系（好友关系）</li>
+<li>无向性（理解为信息沟通的双向性）：两个用户间的关系是双向的，可互相传递信息，无起始结点和目标结点的概念</li>
+</ul>
+<p>微博：大型有向图</p>
+<ul>
+<li>有向性（信息传播的单向性）：用户发微博时博文会在同时间点由用户向粉丝发送，这一过程有方向且不可逆</li>
+</ul>
+<p><img src="https://pic2.zhimg.com/50/v2-6a4f39f08248567ce27e6bf8de484b89_hd.jpg" alt="wechat——undirected graph"></p>
+<h1 id="概率图模型"><a href="#概率图模型" class="headerlink" title="概率图模型"></a>概率图模型</h1><p>ML:从数据中挖掘隐含信息与模型</p>
+<ul>
+<li>将图中的结点作为随机变量，边（连接）作为相关性关系，则可构造出图模型。</li>
+<li>概率图模型（概率论+图论）是实现这一任务的重要手段</li>
+</ul>
+<p>概率图模型</p>
+<ul>
+<li>图论定义：概率图模型是一个<strong>包含结点与边的图</strong>；结点分为2类：隐含结点和观测结点；边分2类：有向边与无向边</li>
+<li>概率论定义：<strong>概率图模型是一个概率分布</strong>，图中的<strong>结点对应于随机变量，边对应于随机变量的相关性关系</strong></li>
+</ul>
+<p>给定一个实际问题，我们通常会观测到一些数据，并且希望能够挖掘出隐含在数据中的知识。那么<strong>怎样才能使用概率图模型从数据中挖掘这些隐藏知识呢？</strong></p>
+<ul>
+<li>构建一个图：用观测结点表示观测到的数据，用隐含结点表示潜在的知识，用边来描述知识与数据的相互关系，最后获得一个概率分布。给定概率分布之后，通过进行两个任务获取知识：即推断 (给定观测结点，推断隐含结点的后验分布）和学习 (学习概率分布的参数）。</li>
+</ul>
+<p>基本图模型的2个类别</p>
+<ul>
+<li>贝叶斯网络（Bayesian Network）</li>
+<li>马尔科夫随机场(Markov Random Field)</li>
+<li>二者的主要区别：采用不同类型的图来表达变量间的关系；贝叶斯网络采用有向无环图（Directed Acyclic Graph）来表达因果关系；马尔可夫随机场则采用无向图 (Undirected Graph) 来表达变量间的相互作用；</li>
+</ul>
+<h1 id="图论——详细概念梳理"><a href="#图论——详细概念梳理" class="headerlink" title="图论——详细概念梳理"></a>图论——详细概念梳理</h1><p>图论是一种表示 “多对多” 的关系</p>
+<p>图是由顶点和边组成的：(可以无边，但至少包含一个顶点)</p>
+<ul>
+<li>一组顶点：通常用 V(vertex) 表示顶点集合</li>
+<li>一组边：通常用 E(edge) 表示边的集合</li>
+</ul>
+<p>图可以分为有向图和无向图，在图中：</p>
+<ul>
+<li>(v, w) 表示无向边，即 v 和 w 是互通的</li>
+<li><v, w=""> 表示有向边，该边始于 v，终于 w</v,></li>
+</ul>
+<p>图可以分为有权图和无权图：</p>
+<ul>
+<li>有权图：每条边具有一定的权重(weight)，通常是一个数字</li>
+<li>无权图：每条边均没有权重，也可以理解为权为 1</li>
+</ul>
+<p>图又可以分为连通图和非连通图：</p>
+<ul>
+<li>连通图：所有的点都有路径相连</li>
+<li>非连通图：存在某两个点没有路径相连</li>
+</ul>
+<p>图中的顶点有度的概念：</p>
+<ul>
+<li>度(Degree)：所有与它连接点的个数之和</li>
+<li>入度(Indegree)：存在于有向图中，所有接入该点的边数之和</li>
+<li>出度(Outdegree)：存在于有向图中，所有接出该点的边数之和</li>
+</ul>
+<h1 id="Extensional-Resources"><a href="#Extensional-Resources" class="headerlink" title="Extensional Resources"></a>Extensional Resources</h1><p><a href="http://freefeast.info/difference-between/difference-between-trees-and-graphs-trees-vs-graphs/" target="_blank" rel="noopener">Difference between Trees and Graphs</a></p>
+<p><a href="https://stackoverflow.com/questions/7423401/whats-the-difference-between-the-data-structure-tree-and-graph" target="_blank" rel="noopener">What’s the difference between the data structure Tree and Graph?</a></p>
+<p><a href="http://www.cs.xu.edu/csci390/12s/IJEST10-02-09-124.pdf" target="_blank" rel="noopener">Applications of Graph Theory In Computer Science: An Overview</a></p>
+<p><a href="http://suo.im/2cu4oH" target="_blank" rel="noopener">Graph Traversal</a></p>
+<p><a href="http://suo.im/4z1QbH" target="_blank" rel="noopener">Data structures: Introduction to graphs（视频）</a></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zh.wikipedia.org/wiki/%E5%9B%BE%E8%AE%BA" target="_blank" rel="noopener">Wiki.图论</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/26133450" target="_blank" rel="noopener">想了解概率图模型？你要先理解图论的基本定义与形式</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Math/" rel="tag"># Math</a>
+          
+            <a href="/tags/Discrete-Mathematics/" rel="tag"># Discrete Mathematics</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/21/离散数学：格与布尔代数/" rel="next" title="离散数学：格与布尔代数">
+                <i class="fa fa-chevron-left"></i> 离散数学：格与布尔代数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/30/如何在hexo中书写LaTex数学公式？/" rel="prev" title="如何在hexo中书写LaTex数学公式？">
+                如何在hexo中书写LaTex数学公式？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">131</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图论-Graph-Theory"><span class="nav-number">1.</span> <span class="nav-text">图论 Graph Theory</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习与图论"><span class="nav-number">2.</span> <span class="nav-text">机器学习与图论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loosey–goosey图"><span class="nav-number">3.</span> <span class="nav-text">Loosey–goosey图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#树"><span class="nav-number">3.1.</span> <span class="nav-text">树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图"><span class="nav-number">3.2.</span> <span class="nav-text">图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图（如何定义图？）"><span class="nav-number">4.</span> <span class="nav-text">图（如何定义图？）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图论的应用"><span class="nav-number">5.</span> <span class="nav-text">图论的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概率图模型"><span class="nav-number">6.</span> <span class="nav-text">概率图模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图论——详细概念梳理"><span class="nav-number">7.</span> <span class="nav-text">图论——详细概念梳理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Extensional-Resources"><span class="nav-number">8.</span> <span class="nav-text">Extensional Resources</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">9.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

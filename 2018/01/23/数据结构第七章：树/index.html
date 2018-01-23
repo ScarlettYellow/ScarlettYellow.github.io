@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Data Structure," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：树。">
+<meta name="keywords" content="Data Structure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构第七章：树">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/数据结构第七章：树/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：树。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223214941Y2.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223215026405.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223214941Y2.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223215H3933.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223215P2J2.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223215T5c7.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-1202232159334K.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223220013162.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-1202232205413U.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223220622554.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223220H2Q0.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-1202232205413U.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223220622554.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223221525238.jpg">
+<meta property="og:updated_time" content="2018-01-23T09:31:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构第七章：树">
+<meta name="twitter:description" content="Abstract：树。">
+<meta name="twitter:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223214941Y2.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/23/数据结构第七章：树/"/>
+
+
+
+
+
+  <title>数据结构第七章：树 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/数据结构第七章：树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构第七章：树</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-23T16:58:44+08:00">
+                2018-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Data-Structure/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Structure</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：树。<br><a id="more"></a></p>
+<h1 id="7-1-树的概念与表示"><a href="#7-1-树的概念与表示" class="headerlink" title="7.1 树的概念与表示"></a>7.1 树的概念与表示</h1><p>对具有更一般意义的树结构进行讨论。本章所讨论的树结构，其<strong>结点可以有任意数目的子结点，这使其在存储以及操作实现上要比二叉树更复杂</strong>。</p>
+<h2 id="7-1-1-树的定义和相关术语"><a href="#7-1-1-树的定义和相关术语" class="headerlink" title="7.1.1 树的定义和相关术语"></a>7.1.1 树的定义和相关术语</h2><p>1.树的定义</p>
+<p>树：n（n&gt;=0）个<strong>有限数据元素</strong>的集合。n = 0时，为空树。</p>
+<p>在一棵非空树T 中：</p>
+<ul>
+<li>（1）有一个特殊的数据元素称为树的根结点，<strong>根结点没有前驱结点</strong>。</li>
+<li>（2）若n&gt;1，<strong>除根结点之外的其余数据元素被分成m（m&gt;0）个互不相交的集合T1，T2，…，Tm，其中每一个集合Ti（1≤i≤m）本身又是一棵树。树T1，T2，…，Tm 称为这个根结点的子树</strong>。</li>
+</ul>
+<p>递归概念：用树定义树；类同二叉树结构算法——递归。</p>
+<p>描述——二元组：T = （D，R）</p>
+<blockquote>
+<p>D：结点的集合；R：结点间关系的集合。</p>
+</blockquote>
+<p>空树时：D=Φ；当T不为空时，D = {Root}∪DF</p>
+<blockquote>
+<p>Root：根结点；DF：子树集合，DF＝D1∪D2∪…∪Dm 且Di∩Dj＝Φ（i≠j，1≤i≤m，1≤j≤m）</p>
+</blockquote>
+<p>当T中结点个数n &lt;= 1时，R = Φ；当树T 中结点个数n&gt;1 时有：R＝{<root，ri>，i＝1，2，…，m}</root，ri></p>
+<blockquote>
+<p>Root：根结点；ri：根结点Root的子树Ti的根结点。</p>
+</blockquote>
+<p>树的两个特点：</p>
+<ul>
+<li>根结点无前驱结点，除根结点外的所有结点有且只有一个前驱；</li>
+<li>所有结点有0个或多个后继结点。</li>
+</ul>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223214941Y2.jpg" alt="树结构与非树"></p>
+<p>b、c、d都不是树结构。</p>
+<p>有序树与无序树：如果一棵树中结点的<strong>各子树丛左到右是有次序的，即若交换了某结点各子树的相对位置，则构成不同的树</strong>，称这棵树为有序树；反之，则称为无序树。</p>
+<p>森林：<strong>零棵或有限棵不相交的树的集合</strong>称为森林。自然界中树和森林是不同的概念，但在数据结构中，树和森林只有很小的差别。<strong>任何一棵树，删去根结点就变成了森林</strong>。</p>
+<h2 id="7-1-2-树的表示"><a href="#7-1-2-树的表示" class="headerlink" title="7.1.2 树的表示"></a>7.1.2 树的表示</h2><p>树的表示方法：</p>
+<p>1.直观表示法：如上图a，对树的逻辑结构的直观描述，最常用。</p>
+<p>2.嵌套集合表示法：嵌套集合指一些集合的集体，对于其中任何两个集合，或者不相交，或者一个包含另一个；<strong>用嵌套集合的形式表示树，就是将根结点视为一个大的集合，其若干棵子树构成这个大集合中若干个互不相交的子集，如此嵌套下去，即构成一棵树的嵌套集合表示</strong>。下图(a)就是一棵树的嵌套集合表示。</p>
+<p>3.凹入表示法：如下图c，用于树的屏幕和打印输出；</p>
+<p>4.广义表表示法：将根作为由子树森林组成的表的名字写在表的左边，这样依次将树表示出来。下图 (b)就是一棵树的广义表表示。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223215026405.jpg" alt="树的三种表示法"></p>
+<h1 id="7-2-树的基本操作与存储"><a href="#7-2-树的基本操作与存储" class="headerlink" title="7.2 树的基本操作与存储"></a>7.2 树的基本操作与存储</h1><ul>
+<li>Initiate(t):初始化一棵空树t</li>
+<li>Root(x):求结点x所在树的根结点</li>
+<li>Parent(t, x):求树t种结点x的双亲结点</li>
+<li>Child(t, x, i):求树t中结点x的第i个孩子结点</li>
+<li>RightSibling（t，x）求树t 中结点x 的第一个右边兄弟结点。</li>
+<li>Insert（t，x，i，s）把以s 为根结点的树插入到树t 中作为结点x 的第i 棵子树。</li>
+<li>Delete（t，x，i）在树t 中删除结点x 的第i 棵子树。</li>
+<li>Tranverse（t）是树的遍历操作，即按某种方式访问树t 中的每个结点，且使每个结点只被访问一次。</li>
+</ul>
+<h3 id="7-2-2-树的存储结构"><a href="#7-2-2-树的存储结构" class="headerlink" title="7.2.2 树的存储结构"></a>7.2.2 树的存储结构</h3><p>存储结构要求：</p>
+<ul>
+<li>存储data——各结点的数据信息</li>
+<li>唯一反映各结点之间的逻辑关系</li>
+</ul>
+<p>1.双亲表示法：树中的每个结点都有唯一的一个双亲结点，根据这一特性，可用一组连续的存储空间（一维数组）存储树中的各个结点，数组中的一个元素表示树中的一个结点，数组元素为结构体类型，其中包括结点本身的信息以及结点的双亲结点在数组中的序号，树的这种存储方法称为双亲表示法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#define MAXNODE</span><br><span class="line">typedef struct&#123;</span><br><span class="line">elemtype data;</span><br><span class="line">int parent;</span><br><span class="line">&#125;NodeType;</span><br><span class="line">NodeType t[MAXNODE]</span><br></pre></td></tr></table></figure>
+<p>缺点：</p>
+<ul>
+<li>求某结点的孩子结点，即实现Child（t，x，i）操作时，需要查询整个数组</li>
+<li>不能反映各兄弟结点的关系，难以实现RightSibling（t，x）操作</li>
+</ul>
+<p>解决：在结点结构中增设存放第一个孩子的域和存放第一个右兄弟的域；</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223214941Y2.jpg" alt="树"></p>
+<p>树a的双亲表示法表示如下图：图中用parent 域的值为-1 表示该结点无双亲结点，即该结点是一个根结点。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223215H3933.jpg" alt="树a的双亲表示法表示"></p>
+<p>2.孩子表示法：</p>
+<p>(1) 多重链表法：</p>
+<p>由于树中的每个结点都有0个或多个孩子结点，因此可令每个结点包括1个结点信息域data和多个指针域；<strong>每个指针域指向该结点的一个孩子结点，通过各指针域反映树中各结点间的逻辑关系</strong>。</p>
+<p>多重链表：每个结点都有多个指针域，形成多条链表。</p>
+<p>在一棵树中，各结点度数差异，结点指针域个数的设置有2种表示方法：</p>
+<ul>
+<li>每个结点指针域的个数 = 该结点的度数：节约存储空间；但由于各结点不同构，各操作不易实现；</li>
+<li>每个结点指针域个数 = 树的度数：结点同构，但浪费存储空间（适用：各结点度数相差不大的情况）；</li>
+</ul>
+<p>树中结点存储表示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#define MAXSON&lt;树的度数&gt;</span><br><span class="line">typedefine struct TreeNode&#123;</span><br><span class="line">elemtype data;</span><br><span class="line">struct TreeNode *son[MAXSON];</span><br><span class="line">&#125;NodeType;</span><br></pre></td></tr></table></figure>
+<p>对任意一棵树t，可定义：NodeType *t；使变量t为指向树的根结点的指针。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223215P2J2.jpg" alt="树的孩子表示法"></p>
+<p>（2）孩子链表表示法：</p>
+<p>将树按下图形式存储。单链表的结构也由两个域组成，一个存放孩子结点在一维数组中的序号，另一个是指针域，指向下一个孩子。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223215T5c7.jpg" alt="树的孩子链表表示法"></p>
+<p>存储表示描述：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#define MAXNODE &lt;树中结点的最大个数&gt;</span><br><span class="line">typedef struct ChildNode&#123;</span><br><span class="line">int childcode;</span><br><span class="line">struct ChildNode *nextchild;</span><br><span class="line">&#125;</span><br><span class="line">typedef struct &#123;</span><br><span class="line">elemtype data;</span><br><span class="line">struct ChildNode *firstchild;</span><br><span class="line">&#125;NodeType;</span><br><span class="line">NodeType t[MAXNODE];</span><br></pre></td></tr></table></figure>
+<p> 3.双亲孩子表示法<br><strong>双亲表示法是将双亲表示法和孩子表示法相结合</strong>的结果。其仍将各结点的孩子结点分别组成单链表，同时用一维数组顺序存储树中的各结点，数组元素除了包括结点本身的信息和该结点的孩子结点链表的头指针之外，还<strong>增设一个域，存储该结点双亲结点在数组中的序号</strong>。如下图：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-1202232159334K.jpg" alt="树的双亲孩子表示法"></p>
+<p> 4.孩子兄弟表示法</p>
+<p>一种常用的存储结构。</p>
+<p>方法：在树中，每个结点除其信息域外，再<strong>增加两个分别指向该结点的第一个孩子结点和下一个兄弟结点的指针</strong>。在这种存储结构下，树中结点的存储表示可描述为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">typedef struct TreeNode &#123;</span><br><span class="line">elemtype data;</span><br><span class="line">struct TreeNode *son;</span><br><span class="line">struct TreeNode *next;</span><br><span class="line">&#125;NodeType;</span><br></pre></td></tr></table></figure>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223220013162.jpg" alt="孩子兄弟表示法"></p>
+<h1 id="7．3-树、森林与二叉树的转换"><a href="#7．3-树、森林与二叉树的转换" class="headerlink" title="7．3 树、森林与二叉树的转换"></a>7．3 树、森林与二叉树的转换</h1><p>从树的孩子兄弟表示法可以看到，如果设定一定规则，就可用二叉树结构表示树和森林，这样，对树的操作实现就可以借助二叉树存储，利用二叉树上的操作来实现。本节将讨论<strong>树和森林与二叉树之间的转换方法</strong>。</p>
+<h2 id="7-3-1-树转换成二叉树"><a href="#7-3-1-树转换成二叉树" class="headerlink" title="7.3.1 树转换成二叉树"></a>7.3.1 树转换成二叉树</h2><p>树与二叉树的区别：无序树的各孩子结点词序无关紧要；而二叉树的左、右孩子结点有区别。</p>
+<p>转换方法：</p>
+<ul>
+<li>树中所有相邻兄弟之间加一条连线</li>
+<li>对树中的每个结点，只保留它与第一个孩子结点之间的连线，删去它与其它孩子结点之间的连线。</li>
+<li>以树的根结点为轴心，将整棵树顺时针转动一定的角度，使之结构层次分明。</li>
+</ul>
+<blockquote>
+<p>在二叉树中，左分支上的各结点在原来的树中是父子关系，而右分支上的各结点在原来的树中是兄弟关系。由于树的根结点没有兄弟，所以变换后的二叉树的根结点的右孩子必为空。<br>一棵树采用孩子兄弟表示法所建立的存储结构与它所对应的二叉树的二叉链表存储结构是完全相同的。</p>
+</blockquote>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-1202232205413U.jpg" alt="树转换成二叉树"></p>
+<h2 id="7-3-2-森林转换为二叉树"><a href="#7-3-2-森林转换为二叉树" class="headerlink" title="7.3.2 森林转换为二叉树"></a>7.3.2 森林转换为二叉树</h2><p>森林是若干棵树的集合，只要将森林中各棵树的根视为兄弟，每棵树又可以用二叉树表示，这样，森林也同样可以用二叉树表示。森林转换为二叉树的方法如下：</p>
+<ul>
+<li>将森林中的每棵树转换成相应的二叉树。</li>
+<li>第一棵二叉树不动，从第二棵二叉树开始，依次把后一棵二叉树的根结点作为前一棵二叉树根结点的右孩子，当所有二叉树连起来后，此时所得到的二叉树就是由森林转换得到的二叉树。</li>
+</ul>
+<p>这一方法可形式化描述为：</p>
+<p>如果F＝{ T1，T2，…，Tm }是森林，则可按如下规则转换成一棵二叉树B＝（root，LB，RB）。</p>
+<ul>
+<li>（1）若F 为空，即m＝0，则B 为空树；</li>
+<li>（2）若F 非空，即m≠0，则B 的根root 即为森林中第一棵树的根Root(T1)；B 的左子树LB 是从T1 中根结点的子树森林F1＝{ T11，T12，…，T1m1 }转换而成的二叉树；其右子树RB 是从森林F’＝{ T2，T3，…，Tm }转换而成的二叉树。</li>
+</ul>
+<p>森林及其转换为二叉树的过程：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223220622554.jpg" alt="森林及其转换为二叉树"></p>
+<h1 id="7-3-3-二叉树转换为树和森林"><a href="#7-3-3-二叉树转换为树和森林" class="headerlink" title="7.3.3 二叉树转换为树和森林"></a>7.3.3 二叉树转换为树和森林</h1><p>树和森林都可以转换为二叉树，二者不同的是<strong>树转换成的二叉树，其根结点无右分支，而森林转换后的二叉树，其根结点有右分支</strong>。显然<strong>这一转换过程是可逆的，即可以依据二叉树的根结点有无右分支，将一棵二叉树还原为树或森林</strong>，具体方法如下：</p>
+<ul>
+<li>（1）若某结点是其双亲的左孩子，则把该结点的右孩子、右孩子的右孩子……都与该结点的双亲结点用线连起来；</li>
+<li>（2）删去原二叉树中所有的双亲结点与右孩子结点的连线；</li>
+<li>（3）整理由（1）、（2）两步所得到的树或森林，使之结构层次分明。</li>
+</ul>
+<p>这一方法可形式化描述为：</p>
+<p>如果B＝（root，LB，RB）是一棵二叉树，则可按如下规则转换成森林F＝{ T1，T2，…，Tm }。</p>
+<ul>
+<li>（1）若B 为空，则F 为空；</li>
+<li>（2）若B 非空，则森林中第一棵树T1 的根ROOT（T1）即为B 的根root；T1 中根结点的子树森林F1 是由B 的左子树LB 转换而成的森林；F 中除T1 之外其余树组成的森林F’＝{ T2，T3，…，Tm }是由B 的右子树RB 转换而成的森林。</li>
+</ul>
+<p>一棵二叉树还原为森林的过程:</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223220H2Q0.jpg" alt="二叉树还原成树"></p>
+<h1 id="7．4-树和森林的遍历"><a href="#7．4-树和森林的遍历" class="headerlink" title="7．4 树和森林的遍历"></a>7．4 树和森林的遍历</h1><h2 id="7-4-1-树的遍历"><a href="#7-4-1-树的遍历" class="headerlink" title="7.4.1 树的遍历"></a>7.4.1 树的遍历</h2><p>1.先根遍历</p>
+<p>定义：</p>
+<ul>
+<li>访问根结点</li>
+<li>按照从左至右顺序先根遍历根结点的每一棵子树</li>
+</ul>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-1202232205413U.jpg" alt="树"></p>
+<p>对上图先根遍历，顺序：ABEFCDG</p>
+<p>2.后根遍历</p>
+<p>定义：</p>
+<ul>
+<li>按照从左至右顺序后根遍历根结点的每一棵子树</li>
+<li>访问根结点</li>
+</ul>
+<p>对上图后根遍历，顺序：EFBCGDA</p>
+<h2 id="7-4-2-森林的遍历"><a href="#7-4-2-森林的遍历" class="headerlink" title="7.4.2 森林的遍历"></a>7.4.2 森林的遍历</h2><p>1.前序遍历</p>
+<p>（1）访问森林中第一棵树的根结点；<br>（2）前序遍历第一棵树的根结点的子树；<br>（3）前序遍历去掉第一棵树后的子森林。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223220622554.jpg" alt="森林"></p>
+<p>对上图森林前序遍历，得出结果序列：ABCDEFGHJIK</p>
+<p>2.中序遍历</p>
+<p>（1）中序遍历第一棵树的根结点的子树；<br>（2）访问森林中第一棵树的根结点；<br>（3）中序遍历去掉第一棵树后的子森林。</p>
+<p>对上图森林中序遍历，得出结果序列：B A D E F C J H K I G</p>
+<p>森林的前序遍历和中序遍历与所转换的二叉树的先序遍历和中序遍历的结果序列相同。</p>
+<h1 id="7．5-树的应用"><a href="#7．5-树的应用" class="headerlink" title="7．5 树的应用"></a>7．5 树的应用</h1><p>树的应用十分广泛，在后面的排序和查找常用的两项技术中，就有以树结构组织数据进行操作的。本节仅讨论<strong>树在判定树和集合表示与运算</strong>方面的应用。</p>
+<h2 id="7．5．1-判定树"><a href="#7．5．1-判定树" class="headerlink" title="7．5．1 判定树"></a>7．5．1 判定树</h2><p>最优二叉树：哈夫曼在判定问题中的应用</p>
+<p>判定树：用于判定问题的描述与解决；解决过程中的一系列判断构成了树结构</p>
+<p>Q：设有八枚硬币，分别表示为a，b，c，d，e，f，g，h，其中有一枚且仅有一枚硬币是伪造的，假硬币的重量与真硬币的重量不同，可能轻，也可能重。现要求以天平为工具，用最少的比较次数挑选出假硬币，并同时确定这枚硬币的重量比其它真硬币是轻还是重。</p>
+<p>A：用H 和L 分别表示假硬币较其它真硬币重或轻。下面对这一判定方法加以说明，并分析它的正确性。</p>
+<p>从八枚硬币中任取六枚，假设是a，b，c，d，e 和f，在天平两端各放三枚进行比较。</p>
+<p>假设a，b，c 三枚放在天平的一端，d，e，f 三枚放在天平的另一端，可能出现三种比较结果：<br>（1）a＋b＋c&gt;d＋e＋f<br>（2）a＋b＋c＝d＋e＋f<br>（3）a＋b＋c&lt;d＋e＋f</p>
+<p>这里，只以第一种情况为例进行讨论。若a＋b＋c&gt;d＋e＋f，根据题目的假设，可以肯定这六枚硬币中必有一枚为假币，同时也说明g，h 为真币。这时可将天平两端个去掉一枚硬币，假设它们是c 和f，同时将天平两端的硬币各换一枚，假设硬币b，d 作了互换，然后进行第二次比较，那么比较的结果同样可能有三种：</p>
+<p>①a＋d&gt;b＋e 这种情况表明天平两端去掉硬币c，f 且硬币b，d 互换后，天平两端的轻重关系保持不变，从而说明了假币必然是a，e 中的一个，这时我们只要用一枚真币（b，c，d，f，g，h）和a 或e 进行比较，就能找出假币。例如，用b 和a 进行比较，若a&gt;b，则a 是较重的假币；若a＝b，则e 为较轻的假币；不可能出现a&lt;b 的情况。</p>
+<p>②a＋d＝b＋e 此时天平两端由不平衡变为平衡，表明假币一定在去掉的两枚硬币c，f 中，a，b，d，e，g，h 必定为真硬币，同样的方法，用一枚真币和c 或f 进行比较，例如，用a 和c 进行比较，若c&gt;a，则c 是较重的假币；若a＝c，则f 为较轻的假币；不可能出现c&lt;a 的情况.</p>
+<p>③a＋d<b＋e 此时表明由于天平两端两枚硬币b，d="" 的对换，引起了两端轻重关系的改变，那么可以肯定b="" 或d="" 中有一枚是假硬币，再只要用一枚真币和b="" 进行比较，就能找出假币。例如，用a="" 和b="" 进行比较，若a<b，则b="" 是较重的假币；若a＝b，则d="" 为较轻的假币；不可能出现a="">b 的情况。</b＋e></p>
+<h2 id="7．5．2-集合的表示"><a href="#7．5．2-集合的表示" class="headerlink" title="7．5．2 集合的表示"></a>7．5．2 集合的表示</h2><p>集合：</p>
+<ul>
+<li>可分成多个子集</li>
+<li>分划</li>
+<li>运算：交并补差，判定</li>
+<li>树结构表示集合：结点——元素；树结构——双亲表示法存储；</li>
+</ul>
+<p>存储描述：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typedef struct&#123;</span><br><span class="line">    elemtype data;</span><br><span class="line">    int parent;</span><br><span class="line">&#125;NodeType</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>data 域存储结点本身的数据，parent 域为指向双亲结点的指针，即存储双亲结点在数组中的序号.</p>
+</blockquote>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223221525238.jpg" alt="集合S1\S2\S3的树结构存储示意"></p>
+<p>集合并运算算法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void Union （ NodeType a[]  int i int j</span><br><span class="line">/*合并以数组a 的第i 个元素和第j 个元素为树根结点的集合*/</span><br><span class="line">&#123; if ( a[i].parent != -1 || a[j].parent != -1 )</span><br><span class="line">  &#123;</span><br><span class="line">	  printf (“ \ n 调 用参数 正确 ”) ；</span><br><span class="line">		  return(；</span><br><span class="line">			 &#125;</span><br><span class="line">			 a[j].parent = i); /*将i 置为两个集合共同的根结点*/</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>如果要查找某个元素所在的集合，可以<strong>沿着该元素的双亲域向上查，当查到某个元素的双亲域值为－1 时，该元素就是所查元素所属集合的树根结点</strong>(-1表示无双亲结点)</p>
+<p>算法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">int Find（NodeType a[ ]，elemtype x）</span><br><span class="line">&#123;/*在数组a 中查找值为x 的元素所属的集合，*/</span><br><span class="line">/*若找到，返回树根结点在数组a 中的序号；否则，返回－1*/</span><br><span class="line">/*常量MAXNODE 为数组a 的最大容量*/</span><br><span class="line">int i,j;</span><br><span class="line">i=0;</span><br><span class="line">while (i&lt;MAXNODE &amp;&amp; a[i].data!=x) i++;</span><br><span class="line">if (i&gt;=MAXNODE) return –1; /*值为x 的元素不属于该组集合，返回－1*/</span><br><span class="line">j=i;</span><br><span class="line">while (a[j].parent!=-1) j=a[j].parent;</span><br><span class="line">return j; /*j 为该集合的树根结点在数组a 中的序号*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7．5．3-关系等价求等价类问题"><a href="#7．5．3-关系等价求等价类问题" class="headerlink" title="7．5．3 关系等价求等价类问题"></a>7．5．3 关系等价求等价类问题</h2><p>1．问题：已知集合S 及其上的等价关系R，求R 在S 上的一个划分{S1,S2,…,Sn}，其中，S1,S2,…,Sn 分别为R 的等价类，它们满足：</p>
+<pre><code>    ∪Si＝S 且Si∩Sj＝ф(i≠j)
+</code></pre><p>设集合S 中有n 个元素，关系R 中有m 个序偶对。</p>
+<p>2．算法思想：</p>
+<p>（1）令S 中每个元素各自形成一个单元素的子集，记作S1，S2，…，Sn；<br>（2）重复读入m 个序偶对，对每个读入的序偶对<x,y>，判定x 和y 所属子集。不失一般性，假设x∈Si，y∈Sj，若Si≠Sj，则将Si 并入Sj，并置Si 为空（或将Sj 并入Si，并置Sj 为空）；若Si＝Sj，则不做什么操作，接着读入下一对序偶。直到m 个序偶对都被处理过后，S1，S2，…，Sn 中所有非空子集即为S 的R 等价类，这些等价类的集合即为集合S 的一个划分。</x,y></p>
+<p>3．数据的存储结构：对集合的存储采用第7.5.2 小节中介绍的集合的存储方式，即采用双亲表示法来存储本算法中的集合。</p>
+<p>4． 算法实现</p>
+<p>通过前面的分析可知，本算法在实现过程中所用到的基本操作有以下两个：</p>
+<p>（1）Find（S，x）查找函数。确定集合S 中的单元素x 所属子集Si，函数的返回值为该子集树根结点在双亲表示法数组中的序号；<br>（2）Union（S，i，j）集合合并函数。将集合S 的两个互不相交的子集合并，i 和j分别为两个子集用树表示的根结点在双亲表示法数组中的序号。合并时，将一个子集的根结点的双亲域的值由没有双亲改为指向另一个子集的根结点。</p>
+<p>这两个操作的实现在7.5.2 小节中已经介绍过，下面就本问题的解决算法步骤给出描述：<br>①k=1<br>②若k&gt;m 则转⑦，否则转③<br>③读入一序偶对<x，y><br>④i= Find（S，x）;j= Find（S，y）<br>⑤若i≠j，则Union（S，i，j）；<br>⑥k++<br>⑦输出结果，结束。</x，y></p>
+<p>5． 算法的时间复杂性：</p>
+<p>查找算法和合并算法的时间复杂度分别为O(d)和O(1)，其中d 是树的深度。这种表示集合的树的深度和树的形成过程有关。在极端的情况下，每读入一个序偶对，就需要合并一次，即最多进行(m－n)/2 次合并，若假设每次合并都是将含成员多的根结点指向含成员少的根结点，则最后得到的集合树的深度为n，而树的深度与查找有关。这样全部操作的时间复杂性可估计为O(n2)。</p>
+<p>若将合并算法进行改进，即合并时将含成员少的根结点指向含成员多的根结点，这样会减少树的深度，从而减少了查找时的比较次数。促使整个算法效率的提高。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/23/数据结构第六章：二叉树/" rel="next" title="数据结构第六章：二叉树">
+                <i class="fa fa-chevron-left"></i> 数据结构第六章：二叉树
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/23/数据结构第八章：图/" rel="prev" title="数据结构第八章：图">
+                数据结构第八章：图 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">131</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#7-1-树的概念与表示"><span class="nav-number">1.</span> <span class="nav-text">7.1 树的概念与表示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-1-树的定义和相关术语"><span class="nav-number">1.1.</span> <span class="nav-text">7.1.1 树的定义和相关术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-2-树的表示"><span class="nav-number">1.2.</span> <span class="nav-text">7.1.2 树的表示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-2-树的基本操作与存储"><span class="nav-number">2.</span> <span class="nav-text">7.2 树的基本操作与存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-2-树的存储结构"><span class="nav-number">2.0.1.</span> <span class="nav-text">7.2.2 树的存储结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7．3-树、森林与二叉树的转换"><span class="nav-number">3.</span> <span class="nav-text">7．3 树、森林与二叉树的转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-1-树转换成二叉树"><span class="nav-number">3.1.</span> <span class="nav-text">7.3.1 树转换成二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-2-森林转换为二叉树"><span class="nav-number">3.2.</span> <span class="nav-text">7.3.2 森林转换为二叉树</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-3-3-二叉树转换为树和森林"><span class="nav-number">4.</span> <span class="nav-text">7.3.3 二叉树转换为树和森林</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7．4-树和森林的遍历"><span class="nav-number">5.</span> <span class="nav-text">7．4 树和森林的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-4-1-树的遍历"><span class="nav-number">5.1.</span> <span class="nav-text">7.4.1 树的遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-4-2-森林的遍历"><span class="nav-number">5.2.</span> <span class="nav-text">7.4.2 森林的遍历</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7．5-树的应用"><span class="nav-number">6.</span> <span class="nav-text">7．5 树的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7．5．1-判定树"><span class="nav-number">6.1.</span> <span class="nav-text">7．5．1 判定树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7．5．2-集合的表示"><span class="nav-number">6.2.</span> <span class="nav-text">7．5．2 集合的表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7．5．3-关系等价求等价类问题"><span class="nav-number">6.3.</span> <span class="nav-text">7．5．3 关系等价求等价类问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Data Structure," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：二叉树。">
+<meta name="keywords" content="Data Structure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构第六章：二叉树">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/数据结构第六章：二叉树/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：二叉树。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223200040156.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223200420b7.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223200420b7.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-12022320115S24.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-12022320122c46.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-12022320122c46.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-1202232012541G.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-1202232013422L.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223201429312.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-1202232015004Y.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223201541F3.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223200420b7.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223203330536.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-12022320342K23.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223203955303.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-12022321131D34.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223211250U5.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223211I2216.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-1202232124225T.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223213424521.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223213514543.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223213AY96.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223213KW27.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223213U4H9.jpg">
+<meta property="og:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223214122595.jpg">
+<meta property="og:updated_time" content="2018-01-23T09:31:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构第六章：二叉树">
+<meta name="twitter:description" content="Abstract：二叉树。">
+<meta name="twitter:image" content="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223200040156.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/23/数据结构第六章：二叉树/"/>
+
+
+
+
+
+  <title>数据结构第六章：二叉树 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/数据结构第六章：二叉树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构第六章：二叉树</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-23T16:57:23+08:00">
+                2018-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Data-Structure/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Structure</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：二叉树。</p>
+<a id="more"></a>
+<h1 id="6-1-二叉树的定义域性质"><a href="#6-1-二叉树的定义域性质" class="headerlink" title="6.1 二叉树的定义域性质"></a>6.1 二叉树的定义域性质</h1><h2 id="6-1-1-二叉树的基本概念"><a href="#6-1-1-二叉树的基本概念" class="headerlink" title="6.1.1 二叉树的基本概念"></a>6.1.1 二叉树的基本概念</h2><p>1.二叉树Binary Tree</p>
+<ul>
+<li>有限个元素的集合，集合<strong>或为空、或由一个称为根（root）的元素和2个不想交的、被分别称为左子树和右子树的二叉树组成</strong></li>
+<li>结点：一个元素称为一个结点</li>
+<li>有序：即左右子树颠倒即成为不同的二叉树；即使树中只有一棵子树也要区分</li>
+<li>5种基本形态：</li>
+</ul>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223200040156.jpg" alt="二叉树的5种基本形态"></p>
+<p>2.二叉树的相关概念</p>
+<ul>
+<li>结点的度：结点<strong>拥有的子树个数</strong></li>
+<li>叶节点：度=0的结点，或称终端结点</li>
+<li>分枝结点：度不为0的结点；除叶节点外的节点都是分支结点</li>
+<li>左孩子，右孩子，双亲，兄弟</li>
+<li>路径，路径长度：结点到结点所要经过的边数；eg.如果一棵树的一串结点n1,n2,…,nk 有如下关系：结点ni 是ni+1的父结点（1≤i&lt;k）,就把n1,n2,…,nk 称为一条由n1 至nk 的路径。这条路径的长度是k-1</li>
+<li>祖先、子孙：在树中，如果有一条路径从结点M 到结点N，那么M 就称为N的祖先，而N 称为M 的子孙</li>
+<li>结点的层数：规定树的根结点的层数为1，其余结点的层数等于它的双亲结点的层数加1。</li>
+<li>树的深度。树<strong>中所有结点的最大层数</strong>称为树的深度。</li>
+<li>树的度。<strong>树中各结点度的最大值</strong>称为该树的度。</li>
+<li>满二叉树：所有分支结点都存在左子树和右子树，并且所有叶子结点都在同一层上。</li>
+<li>完全二叉树：一棵深度为k 的有n 个结点的二叉树，<strong>对树中的结点按从上至下、从左到右的顺序进行编号</strong>，<strong>如果编号为i（1≤i≤n）的结点与满二叉树中编号为i 的结点在二叉树中的位置相同</strong>，则这棵二叉树称为完全二叉树。完全二叉树的特点是：<strong>叶子结点只能出现在最下层和次下层，且最下层的叶子结点集中在树的左部</strong>。显然，<strong>一棵满二叉树必定是一棵完全二叉树，而完全二叉树未必是满二叉树</strong>。</li>
+</ul>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223200420b7.jpg" alt="完全二叉树"></p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223200420b7.jpg" alt="非完全"></p>
+<h2 id="6-1-2-二叉树的主要性质"><a href="#6-1-2-二叉树的主要性质" class="headerlink" title="6.1.2 二叉树的主要性质"></a>6.1.2 二叉树的主要性质</h2><p>性质1：<strong>一棵非空二叉树的第i 层上最多有2i-1 个结点</strong>（i≥1）</p>
+<p>性质2<strong>：一棵深度为k 的二叉树中，最多具有2k－1 个结点</strong></p>
+<p>性质3：对于一棵<strong>非空的二叉树</strong>，如果<strong>叶子结点数为n0，度数为2 的结点数为n2，则有: n0＝n2＋1</strong>。</p>
+<p>性质4：<strong>具有n个结点的完全二叉树的深度k = [log2n + 1]</strong>（2为下标）</p>
+<p>性质5：对于具有n 个结点的<strong>完全二叉树</strong>，如果<strong>按照从上至下和从左到右的顺序对二叉树中的所有结点从1 开始顺序编号</strong>，则对于任意的序号为i 的结点，有：</p>
+<ul>
+<li>（1）如果i&gt;1，则序号为i 的结点的<strong>双亲结点的序号为i/2</strong>(“/”表示整除)；如果i＝1，则序号为i 的结点是根结点，无双亲结点。</li>
+<li>（2）如果<strong>2i≤n，则序号为i 的结点的左孩子结点的序号为2i；如果2i&gt;n，则序号为i 的结点无左孩子</strong>。</li>
+<li>（3）如果<strong>2i＋1≤n</strong>，则<strong>序号为i 的结点的右孩子结点的序号为2i＋1；如果2i＋1&gt;n，则序号为i 的结点无右孩子</strong>。</li>
+</ul>
+<p>性质6：若对<strong>二叉树的根结点从0 开始编号，则相应的i 号结点的双亲结点的编号为（i -1）/2，左孩子的编号为2i＋1，右孩子的编号为2i＋2</strong>。</p>
+<h1 id="6-2-基本操作与存储—二叉树的存储"><a href="#6-2-基本操作与存储—二叉树的存储" class="headerlink" title="6.2 基本操作与存储—二叉树的存储"></a>6.2 基本操作与存储—二叉树的存储</h1><h2 id="1-顺序存储结构"><a href="#1-顺序存储结构" class="headerlink" title="1.顺序存储结构"></a>1.顺序存储结构</h2><p>顺序存储：用一组连续的存储单元存放二叉树的结点，顺序为从上至下，从左至右。</p>
+<ul>
+<li>一般的二叉树：数组元素下标的关系不能反映二叉树结点间的逻辑关系（结点在存储位置上的前驱后继关系并不一定就是它们在逻辑上的邻接关系），只有<strong>增添一些并不存在的空结点，使之成为一棵完全二叉树的形式，然后再用一维数组顺序存储</strong>（先增加空节点，再存储）。</li>
+<li>完全二叉树和满二叉树：可以反映</li>
+</ul>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-12022320115S24.jpg" alt="二叉树改造"></p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-12022320122c46.jpg" alt="改造后的存储状态"></p>
+<blockquote>
+<p>改造：空间浪费；最坏的情况是右单支树，如图：一棵深度为k 的右单支树，只有k 个结点，却需分配2k－1 个存储单元。</p>
+</blockquote>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-12022320122c46.jpg" alt="单支树改造"></p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-1202232012541G.jpg" alt="存储"></p>
+<h2 id="2-链式存储结构"><a href="#2-链式存储结构" class="headerlink" title="2.链式存储结构"></a>2.链式存储结构</h2><p>二叉树的链式存储：链表表示二叉树，链指示元素的逻辑关系。</p>
+<h3 id="1-二叉链表存储【最常用】"><a href="#1-二叉链表存储【最常用】" class="headerlink" title="(1) 二叉链表存储【最常用】"></a>(1) 二叉链表存储【最常用】</h3><p>结点：三个域组成，数据域+指针域（分别指向该结点左孩子和右孩子所在结点的存储地址）</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-1202232013422L.jpg" alt="结点存储结构"></p>
+<p>data域：存放结点的数据信息；lchild 与rchild 分别存放指向左孩子和右孩子的指针，当左孩子或右孩子不存在时，相应指针域值为空（用符号∧或NULL 表示）</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223201429312.jpg" alt="二叉树的二叉链表"></p>
+<p>描述：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typedef struct BiTNode&#123;</span><br><span class="line">    elemtype data;</span><br><span class="line">    struct BiTNode *lchild; *rchild;</span><br><span class="line">    &#125;BiTNode, *BiTree; // 将BiTree 定义为指向二叉链表结点结构的指针类型</span><br></pre></td></tr></table></figure>
+<h3 id="2-三叉链表存储"><a href="#2-三叉链表存储" class="headerlink" title="(2) 三叉链表存储"></a>(2) 三叉链表存储</h3><p>每个结点四个域。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-1202232015004Y.jpg" alt="结点四域"></p>
+<ul>
+<li>parent 域为指向该结点双亲结点的指针</li>
+<li>优点：便于寻找孩子结点和双亲</li>
+<li>缺点：增加空间开销</li>
+</ul>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223201541F3.jpg" alt="三叉链表"></p>
+<h1 id="6-2-基本操作与存储—二叉树的基本操作及实现"><a href="#6-2-基本操作与存储—二叉树的基本操作及实现" class="headerlink" title="6.2 基本操作与存储—二叉树的基本操作及实现"></a>6.2 基本操作与存储—二叉树的基本操作及实现</h1><h2 id="1-二叉树的基本操作"><a href="#1-二叉树的基本操作" class="headerlink" title="1.二叉树的基本操作"></a>1.二叉树的基本操作</h2><ul>
+<li>initiate(bt): 建立一棵空二叉树</li>
+<li>create（x，lbt，rbt）：生成一棵以x为根结点的数据域信息，以二叉树lbt和rbt为左子树和右子树的二叉树</li>
+<li>Insert（bt，x，parent）：将数据域信息为x 的结点插入到二叉树bt 中作为结点parent 的左孩子结点。如果结点parent 原来有左孩子结点，则将结点parent 原来的左孩子结点作为结点x 的左孩子结点。</li>
+<li>InsertR（bt，x，parent）将数据域信息为x 的结点插入到二叉树bt 中作为结点parent 的右孩子结点。如果结点parent 原来有右孩子结点，则将结点parent 原来的右孩子结点作为结点x 的右孩子结点。</li>
+<li>DeleteL（bt，parent）在二叉树bt 中删除结点parent 的左子树。</li>
+<li>DeleteR（bt，parent）在二叉树bt 中删除结点parent 的右子树。</li>
+<li>Search（bt，x）在二叉树bt 中查找数据元素x。</li>
+<li>Traverse（bt）按某种方式遍历二叉树bt 的全部结点。</li>
+</ul>
+<h2 id="2．算法的实现——基于二叉链表"><a href="#2．算法的实现——基于二叉链表" class="headerlink" title="2．算法的实现——基于二叉链表"></a>2．算法的实现——基于二叉链表</h2><p>1.<strong>Initiate（bt）</strong>初始<strong>建立二叉树bt，并使bt 指向头结点</strong>。在二叉树根结点前建立头结点，就如同在单链表前建立的头结点，可以方便后边的一些操作实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int Initiate (BiTree *bt)</span><br><span class="line">&#123;/*初始化建立二叉树*bt 的头结点*/</span><br><span class="line">if((*bt=(BiTNode *)malloc(sizeof(BiTNode)))==NULL)</span><br><span class="line">    return 0;</span><br><span class="line">*bt-&gt;lchild=NULL;</span><br><span class="line">*bt-&gt;rchild=NULL;</span><br><span class="line">return 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.<strong>Create（x，lbt，rbt）建立一棵以x 为根结点的数据域信息，以二叉树lbt 和rbt为左右子树的二叉树。建立成功时返回所建二叉树结点的指针；建立失败时返回空指针</strong>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">BiTree Create（elemtype x，BiTree lbt，BiTree rbt）</span><br><span class="line">&#123;/*生成一棵以x 为根结点的数据域值以lbt 和rbt 为左右子树的二叉树*/</span><br><span class="line">BiTree p;</span><br><span class="line">if ((p=(BiTNode *)malloc(sizeof(BiTNode)))==NULL) return NULL;</span><br><span class="line">    p-&gt;data=x;</span><br><span class="line">    p-&gt;lchild=lbt;</span><br><span class="line">    p-&gt;rchild=rbt;</span><br><span class="line">return p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.InsertL（bt，x，parent）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">BiTree InsertL（BiTree bt，elemtype x，BiTree parent）</span><br><span class="line">&#123;/*在二叉树bt 的结点parent 的左子树插入结点数据元素x*/</span><br><span class="line">BiTree p;</span><br><span class="line">if (parent==NULL)</span><br><span class="line">&#123; printf(“\n 插入出错”)；</span><br><span class="line">return NULL;</span><br><span class="line">&#125;</span><br><span class="line">if ((p=(BiTNode *)malloc(sizeof(BiTNode)))==NULL) return NULL;</span><br><span class="line">    p-&gt;data=x;</span><br><span class="line">    p-&gt;lchild=NULL;</span><br><span class="line">    p-&gt;rchild=NULL;</span><br><span class="line">if (parent-&gt;lchild==NULL) parent-&gt;lchild=p;</span><br><span class="line">    else &#123;p-&gt;lchild=parent-&gt;lchild;</span><br><span class="line">    parent-&gt;lchild=p;</span><br><span class="line">&#125;</span><br><span class="line">return bt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.DeleteL（bt，parent）在二叉树bt 中删除结点parent 的左子树。当parent 或parent的左孩子结点为空时删除失败。<strong>删除成功时返回根结点指针；删除失败时返回空指针</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">BiTree DeleteL（BiTree bt，BiTree parent）</span><br><span class="line">&#123;/*在二叉树bt 中删除结点parent 的左子树*/</span><br><span class="line">BiTree p;</span><br><span class="line">if (parent==NULL||parent-&gt;lchild==NULL)</span><br><span class="line">&#123; printf(“\n 删除出错”)；</span><br><span class="line">return NULL’</span><br><span class="line">&#125;</span><br><span class="line">    p=parent-&gt;lchild;</span><br><span class="line">    parent-&gt;lchild=NULL;</span><br><span class="line">    free(p); /*当p 为非叶子结点时，这样删除仅释放了所删子树根结点的空间，*/</span><br><span class="line">/*若要删除子树分支中的结点，需用后面介绍的遍历操作来实现。*/</span><br><span class="line">return br;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="6-3-二叉树的遍历—二叉树的遍历方法及递归实现"><a href="#6-3-二叉树的遍历—二叉树的遍历方法及递归实现" class="headerlink" title="6.3 二叉树的遍历—二叉树的遍历方法及递归实现"></a>6.3 二叉树的遍历—二叉树的遍历方法及递归实现</h1><p>二叉树的遍历:</p>
+<ul>
+<li>指按照<strong>某种顺序</strong>访问二叉树中的每个结点，使每个结点<strong>被访问一次且仅被访问一次</strong>。</li>
+<li>若以D、L、R分别访问根结点、遍历根结点的左子树、遍历根结点的右子树，则二叉树的遍历方式有六种：<strong>DLR、LDR、LRD、DRL、RDL 和RLD</strong>。<strong>如果限定先左后右，则只有前三种方式，即DLR（称为先序遍历）、LDR（称为中序遍历）和LRD（称为后序遍历）</strong>。</li>
+</ul>
+<h2 id="1-先序遍历DLR"><a href="#1-先序遍历DLR" class="headerlink" title="1.先序遍历DLR"></a>1.先序遍历DLR</h2><p>先序遍历的<strong>递归过程</strong>：<strong>若二叉树为空，遍历结束</strong>。否则：</p>
+<ul>
+<li>访问根结点</li>
+<li>先序遍历根结点的左子树</li>
+<li>先序遍历根结点的右子树</li>
+</ul>
+<p>递归算法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void PreOrder(BiTree bt)</span><br><span class="line">&#123;</span><br><span class="line">if (bt == NULL) return;</span><br><span class="line">    Visite (bt-&gt;data); //遍历bt二叉树的数据域</span><br><span class="line">    PreOrder (bt-&gt;lchild);//preorder指先序</span><br><span class="line">    PreOrder (bt-&gt;rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223200420b7.jpg" alt="二叉树"></p>
+<p>对上图b先序遍历：A-B-D-G-C-E-F(从根结点开始，先左后右)</p>
+<h2 id="2-中序遍历LDR"><a href="#2-中序遍历LDR" class="headerlink" title="2.中序遍历LDR"></a>2.中序遍历LDR</h2><p>递归过程：若二叉树为空，遍历结束。否则：</p>
+<ul>
+<li>中序遍历根结点的左子树</li>
+<li>访问根结点</li>
+<li>中序遍历根结点的右子树</li>
+</ul>
+<p>递归算法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void InOrder (BiTree bt)</span><br><span class="line">&#123;/*中序遍历二叉树bt*/</span><br><span class="line">if (bt==NULL) return; /*递归调用的结束条件*/</span><br><span class="line">InOrder（bt-&gt;lchild）; /*中序递归遍历bt 的左子树*/</span><br><span class="line">Visite（bt-&gt;data）; /*访问结点的数据域*/</span><br><span class="line">InOrder（bt-&gt;rchild）; /*中序递归遍历bt 的右子树*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对上图b中序：D-G-B-A-C-E-F（从左子树开始）</p>
+<h2 id="3-后序遍历LRD"><a href="#3-后序遍历LRD" class="headerlink" title="3.后序遍历LRD"></a>3.后序遍历LRD</h2><p>递归：若二叉树为空，遍历结束。否则，</p>
+<p>（1）后序遍历根结点的左子树；<br>（2）后序遍历根结点的右子树。<br>（3）访问根结点；</p>
+<p>算法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void PostOrder（BiTree bt）</span><br><span class="line">&#123;/*后序遍历二叉树bt*/</span><br><span class="line">if (bt==NULL) return; /*递归调用的结束条件*/</span><br><span class="line">        PostOrder（bt-&gt;lchild）; /*后序递归遍历bt 的左子树*/</span><br><span class="line">        PostOrder（bt-&gt;rchild）; /*后序递归遍历bt 的右子树*/</span><br><span class="line">        Visite（bt-&gt;data）; /*访问结点的数据域*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对图b后序：G-D-B-E-F-C-A</p>
+<h2 id="4-层次遍历"><a href="#4-层次遍历" class="headerlink" title="4.层次遍历"></a>4.层次遍历</h2><p>从根结点出发，由上至下由左至右逐个访问结点。如图b：A-B-C-D-E-F-G</p>
+<p>算法：</p>
+<p>在进行层次遍历时，可<strong>设置一个队列结构</strong>，遍历从二叉树的根结点开始，首先将根结点指针入队列，然后从对头取出一个元素，每取一个元素，执行下面两个操作：</p>
+<ul>
+<li>（1）访问该元素所指结点；</li>
+<li>（2）若该元素所指结点的左、右孩子结点非空，则将该元素所指结点的左孩子指针和右孩子指针顺序入队。</li>
+</ul>
+<p>此过程不断进行，当队列为空时，二叉树的层次遍历结束。在下面的层次遍历算法中，<strong>二叉树以二叉链表存放，一维数组Queue[MAXNODE]用以实现队列</strong>，变量front 和rear 分别表示当前对首元素和队尾元素在数组中的位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">void LevelOrder （ BiTree bt</span><br><span class="line">/*层次遍历二叉树bt*/</span><br><span class="line">&#123; BiTree	Queue[MAXNODE];</span><br><span class="line">  int		front, rear;</span><br><span class="line">  if ( bt == NULL )</span><br><span class="line">	  return;</span><br><span class="line">  front		= -1;</span><br><span class="line">  rear		= 0;</span><br><span class="line">  queue[rear]	= bt;</span><br><span class="line">  while ( front != rear )</span><br><span class="line">  &#123;</span><br><span class="line">	  front++;</span><br><span class="line">	  Visite( queue[front]-&gt;data );         /*访问队首结点的数据域*/</span><br><span class="line">	  if ( queue[front]-&gt;lchild != NULL )   /*将队首结点的左孩子结点入队列*/</span><br><span class="line">	  &#123;</span><br><span class="line">		  rear++;</span><br><span class="line">		  queue[rear] = queue[front]-&gt;lchild;</span><br><span class="line">	  &#125;</span><br><span class="line">	  if ( queue[front]-&gt;rchild != NULL )   /*将队首结点的右孩子结点入队列*/</span><br><span class="line">	  &#123;</span><br><span class="line">		  rear++;</span><br><span class="line">		  queue[rear] = queue[front]-&gt;rchild;</span><br><span class="line">	  &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="6-3-二叉树的遍历—二叉树遍历的非递归实现"><a href="#6-3-二叉树的遍历—二叉树遍历的非递归实现" class="headerlink" title="6.3 二叉树的遍历—二叉树遍历的非递归实现"></a>6.3 二叉树的遍历—二叉树遍历的非递归实现</h1><p>为什么要用非递归实现？</p>
+<ul>
+<li>并非所有程序设计语言都允许递归；</li>
+<li>递归程序虽然简洁，但可读性一般不好，执行效率也不高。</li>
+<li>因此，就存在如何把一个递归算法转化为非递归算法的问题。解决这个问题的方法可以通过<strong>对三种遍历方法的实质过程的分析得到</strong>。</li>
+</ul>
+<p><strong>先序遍历是在深入时遇到结点就访问，中序遍历是在从左子树返回时遇到结点访问，后序遍历是在从右子树返回时遇到结点访问</strong>。</p>
+<p>在这一过程中，返回结点的顺序与深入结点的顺序相反，即后深入先返回，正好符合栈结构后进先出的特点。因此，可以用栈来帮助实现这一遍历路线。其过程如下。在沿左子树深入时，深入一个结点入栈一个结点，若为先序遍历，则在入栈之前访问之；当沿左分支深入不下去时，则返回，即从堆栈中弹出前面压入的结点，若为中序遍历，则此时访问该结点，然后从该结点的右子树继续深入；若为后序遍历，则将此结点再次入栈，然后从该结点的右子树继续深入，与前面类同，仍为深入一个结点入栈一个结点，深入不下去再返回，直到第二次从栈里弹出该结点，才访问之。</p>
+<h2 id="先序遍历的非递归实现"><a href="#先序遍历的非递归实现" class="headerlink" title="先序遍历的非递归实现"></a>先序遍历的非递归实现</h2><p>下面算法：二叉树以二叉链表存放，一维数组stack[MAXNODE]实现栈，变量top表示当前栈顶的位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">void NRPreOrder (BiTree bt)</span><br><span class="line">BiTree stack[MAXNODE],p;</span><br><span class="line">int top;</span><br><span class="line">if (bt==NULL) return;</span><br><span class="line">top=0;</span><br><span class="line">p=bt;</span><br><span class="line">while(!(p==NULL&amp;&amp;top==0))</span><br><span class="line">&#123; while(p!=NULL)</span><br><span class="line">&#123; Visite(p-&gt;data); /*访问结点的数据域*/</span><br><span class="line">if (top&lt;MAXNODE-1) /*将当前指针p 压栈*/</span><br><span class="line">&#123; stack[top]=p;</span><br><span class="line">top++;</span><br><span class="line">&#125;</span><br><span class="line">else &#123; printf(“栈溢出”)；</span><br><span class="line">return；</span><br><span class="line">&#125;</span><br><span class="line">p=p-&gt;lchild； /*指针指向p 的左孩子*/</span><br><span class="line">&#125;</span><br><span class="line">if (top&lt;=0) return; /*栈空时结束*/</span><br><span class="line">else&#123; top--;</span><br><span class="line">p=stack[top]; /*从栈中弹出栈顶元素*/</span><br><span class="line">p=p-&gt;rchild; /*指针指向p 的右孩子结点*/</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对图b的二叉树，用上算法遍历，栈stack 和当前指针p 的变化情况以及树中各结点的访问次序如表所示。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223203330536.jpg" alt="二叉树先序非递归遍历"></p>
+<h2 id="中序遍历的非递归实现"><a href="#中序遍历的非递归实现" class="headerlink" title="中序遍历的非递归实现"></a>中序遍历的非递归实现</h2><p>中序遍历的非递归算法的实现，只需将先序遍历的非递归算法中的Visite(p-&gt;data)移到p=stack[top]和p=p-&gt;rchild 之间即可。</p>
+<h2 id="后序遍历的非递归实现"><a href="#后序遍历的非递归实现" class="headerlink" title="后序遍历的非递归实现"></a>后序遍历的非递归实现</h2><p>由前面的讨论可知，后序遍历与先序遍历和中序遍历不同，<strong>在后序遍历过程中，结点在第一次出栈后，还需再次入栈，也就是说，结点要入两次栈，出两次栈，而访问结点是在第二次出栈时访问</strong>。因此，<strong>为了区别同一个结点指针的两次出栈，设置一标志flag</strong>，令：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-12022320342K23.jpg" alt="flag"></p>
+<p>当结点指针进、出栈时，其标志flag 也同时进、出栈。因此，可将栈中元素的数据类型定义为指针和标志flag 合并的结构体类型。定义如下：</p>
+<p>typedef struct {<br>BiTree link;<br>int flag;<br>}stacktype;</p>
+<p>后序遍历二叉树的非递归算法如下。在算法中，一维数组stack[MAXNODE]用于实现栈的结构，指针变量p 指向当前要处理的结点，整型变量top 用来表示当前栈顶的位置，整型变量sign 为结点p 的标志量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">void NRPostOrder( BiTree bt )</span><br><span class="line">/*非递归后序遍历二叉树bt*/</span><br><span class="line">&#123;</span><br><span class="line">	stacktype	stack[MAXNODE];</span><br><span class="line">	BiTree		p;</span><br><span class="line">	int		top, sign;</span><br><span class="line">	if ( bt == NULL )</span><br><span class="line">		return;</span><br><span class="line">	top		= -1                                    /*栈顶位置初始化*/</span><br><span class="line">		  p	= bt;</span><br><span class="line">	while ( !(p == NULL &amp;&amp; top == -1) )</span><br><span class="line">	&#123;</span><br><span class="line">		if ( p != NULL )                                /*结点第一次进栈*/</span><br><span class="line">		&#123;</span><br><span class="line">			top++;</span><br><span class="line">			stack[top].link = p;</span><br><span class="line">			stack[top].flag = 1;</span><br><span class="line">			p		= p-&gt;lchild;            /*找该结点的左孩子*/</span><br><span class="line">		&#125;else  &#123; p	= stack[top].link;</span><br><span class="line">			 sign	= stack[top].flag;</span><br><span class="line">			 top--;</span><br><span class="line">			 if ( sign == 1 )                       /*结点第二次进栈*/</span><br><span class="line">			 &#123;</span><br><span class="line">				 top++;</span><br><span class="line">				 stack[top].link	= p;</span><br><span class="line">				 stack[top].flag	= 2;    /*标记第二次出栈*/</span><br><span class="line">				 p			= p-&gt;rchild;</span><br><span class="line">			 &#125;else  &#123; Visite( p-&gt;data );            /*访问该结点数据域值*/</span><br><span class="line">			 &#125; &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="6-3-二叉树的遍历—由遍历序列恢复二叉树"><a href="#6-3-二叉树的遍历—由遍历序列恢复二叉树" class="headerlink" title="6.3 二叉树的遍历—由遍历序列恢复二叉树"></a>6.3 二叉树的遍历—由遍历序列恢复二叉树</h1><p>1.任何二叉树的先序和中序序列唯一，则可由其先序中序序列确定唯一的二叉树。</p>
+<p>2.由二叉树的后序序列和中序序列也可唯一地确定一棵二叉树。</p>
+<p>因为，依据后序遍历和中序遍历的定义，后序序列的最后一个结点，就如同先序序列的第一个结点一样，可将中序序列分成两个子序列，分别为这个结点的左子树的中序序列和右子树的中序序列，再拿出后序序列的倒数第二个结点，并继续分割中序序列，如此递归下去，当倒着取取尽后序序列中的结点时，便可以得到一棵二叉树。</p>
+<p>已知一棵二叉树的先序序列与中序序列分别为：</p>
+<p>A B C D E F G H I<br>B C A E D G H F I</p>
+<p>试恢复该二叉树。</p>
+<p>首先，由先序序列可知，结点A 是二叉树的根结点。其次，根据中序序列，在A 之前的所有结点都是根结点左子树的结点，在A 之后的所有结点都是根结点右子树的结点，由此得到图6.10 (a)所示的状态。然后，再对左子树进行分解，得知B 是左子树的根结点，又从中序序列知道，B 的左子树为空，B 的右子树只有一个结点C。接着对A 的右子树进行分解，得知A 的右子树的根结点为D；而结点D 把其余结点分成两部分，即左子树为E，右子树为F、G、H、I，如图6.10 (b)所示。接下去的工作就是按上述原则对D 的右子树继续分解下去，最后得到如图6.10 (c)的整棵二叉树。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223203955303.jpg" alt="恢复"></p>
+<p>上述过程是一个递归过程，其递归算法的思想是：先根据先序序列的第一个元素建立根结点；然后在中序序列中找到该元素，确定根结点的左、右子树的中序序列；再在先序序列中确定左、右子树的先序序列；最后由左子树的先序序列与中序序列建立左子树，由右子树的先序序列与中序序列建立右子树。下面给出用C 语言描述的该算法。假设二叉树的先序序列和中序序列分别存放在一维数组preod[ ]与inod[ ]中，并假设二叉树各结点的数据值均不相同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void ReBiTree（char preod[ ],char inod[ ],int n,BiTree root）</span><br><span class="line">/*n 为二叉树的结点个数，root 为二叉树根结点的存储地址*/</span><br><span class="line">&#123; if (n≤0) root=NULL;</span><br><span class="line">else PreInOd(preod,inod,1,n,1,n,&amp;root);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void PreInOd（char preod[ ],char inod[ ],int i,j,k,h,BiTree *t）</span><br><span class="line">&#123;* t=(BiTNode *)malloc(sizeof(BiTNode));</span><br><span class="line">*t-&gt;data=preod[i];</span><br><span class="line">m=k;</span><br><span class="line">while (inod[m]!=preod[i]) m++;</span><br><span class="line">if (m==k) *t-&gt;lchild=NULL</span><br><span class="line">else PreInOd(preod,inod,i+1,i+m-k,k,m-1,&amp;t-&gt;lchild);</span><br><span class="line">if (m==h) *t-&gt;rchild=NULL</span><br><span class="line">else PreInOd(preod,inod,i+m-k+1,j,m+1,h,&amp;t-&gt;rchild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注：数组preod 和inod 的元素类型可根据实际需要来设定，这里设为字符型。另外，如果只知道二叉树的先序序列和后序序列，则不能唯一地确定一棵二叉树。</p>
+<h1 id="6-3-二叉树的遍历—不用栈的二叉树遍历的非递归方法"><a href="#6-3-二叉树的遍历—不用栈的二叉树遍历的非递归方法" class="headerlink" title="6.3 二叉树的遍历—不用栈的二叉树遍历的非递归方法"></a>6.3 二叉树的遍历—不用栈的二叉树遍历的非递归方法</h1><p>二叉树的遍历算法：</p>
+<ul>
+<li>依据二叉树结构的递归性，采用递归调用的方式来实现</li>
+<li>通过堆栈或队列来辅助实现</li>
+</ul>
+<p>缺点：递归调用和栈都增加额外空间。</p>
+<p><strong>递归调用的深度与栈的大小是动态变化的，都与二叉树的高度有关</strong>。因此，在最坏的情况下，即<strong>二叉树退化为单支树的情况下，递归的深度或栈需要的存储空间等于二叉树中的结点数</strong>。</p>
+<p>常用的<strong>不用栈的二叉树遍历的非递归方法</strong>有以下三种：</p>
+<ul>
+<li>用三叉链表存放二叉树：即在二叉树的每个结点中增加一个双亲域parent，这样，在遍历深入到不能再深入时，可沿着走过的路径回退到任何一棵子树的根结点，并再向另一方向走。由于这一方法的实现是在每个结点的存储上又增加一个双亲域，故其存储开销就会增加。</li>
+<li>逆转链：在遍历深入时，<strong>每深入一层，就将其再深入的孩子结点的地址取出，并将其双亲结点的地址存入</strong>，<strong>当深入不下去需返回时，可逐级取出双亲结点的地址，沿原路返回</strong>。虽然此种方法是在二叉链表上实现的，没有增加过多的存储空间，但在<strong>执行遍历的过程中改变子女指针的值</strong>，这既是<strong>以时间换取空间</strong>，同时当有几个用户同时使用这个算法时将会发生问题。</li>
+<li>在线索二叉树上的遍历：利用具有n 个结点的二叉树中的叶子结点和一度结点的n＋1 个空指针域，来存放线索，然后在这种具有线索的二叉树上遍历时，就可不需要栈，也不需要递归了。</li>
+</ul>
+<h1 id="6-4-线索二叉树—线索二叉树的定义及结构"><a href="#6-4-线索二叉树—线索二叉树的定义及结构" class="headerlink" title="6.4 线索二叉树—线索二叉树的定义及结构"></a>6.4 线索二叉树—线索二叉树的定义及结构</h1><h2 id="1-线索二叉树的定义"><a href="#1-线索二叉树的定义" class="headerlink" title="1.线索二叉树的定义"></a>1.线索二叉树的定义</h2><p>线索二叉树：带了线索的二叉树。<strong>线索thread：指向直接前驱结点和指向直接后继结点的指针</strong>。</p>
+<blockquote>
+<p>为了保留结点在某种遍历序列中直接前驱和直接后继的位置信息，可以利用二叉树的二叉链表存储结构中的那些空指针域来指示。</p>
+</blockquote>
+<h2 id="2-线索二叉树的结构"><a href="#2-线索二叉树的结构" class="headerlink" title="2.线索二叉树的结构"></a>2.线索二叉树的结构</h2><p>一个具有n 个结点的二叉树若采用二叉链表存储结构，在2n 个指针域中只有n－1 个指针域是用来存储结点孩子的地址，而另外n＋1 个指针域存放的都是NULL。因此，可以利用某结点空的左指针域（lchild）指出该结点在某种遍历序列中的直接前驱结点的存储地址，利用结点空的右指针域（rchild）指出该结点在某种遍历序列中的直接后继结点的存储地址；对于那些非空的指针域，则仍然存放指向该结点左、右孩子的指针。这样，就得到了一棵线索二叉树。</p>
+<p>序列可由不同的遍历方法得到。线索树有先序线索二叉树、中序线索二叉树和后序线索二叉树三种。把二叉树改造成线索二叉树的过程称为<strong>线索化</strong>。</p>
+<p>对图b进行线索化：得到先序线索二叉树、中序线索二叉树和后序线索二叉树分别如图(a)、(b)、(c)所示。图中实线表示指针，虚线表示线索。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-12022321131D34.jpg" alt="线索化"></p>
+<p>如何区别某结点的指针域内存放的是指针还是线索？</p>
+<p>（1）为每个结点增设两个标志位域ltag 和rtag，令：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223211250U5.jpg" alt="标志域"></p>
+<p>这里我们按第一种方法来介绍线索二叉树的存储。<strong>为了将二叉树中所有空指针域都利用上，以及操作便利的需要，在存储线索二叉树时往往增设一头结点</strong>，其结构与其它线索二叉树的结点结构一样，只是<strong>其数据域不存放信息，其左指针域指向二叉树的根结点，右指针域指向自己</strong>。而原二叉树在某序遍历下的第一个结点的前驱线索和最后一个结点的后继线索都指向该头结点。</p>
+<h1 id="6-4-线索二叉树—线索二叉树的基本操作实现"><a href="#6-4-线索二叉树—线索二叉树的基本操作实现" class="headerlink" title="6.4 线索二叉树—线索二叉树的基本操作实现"></a>6.4 线索二叉树—线索二叉树的基本操作实现</h1><p>线索二叉树的结点结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">typedef char elemtype;</span><br><span class="line">typedef struct BiThrNode &#123;</span><br><span class="line">	elemtype		data;</span><br><span class="line">	struct BiThrNode	*lchild;</span><br><span class="line">	struct BiThrNode	*rchild;</span><br><span class="line">	unsigned		ltag : 1;</span><br><span class="line">	unsigned		rtag : 1;</span><br><span class="line">&#125;BiThrNodeType, *BiThrTree;</span><br></pre></td></tr></table></figure>
+<p>下面以中序线索二叉树为例，讨论线索二叉树的建立、线索二叉树的遍历以及在线索二叉树上查找前驱结点、查找后继结点、插入结点和删除结点等操作的实现算法。</p>
+<h2 id="1-建立一棵中序线索二叉树"><a href="#1-建立一棵中序线索二叉树" class="headerlink" title="1.建立一棵中序线索二叉树"></a>1.建立一棵中序线索二叉树</h2><p>建立线索二叉树/线索化：</p>
+<ul>
+<li>实质：<strong>遍历一棵二叉树</strong></li>
+<li>遍历过程中：<strong>访问结点的操作是检查当前结点的左、右指针域是否为空，若空，则将其改为指向前驱结点或后继结点的线索</strong>。为实现这一过程，<strong>设指针pre始终指向刚访问过的结点</strong>，即若指针p指向当前结点，则pre指向当前结点，则pre指向它的前驱，以便增设线索。</li>
+<li>对二叉树加线索时，<strong>必须首先申请一个头结点</strong>，<strong>建立头结点与二叉树的根结点的指向关系</strong>，对二叉树线索化后，还需建立最后一个结点与头结点之间的线索。</li>
+</ul>
+<p>递归算法：其中pre为全局变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//算法1</span><br><span class="line">int InOrderThr( BiThrTree *head, BiThrTree T )</span><br><span class="line">&#123;                                                       /*中序遍历二叉树T，并将其中序线索化，*head 指向头结点。*/</span><br><span class="line">	if ( !(*head = (BiThrNodeType *) malloc( sizeof(BiThrNodeType) ) ) )</span><br><span class="line">		return(0);</span><br><span class="line">	(*head)-&gt;ltag	= 0; (*head)-&gt;rtag = 1;         /*建立头结点*/</span><br><span class="line">	(*head)-&gt;rchild = *head;                        /*右指针回指*/</span><br><span class="line">	if ( !T )</span><br><span class="line">		(*head)-&gt;lchild = *head;                /*若二叉树为空，则左指针回指*/</span><br><span class="line">	else &#123; (*head)-&gt;lchild = T; pre = head;</span><br><span class="line">	       InThreading( T );                        /*中序遍历进行中序线索化*/</span><br><span class="line">	       pre-&gt;rchild	= *head; pre-&gt;rtag = 1; /*最后一个结点线索化*/</span><br><span class="line">	       (*head)-&gt;rchild	= pre; &#125;</span><br><span class="line">	return(1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//算法2</span><br><span class="line">void InTreading( BiThrTree p )</span><br><span class="line">&#123;                                               /*中序遍历进行中序线索化*/</span><br><span class="line">	if ( p )</span><br><span class="line">	&#123;</span><br><span class="line">		InThreading( p-&gt;lchild );       /*左子树线索化*/</span><br><span class="line">		if ( !p-&gt;lchild )               /*前驱线索*/</span><br><span class="line">		&#123;</span><br><span class="line">			p-&gt;ltag = 1; p-&gt;lchild = pre;</span><br><span class="line">		&#125;</span><br><span class="line">		if ( !pre-&gt;rchild )             /*后继线索*/</span><br><span class="line">		&#123;</span><br><span class="line">			pre-&gt;rtag = 1; pre-&gt;rchild = p;</span><br><span class="line">		&#125;</span><br><span class="line">		pre = p;</span><br><span class="line">		InThreading( p-&gt;rchild );       /*右子树线索化*/</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-在中序线索二叉树上查找任意结点的中序前驱结点"><a href="#2-在中序线索二叉树上查找任意结点的中序前驱结点" class="headerlink" title="2.在中序线索二叉树上查找任意结点的中序前驱结点"></a>2.在中序线索二叉树上查找任意结点的中序前驱结点</h2><p>对于中序线索二叉树上的任一结点，寻找其中序的前驱结点，有以下两种情况：</p>
+<p>（1）如果该结点的左标志为1，那么其左指针域所指向的结点便是它的前驱结点；</p>
+<p>（2）如果该结点的左标志为0，表明该结点有左孩子，根据中序遍历的定义，它的前驱结点是以该结点的左孩子为根结点的子树的最右结点，即沿着其左子树的右指针链向下查找，当某结点的右标志为1 时，它就是所要找的前驱结点。</p>
+<p>在中序线索二叉树上寻找结点p 的中序前驱结点的算法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">BiThrTree InPreNode（BiThrTree p）</span><br><span class="line">&#123;/*在中序线索二叉树上寻找结点p 的中序前驱结点*/</span><br><span class="line">BiThrTree pre;</span><br><span class="line">pre=p-&gt;lchild;</span><br><span class="line">if (p-&gt;ltag!=1)</span><br><span class="line">    while (pre-&gt;rtag==0) pre=pre-&gt;rchild;</span><br><span class="line">    return(pre);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-在中序线索二叉树上查找任意结点的先序后继结点"><a href="#3-在中序线索二叉树上查找任意结点的先序后继结点" class="headerlink" title="3.在中序线索二叉树上查找任意结点的先序后继结点"></a>3.在中序线索二叉树上查找任意结点的先序后继结点</h2><p>这一操作的实现依据是：<strong>若一个结点是某子树在中序下的最后一个结点，则它必是该子树在先序下的最后一个结点</strong>。该结论可以用反证法证明。</p>
+<p>下面就依据这一结论，讨论在中序线索二叉树上查找某结点在先序下后继结点的情况。设开始时，指向此某结点的指针为p。</p>
+<p>（1）若待确定先序后继的结点为分支结点，则又有两种情况：<br>① 当p-&gt;ltag=0 时，p-&gt;lchild 为p 在先序下的后继；<br>② 当p-&gt;ltag=1 时，p-&gt;rchild 为p 在先序下的后继。</p>
+<p>（2）若待确定先序后继的结点为叶子结点，则也有两种情况：<br>① 若p-&gt;rchild 是头结点，则遍历结束；<br>② 若p-&gt;rchild 不是头结点，则p 结点一定是以p-&gt;rchild 结点为根的左子树中在中序遍历下的最后一个结点，因此p 结点也是在该子树中按先序遍历的最后一个结点。此时， 若p-&gt;rchild 结点有右子树， 则所找结点在先序下的后继结点的地址为p-&gt;rchild-&gt;rchild；若p-&gt;rchild 为线索，则让p＝p-&gt;rchild，反复情况（2）的判定。</p>
+<p>在中序线索二叉树上寻找结点p 的先序后继结点的算法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">BiThrTree IPrePostNode（BiThrTree head,BiThrTree p）</span><br><span class="line">&#123;/*在中序线索二叉树上寻找结点p 的先序的后继结点,head 为线索树的头结点*/</span><br><span class="line">BiThrTree post;</span><br><span class="line">if (p-&gt;ltag==0) post=p-&gt;lchild;</span><br><span class="line">else &#123; post=p;</span><br><span class="line">while (post-&gt;rtag==1&amp;&amp;post-&gt;rchild!=head) post=post-&gt;rchild;</span><br><span class="line">post=post-&gt;rchild;</span><br><span class="line">&#125;</span><br><span class="line">return(post);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-在中序线索二叉树上查找值为x的结点"><a href="#4-在中序线索二叉树上查找值为x的结点" class="headerlink" title="4.在中序线索二叉树上查找值为x的结点"></a>4.在中序线索二叉树上查找值为x的结点</h2><p>利用在中序线索二叉树上寻找后继结点和前驱结点的算法，就可以遍历到二叉树的所有结点。比如，先找到按某序遍历的第一个结点，然后再依次查询其后继；或先找到按某序遍历的最后一个结点，然后再依次查询其前驱。这样，既不用栈也不用递归就可以访问到二叉树的所有结点。</p>
+<p>在中序线索二叉树上查找值为x 的结点，实质上就是在线索二叉树上进行遍历，将访问结点的操作具体写为那结点的值与x 比较的语句。下面给出其算法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">BiThrTree Search (BiThrTree head,elemtype x)</span><br><span class="line">&#123;/*在以head 为头结点的中序线索二叉树中查找值为x 的结点*/</span><br><span class="line">BiThrTree p;</span><br><span class="line">p=head-&gt;lchild;</span><br><span class="line">while (p-&gt;ltag==0&amp;&amp;p!=head) p=p-&gt;lchild;</span><br><span class="line">while(p!=head &amp;&amp; p-&gt;data!=x) p=InPostNode(p);</span><br><span class="line">if (p==head)</span><br><span class="line">&#123; printf(“Not Found the data!\n”);</span><br><span class="line">return(0);</span><br><span class="line">&#125;</span><br><span class="line">else return(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-在中序线索二叉树上查找任意结点在后序下的前驱"><a href="#5-在中序线索二叉树上查找任意结点在后序下的前驱" class="headerlink" title="5.在中序线索二叉树上查找任意结点在后序下的前驱"></a>5.在中序线索二叉树上查找任意结点在后序下的前驱</h2><p>这一操作的实现依据是：若一个结点是某子树在中序下的第一个结点，则它必是该子树在后序下的第一个结点。该结论可以用反证法证明。</p>
+<p>下面就依据这一结论，讨论在中序线索二叉树上查找某结点在后序下前驱结点的情况。设开始时，指向此某结点的指针为p。</p>
+<p>（1）若待确定后序前驱的结点为分支结点，则又有两种情况：<br>① 当p-&gt;ltag=0 时，p-&gt;lchild 为p 在后序下的前驱；<br>② 当p-&gt;ltag=1 时，p-&gt;rchild 为p 在后序下的前驱。</p>
+<p>（2）若待确定后序前驱的结点为叶子结点，则也有两种情况：<br>① 若p-&gt;lchild 是头结点，则遍历结束；<br>② 若p-&gt;lchild 不是头结点，则p 结点一定是以p-&gt;lchild 结点为根的右子树中在中中序遍历下的第一个结点，因此p 结点也是在该子树中按后序遍历的第一个结点。此时，若p-&gt;lchild 结点有左子树， 则所找结点在后序下的前驱结点的地址为p-&gt;lchild-&gt;lchild；若p-&gt;lchild 为线索，则让p＝p-&gt;lchild，反复情况（2）的判定。</p>
+<p>在中序线索二叉树上寻找结点p 的后序前驱结点的算法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">BiThrTree IPostPretNode（BiThrTree head,BiThrTree p）</span><br><span class="line">&#123;/*在中序线索二叉树上寻找结点p 的先序的后继结点，head 为线索树的头结点*/</span><br><span class="line">BiThrTree pre;</span><br><span class="line">if (p-&gt;rtag==0) pre=p-&gt;rchild;</span><br><span class="line">else &#123; pre=p;</span><br><span class="line">while (pre-&gt;ltag==1&amp;&amp; post-&gt;rchild!=head) pre=pre-&gt;lchild;</span><br><span class="line">pre=pre-&gt;lchild;</span><br><span class="line">&#125;</span><br><span class="line">return(pre);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6-在中序线索二叉树上查找值为x的结点"><a href="#6-在中序线索二叉树上查找值为x的结点" class="headerlink" title="6.在中序线索二叉树上查找值为x的结点"></a>6.在中序线索二叉树上查找值为x的结点</h2><p>利用在中序线索二叉树上寻找后继结点和前驱结点的算法，就可以遍历到二叉树的所有结点。比如，先找到按某序遍历的第一个结点，然后再依次查询其后继；或先找到按某序遍历的最后一个结点，然后再依次查询其前驱。这样，既不用栈也不用递归就可以访问到二叉树的所有结点。</p>
+<p>在中序线索二叉树上查找值为x 的结点，实质上就是在线索二叉树上进行遍历，将访问结点的操作具体写为那结点的值与x 比较的语句。下面给出其算法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">BiThrTree Search (BiThrTree head,elemtype x)</span><br><span class="line">&#123;/*在以head 为头结点的中序线索二叉树中查找值为x 的结点*/</span><br><span class="line">BiThrTree p;</span><br><span class="line">p=head-&gt;lchild;</span><br><span class="line">while (p-&gt;ltag==0&amp;&amp;p!=head) p=p-&gt;lchild;</span><br><span class="line">while(p!=head &amp;&amp; p-&gt;data!=x) p=InPostNode(p);</span><br><span class="line">if (p==head)</span><br><span class="line">&#123; printf(“Not Found the data!\n”);</span><br><span class="line">return(0);</span><br><span class="line">&#125;</span><br><span class="line">else return(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7-在中序线索二叉树上的更新"><a href="#7-在中序线索二叉树上的更新" class="headerlink" title="7.在中序线索二叉树上的更新"></a>7.在中序线索二叉树上的更新</h2><p>线索二叉树的更新是指，在线索二叉树中插入一个结点或者删除一个结点。一般情况下，这些操作有可能破坏原来已有的线索，因此，在修改指针时，还需要对线索做相应的修改。一般来说，这个过程的代价几乎与重新进行线索化相同。这里仅讨论一种比较简单的情况，即在中序线索二叉树中插入一个结点p，使它成为结点s 的右孩子。</p>
+<p>下面分两种情况来分析：</p>
+<p>（1）若s 的右子树为空，如图6.13 (a)所示，则插入结点p 之后成为图6.13 (b)所示的情形。在这种情况中，s 的后继将成为p 的中序后继，s 成为p 的中序前驱，而p 成为s 的右孩子。二叉树中其它部分的指针和线索不发生变化。</p>
+<p>（2）若s 的右子树非空，如图6.14 (a)所示，插入结点p 之后如图6.14 (b)所示。S 原来的右子树变成p 的右子树，由于p 没有左子树，故s 成为p 的中序前驱，p 成为s 的右孩子；又由于s 原来的后继成为p 的后继，因此还要将s 原来的本来指向s 的后继的左线索，改为指向p。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223211I2216.jpg" alt="中序线索树更新位置右子树为空与不为空"></p>
+<p>下面给出上述操作的算法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">void InsertThrRight(BiThrTree s,BiThrTree p)</span><br><span class="line">&#123;/*在中序线索二叉树中插入结点p 使其成为结点s 的右孩子*/</span><br><span class="line">BiThrTree w;</span><br><span class="line">p-&gt;rchild=s-&gt;rchild;</span><br><span class="line">p-&gt;rtag=s-&gt;rtag;</span><br><span class="line">p-&gt;lchild=s;</span><br><span class="line">p-&gt;ltag=1; /*将s 变为p 的中序前驱*/</span><br><span class="line">s-&gt;rchild=p;</span><br><span class="line">s-&gt;rtag=0; /*p 成为s 的右孩子*/</span><br><span class="line">if(p-&gt;rtag==0) /*当s 原来右子树不空时，找到s 的后继w，变w 为p 的后继，p 为w 的前驱*/</span><br><span class="line">&#123; w=InPostNode(p);</span><br><span class="line">w-&gt;lchild=p;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="6-5-二叉树的应用—二叉树遍历的应用"><a href="#6-5-二叉树的应用—二叉树遍历的应用" class="headerlink" title="6.5 二叉树的应用—二叉树遍历的应用"></a>6.5 二叉树的应用—二叉树遍历的应用</h1><p>Viste（bt-&gt;data）：访问结点的数据域信息。即根据具体问题，对bt数据进行不同操作。</p>
+<p>几个遍历操作的典型应用：</p>
+<h2 id="1-查找数据元素"><a href="#1-查找数据元素" class="headerlink" title="1.查找数据元素"></a>1.查找数据元素</h2><p>search (bt, x): 在bt为二叉树的根结点指针的二叉树中查找数据元素x。查找成功时返回该结点的指针；失败则返回空指针。</p>
+<p>算法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//注意遍历算法中的Visite(bt-&gt;data)等同于其中的一组操作步骤。</span><br><span class="line"></span><br><span class="line">BiTree Search（BiTree bt，elemtype x）</span><br><span class="line">&#123;/*在bt 为根结点指针的二叉树中查找数据元素x*/</span><br><span class="line">BiTree p;</span><br><span class="line">if (bt-&gt;data==x) </span><br><span class="line">    return bt; /*查找成功返回*/</span><br><span class="line">if (bt-&gt;lchild!=NULL) </span><br><span class="line">    return(Search(bt-&gt;lchild,x));</span><br><span class="line">/*在bt-&gt;lchild 为根结点指针的二叉树中查找数据元素x*/</span><br><span class="line">if (bt-&gt;rchild!=NULL) </span><br><span class="line">    return(Search(bt-&gt;rchild,x));</span><br><span class="line">/*在bt-&gt;rchild 为根结点指针的二叉树中查找数据元素x*/</span><br><span class="line">    return NULL; /*查找失败返回*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-统计出给定二叉树中叶子结点的数目"><a href="#2-统计出给定二叉树中叶子结点的数目" class="headerlink" title="2.统计出给定二叉树中叶子结点的数目"></a>2.统计出给定二叉树中叶子结点的数目</h2><p>1）顺序存储结构的实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int CountLeaf1（SqBiTree bt，int k）</span><br><span class="line">&#123;/*一维数组bt[2k-1]为二叉树存储结构，k 为二叉树深度，函数值为叶子数。*/</span><br><span class="line">total=0;</span><br><span class="line">for(i=1;i&lt;=2k-1;i++)</span><br><span class="line">&#123; if (bt[i]!=0)</span><br><span class="line">&#123; if ((bt[2i]==0 &amp;&amp; bt[2i+1]==0) || (i&gt;(2k-1)/2))</span><br><span class="line">total++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">return(total);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>（2）二叉链表存储结构的实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int CountLeaf2（BiTree bt）</span><br><span class="line">&#123;/*开始时，bt 为根结点所在链结点的指针，返回值为bt 的叶子数*/</span><br><span class="line">if (bt==NULL) return(0);</span><br><span class="line">if (bt-&gt;lchild==NULL &amp;&amp; bt-&gt;rchild==NULL) return(1);</span><br><span class="line">return(CountLeaf2(bt-&gt;lchild)+CountLeaf2(bt-&gt;rchild));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-创建二叉树二叉链表存储，并显示"><a href="#3-创建二叉树二叉链表存储，并显示" class="headerlink" title="3.创建二叉树二叉链表存储，并显示"></a>3.创建二叉树二叉链表存储，并显示</h2><p>设创建时，按二叉树带空指针的先序次序输入结点值，结点值类型为字符型。输出按中序。</p>
+<p>CreateBinTree（BinTree *bt）是以二叉链表为存储结构建立一棵二叉树T 的存储，bt为指向二叉树T 根结点指针的指针。设建立时的输入序列为：AB0D00CE00F00。建立如图6.3 (b)所示的二叉树存储。</p>
+<p>InOrderOut（bt）为按中序输出二叉树bt 的结点。算法实现如下，注意在创建算法中，遍历算法中的Visite(bt-&gt;data)被读入结点、申请空间存储的操作所代替；在输出算法中，遍历算法中的Visite(bt-&gt;data)被c 语言中的格式输出语句所代替。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">void CreateBinTree(BinTree *T)</span><br><span class="line">&#123;/*以加入结点的先序序列输入，构造二叉链表*/</span><br><span class="line">char ch;</span><br><span class="line">scanf(&quot;\n%c&quot;,&amp;ch);</span><br><span class="line">if (ch==&apos;0&apos;) *T=NULL; /*读入0 时，将相应结点置空*/</span><br><span class="line">else &#123;*T=(BinTNode*)malloc(sizeof(BinTNode)); /*生成结点空间*/</span><br><span class="line">(*T)-&gt;data=ch;</span><br><span class="line">CreateBinTree(&amp;(*T)-&gt;lchild); /*构造二叉树的左子树*/</span><br><span class="line">CreateBinTree(&amp;(*T)-&gt;rchild); /*构造二叉树的右子树*/</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">void InOrderOut(BinTree T)</span><br><span class="line">&#123;/*中序遍历输出二叉树T 的结点值*/</span><br><span class="line">if (T)</span><br><span class="line">&#123; InOrderOut(T-&gt;lchild); /*中序遍历二叉树的左子树*/</span><br><span class="line">printf(&quot;%3c&quot;,T-&gt;data); /*访问结点的数据*/</span><br><span class="line">InOrderOut(T-&gt;rchild); /*中序遍历二叉树的右子树*/</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">main()</span><br><span class="line">&#123;BiTree bt;</span><br><span class="line">CreateBinTree(&amp;bt);</span><br><span class="line">InOrderOut(bt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-表达式运算"><a href="#4-表达式运算" class="headerlink" title="4.表达式运算"></a>4.表达式运算</h2><p>我们可以把任意一个算数表达式用一棵二叉树表示，图6.15 所示为表达式3x2+x-1/x+5的二叉树表示。在表达式二叉树中，每个叶结点都是操作数，每个非叶结点都是运算符。对于一个非叶子结点，它的左、右子树分别是它的两个操作数。</p>
+<p>对该二叉树分别进行先序、中序和后序遍历，可以得到表达式的三种不同表示形式。</p>
+<p>前缀表达式+-+<em>3</em>xxx/1x5<br>中缀表达式3<em>x</em>x+x-1/x+5<br>后缀表达式3xx**x+1x/-5+</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-1202232124225T.jpg" alt="表达式运算"></p>
+<h1 id="6-5-二叉树的应用—最优二叉树-哈夫曼树"><a href="#6-5-二叉树的应用—最优二叉树-哈夫曼树" class="headerlink" title="6.5 二叉树的应用—最优二叉树(哈夫曼树)"></a>6.5 二叉树的应用—最优二叉树(哈夫曼树)</h1><h2 id="1-哈夫曼树的基本概念"><a href="#1-哈夫曼树的基本概念" class="headerlink" title="1.哈夫曼树的基本概念"></a>1.哈夫曼树的基本概念</h2><p>最优二叉树：<strong>对一组带有确定权值的叶结点，构造的具有最小带权路径长度的二叉树</strong>。</p>
+<p>路径长度：根结点到所有叶结点的路径长度之和。</p>
+<p><strong>带权路径长度：从根结点到各个叶结点的路径长度与相应结点权值的乘积之和</strong>。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223213424521.jpg" alt="带权路径长度"></p>
+<blockquote>
+<p>其中Wk 为第k 个叶结点的权值，Lk 为第k 个叶结点的路径长度。如图所示的二叉树，它的带权路径长度值WPL＝2×2＋4×2＋5×2＋3×2＝28。</p>
+</blockquote>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223213514543.jpg" alt="带权二叉树"></p>
+<p><strong>给定一组具有确定权值的叶结点，可以构造出不同的带权二叉树</strong>。例如，给出4 个叶结点，设其权值分别为1，3，5，7，我们可以构造出形状不同的多个二叉树。这些形状不同的二叉树的带权路径长度将各不相同。</p>
+<p>这五棵树的带权路径长度分别为：<br>（a）WPL＝1×2＋3×2＋5×2＋7×2＝32<br>（b）WPL＝1×3＋3×3＋5×2＋7×1＝29<br>（c）WPL＝1×2＋3×3＋5×3＋7×1＝33<br>（d）WPL＝7×3＋5×3＋3×2＋1×1＝43<br>（e）WPL＝7×1＋5×2＋3×3＋1×3＝29</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223213AY96.jpg" alt="具有相同叶结点和不同带权路径长度的二叉树"></p>
+<p>由此可见，<strong>由相同权值的一组叶子结点所构成的二叉树有不同的形态和不同的带权路径长度，</strong>那么<strong>如何找到带权路径长度最小的二叉树（即哈夫曼树）</strong>呢？根据哈夫曼树的定义，一棵二叉树要使其WPL 值最小，<strong>必须使权值越大的叶结点越靠近根结点，而权值越小的叶结点越远离根结点</strong>。哈夫曼（Haffman）依据这一特点提出了一种方法，这种方法的基本思想是：</p>
+<p>（1）由给定的n 个权值{W1，W2，…，Wn}构造n 棵只有一个叶结点的二叉树，从而得到一个二叉树的集合F＝{T1，T2，…，Tn}；</p>
+<p>（2）在F 中选取根结点的权值最小和次小的两棵二叉树作为左、右子树构造一棵新的二叉树，这棵新的二叉树根结点的权值为其左、右子树根结点权值之和；</p>
+<p>（3）在集合F 中删除作为左、右子树的两棵二叉树，并将新建立的二叉树加入到集合F 中；</p>
+<p>（4）重复（2）（3）两步，当F 中只剩下一棵二叉树时，这棵二叉树便是所要建立的哈夫曼树。</p>
+<p>对于同一组<strong>给定叶结点所构造的哈夫曼树，树的形状可能不同，但带权路径长度值是相同的，一定是最小的</strong>。</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223213KW27.jpg" alt="哈夫曼树的建立过程"></p>
+<h2 id="2-哈夫曼树的构造算法"><a href="#2-哈夫曼树的构造算法" class="headerlink" title="2.哈夫曼树的构造算法"></a>2.哈夫曼树的构造算法</h2><p>在构造哈夫曼树时，<strong>可以设置一个结构数组HuffNode 保存哈夫曼树中各结点的信息</strong>，根据二叉树的性质可知，<strong>具有n 个叶子结点的哈夫曼树共有2n－1 个结点，所以数组HuffNode 的大小设置为2n －1</strong>，数组元素的结构形式如下：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223213U4H9.jpg" alt="数组元素的结构形式"></p>
+<blockquote>
+<p>为了判定一个结点是否已加入到要建立的哈夫曼树中，可通过parent 域的值来确定。初始时parent 的值为－1，当结点加入到树中时，该结点parent 的值为其双亲结点在数组HuffNode 中的序号，就不会是－1 了。</p>
+</blockquote>
+<p>构造哈夫曼树时，首先将由n 个字符形成的n 个叶结点存放到数组HuffNode 的前n个分量中，然后根据前面介绍的哈夫曼方法的基本思想，不断将两个小子树合并为一个较大的子树，每次构成的新子树的根结点顺序放到HuffNode 数组中的前n 个分量的后面。</p>
+<p>算法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#define MAXVALUE	10000   /*定义最大权值*/</span><br><span class="line">#define MAXLEAF		30      /*定义哈夫曼树中叶子结点个数*/</span><br><span class="line">#define MAXNODE		MAXLEAF * 2 - 1</span><br><span class="line">typedef struct &#123;</span><br><span class="line">	int	weight;</span><br><span class="line">	int	parent;</span><br><span class="line">	int	lchild;</span><br><span class="line">	int	rchild;</span><br><span class="line">&#125;HNodeType;</span><br><span class="line">void HaffmanTree( HNodeType HuffNode[] )</span><br><span class="line">&#123;                                               /*哈夫曼树的构造算法*/</span><br><span class="line">	int i, j, m1, m2, x1, x2, n;</span><br><span class="line">	scanf( “ % d ”, &amp;n );                   /*输入叶子结点个数*/</span><br><span class="line">	for ( i = 0; i &lt; 2 * n - 1; i++ )       /*数组HuffNode[ ]初始化*/</span><br><span class="line">	&#123;</span><br><span class="line">		HuffNode[i].weight	= 0;</span><br><span class="line">		HuffNode[i].parent	= -1;</span><br><span class="line">		HuffNode[i].lchild	= -1;</span><br><span class="line">		HuffNode[i].rchild	= -1;</span><br><span class="line">	&#125;</span><br><span class="line">	for ( i = 0; i &lt; n; i++ )</span><br><span class="line">		scanf( “ % d ”, &amp;HuffNode[i].weight );  /*输入n 个叶子结点的权值*/</span><br><span class="line">	for ( i = 0; i &lt; n - 1; i++ )                   /*构造哈夫曼树*/</span><br><span class="line">	&#123;</span><br><span class="line">		m1	= m2 = MAXVALUE;</span><br><span class="line">		x1	= x2 = 0;</span><br><span class="line">		for ( j = 0; j &lt; n + i; j++ )</span><br><span class="line">		&#123;</span><br><span class="line">			if ( HuffNode[j].weight &lt; m1 &amp;&amp; HuffNode[j].parent == -1 )</span><br><span class="line">			&#123;</span><br><span class="line">				m2	= m1; x2 = x1;</span><br><span class="line">				m1	= HuffNode[j].weight; x1 = j;</span><br><span class="line">			&#125;else if ( HuffNode[j].weight &lt; m2 &amp;&amp; HuffNode[j].parent == -1 )</span><br><span class="line">			&#123;</span><br><span class="line">				m2	= HuffNode[j].weight;</span><br><span class="line">				x2	= j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">/*将找出的两棵子树合并为一棵子树*/</span><br><span class="line">		HuffNode[x1].parent	= n + i; HuffNode[x2].parent = n + i;</span><br><span class="line">		HuffNode[n + i].weight	= HuffNode[x1].weight + HuffNode[x2].weight;</span><br><span class="line">		HuffNode[n + i].lchild	= x1; HuffNode[n + i].rchild = x2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-哈夫曼树在编码问题中的应用"><a href="#3-哈夫曼树在编码问题中的应用" class="headerlink" title="3.哈夫曼树在编码问题中的应用"></a>3.哈夫曼树在编码问题中的应用</h2><p>编码：数据通讯中，将传送的文字转换成二进制符号0，1组成的二进制串。</p>
+<p>如何使电文编码尽可能短？：让出现频率高的字符采用尽可能短的编码，出现频率低的字符采用稍长的编码，构造一种不等长编码。</p>
+<p>哈夫曼树可用于<strong>构造使电文的编码总长最短的编码方案</strong>。具体做法如下：设需要编码的字符集合为{d1，d2，…，dn}，它们在电文中出现的次数或频率集合为{w1，w2，…，wn}，以d1，d2，…，dn 作为叶结点，w1，w2，…，wn 作为它们的权值，<strong>构造一棵哈夫曼树，规定哈夫曼树中的左分支代表0，右分支代表1，则从根结点到每个叶结点所经过的路径分支组成的0 和1 的序列便为该结点对应字符的编码，我们称之为哈夫曼编码</strong>。</p>
+<p>树的带权路径长度——电文代码总长：<strong>各字符码长与其出现次数的乘积之和</strong>。采用哈夫曼树构造的编码是一种能使电文代码总长最短的不等长编码。</p>
+<ul>
+<li>在建立不等长编码时，必须使任何一个字符的编码都不是另一个字符编码的前缀，这样才能保证译码的唯一性。</li>
+<li>如表 (d)的编码方案，字符A 的编码01 是字符B 的编码010 的前缀部分，这样对于代码串0101001，既是AAC 的代码，也是ABD 和BDA 的代码，因此，这样的编码不能保证译码的唯一性，我们称之为具有<strong>二义性的译码</strong>。</li>
+<li><strong>采用哈夫曼树进行编码，则不会产生上述二义性问题</strong>。因为，在哈夫曼树中，每个字符结点都是叶结点，它们不可能在根结点到其它字符结点的路径上，所以一个字符的哈夫曼编码不可能是另一个字符的哈夫曼编码的前缀，从而保证了译码的非二义性。</li>
+</ul>
+<p>实现哈夫曼编码算法：</p>
+<p>1.构造哈夫曼树；<br>2.在哈夫曼树上求叶结点的编码。</p>
+<p><strong>求哈夫曼编码，实质上就是在已建立的哈夫曼树中，从叶结点开始，沿结点的双亲链域回退到根结点，每回退一步，就走过了哈夫曼树的一个分支，从而得到一位哈夫曼码值，由于一个字符的哈夫曼编码是从根结点到相应叶结点所经过的路径上各分支所组成的0，1 序列，因此先得到的分支代码为所求编码的低位码，后得到的分支代码为所求编码的高位码。</strong>我们可以设置一结构数组HuffCode 用来存放各字符的哈夫曼编码信息，数组元素的结构如下：</p>
+<p>其中，分量bit 为一维数组，用来保存字符的哈夫曼编码，start 表示该编码在数组bit中的开始位置。所以，对于第i 个字符，它的哈夫曼编码存放在HuffCode[i].bit 中的从HuffCode[i].start 到n 的分量上。</p>
+<p>哈夫曼编码算法描述如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#define MAXBIT 10                       /*定义哈夫曼编码的最大长度*/</span><br><span class="line">typedef struct &#123;</span><br><span class="line">	int	bit[MAXBIT];</span><br><span class="line">	int	start;</span><br><span class="line">&#125;HCodeType;</span><br><span class="line">void HaffmanCode()</span><br><span class="line">&#123;                                       /*生成哈夫曼编码*/</span><br><span class="line">	HNodeType	HuffNode[MAXNODE];</span><br><span class="line">	HCodeType	HuffCode[MAXLEAF], cd;</span><br><span class="line">	int		i, j, c, p;</span><br><span class="line">	HuffmanTree( HuffNode );        /*建立哈夫曼树*/</span><br><span class="line">	for ( i = 0; i &lt; n; i++ )       /*求每个叶子结点的哈夫曼编码*/</span><br><span class="line">	&#123;</span><br><span class="line">		cd.start	= n - 1; c = i;</span><br><span class="line">		p		= HuffNode[c].parent;</span><br><span class="line">		while ( p != 0 )        /*由叶结点向上直到树根*/</span><br><span class="line">		&#123;</span><br><span class="line">			if ( HuffNode[p].lchild == c )</span><br><span class="line">				cd.bit[cd.start] = 0;</span><br><span class="line">			else cd.bit[cd.start] = 1;</span><br><span class="line">			cd.start--; c	= p;</span><br><span class="line">			p		= HuffNode[c].parent;</span><br><span class="line">		&#125;</span><br><span class="line">		for ( j = cd.start + 1; j &lt; n; j++ )    /*保存求出的每个叶结点的哈夫曼编码和编码的起始位*/</span><br><span class="line">			HuffCode[i].bit[j] = cd.bit[j];</span><br><span class="line">		HuffCode[i].start = cd.start;</span><br><span class="line">	&#125;</span><br><span class="line">	for ( i = 0; i &lt; n; i++ )                       /*输出每个叶子结点的哈夫曼编码*/</span><br><span class="line">	&#123;</span><br><span class="line">		for ( j = HuffCode[i].start + 1; j &lt; n; j++ )</span><br><span class="line">			printf( “ % ld ”, HuffCode[i].bit[j] );</span><br><span class="line">		printf( “ \ n ” );</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-哈夫曼在判定问题中的应用"><a href="#3-哈夫曼在判定问题中的应用" class="headerlink" title="3.哈夫曼在判定问题中的应用"></a>3.哈夫曼在判定问题中的应用</h2><p>如：编制一个百分制转五级分制的程序。条件语句即可完成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (a&lt;60) b=”bad”;</span><br><span class="line">else if (a&lt;70) b=”pass”</span><br><span class="line">else if (a&lt;80) b=”general”</span><br><span class="line">else if (a&lt;90) b=”good”</span><br><span class="line">else b=”excellent”;</span><br></pre></td></tr></table></figure>
+<p>这个判定过程可以图(a)所示的判定树来表示。如果上述程序需反复使用，而且每次的输入量很大，则应考虑上述程序的质量问题，即其操作所需要的时间。因为在实际中，学生的成绩在五个等级上的分布是不均匀的，假设其分布规律如下表所示：</p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/120223/1-120223214122595.jpg" alt="分布规律"></p>
+<p>则80％以上的数据需进行三次或三次以上的比较才能得出结果。假定以5，15，40，30 和10 为权构造一棵有五个叶子结点的哈夫曼树，则可得到如图(b)所示的判定过程，它可使大部分的数据经过较少的比较次数得出结果。但由于每个判定框都有两次比较，将这两次比较分开，得到如图6.19 (c)所示的判定树，按此判定树可写出相应的程序。假设有10000 个输入数据，若按图(a)的判定过程进行操作，则总共需进行31500 次比较；而若按图6.19 (c)的判定过程进行操作，则总共仅需进行22000 次比较。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/23/数据结构第五章：数组/" rel="next" title="数据结构第五章：数组">
+                <i class="fa fa-chevron-left"></i> 数据结构第五章：数组
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/23/数据结构第七章：树/" rel="prev" title="数据结构第七章：树">
+                数据结构第七章：树 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">131</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#6-1-二叉树的定义域性质"><span class="nav-number">1.</span> <span class="nav-text">6.1 二叉树的定义域性质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-1-二叉树的基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">6.1.1 二叉树的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-2-二叉树的主要性质"><span class="nav-number">1.2.</span> <span class="nav-text">6.1.2 二叉树的主要性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-2-基本操作与存储—二叉树的存储"><span class="nav-number">2.</span> <span class="nav-text">6.2 基本操作与存储—二叉树的存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-顺序存储结构"><span class="nav-number">2.1.</span> <span class="nav-text">1.顺序存储结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-链式存储结构"><span class="nav-number">2.2.</span> <span class="nav-text">2.链式存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-二叉链表存储【最常用】"><span class="nav-number">2.2.1.</span> <span class="nav-text">(1) 二叉链表存储【最常用】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-三叉链表存储"><span class="nav-number">2.2.2.</span> <span class="nav-text">(2) 三叉链表存储</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-2-基本操作与存储—二叉树的基本操作及实现"><span class="nav-number">3.</span> <span class="nav-text">6.2 基本操作与存储—二叉树的基本操作及实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-二叉树的基本操作"><span class="nav-number">3.1.</span> <span class="nav-text">1.二叉树的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2．算法的实现——基于二叉链表"><span class="nav-number">3.2.</span> <span class="nav-text">2．算法的实现——基于二叉链表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-3-二叉树的遍历—二叉树的遍历方法及递归实现"><span class="nav-number">4.</span> <span class="nav-text">6.3 二叉树的遍历—二叉树的遍历方法及递归实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-先序遍历DLR"><span class="nav-number">4.1.</span> <span class="nav-text">1.先序遍历DLR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-中序遍历LDR"><span class="nav-number">4.2.</span> <span class="nav-text">2.中序遍历LDR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-后序遍历LRD"><span class="nav-number">4.3.</span> <span class="nav-text">3.后序遍历LRD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-层次遍历"><span class="nav-number">4.4.</span> <span class="nav-text">4.层次遍历</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-3-二叉树的遍历—二叉树遍历的非递归实现"><span class="nav-number">5.</span> <span class="nav-text">6.3 二叉树的遍历—二叉树遍历的非递归实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#先序遍历的非递归实现"><span class="nav-number">5.1.</span> <span class="nav-text">先序遍历的非递归实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中序遍历的非递归实现"><span class="nav-number">5.2.</span> <span class="nav-text">中序遍历的非递归实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后序遍历的非递归实现"><span class="nav-number">5.3.</span> <span class="nav-text">后序遍历的非递归实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-3-二叉树的遍历—由遍历序列恢复二叉树"><span class="nav-number">6.</span> <span class="nav-text">6.3 二叉树的遍历—由遍历序列恢复二叉树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-3-二叉树的遍历—不用栈的二叉树遍历的非递归方法"><span class="nav-number">7.</span> <span class="nav-text">6.3 二叉树的遍历—不用栈的二叉树遍历的非递归方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-4-线索二叉树—线索二叉树的定义及结构"><span class="nav-number">8.</span> <span class="nav-text">6.4 线索二叉树—线索二叉树的定义及结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-线索二叉树的定义"><span class="nav-number">8.1.</span> <span class="nav-text">1.线索二叉树的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-线索二叉树的结构"><span class="nav-number">8.2.</span> <span class="nav-text">2.线索二叉树的结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-4-线索二叉树—线索二叉树的基本操作实现"><span class="nav-number">9.</span> <span class="nav-text">6.4 线索二叉树—线索二叉树的基本操作实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-建立一棵中序线索二叉树"><span class="nav-number">9.1.</span> <span class="nav-text">1.建立一棵中序线索二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-在中序线索二叉树上查找任意结点的中序前驱结点"><span class="nav-number">9.2.</span> <span class="nav-text">2.在中序线索二叉树上查找任意结点的中序前驱结点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-在中序线索二叉树上查找任意结点的先序后继结点"><span class="nav-number">9.3.</span> <span class="nav-text">3.在中序线索二叉树上查找任意结点的先序后继结点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-在中序线索二叉树上查找值为x的结点"><span class="nav-number">9.4.</span> <span class="nav-text">4.在中序线索二叉树上查找值为x的结点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-在中序线索二叉树上查找任意结点在后序下的前驱"><span class="nav-number">9.5.</span> <span class="nav-text">5.在中序线索二叉树上查找任意结点在后序下的前驱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-在中序线索二叉树上查找值为x的结点"><span class="nav-number">9.6.</span> <span class="nav-text">6.在中序线索二叉树上查找值为x的结点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-在中序线索二叉树上的更新"><span class="nav-number">9.7.</span> <span class="nav-text">7.在中序线索二叉树上的更新</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-5-二叉树的应用—二叉树遍历的应用"><span class="nav-number">10.</span> <span class="nav-text">6.5 二叉树的应用—二叉树遍历的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-查找数据元素"><span class="nav-number">10.1.</span> <span class="nav-text">1.查找数据元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-统计出给定二叉树中叶子结点的数目"><span class="nav-number">10.2.</span> <span class="nav-text">2.统计出给定二叉树中叶子结点的数目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-创建二叉树二叉链表存储，并显示"><span class="nav-number">10.3.</span> <span class="nav-text">3.创建二叉树二叉链表存储，并显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-表达式运算"><span class="nav-number">10.4.</span> <span class="nav-text">4.表达式运算</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-5-二叉树的应用—最优二叉树-哈夫曼树"><span class="nav-number">11.</span> <span class="nav-text">6.5 二叉树的应用—最优二叉树(哈夫曼树)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-哈夫曼树的基本概念"><span class="nav-number">11.1.</span> <span class="nav-text">1.哈夫曼树的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-哈夫曼树的构造算法"><span class="nav-number">11.2.</span> <span class="nav-text">2.哈夫曼树的构造算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-哈夫曼树在编码问题中的应用"><span class="nav-number">11.3.</span> <span class="nav-text">3.哈夫曼树在编码问题中的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-哈夫曼在判定问题中的应用"><span class="nav-number">11.4.</span> <span class="nav-text">3.哈夫曼在判定问题中的应用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
