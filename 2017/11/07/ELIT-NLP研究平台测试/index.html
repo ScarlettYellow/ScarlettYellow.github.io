@@ -392,7 +392,7 @@
 <p>CNN模型进行情感分析：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">A[create matrix通过叠加每个词的词向量创建输入矩阵]--&gt;B[input matrix into convolution and pooling把输入矩阵送入卷积层和池化层]</span><br><span class="line">B--&gt;C[match the output with attention matrix将输出与attention矩阵匹配，测量输入文档中每个n-gram的强度]</span><br><span class="line">C--&gt;D[couple the output back to softmax layer模型将attention输出反馈给softmax层]</span><br><span class="line">D--&gt;E[softmax layer judge the rate of positiveness and negativeness and neutrality判断文本中词语正负中的概率]</span><br></pre></td></tr></table></figure>
 <p><a href="http://www.z4a.net/images/2017/11/07/QQ20171107-1930282x.png" target="_blank" rel="noopener">CNN-Sentiment Analysis</a></p>
-<p>功能：<strong>单词化–&gt;分割–&gt;情感分析</strong>。</p>
+<p>功能：<strong>单词化—&gt;分割—&gt;情感分析</strong>。</p>
 <h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><p><a href="http://demo.elit.cloud/" target="_blank" rel="noopener">ELIT SENTIMENT VISUALIZATION</a></p>
 <p><a href="https://elit.cloud/tutorial/decode/" target="_blank" rel="noopener">ELIT tutorial</a></p>
 <p>1.输入文本</p>
@@ -777,24 +777,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 

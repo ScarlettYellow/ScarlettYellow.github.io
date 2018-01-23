@@ -489,6 +489,7 @@
 <p>当z的绝对值大于4时，g(z)的值必定等于1或0.故在选取权重值时一定要保证任何情况下g(z)的值只能为1或0.</p>
 </blockquote>
 <p>假设在各种情况下的输出,即为逻辑与的计算结果: </p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -520,6 +521,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h3 id="OR"><a href="#OR" class="headerlink" title="OR"></a>OR</h3><p><img src="http://studyai.site/img/16_09_11/008.png" alt="24"> </p>
 <p>如上图神经网络同理实现了“或”的功能。    </p>
 <p>假设函数为：hΘ(x)=g(−10+20x1+20x2)  </p>
@@ -539,6 +541,7 @@
 <li>将特征值x1，x2同时输入3个神经元，输出结果h theta(X)即为结果。**</li>
 </ul>
 <p>最终真值表如下：    </p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -580,6 +583,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>注:XNOR 是同或，真假性相同才真，真假性相异则假。    </p>
 <p>总结：<strong>通过一个含有输入层、隐藏层、输出层的神经网络，我们最终拟合了x1XNORx2x1</strong>。   </p>
 <blockquote>
@@ -973,24 +977,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 

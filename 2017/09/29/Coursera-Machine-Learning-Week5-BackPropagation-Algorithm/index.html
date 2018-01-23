@@ -746,7 +746,7 @@ Theta2 = rand(1,11)*(2*INIT_EPSILON) - INIT_EPSILON;
 <blockquote>
 <p>具体来说，我们要对所有训练集数据使用一个for循环进行遍历每一个样本（实际上有更复杂的方式来替代for循环来实现，但对于第一次实现神经网络的训练过程，不建议使用for循环以为的方式，因为这种方式更有助于第一次使用时的理解）</p>
 </blockquote>
-<pre><code>for i = 1:m
+<pre><code> for i = 1:m
 </code></pre><p> <img src="http://www.z4a.net/images/2017/10/05/36.png" alt="7"> </p>
 <p>5.使用梯度检查来校验结果。用梯度检查来比较这些已经用反向传播算法得到的偏导数值(∂/∂Θjk(l))J(Θ)与用数值方法得到的估计值进行比较，来检查，确保这两种方法得到值是基本相近的。</p>
 <blockquote>
@@ -1140,24 +1140,7 @@ Theta2 = rand(1,11)*(2*INIT_EPSILON) - INIT_EPSILON;
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
