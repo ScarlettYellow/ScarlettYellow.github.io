@@ -371,34 +371,25 @@
 <a id="more"></a>
 <h1 id="学习基础的LaTex语法"><a href="#学习基础的LaTex语法" class="headerlink" title="学习基础的LaTex语法"></a>学习基础的LaTex语法</h1><p>1.插入公式：用`$ 包住表达式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D = \left \&#123; T_1,w_1;T_2,w_2;...;T_n,w_n \right \&#125;</span><br></pre></td></tr></table></figure>
-<p><code>$ D = \left \{ T_1,w_1;T_2,w_2;...;T_n,w_n \right \} $</code></p>
-<p>2.空格:用 \qquad,\quad,a\b</p>
+<script type="math/tex; mode=display">D = \left \{ T_1,w_1;T_2,w_2;...;T_n,w_n \right \}</script><p>2.空格:用 \qquad,\quad,a\b</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">`$ C_&#123;1&#125; \qquad &#123;C_2&#125; $`</span><br><span class="line"></span><br><span class="line">`$ C_&#123;1&#125; \quad &#123;C_2&#125; $`</span><br><span class="line"></span><br><span class="line">`$ C_&#123;1&#125; \ &#123;C_2&#125; $`</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<p><code>$ C_{1} \qquad {C_2} $</code></p>
-<p><code>$ C_{1} \quad {C_2} $</code></p>
-<p><code>$ C_{1} \ {C_2} $</code></p>
-<p>3.下标：使用符号_</p>
+<script type="math/tex; mode=display">C_{1} \qquad {C_2}</script><script type="math/tex; mode=display">C_{1} \quad {C_2}</script><script type="math/tex; mode=display">C_{1} \ {C_2}</script><p>3.下标：使用符号_</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`$C_&#123;1&#125; + &#123;C_2&#125;$`</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<p><code>$C_{1} + {C_2}$</code></p>
-<p>4.上标：使用符号^</p>
+<script type="math/tex; mode=display">C_{1} + {C_2}</script><p>4.上标：使用符号^</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`$c_&#123;1&#125;^&#123;2&#125;=a^&#123;2&#125;+b^&#123;2&#125;$`</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<p><code>$c_{1}^{2}=a^{2}+b^{2}$</code></p>
-<p>5.希腊字母：</p>
+<script type="math/tex; mode=display">c_{1}^{2}=a^{2}+b^{2}</script><p>5.希腊字母：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`$\lambda,\xi,\pi,\mu,\Phi,\Omega,\alpha, \beta, \gamma,\Gamma, \Delta$`</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<p><code>$\lambda,\xi,\pi,\mu,\Phi,\Omega,\alpha, \beta, \gamma,\Gamma, \Delta$</code></p>
-<p>6.值比较符：\eq，\geq，\neq</p>
+<script type="math/tex; mode=display">\lambda,\xi,\pi,\mu,\Phi,\Omega,\alpha, \beta, \gamma,\Gamma, \Delta</script><p>6.值比较符：\eq，\geq，\neq</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`$e^&#123;x^2&#125; \neq &#123;e^x&#125;^2$`</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<p><code>$e^{x^2} \neq {e^x}^2$</code></p>
-<p>7.平方根：使用\sqrt或 \surd</p>
+<script type="math/tex; mode=display">e^{x^2} \neq {e^x}^2</script><p>7.平方根：使用\sqrt或 \surd</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">`$\sqrt&#123;x+y&#125;$`</span><br><span class="line">`$\sqrt[3]&#123;x^&#123;2&#125;+y&#125;$`</span><br><span class="line">`$\surd[x^2 + y^2] $`</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<p><code>$\sqrt{x+y}$</code><br><code>$\sqrt[3]{x^{2}+y}$</code><br><code>$\surd[x^2 + y^2] $</code></p>
-<p>更多基础LeTex语法见此文：</p>
+<script type="math/tex; mode=display">\sqrt{x+y}</script><script type="math/tex; mode=display">\sqrt[3]{x^{2}+y}</script><script type="math/tex; mode=display">\surd[x^2 + y^2]</script><p>更多基础LeTex语法见此文：</p>
 <p><a href="http://blog.csdn.net/fansongy/article/details/45368915" target="_blank" rel="noopener">LaTex 编辑公式 快速上手</a></p>
 <hr>
 <p>学会基础的LeTex语法即可愉快地在mardown里书写数学公式辣~</p>
