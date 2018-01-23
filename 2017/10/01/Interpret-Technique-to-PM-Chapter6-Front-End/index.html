@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PM Communication,System Logic,Reading Notes," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：产品研发过程中的一些前端知识。如Ajax，PWA，H5,react,websocket,spider 等。">
+<meta name="keywords" content="PM Communication,System Logic,Reading Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Interpret Technique to PM|Chapter6:Front End">
+<meta property="og:url" content="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter6-Front-End/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：产品研发过程中的一些前端知识。如Ajax，PWA，H5,react,websocket,spider 等。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-30T12:43:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Interpret Technique to PM|Chapter6:Front End">
+<meta name="twitter:description" content="Abstract：产品研发过程中的一些前端知识。如Ajax，PWA，H5,react,websocket,spider 等。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter6-Front-End/"/>
+
+
+
+
+
+  <title>Interpret Technique to PM|Chapter6:Front End | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter6-Front-End/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Interpret Technique to PM|Chapter6:Front End</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T18:51:10+08:00">
+                2017-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/System-Logic/" itemprop="url" rel="index">
+                    <span itemprop="name">System Logic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：产品研发过程中的一些前端知识。如Ajax，PWA，H5,react,websocket,spider 等。<br><a id="more"></a></p>
+<h1 id="Ajax技术的妙用"><a href="#Ajax技术的妙用" class="headerlink" title="Ajax技术的妙用"></a>Ajax技术的妙用</h1><ul>
+<li>Ajax：不用刷新网页来和后台交互获取数据，并应用于当前网页；</li>
+<li>DOM：document object model文档对象模型，定义了一个网页的大概结构；</li>
+<li>Ajax实现：发起网络请求（利用XmlHttpRequest对象发起）——网络请求返回若干个联想词的json串——网页中的javascript程序开始处理，进行json串的解析——将解析后的字符串插入网页的dom结构中——页面渲染，在当前页面展示一个下拉列表框并填入联想词；</li>
+<li>ajax是一项用于异步拉取数据并展示在当前页面的技术，适用于需要延迟加载数据和触发式加载数据；</li>
+</ul>
+<h1 id="Google-PWA"><a href="#Google-PWA" class="headerlink" title="Google PWA"></a>Google PWA</h1><ul>
+<li>PWA：progressive web apps：利用chrome的一系列基础能力整合成的一套技术框架，使web应用可像原生app一样在手机 上运行；</li>
+<li>PWA能力</li>
+</ul>
+<blockquote>
+<p>快速加载（service worker：可控制缓存数据在本地，以便下次加载时直接使用本地数据）</p>
+<ul>
+<li>添加到桌面+push消息（浏览器使用service worker时会开辟独立后台线程，通过线程可与服务器保持稳定通信，通过浏览器使用系统通知栏push消息）<br>+安全（建立在https加密链接上）<br>+响应式设计（继承网页响应式设计，从容适配机型） </li>
+<li>使用本地硬件设备</li>
+</ul>
+</blockquote>
+<h1 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h1><ul>
+<li>表单：是用户与服务器数据交互的用户界面，一切向服务器提交的数据都是由这几个简单标签所组成；</li>
+<li>h5应用程序缓存：application cache技术可扩容（离线存储技术，使明确页面中哪些静态资源可在第一次访问网页的同时缓存到本地，并在下次访问时向服务器询问本地资源是否需要更新），可用在web应用上；加快网页访问速度，节省带宽，提供离线功能；</li>
+</ul>
+<h1 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h1><ul>
+<li>前端技术；用javascript即可同时编写前端，移动终端，后台应用程序；随时热更新；</li>
+</ul>
+<h1 id="UA"><a href="#UA" class="headerlink" title="UA"></a>UA</h1><ul>
+<li>UA：useragent用户代理；</li>
+</ul>
+<h1 id="web开发"><a href="#web开发" class="headerlink" title="web开发"></a>web开发</h1><ul>
+<li>javascript：用来控制html里的每个元素；</li>
+</ul>
+<h1 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h1><ul>
+<li>url地址的组成：protocol，hostname，port，path，parameters，query；</li>
+<li>protocol：协议，定义数据如何封装／打包／解释的规则；</li>
+<li>hostname：主机名／域名；qq.com是一级域名，www.qq.com是二级域名；</li>
+<li>path：路径；即最终文件所在的路径和文件名；存储在本地货服务器上；</li>
+<li>parameters：参数／查询，目的是在url中戴上去一些本地的信息传给服务器；</li>
+<li>port：端口号，即从哪个端口访问资源；</li>
+<li><a href="http://news.qq.com:8080/a/20160203/012323.htm?a=1&amp;c=3#p=1" target="_blank" rel="noopener">http://news.qq.com:8080/a/20160203/012323.htm?a=1&amp;c=3#p=1</a>;</li>
+</ul>
+<h1 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h1><ul>
+<li>实现实时更新用户界面数据：1.轮询：每隔几秒就重新向服务器发送一个请求（缺点：效率低，浪费不环保）；2.使用comet技术（发送一个更新请求出去后就一直占据端口，等待服务器响应，直到服务器有数据返回时菜断开链接；也不环保，浪费资源）；3.websocket：建立在TCP上的一种全双工协议，客户端可向服务器发送信息，服务器也可向客户端push信息；</li>
+</ul>
+<h1 id="跨域与同源"><a href="#跨域与同源" class="headerlink" title="跨域与同源"></a>跨域与同源</h1><ul>
+<li>iframe是html中的一个标签；可指定一个随意的url地址；作用就是将一个URL地址嵌入到当前页面并展示出来；</li>
+<li>跨域：</li>
+<li>同源策略：协议／端口／host三个都一样的url即同源；同源即同域； </li>
+</ul>
+<h1 id="网页"><a href="#网页" class="headerlink" title="网页"></a>网页</h1><ul>
+<li>1.生成dom</li>
+<li>2.生成渲染树；（css样式描述）</li>
+<li>3.测量／排版／绘制；</li>
+<li>动态网页和静态网页：最核心的区别是后台是否有数据库的支撑，网页展示的内容是否需要因人而异地变化；静态网页一般不需要后台程序干预处理，直接由服务器返回，由于数据不需要更新故实现为静态网页后一般不需要维护；动态网页一般需要程序处理（asp，jsp，php，python，ruby等）并由数据库提供数据支撑；</li>
+</ul>
+<h1 id="互联网的黄金矿工：爬虫"><a href="#互联网的黄金矿工：爬虫" class="headerlink" title="互联网的黄金矿工：爬虫"></a>互联网的黄金矿工：爬虫</h1><ul>
+<li>爬虫原理：给爬虫几个原始的url——爬虫把这些链接的网页抓取回来——经过对网页的分析后得到两部分数据（1.网页的有效内容，用来建立搜索关键词的索引，2.网页中的url链接「作为下一轮爬虫抓取的目标网页」；）</li>
+<li>挑战：从页面中解析出正确的url——很快的抓取速度——挑选最有价值的页面进行抓取的能力——适应不同的网站；</li>
+<li>设置不想被抓取：在网站根目录下放一个tobot.txt文件，描述哪些页面可以被抓取，哪些不能；</li>
+<li>网页内跳转的实现——锚点：网页元素可用id-xxx来定义位置（锚点）；</li>
+<li>广告过滤机制：1.屏蔽广告的招数：不让广告被下载下来（找到广告对应的url，浏览器不拉取即可） or 即便下载下来也不让它被展示出来（找到网页藏身的标签，不展示标签即可）；</li>
+<li>AngularJS与双向绑定：1.bootstrap解决了快速构建一个网页框架和样式的问题；2.如何构建一个动态网页／webapp：用angularJS框架；3.双向绑定：在输入框输入同时在网页中实时输出trump（控件与数据双向通信）；</li>
+<li>前端和后台的数据交互协议：1.移动端如何与后台交换数据并演示：用户刷新——客户端开始组织数据请求——数据请求传到服务器——服务器查看并准备数据——数据传回客户端——用户界面上显示数据；2.客户端与服务器传输数据的格式：PB（protocol buffer二进制数据传输），JSON（javascriptobject notation，轻量级数据传输格式，非二进制，用一堆中括号把数据组织起来）；</li>
+<li>bootstrap：创业公司只打磨mvp原型／写代码来成就感；轮子是无所不有的！</li>
+<li>响应式设计和viewport：网页的内容可根据屏幕的尺寸不同而自动适配；1024*768；viewport：视口，描述一块区域，浏览器可在这块区域上去排版／渲染；网页适配手机的方式：css的px与真实的px之间根据不同机型构建不同的换算关系；</li>
+<li>自动秒杀脚本：1.脚本：一些命令的集合，不同脚本实现不同的功能；2.自动秒杀的障碍：不停刷新浏览器（js：定时器）——自动发起购买请求（模拟用户点击购买按钮或虚拟一个http请求，把需要的参数填进去，然后不停发往服务器）；3.document.getElementById(‘kw’).value=’给产品经理讲技术’; document.getElementById(‘su’).click();4.防自动化脚本：加验证码；5.实现流程：用js实现自动刷新-自动点击购买按钮-自动填写验证码；</li>
+<li>网页与元升app的交互：安卓里是js2java实现网页与app的双向通信，app通过webview（即一个没有任何操作按钮的组件）来展示网页；</li>
+<li>js：解释性语言，java：编译性语言；</li>
+<li>python：高大上的脚本语言；</li>
+<li>json：javascript object notation从js里走出的数据格式；优点是人类能看懂，机器好解析，适合前端和后台数据传输；</li>
+<li>盗链与反盗链：1.盗链：盗取别人的链接；（给别人网站增加了资源消耗）2.反盗链返回一个警告图片之类的；</li>
+<li>浏览器缓存：浏览器回缓存他浏览过的资源（图片，脚本，网页等），若资源在保质期内，则下次同样的请求直接用缓存，过期后会带着资源上次的修改实践由服务器来判断是否失效；</li>
+<li>数据类型：各种编程语言都有自己的基本数据类型，bool（布尔型），int（整形），float（浮点型），string（字符串）；二进制数据表示；</li>
+<li>序列化：将数据对象转化成二进制串，反序列化是将二进制串还原为数据对象，能被序列化是数据对象能够持久化保存在硬盘中货网络中、不同平台间互相传输的先决条件；button不能被序列化；能被序列化解决了协议传输的问题，关于协议解析需要遵循通用的协议表示的规范（基本数据类型里扩展性最好的是字符串）</li>
+<li>协议收发过程：发送方将协议制定的字段写成xml或json格式的字符串，序列化后传输，接收方反序列化还原出字符串，然后按照xml或json格式取出传过来的各个协议字段；（协议写成字符串——序列化——传输——接收——还原字符串——按格式取出协议字段）</li>
+</ul>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><ul>
+<li>用来匹配字符串（即自己先定义一套规则，然后根据这套规则去一个字符串里着哪些符合规则的字符串）</li>
+<li>搜索需要精确查找，而正则可匹配一类东西；</li>
+<li>\b：单词的分界，表示只取单词；\w：表示单词和数字；\d:表示一个数字；「.」可匹配任意字符；「{num}」：数量限定符；「*」：表示任意数目；「+」：表示最少1个；「？」：表示最多一个；<blockquote>
+<p>eg. \d「{18}」表示18位身份证号；\d\d\d\d\d\d\d\d表示匹配8位数的qq号；</p>
+</blockquote>
+</li>
+<li>应用：验证用户输入是否合法；</li>
+</ul>
+<h1 id="爬虫"><a href="#爬虫" class="headerlink" title="爬虫"></a>爬虫</h1><h2 id="网页分析"><a href="#网页分析" class="headerlink" title="网页分析"></a>网页分析</h2><ul>
+<li>爬虫：脚本程序；把命令写到脚本里让计算机自动执行；</li>
+<li>微信公众号历史消息：一次加载10篇，典型的异步加载；</li>
+<li>html：以很多标签来描述网页，标签一般成对，标签里还可以套标签，表示层级关系；eg一个人叫html，有head／body，body上有hand，hand上有finger；</li>
+<li>找到url：即网页源代码里的<a></a></li>
+</ul>
+<h2 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h2><ul>
+<li>如何实现自动下拉：1.让程序模拟人的操作；2.获知网页是如何下拉的，再不断伪造这个请求；</li>
+<li>抓包：在客户端／浏览器和服务器之间设一个检查站，获知所有经过的数据的来源／目的地／数据内容；</li>
+<li>网络通信：客户端／浏览连接到服务器——通过http协议向服务器发出拉取数据的请求——服务器收到请求做出应答吐出数据；【渠道：检查源代码——network】</li>
+<li>network——相应操作的response里找到下面网页的URL</li>
+<li>爬虫抓包的思路：打开历史消息——爬到最近10篇——伪装页面向服务器发起加载更多的请求——服务器吐出一个json格式的响应——解析json即得后10篇文章的url——重复几次得所有；</li>
+<li>json：数据格式；一些键值对；</li>
+</ul>
+<h2 id="json解析"><a href="#json解析" class="headerlink" title="json解析"></a>json解析</h2><ul>
+<li>算法：告诉电脑该怎么做；</li>
+<li>json：javascript object notation轻量级的文本交换格式；用{key ：value}格式表达信息使易解析；key——数据名，value——值（字符串／数字／数据／数组／空值／真假／另一个jason数据）；字符串{『name』：」guoguo」};数字{「age」=18}；真假{「hansome」：true}；另一个json数据{「game」：{「name」：“clash”」}（只需要在值的位置再加一个大括号描述json数据即可）；一堆数据{「articles」：[{「title」：“xxxxxx”，」author：“果果”」}];(用中括号把一个个value扩起来即一堆数据)；</li>
+</ul>
+<h1 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h1><ul>
+<li>Js2Java：网页通过js接口调用微信的native能力；微信——将native能力封装成接口，开发者——做简单的前端页面开发+在服务器上部署服务+通过微信插件框架加载起来；</li>
+</ul>
+<h1 id="优化网页速度的7种方法"><a href="#优化网页速度的7种方法" class="headerlink" title="优化网页速度的7种方法"></a>优化网页速度的7种方法</h1><ul>
+<li>网页加载流程：打开网页——拉取html页面——浏览器解析html页面——根据页面内容拉取js／css和图片文件——根据文件渲染出页面；</li>
+<li>影响网页展示速度的主要因素：不是网页本身，而是它依赖的一些其他文件；优化重心：资源的加载速度；</li>
+<li>1.优化图片资源的格式和大小，在保证质量的前提下尽量使用高压缩率的图片格式（优先级：webp-jpeg-png-bmp），根据展示尺寸来拉取图片资源；</li>
+<li>2.开启网络压缩：以gzip压缩方式传输数据可减少70～80%的流量；</li>
+<li>3.使用浏览器缓存：同一站点下的不同页面往往会复用一部分资源文件，若设置成可缓存的，则在刷新或跳转时则无需从网络再拉取相关资源；</li>
+<li>4.减少重定向请求：使用响应式设计，一个站点覆盖所有终端，避免重定向请求；</li>
+<li>5.使用CDN存储静态资源：CDN是静态内容分发网络（在每个地区都有其服务器，就近从cdn拉取可快速获取资源），把不会变化的内容放在cdn上可提升资源下载速度；</li>
+<li>6.减少DNS查询次数：浏览器解析域名需要时间，故尽可能将图片放在同一个域名下；</li>
+<li>7.压缩css和js内容：将css和js里的大量空格／变量命名精简即减小文件大小，加快速度；</li>
+<li>总结方法：减少请求数+减小资源大小+找最快的饿服务器</li>
+</ul>
+<h1 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h1><ul>
+<li>js的运行环境：解释器——js引擎（浏览器都会内置js引擎）</li>
+<li>js应用：react native ；node.js；</li>
+</ul>
+<h1 id="react"><a href="#react" class="headerlink" title="react"></a>react</h1><ul>
+<li>react：前端UI组件库，前端框架；</li>
+<li>面向对象的好处：能封装就封装；用js包装html，使html也有封装能力；可以少写很多代码；</li>
+<li>自带虚拟dom树；</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PM-Communication/" rel="tag"># PM Communication</a>
+          
+            <a href="/tags/System-Logic/" rel="tag"># System Logic</a>
+          
+            <a href="/tags/Reading-Notes/" rel="tag"># Reading Notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter5-Computer-Network/" rel="next" title="Interpret Technique to PM|Chapter5:Computer Network">
+                <i class="fa fa-chevron-left"></i> Interpret Technique to PM|Chapter5:Computer Network
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter7-Secure/" rel="prev" title="Interpret Technique to PM|Chapter7:Secure">
+                Interpret Technique to PM|Chapter7:Secure <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ajax技术的妙用"><span class="nav-number">1.</span> <span class="nav-text">Ajax技术的妙用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Google-PWA"><span class="nav-number">2.</span> <span class="nav-text">Google PWA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#H5"><span class="nav-number">3.</span> <span class="nav-text">H5</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Native"><span class="nav-number">4.</span> <span class="nav-text">React Native</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UA"><span class="nav-number">5.</span> <span class="nav-text">UA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#web开发"><span class="nav-number">6.</span> <span class="nav-text">web开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#URL"><span class="nav-number">7.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#websocket"><span class="nav-number">8.</span> <span class="nav-text">websocket</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跨域与同源"><span class="nav-number">9.</span> <span class="nav-text">跨域与同源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网页"><span class="nav-number">10.</span> <span class="nav-text">网页</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#互联网的黄金矿工：爬虫"><span class="nav-number">11.</span> <span class="nav-text">互联网的黄金矿工：爬虫</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式"><span class="nav-number">12.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#爬虫"><span class="nav-number">13.</span> <span class="nav-text">爬虫</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网页分析"><span class="nav-number">13.1.</span> <span class="nav-text">网页分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抓包"><span class="nav-number">13.2.</span> <span class="nav-text">抓包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#json解析"><span class="nav-number">13.3.</span> <span class="nav-text">json解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#微信小程序"><span class="nav-number">14.</span> <span class="nav-text">微信小程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化网页速度的7种方法"><span class="nav-number">15.</span> <span class="nav-text">优化网页速度的7种方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript"><span class="nav-number">16.</span> <span class="nav-text">javascript</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#react"><span class="nav-number">17.</span> <span class="nav-text">react</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

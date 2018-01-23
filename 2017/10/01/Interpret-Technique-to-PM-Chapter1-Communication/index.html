@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PM Communication,System Logic,Reading Notes," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract:基础篇，关于PM怎样愉快地跟程序员沟通。哪些话会惹恼程序员？提需求的正确姿势是什么？">
+<meta name="keywords" content="PM Communication,System Logic,Reading Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Interpret Technique to PM|Chapter1:Communication">
+<meta property="og:url" content="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter1-Communication/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract:基础篇，关于PM怎样愉快地跟程序员沟通。哪些话会惹恼程序员？提需求的正确姿势是什么？">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://aisharing.com/wp/wp-content/uploads/2011/08/hfsm_thumb.png">
+<meta property="og:updated_time" content="2017-10-30T12:42:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Interpret Technique to PM|Chapter1:Communication">
+<meta name="twitter:description" content="Abstract:基础篇，关于PM怎样愉快地跟程序员沟通。哪些话会惹恼程序员？提需求的正确姿势是什么？">
+<meta name="twitter:image" content="http://aisharing.com/wp/wp-content/uploads/2011/08/hfsm_thumb.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter1-Communication/"/>
+
+
+
+
+
+  <title>Interpret Technique to PM|Chapter1:Communication | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter1-Communication/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Interpret Technique to PM|Chapter1:Communication</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T17:43:10+08:00">
+                2017-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/System-Logic/" itemprop="url" rel="index">
+                    <span itemprop="name">System Logic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract:基础篇，关于PM怎样愉快地跟程序员沟通。哪些话会惹恼程序员？提需求的正确姿势是什么？</p>
+<a id="more"></a>
+<h1 id="沟通"><a href="#沟通" class="headerlink" title="沟通"></a>沟通</h1><ul>
+<li>产品本质是获取信息（程序猿角度），信息-数据；前端：展示数据，后台：管理数据（守着服务器鼓捣数据）；</li>
+<li>不要重复造轮子：别人写过的代码不要重复写，可以直接搬运；</li>
+<li>全栈：前端后台样样精通；</li>
+</ul>
+<h1 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h1><ul>
+<li>分布式：为了让各个服务器并行工作，故研究分布式算法，把大任务拆成小任务，分布给哥哥服务器单独运算；</li>
+<li>非关系型数据库NoSQL：提高数据库的存取速度；</li>
+<li>缓存技术：解决硬盘速度远远跟不上内存速度的问题，即数据从硬盘取出来就不放回去了；</li>
+</ul>
+<h1 id="哪些话会惹恼程序员？"><a href="#哪些话会惹恼程序员？" class="headerlink" title="哪些话会惹恼程序员？"></a>哪些话会惹恼程序员？</h1><ul>
+<li>先做出来看看：随时可能被删除的需求，删代码等于割肉；（好的pm把需求的关键路径在脑海里演练上百次）</li>
+<li>我就要这种效果，怎么实现是你的问题：有的创意功能实在不好实现／根本无法实现／不合适实现；（功能设计时要考虑：用户需求／商业模式／设计和开发实现的可能性）</li>
+<li>不要教育程序员怎么写代码；</li>
+<li>你就说能不能做吧：不要粗暴直接问程序员做决定；pm大可不必跟开发探讨技术细节，就讲道理／讲数据／大局观，迂回取胜。</li>
+<li>我有一个绝妙的 idea，什么都准备好了，就差一个写代码的了：idea谁都能想，不要在言语里露出对程序员的轻视；</li>
+<li>这个需求老大已经同意了，你照着做就是了：不要拿上级压人，易遭致反感；最好以理服人，充分pk／摩擦产生高效输出；</li>
+</ul>
+<h1 id="提需求的正确姿势是什么"><a href="#提需求的正确姿势是什么" class="headerlink" title="提需求的正确姿势是什么"></a>提需求的正确姿势是什么</h1><ul>
+<li>往往一些看似很简单的需求，实际上会遇到很多坑：比如一个很简单的按钮的实现可能需要千行代码；（好的pm需要从用户角度想清楚一个功能的前后逻辑）</li>
+</ul>
+<blockquote>
+<p>举例：实现「视频播放的时候，用户可以设置屏幕亮度」的功能   </p>
+</blockquote>
+<p>问题：调用系统提供的「设置屏幕亮度」的程序接口    </p>
+<p>存在问题：  </p>
+<p>1.如果用户在我的APP里提高了屏幕亮度，退出之后要不要给人家还原呢？如果用户只是暂时离开了我的APP，退出又回来，我是不是要给人恢复成原来设置的亮度呢？  </p>
+<p>2.「设置屏幕亮度」的接口是一个很耗时的接口，可能会造成整个APP的卡顿，这时候你就得考虑用多线程来解决。引入多线程之后，线程之间的资源共享问题如何解决，谁先谁后的问题如何解决，等等…</p>
+<ul>
+<li>程序员写代码：完成功能，代码规范，扩展性，后期的完全负责；</li>
+<li>知道有哪些轮子：</li>
+</ul>
+<blockquote>
+<p>开源社区：平时多看一些别人整理的技术博客，你可能并不需要知道里面技术上是如何实现的，你只需要记下，这个功能是有轮子可以用的，就够了。<br>自己的项目：想知道自己项目积累了哪些轮子，去问你们的开发吧，找他们抽支烟、吃个饭，很容易就套出来了。<br>系统平台：买一本介绍你们产品平台的技术书，比如《疯狂Android讲义》、《iOS Programming》，大体翻一下就行了，主要是了解一下这个平台到底可以做哪些事情。</p>
+</blockquote>
+<ul>
+<li>提需求要跟着项目的版本周期走：每个版本会经过功能开发（有提必应）、单元测试（一个功能模块的需求做完后给测试找bug的时段，大多数有提必应）、集成测试、beta验证（提需求拉仇恨，需要评估需求的实现难度）、上线五个阶段</li>
+</ul>
+<h1 id="程序员需要什么样的PRD？"><a href="#程序员需要什么样的PRD？" class="headerlink" title="程序员需要什么样的PRD？"></a>程序员需要什么样的PRD？</h1><ul>
+<li>程序员不需要文字式的需求文档，只要清晰的流程图和原型即可。</li>
+</ul>
+<h1 id="以程序猿的逻辑去沟通产品逻辑：状态机（万字不如一图）"><a href="#以程序猿的逻辑去沟通产品逻辑：状态机（万字不如一图）" class="headerlink" title="以程序猿的逻辑去沟通产品逻辑：状态机（万字不如一图）"></a>以程序猿的逻辑去沟通产品逻辑：状态机（万字不如一图）</h1><ul>
+<li>状态机：描述事物不同状态切换的逻辑方式；</li>
+<li>要素：现态（描述事物当前的状态）+ 次态（现态在一定条件下出发相应动作后能达到的状态）+ 条件（执行动作的前提）+ 动作（条件满足时触发状态机状态改变）</li>
+<li>核心：各个可相互切换的状态+出入动作</li>
+</ul>
+<blockquote>
+<p>tip：<br>要<strong>为状态定义入口动作/出口动作</strong><br>要详细设计每一个状态，列出层次化状态结构<br>针对具体问题，严格限制状态跳转的请求<br>同一层次的状态数量不宜超过5个<br>记录每一次的跳转历史，方便调试<br>可能的话，最好使用编辑器来编辑状态机</p>
+</blockquote>
+<ul>
+<li>1.有限状态机FSM：只有一个层级的状态切换</li>
+<li>2.无限（层次）状态机HFSM：存在多个层级的状态切换（状态嵌套）    </li>
+</ul>
+<p><img src="http://aisharing.com/wp/wp-content/uploads/2011/08/hfsm_thumb.png" alt="01"><br>状态内的状态是不需要关心外部状态的跳转的，这样也做到了无关状态间的隔离；</p>
+<h1 id="为什么项目会延期？"><a href="#为什么项目会延期？" class="headerlink" title="为什么项目会延期？"></a>为什么项目会延期？</h1><ul>
+<li>关于需求：pm在初期需明确每个需求的关键路径和效果预期；存在风险的需求需提前预估风险；复杂需求需与开发评估实现成本；大需求最好化成小需求，方便进度跟进和风险响应；</li>
+<li>排期与风险控制：排期取决于交付周期+需求量+所需人力；大项目前期可采取周会+后期或短周期项目可采取晨会；延期风险：敢于做减法，分清主次需求；加班；</li>
+<li>沟通沟通！</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PM-Communication/" rel="tag"># PM Communication</a>
+          
+            <a href="/tags/System-Logic/" rel="tag"># System Logic</a>
+          
+            <a href="/tags/Reading-Notes/" rel="tag"># Reading Notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/29/Coursera-Machine-Learning-Week5-BackPropagation-Algorithm/" rel="next" title="Coursera Machine Learning|Week5:BackPropagation Algorithm">
+                <i class="fa fa-chevron-left"></i> Coursera Machine Learning|Week5:BackPropagation Algorithm
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter2-Data-Processing/" rel="prev" title="Interpret Technique to PM|Chapter2:Data Processing">
+                Interpret Technique to PM|Chapter2:Data Processing <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#沟通"><span class="nav-number">1.</span> <span class="nav-text">沟通</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后台"><span class="nav-number">2.</span> <span class="nav-text">后台</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#哪些话会惹恼程序员？"><span class="nav-number">3.</span> <span class="nav-text">哪些话会惹恼程序员？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提需求的正确姿势是什么"><span class="nav-number">4.</span> <span class="nav-text">提需求的正确姿势是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序员需要什么样的PRD？"><span class="nav-number">5.</span> <span class="nav-text">程序员需要什么样的PRD？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#以程序猿的逻辑去沟通产品逻辑：状态机（万字不如一图）"><span class="nav-number">6.</span> <span class="nav-text">以程序猿的逻辑去沟通产品逻辑：状态机（万字不如一图）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么项目会延期？"><span class="nav-number">7.</span> <span class="nav-text">为什么项目会延期？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

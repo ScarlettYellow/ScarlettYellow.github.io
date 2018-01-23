@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Artificial Intelligence,Sentiment Analysis," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="摘要：关于社交媒体中的情感分析的关键技术、发展趋势和历史（btw：整理自糖姐姐的blog）">
+<meta name="keywords" content="Artificial Intelligence,Sentiment Analysis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="社交情感分析与机器学习">
+<meta property="og:url" content="http://yoursite.com/2017/09/18/社交情感分析初导/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="摘要：关于社交媒体中的情感分析的关键技术、发展趋势和历史（btw：整理自糖姐姐的blog）">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-09-18T10:02:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="社交情感分析与机器学习">
+<meta name="twitter:description" content="摘要：关于社交媒体中的情感分析的关键技术、发展趋势和历史（btw：整理自糖姐姐的blog）">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/18/社交情感分析初导/"/>
+
+
+
+
+
+  <title>社交情感分析与机器学习 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/18/社交情感分析初导/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">社交情感分析与机器学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-18T17:33:25+08:00">
+                2017-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/Sentiment-Analysis/" itemprop="url" rel="index">
+                    <span itemprop="name">Sentiment Analysis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>摘要：关于社交媒体中的情感分析的关键技术、发展趋势和历史（btw：整理自糖姐姐的blog）<br><a id="more"></a></p>
+<h1 id="一、Tecent-AI-LAB"><a href="#一、Tecent-AI-LAB" class="headerlink" title="一、Tecent AI LAB"></a>一、Tecent AI LAB</h1><ul>
+<li>CV + ML + Speech + NLP（更难，还需10-20年）</li>
+<li>基础研究 + 产品（游戏，社交，音乐视频） + 开放（ai open platform）</li>
+<li>爬取data——数据清洗（抽取关系、事件等，整理和处理）——可视化</li>
+<li>个性化推荐：需要和文本相关，词的标签、分类；如何构建起用户兴趣；</li>
+<li>舆情分析</li>
+<li>情感分析deep emotion parsing</li>
+</ul>
+<h1 id="二、社交媒体中的情感分析"><a href="#二、社交媒体中的情感分析" class="headerlink" title="二、社交媒体中的情感分析"></a>二、社交媒体中的情感分析</h1><p>情感分析发展的7项关键技术</p>
+<ul>
+<li>情感分类</li>
+<li>情感元素抽取</li>
+<li>跨领域情感分析</li>
+<li>个性化情感分析</li>
+<li>隐式情感分析</li>
+<li>情感原因发现</li>
+<li>情感生成</li>
+</ul>
+<h2 id="情感分类"><a href="#情感分类" class="headerlink" title="情感分类"></a>情感分类</h2><ul>
+<li>1.基于传统ML方法的情感分类</li>
+<li>2.基于DL的情感分类</li>
+<li>3.面向评价对象的情感分类</li>
+<li>输入seq或篇章，输出情感类别</li>
+</ul>
+<h3 id="基于层次化神经网络的篇章建模"><a href="#基于层次化神经网络的篇章建模" class="headerlink" title="基于层次化神经网络的篇章建模"></a>基于层次化神经网络的篇章建模</h3><ul>
+<li>篇章表示；篇章语义组合；句子表示；句子语义组合；词语表示</li>
+<li>传统做的话能达到80%-&gt;rnn在依存树基础上得到根节点的情感分类（基于句法分析）-&gt;cnn直接做全局和局部的上下文信息且速度快-&gt;得到情感词典、得到语言学约束加到损失函数中</li>
+</ul>
+<h3 id="基于DL的情感分类"><a href="#基于DL的情感分类" class="headerlink" title="基于DL的情感分类"></a>基于DL的情感分类</h3><p>文档级情感分析任务</p>
+<ul>
+<li>层级关系：词到句子，句子到篇章</li>
+</ul>
+<h2 id="情感抽取"><a href="#情感抽取" class="headerlink" title="情感抽取"></a>情感抽取</h2><p>3个任务：</p>
+<ul>
+<li>情感词语抽取</li>
+<li>评价对象抽取</li>
+<li>评价搭配抽取（二元组对应）</li>
+</ul>
+<p>情感词典    </p>
+<p>评价对象搭配：&lt;评价对象，评价表达&gt;  </p>
+<h2 id="跨领域情感分析"><a href="#跨领域情感分析" class="headerlink" title="跨领域情感分析"></a>跨领域情感分析</h2><ul>
+<li>从源领域到目标领域，相当于迁移学习</li>
+<li>问题：评价对象不同，评价表达不同，情感表达极性不同（程度不同）</li>
+</ul>
+<h2 id="个性化情感分析"><a href="#个性化情感分析" class="headerlink" title="个性化情感分析"></a>个性化情感分析</h2><p>基于用户用词习惯：不同群体情感倾向，主观想法和个人身份立场  </p>
+<p>基于认知理论的想法：</p>
+<ul>
+<li>用户画像（属性维度，性格维度，行为维度）；</li>
+<li>把用户和产品用低维向量和矩阵表示，融入已有神经网络框架，应用到篇章级文本情感分类任务  </li>
+</ul>
+<p>基于网络结构的方法：社交媒体上用户之间的连接关系、相同情感倾向性</p>
+<h2 id="隐式情感分析"><a href="#隐式情感分析" class="headerlink" title="隐式情感分析"></a>隐式情感分析</h2><ul>
+<li>中文情感表达方式复杂</li>
+</ul>
+<h3 id="事实型隐式情感分析"><a href="#事实型隐式情感分析" class="headerlink" title="事实型隐式情感分析"></a>事实型隐式情感分析</h3><p>基于上下文的方法：挖掘句子外部信息；与句子内部信息相融合（基于图的融合算法）    </p>
+<p>基于特征+规则的意见挖掘模型：</p>
+<ul>
+<li>隐含情感特征可从形容词获知</li>
+<li>与情感词典中情感词贡献的得分信息</li>
+<li>利用conj处理上下文相关的特征</li>
+<li>利用两种直接依存关系来抽取名词产品特征</li>
+<li>去除那些直接同时被褒义、编译情感词修饰的产品特征</li>
+</ul>
+<h3 id="修辞型"><a href="#修辞型" class="headerlink" title="修辞型"></a>修辞型</h3><p>反讽：大连理工林鸿飞的隐喻语料库</p>
+<h2 id="情感原因发现"><a href="#情感原因发现" class="headerlink" title="情感原因发现"></a>情感原因发现</h2><h3 id="基于文本"><a href="#基于文本" class="headerlink" title="基于文本"></a>基于文本</h3><p>数据来源哈工大深圳徐睿峰</p>
+<h3 id="基于个体立场"><a href="#基于个体立场" class="headerlink" title="基于个体立场"></a>基于个体立场</h3><p>现有方法难以解决立场问题</p>
+<h3 id="基于群体立场"><a href="#基于群体立场" class="headerlink" title="基于群体立场"></a>基于群体立场</h3><p>民众情绪的自动归因（对焦点事件）、可能有子话题：比如沉船有人被救起</p>
+<h2 id="情感生成"><a href="#情感生成" class="headerlink" title="情感生成"></a>情感生成</h2><h3 id="评论文本生成"><a href="#评论文本生成" class="headerlink" title="评论文本生成"></a>评论文本生成</h3><p>Affect-LM：基于LSTM的语言生成；情感类别信息/强度<br>Attri2Sequence+Attention    </p>
+<p>情感回复生成：emotional chatting machine    </p>
+<p>情绪对话生成评测：NLPCC2017比赛 首届情绪对话生成评测</p>
+<ul>
+<li>给定微博及用户指定情感，生成一条与该情感类型一致的回复。</li>
+<li>训练数据：100万对&lt;微博,回复&gt;      </li>
+</ul>
+<h2 id="情感分析6大趋势"><a href="#情感分析6大趋势" class="headerlink" title="情感分析6大趋势"></a>情感分析6大趋势</h2><ul>
+<li>从粗粒度到细粒度</li>
+<li>从单领域到跨领域</li>
+<li>从文本到社会媒体</li>
+<li>从显示情感到隐式情感</li>
+<li>从情感分类到情感原因</li>
+<li>从情感分析到情感生成</li>
+</ul>
+<h2 id="总结历史"><a href="#总结历史" class="headerlink" title="总结历史"></a>总结历史</h2><p>20世界前：社会学为主：1967六度分割、1973weak tie、1995结构度</p>
+<p>20世纪左右：物理学：hits、pagerank、smallworld、scale free</p>
+<p>21世纪：计算机学：link prediction、network evolution：复杂化发展（加时间加地点）densification、social influnence分析</p>
+<p>2009computational social science（giles）</p>
+<p>社会计算学：很多节点和边组成的社交图</p>
+<p>信息1.0：data：像是给一个query把文档排序（google是1.0重要代表）</p>
+<p>大数据来了：it时代公司发展云，传统公司跳进来把数据存进去</p>
+<p>信息2.0：数据➕用户，像是信息推荐（如今日头条是2.0时代重要代表）</p>
+<p>信息3.0（未来）：融合+智能</p>
+<ul>
+<li>socail network = info space + social space</li>
+<li>数据语义 + 用户语义 = 知识 ——&gt; 智能</li>
+<li>大数据需要知识，一定需要deep learning这个锄头去挖数据</li>
+<li>以交互驱动</li>
+<li>节点是用户，边是关系，以用户为核心和以边为核心两种建模方式</li>
+<li>难点：社会理论融合到概率图模型上，不仅需要how，更需要why</li>
+</ul>
+<h2 id="应用之一：舆情"><a href="#应用之一：舆情" class="headerlink" title="应用之一：舆情"></a>应用之一：舆情</h2><p>未来：从单舆论场到多舆论场的融合（微博微信联合在一起）、从分析到预测（预测未来可能会发生什么，需要知识库推理）、综合人行为空间时间一起综合分析、从单语种到跨语种（全球化）、机器数据也是舆情、对重点事件做多维度分析（传播的指标）  </p>
+<p>舆情报告的智能化（ai写数据驱动的舆情报告）  </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Artificial-Intelligence/" rel="tag"># Artificial Intelligence</a>
+          
+            <a href="/tags/Sentiment-Analysis/" rel="tag"># Sentiment Analysis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/18/AI来临，应试教育何去何从/" rel="next" title="AI来临，应试教育何去何从">
+                <i class="fa fa-chevron-left"></i> AI来临，应试教育何去何从
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/25/数据结构-Chapter2：线性表/" rel="prev" title="数据结构|Chapter2：线性表">
+                数据结构|Chapter2：线性表 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Tecent-AI-LAB"><span class="nav-number">1.</span> <span class="nav-text">一、Tecent AI LAB</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、社交媒体中的情感分析"><span class="nav-number">2.</span> <span class="nav-text">二、社交媒体中的情感分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#情感分类"><span class="nav-number">2.1.</span> <span class="nav-text">情感分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于层次化神经网络的篇章建模"><span class="nav-number">2.1.1.</span> <span class="nav-text">基于层次化神经网络的篇章建模</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于DL的情感分类"><span class="nav-number">2.1.2.</span> <span class="nav-text">基于DL的情感分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#情感抽取"><span class="nav-number">2.2.</span> <span class="nav-text">情感抽取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨领域情感分析"><span class="nav-number">2.3.</span> <span class="nav-text">跨领域情感分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个性化情感分析"><span class="nav-number">2.4.</span> <span class="nav-text">个性化情感分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐式情感分析"><span class="nav-number">2.5.</span> <span class="nav-text">隐式情感分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#事实型隐式情感分析"><span class="nav-number">2.5.1.</span> <span class="nav-text">事实型隐式情感分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修辞型"><span class="nav-number">2.5.2.</span> <span class="nav-text">修辞型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#情感原因发现"><span class="nav-number">2.6.</span> <span class="nav-text">情感原因发现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于文本"><span class="nav-number">2.6.1.</span> <span class="nav-text">基于文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于个体立场"><span class="nav-number">2.6.2.</span> <span class="nav-text">基于个体立场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于群体立场"><span class="nav-number">2.6.3.</span> <span class="nav-text">基于群体立场</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#情感生成"><span class="nav-number">2.7.</span> <span class="nav-text">情感生成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#评论文本生成"><span class="nav-number">2.7.1.</span> <span class="nav-text">评论文本生成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#情感分析6大趋势"><span class="nav-number">2.8.</span> <span class="nav-text">情感分析6大趋势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结历史"><span class="nav-number">2.9.</span> <span class="nav-text">总结历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用之一：舆情"><span class="nav-number">2.10.</span> <span class="nav-text">应用之一：舆情</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Artificial Intelligence,Machine Learning,Coursera ML," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：神经网络产生的原因是人们想尝试设计出模仿大脑的算法。">
+<meta name="keywords" content="Artificial Intelligence,Machine Learning,Coursera ML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Coursera Machine Learning|Week4：Neural Networks">
+<meta property="og:url" content="http://yoursite.com/2017/09/27/Coursera-Machine-Learning-Week4：Neural-Networks/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：神经网络产生的原因是人们想尝试设计出模仿大脑的算法。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://studyai.site/img/16_09_04/008.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_04/012.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_04/013.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_04/018.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_04/019.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_04/020.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_07/001.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_07/003.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/27/4eb3eea3b62d36b5c.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_07/004.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/27/5c44710d05d88f8e8.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_07/005.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/27/637551dd259fe58e6.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/27/7.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_07/006.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_07/007.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/27/637551dd259fe58e6.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/27/7.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/28/11.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/28/14.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/28/12.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_07/009.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_07/011.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_11/003.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_11/004.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_11/006.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_11/007.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_11/008.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_11/009.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_11/010.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_11/011.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_11/001.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_11/012.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_11/014.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_11/016.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_11/017.png">
+<meta property="og:updated_time" content="2017-09-28T09:58:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Coursera Machine Learning|Week4：Neural Networks">
+<meta name="twitter:description" content="Abstract：神经网络产生的原因是人们想尝试设计出模仿大脑的算法。">
+<meta name="twitter:image" content="http://studyai.site/img/16_09_04/008.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/27/Coursera-Machine-Learning-Week4：Neural-Networks/"/>
+
+
+
+
+
+  <title>Coursera Machine Learning|Week4：Neural Networks | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/27/Coursera-Machine-Learning-Week4：Neural-Networks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Coursera Machine Learning|Week4：Neural Networks</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-27T23:49:31+08:00">
+                2017-09-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：神经网络产生的原因是人们想尝试设计出模仿大脑的算法。<br><a id="more"></a>    </p>
+<h1 id="Neural-Networks-import"><a href="#Neural-Networks-import" class="headerlink" title="Neural Networks import"></a>Neural Networks import</h1><h2 id="线性回归对于非线性假设的不可行性分析"><a href="#线性回归对于非线性假设的不可行性分析" class="headerlink" title="线性回归对于非线性假设的不可行性分析"></a>线性回归对于非线性假设的不可行性分析</h2><p><img src="http://studyai.site/img/16_09_04/008.png" alt="监督学习分类问题">   </p>
+<p>对上面的监督学习分类问题，若用逻辑回归算法解决，则需要首先构造一个包含很多非线性项的logstic regression function :<br><code>g(θ0+θ1x1+θ2x2+θ3x1x2+θ4x21x2+θ5x31x2+θ6x1x22+…)</code> ;当项数足够多时可得到一个分开正样本和负样本的分界线。   </p>
+<p>问题在于，当只有2项时，逻辑回归的确能得到不错的效果，因为x1，x2的所有组合都可被包含到多项式中。但对于这种复杂的机器学习问题，涉及的项往往多于两项，可能有成千上百的特征。而<strong>当项数过多时最终结果很可能是过拟合的，且运算量会很大</strong>。而且，若还要引入三次项，则项数将以O(n^3)的量级增长。（如100个特征——约170000个三次项组合。）故<strong>当特征个数增大时，高阶多项式项数将以几何数递增，特征空间随之急剧膨胀</strong>。所以，<strong>当特征数量过多时，这种方式构建分类器并不合适</strong>。  </p>
+<h2 id="图像识别中使用线性回归的不可行性"><a href="#图像识别中使用线性回归的不可行性" class="headerlink" title="图像识别中使用线性回归的不可行性"></a>图像识别中使用线性回归的不可行性</h2><p><img src="http://studyai.site/img/16_09_04/012.png" alt="图像识别">   </p>
+<p>场景：用ML算法训练一个分类器，用于检测一个图像是否为一辆汽车。  </p>
+<p>如图，取图像一小部分，人眼看到得失汽车，计算机看到的是一个数据矩阵。矩阵中每个元素表示像素强度值，即每个像素的亮度值。即计算机识别的方法变成：根据这个像素点亮度矩阵，来告诉我们这些数值代表一个汽车门把手。    </p>
+<p><img src="http://studyai.site/img/16_09_04/013.png" alt="构建汽车识别器"><br>构建汽车识别器(car detection)的方法：出一个带标签的样本集，其中各类汽车和非汽车事物各一些。将样本集输入给学习算法以训练出一个分类器。训练完毕后，输入一副新图片，让分类器判定“whats this？”    </p>
+<p>为什么一定要引入非线性分类器？—— 计算成本太高   </p>
+<p><img src="http://studyai.site/img/16_09_04/018.png" alt="非线性分类器分类样本"><br>如上图，我们在每幅图片（既包括汽车又包括非汽车）上挑出一组像素点，在坐标系上标出这幅汽车的位置(pixel1,pixel2)。随着样本数量的增多，我们将发现这两类数据分布在坐标系中的不同区域。因此我们现在需要一个非线性分类器，来尽量分开这两类样本。  </p>
+<p>这个分类问题中，特征空间的维度是多少呢？假设我们使用50∗50像素的图片，虽然这个图片尺寸很小，但依然有2500个像素点。因此我们的特征数量n是2500个，特征向量XX包含了所有像素点的亮度值。如果存储的是每个像素点的灰度值（典型的计算机图片表示方法），那么每个元素值应该介于0到255之间。如果图片存储形式是RGB模式，每个像素点包含红、绿、蓝三个子像素，那么n=7500。</p>
+<p><img src="http://studyai.site/img/16_09_04/019.png" alt="1"><br><img src="http://studyai.site/img/16_09_04/020.png" alt="2"></p>
+<p>因此，如果我们非要通过包含所有的二次项来解决这个非线性问题，那么，这个式子的所有条件的个数大约是300万个。这样计算成本太高了。  </p>
+<p>总结：<strong>若通过逻辑回归算法做图像识别，则项数过多会导致结果过拟合以及计算成本太高的问题，故最好使用非线性分类器来解决</strong>。    </p>
+<h1 id="Model-Representation-神经网络的表示"><a href="#Model-Representation-神经网络的表示" class="headerlink" title="Model Representation 神经网络的表示"></a>Model Representation 神经网络的表示</h1><h2 id="神经网络的表示1"><a href="#神经网络的表示1" class="headerlink" title="神经网络的表示1"></a>神经网络的表示1</h2><p><img src="http://studyai.site/img/16_09_07/001.png" alt="神经网络">   </p>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>神经元：大脑中的细胞；一个计算单元，从输入神经接受一定数目的信息，并做一些计算，然后将结果通过它的轴突传送到大脑中的其他神经元</li>
+<li>树突Dendrite：神经元的输入神经，可接收来自其他神经元的信息</li>
+<li>轴突Axon：神经元的输出神经，可传递神经元信号给其他神经元</li>
+<li>动作电位：神经元利用微弱的电流进行沟通</li>
+</ul>
+<h3 id="神经网络逻辑单元"><a href="#神经网络逻辑单元" class="headerlink" title="神经网络逻辑单元"></a>神经网络逻辑单元</h3><p><img src="http://studyai.site/img/16_09_07/003.png" alt="Neuron model:logstic unit"></p>
+<p>我们将神经元模拟成一个逻辑单元。上图中，黄色的圆圈，你可以理解为类似神经元的东西，然后我们通过它的树突(或者说是它的输入神经)传递给它一些信息。然后神经元做一些计算，并通过它的输出神经(即它的轴突)输出计算结果。</p>
+<p><img src="http://www.z4a.net/images/2017/09/27/4eb3eea3b62d36b5c.png" alt="4">    </p>
+<p>x和θ指的是我们的参数向量。此即一个简单的模拟神经元模型。</p>
+<p><img src="http://studyai.site/img/16_09_07/004.png" alt="5">  </p>
+<p>当绘制一个神经网络时，有时会额外增加一个x0的输入节点，这个x0节点有时也被称作偏置单位(或偏置神经元)。但由于x0=1，有时是不会画出它的，这取决于它是否对例子有利。</p>
+<h3 id="激励函数g-z"><a href="#激励函数g-z" class="headerlink" title="激励函数g(z)"></a>激励函数g(z)</h3><p>activation function：<br><img src="http://www.z4a.net/images/2017/09/27/5c44710d05d88f8e8.png" alt="6"></p>
+<p>其中：θ为模型的参数，也是权重weight </p>
+<p>激励activation：由一个具体神经元读入计算并输出的值。    </p>
+<h3 id="解读神经网络"><a href="#解读神经网络" class="headerlink" title="解读神经网络"></a>解读神经网络</h3><p><img src="http://studyai.site/img/16_09_07/005.png" alt="7">  </p>
+<p>神经网络：不同神经元组合在一起的集合。  </p>
+<p>layer1：输入层，有三个输入单元：x1,x2和x3，当然我们也可以加入值为1的x0 ；<br>layer2：隐藏层，有三个神经元：a(2)1，a(2)2和a3(2)，同理，你可以可以加上值永远为1的偏置单元a(2)0；隐藏层的值在你的训练过程中是看不到的，它的值不是x也不是y，所以我们叫它隐藏层。神经网络可以有不止一个的隐藏层。在神经网络中，任何一个非输入层且非输出层，就被称为隐藏层。<br>layer3：输出层，输出h(x)的计算结果hθ(x)；   </p>
+<h3 id="神经网络运行原理"><a href="#神经网络运行原理" class="headerlink" title="神经网络运行原理"></a>神经网络运行原理</h3><p>ai(j) 表示第j层的第i个神经元；如a1^2表示的是第2层的第1个激励，即隐藏层的第一个激励。</p>
+<p>Θ(j) 表示层与层之间权重的参数矩阵(或者叫权重矩阵)(比如说从第一层到第二层、或者从第二层到第三层的作用)。 </p>
+<p>隐藏层的三个神经元的计算结果：<br><img src="http://www.z4a.net/images/2017/09/27/637551dd259fe58e6.png" alt="8">    </p>
+<p>这里我们有三个输入单元和三个隐藏单元，这样一来，参数矩阵Θ(1)Θ(1)控制了我们来自三个输入单元到三个隐藏单元的映射。因此Θ(1)的维数是R^(3×4)的(考虑x0的情况下)矩阵。    </p>
+<p>如果一个神经网络在第j层有Sj个单元，在j+1层有Sj+1个单元，那么第j层的参数矩阵Θ(j)的维度就是sj+1 × (sj+1)  </p>
+<p>最后，在输出层，我们还有一个单元，它用来计算hΘ(x)：<br><img src="http://www.z4a.net/images/2017/09/27/7.png" alt="9">    </p>
+<p>以上就是从数学上对一个人工神经网络的定义。</p>
+<h2 id="神经网络的表示2"><a href="#神经网络的表示2" class="headerlink" title="神经网络的表示2"></a>神经网络的表示2</h2><p>Abstract：介绍如何高效地进行计算，并展示一个向量化的实现方法。更重要的是明白神经网络的好处所在，并且介绍它是如何帮助我们学习复杂的非线性假设的。神经网络使用的前向传播计算法<strong>就是从输入层到隐藏层到输出层的层层递进计算来获取最终结果的计算路径</strong>。其与逻辑回归的区别在于，逻辑回归的输入特征值为x1，x2，x3…，而前向传播的输入值为通过隐藏层的输入函数Θ(1)来学习而得的特征项a1(2)、a2(2)、a3(2) 。隐藏层内的计算是不可见的，但看起来就像逻辑回归在做的事。 最终的目的是从输出层输出一个假设函数的值h theta(x)。  </p>
+<h3 id="前向传播-forward-propagation-的向量化实现"><a href="#前向传播-forward-propagation-的向量化实现" class="headerlink" title="前向传播(forward propagation)的向量化实现"></a>前向传播(forward propagation)的向量化实现</h3><p><img src="http://studyai.site/img/16_09_07/006.png" alt="11"><br><img src="http://studyai.site/img/16_09_07/007.png" alt="12"><br><img src="http://www.z4a.net/images/2017/09/27/637551dd259fe58e6.png" alt="13"><br><img src="http://www.z4a.net/images/2017/09/27/7.png" alt="14"><br><img src="http://www.z4a.net/images/2017/09/28/11.png" alt="15"><br><img src="http://www.z4a.net/images/2017/09/28/14.png" alt="16"><br><img src="http://www.z4a.net/images/2017/09/28/12.png" alt="17">   </p>
+<p>前向传播：<strong>就是从输入层到隐藏层到输出层的层层递进计算来获取最终结果的计算路径</strong>。    </p>
+<blockquote>
+<p>从输入层的激励开始，然后进行前向传播给隐藏层，并计算隐藏层的激励，然后我们继续向前传播，并计算出层的激励，这个从输入层，到隐藏层，再到输出层，依次计算激励的过程，叫前向传播。</p>
+</blockquote>
+<p>推导过程：我们将上图中的假设函数计算方程简化计算。先定义一些额外的项如a1(2)=…来简化表示，然后层层推导。最后h theta(x)只需2步即可推导出来。   </p>
+<h3 id="为什么神经网络可以帮助我们学习非线性假设"><a href="#为什么神经网络可以帮助我们学习非线性假设" class="headerlink" title="为什么神经网络可以帮助我们学习非线性假设"></a>为什么神经网络可以帮助我们学习非线性假设</h3><p><img src="http://studyai.site/img/16_09_07/009.png" alt="18">     </p>
+<p>盖住左边，发现神经网络很像逻辑回归。但区别是：<strong>神经网络的输入特征值是通过隐藏层计算的，即，神经网络所做的工作看起来就像逻辑回归，但它不是使用x1，x2，x3作为输入特征，而是使用特征项a1(2)、a2(2)、a3(2)</strong>。<strong>而特征项a1(2)、a2(2)、a3(2)是通过输入函数Θ(1)来学习的</strong>，即从layer1映射到layer2的函数。这个函数由其他一组参数Θ(1)决定。所以，在神经网络中，它没有用输入特征x1、x2、x3来训练逻辑回归，而是训练逻辑回归的输入:a1(2)、a2(2)、a3(2)。 </p>
+<h3 id="神经网络的架构"><a href="#神经网络的架构" class="headerlink" title="神经网络的架构"></a>神经网络的架构</h3><p>神经网络的架构(Architecture)：神经网络中神经元相连接的方式。  </p>
+<p><img src="http://studyai.site/img/16_09_07/011.png" alt="20"><br>注：隐藏层可以是不止一层。  </p>
+<h1 id="神经网络应用实例Applications"><a href="#神经网络应用实例Applications" class="headerlink" title="神经网络应用实例Applications"></a>神经网络应用实例Applications</h1><p>Abstract：本节通过具体的例子来解释神经网络是如何计算关于输入的复杂的非线性函数的。神经网络是通过层层递进的前向传播来计算复杂的非线性函数的。隐藏层数量增多，可计算更复杂的函数。  </p>
+<h2 id="问题引入"><a href="#问题引入" class="headerlink" title="问题引入"></a>问题引入</h2><p><img src="http://studyai.site/img/16_09_11/003.png" alt="21">   </p>
+<p>Q：如上图，我们有一组二进制的输入特征x1和x2；x1，x2 ∈{1,0};我们的目的是用一个非线性的决策边界来区分正负样本。那么神经网络是如何做到的呢？   </p>
+<p>Solution：    </p>
+<ul>
+<li>求同或（真假性相同才真，真假性相异则假），即 y=x1 XNOR x2</li>
+<li>求异或（真假性相同则假，真假性相同则真），即NOT(y=x1 XOR x2)</li>
+</ul>
+<h2 id="简单例子：AND、OR、NOT的实现"><a href="#简单例子：AND、OR、NOT的实现" class="headerlink" title="简单例子：AND、OR、NOT的实现"></a>简单例子：AND、OR、NOT的实现</h2><h3 id="AND"><a href="#AND" class="headerlink" title="AND"></a>AND</h3><p><img src="http://studyai.site/img/16_09_11/004.png" alt="22"><br><img src="http://studyai.site/img/16_09_11/006.png" alt="23">   </p>
+<p>条件：有二进制输入特征值x1，x2，目标函数是y = x1 AND x2 </p>
+<p>目的：得到一个具有单个神经元的神经网络来计算这个逻辑与。    </p>
+<p>步骤：    </p>
+<ul>
+<li><strong>画出偏置单元x0，值为+1</strong>；不影响整体值；</li>
+<li><strong>给这个神经网络分配一些权重（参数）</strong>，如上图；</li>
+<li>故假设函数为hΘ(x)=g(−30+20x1+20x2)；Θ10(1) = −30，Θ11(2) = 20，Θ12(3) = 20；</li>
+<li><strong>在输入不同特征值时，神经元输出计算结果hΘ(x)的值</strong>； </li>
+</ul>
+<blockquote>
+<p><strong>激励函数g(z)</strong>:<br><img src="http://studyai.site/img/16_09_11/007.png" alt="24"> </p>
+<p>当z的绝对值大于4时，g(z)的值必定等于1或0.故在选取权重值时一定要保证任何情况下g(z)的值只能为1或0.</p>
+</blockquote>
+<p>假设在各种情况下的输出,即为逻辑与的计算结果: </p>
+<table>
+<thead>
+<tr>
+<th>x1</th>
+<th>x2</th>
+<th>hΘ(x)     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>g(−30)≈0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>g(−10)≈0    </td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>g(−10)≈0    </td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>g(10)≈1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="OR"><a href="#OR" class="headerlink" title="OR"></a>OR</h3><p><img src="http://studyai.site/img/16_09_11/008.png" alt="24"> </p>
+<p>如上图神经网络同理实现了“或”的功能。    </p>
+<p>假设函数为：hΘ(x)=g(−10+20x1+20x2)  </p>
+<h3 id="NOT"><a href="#NOT" class="headerlink" title="NOT"></a>NOT</h3><p><img src="http://studyai.site/img/16_09_11/009.png" alt="25"> </p>
+<p>如上图神经网络同理实现了“非”的功能。    </p>
+<p>假设函数为：hΘ(x)=g(10−20x1)    </p>
+<h2 id="更复杂的例子"><a href="#更复杂的例子" class="headerlink" title="更复杂的例子"></a>更复杂的例子</h2><h3 id="NOTx1-AND-NOTx2"><a href="#NOTx1-AND-NOTx2" class="headerlink" title="(NOTx1)AND(NOTx2)"></a>(NOTx1)AND(NOTx2)</h3><p><img src="http://studyai.site/img/16_09_11/010.png" alt="25">     </p>
+<p>如上图神经网络同理实现了(NOTx1)AND(NOTx2) 的功能。  </p>
+<p>假设函数为：hΘ(x)=g(10−20x1−20x2)   </p>
+<h3 id="求解XNOR（组合多神经元求解）"><a href="#求解XNOR（组合多神经元求解）" class="headerlink" title="求解XNOR（组合多神经元求解）"></a>求解XNOR（组合多神经元求解）</h3><p><img src="http://studyai.site/img/16_09_11/011.png" alt="26"><br><img src="http://studyai.site/img/16_09_11/001.png" alt="27"><br><img src="http://studyai.site/img/16_09_11/012.png" alt="28">     </p>
+<p>目的：求解XNOR（<strong>组合多神经元求解</strong>）</p>
+<p>方法：如上图将上面求解的三个神经网络（AND &amp; (NOTx1)AND(NOTx2) &amp; OR）组合成一个具有三个输出单元的神经网络，即可运算x1 XNO x2  ；为拟合x1 XNOR x2的非线性样本分布，我们可以构建双层神经网络隐藏层a1(2)、a2(2)。加入偏置单元x0(= +1)即可得到输出层。    </p>
+<p>计算路径：    </p>
+<ul>
+<li>Neuron1：AND；Neuron2：(NOTx1)AND(NOTx2) ； Neuron3：OR</li>
+<li>**Neuron1只能输出1/Neuron2只能输出1/Neuron3只能输出0；</li>
+<li>将特征值x1，x2同时输入3个神经元，输出结果h theta(X)即为结果。**</li>
+</ul>
+<p>最终真值表如下：    </p>
+<table>
+<thead>
+<tr>
+<th>x1</th>
+<th>x2</th>
+<th>a1(2)</th>
+<th>a2(2)</th>
+<th>hΘ(x)     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0 </td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>注:XNOR 是同或，真假性相同才真，真假性相异则假。    </p>
+<p>总结：<strong>通过一个含有输入层、隐藏层、输出层的神经网络，我们最终拟合了x1XNORx2x1</strong>。   </p>
+<blockquote>
+<p>更一般的理解是：在输入层中，我们有原始输入值，然后我们建立了一个隐藏层，用来计算稍微复杂一些的输入量的函数，然后通过添加另一个层我们得到了一个更复杂一点的函数，这就是神经网络可以计算较复杂函数的某种直观解释。</p>
+<p>我们知道，当层数很多的时候，你有一个相对简单的输入量的函数作为第二层，而第三层可以建立在此基础上来计算更加复杂一些的函数，然后再下一层，又可以计算再复杂一些的函数. </p>
+</blockquote>
+<p><img src="http://studyai.site/img/16_09_11/014.png" alt="">   </p>
+<h2 id="神经网络的多类别分类"><a href="#神经网络的多类别分类" class="headerlink" title="神经网络的多类别分类"></a>神经网络的多类别分类</h2><p>Abstract：使用神经网络解决多类别分类问题，即建立一个具有多个输出单元的神经网络。它和逻辑回归时介绍的一对多方法其实是一样的，只不过现在我们有四个逻辑回归的分类器，而我们需要对每一个分类器都分别进行识别分类（<strong>为什么多神经元：因为一个神经元只能输出一个预设的结果</strong>）。  </p>
+<p>我们处理多类别分类的方法实际上是<strong>基于一个多神经网络算法而延伸出来的</strong>。    </p>
+<p>譬如：识别图片中的对象，设定4个类别：行人，汽车，摩托车，卡车。此即多类别分类问题。   </p>
+<p><img src="http://studyai.site/img/16_09_11/016.png" alt="CV"> </p>
+<p><img src="http://studyai.site/img/16_09_11/017.png" alt="multi">  </p>
+<p>方法：<strong>建立一个具有4个输出单元的神经网络</strong>(如上图)。    </p>
+<ul>
+<li>此时神经网络的输出是一个思维向量。</li>
+<li>因此<strong>现在的输出需要用一个向量hΘ(x)来表示，这个向量中有四个元素，即hΘ(x) = [y1,y2,y3,y4]T</strong>;</li>
+<li>我们要做的是对第一个输出元素进行分辨图片上是不是一个行人(Pedestrian)，然后对第二个元素分辨它是不是一辆轿车(Car)，对第三个元素分辨它是不是摩托车(Motorcycle)，对第四个元素分辨它是不是一辆卡车(Truck)。</li>
+</ul>
+<p>输出结果hΘ(x)：    </p>
+<ul>
+<li>若图上是汽车，则输出结果：hΘ(x) = [0,1,0,0]</li>
+<li>若图上是摩托车，则输出结果：hΘ(x) = [0,0,1,0]</li>
+<li>若图上是卡车，则输出结果：hΘ(x) = [0,0,0,1]</li>
+<li>若图上是行人，则输出结果：hΘ(x) = [1,0,0,0]</li>
+</ul>
+<p>总结：使用神经网络解决多类别分类问题，和逻辑回归时介绍的一对多方法其实是一样的，只不过现在我们有四个逻辑回归的分类器，而我们需要对每一个分类器都分别进行识别分类。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Artificial-Intelligence/" rel="tag"># Artificial Intelligence</a>
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Coursera-ML/" rel="tag"># Coursera ML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/27/新媒体标题写作：如何成为标题党？/" rel="next" title="新媒体标题写作：如何成为标题党？">
+                <i class="fa fa-chevron-left"></i> 新媒体标题写作：如何成为标题党？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/29/新媒体掐架定律25条/" rel="prev" title="新媒体掐架定律25条">
+                新媒体掐架定律25条 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Neural-Networks-import"><span class="nav-number">1.</span> <span class="nav-text">Neural Networks import</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归对于非线性假设的不可行性分析"><span class="nav-number">1.1.</span> <span class="nav-text">线性回归对于非线性假设的不可行性分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像识别中使用线性回归的不可行性"><span class="nav-number">1.2.</span> <span class="nav-text">图像识别中使用线性回归的不可行性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Model-Representation-神经网络的表示"><span class="nav-number">2.</span> <span class="nav-text">Model Representation 神经网络的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络的表示1"><span class="nav-number">2.1.</span> <span class="nav-text">神经网络的表示1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">2.1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#神经网络逻辑单元"><span class="nav-number">2.1.2.</span> <span class="nav-text">神经网络逻辑单元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#激励函数g-z"><span class="nav-number">2.1.3.</span> <span class="nav-text">激励函数g(z)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解读神经网络"><span class="nav-number">2.1.4.</span> <span class="nav-text">解读神经网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#神经网络运行原理"><span class="nav-number">2.1.5.</span> <span class="nav-text">神经网络运行原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络的表示2"><span class="nav-number">2.2.</span> <span class="nav-text">神经网络的表示2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前向传播-forward-propagation-的向量化实现"><span class="nav-number">2.2.1.</span> <span class="nav-text">前向传播(forward propagation)的向量化实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么神经网络可以帮助我们学习非线性假设"><span class="nav-number">2.2.2.</span> <span class="nav-text">为什么神经网络可以帮助我们学习非线性假设</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#神经网络的架构"><span class="nav-number">2.2.3.</span> <span class="nav-text">神经网络的架构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络应用实例Applications"><span class="nav-number">3.</span> <span class="nav-text">神经网络应用实例Applications</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题引入"><span class="nav-number">3.1.</span> <span class="nav-text">问题引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单例子：AND、OR、NOT的实现"><span class="nav-number">3.2.</span> <span class="nav-text">简单例子：AND、OR、NOT的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AND"><span class="nav-number">3.2.1.</span> <span class="nav-text">AND</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OR"><span class="nav-number">3.2.2.</span> <span class="nav-text">OR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NOT"><span class="nav-number">3.2.3.</span> <span class="nav-text">NOT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更复杂的例子"><span class="nav-number">3.3.</span> <span class="nav-text">更复杂的例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NOTx1-AND-NOTx2"><span class="nav-number">3.3.1.</span> <span class="nav-text">(NOTx1)AND(NOTx2)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求解XNOR（组合多神经元求解）"><span class="nav-number">3.3.2.</span> <span class="nav-text">求解XNOR（组合多神经元求解）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络的多类别分类"><span class="nav-number">3.4.</span> <span class="nav-text">神经网络的多类别分类</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

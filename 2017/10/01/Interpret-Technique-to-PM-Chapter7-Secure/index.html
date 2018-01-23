@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PM Communication,System Logic,Reading Notes," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract:产品研发过程中的一些计算机安全方面的知识。如web安全，信息攻击，加密，信息安全等。">
+<meta name="keywords" content="PM Communication,System Logic,Reading Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Interpret Technique to PM|Chapter7:Secure">
+<meta property="og:url" content="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter7-Secure/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract:产品研发过程中的一些计算机安全方面的知识。如web安全，信息攻击，加密，信息安全等。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-30T12:43:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Interpret Technique to PM|Chapter7:Secure">
+<meta name="twitter:description" content="Abstract:产品研发过程中的一些计算机安全方面的知识。如web安全，信息攻击，加密，信息安全等。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter7-Secure/"/>
+
+
+
+
+
+  <title>Interpret Technique to PM|Chapter7:Secure | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter7-Secure/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Interpret Technique to PM|Chapter7:Secure</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T18:57:18+08:00">
+                2017-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/System-Logic/" itemprop="url" rel="index">
+                    <span itemprop="name">System Logic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract:产品研发过程中的一些计算机安全方面的知识。如web安全，信息攻击，加密，信息安全等。</p>
+<a id="more"></a>
+<h1 id="撞库"><a href="#撞库" class="headerlink" title="撞库"></a>撞库</h1><ul>
+<li>利用在a网站盗取的账户密码登b网站（大部分人喜欢在不同网站上用同一组账户密码）</li>
+<li>防范：1.网站：从其他维度检验（如若不在常用城市登录，则发个短信进行二次验证）；2.用户：密码记忆工具or给自己定一个密码规则便于记忆；</li>
+</ul>
+<h1 id="web安全"><a href="#web安全" class="headerlink" title="web安全"></a>web安全</h1><h2 id="SQL注入攻击"><a href="#SQL注入攻击" class="headerlink" title="SQL注入攻击"></a>SQL注入攻击</h2><ul>
+<li>原因：开发者未对用户提交的内容进行过滤，导致恶意SQL语句的执行；</li>
+<li>防范：设置过滤机制，如只允许使用字母和数字；（永远不要相信外界输入的数据）；<h4 id="XSS漏洞"><a href="#XSS漏洞" class="headerlink" title="XSS漏洞"></a>XSS漏洞</h4></li>
+<li>XSS（cross site script）：跨站脚本攻击，即利用js产生的一个网站攻击另一个网站的安全问题；</li>
+<li>dom-based xss（基于dom的xss漏洞）</li>
+<li>stored xss：只要看过某网页的人的cookie都被发送到b网站；</li>
+<li>根源：未对参数货一些可执行代码进行校验货过滤；</li>
+<li>解决方法：进行校验（如手机号不是11位不让提交到服务器）或对可执行代码变普通文本废掉可执行能力；不对输入参数进行防护都会造成xss漏洞，可用工具扫描；</li>
+</ul>
+<h2 id="CSRF攻击"><a href="#CSRF攻击" class="headerlink" title="CSRF攻击"></a>CSRF攻击</h2><ul>
+<li>CSRF：cross site request forgery，跨站点请求伪造；即a网站对用户建立信任关系后在b网站利用这种信任关系、跨站点向a发起一些伪造的用户操作请求以达到攻击的目的；</li>
+<li>原因：服务器对浏览器过于信任，未区分请求是用户主动发出的还是模拟发出的；</li>
+<li>防范：1.关键数据操作的请求使用post请求，限制get请求的数据；2.关键数据操作时加上验证码验证用户身份；3.Anti CSRF token：在真正表单面里隐藏一个随机的每次都变化的token，当用户提交表单时，将token提交到后台进行验证，若验证通过则执行操作（b拿不到a表单里的token）；</li>
+</ul>
+<h1 id="黑产系列"><a href="#黑产系列" class="headerlink" title="黑产系列"></a>黑产系列</h1><h2 id="ARP攻击"><a href="#ARP攻击" class="headerlink" title="ARP攻击"></a>ARP攻击</h2><ul>
+<li>mac地址（网卡地址）：当网络上相邻的两台网络设备通信时必须明确知道对方的mac地址才能通信；</li>
+<li>局域网中的主机可以利用ARP（地址解析协议）来获取局域网IP对应主机的mac地址；</li>
+<li>ARP协议的请求过程：主机A在局域网中发送ARP请求，内容为请主机B把mac地址告诉我——局域网中所有主机和网关都会收到这个消息，但只有主机B会回答这个消息（我是主机B，我的mac地址是xxx）——主机A获得B的mac地址并将其保存在自己的ARP缓存表里</li>
+<li>被攻击的根源：请求过程有漏洞；</li>
+<li>ARP攻击能达到的目的：1.制造网络中断（how：使至少一方无法获得对方的正确mac地址，如攻击者主动回复A ARP消息）；2.ARP欺骗，中间人攻击（how：攻击者主动回复病将自己的mac地址放入应答消息里伪装成网关，则A发送的所有收发消息都被窥探）；</li>
+<li>ARP攻击的主要手段：让被攻击主机的ARP缓存表中加入攻击者期望的错误信息；</li>
+</ul>
+<h2 id="android应用之二次打包"><a href="#android应用之二次打包" class="headerlink" title="android应用之二次打包"></a>android应用之二次打包</h2><ul>
+<li>what：把Google play上的应用进行二次打包分发到国内市场，通过广告植入等手段牟利；</li>
+<li>流程：下载应用——反编译——篡改代码——重新打包——国内分发；</li>
+<li>defend：1.校验签名（在应用的关键节点进行签名校验）；2.加固处理（使无法被反编译或即使反编译了也无法打包）；</li>
+</ul>
+<h2 id="年产百亿的DDoS攻击"><a href="#年产百亿的DDoS攻击" class="headerlink" title="年产百亿的DDoS攻击"></a>年产百亿的DDoS攻击</h2><ul>
+<li>原理：通过对服务器发送大量无用的请求，耗尽服务器资源（CPU，内存等）导致服务器无法正常运行，正常请求无法得到响应；</li>
+<li>实现DDoS攻击需要：攻击者比被攻击者拥有更多的硬件资源（更好的CPU和更大的带宽），实现途径：1.通过流量平台租赁流量实现流量攻击；2.种植肉鸡，构建僵尸网络，利用云控指令对被攻击者发起攻击；</li>
+<li>可怕之处：被攻击者无法正确地区分哪些是攻击者发来的请求，哪些是正常的请求；</li>
+<li>攻击方式的切入点：利用TCP等协议栈或系统本身的缺陷达到最大化利用攻击资源的效果；</li>
+<li>TCP协议的三次握手：客户端向服务器发送一个SYN报文（我要跟你建立TCP连接）——服务器向客户端发送一个SYN+ACK报文（ACK是对第一次握手中SYN报文的确认：同意建立连接）——客户端向服务器发送一个ACK报文（确认第二次握手的SYN报文被成功接收）——TCP连接成功建立，服务器和客户端开始数据的传输；</li>
+</ul>
+<h2 id="ROOT权限：裸奔模式"><a href="#ROOT权限：裸奔模式" class="headerlink" title="ROOT权限：裸奔模式"></a>ROOT权限：裸奔模式</h2><ul>
+<li>app遵循系统开发框架：开发框架定义了app获取系统能力的通道，app通过获取系统提供的能力来完成自己产品对应的功能；用户所做的每一个操作都要经过这个通道，由操作系统处理后完成；【通道是实现功能的必经之路】</li>
+<li>风险：如果通道被挟持／篡改，我们的敏感信息就可能暴露「这种技术叫：动态注入」</li>
+<li>动态注入：所有数据都会被某个「其他应用」窥视一遍，然后才会到达系统；</li>
+<li>root的风险：手机root+安装某具有动态注入功能的应用——结果：信息被窥探；</li>
+<li>动态注入监控应用的实现过程：应用启动，A使用动态注入将自己的窥视代码注入应用进程中——窥视代码注入后会针对性拦截应用到系统的通道——应用使用通道时数据会先被A窥视，然后才会交给操作系统；</li>
+<li>好的作用：通过获取用户的使用习惯来做针对性的体验优化；</li>
+</ul>
+<h2 id="诈骗短信和伪基站"><a href="#诈骗短信和伪基站" class="headerlink" title="诈骗短信和伪基站"></a>诈骗短信和伪基站</h2><ul>
+<li>原理：伪基站（核心原理：模拟正常基站的频率来吸引手机连接，然后对用户手机发送诈骗短信；GSM模式下手机与基站是单向认证，手机天生信赖所有基站）</li>
+<li>基站：手机能接入网络的桥头堡，所有用户的通话和上网行为都要通过基站连接网络；</li>
+</ul>
+<h1 id="家庭wifi防蹭网指南"><a href="#家庭wifi防蹭网指南" class="headerlink" title="家庭wifi防蹭网指南"></a>家庭wifi防蹭网指南</h1><ul>
+<li>定期更换密码</li>
+<li>使用加密效果更好的加密方式：加密方式（WEP／WPA/WPA2/WPASK/WPA2-PSK;WEP加密弱，WPA／WPA2需要额外的认证服务器，不适合家庭网络，WPAPSK／WPA2-PSK最适合加密强）</li>
+<li>隐藏无限网络SSID：SSID是Wi-Fi名称，在路由器里关闭SSID广播即可防蹭，自连Wi-Fi时手动输入SSID即可；</li>
+<li>关闭DHCP服务：控制IP地址的分配，手动给自己的设备配IP地址；</li>
+<li>开启mac地址过滤：只允许自己的mac地址通过路由器；</li>
+</ul>
+<h1 id="设计windows病毒"><a href="#设计windows病毒" class="headerlink" title="设计windows病毒"></a>设计windows病毒</h1><ul>
+<li>伪装：提高用户主动启动病毒源文件的可能性；</li>
+<li>释放主程序：感染计算机时病毒源文件需要将主程序释放到计算机的其他目录里（为了防止用户删除源文件导致病毒被清除）；</li>
+<li>添加自启动：释放主程序的同时将主程序添加到注册表（windows系统里的“数据库”，存储着操作系统的一些关键设置，包括自启动设置）定义的启动项中；</li>
+<li>深度隐藏：设置病毒主程序所在的文件夹为隐藏+修改注册表、屏蔽常规恢复文件可见性的操作；</li>
+<li>自我复制：备份病毒的可执行程序——拷贝病毒的exe文件到各个磁盘的根目录+修改autorum.inf文件内容（打开磁盘=触发病毒运行）；</li>
+<li>传播：通过windows提供的远程登录功能，利用管理员账户的弱口令来登陆到局域网中的其他计算机并拷贝病毒到计算机；</li>
+</ul>
+<h1 id="公共Wi-Fi"><a href="#公共Wi-Fi" class="headerlink" title="公共Wi-Fi"></a>公共Wi-Fi</h1><ul>
+<li>无密码wifi：无任何加密保护；</li>
+<li>带WEP加密的wifi：可被窃听的；</li>
+<li>带WPA加密的Wi-Fi：不易被窃听的；</li>
+<li>钓鱼wifi</li>
+<li>蜜罐wifi：下次自动连接；</li>
+<li>风险：窃听重要信息，篡改信息；</li>
+</ul>
+<h1 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h1><ul>
+<li>密钥：一堆参数，把参数与明文信息按一定算法混到一起，把原始信息整的像代码一样；</li>
+<li>加密类型：对称加密（加解密双方的密钥相同），非对称加密（公私钥，不同，不可推导）；</li>
+</ul>
+<h1 id="android系统权限管理"><a href="#android系统权限管理" class="headerlink" title="android系统权限管理"></a>android系统权限管理</h1><ul>
+<li>常用权限：网络访问；读取手机状态和身份；开机启动；修改货删除外置存储中的相机／内容；</li>
+<li>app调用相机权限的步骤：把需要的权限写在程序清单文件里——把文件打包到APK里——用户下载APK——安装时弹出一个权限说明——用户选择是否安装（选择安装=同意app调用权限）——app自调用</li>
+</ul>
+<h1 id="微信如何校验分享的合法性"><a href="#微信如何校验分享的合法性" class="headerlink" title="微信如何校验分享的合法性"></a>微信如何校验分享的合法性</h1><ul>
+<li>应用获取分享功能的过程：在微信平台上注册自己的信息（应用名称／包名／签名的公钥信息：使微信有校验应用的能力）——签名校验信息无法通过则拒绝分享；</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PM-Communication/" rel="tag"># PM Communication</a>
+          
+            <a href="/tags/System-Logic/" rel="tag"># System Logic</a>
+          
+            <a href="/tags/Reading-Notes/" rel="tag"># Reading Notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter6-Front-End/" rel="next" title="Interpret Technique to PM|Chapter6:Front End">
+                <i class="fa fa-chevron-left"></i> Interpret Technique to PM|Chapter6:Front End
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter8-Development-Tools/" rel="prev" title="Interpret Technique to PM|Chapter8:Development Tools">
+                Interpret Technique to PM|Chapter8:Development Tools <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#撞库"><span class="nav-number">1.</span> <span class="nav-text">撞库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#web安全"><span class="nav-number">2.</span> <span class="nav-text">web安全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL注入攻击"><span class="nav-number">2.1.</span> <span class="nav-text">SQL注入攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#XSS漏洞"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">XSS漏洞</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSRF攻击"><span class="nav-number">2.2.</span> <span class="nav-text">CSRF攻击</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#黑产系列"><span class="nav-number">3.</span> <span class="nav-text">黑产系列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ARP攻击"><span class="nav-number">3.1.</span> <span class="nav-text">ARP攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#android应用之二次打包"><span class="nav-number">3.2.</span> <span class="nav-text">android应用之二次打包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#年产百亿的DDoS攻击"><span class="nav-number">3.3.</span> <span class="nav-text">年产百亿的DDoS攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROOT权限：裸奔模式"><span class="nav-number">3.4.</span> <span class="nav-text">ROOT权限：裸奔模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#诈骗短信和伪基站"><span class="nav-number">3.5.</span> <span class="nav-text">诈骗短信和伪基站</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#家庭wifi防蹭网指南"><span class="nav-number">4.</span> <span class="nav-text">家庭wifi防蹭网指南</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计windows病毒"><span class="nav-number">5.</span> <span class="nav-text">设计windows病毒</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#公共Wi-Fi"><span class="nav-number">6.</span> <span class="nav-text">公共Wi-Fi</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加密"><span class="nav-number">7.</span> <span class="nav-text">加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#android系统权限管理"><span class="nav-number">8.</span> <span class="nav-text">android系统权限管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#微信如何校验分享的合法性"><span class="nav-number">9.</span> <span class="nav-text">微信如何校验分享的合法性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

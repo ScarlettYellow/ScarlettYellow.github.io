@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Artificial Intelligence,Deep Learning,Reinforcement Learning," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：从用棋谱到扔棋谱，阿元狗完败阿法狗显示强化学习（∈非监督学习）不依赖人的经验也可以通过自学做的很好。其意义在于做AI应用不再需要人工去标注大量样本（非监督学习之区别于监督学习），通过摆脱对人类经验和辅助的依赖，类似的深度强化学习算法或许能更容易地被广泛应用到其他人类缺乏了解或是缺乏大量标注数据的领域。本文分析了Zero与旧版AlphaGo相比的改进，以及思考该模型是否具有可移植性">
+<meta name="keywords" content="Artificial Intelligence,Deep Learning,Reinforcement Learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AlphaGo Zero论文分析与模型可移植性的思考">
+<meta property="og:url" content="http://yoursite.com/2017/10/29/AlphaGo-Zero论文分析与模型可移植性的思考/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：从用棋谱到扔棋谱，阿元狗完败阿法狗显示强化学习（∈非监督学习）不依赖人的经验也可以通过自学做的很好。其意义在于做AI应用不再需要人工去标注大量样本（非监督学习之区别于监督学习），通过摆脱对人类经验和辅助的依赖，类似的深度强化学习算法或许能更容易地被广泛应用到其他人类缺乏了解或是缺乏大量标注数据的领域。本文分析了Zero与旧版AlphaGo相比的改进，以及思考该模型是否具有可移植性">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-29T14:55:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AlphaGo Zero论文分析与模型可移植性的思考">
+<meta name="twitter:description" content="Abstract：从用棋谱到扔棋谱，阿元狗完败阿法狗显示强化学习（∈非监督学习）不依赖人的经验也可以通过自学做的很好。其意义在于做AI应用不再需要人工去标注大量样本（非监督学习之区别于监督学习），通过摆脱对人类经验和辅助的依赖，类似的深度强化学习算法或许能更容易地被广泛应用到其他人类缺乏了解或是缺乏大量标注数据的领域。本文分析了Zero与旧版AlphaGo相比的改进，以及思考该模型是否具有可移植性">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/29/AlphaGo-Zero论文分析与模型可移植性的思考/"/>
+
+
+
+
+
+  <title>AlphaGo Zero论文分析与模型可移植性的思考 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/29/AlphaGo-Zero论文分析与模型可移植性的思考/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">AlphaGo Zero论文分析与模型可移植性的思考</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-29T22:51:19+08:00">
+                2017-10-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/Deep-Learning/Reinforcement-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Reinforcement Learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：从用棋谱到扔棋谱，阿元狗完败阿法狗显示强化学习（∈非监督学习）不依赖人的经验也可以通过自学做的很好。其意义在于做AI应用不再需要人工去标注大量样本（非监督学习之区别于监督学习），通过摆脱对人类经验和辅助的依赖，类似的深度强化学习算法或许能更容易地被广泛应用到其他人类缺乏了解或是缺乏大量标注数据的领域。<br>本文分析了Zero与旧版AlphaGo相比的改进，以及思考该模型是否具有可移植性？文末提出了自己的几个疑问，待解答。</p>
+<a id="more"></a>
+<h1 id="AlphaGo-VS-AlphaGo-Zero"><a href="#AlphaGo-VS-AlphaGo-Zero" class="headerlink" title="AlphaGo VS AlphaGo Zero"></a>AlphaGo VS AlphaGo Zero</h1><blockquote>
+<p>Deepmind:”从空白状态学起，在无任何人类输入的条件下，它能够迅速自学围棋，并以100:0的战绩击败“前辈”。AlphaGo Zero采用了新的reinforcement learning（强化学习的算法），并给该算法带了新的发展。”</p>
+</blockquote>
+<p>阿法狗：基于海量数据样本训练而获得分类预测的能力。</p>
+<p>阿法元AlphaGo Zero：在没有任何训练样本的前提下，通过完全的自学，在极具挑战的领域，达到超人的境地。不再被人类认知所局限，而能够发现新知识，发展新策略。</p>
+<p>技术：强化学习（reinforcement learning）</p>
+<blockquote>
+<p>训练过程和效果区别：阿法元只需要在4个TPU上，花三天时间，自己左右互搏490万棋局。而它的哥哥阿法狗，需要在48个TPU上，花几个月的时间，学习三千万棋局，才打败人类。</p>
+</blockquote>
+<p>AlphaGo Zero降低了训练复杂度，摆脱了对人类标注样本(人类历史棋局)的依赖，让深度学习用于复杂决策更加方便可行。最有趣的是证明了人类经验由于样本空间大小的限制，往往都收敛于局部最优而不自知（或无法发现），而机器学习可以突破这个限制。</p>
+<blockquote>
+<p>AI学习人类下法，而人类的下棋数据将算法导向了局部最优(local optima)了；放弃学习人类下法而使用完全随机的初始下法，训练过程也一直趋于收敛，未出现难以收敛的现象。</p>
+</blockquote>
+<h1 id="AlphaGo-Zero如何实现无师自通？"><a href="#AlphaGo-Zero如何实现无师自通？" class="headerlink" title="AlphaGo Zero如何实现无师自通？"></a>AlphaGo Zero如何实现无师自通？</h1><blockquote>
+<p>AlphaGo采用传统增强学习技术+深度神经网络DNN完成搭建。其基于深度学习的增强学习方法按照使用的网络模型数量可以分为两类:</p>
+<p>1.一类使用一个DNN”端到端”地完成全部决策过程(比如DQN)，这类方法比较轻便，对于离散动作决策更适用;<br>2.另一类使用多个DNN分别学习子策略网络（policy）和胜率值网络（value）(比如之前战胜李世石的AlphaGoGo)，这类方法比较复杂，对于各种决策更通用。</p>
+<p>DNN缺点：DNN的一个缺点日益明显: 训练过程需要消耗大量人类标注样本，而这对于小样本应用领域(比如医疗图像处理)是不可能办到的。</p>
+</blockquote>
+<p>AlphaGo Zero如何实现无师自通？</p>
+<p>1.将策略网络和价值网络合并，组成一个可以同时输出策略p和价值v的新策略-价值网络：AlphaGo Zero采用类似DQN的一个DNN网络实现决策过程，并利用这个DNN同时输出输出policy和value，然后利用一个蒙特卡罗搜索树完成当前步骤选择。</p>
+<blockquote>
+<p>Q: 为什么变分开训练为同时输出？<br>A：policy与value网络相当于共用之前大部分的特征提取层，输出阶段的最后几层结构仍相互独立。<br>作用：节省训练时间 + 混合的policy与value网络也许能适应更多种不同情况。<br>为什么之前要分开学习和输出：当时暂时做不到。</p>
+</blockquote>
+<p>2.训练过程从完全随机开始：只用随机落子作为初始训练样本，且省去快速走子（需要输入大量人类先验知识），从而解除对人工标注样本的依赖。</p>
+<blockquote>
+<p>Q：为什么可解除依赖？<br>A：其特征提取层采用了20或40个残差模块，每个模块包含2个卷积层。与之前采用的12层左右的卷积层相比，残差模块的运用使网络深度获得了很大的提升。AlphaGo Zero不再需要人工提取的特征应该也是由于更深的网络能更有效地直接从棋盘上提取特征。这两点结构上的改进对棋力的提升贡献大致相等。</p>
+</blockquote>
+<ol>
+<li>改CNN为残差网络结构：DNN网络结构上吸收最新进展，采用ResNet网络中的Residual结构作为基础模块.</li>
+</ol>
+<blockquote>
+<p>ResNet使用的Residual结构比GoogLeNet使用的Inception结构在达到相同预测精度条件下的运行速度更快。</p>
+<p>Q：为什么旧版AlphaGo没有做这些改进？<br>A：分拆策略，价值网络，快速走子，是旧版AlphaGo暂时的妥协，而在新版终于得以解决。旧版没有做这些改进，应该是当时还做不到吧。</p>
+</blockquote>
+<h1 id="Zero的意义"><a href="#Zero的意义" class="headerlink" title="Zero的意义"></a>Zero的意义</h1><ul>
+<li>通用人工智能：Google的目的是造出通用人工智能，而通用人工智能是不需要专业知识的。Zero从零学起而达的成就意味着离通用人工智能进了一步。</li>
+<li>不必样本：从应用角度，以后可能不再需要耗费人工去为AI的产品做大量的前期准备工作。</li>
+<li>没有充足样本：通过摆脱对人类经验和辅助的依赖，类似的深度强化学习算法或许能更容易地被广泛应用到其他人类缺乏了解或是缺乏大量标注数据的领域。</li>
+</ul>
+<h1 id="分析：Zero的模型是否具有可移植性？"><a href="#分析：Zero的模型是否具有可移植性？" class="headerlink" title="分析：Zero的模型是否具有可移植性？"></a>分析：Zero的模型是否具有可移植性？</h1><p>1.事实（Zero利用强化学习击败哥哥）</p>
+<blockquote>
+<p>算法拥有了在一张棋盘上，自我进化出近乎理论上限的能力。</p>
+</blockquote>
+<p>2.提问（是否能以同样的思路迅速攻克其他领域？即模型是否有可移植性？）</p>
+<p>3.答疑（不能，因为外部环境的规则是不稳定的变幻莫测的，受很多外部噪声干扰）</p>
+<blockquote>
+<p>围棋规则三千年不变，而其他领域（诸如交通，投资等）没有这样一张亘古不变的棋盘让算法进行计算。</p>
+</blockquote>
+<p>4.解决方法（造一个优秀的外部环境使之尽可能符合业务需求且简单,在模拟环境中对算法和策略迭代）</p>
+<blockquote>
+<p>外部环境复杂，不意味着增强学习算法无法应用。因为我们可以造一个“棋盘”，即模拟出来一个优秀的外部环境去训练算法和优化策略。</p>
+</blockquote>
+<p>5.问题（缺少“棋盘设计者”，需要既深度了解业务，又深度了解算法的人，如AlphaGo的缔造者之一黄博士是围棋高手+算法大神）</p>
+<h1 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h1><ul>
+<li>如何让AI在其他领域（规则不稳定，噪声多）也能实现从零开始地自我进化？可能有什么解决方法？</li>
+<li>“造棋盘”真的可以解决上述问题吗？</li>
+<li>如何理解棋盘设计者这一“概念”？</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Artificial-Intelligence/" rel="tag"># Artificial Intelligence</a>
+          
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
+          
+            <a href="/tags/Reinforcement-Learning/" rel="tag"># Reinforcement Learning</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/29/PM的逻辑——详细阐述/" rel="next" title="PM的逻辑——详细阐述">
+                <i class="fa fa-chevron-left"></i> PM的逻辑——详细阐述
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/30/熵是什么？/" rel="prev" title="熵是什么？">
+                熵是什么？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AlphaGo-VS-AlphaGo-Zero"><span class="nav-number">1.</span> <span class="nav-text">AlphaGo VS AlphaGo Zero</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AlphaGo-Zero如何实现无师自通？"><span class="nav-number">2.</span> <span class="nav-text">AlphaGo Zero如何实现无师自通？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Zero的意义"><span class="nav-number">3.</span> <span class="nav-text">Zero的意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析：Zero的模型是否具有可移植性？"><span class="nav-number">4.</span> <span class="nav-text">分析：Zero的模型是否具有可移植性？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Questions"><span class="nav-number">5.</span> <span class="nav-text">Questions</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

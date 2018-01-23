@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Artificial Intelligence,Machine Learning,Coursera ML," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：本文讲在给定训练集下为神经网络拟合参数的学习算法。反向传播算法——让代价函数J(theta)最小化的算法。即，我们从输出层开始计算δ项，然后我们返回到上一层计算第三隐藏层的δ项，接着我们再往前一步来计算δ(2)。类似于把输出层的误差反向传播给了第3层，然后再传到第二层。这就是反向传播的意思。 反向传播其实就是计算所有δ项， δ是每层的激励值的误差项，δ = 这个单元的激励值 -">
+<meta name="keywords" content="Artificial Intelligence,Machine Learning,Coursera ML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Coursera Machine Learning|Week5:BackPropagation Algorithm">
+<meta property="og:url" content="http://yoursite.com/2017/09/29/Coursera-Machine-Learning-Week5-BackPropagation-Algorithm/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：本文讲在给定训练集下为神经网络拟合参数的学习算法。反向传播算法——让代价函数J(theta)最小化的算法。即，我们从输出层开始计算δ项，然后我们返回到上一层计算第三隐藏层的δ项，接着我们再往前一步来计算δ(2)。类似于把输出层的误差反向传播给了第3层，然后再传到第二层。这就是反向传播的意思。 反向传播其实就是计算所有δ项， δ是每层的激励值的误差项，δ = 这个单元的激励值 -">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://studyai.site/img/16_09_18/001.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/29/22.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_18/002.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/29/21.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/29/22.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_18/003.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_18/004.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_18/005.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_18/006.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/29/23.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_18/007.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_18/008.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_18/011.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_18/012.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_18/013.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_18/014.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/29/31.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/29/32.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/09/29/33.png">
+<meta property="og:image" content="http://studyai.site/img/16_09_18/016.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_13/002.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_13/004.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_13/007.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_13/010.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/05/35.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_13/013.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_13/014.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_13/015.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_13/017.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_13/019.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/05/36.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_13/020.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_13/021.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_13/022.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_16/001.png">
+<meta property="og:updated_time" content="2017-10-05T14:30:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Coursera Machine Learning|Week5:BackPropagation Algorithm">
+<meta name="twitter:description" content="Abstract：本文讲在给定训练集下为神经网络拟合参数的学习算法。反向传播算法——让代价函数J(theta)最小化的算法。即，我们从输出层开始计算δ项，然后我们返回到上一层计算第三隐藏层的δ项，接着我们再往前一步来计算δ(2)。类似于把输出层的误差反向传播给了第3层，然后再传到第二层。这就是反向传播的意思。 反向传播其实就是计算所有δ项， δ是每层的激励值的误差项，δ = 这个单元的激励值 -">
+<meta name="twitter:image" content="http://studyai.site/img/16_09_18/001.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/29/Coursera-Machine-Learning-Week5-BackPropagation-Algorithm/"/>
+
+
+
+
+
+  <title>Coursera Machine Learning|Week5:BackPropagation Algorithm | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/29/Coursera-Machine-Learning-Week5-BackPropagation-Algorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Coursera Machine Learning|Week5:BackPropagation Algorithm</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-29T17:44:25+08:00">
+                2017-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：本文讲在<strong>给定训练集下为神经网络拟合参数的学习算法</strong>。<strong>反向传播算法——让代价函数J(theta)最小化的算法。即，我们从输出层开始计算δ项，然后我们返回到上一层计算第三隐藏层的δ项，接着我们再往前一步来计算δ(2)</strong>。类似于<strong>把输出层的误差反向传播给了第3层，然后再传到第二层</strong>。这就是反向传播的意思。 <strong>反向传播其实就是计算所有δ项， δ是每层的激励值的误差项</strong>，δ = 这个单元的激励值 - 训练样本里的真实值。反向传播和前向传播很相似，只不过<strong>计算方向不同</strong>。反向传播的计算结果<strong>其实是δ值的加权和。权值是这些对应边的强度</strong>。    </p>
+<p>实现将参数从矩阵展开成向量，以便我们在高级最优化步骤中的使用需要。矩阵向量化：thetaVec；向量矩阵化：reshape命令。  而当使用反向传播时，易遇到很多细小的错误，梯度检验方法会帮助确定实现的向前传播和反向传播或者其他的什么算法是100%正确的。梯度检验的原理是双侧差分法求导数。随机初始化theta。以上方法都是训练神经网络的过程中需要用到的。本文后半段详细介绍了训练神经网络的步骤和方法。</p>
+<a id="more"></a>
+<h1 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h1><p>Abstract：本节讲拟合神经网络的代价函数。</p>
+<p><img src="http://studyai.site/img/16_09_18/001.png" alt="1">   </p>
+<p><img src="http://www.z4a.net/images/2017/09/29/22.png" alt="4">   </p>
+<p>如上图，以神经网络在分类问题中的应用为例。假设我们有上图所示的神经网络结构。    </p>
+<ul>
+<li>训练集：(x(1),y(1)),(x(2),y(2)),…,(x(m),y(m))，共m个训练样本(x(i),y(i))</li>
+<li>L：神经网络结构的总层数（total no. of layers in network）<blockquote>
+<p>如上图的L = 4</p>
+</blockquote>
+</li>
+<li>Sl：第l层的神经元的数量（no. of units(not counting bias unit) in layer l），不包括偏置单元<blockquote>
+<p>如：S1 = 3（输入层）；S2 = 5，S3 = 5（隐藏层）；S4 = SL = 4（L = 4）</p>
+</blockquote>
+</li>
+</ul>
+<p>接下来讨论两种分类问题：二元分类和多元分类。    </p>
+<h2 id="二元分类-Binary-classification"><a href="#二元分类-Binary-classification" class="headerlink" title="二元分类(Binary classification)"></a>二元分类(Binary classification)</h2><p>二元分类中的 y = 0 or 1；        </p>
+<p>1个输出单元，神经网络的输出会是一个实数；hΘ(x) ∈ ℝ；    </p>
+<p>输出单元个数：SL = 1（即第L层即输出层的神经元个数为1）；    </p>
+<p><strong>K = 输出层的单元数目。二元分类中K = 1</strong>。 </p>
+<h2 id="多类别分类（Multi-class-classification）"><a href="#多类别分类（Multi-class-classification）" class="headerlink" title="多类别分类（Multi-class classification）"></a>多类别分类（Multi-class classification）</h2><p><img src="http://studyai.site/img/16_09_18/002.png" alt="2">  </p>
+<p><strong>多类别分类问题，会有K个不同的类，即K个输出单元</strong>。    </p>
+<p>我们的输出假设就是个<strong>K维向量</strong>：hΘ(x) ∈ ℝ^K ;输出单元数就是K：SL = K； </p>
+<blockquote>
+<p>如上图4个四维向量。   </p>
+</blockquote>
+<p>注：通常这类多元分类问题，K &gt;= 3。因为若K = 2，直接使用二元分类法即可。 </p>
+<h2 id="定义代价函数"><a href="#定义代价函数" class="headerlink" title="定义代价函数"></a>定义代价函数</h2><p>Abstract：<strong>神经网络里用的代价函数是逻辑回归里的代价函数的一般形式</strong>。我们要把其放到神经网络里去理解，注意<strong>求J(theta)时需要除去正则化项，以避免重复计算</strong>。    </p>
+<p>我们在神经网络里，使用的代价函数，应该是逻辑回归里使用的代价函数的一般形式。    </p>
+<p>逻辑回归的代价函数：</p>
+<p><img src="http://www.z4a.net/images/2017/09/29/21.png" alt="3">    </p>
+<p>注：其中λ2m∑nj=1θ2jλ这一项是个额外的正则化项，是一个jj从1到nn的求和形式。因为我们并没有把偏置项0正则化。    </p>
+<p>而<strong>对于神经网络，我们使用的代价函数是上式的一般形式</strong>：    </p>
+<p><img src="http://www.z4a.net/images/2017/09/29/22.png" alt="4">    </p>
+<ul>
+<li>神经网络输出的K维向量为hΘ(x)：hΘ(x) ∈ ℝ^K ;(hΘ(x))i表示第i个输出  </li>
+<li>∑Kk=1：为求和项，对K个输出单元求和；如我们有4个输出单元在神经网络的最后一层，则这个求和项为K从1到4所对应的每一个逻辑回归算法的代价函数之和。<blockquote>
+<p>eg.hΘ(x) = [0,0,0,1]T ,则求和项的结果为0+0+0+1 = 1，表示多元分类后的最终结果；</p>
+</blockquote>
+</li>
+<li>式子的最后一项λ/2m….：为一个求和项，类似逻辑回归中用到的正则化项；<strong>它的作用在于把这些项全部加起来，即对所有的Θji(l)的值都相加，目的是除去那些对应于偏差值的项Θj0(l)，因为我们在计算神经元的激励值时已经把这些项（类似于偏置单元的项）计算进去了</strong>。类比于我们在做逻辑回归的时候，我们就不应该把这些项加入到正规化项里去，因为我们并不想正规化这些项，并把这些项设定为0。</li>
+</ul>
+<h1 id="反向传播（B-P-Backpropagation-算法）"><a href="#反向传播（B-P-Backpropagation-算法）" class="headerlink" title="反向传播（B-P(Backpropagation)算法）"></a>反向传播（B-P(Backpropagation)算法）</h1><p>Abstract：反向传播算法——让代价函数J(theta)最小化的算法。即，我们从输出层开始计算δ项，然后我们返回到上一层计算第三隐藏层的δ项，接着我们再往前一步来计算δ(2)。类似于把输出层的误差反向传播给了第3层，然后再传到第二层。这就是反向传播的意思。     </p>
+<p><img src="http://studyai.site/img/16_09_18/003.png" alt="41">   </p>
+<p>上图是上一节写好的代价函数。    </p>
+<p>目的：<strong>找到使代价函数J(Θ)最小的Θ值</strong> </p>
+<p><img src="http://studyai.site/img/16_09_18/004.png" alt="42">     </p>
+<p>方法：<strong>梯度下降计算法</strong>。  </p>
+<p>操作：写好一个通过参数Θ，然后计算：</p>
+<p><img src="http://studyai.site/img/16_09_18/005.png" alt="43">     </p>
+<p>下面将详解梯度下降计算。    </p>
+<h2 id="梯度下降计算"><a href="#梯度下降计算" class="headerlink" title="梯度下降计算"></a>梯度下降计算</h2><p><img src="http://studyai.site/img/16_09_18/006.png" alt="44"> </p>
+<h3 id="情况1：只有一个训练样本。"><a href="#情况1：只有一个训练样本。" class="headerlink" title="情况1：只有一个训练样本。"></a>情况1：只有一个训练样本。</h3><p>情况：假设我们整个训练集只包含一个训练样本：(x,y)   </p>
+<p>计算方法：  </p>
+<p>1.<strong>用向前传播方法计算</strong>：在给定输入时，假设函数的输出结果：</p>
+<p><img src="http://www.z4a.net/images/2017/09/29/23.png" alt="45">       </p>
+<p><img src="http://studyai.site/img/16_09_18/007.png" alt="46">     </p>
+<p>2.<strong>通过上面的层层推导，我们即可得出假设函数的输出结果</strong>。  </p>
+<blockquote>
+<p>注：a(i)表示第i层经过函数计算后输出的结果。若该神经网络共K层，则h(Θ)X = a(k). </p>
+</blockquote>
+<p>3.然后，<strong>为了计算导数项，我们采用反向传播算法</strong>。</p>
+<p><strong>反向传播算法</strong>：直观上理解，就是<strong>对每一个节点求下面这一个误差项</strong>：      </p>
+<p><img src="http://studyai.site/img/16_09_18/008.png" alt="51">   </p>
+<p>δj(l)：代表了第l层的第j个结点的激励值的误差；而aj(l)表示第l层的第j个结点的激励值。</p>
+<p>接下来，我们用四层的神经网络结构做例子 。   </p>
+<p>计算公式：每一项的输出单元(layer L = 4) —— δj(4) = aj(4) − yj   </p>
+<p>理解上式：  </p>
+<ul>
+<li><strong>对每一个输出单元，计算δ项，则第4层的第j个单元的δ = 这个单元的激励值 - 训练样本里的真实值。此即为误差求法。故aj(4)亦可写成hΘ(x)j：δj(4) = hΘ(x)j−yj</strong>。    </li>
+<li>若把δ、a、y这三项都看作向量的话，那么上面的式子你也可以写出向量化的实现：δ(4) = a(4)−y。这里的δ(4)、a(4)和y都是一个向量，并且向量维数等于输出单元的数目。</li>
+</ul>
+<p>计算过程（<strong>从后往前计算每层的误差项δ</strong>）： </p>
+<ul>
+<li>1.由δj(4) = aj(4) − yj计算出δ(4)</li>
+<li>2.由δ(3) = (Θ(3))Tδ(4).∗g′(z(3))计算出δ(3)  </li>
+</ul>
+<blockquote>
+<p>这里的点乘.∗.∗是我们从MATLAB里知道的对y元素的乘法操作，指的是两个向量中元素间对应相乘。<br>其中g′(z(3))g′(z(3))这一项其实是对激励函数gg在输入值为z(3)z(3)的时候所求的导数。g′(z(3)) = a(3).∗(1−a(3))，其中1是元素都为1的向量。    </p>
+</blockquote>
+<ul>
+<li>3.同理由δ(2)=(Θ(2))Tδ(3).∗g′(z(2))求出δ(2)</li>
+</ul>
+<blockquote>
+<p>注：这里我们没有δ(1)项，因为第一层是输入层，不存在误差。所以这个例子中，我们的δ项就只有第2层和第3层。 </p>
+</blockquote>
+<p><strong>反向传播法的方法阐释：我们从输出层开始计算δ项，然后我们返回到上一层计算第三隐藏层的δ项，接着我们再往前一步来计算δ(2)。类似于把输出层的误差反向传播给了第3层，然后再传到第二层。这就是反向传播的意思</strong>。  </p>
+<h3 id="情况2：当我们有一个很大的训练样本"><a href="#情况2：当我们有一个很大的训练样本" class="headerlink" title="情况2：当我们有一个很大的训练样本"></a>情况2：当我们有一个很大的训练样本</h3><p>情况：假设我们有m个样本的训练集: Training set (x(1),y(1)),…,(x(m),y(m))</p>
+<p>计算过程： 略   </p>
+<h1 id="反向传播算法的直观介绍"><a href="#反向传播算法的直观介绍" class="headerlink" title="反向传播算法的直观介绍"></a>反向传播算法的直观介绍</h1><h2 id="神经网络计算过程"><a href="#神经网络计算过程" class="headerlink" title="神经网络计算过程"></a>神经网络计算过程</h2><p><img src="http://studyai.site/img/16_09_18/011.png" alt="52">     </p>
+<p>如上图神经网络，包含2个输入单元（不包括偏差单元）。在第2、3层分别有2个隐藏单元（不包括偏差单元），最后的输出层有1个输出单元。   </p>
+<h2 id="前向传播"><a href="#前向传播" class="headerlink" title="前向传播"></a>前向传播</h2><p><img src="http://studyai.site/img/16_09_18/012.png" alt="53">     </p>
+<p>如上图展示了这个神经网络的前向传播的运算过程。而反<strong>向传播算法的运算过程非常类似于此，只有计算的方向不同而已</strong>。    </p>
+<h2 id="代价函数-1"><a href="#代价函数-1" class="headerlink" title="代价函数"></a>代价函数</h2><p>为了更好的理解反向传播算法的原理，我们把目光转向代价函数：  </p>
+<p><img src="http://studyai.site/img/16_09_18/013.png" alt="54">     </p>
+<p>上面的代价函数只有一个输出单元。若有不止一个输出单元，则我们需要对所有输出单元进行求和运算。    </p>
+<p>而且，在只有一个输出单元时，若不考虑正则化即λ=0。所以后面的正则化项也没有了。</p>
+<p><img src="http://studyai.site/img/16_09_18/014.png" alt="55">     </p>
+<p>这个求和运算括号里面与第i个训练样本对应的代价项，也就是说(x(i),y(i))对应的代价项，将有下面这个式子决定：</p>
+<p><img src="http://www.z4a.net/images/2017/09/29/31.png" alt="11">   </p>
+<p>而这个代价函数所扮演的角色可以看做是平方误差，当然，如果你愿意，你可以把cost(i)想象成：   </p>
+<p><img src="http://www.z4a.net/images/2017/09/29/32.png" alt="12">      </p>
+<p>故，这里的<strong>cost(i)表征了该神经网络是否能准确地预测样本i的值，也就是输出值，和实际观测值y(i)y(i)的接近程度</strong>。    </p>
+<h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><p>直观理解：<strong>反向传播算法就是在计算所有这些δ项</strong>：δ(l)j=“error” of cost for a(l)j (unit j in layer l).  可以把它们看作是这些激励值的“误差”(注意这些激励值是第l层中的第j项)。    </p>
+<p>更正式一点的说法是<strong>δ项实际上是关于zj(l)的偏微分</strong>，也就是cost函数关于我们计算出的输入项的加权和，也就是z项的偏微分。   </p>
+<p><img src="http://www.z4a.net/images/2017/09/29/33.png" alt="12"></p>
+<p>如果我们观察该神经网络内部的话，把这些z(l)jzj(l)项稍微改一点点，那就将影响到神经网络的输出，并且最终会改变代价函数的值。    </p>
+<p>因此，它们度量着我们对神经网络的权值做多少的改变，对中间的计算量影响是多少，进一步对整个神经网络的输出h(x)h(x)影响多少，以及对整个的代价影响多少。      </p>
+<p>我们再深入一点，研究一下反向传播的过程，对于输入层，如果我们设置δδ项，假设我们进行第i个训练样本，那么：δ1(4)=y(i)−a1(4) </p>
+<p>接下来我们要对这些值进行反向传播，算出δ1(3)、δ2(3)，然后同样的再进行下一层的反向传播，算出δ1(2)、δ2(2)。    </p>
+<p>接下来，我们来看看如何计算δ2(2)：   </p>
+<p><img src="http://studyai.site/img/16_09_18/016.png" alt="12">  </p>
+<p>![13]<a href="http://studyai.site/img/16_09_18/017.png" target="_blank" rel="noopener">http://studyai.site/img/16_09_18/017.png</a>) </p>
+<p>实际上，我们要做的是我们要<strong>用下一层的δ值和权值相乘，然后加上另一个δ值和权值相乘的结果</strong>。也就是说，它<strong>其实是δ值的加权和</strong>。<strong>权值是这些对应边的强度</strong>。</p>
+<p>计算过程：δ2(2) = Θ12(2)<em>δ1(3) + Θ22(2)</em>δ2(3)   </p>
+<p>同理，若计算δ2(3): δ2(3) = Θ12(3)*δ1(4).    </p>
+<p>注：本节中的δ值仅仅是隐藏层中的没有包括偏差单元:”+1”的。<strong>包不包括偏差单元取决于你如何实现这个反向传播算法</strong>，你也可以对这些偏差单元计算δ的值，这些偏差单元总是取为”+1”的值。通常来说，我在执行反向传播的时候，我是算出了这些偏差单元的δ值，但我<strong>通常忽略掉它们</strong>，而不是把它们带入计算，因为它们其实并不是计算那些微积分的必要部分，</p>
+<h1 id="BP算法练习"><a href="#BP算法练习" class="headerlink" title="BP算法练习"></a>BP算法练习</h1><h2 id="将参数从矩阵展开成向量"><a href="#将参数从矩阵展开成向量" class="headerlink" title="将参数从矩阵展开成向量"></a>将参数从矩阵展开成向量</h2><p>Abstract：实现将参数从矩阵展开成向量，以便我们在高级最优化步骤中的使用需要。矩阵向量化：thetaVec；向量矩阵化：reshape命令。  而当使用反向传播时，易遇到很多细小的错误，梯度检验方法会帮助确定实现的向前传播和反向传播或者其他的什么算法是100%正确的。梯度检验的原理是双侧差分法求导数。随机初始化theta。以上方法都是训练神经网络的过程中需要用到的。</p>
+<p>目的：实现将参数从矩阵展开成向量，以便我们在高级最优化步骤中的使用需要。    </p>
+<pre><code>function[jVal, gradient] = costFunction(theta)  
+... 
+optTheta = fminunc(@costFucntion, initialTheta, options)    
+</code></pre><p>如上代码段，对代价函数costFunction(theta)传入参数theta，函数返回值是jVal和导数值gradient，然后将返回值再传递给高级最优化算法fminunc .   </p>
+<p>其中costFunction中的参数theta、返回值gradient和fiminunc的参数initialTheta都是一个R^(n+1)阶的向量 .</p>
+<blockquote>
+<p>注：fiminunc不是唯一算法，可使用他法。 </p>
+</blockquote>
+<p>但，对神经网络，我们的参数将不再是向量，而是矩阵。  </p>
+<p>以一个四层完整的神经网络为例：  </p>
+<p>其参数theta所代表的参数矩阵为矩阵Θ(1) ,Θ(2),Θ(3)，在Octave中，我们可以设为Theta1,Theta2,Theta3。</p>
+<p><img src="http://studyai.site/img/16_10_13/002.png" alt="1">  </p>
+<p>类似的，这些梯度项gradient也是costFunction的返回值之一。这些梯度矩阵的计算结果是D(1),D(2),D(3)，在Octave中用D1,D2,D3来表示。</p>
+<p><img src="http://studyai.site/img/16_10_13/004.png" alt="2"> </p>
+<p>下面将介绍，如何取出这些矩阵并将它们展开成向量，以便他们最终成为恰当的格式以传入initialTheta里，并得到正确的梯度返回值gradient。    </p>
+<h3 id="阶段1：抽象解释算法"><a href="#阶段1：抽象解释算法" class="headerlink" title="阶段1：抽象解释算法"></a>阶段1：抽象解释算法</h3><p>具体来说，假设我们有这样一个神经网络：  </p>
+<p><img src="http://studyai.site/img/16_10_13/007.png" alt="3">  </p>
+<p>上图神经网络：10个输入单元(s1=10)，10个隐藏单元(s2=10)，1个输出单元(s3=1)</p>
+<p>矩阵Θ的维度和矩阵D的维度将由这个神经网络的结构所决定，如：Θ(1)是一个10×11的矩阵。   </p>
+<p>因此，在octave中，矩阵向量化的步骤：    </p>
+<p>1.取出Θ(1) ,Θ(2),Θ(3)；即用下面这段代码，取出三个Θ矩阵中的所有元素，然后把他们全部展开，成为一个很长的向量，也就是thetaVec。同理，取出D矩阵的所有元素，然后展开成一个长向量DVec（：把所有元素集中到一列）。</p>
+<pre><code>thetaVec = [Theta1(:);Theta2(:);Theta3(:)]; 
+AND
+DVec = [D1(:);D2(:);D3(:)];
+</code></pre><blockquote>
+<p>thetaVec：将参数向量化，即矩阵向量化。构成为xx+Vec，Vec是向量化的意思，Vec前面的代表要被向量化的对象。        </p>
+</blockquote>
+<p>2.[返回路径]如果想从向量表达式返回到矩阵表达式，就使用reshape函数，传入向量区间和矩阵的行数和列数，即可得到对应的矩阵。 </p>
+<pre><code>Theta1 = reshape(thetaVec(1:110),10,11);
+Theta2 = reshape(thetaVec(111:220),10,11);
+Theta3 = reshape(thetaVec(221:231),10,11);
+</code></pre><blockquote>
+<p>注：reshape(thetaVec(start:end), #row, #column)</p>
+</blockquote>
+<h3 id="阶段2：Octave展示算法"><a href="#阶段2：Octave展示算法" class="headerlink" title="阶段2：Octave展示算法"></a>阶段2：Octave展示算法</h3><p>Octave展示上述计算过程：    </p>
+<p>1.假设Theta1是一个10X11的单位矩阵： </p>
+<pre><code>&gt;&gt; Theta1 = 1*ones(10,11);
+&gt;&gt; Theta1
+Theta1 =
+1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1
+</code></pre><p>Theta2是一个元素都为2的10X11矩阵：</p>
+<pre><code>&gt;&gt; Theta2 = 2*ones(10,11)
+&gt;&gt; Theta2
+Theta2 =
+   2   2   2   2   2   2   2   2   2   2   2
+   2   2   2   2   2   2   2   2   2   2   2
+   2   2   2   2   2   2   2   2   2   2   2
+   2   2   2   2   2   2   2   2   2   2   2
+   2   2   2   2   2   2   2   2   2   2   2
+   2   2   2   2   2   2   2   2   2   2   2
+   2   2   2   2   2   2   2   2   2   2   2
+   2   2   2   2   2   2   2   2   2   2   2
+   2   2   2   2   2   2   2   2   2   2   2
+   2   2   2   2   2   2   2   2   2   2   2
+</code></pre><p>假设Theta3是一个1X11的元素为3的矩阵：</p>
+<pre><code>&gt;&gt; Theta3 = 3*ones(1,11)
+&gt;&gt; Theta3
+Theta3 = 
+3   3   3   3   3   3   3   3   3   3   3
+</code></pre><p>2.把上面三个矩阵变成一个长向量thetaVec：    </p>
+<pre><code>&gt;&gt; thetaVec = [Theta1(:);Theta2(:);Theta3(:)];
+&gt;&gt; thetaVec 
+
+thetaVec = 
+   1
+   1
+   1
+   1
+   1
+   1
+   1
+   1
+   1
+   1
+   1
+   1
+   ...
+</code></pre><p>thetaVec是一个231X1的向量，包含所有矩阵的元素：</p>
+<pre><code>&gt;&gt; size(thetaVec)
+ans = 231  1
+</code></pre><p>若想返回原来的3个矩阵，则可对thetaVec用resharp命令。</p>
+<p>比如，我们可以抽出前110个元素，来重组一个10×1110×11的矩阵，即Theta1：</p>
+<pre><code>&gt;&gt; reshape(thetaVec(1:110),10,11)
+ans =       
+   1   1   1   1   1   1   1   1   1   1   1
+   1   1   1   1   1   1   1   1   1   1   1
+   1   1   1   1   1   1   1   1   1   1   1
+   1   1   1   1   1   1   1   1   1   1   1
+   1   1   1   1   1   1   1   1   1   1   1
+   1   1   1   1   1   1   1   1   1   1   1
+   1   1   1   1   1   1   1   1   1   1   1
+   1   1   1   1   1   1   1   1   1   1   1
+   1   1   1   1   1   1   1   1   1   1   1
+   1   1   1   1   1   1   1   1   1   1   1
+</code></pre><h3 id="阶段3：将算法应用到学习算法"><a href="#阶段3：将算法应用到学习算法" class="headerlink" title="阶段3：将算法应用到学习算法"></a>阶段3：将算法应用到学习算法</h3><p>首先，假设我们有一些初始参数值：Θ(1) ，Θ(2)，Θ(3)；</p>
+<p>目的：</p>
+<p>1.取出这些参数并将他们展开成一个长向量作为initialTheta，代入fiminunc函数;</p>
+<p>2.执行代价函数@costFunction，实现算法如下。</p>
+<pre><code>1：fiminunc(@costFunction, initialTheta, options)
+
+2：function [jval, gradientVec] = costFunction(thetaVec)
+</code></pre><p>步骤：</p>
+<p>1.通过已知的向量thetaVec使用重组函数reshape得到Θ(1)，)Θ(2),Θ(3)；</p>
+<p>2.执行向前传播和反向传播来计算出导数D(1)，D(2),D(3)和代价函数J(Θ)；</p>
+<p>3.取出这些导数值，并让它们保存和我展开的ΘΘ值相同的顺序来展开它们(按照D(1)，D(2),D(3)的顺序)，得到gradientVec，这个值由我的代价函数返回，它可以以一个向量的形式返回这些导数值。</p>
+<p>两种表达式各自的优点：</p>
+<ul>
+<li>使用矩阵表达式的好处：当你的参数以矩阵的形式存储时，你在进行正向传播和反向传播时，你会觉得更加方便。当你将参数存储为矩阵时，一大好处是充分利用了向量化的实现过程。</li>
+<li>向量表达式的优点：如果你有像thetaVec或者DVec这样的矩阵，当你使用一些高级的优化算法时，这些算法通常要求你所有的参数都展开成一个长向量的形式。</li>
+</ul>
+<h2 id="梯度检验（Gradient-Checking）"><a href="#梯度检验（Gradient-Checking）" class="headerlink" title="梯度检验（Gradient Checking）"></a>梯度检验（Gradient Checking）</h2><p>为什么要梯度检验：</p>
+<p>当使用反向传播时，易遇到很多细小的错误。梯度检验方法会帮助确定你实现的向前传播和反向传播或者其他的什么算法是100%正确的。</p>
+<h3 id="梯度检验原理"><a href="#梯度检验原理" class="headerlink" title="梯度检验原理"></a>梯度检验原理</h3><p><img src="http://studyai.site/img/16_10_13/010.png" alt="4">   </p>
+<p>如上图，假设有一个假设函数J(theta)，若想估计在某一点上的导数值，则此导数 =  其切线的斜率。用双侧差分法计算近似导数：</p>
+<p>1.找到θ+ε和θ−ε这两个点，用一条直线把这两点连起来；</p>
+<p>2.用两点的连线作导数近似值，即：(∂/∂θ)*J(θ) ≈ [J(θ+ε)−J(θ−ε)]/2ε;</p>
+<blockquote>
+<p>通常给ε取很小的值，如ε=10^−4;</p>
+</blockquote>
+<h3 id="Octave中实现梯度检验"><a href="#Octave中实现梯度检验" class="headerlink" title="Octave中实现梯度检验"></a>Octave中实现梯度检验</h3><pre><code>gradApprox = (J(theta + EPSILON) - J(theta - EPSILON))/(2*EPSILON)
+</code></pre><p>梯度检验在octave中的实现要用上面的代码。你的程序要调用gradApprox来计算这个函数。这个函数会通过这个公式：[J(θ+ε)−J(θ−ε)]/2ε，它会给出这点导数的数值估计。</p>
+<h3 id="当θ是向量时"><a href="#当θ是向量时" class="headerlink" title="当θ是向量时"></a>当θ是向量时</h3><p>在前面的例子中，θ是实数。接下来我们来讨论一种更普遍的情况：θ为向量参数。</p>
+<p>假设θ是一个n维向量（它可能是我们的神经网络参数Θ1，Θ2，Θ3的展开形式），所以θ是一个有n个元素的向量。θ=[θ1,θ2,θ3,…,θn] </p>
+<hr>
+<p>我们可以用类似的想法来估计所有偏导数项：</p>
+<p><img src="http://www.z4a.net/images/2017/10/05/35.png" alt="6"> </p>
+<p>分别对θ向量的每个元素使用双侧差分来计算导数。   </p>
+<p>上面公式给出一个对任意参数求近似偏导数的方法。具体的说，要实现的是下面这个程序：</p>
+<pre><code>//双侧差分法计算导数
+for i = 1:n,
+    thetaPlus = theta;
+    thetaPlus(i) = thetaPlus(i) + EPSILON;
+    thetaMinus = theta;
+    thetaMinus(i) = thetaMinus(i) - EPSILON;
+    gradApprox(i) = (J(thetaPlus) - J(thetaMinus))/(2*EPSILON);
+end;
+</code></pre><p>我们实现神经网络时，我们用for循环来计算代价函数对每个网络中的参数的偏导数gradApprox，然后和我们从反向传播得到的导数DVec进行对比，看是否相等或近似于DVec。</p>
+<p>如果这两种计算导数的方法给了你相同的结果，或者非常接近的结果，那么我就非常确信我实现的反向传播是正确的。然后我把这些DVec向量用在梯度下降法，或者其他高级优化算法里。</p>
+<h3 id="总结：如何实现梯度检验"><a href="#总结：如何实现梯度检验" class="headerlink" title="总结：如何实现梯度检验"></a>总结：如何实现梯度检验</h3><ul>
+<li>实现反向传播来计算DVec(D(1)，D(2)，D(3)）</li>
+<li>用gradApprox实现数值梯度检验</li>
+<li>然后确定DVec和gradApprox给出的结果非常相近</li>
+<li>在使用你的代码去学习训练你的网络之前，重要的是要关掉梯度检验，不在使用gradApprox这个数值导数公式（这么做的原因是，这个梯度检验的计算量非常大，它是一个非常慢的计算近似导数的方法。而相对的反向传播算法是一个在计算导数上效率更高的方法。）</li>
+</ul>
+<blockquote>
+<p>如果你在每次的梯度下降法迭代时，都运行数值梯度检验，你的程序会变得非常慢，因为数值检验程序比反向传播算法要慢得多。</p>
+</blockquote>
+<h2 id="随机初始化θ"><a href="#随机初始化θ" class="headerlink" title="随机初始化θ"></a>随机初始化θ</h2><p>为什么要随机初始化θ：</p>
+<p>当你运行一个算法（例如梯度下降算法，或者其他高级优化算法）时，我们需要给变量θ一些初始值。</p>
+<pre><code>optTheta = fminunc(@costFunction, initialTheta, options)
+</code></pre><p>梯度下降算法，我们需给定θ一些初始值，接下来使用梯度下降方法慢慢地执行这些步骤使其下降，使J(θ)下降到最小。</p>
+<p>是否可将θ的初始值设置为0向量？Set initialTheta = zeros(n,1) </p>
+<p>在逻辑回归时，初始化所有变量为0是可行的。但在训练神经网络时，这样做是不行的。   </p>
+<p>以训练下面的神经网络为例：</p>
+<p><img src="http://studyai.site/img/16_10_13/013.png" alt="8"> </p>
+<p>若将所有变量初始化为0：Θij(l) = 0  for all i,j,l.</p>
+<p>当初始化下面这些颜色两两相同的权重时，这些权重都被赋予相同的初始值0：</p>
+<p><img src="http://studyai.site/img/16_10_13/014.png" alt="11"></p>
+<p>则经过计算后，两个隐藏单元a1，a2的值是相同的：a1(2) = a2(2);</p>
+<p>由于权重相同，亦可证明：δ1(2) = δ2(2)；</p>
+<p>进一步推导，以这两条红色权重为例，代价函数的关于这两个权重的偏导数是相等的：(∂/∂Θ01(1))J(Θ) = (∂/∂Θ02(1))J(Θ)</p>
+<p><img src="http://studyai.site/img/16_10_13/015.png" alt="12"></p>
+<p>这意味着：一旦更新梯度下降方法，第一个红色权重也会更新，等于学习率乘以这个式子:(∂/∂Θ01(1))J(Θ)；第二条红色权重更新为学习率乘以这个式子：(∂/∂Θ02(1))J(Θ)。</p>
+<p>即使权重现在不都为0，但参数值最后也互为相等。</p>
+<p>所以每次更新后，两个隐藏单元的输入的对应的参数将是相同的。这就意味着即使经过一次梯度下降的循环后，你会发现两个隐藏单元任然是两个完全相同的输入函数：a1(2) = a2(2)；</p>
+<p>这也意味着，这个神经网络并不能计算出什么更有价值的东西。</p>
+<p>想象一下，不止有两个隐藏单元，而是有很多的隐藏单元，这就是会导致所有的隐藏单元都在计算相同的特征，这是完全多余的表达，因为这意味着最后的逻辑回归单元只会得到一种特征。这样便阻止了神经网络学习出更有价值的信息。</p>
+<h3 id="随机初始化Θ引入"><a href="#随机初始化Θ引入" class="headerlink" title="随机初始化Θ引入"></a>随机初始化Θ引入</h3><p>目的：为了解决这个神经网络变量初始化的问题，我们采用随机初始化的方法。</p>
+<p>具体分析：上面的问题根本在于所有权重相同的问题，即对称权重。故随机初始化解决的是如何打破这种对称性(Symmetry breaking)。</p>
+<p>我们需要做的是对Θ(l)ijΘi的每个值进行初始化，范围在[−ε,ε][−ε,ε]之间（−ε≤Θij(l)≤ε）</p>
+<p>在Octave中初始化Θ：</p>
+<pre><code>Theta1 = rand(10,11)*(2*INIT_EPSILON) - INIT_EPSILON;
+Theta2 = rand(1,11)*(2*INIT_EPSILON) - INIT_EPSILON;
+</code></pre><p>其中rand(10,11)代表一个10*11的随机矩阵，这个rand()函数就是用来得到一个任意的随机矩阵方法，并且所有的值都是介于0到1的实数。</p>
+<p>若取0到1之间的一个数和2ε相乘再减去ε，然后得到的结果就是一个在[−ε,ε]之间的数。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>为训练神经网络，应对权重进行随机初始化为[−ε,ε]之间的值。ε是接近于0的小数，然后进行反向传播，执行梯度检查，使用梯度下降或者高级的优化算法，试着使代价函数J(Θ)J(Θ)达到最小，从某个随机选取的参数ΘΘ开始。通过打破对称性的过程，我们希望梯度下降或者其他高级优化算法可以找到Θ的最优值。</p>
+<h2 id="神经网络总体回顾：算法合体"><a href="#神经网络总体回顾：算法合体" class="headerlink" title="神经网络总体回顾：算法合体"></a>神经网络总体回顾：算法合体</h2><p>Abstract：对神经网络的所有内容进行一个整体回顾，看看这些零散的内容相互之间有怎样的联系，以及神经网络学习算法的总体实现过程。</p>
+<h3 id="第一步，选择一个合适的神经网络结构"><a href="#第一步，选择一个合适的神经网络结构" class="headerlink" title="第一步，选择一个合适的神经网络结构"></a>第一步，选择一个合适的神经网络结构</h3><p>搭建网络的大体框架，框架指神经元之间的链接模式。可能会从以下几种结构中选择：</p>
+<p><img src="http://studyai.site/img/16_10_13/017.png" alt="13"></p>
+<ul>
+<li>第一种网络结构包含三个输入单元、五个隐藏单元、和四个输出单元。</li>
+<li>第二种包含三个输入单元，两组五个隐藏单元作为隐藏层，四个输出单元。</li>
+<li>第三种组合是三个输入单元，三组五个隐藏单元作为隐藏层，四个输出单元。</li>
+</ul>
+<p>上面就是可能选择的结构，即每一层可选择多少个隐藏单元，多少个隐藏层。这些都是构建框架时的选择。</p>
+<p>1.输入单元数量已定义：确定了特征集x(i)对应的输入单元数目 = 确定了特征x(i)的维度 = 确定输入单元的数目</p>
+<p>2.输出单元数目：多类别分类中，输出层的单元数目将会由分类问题中所要区分的类别个数确定</p>
+<blockquote>
+<p>若多类别分类问题中，若y的取值范围在1，2，…，10之间，则有10个可能的分类，记得要将y写成向量形式，如：<br>y = [1,0,0,…,0]</p>
+<p>若要表示5个分类，即y = 5，则在你的神经网络中，不能直接用5来表达，而是用10个输出单元来表示，向量为：y = [0,0,0,0,1,0,0,0,0,0]</p>
+</blockquote>
+<p>3.隐藏层层数：默认只使用单个隐藏层；若使用超过一层，则默认每个隐藏层都拥有相同单元数。所以后面的两种神经网络结构的隐藏层都拥有相同的单元数：</p>
+<p><img src="http://studyai.site/img/16_10_13/019.png" alt="14"></p>
+<p>4.隐藏单元数目：越多越好。不过，需要注意的是，如果有大量的隐藏单元，计算量一般会比较大。并且，一般来说，每个隐藏层所包含的单元数量还应该和输入x的维度相匹配，也要和特征的数目相匹配。可能隐藏单元的数目和输入特征的数量相同，或者是它的二倍或者三倍、四倍。因此，隐藏单元的数目需要和其他参数相匹配。一般来说隐藏单元的数目取稍大于输入特征数目都是可以接受的。</p>
+<h3 id="训练神经网络的步骤"><a href="#训练神经网络的步骤" class="headerlink" title="训练神经网络的步骤"></a>训练神经网络的步骤</h3><p>1.构建一个神经网络并随机初始化权值（Randomly initialize Weight）；通常把权值初始化为很小的值，接近于0；</p>
+<p>2.执行向前传播算法，也就是对于神经网络的任意一个输入x(i)计算出对应的hΘ(x(i))；</p>
+<p>3.通过代码计算出代价函数J(Θ)J(Θ)</p>
+<p>4.执行反向传播算法(Backprop)来算出这些偏导数：(∂/∂Θjk(l))J(Θ)</p>
+<blockquote>
+<p>具体来说，我们要对所有训练集数据使用一个for循环进行遍历每一个样本（实际上有更复杂的方式来替代for循环来实现，但对于第一次实现神经网络的训练过程，不建议使用for循环以为的方式，因为这种方式更有助于第一次使用时的理解）</p>
+</blockquote>
+<pre><code>for i = 1:m
+</code></pre><p> <img src="http://www.z4a.net/images/2017/10/05/36.png" alt="7"> </p>
+<p>5.使用梯度检查来校验结果。用梯度检查来比较这些已经用反向传播算法得到的偏导数值(∂/∂Θjk(l))J(Θ)与用数值方法得到的估计值进行比较，来检查，确保这两种方法得到值是基本相近的。</p>
+<blockquote>
+<p>通过梯度检查，我们能确保我们的反向传播算法得到的结果是正确的，但必须要说明的一点是，检查结束后我们需要去掉梯度检查的代码，因为梯度检查计算非常慢。</p>
+</blockquote>
+<p>6.使用一个最优化算法（比如说梯度下降算法或者其他更加高级的优化方法，比如说BFGS算法，共轭梯度法，或者其他一些已经内置到fminunc函数中的方法），将所有这些优化方法和反向传播算法相结合，这样我们就能计算出这些偏导数项的值(∂/∂Θjk(l))J(Θ)。</p>
+<blockquote>
+<p>到现在，我们已经知道了如何计算代价函数J(Θ)J(Θ)，我们知道了如何使用反向传播算法来计算偏导数(∂/∂Θjk(l))J(Θ)，那么我们就能使用某个最优化方法来最小化J(Θ)关于Θ的函数值。</p>
+</blockquote>
+<p>BTW: 对于神经网络代价函数J(Θ)是一个非凸函数，因此理论上是能够停留在局部最小值的位置。实际上，梯度下降算法和其他一些高级优化方法理论上都能收敛于局部最小值，但一般来讲这个问题其实并不是什么要紧的事，尽管我们不能保证这些优化算法一定会得到全局最优值，但通常来讲，像梯度下降这类的算法在最小化代价函数J(Θ)的过程中，还是表现的很不错的，通常能够得到一个很小的局部最小值，尽管这可能不一定是全局最优值。</p>
+<h3 id="梯度下降法在神经网络中的直观理解"><a href="#梯度下降法在神经网络中的直观理解" class="headerlink" title="梯度下降法在神经网络中的直观理解"></a>梯度下降法在神经网络中的直观理解</h3><p><img src="http://studyai.site/img/16_10_13/020.png" alt="15"></p>
+<p>假设这个神经网络中只有两个参数值：Θ12(1),Θ11(1),则代价函数J(Θ)度量的就是这个神经网络对训练数据的拟合情况。</p>
+<p>所以，如果你取某个参数，比如说在这样一个局部最优值：</p>
+<p><img src="http://studyai.site/img/16_10_13/021.png" alt="16"></p>
+<p>这一点的位置所对应的参数Θ的情况是对于大部分的训练数据，我的假设函数的输出会非常接近于y(i): hΘ(x(i)) ≈ y(i)</p>
+<p>若是这样，代价函数J(Θ)值就会很小。</p>
+<p>而反过来，如果我们取这个值, 我们的代价函数J(Θ)J(Θ)值就会很大。</p>
+<p><img src="http://studyai.site/img/16_10_13/022.png" alt="17"></p>
+<p>梯度下降原理：我们从某个随机的初始点开始，它将会不停地下降，那么反向传播算法的目的就是算出梯度下降的方向，而梯度下降的过程就是沿着这个方法一点点地下降，一直到我们希望得到的点，这一点即我们希望找到的局部最优点。</p>
+<h1 id="神经网络实现自动驾驶"><a href="#神经网络实现自动驾驶" class="headerlink" title="神经网络实现自动驾驶"></a>神经网络实现自动驾驶</h1><p><img src="http://studyai.site/img/16_10_16/001.png" alt="18"></p>
+<p>如图：</p>
+<p>左下方：汽车看到的前方路况图像，是汽车前方摄像头每2秒采集且压缩处理后得到的一张30*32图像。从中可看见道路。</p>
+<p>左上方：第一个水平进度条显示驾驶员所选方向，第二个显示学习算法所选方向。含义为：白色区段偏左表示向左转；反之向右转。</p>
+<blockquote>
+<p>实际上神经网络在开始学习之前，你会看到网络的输出是一条灰色的区段，覆盖着整个区域，只有在学习算法运行足够长的时间之后，亮白色的区段才能逐渐显现。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Artificial-Intelligence/" rel="tag"># Artificial Intelligence</a>
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Coursera-ML/" rel="tag"># Coursera ML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/29/新媒体掐架定律25条/" rel="next" title="新媒体掐架定律25条">
+                <i class="fa fa-chevron-left"></i> 新媒体掐架定律25条
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter1-Communication/" rel="prev" title="Interpret Technique to PM|Chapter1:Communication">
+                Interpret Technique to PM|Chapter1:Communication <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代价函数"><span class="nav-number">1.</span> <span class="nav-text">代价函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二元分类-Binary-classification"><span class="nav-number">1.1.</span> <span class="nav-text">二元分类(Binary classification)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多类别分类（Multi-class-classification）"><span class="nav-number">1.2.</span> <span class="nav-text">多类别分类（Multi-class classification）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义代价函数"><span class="nav-number">1.3.</span> <span class="nav-text">定义代价函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反向传播（B-P-Backpropagation-算法）"><span class="nav-number">2.</span> <span class="nav-text">反向传播（B-P(Backpropagation)算法）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降计算"><span class="nav-number">2.1.</span> <span class="nav-text">梯度下降计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#情况1：只有一个训练样本。"><span class="nav-number">2.1.1.</span> <span class="nav-text">情况1：只有一个训练样本。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#情况2：当我们有一个很大的训练样本"><span class="nav-number">2.1.2.</span> <span class="nav-text">情况2：当我们有一个很大的训练样本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反向传播算法的直观介绍"><span class="nav-number">3.</span> <span class="nav-text">反向传播算法的直观介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络计算过程"><span class="nav-number">3.1.</span> <span class="nav-text">神经网络计算过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前向传播"><span class="nav-number">3.2.</span> <span class="nav-text">前向传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代价函数-1"><span class="nav-number">3.3.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反向传播"><span class="nav-number">3.4.</span> <span class="nav-text">反向传播</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BP算法练习"><span class="nav-number">4.</span> <span class="nav-text">BP算法练习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#将参数从矩阵展开成向量"><span class="nav-number">4.1.</span> <span class="nav-text">将参数从矩阵展开成向量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#阶段1：抽象解释算法"><span class="nav-number">4.1.1.</span> <span class="nav-text">阶段1：抽象解释算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阶段2：Octave展示算法"><span class="nav-number">4.1.2.</span> <span class="nav-text">阶段2：Octave展示算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阶段3：将算法应用到学习算法"><span class="nav-number">4.1.3.</span> <span class="nav-text">阶段3：将算法应用到学习算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度检验（Gradient-Checking）"><span class="nav-number">4.2.</span> <span class="nav-text">梯度检验（Gradient Checking）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度检验原理"><span class="nav-number">4.2.1.</span> <span class="nav-text">梯度检验原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Octave中实现梯度检验"><span class="nav-number">4.2.2.</span> <span class="nav-text">Octave中实现梯度检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当θ是向量时"><span class="nav-number">4.2.3.</span> <span class="nav-text">当θ是向量时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结：如何实现梯度检验"><span class="nav-number">4.2.4.</span> <span class="nav-text">总结：如何实现梯度检验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机初始化θ"><span class="nav-number">4.3.</span> <span class="nav-text">随机初始化θ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机初始化Θ引入"><span class="nav-number">4.3.1.</span> <span class="nav-text">随机初始化Θ引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.3.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络总体回顾：算法合体"><span class="nav-number">4.4.</span> <span class="nav-text">神经网络总体回顾：算法合体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步，选择一个合适的神经网络结构"><span class="nav-number">4.4.1.</span> <span class="nav-text">第一步，选择一个合适的神经网络结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#训练神经网络的步骤"><span class="nav-number">4.4.2.</span> <span class="nav-text">训练神经网络的步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度下降法在神经网络中的直观理解"><span class="nav-number">4.4.3.</span> <span class="nav-text">梯度下降法在神经网络中的直观理解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络实现自动驾驶"><span class="nav-number">5.</span> <span class="nav-text">神经网络实现自动驾驶</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Artificial Intelligence,Machine Learning,Coursera ML," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：第一部分讲SVM支持向量机的原理和推导，以及其为何可产生大间距分类。第二部分讲如何通过核函数达到改造支持向量机以构造复杂的非线性分类器的目的。第三部分将如何使用SVM。当遇到机器学习问题时，算法确实很重要，但是通常更重要的是：你有多少数据，你有多熟练，是否擅长做误差分析和调试学习算法，想出如何设计新的特征变量，想出如何设计新的特征变量，以及找出应该输入给学习算法的其它特征变量等方">
+<meta name="keywords" content="Artificial Intelligence,Machine Learning,Coursera ML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Coursera Machine Learning|Week7:SVM &amp; Kernels">
+<meta property="og:url" content="http://yoursite.com/2017/10/08/Coursera-Machine-Learning-Week7-SVM-Kernels/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：第一部分讲SVM支持向量机的原理和推导，以及其为何可产生大间距分类。第二部分讲如何通过核函数达到改造支持向量机以构造复杂的非线性分类器的目的。第三部分将如何使用SVM。当遇到机器学习问题时，算法确实很重要，但是通常更重要的是：你有多少数据，你有多熟练，是否擅长做误差分析和调试学习算法，想出如何设计新的特征变量，想出如何设计新的特征变量，以及找出应该输入给学习算法的其它特征变量等方">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://studyai.site/img/17_02_06/001.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/08/01.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/08/02.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/08/03.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_06/002.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_06/003.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/08/02.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/08/04.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_06/004.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_06/005.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_06/003.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_06/005.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_06/006.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/08/05.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/08/06.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/08/07.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/08/07.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_06/007.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_06/008.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/08/09.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_06/012.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_06/017.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_06/018.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_09/002.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_09/003.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_09/004.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_09/006.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_09/010.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_09/013.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_09/014.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_09/018.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/08/07.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_09/019.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_09/020.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_09/022.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_09/023.png">
+<meta property="og:image" content="http://studyai.site/img/17_04_11/001.png">
+<meta property="og:image" content="http://studyai.site/img/17_04_11/003.png">
+<meta property="og:updated_time" content="2017-10-11T12:01:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Coursera Machine Learning|Week7:SVM &amp; Kernels">
+<meta name="twitter:description" content="Abstract：第一部分讲SVM支持向量机的原理和推导，以及其为何可产生大间距分类。第二部分讲如何通过核函数达到改造支持向量机以构造复杂的非线性分类器的目的。第三部分将如何使用SVM。当遇到机器学习问题时，算法确实很重要，但是通常更重要的是：你有多少数据，你有多熟练，是否擅长做误差分析和调试学习算法，想出如何设计新的特征变量，想出如何设计新的特征变量，以及找出应该输入给学习算法的其它特征变量等方">
+<meta name="twitter:image" content="http://studyai.site/img/17_02_06/001.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/08/Coursera-Machine-Learning-Week7-SVM-Kernels/"/>
+
+
+
+
+
+  <title>Coursera Machine Learning|Week7:SVM & Kernels | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/08/Coursera-Machine-Learning-Week7-SVM-Kernels/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Coursera Machine Learning|Week7:SVM & Kernels</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-08T21:41:11+08:00">
+                2017-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：第一部分讲SVM支持向量机的原理和推导，以及其为何可产生大间距分类。第二部分讲如何通过核函数达到改造支持向量机以构造复杂的非线性分类器的目的。第三部分将如何使用SVM。<br>当遇到机器学习问题时，算法确实很重要，但是通常更重要的是：你有多少数据，你有多熟练，是否擅长做误差分析和调试学习算法，想出如何设计新的特征变量，想出如何设计新的特征变量，以及找出应该输入给学习算法的其它特征变量等方面。通常这些方面会比你使用逻辑回归还是SVM更加重要。<br><a id="more"></a></p>
+<h1 id="大间距分类"><a href="#大间距分类" class="headerlink" title="大间距分类"></a>大间距分类</h1><p>Abstract：相较于逻辑回归，支持向量机SVM在学习复杂的非线性方程时提供更为清晰强大的解决方式。SVM的推导是在逻辑回归的基础上改进。在对样本的分类效果上，支持向量机比逻辑回归的要求更高——要求大间距。即SVM始终在努力用最大间距去分类样本。</p>
+<h2 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h2><p>监督学习中许多学习算法的性能都非常类似，因此重要的不是你该选择使用学习算法A还是学习算法B，而更重要的是应用这些算法时所创建的大量数据。</p>
+<p>支持向量机SVM(Support Vector Machine)：广泛应用于工业界和学术界。与逻辑回归和神经网络相比，支持向量机或者简称SVM在学习复杂的非线性方程时提供了一种更为清晰，更加强大的方式。</p>
+<h2 id="支持向量机引入"><a href="#支持向量机引入" class="headerlink" title="支持向量机引入"></a>支持向量机引入</h2><p>逻辑回归的假设函数形式：hθ(x) = 1/[1+e^(−θTx)]</p>
+<p>S型激励函数：</p>
+<p><img src="http://studyai.site/img/17_02_06/001.png" alt="01"></p>
+<p>我们需要逻辑回归做什么？</p>
+<ul>
+<li>如果有一个样本为y=1，那么我们希望假设函数h(x)≈1，即θT&gt;&gt;0。你不难发现，此时逻辑回归的输出将趋近于1。</li>
+<li>如果有另一个样本为y=0，那么我们希望假设函数h(x)≈0，即θT&lt;&lt;0。此时逻辑回归的输出将趋近于0。</li>
+</ul>
+<p>进一步观察逻辑回归的代价函数，会发现样本(x,y)都会为总代价函数增加这样一项：</p>
+<p><img src="http://www.z4a.net/images/2017/10/08/01.png" alt="02"></p>
+<p>在逻辑回归中，这一项表示一个训练样本所对应的表达式。</p>
+<p>现在考虑y = 1和y = 0的2种情况：</p>
+<p>1.y=1的情况下（即θTx&gt;&gt;0）</p>
+<p>对于：</p>
+<p><img src="http://www.z4a.net/images/2017/10/08/02.png" alt="03"></p>
+<p>由于(1-y) = 0,故我们只考虑前半部分：</p>
+<p><img src="http://www.z4a.net/images/2017/10/08/03.png" alt="04"></p>
+<p>若画出代价函数关于z的图，则有下图：</p>
+<p><img src="http://studyai.site/img/17_02_06/002.png" alt="05"></p>
+<p>当z增大时(即θ^(Tx)增大时)，z对应的值会变得非常小，对整个代价函数而言，影响也非常小。</p>
+<p>现在开始建立支持向量机，从代价函数−y*[log(1/1+e−θTx]开始修改：</p>
+<p>画出一个非常接近于逻辑回归函数的折线，其由z = 1的一点的两条线段组成。</p>
+<p><img src="http://studyai.site/img/17_02_06/003.png" alt="06"></p>
+<p>2.y = 0的情况下（即θTx&lt;&lt;0）</p>
+<p>对于</p>
+<p><img src="http://www.z4a.net/images/2017/10/08/02.png" alt="03"></p>
+<p>由于y = 0，故只考虑后半部分：</p>
+<p><img src="http://www.z4a.net/images/2017/10/08/04.png" alt="08"></p>
+<p>画出代价函数关于z的图：</p>
+<p><img src="http://studyai.site/img/17_02_06/004.png" alt="09"></p>
+<p>建立支持向量机：</p>
+<p><img src="http://studyai.site/img/17_02_06/005.png" alt="10"></p>
+<p>目的是在y = 0的前提下使用新的代价函数。</p>
+<p>然后给上面两种情况得出的2个方程命名：</p>
+<p><img src="http://studyai.site/img/17_02_06/003.png" alt="11"></p>
+<p><img src="http://studyai.site/img/17_02_06/005.png" alt="12"></p>
+<p>第一个为cost1(z)，第二个为cost0(z)，下标分别指函数中对应的y = 1 or 0的情况。</p>
+<h2 id="构建支持向量机"><a href="#构建支持向量机" class="headerlink" title="构建支持向量机"></a>构建支持向量机</h2><h3 id="1-替换逻辑回归函数"><a href="#1-替换逻辑回归函数" class="headerlink" title="1.替换逻辑回归函数"></a>1.替换逻辑回归函数</h3><p>逻辑回归中的代价函数J(theta):</p>
+<p><img src="http://studyai.site/img/17_02_06/006.png" alt="13"></p>
+<p>做法：将逻辑回归中的代价函数J(theta)里的(−loghθ(x(i)))和((−log(1-hθ(x(i)))分别替换为cost1(z)和cost0(z)，即cost1(θ^Tx(i))和cost0(θ^Tx(i)),故对支持向量机的最小化代价函数问题，代价函数的形式为：</p>
+<p><img src="http://www.z4a.net/images/2017/10/08/05.png" alt="14"></p>
+<h3 id="2-去除多余的常数项1-m"><a href="#2-去除多余的常数项1-m" class="headerlink" title="2.去除多余的常数项1/m"></a>2.去除多余的常数项1/m</h3><p>现在按照支持向量机的惯例，我们去除1/m这一项，因为为常数项，即使去掉我们也可以得出相同的θ最优值：</p>
+<p><img src="http://www.z4a.net/images/2017/10/08/06.png" alt="15"></p>
+<h3 id="3-正则化项系数的处理"><a href="#3-正则化项系数的处理" class="headerlink" title="3.正则化项系数的处理"></a>3.正则化项系数的处理</h3><p>在逻辑回归的目标函数中，我们有两项表达式：</p>
+<p>来自于训练样本的代价函数:1/m[∑i=1my(i)(−loghθ(x(i)))+(1−y(i))((−log(1−hθ(x(i)))))]</p>
+<p>正则化项：λ/2(∑j=1n) θj^2</p>
+<p>我们需要使用正则化项来平衡代价函数，即：A+λB</p>
+<p>其中，A相当于上面的第一项，B相当于第二项。</p>
+<p>通过修改不同的正则化参数λ来达到优化目的，就可以使训练样本拟合得更好。</p>
+<p>对于支持向量机，按照惯例我们将使用一个不同的参数来替换这里使用的λ来实现权衡这两项的目的。这个参数我们称为C。同时将优化目标改为: CA + B</p>
+<p>在逻辑回归中，如果给λ一个很大的值，那么就意味着给与B了一个很大的权重，而在支持向量机中，就相当于对C设定了一个非常小的值，这样一来就相当于对B给了比A更大的权重。</p>
+<p>实质：使用参数C来替换λ来控制A和B的权衡关系（A+λB ——&gt; CA + B ）</p>
+<p>因此，即得到在支持向量机中的我们的整个优化目标函数：</p>
+<p><img src="http://www.z4a.net/images/2017/10/08/07.png" alt="15"></p>
+<blockquote>
+<p>注:有别于逻辑回归的一点，对于支持向量机假设函数的形式如下：<br>hθ(x)=0   if θTx&lt;0;<br>hθ(x)=0   if θTx&lt;0;<br>而不是逻辑回归中的S型曲线：hθ(x)=1/(1+e^−x)</p>
+</blockquote>
+<h2 id="大间距的直觉"><a href="#大间距的直觉" class="headerlink" title="大间距的直觉"></a>大间距的直觉</h2><p>Abstract：有时会将支持向量机看做是大间距分类器。</p>
+<p>支持向量机模型的代价函数：</p>
+<p><img src="http://www.z4a.net/images/2017/10/08/07.png" alt="15"></p>
+<p>1.如果有一个正样本，即y=1时，那么代价函数cost1(z)的图像如下：</p>
+<p><img src="http://studyai.site/img/17_02_06/007.png" alt="16"></p>
+<p>只有在z≥1(即θTx≥1)时(不仅仅是≥0)，代价函数ost1(z)的值才等于0。</p>
+<p>2.如果你有一个负样本，即y=0时，那么代价函数cost0(z)的图像如下：</p>
+<p><img src="http://studyai.site/img/17_02_06/008.png" alt="17"></p>
+<p>只有在z≤−1(即θTx≤−1)时(不仅仅是&lt;0)，代价函数cost0(z)的值才等于0。</p>
+<p>注：以上是支持向量机的一个有趣的性质。</p>
+<h3 id="安全距离因子"><a href="#安全距离因子" class="headerlink" title="安全距离因子"></a>安全距离因子</h3><p>在对样本的分类效果上，支持向量机比逻辑回归的要求更高——要求大间距。</p>
+<p>逻辑回归：</p>
+<ul>
+<li>如果你有一个正样本，即y=1的情况下，我们仅仅需要θTx≥0；</li>
+<li>如果你有一个负样本，即y=0的情况下，我们仅仅需要θTx&lt;0；</li>
+</ul>
+<p>就能将该样本恰当的分类了。</p>
+<p>支持向量机：不仅仅要求θTx≥0或θTx&lt;0，而且要求θTx比0大很多，或小很多。比如这里要求θTx≥1以及θTx≤−1。相当于在支持向量机中嵌入一个额外的安全距离因子。</p>
+<p>接下来看这个因子会导致什么结果：</p>
+<p>将代价函数中的常数项C设置成一个非常大的值，比如100000或者其他非常大的数，然后再来观察支持向量机会给出什么结果。</p>
+<p>此时，我们希望找到一个使第一项为0的最优解。第一项为：</p>
+<p><img src="http://www.z4a.net/images/2017/10/08/09.png" alt="18"></p>
+<p>当输入一个正样本y(i)=1时，我们想令上面这一项为0，对于代价函数cost1(z)我们需要使得θTx(i)≥1。</p>
+<p>当输入一个负样本y(i)=0时，我们想令上面这一项为0，对于代价函数cost1(z)我们需要使得θTx(i)&lt;=-1。</p>
+<p>选择参数使第一项为0，因此这个函数的第一项为0，因此是：minθC0 + 1/2(∑j=1n)θj^2.</p>
+<p>C0的结果是0，因此可以删掉，所以最终得到的结果是：</p>
+<p>minθ12∑j=1nθ2j</p>
+<p>其中：</p>
+<p>若y(i)=1时，则θTx(i)≥1</p>
+<p>即得一个非常有趣的决策边界。</p>
+<h3 id="SVM决策边界：线性分割案例"><a href="#SVM决策边界：线性分割案例" class="headerlink" title="SVM决策边界：线性分割案例"></a>SVM决策边界：线性分割案例</h3><p><img src="http://studyai.site/img/17_02_06/012.png" alt="19"></p>
+<p>如上图，这个数据集是线性可分的（即存在一条直线把正负样本分开）。存在很多直线能把正负样本分开，如绿线和红线。支持向量机会选择黑线，因其看起来更稳健，即黑线拥有相对于训练数据更大的最短间距（margin）。因其一直努力用一个最大间距来分离样本，故器有时又被称为大间距分类器。而红线和绿线因离训练样本很近，故分类效果会比黑线差。</p>
+<h3 id="大间距分类器中的异常值"><a href="#大间距分类器中的异常值" class="headerlink" title="大间距分类器中的异常值"></a>大间距分类器中的异常值</h3><p>Abstract：支持向量机中的异常数据处理。</p>
+<p><img src="http://studyai.site/img/17_02_06/017.png" alt="20"></p>
+<p>异常值出现</p>
+<p>当C值非常大时，仅一个异常值就会将我们的决策边界旋转很大角度，这样是不明智的，但支持向量机确实会这样处理。而若我们适当减小C值，最终还是会得到黑色决策边界。</p>
+<p>若数据线性不可分，如：</p>
+<p><img src="http://studyai.site/img/17_02_06/018.png" alt="21"></p>
+<p>支持向量机也可恰当分开。</p>
+<p>注：</p>
+<ul>
+<li>C的作用其实等同于1/λ，λλ就是我们之前用到的正则化参数。在支持向量机中，CC不是很大的时候，可以对包含异常数据、以及线性不可分的数据有比较好的处理效果。</li>
+<li>支持向量机所做的事情，其实就是在极小化参数向量θθ范数的平方（或者说是长度的平方）。</li>
+</ul>
+<h1 id="核函数-Kernel-Function（Kernels）"><a href="#核函数-Kernel-Function（Kernels）" class="headerlink" title="核函数 Kernel Function（Kernels）"></a>核函数 Kernel Function（Kernels）</h1><p>Abstract：如何通过核函数达到改造支持向量机以构造复杂的非线性分类器的目的，以及如何在实际中应用这些想法，如如何处理向量机中的偏差方差折中。关于核函数，我们通过标记点和相似性函数来定义新的特征变量从而训练复杂的非线性分类器。核函数实际上是通过双次复合定义特征变量来得到的函数。</p>
+<h2 id="核函数-I"><a href="#核函数-I" class="headerlink" title="核函数 I"></a>核函数 I</h2><p>Abstract：讲解如何通过标记点，以及核函数，来训练出非常复杂的非线性判别边界的方法。</p>
+<p><img src="http://studyai.site/img/17_02_09/002.png" alt="22"></p>
+<p>如上图，如若有这样一个训练集，并希望拟合一个非线性的判别边界来区别正负样本，则判别边界可能如图。该决策边界由类似下面的多项式构成：</p>
+<ul>
+<li><p>如果θ0+θ1x1+θ2x2+θ3x1x2+θ4x21+θ5x22+…≥0，则预测hθ(x)=1；</p>
+</li>
+<li><p>如果θ0+θ1x1+θ2x2+θ3x1x2+θ4x21+θ5x22+…&lt;0，则预测hθ(x)=0；</p>
+</li>
+</ul>
+<p>若把假设函数改写成一下形式：θ0+θ1f1+θ2f2+θ3f3+θ4f4+θ5f5+…，则有：f1=x1;f2=x2;f3=x1x2;f4=x1^2;f5=x2^2;</p>
+<p>若使用高阶项作为特征变量，运算量会非常大，因为有太多高阶项需要被计算。那么，我们是否有不同的选择，或者是更好的选择来构造特征变量，以用来嵌入到假设函数中呢？</p>
+<h3 id="用核函数构造新特征"><a href="#用核函数构造新特征" class="headerlink" title="用核函数构造新特征"></a>用核函数构造新特征</h3><p>1.定义3个特征变量(但是对于实际问题而言，我们可以定义非常多的特征变量），将这三个点标记为l(1)，l(2)，l(3)</p>
+<p><img src="http://studyai.site/img/17_02_09/003.png" alt="23"></p>
+<p>2.定义新特征变量：f1 = similarity(x,l(1))；</p>
+<blockquote>
+<p>similarity(x,l(1))是一种相似度度量，度量样本x与第一个标记l(1)的相似度。<br>相似度公式：f1 = similarity(x,l(1)) = exp(−||x−l(1)||/(2*σ^2)),exp是自然常数e为底的指数函数,||w||是表示向量w的长度,||x−l(1)||是向量的欧式距离。</p>
+</blockquote>
+<p>3.依次写出f1,f2,f3:<br>f1 = similarity(x,l(1)) = exp(−||x−l(1)||/(2<em>σ^2))<br>f2 = similarity(x,l(2)) = exp(−||x−l(2)||/(2</em>σ^2))<br>f3 = similarity(x,l(3)) = exp(−||x−l(3)||/(2*σ^2))  </p>
+<p>注：similarite(x,l)函数，即核函数(Kernels)/高斯核函数.核函数我们通常不写作similarity(x,l(i)，而是写作：k(x,l(i)).</p>
+<h3 id="核函数可以做什么？"><a href="#核函数可以做什么？" class="headerlink" title="核函数可以做什么？"></a>核函数可以做什么？</h3><p>f1 = similarity(x,l(1)) = exp(−||x−l(1)||22σ2) = exp[−∑nj=1(xj−l(1)j)22σ2]</p>
+<p>l(1)是之前在图中选取的几个点之中的一个，上面是x和l(1)之间的核函数。</p>
+<p>其中||x−l(1)||^2这一项可以表示成各个x向量到l向量的距离求和的形式：∑nj=1(xj−l(1)j)^2（这里我们依然忽略了截距的影响，即令x0=1）。</p>
+<p>假设，如果x≈l(1)，即x与其中一个标记点非常接近，那么这个欧氏距离||x−l(1)||就会接近0，因此：f1≈exp(−0^2/2σ^2)≈1.</p>
+<p>相反，若x离l(1)很远，则有:f1 ≈ exp(−(large number)^2/2σ^2) ≈ 0.</p>
+<p>这些特征变量的作用是度量xx到标记l(1)的相似度的，并且如果x离l非常接近，那么特征变量f就接近1；如果x离标记l(1)非常远，那么特征变量ff就接近于0。</p>
+<p>则三个标记点l(1)，l(2)，l(3)每一个标记点会定义一个新的特征变量。</p>
+<p>f1 = similarity(x,l(1)) = exp(−||x−l(1)||/(2<em>σ^2))<br>f2 = similarity(x,l(2)) = exp(−||x−l(2)||/(2</em>σ^2))<br>f3 = similarity(x,l(3)) = exp(−||x−l(3)||/(2*σ^2))  </p>
+<p>即：给出一个训练样本x，我们就能基于我们之前给出的标记点l(1)，l(2)，l(3)来计算出三个新的特征变量f1，f2，f3。（双次复合特征变量）</p>
+<h3 id="深入理解核函数"><a href="#深入理解核函数" class="headerlink" title="深入理解核函数"></a>深入理解核函数</h3><h4 id="x对f的值的影响"><a href="#x对f的值的影响" class="headerlink" title="x对f的值的影响"></a>x对f的值的影响</h4><p>假设我们有两个特征x1和x2，假设我们第一个标记点是l(1)：l(1) = [3，5]T</p>
+<p>假设σ^2=1,若画出：f1 = similarity(x,l(1)) = exp(−||x−l(1)||/(2*σ^2))</p>
+<p>结果：</p>
+<p><img src="http://studyai.site/img/17_02_09/004.png" alt="24"></p>
+<p>其中，左图纵轴为f1，水平为x1和x2；右图为左侧图的等高线图。</p>
+<p>当x=(3,5)的时候，f1=1，因为它在最大值的位置上。所以如果x往旁边移动，离这个点越远，那么从图中可以看到f1的值就越接近0。</p>
+<h4 id="σ-2对f的值的影响"><a href="#σ-2对f的值的影响" class="headerlink" title="σ^2对f的值的影响"></a>σ^2对f的值的影响</h4><p>σ^2是高斯核函数的参数，改变它会得到略微不同的结果。</p>
+<p>对比σ^2=1,σ^2=0.5,σ^2=3的情况:</p>
+<p><img src="http://studyai.site/img/17_02_09/006.png" alt="26"></p>
+<p>发现：函数形状相似，只是σ^2=0.5相较于σ^2=1凸起的宽度变窄了，等值线图也收缩了一些；σ^2=3相较于σ^2=1凸起的宽度变宽了，等值线也扩张了一些。</p>
+<p>所以，如果我们将σ^2设为0.5时，特征变量f1下降到0的速度也会相应变快；如果我们将σ^2设为3时，特征变量f1下降到0的速度也会相应变慢。</p>
+<h4 id="获取预测函数"><a href="#获取预测函数" class="headerlink" title="获取预测函数"></a>获取预测函数</h4><p>Abstract：在了解了特征变量的定义的基础上，我们来看看能得到什么样的预测函数。</p>
+<p>给定一个训练样本x，我们要计算出三个特征变量f1，f2，f3</p>
+<p><img src="http://studyai.site/img/17_02_09/010.png" alt="26"></p>
+<p>若θ0+θ1f1+θ2f2+θ3f3≥0 ，则预测函数的预测值为1，即y=1。</p>
+<p>对于这个特定的例子而言，假设我们已经找到了一个学习算法，并且假设我已经得到了这些参数的值，比如：θ0=−0.5，θ1=1，θ2=1，θ3=0</p>
+<p>假设我有一个训练样本x，计算预测函数的结果：</p>
+<ul>
+<li>训练样本x接近于l(1),则f1接近于1：f1 ≈ 1</li>
+<li>x离l(2)，l(3)都很远，故f2就接近于0，f3也接近于0：f2≈0，f3≈0；</li>
+<li>带入上面的公式可得：θ0+θ1f1+θ2f2+θ3f3=θ0+θ1·1+θ2·0+θ3·0=−0.5+1=0.5 ≥ 0</li>
+<li>故预测结果为1</li>
+</ul>
+<p>同理，选择另一个训练样本x，带入计算，发现f1f2f3都接近于0，故得到θ0+θ1f1+θ2f2+θ3f3=−0.5&lt;0,故预测的y值为0.</p>
+<p>对于接近l(1)和l(2)的点，我们的预测值是1，对于远离l(1)和l(2)的点，我们最后预测的结果等于0。</p>
+<p>最后得到的预测函数的判别边界为：</p>
+<p><img src="http://studyai.site/img/17_02_09/013.png" alt="28"></p>
+<p>在这个红色的判别边界里面，预测的y值等于1；以外预测的y值等于0。</p>
+<p>总结：以上是如何通过标记点以及核函数，来训练出非常复杂的非线性判别边界的方法。</p>
+<h2 id="核函数-II"><a href="#核函数-II" class="headerlink" title="核函数 II"></a>核函数 II</h2><p>Abstract：介绍如何在实际中应用这些想法，如怎么处理支持向量机中的偏差方差折中。</p>
+<h3 id="如何选取标记点landmark"><a href="#如何选取标记点landmark" class="headerlink" title="如何选取标记点landmark"></a>如何选取标记点landmark</h3><p><img src="http://studyai.site/img/17_02_09/014.png" alt="29"></p>
+<p>选择标记点，如l(1),l(2),l(3) 这些点使我们能够定义相似度函数，也称核函数。此例中我们的相似度函数为高斯核函数。</p>
+<p>上例中，我们的标记点是手动选取的，但在复杂度额学习问题中，我们需要更多的标记点。如何选取标记点？</p>
+<p><img src="http://studyai.site/img/17_02_09/018.png" alt="30"></p>
+<p>方法：直接将训练样本作为标记点。如图可得m个标记点，每一个标记点的位置，都与每一个样本点的位置精确对应。特征函数基本上是在描述每一个样本距离样本集中其他样本的距离。</p>
+<p>步骤解析：</p>
+<p>1.给定m个训练样本：(x(1),y(1)),(x(2),y(2)),…,(x(m),y(m))；      </p>
+<p>2.选取与m个训练样本精确一致的位置作为我的标记点：l(1)=x(1),l(2)=x(2),…,l(m)=x(m).       </p>
+<p>3.当输入样本x（样本x可以属于训练集，也可以属于交叉验证集，也可以属于测试集），我们可以计算这些特征，即：f1=similarity(x,l(1))，f2=similarity(x,l(2))    </p>
+<p>4.最终我们能得到一个特征向量，我们将特征向量记为f：f = [f1,f2,f3…fm]T     </p>
+<p>5.如果我们需要的话，可以添加额外的特征f0,值始终为1：f = [f0, f1,f2,f3…fm]T </p>
+<blockquote>
+<p>f0作用类似于截距x0.</p>
+</blockquote>
+<p>如果已得到参数θ并且想对样本x做出预测，我们先要计算特征向量f，f是m+1维的特征向量（这里有m是因为我们有m个训练样本，因此就有m个标记点）。</p>
+<p>我们在θTf≥0时，预测y=1</p>
+<p>这里θTf=θ0f0+θ1f1+…+θmfm</p>
+<p>以上是当已知参数θ时，怎么做出预测的过程</p>
+<p>那么，怎样得到参数θ？</p>
+<p>在使用SVM学习算法的时候，具体来说就是要求解这个最小化问题：</p>
+<p><img src="http://www.z4a.net/images/2017/10/08/07.png" alt="15"></p>
+<p>需要求出能使这个式子取最小值的参数θ。注意，这里我们把之前的x(i)换成了f(i)。</p>
+<p>通过解决这个最小化问题，我们就能得到支持向量机的参数。</p>
+<p>最后一个对于这个优化问题的细节是：我们有n=m个特征。有效的特征数量应该等于f的维数，所以n其实就等于m。</p>
+<p><img src="http://studyai.site/img/17_02_09/019.png" alt="30"></p>
+<p>以上就是支持向量机的学习算法。</p>
+<p>注：</p>
+<ul>
+<li>将核函数用于逻辑回归上时，会变得非常的慢</li>
+<li>我们并不需要知道怎么去写一个软件，来最小化代价函数。能找到很好的成熟的软件来做这些，就像不建议自己写矩阵求逆函数，或者平方根函数的道理一样。这些软件包已经包含了那些数值优化技巧，所以我们不必担心这些东西。</li>
+</ul>
+<h3 id="SVM参数"><a href="#SVM参数" class="headerlink" title="SVM参数"></a>SVM参数</h3><p>1.C(=1/λ)</p>
+<p><img src="http://studyai.site/img/17_02_09/020.png" alt="31"></p>
+<p>λ是逻辑回归算法中的正则化参数，所以C对应着我们之前在逻辑回归问题中的λ，这意味着:</p>
+<ul>
+<li>较小的λ对应较大的C，这就意味着有可能得到一个低偏差但高方差的模型。</li>
+<li>较大的λ对应较小的C，这就意味着有可能得到一个高偏差但低方差的模型。</li>
+</ul>
+<p>所以使用较大的C值模型，为高方差，更倾向于过拟合；而使用较小的C值的模型，为高偏差，更倾向于欠拟合。</p>
+<p>2.σ^2</p>
+<p>如果σ^2越大，那么高斯核函数倾向于变得越平滑，由于函数平滑且变化的比较平缓，这会给你的模型带来较高的偏差和较低的方差，由于高斯核函数变得平缓，就更倾向于得到一个随着输入x变化得缓慢的模型；</p>
+<p><img src="http://studyai.site/img/17_02_09/022.png" alt="32"></p>
+<p>反之如果σ^2越小，那么高斯核函数会变化的很剧烈，在这种情况下，最终得到的模型会是低偏差和高方差：</p>
+<p><img src="http://studyai.site/img/17_02_09/023.png" alt="33"></p>
+<p>以上即利用核函数的支持向量机算法。</p>
+<h1 id="使用SVM"><a href="#使用SVM" class="headerlink" title="使用SVM"></a>使用SVM</h1><p>Abstract：对于SVM，我们需要知道如何使用SVM安装包。SVM核函数的选择很关键，有多种核函数供选择（因时制宜）。至于逻辑回归和SVM的使用在不同场景下有不同的选择。而当遇到机器学习问题时，算法确实很重要，但是通常更重要的是：你有多少数据，你有多熟练，是否擅长做误差分析和调试学习算法，想出如何设计新的特征变量，想出如何设计新的特征变量，以及找出应该输入给学习算法的其它特征变量等方面。通常这些方面会比你使用逻辑回归还是SVM更加重要。</p>
+<p>支持向量机是一个特定的优化问题，但是不建议自己去手动实现这一算法来求解参数θ。就像如今只有很少的人，或者说根本没有人会考虑自己写代码，来实现对矩阵求逆，或求一个数的平方根等。我们只需要调用库函数来实现这些功能即可。强烈建议使用一个高度优化的软件库，如liblinear和libsvm，而不是尝试自己去实现它。</p>
+<p>尽管不需要自己去实现SVM，但也需要做以下几件事：</p>
+<ul>
+<li>选择参数C</li>
+<li>选择核函数（相似度函数）</li>
+</ul>
+<h2 id="核函数的选择"><a href="#核函数的选择" class="headerlink" title="核函数的选择"></a>核函数的选择</h2><h3 id="线性核函数（无核函数）"><a href="#线性核函数（无核函数）" class="headerlink" title="线性核函数（无核函数）"></a>线性核函数（无核函数）</h3><p>即不用任何核函数。</p>
+<p>即对于预测结果y=1，满足θTx≥0。</p>
+<blockquote>
+<p>例如这种情况下当θ0+θ1x1+…+θnxn≥0时，预测y=1。</p>
+</blockquote>
+<p>使用情境：当特征数量n很大，但数据量m很小时，由于数据量不足，在这种情况下如果使用其他核函数，可能会过拟合，因此，此时线性核函数是一个合理的选择。</p>
+<h3 id="高斯核函数"><a href="#高斯核函数" class="headerlink" title="高斯核函数"></a>高斯核函数</h3><p>fi = exp(−||x−l(i)||^2/2σ^2)</p>
+<p>需要选择一个σ。</p>
+<ul>
+<li>如果σ^2很大，那么可能得到一个较高偏差较低方差的分类器。</li>
+<li>如果σ^2很小，那么可能得到一个较低偏差较高方差的分类器。</li>
+</ul>
+<p>使用情境:若原来的特征变量x是n维的，而且n很小，样本数量m很大时，高斯核函数会是一个不错的选择。</p>
+<h4 id="如何使用高斯核函数"><a href="#如何使用高斯核函数" class="headerlink" title="如何使用高斯核函数"></a>如何使用高斯核函数</h4><p>在很多SVM的软件包中，如果你需要使用SVM时，你需要提供一个核函数。</p>
+<p>具体地说，如果你决定使用高斯核函数，那么你需要做的就是根据你所用的SVM软件包，来提供一个用于计算核函数的特定特征的方法，如图。然后它将自动地生成所有特征变量。</p>
+<p><img src="http://studyai.site/img/17_04_11/001.png" alt="41"></p>
+<blockquote>
+<p>注意：如果你有大小很不一样的特征变量，在使用高斯核函数之前，对它们进行归一化是很重要的。为了让SVM更好的工作，我们需要对特征变量进行归一化处理。这将会保证SVM能够同等地关注到所有不同的特征变量。</p>
+</blockquote>
+<h3 id="选择其他核函数"><a href="#选择其他核函数" class="headerlink" title="选择其他核函数"></a>选择其他核函数</h3><p>多项式核函数（Polynomial kernel）</p>
+<p>字符串核函数（String kernel）</p>
+<blockquote>
+<p>如果你的输入数据是文本字符串，或者其他类型的字符串，有时会用到这个核函数。</p>
+</blockquote>
+<p>卡方核函数（chi-square kernel）</p>
+<p>直方图交叉核函数（histogram intersection kernel）<br>…</p>
+<blockquote>
+<p>可以用它们来度量不同对象之间的相似性。</p>
+<p>例如，你在做一些文本分类问题，在这个问题中，输入变量xx是一个字符串，我们想要通过字符串核函数来找到两个字符串间的相似度</p>
+</blockquote>
+<h2 id="两个细节"><a href="#两个细节" class="headerlink" title="两个细节"></a>两个细节</h2><h3 id="多类分类"><a href="#多类分类" class="headerlink" title="多类分类"></a>多类分类</h3><p><img src="http://studyai.site/img/17_04_11/003.png" alt="43"></p>
+<p>怎样让SVM输出下面这种各个类别间合适的判定边界呢？</p>
+<p>1.大部分SVM软件包已经内置了多类分类的函数了，因此，如果你用的是这种软件包，你可以直接使用内置函数。</p>
+<p>2.另一种方式就是使用一对多(one-vs-all)方法。这个我们在讲逻辑回归的时候讨论过，所以，你要做的就是要训练KK个SVM，每一个SVM把一个类同其他类区分开。这种操作会给你KK个参数向量：</p>
+<p>θ(1),θ(2),…,θ(K)</p>
+<p>最后，这就与我们在逻辑回归中用到的一对多方法一样，选取使得(θ(i))Tx最大的类ii即可。</p>
+<blockquote>
+<p>其实大多数软件包都已经内置了多类分类的函数，因此你不必重新造轮子。</p>
+</blockquote>
+<h3 id="逻辑回归-vs-SVM"><a href="#逻辑回归-vs-SVM" class="headerlink" title="逻辑回归 vs SVM"></a>逻辑回归 vs SVM</h3><p>关于逻辑回归和SVM，什么时候用哪个？</p>
+<p>假设n是特征变量的个数，m是训练样本数：</p>
+<p>-如果n(相对于m)大很多时，使用逻辑回归，或者使用无核函数的SVM（线性核函数）。<br>比如你有一个文本分类的问题，特征数量n=10000，而且如果你的训练集大小为m=10，在这个问题中，你有10000个特征变量，对应10000个词，但是你只有10个训练样本。这种情况下就比较适合使用逻辑回归或者线性核函数的SVM了。<br>-如果n较小，m是中等大小，（例如n为1到1000之间的值，mm为10到10000之间的值）那么使用高斯核函数的SVM效果好一些。<br>-如果n很小，m很大时（例如n=1000,m=100000+），那么高斯核函数的SVM运行起来会很慢，这种情况下，需要尝试手动地创建更多的特征变量，然后使用逻辑回归或者无核函数的SVM（线性核函数）。</p>
+<p>逻辑回归和不带核函数的SVM它们都是非常相似的算法，他们会做相似的事情，并且表现也相似，但是根据你实现的具体情况，其中一个可能会比另一个更加有效。</p>
+<p>但是SVM的威力会随着你用不同的核函数而发挥出来。</p>
+<h3 id="什么时候使用神经网络？"><a href="#什么时候使用神经网络？" class="headerlink" title="什么时候使用神经网络？"></a>什么时候使用神经网络？</h3><p>一个设计的好的神经网络很可能非常有效,但其缺点是训练起来比较慢。但如果你有一个很好的SVM实现包，它就会运行的比较快，比神经网络快很多。</p>
+<blockquote>
+<p>SVM的优化问题，实际上是一个凸优化问题。因此好的SVM优化软件包总是会找到全局最小值，或者接近它的值。<br>对于SVM，你不需要担心局部最优。在实际应用中，局部最优对神经网络来说不是非常大，但是也不小。所以使用SVM，你不用考虑这部分问题。</p>
+</blockquote>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>当遇到机器学习问题时，算法确实很重要，但是通常更重要的是：你有多少数据，你有多熟练，是否擅长做误差分析和调试学习算法，想出如何设计新的特征变量，想出如何设计新的特征变量，以及找出应该输入给学习算法的其它特征变量等方面。通常这些方面会比你使用逻辑回归还是SVM更加重要。</p>
+<p>但是SVM仍然被广泛认为是最强大的学习算法之一，最强大的学习算法之一，而且SVM在一个区间内是一个非常有效地学习复杂非线性函数的方法。因此，有了逻辑回归、神经网络、SVM这三个学习算法，我们已经具备了在广泛的应用里构建最前沿的机器学习系统的能力。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Artificial-Intelligence/" rel="tag"># Artificial Intelligence</a>
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Coursera-ML/" rel="tag"># Coursera ML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/06/Coursera-Machine-Learning-Week6-Advice-for-Applying-Machine-Learning/" rel="next" title="Coursera Machine Learning|Week6:Advice for Applying Machine Learning">
+                <i class="fa fa-chevron-left"></i> Coursera Machine Learning|Week6:Advice for Applying Machine Learning
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/11/Coursera-Machine-Learning-Week8-Cluster-PCA/" rel="prev" title="Coursera Machine Learning|Week8:Cluster & PCA">
+                Coursera Machine Learning|Week8:Cluster & PCA <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#大间距分类"><span class="nav-number">1.</span> <span class="nav-text">大间距分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优化目标"><span class="nav-number">1.1.</span> <span class="nav-text">优化目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#支持向量机引入"><span class="nav-number">1.2.</span> <span class="nav-text">支持向量机引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建支持向量机"><span class="nav-number">1.3.</span> <span class="nav-text">构建支持向量机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-替换逻辑回归函数"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.替换逻辑回归函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-去除多余的常数项1-m"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.去除多余的常数项1/m</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-正则化项系数的处理"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.正则化项系数的处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大间距的直觉"><span class="nav-number">1.4.</span> <span class="nav-text">大间距的直觉</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安全距离因子"><span class="nav-number">1.4.1.</span> <span class="nav-text">安全距离因子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVM决策边界：线性分割案例"><span class="nav-number">1.4.2.</span> <span class="nav-text">SVM决策边界：线性分割案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大间距分类器中的异常值"><span class="nav-number">1.4.3.</span> <span class="nav-text">大间距分类器中的异常值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核函数-Kernel-Function（Kernels）"><span class="nav-number">2.</span> <span class="nav-text">核函数 Kernel Function（Kernels）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核函数-I"><span class="nav-number">2.1.</span> <span class="nav-text">核函数 I</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用核函数构造新特征"><span class="nav-number">2.1.1.</span> <span class="nav-text">用核函数构造新特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核函数可以做什么？"><span class="nav-number">2.1.2.</span> <span class="nav-text">核函数可以做什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深入理解核函数"><span class="nav-number">2.1.3.</span> <span class="nav-text">深入理解核函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#x对f的值的影响"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">x对f的值的影响</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#σ-2对f的值的影响"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">σ^2对f的值的影响</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取预测函数"><span class="nav-number">2.1.3.3.</span> <span class="nav-text">获取预测函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核函数-II"><span class="nav-number">2.2.</span> <span class="nav-text">核函数 II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何选取标记点landmark"><span class="nav-number">2.2.1.</span> <span class="nav-text">如何选取标记点landmark</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVM参数"><span class="nav-number">2.2.2.</span> <span class="nav-text">SVM参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用SVM"><span class="nav-number">3.</span> <span class="nav-text">使用SVM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核函数的选择"><span class="nav-number">3.1.</span> <span class="nav-text">核函数的选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性核函数（无核函数）"><span class="nav-number">3.1.1.</span> <span class="nav-text">线性核函数（无核函数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯核函数"><span class="nav-number">3.1.2.</span> <span class="nav-text">高斯核函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用高斯核函数"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">如何使用高斯核函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择其他核函数"><span class="nav-number">3.1.3.</span> <span class="nav-text">选择其他核函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两个细节"><span class="nav-number">3.2.</span> <span class="nav-text">两个细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多类分类"><span class="nav-number">3.2.1.</span> <span class="nav-text">多类分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑回归-vs-SVM"><span class="nav-number">3.2.2.</span> <span class="nav-text">逻辑回归 vs SVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么时候使用神经网络？"><span class="nav-number">3.2.3.</span> <span class="nav-text">什么时候使用神经网络？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">3.2.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

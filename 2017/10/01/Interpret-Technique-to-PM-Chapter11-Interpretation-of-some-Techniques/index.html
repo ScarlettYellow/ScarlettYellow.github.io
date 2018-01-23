@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PM Communication,System Logic,Reading Notes," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：对一些技术概念和原理的解释。如搜索引擎，推荐算法，贝塞尔曲线，A/B 测试等。">
+<meta name="keywords" content="PM Communication,System Logic,Reading Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Interpret Technique to PM|Chapter11:Interpretation of some Techniques">
+<meta property="og:url" content="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter11-Interpretation-of-some-Techniques/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：对一些技术概念和原理的解释。如搜索引擎，推荐算法，贝塞尔曲线，A/B 测试等。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-30T12:43:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Interpret Technique to PM|Chapter11:Interpretation of some Techniques">
+<meta name="twitter:description" content="Abstract：对一些技术概念和原理的解释。如搜索引擎，推荐算法，贝塞尔曲线，A/B 测试等。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter11-Interpretation-of-some-Techniques/"/>
+
+
+
+
+
+  <title>Interpret Technique to PM|Chapter11:Interpretation of some Techniques | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter11-Interpretation-of-some-Techniques/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Interpret Technique to PM|Chapter11:Interpretation of some Techniques</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T19:11:08+08:00">
+                2017-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/System-Logic/" itemprop="url" rel="index">
+                    <span itemprop="name">System Logic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：对一些技术概念和原理的解释。如搜索引擎，推荐算法，贝塞尔曲线，A/B 测试等。</p>
+<a id="more"></a>
+<h1 id="百度和搜索引擎"><a href="#百度和搜索引擎" class="headerlink" title="百度和搜索引擎"></a>百度和搜索引擎</h1><ul>
+<li>爬虫：搜索引擎的关键构件；自动提取网页的程序；</li>
+<li>爬虫的策略：1.选择：决定要下载的页面，2.重新访问：决定什么时候检查页面的更新变化，3.平衡礼貌：指出怎样避免站点超载，4.并行：指出怎么协同达到分布式抓取的效果；</li>
+</ul>
+<h1 id="无损音乐"><a href="#无损音乐" class="headerlink" title="无损音乐"></a>无损音乐</h1><ul>
+<li>采样：声音从自然界的模拟信号到数字信号的转换需要采样，即将声波上的每个点量化成一个值，存储在磁盘上；每秒采样的次数越多，声音越连贯，失真越小；单位时间的采样次数即采样频率，单位是赫兹Hz；</li>
+<li>CD标准：采样频率是44100Hz，16bit来存储每个采样到的声音；即每秒采样44100次，每次占16bit空间；（8bit-1byte；1024byte-1M）</li>
+</ul>
+<h1 id="推荐算法"><a href="#推荐算法" class="headerlink" title="推荐算法"></a>推荐算法</h1><h2 id="协同过滤算法"><a href="#协同过滤算法" class="headerlink" title="协同过滤算法"></a>协同过滤算法</h2><ul>
+<li>需要数据：推荐的东西+用户行为数据；</li>
+<li>核心：物以类聚，人以群分；分为基于用户的协同过滤算法和基于物品的；</li>
+<li>基于用户的：爱好相似的人喜欢的东西相似；余弦相似度公式（通过计算n维空间中两个向量的夹角余弦来表示相似度）；</li>
+<li>基于物品的协同过滤：假设AB是相似的物品，则喜欢A的人也可能喜欢B；</li>
+</ul>
+<h2 id="基于内容的算法"><a href="#基于内容的算法" class="headerlink" title="基于内容的算法"></a>基于内容的算法</h2><ul>
+<li>在无用户行为数据情况下，面临的冷启动问题；基于内容即：事先把所有内容归个类，用户进行第一次消费后即把同类的内容推荐给用户；</li>
+<li>简单粗暴，命中率低；</li>
+<li>真正的推荐系统会综合运用各种算法；</li>
+</ul>
+<h1 id="贝塞尔曲线"><a href="#贝塞尔曲线" class="headerlink" title="贝塞尔曲线"></a>贝塞尔曲线</h1><ul>
+<li>原理：几个点控制一段曲线，以画出不同形状的曲线／图形；</li>
+</ul>
+<h1 id="思考的重要性"><a href="#思考的重要性" class="headerlink" title="思考的重要性"></a>思考的重要性</h1><ul>
+<li>一个问题的思考路径：全面调查清楚当前现状（包括现象和规律）——是什么引起了当前的状况／改变——当前的状况或变化是一次性的还是市场或环境发生了变化？——应对当前情况的核心点在哪里？——针对核心点思考解法；</li>
+</ul>
+<h1 id="声音传文件"><a href="#声音传文件" class="headerlink" title="声音传文件"></a>声音传文件</h1><ul>
+<li>流程：手机确认要发送文件——首先将文件上传到服务器——手机接收服务器返回的短地址——手机将短地址编码成声音——接收的手机将声音解码成短地址——从地址下载文件；（声音表示的是文件所在的短地址，而非文件）</li>
+</ul>
+<h1 id="AR公司"><a href="#AR公司" class="headerlink" title="AR公司"></a>AR公司</h1><ul>
+<li>公司：Hololens，magic leap，Meta；</li>
+<li>产品：目前依托于移动端承载，以后一定会脱离移动端独立存在；</li>
+</ul>
+<h1 id="Google-Loon"><a href="#Google-Loon" class="headerlink" title="Google Loon"></a>Google Loon</h1><ul>
+<li>目标：实现全球任意地区都可接上互联网；</li>
+<li>实现：利用热气球飞往天空的平流层，利用大气流动的算法使其移动到指定区域，从而实现互联网接入；（即一个漂浮在天空的基站）</li>
+<li>热气球基站的构成：气球+基站（白天太阳能，晚上电池）；</li>
+</ul>
+<h1 id="云计算"><a href="#云计算" class="headerlink" title="云计算"></a>云计算</h1><ul>
+<li>大数据：对数据挖掘的包装，可创造新的商业价值；</li>
+<li>云计算：Iaas（Infrastructure as a service基础设施即服务，即卖服务器），PaaS（Platform as a service平台即服务，即面向软件开发者提供一整套方便的开发和部署环境），SaaS（software as a service软件即服务）；</li>
+</ul>
+<h1 id="计算机时间"><a href="#计算机时间" class="headerlink" title="计算机时间"></a>计算机时间</h1><ul>
+<li>NTP：Network Time Protocol网络时间协议，同步时间，在网络上部署一些标准的时钟服务器，其他设备都通过NTP协议来计算自己的时钟与标准时钟的误差，再调整自己的时钟来弥补误差，使设备时间标准化；</li>
+</ul>
+<h1 id="A／B测试"><a href="#A／B测试" class="headerlink" title="A／B测试"></a>A／B测试</h1><ul>
+<li>通过设定一个变量，对比几个版本之间在真实环境下的数据，来选出最佳方案；</li>
+<li>技术角度：A/B测试不一定要打两个包、生成两个版本，变量不要写死在代码里，可以由服务器动态下发，由后台决定下发流量的多少、下发给谁、什么时候下发；（但可能技术基础不支持）</li>
+<li>AppAdhoc：A/B测试专业平台；支持各个端产品；只需后台设置要测试的变量和指标即可实时跟踪不同版本的数据表现；科学试验流量分割算法，保证不同版本用户都有相同代码；流量分配可后台自主调节；</li>
+</ul>
+<h1 id="抽奖代码"><a href="#抽奖代码" class="headerlink" title="抽奖代码"></a>抽奖代码</h1><ul>
+<li>流程：获取一个系统生成的随机数——将随机数映射到名单里的某个人——被映射者即中奖者；</li>
+<li>伪随机数：用函数计算出的随机数，当输入的参数相同时获得的随机数相同；</li>
+<li>真随机数：通过对无规律的自然现象量化后得到，如热力学噪声、量子现象；代价高；random.org提供各种获取随机数序列的API；</li>
+</ul>
+<h1 id="视频直播"><a href="#视频直播" class="headerlink" title="视频直播"></a>视频直播</h1><ul>
+<li>技术：HLS（http live streaming），RTSP，RTMP；</li>
+<li>直播流程：采集视频源和音频源——对视频源H264编码／对音频源AAC编码——分割成TS文件——组装成M3U8文件——Http 传输以及部署到CDN；</li>
+<li>HLS原理：利用http服务器，以http的方式传输音视频文件，由于音视频文件分割得足够小，故下载也足够快，近似于实时直播；</li>
+</ul>
+<h1 id="DLNA——平民化跨屏互联解决方案"><a href="#DLNA——平民化跨屏互联解决方案" class="headerlink" title="DLNA——平民化跨屏互联解决方案"></a>DLNA——平民化跨屏互联解决方案</h1><ul>
+<li>DLNA：定义了逻辑上的功能模块（DMS数字媒体服务器，DMR数字媒体渲染器，DMC数字媒体控制器，DMP数字媒体播放器）和模块间的交流方式；</li>
+</ul>
+<h1 id="IFTTT普通人也能写的小程序"><a href="#IFTTT普通人也能写的小程序" class="headerlink" title="IFTTT普通人也能写的小程序"></a>IFTTT普通人也能写的小程序</h1><ul>
+<li>if判断语句；</li>
+</ul>
+<h1 id="微信支付的业务流程"><a href="#微信支付的业务流程" class="headerlink" title="微信支付的业务流程"></a>微信支付的业务流程</h1><ul>
+<li>1.注册订单信息：用户确认订单信息—商户后台讲商户信息、订单明细、金额信息发送到微信支付后台-微信后台将信息缓存到后台服务器里+同时生成prepay_id——prepay_id返回到终端后商户APP会展示支付确认界面；</li>
+<li>2.微信客户端展示订单：用户在商户app点击微信支付——吊起微信客户端+将prepay_id、商户信息传给微信客户端——客户端通过prepay-id、商户身份信息、微信账号信息向微信支付后台查询本次支付是否合法+检查客户端的支付权限——确认无误后微信后台同志客户端展示支付授权页面；</li>
+<li>3.用户确认，完成交易：用户在授权页面点击确认并输入密码——交易完成；</li>
+<li>prepay-id标识微信支付行为的开始；</li>
+</ul>
+<h1 id="人工智能——机器学习及相关概念解析"><a href="#人工智能——机器学习及相关概念解析" class="headerlink" title="人工智能——机器学习及相关概念解析"></a>人工智能——机器学习及相关概念解析</h1><ul>
+<li>模式识别：（模式——理解为特征）利用待处理数据（图像、文字、语音等）的特征，与模版匹配并输出匹配结果；如语音识别、文字识别等；实质是依赖于人类赋予的确定规则来对数据进行处理，不具备学习能力（要提高算法的成功率需要人肉调优）；</li>
+<li>学习：个体由经验或练习引起的在能力或倾向方面的变化，也指变化的过程；</li>
+<li>计算机程序的学习：在不修改算法的前提下，算法的正确性可通过经验（历史数据）和练习（一组有明确结果的数据）来逐步提高；</li>
+<li>深度学习：参考人类大脑对数据的存储和处理方式建立计算模型，使算法具有自适应、自组织能力；</li>
+</ul>
+<h1 id="微信-查找附近的人"><a href="#微信-查找附近的人" class="headerlink" title="微信-查找附近的人"></a>微信-查找附近的人</h1><ul>
+<li>GeoHash：对每个坐标打上可逐级查找的地址标签；以半切蛋糕的方式分区，切的次数越多，GeoHash越长，小区范围越小；范围细化到小区时就不必再切，在同一个小区的人的GeoHash相同，匹配附近的人即匹配GeoHash相同的人；</li>
+</ul>
+<h1 id="模糊"><a href="#模糊" class="headerlink" title="模糊"></a>模糊</h1><ul>
+<li>目标：让每个像素点的细节不明显；</li>
+<li>实现：将某个像素点周围的像素值根据一些权重加起来，然后取平均值作为新图中对应位置的像素值；</li>
+</ul>
+<h1 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h1><ul>
+<li>绝大部分动画可通过基本动画的组合来完成：平移，旋转，缩放，Alpha（透明度变化）；</li>
+</ul>
+<h1 id="以图搜图"><a href="#以图搜图" class="headerlink" title="以图搜图"></a>以图搜图</h1><ul>
+<li>感知哈希算法：仿照人眼对图片相似的判断，只要轮廓、大体颜色一致，就认为相似；</li>
+<li>流程：把图片缩小成8*8，人为降低匹配精度——把图片颜色信息转化成64阶灰度（目的是比较颜色的相对强弱，不关心颜色是什么）——计算所有像素的灰度的平均值并记录信息、大于均值的标1反之标0、形成一个64bit的二进制数即为这张图的hash值——两图对比hash值、64位里相同的越多越相似；</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PM-Communication/" rel="tag"># PM Communication</a>
+          
+            <a href="/tags/System-Logic/" rel="tag"># System Logic</a>
+          
+            <a href="/tags/Reading-Notes/" rel="tag"># Reading Notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter10-Noun-Interpretation/" rel="next" title="Interpret Technique to PM|Chapter10:Noun Interpretation">
+                <i class="fa fa-chevron-left"></i> Interpret Technique to PM|Chapter10:Noun Interpretation
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/01/PM需要了解的行业技术名词/" rel="prev" title="PM需要了解的行业技术名词">
+                PM需要了解的行业技术名词 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#百度和搜索引擎"><span class="nav-number">1.</span> <span class="nav-text">百度和搜索引擎</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无损音乐"><span class="nav-number">2.</span> <span class="nav-text">无损音乐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#推荐算法"><span class="nav-number">3.</span> <span class="nav-text">推荐算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#协同过滤算法"><span class="nav-number">3.1.</span> <span class="nav-text">协同过滤算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于内容的算法"><span class="nav-number">3.2.</span> <span class="nav-text">基于内容的算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#贝塞尔曲线"><span class="nav-number">4.</span> <span class="nav-text">贝塞尔曲线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思考的重要性"><span class="nav-number">5.</span> <span class="nav-text">思考的重要性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#声音传文件"><span class="nav-number">6.</span> <span class="nav-text">声音传文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AR公司"><span class="nav-number">7.</span> <span class="nav-text">AR公司</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Google-Loon"><span class="nav-number">8.</span> <span class="nav-text">Google Loon</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#云计算"><span class="nav-number">9.</span> <span class="nav-text">云计算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机时间"><span class="nav-number">10.</span> <span class="nav-text">计算机时间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A／B测试"><span class="nav-number">11.</span> <span class="nav-text">A／B测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#抽奖代码"><span class="nav-number">12.</span> <span class="nav-text">抽奖代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视频直播"><span class="nav-number">13.</span> <span class="nav-text">视频直播</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DLNA——平民化跨屏互联解决方案"><span class="nav-number">14.</span> <span class="nav-text">DLNA——平民化跨屏互联解决方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IFTTT普通人也能写的小程序"><span class="nav-number">15.</span> <span class="nav-text">IFTTT普通人也能写的小程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#微信支付的业务流程"><span class="nav-number">16.</span> <span class="nav-text">微信支付的业务流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#人工智能——机器学习及相关概念解析"><span class="nav-number">17.</span> <span class="nav-text">人工智能——机器学习及相关概念解析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#微信-查找附近的人"><span class="nav-number">18.</span> <span class="nav-text">微信-查找附近的人</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模糊"><span class="nav-number">19.</span> <span class="nav-text">模糊</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动画"><span class="nav-number">20.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#以图搜图"><span class="nav-number">21.</span> <span class="nav-text">以图搜图</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

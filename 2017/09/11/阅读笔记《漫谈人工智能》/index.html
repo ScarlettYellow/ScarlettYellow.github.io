@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Artificial Intelligence,Reading Notes," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="《漫谈人工智能》从人工智能的历史谈起，讲述了此领域最新的思想成果、深度学习和机器学习理论、自然语言处理、人与机器的关系以及人工智能领域的最新应用。">
+<meta name="keywords" content="Artificial Intelligence,Reading Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阅读笔记《漫谈人工智能》">
+<meta property="og:url" content="http://yoursite.com/2017/09/11/阅读笔记《漫谈人工智能》/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="《漫谈人工智能》从人工智能的历史谈起，讲述了此领域最新的思想成果、深度学习和机器学习理论、自然语言处理、人与机器的关系以及人工智能领域的最新应用。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-09-17T02:05:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="阅读笔记《漫谈人工智能》">
+<meta name="twitter:description" content="《漫谈人工智能》从人工智能的历史谈起，讲述了此领域最新的思想成果、深度学习和机器学习理论、自然语言处理、人与机器的关系以及人工智能领域的最新应用。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/11/阅读笔记《漫谈人工智能》/"/>
+
+
+
+
+
+  <title>阅读笔记《漫谈人工智能》 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/11/阅读笔记《漫谈人工智能》/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">阅读笔记《漫谈人工智能》</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-11T00:12:34+08:00">
+                2017-09-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>《漫谈人工智能》从人工智能的历史谈起，讲述了此领域最新的思想成果、深度学习和机器学习理论、自然语言处理、人与机器的关系以及人工智能领域的最新应用。<br><a id="more"></a></p>
+<h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><ul>
+<li>part1:整个人工智能学科发展历史的介绍；</li>
+<li>part2-4:介绍了人工智能中最古老的部分，包括图灵机模型（第2章）、冯·诺依曼计算机体系结构（第3章）以及怪圈与哥德尔定理（第4章）</li>
+<li>part5-12:介绍了人工智能领域最新的思想和成果</li>
+<li>part5:马库斯·胡特（Marcus Hutter）的通用人工智能理论</li>
+<li>part6:深度学习理论</li>
+<li>part7:探讨人工智能与人脑在信息处理等若干方面的异同之处</li>
+<li>part8-9:讨论了一种非常另类的人工智能——人类计算，即通过互联网众包的方式，让人类自己帮助计算机程序来实现“人工智能”。</li>
+<li>part10:自然语言处理</li>
+<li>part11:展现了一种另类的理解、构思人工智能的视角。这里关注的不再是个体机器人，而是这群机器人通过相互作用而涌现出来的集体行为。人类的智力不也是来自于成千上万个神经元互动的涌现模式吗？通过巧妙地设计机器人的相互作用规则，我们可以在集体层面获得智能.</li>
+<li>part13-14:实践人工智能的应用案例</li>
+</ul>
+<h1 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h1><h2 id="图灵机模型"><a href="#图灵机模型" class="headerlink" title="图灵机模型"></a>图灵机模型</h2><ul>
+<li>假设有两间密闭的屋子，其中一间屋子里面关了一个人，另一间屋子里面关了一台计算机：进行图灵测试的人工智能程序。然后，屋子外面有一个人作为测试者，测试者只能通过一根导线与屋子里面的人或计算机交流——与它们进行联网聊天。假如测试者在有限的时间内无法判断出这两间屋子里面哪一个关的是人，哪一个是计算机，那么我们就称屋子里面的人工智能程序通过了图灵测试，并具备了智能。事实上，图灵当年在《机器能思考吗？》一文中设立的标准相当宽泛：只要有30%的人类测试者在5分钟内无法分辨出被测试对象，就可以认为程序通过了图灵测试。</li>
+</ul>
+<h2 id="学科"><a href="#学科" class="headerlink" title="学科"></a>学科</h2><ul>
+<li>自动定理证明；模式识别；机器学习；自然语言理解；计算机视觉；自动程序设计</li>
+</ul>
+<h1 id="part2-图灵的计算王国Turing-Machine-and-Theory-of-Comoutation"><a href="#part2-图灵的计算王国Turing-Machine-and-Theory-of-Comoutation" class="headerlink" title="part2 图灵的计算王国Turing Machine and Theory of Comoutation"></a>part2 图灵的计算王国Turing Machine and Theory of Comoutation</h1><h2 id="小虫模型"><a href="#小虫模型" class="headerlink" title="小虫模型"></a>小虫模型</h2><ul>
+<li>从信息处理角度建立小虫行动的模型：对小虫所处环境建模；假设小虫所处环境是一个无限长的纸带，纸带被分成若干小方格（只有黑白色），假设小虫只有眼睛能感知方格颜色，方格的颜色即它的输入信息；</li>
+<li>输入信息：方格的颜色，I={black，white}；输出动作：在纸带上前进或后退一个方格，O={forward,backwards}；程序：从I集合到O集合的映射；内部状态：黑方格为吃饱状态，白方格为吃饱状态，再次读入黑方格是饥饿状态，S={饥饿，吃饱}；</li>
+<li>模型复杂化【复杂性来自于组合】：把小虫的输入集合（多种感官，环境复杂化）、输出行动集合（移动，改造）、内部状态集合进行扩大；</li>
+<li>信息处理的根本：输入集合、输出集合、内部状态、固定的程序；</li>
+</ul>
+<h2 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h2><ul>
+<li>图灵机是理论计算模型；也是一个会对输入信息进行变换给出输出信息的系统；功能是完成对输入信息进行变换得到输出信息的计算；</li>
+<li>如果我们把一切都看作信息，那么<strong>广义上讲，计算就是对信息的变换</strong>。你会发现，其实自然界充满了计算。如果我们把一个小球扔到地上，小球又弹起来了，那么大地就完成了一次对小球的计算。因为你完全可以把小球的运动都抽象成信息，它无非是一些位置、速度、形状等能用信息描述的东西，而大地把小球弹起来无非是对小球的这些信息进行了某种变换，因而大地就完成了一次计算。你可以把整个大地看作一个系统，而扔下去的小球是对这个系统的输入，那么弹回来的小球就是该系统的输出，因而也可以说，<strong>计算就是某个系统完成了一次从输入到输出的变换。</strong></li>
+<li>因为我们完全可以把所有的自然界存在的过程都抽象成这样的输入输出系统，所有的大自然存在的变量都看作信息，因而计算无处不在</li>
+<li>计算的组合：可以把若干个计算系统进行合并，构成更大的计算系统。比如还是那个小球，如果往地上放了一个跷跷板，小球掉到地上会弹起这个跷跷板的另一端，而跷跷板的另一端可能还是一个小球，于是这个弹起的小球又会砸向另一个跷跷板；</li>
+<li>最简单的信息就是0和1，最简单的计算就是对0或1进行的布尔运算。而布尔运算本质上其实就三种：与、或、非。从最简单的逻辑运算操作最简单的二进制信息出发，我们其实可以构造任意的图灵机。这点不难理解：任何图灵机都可以把输入、输出信息进行01编码，任何一个变换也可以最终分解为对01编码的变换，而对01编码的所有计算都可分解成前面说的三种运算。也许，现在你明白了为什么研究计算机的人都要去研究基本的布尔电路。奥秘就在于，用布尔电路可以组合出任意的图灵机；</li>
+</ul>
+<h2 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h2><ul>
+<li>图中A是你的鬼脸动作，B是你朋友做出来的鬼脸动作，C是日记本上的描述。你朋友的动作B模拟了你的动作A，而B的动作信息是通过执行C上的描述得到的，也就是说，存在着一个从C到B的信息变换。这样我们认为C也对A进行了模拟。</li>
+<li>一台图灵机A如果要模拟B，并不一定要模拟B中的所有输入、输出、内部状态、程序规则表这些元素，而只要在给定输入信息的时候能够模拟B的输出信息就可以了；</li>
+<li>在给定相同输入信息的情况下，只要输出信息 o’ 能够模拟信息 o，也就认为B模拟了A。而信息 o’ 对信息 o 的模拟又符合我们上面对一般集合之间模拟的定义。也就是说，如果存在另外一台图灵机能够把信息 o’ 计算并映射成信息 o，就认为 o’ 模拟了 o。说白了也就是 o’ 可以与 o 不一样，但是只要你能用一个图灵机把 o’ 经过一系列运算变换到相同的 o，就认为 o’ 模拟了 o。因而也就是图灵机B模拟了图灵机A。</li>
+<li>假设A和B输入的信息也不一样，一个是 i，另一个是 i’，那么如果 i 和 i’ 之间也存在着模拟对应关系的话，我们仍然认为B可以模拟A</li>
+</ul>
+<h2 id="计算等价性"><a href="#计算等价性" class="headerlink" title="计算等价性"></a>计算等价性</h2><ul>
+<li>如果把中国人、英国人、机器人都看作图灵机，把那三句话看作对它们的输入信息，那么最终的结果就是图灵机计算的输出。这个时候我们看到三种结果是相同的，也就是说这些图灵机之间是可以相互模拟的</li>
+<li>能够相互模拟的图灵机是计算等价的。而这种计算等价性就像前面说到的加法规则一样是独立于计算系统和执行机构的。</li>
+</ul>
+<h2 id="自食其尾"><a href="#自食其尾" class="headerlink" title="自食其尾"></a>自食其尾</h2><ul>
+<li>万能图灵机可以模拟自身：把自己的编码信息输入给自己；</li>
+<li>存在某种图灵机可以完成自我复制，其构造：如果一台图灵机是X，那么它的编码就记为<x>。这样能够自我复制的图灵机T的功能是把T的编码<t>写到纸带上输入万能图灵机，那么万能图灵机就能根据读入的<t>执行T，在纸带上再次输出<t>的一份副本<t>‘，并且<t> = <t>‘。下面就来解释如何构造这样的T。首先T由两部分构成：A和B。第一部分A的功能是指导万能图灵机把B的编码<b>原封不动地打印到纸带上，纸带上就有了<b>，如果这个时候你想用同样的方法打印<a>到纸带上是不行的，因为A就会打印自己了。然而B却可以这样做：读入纸带上的信息X，生成能够打印X的图灵机p(X)的编码<p(x)>，打印到纸带上，并把X和<p(x)>的内容前后调换，有定理保证这样的图灵机是存在的。这样当B读到纸带上的信息<b>之后，就会打印出能够打印<b>的图灵机的编码也就是<a>，然后把<a>和<b>位置对换，就构成了<ab>，也就是<p>，所以P把自己进行了一次复制。初看起来，这种自我复制的程序是不可能的，因为这包含了无穷无尽的怪圈。P要能产生它自己</p><p>，就意味着P中至少包含了一个</p><p>，而这个</p><p>中又包含了至少一个</p><p>……最后P必然是一个无限大的程序，然而我们却能够证明P是可能的。</p></ab></b></a></a></b></b></p(x)></p(x)></a></b></b></t></t></t></t></t></t></x></li>
+</ul>
+<h2 id="停机问题"><a href="#停机问题" class="headerlink" title="停机问题"></a>停机问题</h2><ul>
+<li>我们不妨设P(X,Y)表示P判断程序X作用到数据（纸带）Y上是否存在死循环的结果。如果X作用到Y上存在死循环，那么P(X,Y)就输出一个yes；否则就输出一个no。</li>
+<li>这很像刚开始叙述的那个猜硬币的游戏。你想猜对我的硬币，就必须告诉我你的答案是左手还是右手，然而问题是我总能根据你给出的答案进行动态调整，让你永远也猜不对！停机问题也是如此，我总能根据你的程序P来构造P判定不出来的问题Q，我总会赢！很简单，因为你总要在我之前构造好P，就相当于你总要先说出硬币在哪个手中。</li>
+<li>图灵停机问题也和复杂系统的不可预测性有关。我们总希望能够预测出复杂系统的运行结果。那么能不能发明一种聪明的程序，输入某个复杂系统的规则，输出的是这些规则运行的结果呢？从原则上讲，这种事情是不可能的。它也和图灵停机问题等价。因而，我们得出来的结论就是：要想弄清楚某个复杂系统运行的结果，唯一的办法就是让这样的系统实际运作，没有任何一种计算机算法能够事先给出这个系统的运行结果。</li>
+</ul>
+<h1 id="part4-一条永恒的金带"><a href="#part4-一条永恒的金带" class="headerlink" title="part4 一条永恒的金带"></a>part4 一条永恒的金带</h1><ul>
+<li>core：缠结的层次结构</li>
+<li>层次，高低（一种典型的层次结构），尺度（另一种层次），虚拟层次（eg.梦中梦，从前有座山）</li>
+</ul>
+<h2 id="层次的混淆／缠结"><a href="#层次的混淆／缠结" class="headerlink" title="层次的混淆／缠结"></a>层次的混淆／缠结</h2><ul>
+<li>本该属于不同层次的东西却由于某种原因混淆到了一起；eg.莫比乌斯带；埃舍尔的僧侣利用视觉错觉和绘画技巧达到二维三维化的效果；</li>
+<li>数学公理化：数学最大的好处就在于，它可以从一些基本而简洁的前提假设（公理）出发，通过严密的推理导出所有可靠的结论——这就是数学公理化方法。</li>
+</ul>
+<h2 id="哥德尔句子"><a href="#哥德尔句子" class="headerlink" title="哥德尔句子"></a>哥德尔句子</h2><ul>
+<li>本数学命题不可以被证明。</li>
+<li>下面我们将展开推理。根据逻辑排中律，这条数学命题要么正确，要么错误。那么，我们不妨先假设它是正确的，然后再看看会发生什么。于是，“本数学命题不可以被证明”就暂时是正确的，也就是说这个数学命题是一条数学真理，并且根据它自己的论述，它不能被证明。于是，我们得到了一条真理，但却不能被我们的数学公理化系统所证明，因此，希尔伯特要求的完备性不能得到保证。</li>
+<li>下面我们再从另一个角度展开讨论，假设该命题是不正确的。那也就是说，“本数学命题不可以被证明”这个命题是可以被证明的。于是，从公理出发，我们能够得到“本数学命题不可以被证明”这一命题。而按照假定，“本数学命题可以被证明”是真理，所以根据完备性，它也必然是系统中的定理。于是，正命题和反命题同时都是系统中的定理，一致性遭到了破坏。</li>
+<li>理发师悖论：<br>某个小村庄里有一名理发师，他给自己制定了一条奇特的规矩：他不给那些给自己理发的人理发。<br>这条规矩看起来没什么问题，但是一旦我们问这位理发师他该不该给自己理发的时候，他就会立即陷入自相矛盾的境地。因为，如果他给自己理发，那么按照他的规矩，他属于给自己理发的人，那么他就不该给自己理发。而如果他不给自己理发，那么根据他的规矩，他又应该给自己理发。所以，这个可怜的理发师将无所适从。</li>
+</ul>
+<h2 id="递归定理"><a href="#递归定理" class="headerlink" title="递归定理"></a>递归定理</h2><ul>
+<li>对于任意的程序F，总存在一段程序代码c，使得我们执行代码c的结果完全等价于把源代码c作为数据输入给程序F执行的结果。</li>
+</ul>
+<h1 id="part5-从算法复杂性到通用人工智能"><a href="#part5-从算法复杂性到通用人工智能" class="headerlink" title="part5 从算法复杂性到通用人工智能"></a>part5 从算法复杂性到通用人工智能</h1><ul>
+<li>人的智能涉及模式识别、分类、学习、记忆、归纳、类比、泛化、联想、规划、优化、创新、演绎推理、问题求解、语言处理、生存、繁衍等方面，试图通过模拟人脑或模拟人类智能的各种功能模块而构建智能主体</li>
+</ul>
+<h2 id="AIXI（通用智能主体）的应用"><a href="#AIXI（通用智能主体）的应用" class="headerlink" title="AIXI（通用智能主体）的应用"></a>AIXI（通用智能主体）的应用</h2><ul>
+<li>序列预测。显然，索洛莫诺夫的序列预测可以看作AIXI的特例，所以AIXI拥有序列预测的功能，像股票走势、天气预报、彩票投注之类的问题都可以转化为类似的序列预测问题，只要现实世界中这些问题真的是可计算的，那么AIXI都可以成功预测。</li>
+<li>最优化。比如寻找某个函数的最小值问题，这时AIXI可以权衡计算该函数的所有程序，然后只要把AIXI的效用函数设为跟自变量的函数值相关的某个函数就好了。函数值越小效用越高，为了寻求最大效用，AIXI会自动寻找函数的最小值。计算经过所有城市路途最短的旅行商问题、求解生产某产品的最小成本问题等都属于此类问题。</li>
+<li>策略博弈。AIXI还可以进行各种策略博弈，只需要把博弈的另一方看作“环境”就好了，比如象棋之类的二人零和游戏。而且，如果对手是“理性人”的话，AIXI的期望最大化策略会收敛到通常的极小极大化策略。传统的博弈理论只能处理理性主体间的博弈，如果博弈的另一方有一些非理性的行为，只要这些行为仍然具备某种模式，那么AIXI都可以探索出来，然后加以利用，从而谋利。也就是说，AIXI可以对抗有限理性或非理性玩家。</li>
+<li>监督学习。给定一系列(z, f(z))，AIXI可以轻易地预测(z’ , ?)，所以监督学习也很容易处理。比如识别物体的属性和根据属性分类的问题都可以划归为这种样式。比较复杂一点儿的如给定一些状态，然后教它在合适的状态下做合适的动作，这意味着给定一个(state, action)序列，然后AIXI就可以学会遇到什么状态该采取什么行动了。诸如此类的几乎所有问题都可以划归为AIXI能处理的问题，与智能相关的各种要素也都应该可以从中涌现出来。这里最关键的还是对环境的压缩问题，而压缩包含着对任何模式的探索，一般来说具体的问题往往只是针对某些或某类具体的模式。</li>
+</ul>
+<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><ul>
+<li>输出：为了使从1加到100的计算结果能够显示在计算机屏幕上，我们需要在内存中留出特定的区域存放用于显示的内容，在CPU通过指令的运行把数据存放在特定的内存位置上以后，操作系统负责不断地将这些特定区域的内容在屏幕上显示出来。在这个过程中，要适应不同的分辨率，计算在显示器上输出的位置。为此，操作系统需要适应不同的显示设备，根据不同的设备运行不同的驱动程序。</li>
+<li>输入：同样，操作系统需要接收键盘的输入，在键盘发生了按键按动作时，需要得到触发的通知，将按键的电信号转换为相应的字符，并不断将接收到的字符存在指定内存区域，供计算机中运行的程序使用。</li>
+<li>在简单的计算机模型中，操作系统主要负责的功能有两点：一是封装对于底层的硬件实现，二是提供更多的函数支持更多的功能</li>
+</ul>
+<h2 id="层次的概念"><a href="#层次的概念" class="headerlink" title="层次的概念"></a>层次的概念</h2><ul>
+<li>层次与其愈上愈简：当一个计算机程序运行时，我们从软件到硬件来观察，就会发现每一层的表现形式完全不一样，但是本质上都是计算，而且每一层都是建立在下一层的基础上的。虽然分了这么多层，但所有的层都是等价的。层和层之间有清楚明确的边界，越到下层牵涉到的基础单元越多，越到上层越简洁。</li>
+<li>真实的世界是在无数的层次上运行着的；</li>
+<li>实例望梅止渴中反应出的反应层次：望梅止渴”中，士兵们被想象中的梅子引诱得不住流口水的过程实际上就是一个非常复杂的多层次系统运行的过程（如图3-23所示）。由梅子这个概念到引起口水的分泌，我们平常都只从概念的层面来提及，但实际上从概念到身体反应，作用是一层层产生的。在身体系统之下，还有更低的层次，如器官、细胞、蛋白质、DNA分子。概念和思维层（视觉，形象回忆，口感回忆）+ 身体系统层次（大脑神经激活，神经系统递质传递，唾液分泌）</li>
+</ul>
+<h2 id="通用智能"><a href="#通用智能" class="headerlink" title="通用智能"></a>通用智能</h2><ul>
+<li>通用智能的核心是通用归纳。通用归纳将归纳转化为预测，而预测的关键是压缩。压缩可以理解为对数据的建模或编码表示，它依赖于对模式的掌握，模式可以用算法来衡量。</li>
+<li>从数据到程序是编码，从程序到数据则是解码。编码越好（即压缩越短）则预测越准，预测越准行为就越有效。与智能相关的其他要素，诸如分类、类比、联想、泛化等都可以理解为对模式的追求，这些都可以在追求最大压缩的过程中涌现出来，所以不是基本的。但找寻最短编码的过程不是一个能行的过程，所以我们只能通过试错不断逼近。逼近的过程可以理解为一个信念修正的过程，这可以通过贝叶斯更新来处理，信念修正之前的“先验信念”的大小则取决于模式自身的简单性。</li>
+<li>复杂的事物要想简单地表达必须先压缩。压缩可以通过编码来实现</li>
+<li>科学是对经验的理解，理解就是压缩，预测可以看作某种解压缩</li>
+<li>主体与环境的交互：考虑一个面对未知环境的主体，它与环境不断交互（如图5-9所示）。在每一个回合中，主体都对环境作出某种动作，然后这个动作激发环境作出某种反应，反过来给主体一些反馈。主体感知到这种反馈，同时从中体会到某种正面（幸福）或负面（悲伤）的效用，然后计划下一回合的交互该采取哪种动作，主体的所有信息都来自过去与环境交互的历史，它对未知环境的评估也主要依赖于这些信息。在主体与环境交互过程中，主体最优的行为方式就是依照算法概率（主观信念）评估未知环境、寻求期望累积效用最大化。</li>
+<li>生活是一系列选择的总和，如果你选择了做ak，你就可能面对ok 、品尝rk 。要想收获更多，就需要慎重选择，立足当下，评估未来。<br>在主体与环境交互过程中，主体最优的行为方式就是依照算法概率（主观信念）评估未知环境、寻求期望累积效用最大化。</li>
+<li>关于这个世界，最不可理解的是——它竟是可以理解的。——爱因斯坦</li>
+</ul>
+<h2 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h2><ul>
+<li>机器学习就是通过算法，使得机器能从大量历史数据中学习规律，从而对新的样本做智能识别或对未来做预测。</li>
+<li>如果把深度学习比作一个物种，和其他机器学习物种相比，它有两个特点：(1) 不挑食。无论原始数据属于图像识别、语言识别、NLP、生物医药等哪个领域，都可以“喂”给神经网络学习处理。这和大脑的工作原理很相似，大脑用同一套算法解决视觉、听觉、嗅觉等感知问题。(2) 胃口大。喂给它的数据越多，它就变得能力越强，越聪明，并且只会吃不饱，不会消化不良。</li>
+<li>BP算法（反向传播算法）：利用BP算法可以让一个人工神经网络模型从大量训练样本中学习出统计规律，从而对未知事件进行预测。这种基于统计的机器学习方法比起过去基于人工规则的系统，在很多方面显示出了优越性。这个时候的人工神经网络，虽然也被称作多层感知机（Multi-layer Perceptron），但实际上是一种只含有一层隐层节点的浅层模型。</li>
+<li>卷积神经网络：本知识多层感知机；成功的关键可能在于它所采用的局部连接和分享权值的方式不仅减少了权值的数量，而且降低了过拟合的风险。</li>
+</ul>
+<h2 id="从特征表示到深度学习"><a href="#从特征表示到深度学习" class="headerlink" title="从特征表示到深度学习"></a>从特征表示到深度学习</h2><ul>
+<li>特征提取和表示学习：机器学习特定问题时，一般采集到数据之后会进行一些特征提取的处理，例如机器视觉里的 SIFT特征 + 词袋模型（Bag of Words），或者语音识别里的 MFCC频谱之类的特征，再把提取出的特征（即原始数据的一个表示）丢到各种机器学习模型（如SVM）里做分类或预测；</li>
+<li>简单图片识别任务：识别一张图片上是否有鸟。如果能预先知道鸟的视觉特征，例如尖嘴、羽毛、翅膀等，并检测一幅图片上是否包含这些特征，作为这幅图片的表示（例如如果有尖嘴，对应位置为1，否则为0）。不难想象，在这个新的表示上识别，比直接在原始像素上识别，准确率要高得多。</li>
+<li>深度学习的实质：通过构建具有很多隐层的机器学习模型和海量的训练数据，来学习更有用的特征，从而最终提升分类或预测的准确性。所以“深度模型”是手段，“表示学习”才是目的。</li>
+<li>深度学习与传统的浅层学习的不同在于：(1) 强调了模型结构的深度，通常有5层或6层，甚至10多层的隐层节点；(2) 明确突出了表示学习的重要性，也就是说，通过逐层特征变换，将样本在原空间的特征表示变换到一个新特征空间，使分类或预测更加容易。</li>
+<li>自编码器（autoencoder）是含有一个隐层的神经网络。从概念上讲，它的训练目标是“重新建立”输入数据；换句话说，让神经网络的输出与输入是同一样东西，只是经过了压缩。例如，有一个由28×28像素的灰度图像组成的训练集，且每一个像素的值都作为一个输入层神经元的输入（这时输入层就会有784个神经元）。输出层神经元要有相同的数目（784），且每一个输出神经元的输出值和输入图像的对应像素灰度值相同。</li>
+</ul>
+<h2 id="RBM（受限玻尔兹曼机）"><a href="#RBM（受限玻尔兹曼机）" class="headerlink" title="RBM（受限玻尔兹曼机）"></a>RBM（受限玻尔兹曼机）</h2><ul>
+<li>一种可以在输入数据集上学习概率分布的生成随机神经网络；标准的RBM中，隐含和可见层的神经元都是二态的，即神经元的激活值只能是服从伯努力分布的0或1。</li>
+<li>RBM的权重更新公式中包含正学习和逆学习两项，其中逆学习项需要可见层和隐含层的交替随机采样（gibbs sampling），直至网络达到平衡态。但这样计算很慢，使得模型只具有理论价值而不够实用。但这种问题难不倒辛顿，他提出了一个叫作对比散度（contrastive divergence）的近似方法，只需采样很少的次数（如1次）就可以更新权重，且对最终的学习效果几乎没有影响。</li>
+<li>自编码器或RBM以无监督的方式学到数据中的特征</li>
+<li>深度学习与传统的神经网络之间既有相同的地方也有很多不同。二者的相同之处在于深度学习采用了相似的分层结构，系统由包括输入层、隐层（多层）、输出层组成的多层网络，只有相邻层节点之间有连接，同一层以及跨层节点之间相互无连接。这种分层结构是比较接近人类大脑的结构的。</li>
+<li>在传统神经网络中，人们采用的是BP算法训练整个网络，随机设定初值，计算当前网络的输出，然后根据当前输出和训练的标签之间的差改变前面各层的参数，直到收敛（整体是一个梯度下降法）。</li>
+<li>BP算法作为传统训练多层网络的典型算法，实际上在仅含几层网络的时候就已经很不理想了。深度结构（涉及多个非线性处理单元层）的非凸目标代价函数中普遍存在的局部最小是训练困难的主要原因。BP算法存在以下几个主要问题。<br>1.梯度越来越稀疏：从顶层越往下，误差校正信号越来越小；<br>2.收敛到局部最小值：尤其是从远离最优区域开始的时候（随机值初始化会导致这种情况的发生）；<br>3.一般只能用有标签的数据来训练：但大部分数据是没有标签的，而大脑可以从没有标签的数据中学习。</li>
+</ul>
+<h2 id="栈式自编码器网络"><a href="#栈式自编码器网络" class="headerlink" title="栈式自编码器网络"></a>栈式自编码器网络</h2><ul>
+<li>(1) 使用自底向上（图6-5的从左向右）非监督学习，就是从底层开始，一层一层地往顶层训练。采用无标定数据（有标定数据也可）分层训练各层参数，这一步可以看作一个无监督训练过程，也可以看作是特征学习过程，是和传统神经网络区别最大的部分。</li>
+<li>（2）自顶向下（图6-5的从右向左）的监督学习，就是通过带标签的数据去更新所有层的权重，误差自顶向下传输，对网络进行微调。</li>
+</ul>
+<h2 id="语音识别"><a href="#语音识别" class="headerlink" title="语音识别"></a>语音识别</h2><ul>
+<li>采用深度神经网络可以充分描述特征之间的相关性，可以把连续多帧的语音特征并在一起，构成一个高维特征。最终的深度神经网络可以采用高维特征训练来模拟。另外，它拥有更为稳定的表述（Invariant Representation）特性，层级越多，抽象能力越强。</li>
+<li>迁移学习：DNN不但大幅度提高了准确率，还间接解决了语音识别模型训练的一个实际问题：对于一些小语种，无法收集到足够多的训练语料数据。谷歌的研究人员发现了一个有趣的现象，先针对有足够训练数据的大语种（如英语）训练一个识别网络，然后将网络最顶层的英语音素分类层去掉，代之以某个新语言的音素分类层，而重用下层产生的特征（即把原网络去掉最顶层后当成一个语音特征提取器），这样只要花非常少的训练代价，就可以得到一个效果非常好的新语言识别网络。特征重用带来的迁移学习能力体现了表示学习的巨大威力。</li>
+</ul>
+<h2 id="自然语言处理NLP"><a href="#自然语言处理NLP" class="headerlink" title="自然语言处理NLP"></a>自然语言处理NLP</h2><ul>
+<li>相比于声音和图像等底层原始信号，语言是一种非自然信号，是完全由人类大脑产生和处理的符号系统，属于人类认知过程中产生的高层认知抽象实体。</li>
+</ul>
+<h3 id="词向量"><a href="#词向量" class="headerlink" title="词向量"></a>词向量</h3><ul>
+<li>自然语言理解的问题要转化为机器学习的问题，第一步肯定是要找一种方法把这些符号数学化。</li>
+<li>One-hot表示法：NLP 中最直观也是到目前为止最常用的词表示方法是 One-hot稀疏表示，这种方法把每个词表示为一个很长的向量。这个向量的维度是词表大小，其中绝大多数元素为 0，只有一个维度的值为 1，这个维度就代表了当前的词。eg.“话筒”表示为 [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 …];“麦克”表示为 [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 …];每个词都是茫茫 0 海中的一个 1。问题：词汇鸿沟”现象，任意两个词之间都是孤立的。光从两个向量中看不出两个词是否有关系，哪怕是“话筒”和“麦克”这样的同义词也不能幸免于难。</li>
+<li>词向量（word embedding）：分布式表示（distributed representation）的一种低维实数向量；这种向量一般长成这个样子：[0.792, -0.177, -0.107, 0.109, -0.542, …]；优点；让相关或者相似的词在距离上更接近。向量的距离可以用最传统的欧氏距离来衡量。用这种方式表示的向量，“麦克”和“话筒”的距离会远远小于“麦克”和“天气”的。</li>
+</ul>
+<h1 id="part7-人工智能与人脑智能的思考"><a href="#part7-人工智能与人脑智能的思考" class="headerlink" title="part7 人工智能与人脑智能的思考"></a>part7 人工智能与人脑智能的思考</h1><ul>
+<li>认知计算与脑识别功能：现在可能已经没有必要讨论人和计算机谁更好这个问题了，更重要的是利用好两者的优势，更好地解决实际问题。在处理人和计算机的关系问题上，一种办法是模拟人的思维过程，利用从结构到功能的特点，实现类似的智能。人类在这一关系中处于服务对象角色，最近十分热门的深度学习属于这一类的实例。还有一种想法是直接利用人的认知功能，将部分计算机不适宜完成的复杂的计算任务由人来完成，人直接参与到了计算之中，与计算机各自分工。这类有人脑辅助的“认知计算”研究也已经取得了很多成果。例如，美国EGI公司利用人的超强图像处理能力从海量遥感卫星获取的图像中检索异常物体，用快速视觉呈现的方式将大量卫星图片呈现给参与实验的人。与传统人工操作相比，这家公司在人进行检查的同时记录了人脑活动的脑电波，一旦发现异常物体，脑电信号中会有特异性反应成分。而这套系统的另一个优势是直接检测脑活动，可以不需要人的意识参与，能够在刺激呈现后短时间内发现异常，并且在前一幅图片加工完之后马上呈现另一幅图片，而无需等人按键决策。通常需要人作出决策、按键反馈等高级认知加工需要耗费很多时间，而直接利用脑的识别功能，绕开耗时的决策和反应，与计算机对接，就极大地提高了检测效率。类似地，美国哥伦比亚大学的Paul Sajda教授研究组进行了很多利用视觉信息进行物体快速归类的实验。近年来还利用人对物体类别感知过程的脑活动特征建立了数据库，实现了利用人特征进行图片检索的引擎。还有一部分认知计算应用是利用人的认知活动直接为人服务的，例如计算出人的情绪活动的状态，给予人实时的反馈调节，协助用户找到保持良好状态的策略（例如Neurosky的系列产品）。这种神经反馈的应用已经用于情绪调节和注意力训练等领域，无一不是恰当地利用了人的认知优势，实现了有机的人机协同。</li>
+<li>人的视觉系统可以很好地处理这个问题，即便背景在变化！这涉及视网膜空间特殊表征，即便物体位置、尺寸、朝向、角度发生了很大改变，仍然能够保持‘视觉不变性’，不会因为输入的客体信息改变而影响识别输出结果，这是稳定追踪的基础。”</li>
+<li>计算机在处理速度方面有优势，可以连续工作，另外大型数据库可以存储的容量远远大于人脑，只不过人脑的信息处理模式可能极为智能</li>
+<li>我们首先可以看出信息加工是层次化的，逐级加工从简单到复杂的特征，从V1到V2、IT区，每个层级都对视觉信息有各自的表征，提取从线段朝向、简单特征组合到复杂特征等不同的特征，感知、识别等认知加工也是伴随着每个层级的表征进行的。而这些表征和加工都是通过多个层级的神经元群体的同步活动来实现的。单个神经元负责表征极为简单的信息，但是通过群体组合在一起（通过神经电活动有节律的同步震荡完成组织）就能表达复杂的功能。从信息科学的角度看，整个加工过程的实现可以理解为复杂的多次特征提取过程，提取的特征从简单到复杂，多次组合，甚至“概念”这种十分抽象的特征也可以被提取。因此我们不难看出现有计算机视觉领域物体识别算法的局限性，也不难理解与人的识别过程有类似之处的深度学习等算法一定有内在结构特点做保证。</li>
+</ul>
+<h1 id="part8-人工智能：从人机交互到人类计算"><a href="#part8-人工智能：从人机交互到人类计算" class="headerlink" title="part8 人工智能：从人机交互到人类计算"></a>part8 人工智能：从人机交互到人类计算</h1><ul>
+<li>从图灵测试看智能的定义：人们往往将注意力集中在那台机器上面：我们如何改进机器的算法来蒙骗人类。但实际上，起到关键作用的恰恰不是机器而是测试机器的测试者——一个活生生的人，因为他是最终的判断者。因此，与其说我们要开发一个具有智能的机器，不如说我们要开发一个能够让人类测试者认为具备智能的机器。虽然后面一种说法只比前面的说法多出了一个限定词：“人类测试者认为”，但是，这已经道破了关于人工智能的一条真理：智能不是一个可以客观定义的属性，而是一种依赖于观察者——人类测试者——的属性；</li>
+<li>只有玩家的交互输入才是让机器实现自我改进、实现进化的唯一动力来源。</li>
+<li>一种有效地让用户“编程”的模式很快被人们用来解决一些更有意义的实际问题。例如，美国新墨西哥州立大学的约翰斯顿（Victor S. Johnston）教授在他的著作《情感之源》一书中就描述了这样一个人类面孔生成的程序。首先，他把人脸的各个组成部分，如鼻子的形状、眼睛的大小、额头的宽度等按照它们的特征进行编码。之后，与“生物变形”程序一样，计算机在随机地选择一组参数之后就能在屏幕上生成一系列人脸，并让人进行选择。但是，与“生物变形”不同的是，这个人脸选择软件可以用于解决实际问题，而不仅仅是为了娱乐。约翰斯顿教授将这款软件用于辅助目击者寻找杀人凶手。人们通常不知道如何描述罪犯的面部特征，但却可以轻松地识别出哪一张脸更像凶手。于是，只要杀人案目击者在电脑屏幕前不停地点选那些更像罪犯的脸孔，就会一点点地把真正的罪犯面孔“进化”出来。</li>
+</ul>
+<h2 id="程序的引擎——人类的注意力"><a href="#程序的引擎——人类的注意力" class="headerlink" title="程序的引擎——人类的注意力"></a>程序的引擎——人类的注意力</h2><ul>
+<li>诺贝尔经济学奖得主郝伯特·西蒙（Herbert Simon）早在1971年的时候就指出：“在一个信息丰富的世界中，拥有信息财富就意味着另外一些东西的匮乏：所有那些信息所消耗的东西。这就是注意力。因此，信息的富足必然导致注意力的稀缺，这也就使得如何能够在过载的信息资源上面有效地分配注意力变得极其重要。”</li>
+<li>不妨把机器的内存环境看作一个大的养鱼池，内存中活跃的程序就好像是这个池子中的各类小鱼小虾。正如所有的鱼都需要吃食物一样，所有的程序体都需要系统给它们分配CPU执行时间。在目前主流的多任务操作系统中，只有竞争到足够多CPU时间的程序段才能够更好地存活，并且有更高的机会被执行和修改。因此，CPU时间对于程序体就像是能量流对于鱼池里面的鱼一样。</li>
+<li>爱德华开始发挥他经济学家的特长。首先，他发现虚拟角色每升级一次，玩家就可以在eBay上多卖出13美元。其次，他估算出玩家让自己的角色升一级大概需要51.4小时，那么平均每个小时每个玩家就能创造13/51.4 ≈0.25美元的价值。而且，每天EQ游戏中都有60 381个玩家在线，那么，整个游戏在一年内创造出的价值，也就是GDP年均值是：60 381×24×365×0.25 ≈1亿3千万美元。这是一个可观的数字，因为按照这个计算，EQ作为一个虚拟的国家，GDP排名竟然是2001年全球所有国家的第77位。爱德华的研究的一个核心假设就是：玩即生产。因为玩消耗了注意力，而注意力相对于EQ世界来说就是一种资源。没有人玩的网络游戏必然会死掉。所以，玩家看似消费一样的玩的行为实际上构成了一种生产，而这种生产的价值恰恰可以体现在eBay上虚拟角色的拍卖价格上面。</li>
+</ul>
+<h2 id="注意力经济学"><a href="#注意力经济学" class="headerlink" title="注意力经济学"></a>注意力经济学</h2><ul>
+<li>互联网广告的运转原理就是将人类的注意力转变成实实在在的资金流。</li>
+<li>谷歌印钞机：利用人工智能技术精准地引导这种注意力流动和相应反向的资金流。谷歌开发了两个系统，分别称为AdWords和AdSense。首先，谷歌公司意识到每天成千上万的网民给谷歌输入了大量的关键词以搜索网页，这实际上是一种商业机会。因为，如果将这些关键词作为广告去出售，这就会是一大笔收入。于是，AdWords系统就完成了这一任务，它将搜索关键词按照重要程度排序，以不同的价格出售给广告商。其次，AdSense负责将正确的广告投放到合适的网站上。它根据关键词，搜索到点击排名靠前的个人网站（博客），并从这些网站站长或博主那里购买广告位，然后将AdWords中的大量广告按照关键词打包投放到这些广告位上。由于采取了先进的人工智能技术，所有广告的投放都能达到精准的定位。这样，当你浏览有关人工智能的网站的时候，你将不会看到有关交友和成人用品的广告。于是，谷歌的AdWords和AdSense系统可以精准地引导大量的注意力流动和资金的流动，同时，也赚取了可观的广告收益。</li>
+<li>真正的人工智能程序应该是一种平台，能够充分利用人类的注意力资源而滋养大大小小的程序，与此同时，该平台还可以牢牢地抓住玩家的心，将它们粘到这个虚拟的数字世界中。、</li>
+</ul>
+<h1 id="part9-美丽的注意力之流"><a href="#part9-美丽的注意力之流" class="headerlink" title="part9 美丽的注意力之流"></a>part9 美丽的注意力之流</h1><ul>
+<li>万物皆流在现实与虚幻世界的对应：古希腊人赫拉克利特说：“万物皆流。”在我看来，这不是一个模糊的隐喻，而是蕴含着深刻的洞察。真实物理世界的河流、城市交通流以及虚拟世界的注意力流三者之间具有很多相似性，而且在各类流系统中普遍存在着标度律。</li>
+</ul>
+<h1 id="part10-自然语言处理"><a href="#part10-自然语言处理" class="headerlink" title="part10 自然语言处理"></a>part10 自然语言处理</h1><h2 id="NLP的应用"><a href="#NLP的应用" class="headerlink" title="NLP的应用"></a>NLP的应用</h2><ul>
+<li>信息检索；社交网络分析（依靠海量数据基于统计的研究方法与社会网络分析方法的融合）；</li>
+<li>自然语言处理的研究涵盖：词法分析和句法分析，语音识别、机器翻译、自动问答、文本摘要、情感分析、舆情分析等应用和社交网络中的数据挖掘、知识理解等。</li>
+<li>自然语言处理与搜索引擎：原始的网页其实是非结构化的信息，充斥着计算机本身无法理解的“自然语言”。搜素引擎首先需要将这些自然语言“转换”成规则的可被解析的“机器文本”。这些文本有许多存储形式，最简单的就是分词后的短语形式：搜索引擎将大篇幅的网页自然语言切割成一个个短小的词语，并将词语按照重要程度进行排序，再与用户输入的关键词进行匹配，才能返回匹配程度最高的网页。</li>
+<li>NLP与社交网络：1.基于社交网络的自然语言理解研究有了更多的应用。一方面，研究聚焦在如何通过人们在社交网络中的表现更好地理解人们的行为模式，最广为人知的应用就是广告点击预测——预测具体的单个用户或单一用户群体是否会点击某一特定广告，从而实现广告收益最大化。另一方面，社交网络中的文本由于其实时性，使许多预测任务成为可能，如利用推特上的关注度预测美国总统大选结果、微软研究院预测奥斯卡获奖情况，以及著名的高盛公司预测世界杯比赛结果。虽然高盛预测的正确率只有可怜的34%，但是社交网络的兴起还是使人们的意图想法反映在了容易获得的文字之中。 2.以我们熟悉的新浪微博为例，用户可以关注别人，获得关注，还可以发表原创内容、评论或转发别人的微博……这些都可以转化为可以“计算”的数据。但若想挖掘出一定的潜在信息，还需要一些靠谱而大胆的假设。比如，人们会更倾向于关注自己感兴趣或和自己相似的人，更愿意转发自己感兴趣的内容。这样，在一定程序上，我们在新浪微博上关注的人“代表”了我们的兴趣爱好，我们转发的内容也就“表达”了我们的观点立场。于是，挖掘了某些文本中蕴含的潜在主题，就挖掘出了一些用户的兴趣爱好，就可以在此基础上做广告推荐。同样，分析出了某些文本中蕴含的情感倾向，再结合一些特定的表情和有情感倾向的词语，就分析出了一些用户对某件事的态度，于是他到底支持哪个候选人或哪个球队，也就都了解了。</li>
+<li>移动应用交互与NLP：如siri，google now，cortana；</li>
+</ul>
+<h2 id="NLP"><a href="#NLP" class="headerlink" title="NLP"></a>NLP</h2><h3 id="NLP的本质是结构预测"><a href="#NLP的本质是结构预测" class="headerlink" title="NLP的本质是结构预测"></a>NLP的本质是结构预测</h3><ul>
+<li>自然语言处理的终极问题是分析出“处理”一门自然语言的过程。它包含自然语言理解和自然语言生成，前者是将自然语言语句转化成形式语言语句，后者相反。</li>
+<li>自然语言处理的本质是结构预测；无论使用何种方法探究处理自然语言的过程，都需要面临最根本的问题：理解语法和语义——语法表现为句法结构，语义表现为语义结构。可以说，句法结构分析和语义结构分析是公认的自然语言处理（语言计算并不仅仅是现代自然语言处理）的基础任务。</li>
+</ul>
+<h3 id="句法分析"><a href="#句法分析" class="headerlink" title="句法分析"></a>句法分析</h3><ul>
+<li>流程：语言结构的基本单位是词语（words），第二个层级是构词法（morphology），第三个层级是词性，进而是语法和语义，最后由多个句子组成篇章。相应地，语言计算的任务对应地由分词得到词，由取词根（Stemming）和词形还原（Lemmatization）分析构词法，再由词性标注得到词性（Part-of-Speech），然后由句法分析（Syntax Parser）得到语法结构树（Parse Tree）。至此，句法分析结束。</li>
+</ul>
+<h3 id="语义分析"><a href="#语义分析" class="headerlink" title="语义分析"></a>语义分析</h3><ul>
+<li>在句法分析的基础上，语义分析可以得到语义理解（semantics），最后再运用篇章分析（discourse）理解句子与句子之间的关系。语义分析即分析自然语言的意义，这里的自然语言可以是词语、句子、篇章等不同级别的语言单位。语言学的语义分析目的在于找出语义表达的规律性、内在解释、不同语言在语义表达方面的个性及共性。逻辑学的语义分析是对一个逻辑系统的解释，着眼点在于真值条件，不直接涉及自然语言。认知科学对语义的研究在于人脑对语言单位的意义的存储及理解的模式，而与计算机科学相关的语义学研究就在于机器对自然语言的理解。</li>
+<li>与较为成熟的句法分析不同，语义分析仍然依应用场景的不同有很大不同。从粒度来说，语义分析包含词汇语义分析、句子语义分析和篇章语义分析；从应用场景看，语义分析包含概念语义提取、指称语义分析、情感语义计算、情景语义分析等。这里我仅将语义拆解成概念、主题和情感</li>
+<li>李桐观点：梅西永无可能到达球王的高度。</li>
+<li>概念：概念是一种浓缩的信息，是一种约定俗成。有了概念，人们在提及一个具体的人或事物时，就不再需要长篇大论的描述。人们不再需要用很长的定义去解释什么叫观点，也不再需要定义什么是球王。这种压缩的信息，不正是一种语义的体现吗？</li>
+<li>主题：如果说概念是文字中直接出现的浓缩信息，那么主题则是一种潜在信息。一篇文章可能围绕着一个具体的社会现象来展开，一次辩论可能以一句名言来交锋，一个网站也许是因一个爱好而建立……这些都可以被称为“主题”。主题是一段自然语言下潜在的中心点，是一个语义上的主体，但它并不一定直接出现在这段自然语言中。比如，还是上面那个例句，显然主题是世界杯，但“世界杯”三个字并没有出现在原句中。如果没有上下文，没有历史语料，机器就无法理解这句话的含义，也无法将其和“世界杯”关联在一起，甚至无法判断出球王是一个约定俗成的词语。所以，挖掘出这样的潜在主题，进一步提炼自然语言的信息，也是语义分析的重要任务。理解了主题，就可以根据主题进行更多地关联扩展，就能提高搜索引擎的相关性，也能用于挖掘社交网络中的某个用户的兴趣爱好。</li>
+<li>情感：人类的自然语言中还常常包含情感倾向。对于刚刚例句中的“李桐”的观点，他并不看好梅西，或者说不认可梅西。这种观点是一种广义的“负面”情感。常见的情感大体上可以分成“正面”“中性”和“负面”三类。这种包含情感倾向的自然语言在社交网络中尤为普遍，但让机器去判断自然语言的情感并不那么简单。简单的词典匹配方法只能解决少数这类语料，比如，“梅西是球王”，这是一个正面判断；“梅西不是球王”，这是一个负面判断；“难道梅西不是球王？”，这又回到正面判断。更复杂的，一些特殊比喻可能被用作反讽，如“西班牙防线可以与国足媲美了”，要让机器去理解，即使是大规模的语料也相当困难。</li>
+</ul>
+<h3 id="向量表示与相似度计算"><a href="#向量表示与相似度计算" class="headerlink" title="向量表示与相似度计算"></a>向量表示与相似度计算</h3><ul>
+<li>分类问题：概念提取和情感分析是两个不同的语义分析任务，但其实它们都是一种分类任务。“是”或者“不是”某一个概念，是一种特定的二分类问题；而情感分析可被简单看作“正面”“中性”“负面”的三分类问题。与分类问题同样重要的是自然语言处理中的另一类问题——相似度衡量问题，潜在语义分析便是这一问题的一种变形和应用。</li>
+<li>相似度的衡量：产生于语义分析中的词汇语义研究。词汇语义的研究分为两类：如何表示词汇的涵义（meaning）；如何表示词汇与词汇语义之间的关系。前者一般依据词典定义的方法，后者的研究大致将词义基本关系分为同义词（Synonymy）、反义词（Antonymy）、上位词（Hypernomy）、下位词（Hyponomy）、整体（Holonymy）和部分（Meronymy）。以同义词和反义词为例，两个词的两个词义（许多词有多个词义）相同或接近相同即是同义词；反之，词义相反即为反义词。词义的相近和相反可能是多种角度的，比如，“长（long）”和“短（short）”作为一对语义上的反义词，在度量长度的用法角度是有共性的。于是，词汇相似度（Word Similarity）也是探究词义关系的重要问题。现在一般将词汇相似度或语义距离（Word Semantic Distance）定为词汇相似度。</li>
+<li>词汇相似度大致有两类计算方法：基于语义词典（Thesaurus-based）的方法；基于语料统计（Distributional/Statistical algorithms）的方法，即比较词语在语料库中的上下文。中文语义词典有同义词词林、中文概念辞书（CCD）和知网（HowNet）。但词典中许多词并不被包含，且大部分词典定义的方法依赖于上下位层次关系，对于特定词性的词汇表达有限。</li>
+<li>基于语义词典的方法：One-hot Representation是最常用的。这种方法把每个词表示为一个很长的向量。这个向量的维度是词典大小，其中绝大多数元素为0，只有一个维度的值为1，这个维度就代表了当前的词。比如，“猫”表示为 [1, 0, 0, …, 0, 0, 0]，“狗”表示为 [0, 1, 0, …, 0, 0, 0]。这种 One-hot Representation 可以采用稀疏方式存储，相当于给每个词分配一个数字 ID。这时，“猫”的 ID 就是 0，“狗”的 ID 就是1。</li>
+<li>基于语料统计的词汇语义计算定义了上下文向量（Context Vector），并将词语语义表示为稀疏特征向量，然后即可方便地运用向量距离或相似度公式进行计算。因为词汇的“共同出现”定义、词语权重度量和相似度计算公式的不同，基于语料统计的词汇语义有很大的变形扩展空间。用向量表示语义空间的思想也随后被使用在基于空间向量模型（线性代数）的潜在语义分析（Latent Semantic Analysis）中，而上文提到的潜在主题分析则是潜在语义分析的一个变形。</li>
+<li>词汇相似度或者语义相关性的计算包含在许多自然语言处理任务之中。<br>1.短串（Term）分析技术，是后续查询和语义的相关度计算做一些基础的分析。由于查询需求有很多不同的表示方法，我们会对查询进行改写，使其能比较好地召回。其中最主要的技术是短串的语义相关性。<br>2.语义规化，即相同语义用不同方法表示，这种语义规化技术在搜索引擎中应用广泛。语义短串在这里可以被很好地应用，用一种相同的形式表示，然后计算它们之间的关联。<br>3.用户意图分析，对查询意图的识别能针对性地满足用户不同的需求，可理解为对查询语义类别的识别，即短串的分类。<br>4.排序上的应用，包含了查询和网页的相关性计算。</li>
+<li>自然语言处理的过程首先要拥有分析的语料，比如网络新闻、微博、正式出版物等，然后根据这些语料建立半结构化的文本库（text database）。紧接着重要的一步就是生成包含词频的结构化的词条-文档矩阵（term-document matrix）；</li>
+<li>向量表示：将语料的向量表示为词条-文档关系矩阵（见图10-3）。词条-文档关系矩阵，顾名思义，就是将矩阵的行与列分别表示为词条和文档的索引，从而表现其关系。词条-文档关系矩阵是后续构建模型的基础。</li>
+<li>向量空间模型（也称词组向量模型）作为向量的标识符（比如索引），是一个用来表示文本文件的代数模型。它应用于信息过滤、信息检索、索引以及关联规则。</li>
+<li>主题模型（Topic Model）作为近年来最受关注的统计语言模型之一，进一步发展了潜在语义模型，将“语义”维度表示为“主题”的多项式分布。通过引入主题空间，主题模型不仅考虑了传统向量空间模型和语言模型中文档在词典空间的维度，也实现了文档在主题空间上的表示。语义挖掘的利器是主题模型，在主题模型中，“主题”表示一个概念、一个方面，表现为一系列相关的单词，是这些单词的条件概率。</li>
+<li>文档-词语矩阵表示每个文档中每个单词的词频，即出现的概率；主题-词语矩阵表示每个主题中每个单词的出现概率；文档-主题矩阵表示每个文档中每个主题出现的概率。给定一系列文档，通过对文档进行分词，计算各个文档中每个单词的词频就可以得到左边的文档-词语矩阵。主题模型就是通过左边这个矩阵进行训练，学习出右边两个矩阵。</li>
+<li>潜在主题分析在微博的应用：已经广泛运用于社交网络的自然语言处理中。最为热门的应用当属微博关键词，微博关键词致力于挖掘出用户在微博上关注的主题。最初的版本只是根据高频词计算，但随后便加入了潜在语义分析的技术。最终的关键词展示也用到了词云的可视化方法，较大的词代表较高的频率（概率），较小的词代表较低的频率（概率）。通过这种自然语言处理方法和可视化展示，很清楚地展现了用户在社交网络上的兴趣爱好；</li>
+</ul>
+<h3 id="深度学习与nlp"><a href="#深度学习与nlp" class="headerlink" title="深度学习与nlp"></a>深度学习与nlp</h3><ul>
+<li>将以前自然语言处理中的字面匹配（词典、One-hot Representation）转变成了基于上下文的语义匹配（Distributed Representation）。</li>
+<li>在大数据时代，将会出现新的语言模型甚至是理论框架。深度学习通过学习模型的“深层结构”从而对数据中存在的复杂关系进行建模，虽不能显著降低计算要求，但在小规模有标注样本和极大规模无标注样本的融合学习中，可能会给语义分析带来突破性的成果。</li>
+</ul>
+<h3 id="NLP的应用核心技术"><a href="#NLP的应用核心技术" class="headerlink" title="NLP的应用核心技术"></a>NLP的应用核心技术</h3><ul>
+<li>1.自然语言处理的各个任务中，首先需要有数据收集。常见的有三种类型的数据：词典，分词和词法分析内可用到；知识库，多用于高级语义分析；语料，用于统计词汇共现等数据。本章第二节已提到大数据收集的必要性。</li>
+<li>2.随后，第二层是词条级，这是语义理解的基础层面。其中，词法分析包含分词分词、词性标注和未登录词识别；词条语义的表示；词条关系表示和知识库构建。在词条基础上进行的浅层词法分析、句法分析和信息检索中的查询扩展替换仍在各类应用中占据重要地位。比如，近年来，基于用户意图分析的查询研究越来越热。</li>
+<li>3.在词语语义计算的基础上，第三层就是篇章级的语义理解，分为单文档分析和多文档分析，pLSA和主题模型都属于此范畴。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Artificial-Intelligence/" rel="tag"># Artificial Intelligence</a>
+          
+            <a href="/tags/Reading-Notes/" rel="tag"># Reading Notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/10/UI-设计规范/" rel="next" title="UI 设计规范">
+                <i class="fa fa-chevron-left"></i> UI 设计规范
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/11/Android-Design-Standards/" rel="prev" title="Android Design Standards">
+                Android Design Standards <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#序言"><span class="nav-number">1.</span> <span class="nav-text">序言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#part-1"><span class="nav-number">2.</span> <span class="nav-text">part 1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图灵机模型"><span class="nav-number">2.1.</span> <span class="nav-text">图灵机模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学科"><span class="nav-number">2.2.</span> <span class="nav-text">学科</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#part2-图灵的计算王国Turing-Machine-and-Theory-of-Comoutation"><span class="nav-number">3.</span> <span class="nav-text">part2 图灵的计算王国Turing Machine and Theory of Comoutation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#小虫模型"><span class="nav-number">3.1.</span> <span class="nav-text">小虫模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算"><span class="nav-number">3.2.</span> <span class="nav-text">计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟"><span class="nav-number">3.3.</span> <span class="nav-text">模拟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算等价性"><span class="nav-number">3.4.</span> <span class="nav-text">计算等价性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自食其尾"><span class="nav-number">3.5.</span> <span class="nav-text">自食其尾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#停机问题"><span class="nav-number">3.6.</span> <span class="nav-text">停机问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#part4-一条永恒的金带"><span class="nav-number">4.</span> <span class="nav-text">part4 一条永恒的金带</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#层次的混淆／缠结"><span class="nav-number">4.1.</span> <span class="nav-text">层次的混淆／缠结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哥德尔句子"><span class="nav-number">4.2.</span> <span class="nav-text">哥德尔句子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归定理"><span class="nav-number">4.3.</span> <span class="nav-text">递归定理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#part5-从算法复杂性到通用人工智能"><span class="nav-number">5.</span> <span class="nav-text">part5 从算法复杂性到通用人工智能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AIXI（通用智能主体）的应用"><span class="nav-number">5.1.</span> <span class="nav-text">AIXI（通用智能主体）的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作系统"><span class="nav-number">5.2.</span> <span class="nav-text">操作系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#层次的概念"><span class="nav-number">5.3.</span> <span class="nav-text">层次的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用智能"><span class="nav-number">5.4.</span> <span class="nav-text">通用智能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习"><span class="nav-number">5.5.</span> <span class="nav-text">深度学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从特征表示到深度学习"><span class="nav-number">5.6.</span> <span class="nav-text">从特征表示到深度学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RBM（受限玻尔兹曼机）"><span class="nav-number">5.7.</span> <span class="nav-text">RBM（受限玻尔兹曼机）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈式自编码器网络"><span class="nav-number">5.8.</span> <span class="nav-text">栈式自编码器网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语音识别"><span class="nav-number">5.9.</span> <span class="nav-text">语音识别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自然语言处理NLP"><span class="nav-number">5.10.</span> <span class="nav-text">自然语言处理NLP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#词向量"><span class="nav-number">5.10.1.</span> <span class="nav-text">词向量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#part7-人工智能与人脑智能的思考"><span class="nav-number">6.</span> <span class="nav-text">part7 人工智能与人脑智能的思考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#part8-人工智能：从人机交互到人类计算"><span class="nav-number">7.</span> <span class="nav-text">part8 人工智能：从人机交互到人类计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#程序的引擎——人类的注意力"><span class="nav-number">7.1.</span> <span class="nav-text">程序的引擎——人类的注意力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意力经济学"><span class="nav-number">7.2.</span> <span class="nav-text">注意力经济学</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#part9-美丽的注意力之流"><span class="nav-number">8.</span> <span class="nav-text">part9 美丽的注意力之流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#part10-自然语言处理"><span class="nav-number">9.</span> <span class="nav-text">part10 自然语言处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NLP的应用"><span class="nav-number">9.1.</span> <span class="nav-text">NLP的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NLP"><span class="nav-number">9.2.</span> <span class="nav-text">NLP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NLP的本质是结构预测"><span class="nav-number">9.2.1.</span> <span class="nav-text">NLP的本质是结构预测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#句法分析"><span class="nav-number">9.2.2.</span> <span class="nav-text">句法分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语义分析"><span class="nav-number">9.2.3.</span> <span class="nav-text">语义分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向量表示与相似度计算"><span class="nav-number">9.2.4.</span> <span class="nav-text">向量表示与相似度计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深度学习与nlp"><span class="nav-number">9.2.5.</span> <span class="nav-text">深度学习与nlp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NLP的应用核心技术"><span class="nav-number">9.2.6.</span> <span class="nav-text">NLP的应用核心技术</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

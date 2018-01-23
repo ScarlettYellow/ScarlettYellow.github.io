@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PM Communication,System Logic,Reading Notes," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：产品研发过程中的一些基础的开发技术知识。如越界，动画开发，并行计算，程序与数据结构,MVC模式，敏捷开发模式等。">
+<meta name="keywords" content="PM Communication,System Logic,Reading Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Interpret Technique to PM|Chapter9:Development Technology">
+<meta property="og:url" content="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter9-Development-Technology/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：产品研发过程中的一些基础的开发技术知识。如越界，动画开发，并行计算，程序与数据结构,MVC模式，敏捷开发模式等。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-30T12:43:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Interpret Technique to PM|Chapter9:Development Technology">
+<meta name="twitter:description" content="Abstract：产品研发过程中的一些基础的开发技术知识。如越界，动画开发，并行计算，程序与数据结构,MVC模式，敏捷开发模式等。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter9-Development-Technology/"/>
+
+
+
+
+
+  <title>Interpret Technique to PM|Chapter9:Development Technology | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter9-Development-Technology/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Interpret Technique to PM|Chapter9:Development Technology</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T19:04:16+08:00">
+                2017-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/System-Logic/" itemprop="url" rel="index">
+                    <span itemprop="name">System Logic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：产品研发过程中的一些基础的开发技术知识。如越界，动画开发，并行计算，程序与数据结构,MVC模式，敏捷开发模式等。<br><a id="more"></a></p>
+<h1 id="越界"><a href="#越界" class="headerlink" title="越界"></a>越界</h1><ul>
+<li>数组越界：由于线程执行顺序导致的异常；</li>
+<li>数据范围越界：要存储的数字超过了其选用的数据类型所能表示的最大范围；一般开始定义时没问题，但掺杂各种运算处理后数据范围易出现问题；</li>
+</ul>
+<h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1><ul>
+<li>Google Tensorflow框架；Facebook Torch框架；UC Berkely Caffe框架；</li>
+</ul>
+<h1 id="程序设计的时空大法"><a href="#程序设计的时空大法" class="headerlink" title="程序设计的时空大法"></a>程序设计的时空大法</h1><h2 id="空间换时间"><a href="#空间换时间" class="headerlink" title="空间换时间"></a>空间换时间</h2><ul>
+<li>目的：运行流畅；</li>
+<li>原理：将经常使用的资源或将来可能使用的资源加载到内存里（缓存／预读）；</li>
+</ul>
+<h2 id="时间换空间"><a href="#时间换空间" class="headerlink" title="时间换空间"></a>时间换空间</h2><ul>
+<li>原理：在空间资源有限的情况下，消耗更多的时间做加载或运算来减少内存的占用；</li>
+<li>方式：1.用更多的运算代替存储；2.直接清理内存空间；3.从外存加载到内存；</li>
+<li>目的：节省存储资源；</li>
+</ul>
+<h1 id="开发动画的工作量"><a href="#开发动画的工作量" class="headerlink" title="开发动画的工作量"></a>开发动画的工作量</h1><ul>
+<li>位移动画：让控件在一段时间内不断改变位置而形成的动画效果；实现：创建一个translateanimation对象（位移动画的配置清单，包括：动画开始时控件的起始位置+结束时控件要到达的位置+动画持续时间）——让控件执行启动动画的命令——系统根据默认的插值算法，在动画的持续时间内，计算每一帧中控件的位置，然后绘制出来；</li>
+<li>缩放动画：控件在一段时间内不断改变自身大小而形成的动画效果；实现：配置清单（动画开始时控件的缩放倍率+结束时的缩放倍率+持续时间+原点）——动画启动后的每一帧都会计算当前时间控件对应的缩放率；</li>
+<li>渐隐渐现动画：在一定时间内持续改变控件的透明度形成的动画效果；实现：配置清单（动画开始时控件的透明度——结束时的透明度+持续时间）；</li>
+<li>旋转动画：让控件在一段时间内围绕一个固定点旋转指定的角度；实现：配置清单（动画开始时控件的旋转角度+结束时的旋转角度+持续时间+原点）；</li>
+</ul>
+<h1 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h1><ul>
+<li>帧Frame：动画过程中的某一张静止画面；</li>
+<li>帧率：动画每秒播放的帧数；FPS为单位；30帧／s为连贯，60帧／s为流畅（每帧16毫秒）；</li>
+<li>技术实现：绘制图形的命令（drawCircle／drawRect／drawText）——refresh（刷新屏幕）——scheduleNextFrame（定时器：告诉操作系统下一帧的时间）；</li>
+<li>ios／android都内置了几种常见动画类型（缩放／平移／旋转／渐变等），只需设置好动画时长／动画中要变化的东西，然后发出start命令即可；</li>
+<li>有交互的动画：由用户手指操作触发刷新屏幕；</li>
+</ul>
+<h1 id="程序与数据结构"><a href="#程序与数据结构" class="headerlink" title="程序与数据结构"></a>程序与数据结构</h1><ul>
+<li>程序=算法+数据结构，本质是对数据进行处理；</li>
+<li>构建数据模型：把可能用到的东西数据化；</li>
+<li>数据结构：描述一些彼此有关联的数据的集合（帮助程序员处理批量数据的：插入修改删除查询CRUD）；</li>
+</ul>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul>
+<li>特点：一下子可承很多数据，挨个排放，每个位置都有一个编号，数据通过编号访问；</li>
+<li>插：后面所有元素要往后挪一格；改：喊编号即可；删：后面的往前挪一格；查：遍历数组；</li>
+</ul>
+<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><ul>
+<li>特点：数据非挨个存放，也无编号；每个数据都有一个指向下个数据位置的指针（指针：地址，指向下个元素的位置）；像链子一样把所有数据串起来；</li>
+<li>插：只需改A元素的指针指向B，然后改B指针指向C；删：删-衔；改：改地址；查：遍历；</li>
+</ul>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><ul>
+<li>特点：先进先出的数据结构，进——数据的插入，出——数据的删除；强制限制顺序，不允许插队；</li>
+</ul>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><ul>
+<li>特点：先进后出；</li>
+<li>栈溢出stackoverflow：app用的内存不小心超过系统限制，被系统封杀；</li>
+</ul>
+<h2 id="线程池：复用的艺术"><a href="#线程池：复用的艺术" class="headerlink" title="线程池：复用的艺术"></a>线程池：复用的艺术</h2><ul>
+<li>服务器：用来接收并响应客户端的请求；</li>
+<li>线程池：用生产者消费者模型来理解，即：生产者——客户端，生产网络请求，消费者——线程池里的线程，消费请求，消费过程即响应网络请求的过程；（当请求太多，而线程池里没有空闲线程时，则把请求放入队列中排队）；</li>
+<li>复用思想：弄个池子，放一些线程，用则取，不用则放归；</li>
+</ul>
+<h1 id="二进制图片转字符"><a href="#二进制图片转字符" class="headerlink" title="二进制图片转字符"></a>二进制图片转字符</h1><ul>
+<li>目的：直接在html里插入图片，节省网络请求（请求图片）；</li>
+<li>如何实现转换：用base64编码转换（base64:64个可用字符，6bit表示一个字符）；</li>
+<li>缺点：html文件会变大，适合编码小图片；</li>
+</ul>
+<h1 id="后台是干啥的（RPC框架）"><a href="#后台是干啥的（RPC框架）" class="headerlink" title="后台是干啥的（RPC框架）"></a>后台是干啥的（RPC框架）</h1><ul>
+<li>后台技术栈的核心：RPC（remote procedure call远程过程调用）框架即基于调用远程服务方法封装的一套框架；</li>
+</ul>
+<h1 id="技术源于生活"><a href="#技术源于生活" class="headerlink" title="技术源于生活"></a>技术源于生活</h1><h2 id="生产者和消费者模式"><a href="#生产者和消费者模式" class="headerlink" title="生产者和消费者模式"></a>生产者和消费者模式</h2><ul>
+<li>多线程：并发执行模式，主要目的——最大化利用各种资源（CPU，磁盘，显卡，网络带宽），提高程序整体性能；精髓在于定义了一个缓冲区；</li>
+</ul>
+<h2 id="流水线"><a href="#流水线" class="headerlink" title="流水线"></a>流水线</h2><ul>
+<li>面向对象的精髓：把所有东西抽象成对象，对象能响应命令；</li>
+<li>pipeline流水线技术：重复执行一项任务时可把它细分成很多小任务，让小任务们重叠执行，以提高整体的运行效率；</li>
+</ul>
+<h1 id="敏捷开发与瀑布式开发"><a href="#敏捷开发与瀑布式开发" class="headerlink" title="敏捷开发与瀑布式开发"></a>敏捷开发与瀑布式开发</h1><ul>
+<li>敏捷开发：拥抱变化，快速响应；</li>
+</ul>
+<h1 id="加载等待的艺术"><a href="#加载等待的艺术" class="headerlink" title="加载等待的艺术"></a>加载等待的艺术</h1><ul>
+<li>菊花：异步加载技术；一种简单的交互，为使界面交互更流畅自然；</li>
+<li>同步加载的执行速度太慢：凡跟内存之后的存储设备（存储设备按运行速度排序：寄存器-高速缓冲器-内存-硬盘；内存前的设备可立刻加载，内存后的很慢）打交道的任务【IO密集型任务】都不适合同步加载；</li>
+<li>菊花的使用场景：当用户跳转到新场景或加载新网页（必须执行一些io密集型任务才能让用户看到内容）时；</li>
+<li>入场动画：动画是GPU密集型任务，后台执行CPU／IO密集型无影响；动画：一遍遍渲染界面（渲染：刷新界面，16毫秒／个）；</li>
+</ul>
+<h1 id="耦合与解耦"><a href="#耦合与解耦" class="headerlink" title="耦合与解耦"></a>耦合与解耦</h1><ul>
+<li>pm眼中的功能：一块一块的积木，可组合可拆分；开发眼中的功能：耦合，血脉相融，牵一发动全身；</li>
+<li>避免耦合：A功能的代码不要写在B功能里，若二者需要交互，可通过接口／消息／引入框架，但不要交叉写；</li>
+<li>pm需提前提醒：若预见功能有未来独立化的趋势，需提前提醒开发避免耦合，以免增加后期代码耦合的工作量；</li>
+</ul>
+<h1 id="代码混淆"><a href="#代码混淆" class="headerlink" title="代码混淆"></a>代码混淆</h1><ul>
+<li>将代码写的晦涩难懂（如改成难懂的变量名），以增加人为分析的难度和时间成本；</li>
+</ul>
+<h1 id="软件架构中的三权分立模式：MVC模式"><a href="#软件架构中的三权分立模式：MVC模式" class="headerlink" title="软件架构中的三权分立模式：MVC模式"></a>软件架构中的三权分立模式：MVC模式</h1><ul>
+<li>model：模型，主要用于表示一些数据结构和数据存取（数据层）；</li>
+<li>view：UI样式；</li>
+<li>controller：model和view的桥梁，负责处理数据和视图之间的逻辑关系（逻辑层）；</li>
+</ul>
+<h1 id="并行计算"><a href="#并行计算" class="headerlink" title="并行计算"></a>并行计算</h1><ul>
+<li>并行计算：一个计算机或计算系统（如分布式系统）在同一时刻执行两个货两个以上的任务；</li>
+<li>两种实现方式：时间上的并行，空间上的并行；</li>
+</ul>
+<h2 id="时间上的并行：流水线技术（极少用）"><a href="#时间上的并行：流水线技术（极少用）" class="headerlink" title="时间上的并行：流水线技术（极少用）"></a>时间上的并行：流水线技术（极少用）</h2><ul>
+<li>CPU执行一条指令的流程：取指-译码-地址生成-取操作数-执行-写回；</li>
+</ul>
+<h2 id="空间并行"><a href="#空间并行" class="headerlink" title="空间并行"></a>空间并行</h2><ul>
+<li>人多力量大，通过加硬件=资源来解决效率问题（如多核处理器）；</li>
+<li>系统进行调度的单位：线程，进程；</li>
+<li>多核操作系统：将相互独立的线程和进程分配到不同核心上，以达到并行计算的目的；</li>
+<li>分布式计算、云计算：都是对并行计算的包装；</li>
+</ul>
+<h1 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h1><ul>
+<li>操作系统：多进程并发执行，每个进程有自己的一亩三分地（以避免对其他进程产生影响，便于系统调度）；</li>
+<li>通信方式：1.基于文件；2.基于管道（点对点通信）；3.基于信号／信息，信号量，套接字；</li>
+</ul>
+<h1 id="为什么有些bug不能改"><a href="#为什么有些bug不能改" class="headerlink" title="为什么有些bug不能改"></a>为什么有些bug不能改</h1><ul>
+<li>开发施展各种奇技淫巧来解决各种奇葩问题导致最后代码只能看不能动；</li>
+<li>用小bug隐藏大bug；</li>
+</ul>
+<h1 id="为什么程序会挂"><a href="#为什么程序会挂" class="headerlink" title="为什么程序会挂"></a>为什么程序会挂</h1><ul>
+<li>开发在设计算法时考虑不周，没有对可能遇到的异常状态做处理；</li>
+<li>操作系统有bug；</li>
+</ul>
+<h1 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h1><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><ul>
+<li>面向过程：每次需求变更都需要重新定义函数；</li>
+<li>面向对象：抛弃函数，把对象作为程序的基本单元；对象：对事物的抽象描述，可用数据+能力来描述；对象有数据、能力，还可接受命令；</li>
+<li>面向对象编程：依次对不同对象发送命令；</li>
+<li>特性：1.自己的事自己做；2.面向接口编程（对象把能力通过接口公布出来，自己则成为接口的实现者）；</li>
+</ul>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><ul>
+<li>多态：多种状态，运行时根据函数返回的内容不同而执行不同的逻辑；好处：屏蔽类与类的差异，当需求扩充时可保证代码稳定；<blockquote>
+<p>eg.快递公司是父类，各大具体的快递公司是子类，多态即：虽然每个子类对送快递实现的具体逻辑不同，但它们都完成同一类功能；</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
+<li>继承者首先要是被继承者；被继承者（父类／基类）用一万行代码描述自己的功能特性，继承者（子类）只需额外用二十行代码声明自己独有的特性，即可拥有一万零二十行代码对应的所有功能；</li>
+<li>类：对属性和功能集合的静态描述；实例：属性真正的载体和功能的执行者；</li>
+</ul>
+<h2 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h2><ul>
+<li>重构：在保留现有功能的基础上重新梳理软件中的代码结构，让原本杂乱无章的代码重新具有可读性／结构性／可扩展性，增加软件开发的效率，优化程序的性能；重构范围可大可小，大到整个产品的各个模块，小到一个函数；<br>eg.盖房子：加盖楼层需要考虑到原本房子的承重结构；</li>
+</ul>
+<h1 id="Unity-VR"><a href="#Unity-VR" class="headerlink" title="Unity-VR"></a>Unity-VR</h1><ul>
+<li>unity引擎：看作是在openGL基础上，实现了很多特效的一堆代码集合；移动端；归根到底是对素材的编辑；可一键生成android／ios代码；</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PM-Communication/" rel="tag"># PM Communication</a>
+          
+            <a href="/tags/System-Logic/" rel="tag"># System Logic</a>
+          
+            <a href="/tags/Reading-Notes/" rel="tag"># Reading Notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter8-Development-Tools/" rel="next" title="Interpret Technique to PM|Chapter8:Development Tools">
+                <i class="fa fa-chevron-left"></i> Interpret Technique to PM|Chapter8:Development Tools
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter10-Noun-Interpretation/" rel="prev" title="Interpret Technique to PM|Chapter10:Noun Interpretation">
+                Interpret Technique to PM|Chapter10:Noun Interpretation <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#越界"><span class="nav-number">1.</span> <span class="nav-text">越界</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深度学习"><span class="nav-number">2.</span> <span class="nav-text">深度学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序设计的时空大法"><span class="nav-number">3.</span> <span class="nav-text">程序设计的时空大法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#空间换时间"><span class="nav-number">3.1.</span> <span class="nav-text">空间换时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间换空间"><span class="nav-number">3.2.</span> <span class="nav-text">时间换空间</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发动画的工作量"><span class="nav-number">4.</span> <span class="nav-text">开发动画的工作量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动画"><span class="nav-number">5.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序与数据结构"><span class="nav-number">6.</span> <span class="nav-text">程序与数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">6.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链表"><span class="nav-number">6.2.</span> <span class="nav-text">链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列"><span class="nav-number">6.3.</span> <span class="nav-text">队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈"><span class="nav-number">6.4.</span> <span class="nav-text">栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程池：复用的艺术"><span class="nav-number">6.5.</span> <span class="nav-text">线程池：复用的艺术</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二进制图片转字符"><span class="nav-number">7.</span> <span class="nav-text">二进制图片转字符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后台是干啥的（RPC框架）"><span class="nav-number">8.</span> <span class="nav-text">后台是干啥的（RPC框架）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#技术源于生活"><span class="nav-number">9.</span> <span class="nav-text">技术源于生活</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生产者和消费者模式"><span class="nav-number">9.1.</span> <span class="nav-text">生产者和消费者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流水线"><span class="nav-number">9.2.</span> <span class="nav-text">流水线</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#敏捷开发与瀑布式开发"><span class="nav-number">10.</span> <span class="nav-text">敏捷开发与瀑布式开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加载等待的艺术"><span class="nav-number">11.</span> <span class="nav-text">加载等待的艺术</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#耦合与解耦"><span class="nav-number">12.</span> <span class="nav-text">耦合与解耦</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码混淆"><span class="nav-number">13.</span> <span class="nav-text">代码混淆</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件架构中的三权分立模式：MVC模式"><span class="nav-number">14.</span> <span class="nav-text">软件架构中的三权分立模式：MVC模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#并行计算"><span class="nav-number">15.</span> <span class="nav-text">并行计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#时间上的并行：流水线技术（极少用）"><span class="nav-number">15.1.</span> <span class="nav-text">时间上的并行：流水线技术（极少用）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间并行"><span class="nav-number">15.2.</span> <span class="nav-text">空间并行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程通信"><span class="nav-number">16.</span> <span class="nav-text">进程通信</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么有些bug不能改"><span class="nav-number">17.</span> <span class="nav-text">为什么有些bug不能改</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么程序会挂"><span class="nav-number">18.</span> <span class="nav-text">为什么程序会挂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#名词"><span class="nav-number">19.</span> <span class="nav-text">名词</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象"><span class="nav-number">19.1.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态"><span class="nav-number">19.2.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">19.3.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重构"><span class="nav-number">19.4.</span> <span class="nav-text">重构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unity-VR"><span class="nav-number">20.</span> <span class="nav-text">Unity-VR</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

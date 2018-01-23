@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PM Communication,System Logic,Reading Notes," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：一些会经常碰到的技术名词的通俗解释。如抽象，封装，多态，SDK，API，架构，PAC，hook，哈希表等。">
+<meta name="keywords" content="PM Communication,System Logic,Reading Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Interpret Technique to PM|Chapter10:Noun Interpretation">
+<meta property="og:url" content="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter10-Noun-Interpretation/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：一些会经常碰到的技术名词的通俗解释。如抽象，封装，多态，SDK，API，架构，PAC，hook，哈希表等。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-30T12:43:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Interpret Technique to PM|Chapter10:Noun Interpretation">
+<meta name="twitter:description" content="Abstract：一些会经常碰到的技术名词的通俗解释。如抽象，封装，多态，SDK，API，架构，PAC，hook，哈希表等。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter10-Noun-Interpretation/"/>
+
+
+
+
+
+  <title>Interpret Technique to PM|Chapter10:Noun Interpretation | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter10-Noun-Interpretation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Interpret Technique to PM|Chapter10:Noun Interpretation</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T19:07:38+08:00">
+                2017-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/System-Logic/" itemprop="url" rel="index">
+                    <span itemprop="name">System Logic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：一些会经常碰到的技术名词的通俗解释。如抽象，封装，多态，SDK，API，架构，PAC，hook，哈希表等。</p>
+<a id="more"></a>
+<h1 id="4D打印"><a href="#4D打印" class="headerlink" title="4D打印"></a>4D打印</h1><ul>
+<li>3D打印：同时具备X／Y／Z三轴，能描述三维控件；</li>
+<li>4D打印：多一个纬度：时间T；随时间变化，材料可随环境／温度进行变化（前提：材料已被编程好）；可能还需要10年预热期才能进入成熟期被应用；</li>
+</ul>
+<h1 id="抽象／封装／类／实例／对象"><a href="#抽象／封装／类／实例／对象" class="headerlink" title="抽象／封装／类／实例／对象"></a>抽象／封装／类／实例／对象</h1><ul>
+<li>对事物进行抽象，从而封装为类，由类可以生成实例或对象；</li>
+<li>封装的前提首先是抽象，抽象是对一系列拥有共同属性或行为的描述；（抽象对应的是具体，抽象后具体消失，共性出现）</li>
+<li>抽象出的共性用来封装为类（class），类可以定义实例或对象；<br>eg.小红（对象）打开化妆包（抽象），拿出红石榴水（具体），运用拖拉摇椅拽拍打七种方法（能力）进行脸部护理（效果／目的）；</li>
+<li>封装／继承／多态是面向对象的三大特性；</li>
+</ul>
+<h1 id="SDK，API，架构"><a href="#SDK，API，架构" class="headerlink" title="SDK，API，架构"></a>SDK，API，架构</h1><ul>
+<li>SDK：software development kit，软件开发工具包，是一整套工具的集合；sdk里一般封装了许多api；</li>
+<li>API：application programming interface应用程序编程接口；可理解为一个函数，函数提供里某一样特殊能力；分公有API（系统以SDK形式暴露出来，对所有开发者可见）和私有API（系统内部使用或仅限于系统自带的一些应用程序使用，不对开发者开放）；</li>
+<li>架构：软件系统的结构；就是考虑了一个软件系统的所有设计要素后，梳理清楚模块划分，以及模块间的关系，所形成的结构设计；</li>
+</ul>
+<h1 id="控件，组件，框架"><a href="#控件，组件，框架" class="headerlink" title="控件，组件，框架"></a>控件，组件，框架</h1><ul>
+<li>控件：程序设计中最小粒度的可复用可编程的部件；</li>
+<li>组件：一个组合功能的控件，功能比控件复杂；</li>
+<li>框架：由很多控件和组件组装到一起且能在某一领域里完成一系列操作；如jQuery框架是对原生js的封装，提供更方便快捷的js操作；</li>
+</ul>
+<h1 id="二进制文件"><a href="#二进制文件" class="headerlink" title="二进制文件"></a>二进制文件</h1><ul>
+<li>文本文件：txt；</li>
+<li>计算机硬盘上存储的饿文件都是二进制存储的，把文件转化为二进制，计算所占字符数，会发现：</li>
+<li>二进制文件在数字上存储要比文本文件省空间，因为文本文件按字符存储，二进制按数据类型存储；</li>
+<li>二进制文件的优点：省空间，写入速度快，可读性差，加密作用；</li>
+</ul>
+<h1 id="本地数据和云端数据"><a href="#本地数据和云端数据" class="headerlink" title="本地数据和云端数据"></a>本地数据和云端数据</h1><ul>
+<li>好的产品设计：本地默认写死一些频道（打底数据，在无网络情况下可展示，用于解决用户体验问题），展示了打底数据后发起云端请求，拉取云端运营数据，若拉取成功则将新的频道数据覆盖本地数据，保证客户端下次启动时展示上次成功拉取的数据；若拉取失败则继续展示本地数据；</li>
+</ul>
+<h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><ul>
+<li>哈希：又称散列，设计一种映射关系f（key）=address，根据key来计算存储地址；可实现一次查找；f是存储过程中用来指引数据存储到什么位置的函数+将来查找这个位置的算法（哈希算法）；核心：哈希函数的设计；</li>
+<li>哈希算法：可随意设计，如直接定址法，平方取中法，除数取余法；本质是通过固定的算法将存储元素变成一个数字来存储（key-value），查找时就通过计算其对应的数字一次查询；</li>
+<li>哈希冲突：很多记录映射到一个位置；哈希冲突与哈希函数的设计正相关，随机性越大产生哈希冲突的可能性越小；解决方法：1.哈希再哈希，针对第一次哈希的结果再进行一次hash来减小冲突的概率；2.对原方法增加随机性和对冲突进行适当的有损化处理；</li>
+<li>hash表：一种数据结构，效率极高的查找方式；</li>
+</ul>
+<h1 id="hook"><a href="#hook" class="headerlink" title="hook"></a>hook</h1><ul>
+<li>hook：在执行某操作之前优先处理一下，再决定后面的执行走向；</li>
+<li>eg.利用hook的技术：hook住程序的校验签名函数，假装校验通过以欺骗程序；</li>
+</ul>
+<h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><ul>
+<li>作用：更改一些需要经常变化的设置（若写死在程序里就无法更改）</li>
+</ul>
+<h1 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h1><ul>
+<li>衡量复杂度的相对标尺：1.时间复杂度，用大写的O标识，如O（n／n^2/n^3）；2.空间复杂度：每个算法对内存使用的相对衡量（空间消耗），如S（n／n^2）;<blockquote>
+<p>eg.要计算n*n次，则复杂度为O（n^2）;长度为n的数组，空间复杂度为s（n），二位数组为s（n^2）；</p>
+</blockquote>
+</li>
+<li>算法优化：降低算法的复杂度，但优化不改变复杂度系数（复杂度是对算法最差情况的衡量）；</li>
+</ul>
+<h1 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h1><ul>
+<li>无锁情况下的异步执行：操作异步性和时间重叠导致写入数据库的数据有误；</li>
+<li>加锁：强行将并行执行变成顺序执行；</li>
+</ul>
+<h1 id="设计模式，架构，框架"><a href="#设计模式，架构，框架" class="headerlink" title="设计模式，架构，框架"></a>设计模式，架构，框架</h1><ul>
+<li>设计模式：一种思想，关注的是写代码过程中遇到的非常具体的某一类问题《常见的23种设计模式》</li>
+<li>框架：树的主干，自己写的代码是叶子；</li>
+<li>架构：一种设计决策；</li>
+</ul>
+<h1 id="时间戳，MD5，GUID"><a href="#时间戳，MD5，GUID" class="headerlink" title="时间戳，MD5，GUID"></a>时间戳，MD5，GUID</h1><ul>
+<li>时间戳（TimeStamp）：当某一事件发生时，立刻为他存储一个时间；</li>
+<li>MD5:信息摘要算法第五版；主要解决的问题：对一个文件或字符串生成一个唯一标识，保证一个字符串生成的MD5码是绝对唯一的；</li>
+<li>GUID：全局唯一标识符，128位的数字标识符；</li>
+</ul>
+<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><ul>
+<li>有好几层含义：</li>
+<li>1.数据结构；标识一个先进先出的队列；push进，pop出；</li>
+<li>2.表示由操作系统管理和分配的一些内存区域，用来存储程序中的变量和参数；栈溢出——内存空间被用完了；</li>
+<li>3.栈信息：程序出错的打印信息；</li>
+<li>全栈：精通前端／后台／终端／架构的工程师；</li>
+</ul>
+<h1 id="OpenGL"><a href="#OpenGL" class="headerlink" title="OpenGL"></a>OpenGL</h1><ul>
+<li>图形编程：最基本的问题——如何用程序再显示器上绘制东西；有两种方式：1.软件绘制：CPU在内存里准备好了要绘制的东西然后交给显示器去显示，2.硬件加速：显卡在显存里准备好了要绘制的东西交给显示器去显示；</li>
+<li>OpenGl：利用显卡的硬件加速能力帮助绘制图形；700多个API（每个API代表一种能力），跨平台，支持各种语言；是一个状态机（不停做状态切换）；</li>
+</ul>
+<h1 id="引擎"><a href="#引擎" class="headerlink" title="引擎"></a>引擎</h1><ul>
+<li>引擎：一套能力的组合；</li>
+</ul>
+<h1 id="PAC文件"><a href="#PAC文件" class="headerlink" title="PAC文件"></a>PAC文件</h1><ul>
+<li>PAC：proxy auto-config，自动配置代理，核心是一个函数「FindProxyForURL（url，host）」，输入一个url和域名，则返回一个或多个代理服务器的地址，或返回一个命令，告诉浏览器不使用代理访问该url；</li>
+</ul>
+<h1 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h1><ul>
+<li>流程：测量-排版-绘制；</li>
+<li>展示熳、卡顿问题：渲染的不是很流畅；</li>
+</ul>
+<h1 id="AR-VR技术"><a href="#AR-VR技术" class="headerlink" title="AR/VR技术"></a>AR/VR技术</h1><ul>
+<li>AR：增强现实，是对真实世界的信息扩展，虚实结合；关键技术：计算机视觉（对真实环境进行处理的前提是让电脑认识真实环境中的事物）；</li>
+<li>VR：提供沉浸感极强的虚拟世界；利用计算机三维建模（构建场景）和动作追踪技术（提供交互）作为系统输出和输入；三维建模完成虚拟世界的建设，VR设备集成的各种传感器则负责让用户与世界建立真实的连接，通过传感器的动作捕捉，将用户的一举一动作用到实时计算生成的三维虚拟世界中；</li>
+</ul>
+<h1 id="位图和矢量图"><a href="#位图和矢量图" class="headerlink" title="位图和矢量图"></a>位图和矢量图</h1><ul>
+<li>位图：用像素点阵来描述图片；失真；jpg，png，WEBP；</li>
+<li>矢量图：由点、直线、多边形等几何图元（可由数值和方程式描述的）构成的图像；不失真；SVG；</li>
+</ul>
+<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><ul>
+<li>接口：提供一种别人可调用的能力的标准；一组能力的集合，抽象的，不包括具体实现（调用者在不需要知道具体实现的前提下即可获得结果）；</li>
+</ul>
+<h1 id="线程池，对象池，连接池"><a href="#线程池，对象池，连接池" class="headerlink" title="线程池，对象池，连接池"></a>线程池，对象池，连接池</h1><ul>
+<li>对象池：提供很多对象放到池子里，循环利用（创建对象是浪费时间的）；</li>
+<li>连接池：同理（数据库连接是宝贵的）；</li>
+<li>池化技术：充分保障系统效率的前提下，充分复用资源的方式；</li>
+</ul>
+<h1 id="关于兼容"><a href="#关于兼容" class="headerlink" title="关于兼容"></a>关于兼容</h1><ul>
+<li>向后兼容：对已发出去的老版本兼容；可适度做的，无法长期兼容未来的；</li>
+<li>向前兼容：对未来还未做好的版本兼容；一定要做的，一定有解决方案的；</li>
+</ul>
+<h1 id="游戏引擎"><a href="#游戏引擎" class="headerlink" title="游戏引擎"></a>游戏引擎</h1><ul>
+<li>游戏世界的基础 框架，定义并实现了游戏中的自然法则，包括光影效果、动画系统、物理系统、渲染系统等；</li>
+</ul>
+<h1 id="渐进式图片"><a href="#渐进式图片" class="headerlink" title="渐进式图片"></a>渐进式图片</h1><ul>
+<li>渐进式：压缩方式是根据小波变换，先存储低频（轮廓）内容，再存储高频（细节）内容；展示方式：先显示图片轮廓，然后随下载数据的增多逐渐细化图片的各个细节，使图片分辨率逐渐提高，最终还原完整图像；</li>
+<li>普通jpeg图片：从左至右、从上至下压缩；</li>
+</ul>
+<h1 id="LiFi"><a href="#LiFi" class="headerlink" title="LiFi"></a>LiFi</h1><ul>
+<li>LiFi：light fidelity，利用可见光传输信息的技术；原理是将可见光的明暗变化进行编码，由接收端将光信号转化为数字信号；</li>
+<li>优点（相对Wi-Fi）：高频宽（不用为降低信号干扰而频繁调整信道）；高速率（传输速率高）；</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PM-Communication/" rel="tag"># PM Communication</a>
+          
+            <a href="/tags/System-Logic/" rel="tag"># System Logic</a>
+          
+            <a href="/tags/Reading-Notes/" rel="tag"># Reading Notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter9-Development-Technology/" rel="next" title="Interpret Technique to PM|Chapter9:Development Technology">
+                <i class="fa fa-chevron-left"></i> Interpret Technique to PM|Chapter9:Development Technology
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter11-Interpretation-of-some-Techniques/" rel="prev" title="Interpret Technique to PM|Chapter11:Interpretation of some Techniques">
+                Interpret Technique to PM|Chapter11:Interpretation of some Techniques <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#4D打印"><span class="nav-number">1.</span> <span class="nav-text">4D打印</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#抽象／封装／类／实例／对象"><span class="nav-number">2.</span> <span class="nav-text">抽象／封装／类／实例／对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SDK，API，架构"><span class="nav-number">3.</span> <span class="nav-text">SDK，API，架构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控件，组件，框架"><span class="nav-number">4.</span> <span class="nav-text">控件，组件，框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二进制文件"><span class="nav-number">5.</span> <span class="nav-text">二进制文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地数据和云端数据"><span class="nav-number">6.</span> <span class="nav-text">本地数据和云端数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#哈希表"><span class="nav-number">7.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hook"><span class="nav-number">8.</span> <span class="nav-text">hook</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置文件"><span class="nav-number">9.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法复杂度"><span class="nav-number">10.</span> <span class="nav-text">算法复杂度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#锁"><span class="nav-number">11.</span> <span class="nav-text">锁</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计模式，架构，框架"><span class="nav-number">12.</span> <span class="nav-text">设计模式，架构，框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时间戳，MD5，GUID"><span class="nav-number">13.</span> <span class="nav-text">时间戳，MD5，GUID</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栈"><span class="nav-number">14.</span> <span class="nav-text">栈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenGL"><span class="nav-number">15.</span> <span class="nav-text">OpenGL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引擎"><span class="nav-number">16.</span> <span class="nav-text">引擎</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PAC文件"><span class="nav-number">17.</span> <span class="nav-text">PAC文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#渲染"><span class="nav-number">18.</span> <span class="nav-text">渲染</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AR-VR技术"><span class="nav-number">19.</span> <span class="nav-text">AR/VR技术</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#位图和矢量图"><span class="nav-number">20.</span> <span class="nav-text">位图和矢量图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口"><span class="nav-number">21.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线程池，对象池，连接池"><span class="nav-number">22.</span> <span class="nav-text">线程池，对象池，连接池</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于兼容"><span class="nav-number">23.</span> <span class="nav-text">关于兼容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#游戏引擎"><span class="nav-number">24.</span> <span class="nav-text">游戏引擎</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#渐进式图片"><span class="nav-number">25.</span> <span class="nav-text">渐进式图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LiFi"><span class="nav-number">26.</span> <span class="nav-text">LiFi</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

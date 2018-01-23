@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Machine Vision & Computer Vision," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：光电转换是摄像机的成像原理，摄像机有镜头、成像件(CCD 或 CMOS)、采样编码这3个主要部分。其中CCD和CMOS都是将光信号转换成电信号的感光器件。本文简要解释了光电转换原理、CCD原理、彩色成像原理。 //完成于摄像与编辑技术课 雾 ~">
+<meta name="keywords" content="Machine Vision &amp; Computer Vision">
+<meta property="og:type" content="article">
+<meta property="og:title" content="摄像机，光电转换原理，CCD感光器件">
+<meta property="og:url" content="http://yoursite.com/2017/11/21/摄像机，光电转换原理，CCD感光器件/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：光电转换是摄像机的成像原理，摄像机有镜头、成像件(CCD 或 CMOS)、采样编码这3个主要部分。其中CCD和CMOS都是将光信号转换成电信号的感光器件。本文简要解释了光电转换原理、CCD原理、彩色成像原理。 //完成于摄像与编辑技术课 雾 ~">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-11-21T14:03:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="摄像机，光电转换原理，CCD感光器件">
+<meta name="twitter:description" content="Abstract：光电转换是摄像机的成像原理，摄像机有镜头、成像件(CCD 或 CMOS)、采样编码这3个主要部分。其中CCD和CMOS都是将光信号转换成电信号的感光器件。本文简要解释了光电转换原理、CCD原理、彩色成像原理。 //完成于摄像与编辑技术课 雾 ~">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/21/摄像机，光电转换原理，CCD感光器件/"/>
+
+
+
+
+
+  <title>摄像机，光电转换原理，CCD感光器件 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/21/摄像机，光电转换原理，CCD感光器件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">摄像机，光电转换原理，CCD感光器件</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-21T16:45:33+08:00">
+                2017-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/Machine-Vision-Computer-Vision/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Vision & Computer Vision</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：光电转换是摄像机的成像原理，摄像机有镜头、成像件(CCD 或 CMOS)、采样编码这3个主要部分。其中CCD和CMOS都是将光信号转换成电信号的感光器件。本文简要解释了光电转换原理、CCD原理、彩色成像原理。</p>
+<p>//完成于摄像与编辑技术课 雾 ~</p>
+<a id="more"></a>
+<h1 id="摄像机"><a href="#摄像机" class="headerlink" title="摄像机"></a>摄像机</h1><p>光–&gt;电传感器</p>
+<p>摄录一体机</p>
+<p>基本构造：镜头，光电转换系统，录像系统，附件（话筒，录像器）</p>
+<h1 id="光电系统转换原理"><a href="#光电系统转换原理" class="headerlink" title="光电系统转换原理"></a>光电系统转换原理</h1><p>摄像的技术本质：光电转换 </p>
+<ul>
+<li>光电转换：实质是通过光照的强弱，最终影响电信号的大小</li>
+<li>以电视机为例：把组成图像的各个像素亮度按一定顺序一个个转换成相应电信号，并依次传送出去；在接收端的荧光屏上再按同样的顺序，将各个电信号在对应的位置上转变成具有相应亮度的像素。</li>
+<li>扫描：将组成一幅图像的像素，按顺序转换成电信号以及将电信号依次转换成图像的过程。</li>
+<li>传送特点：一条信道，顺序传送</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR </span><br><span class="line">A[像素亮度]--&gt;|按顺序转换|B[电信号]</span><br><span class="line">B--&gt;|按同样顺序转换|A</span><br></pre></td></tr></table></figure>
+<h1 id="CCD（Charge-coupled-Device-感光耦合组件）及其原理"><a href="#CCD（Charge-coupled-Device-感光耦合组件）及其原理" class="headerlink" title="CCD（Charge-coupled Device/感光耦合组件）及其原理"></a>CCD（Charge-coupled Device/感光耦合组件）及其原理</h1><p>WHAT：一种集成电路，上有许多排列整齐的电容，能感应光线，并将视频转变成数字信号。经由外部电路的控制，每个小电容能将其所带的电荷转给它相邻的电容。</p>
+<p>Application：广泛应用在数字摄影、天文学，尤其是光学遥测技术（photometry）、光学与频谱望远镜，和高速摄影技术如幸运成像。</p>
+<p>原理：在一个用于感光的CCD中，有一个光敏区域（硅的外延层），和一个由移位寄存器制成的传感区域（狭义上的CCD）。</p>
+<ul>
+<li>图像通过透镜投影在一列电容上（光敏区域），导致每一个电容都积累一定的电荷，而电荷的数量则正比于该处的入射光强。用于线扫描相机的一维电容阵列，每次可以扫描一单层的电容；而用于摄像机和一般相机的二维电容阵列，则可以扫描投射在焦平面上的图像。一旦电容阵列曝光，一个控制回路将会使每个电容把自己的电荷传给相邻的下一个电容（传感区域）。而阵列中最后一个电容里的电荷，则将传给一个电荷放大器，并被转化为电压信号。通过重复这个过程，控制回路可以把整个阵列中的电荷转化为一系列的电压信号。</li>
+<li>在数字电路中，会将这些信号采样、数字化，通常会存储起来；而在模拟电路中，会将它们处理成一个连续的模拟信号（例如把电荷放大器的输出信号输给一个低通滤波器）。</li>
+</ul>
+<h1 id="CCD成像与CMOS成像"><a href="#CCD成像与CMOS成像" class="headerlink" title="CCD成像与CMOS成像"></a>CCD成像与CMOS成像</h1><p>摄像机有3个主要部分：镜头、成像件(CCD 或 CMOS)、采样编码。</p>
+<ul>
+<li>CCD成像</li>
+<li>CMOS（Complementary Metal-Oxide<br>Semiconductor/互补性氧化金属半导体）</li>
+</ul>
+<p>CCD成像与CMOS成像的共同点：</p>
+<ul>
+<li>原理：都是将光信号转换成电信号的感光器件</li>
+<li>表面都是由像点(photosite)组成的矩阵；像点是成像器件的基本单位,当光照到像点上时，像点就能将光转换成电信号；摄像机收集全部像点产生的信号，处理之后生成画面</li>
+<li>描述像点数量：水平数量 X 垂直数量</li>
+<li>它们的像点只能感受光的强度，不能感受光的色彩</li>
+</ul>
+<blockquote>
+<p>意味着：CCD和CMOS拍到的都是黑白画面，就像黑白胶卷<br>那样</p>
+</blockquote>
+<p>彩色画面的实现：</p>
+<ul>
+<li>多片CCD实现彩色画：3CCD：3个相同CCD分别接受红绿蓝三束光）棱镜分光的方式实现分别获取红绿蓝信息</li>
+<li>单片CCD实现彩色画：将拜尔滤镜安装在CCD上。每四个像素形成一个单元，一个负责过滤红色、一个过滤蓝色，两个过滤绿色（因为人眼对绿色比较敏感）。结果每个像素都接收到感光信号，但色彩分辨率不如感光分辨率。</li>
+</ul>
+<p>像素、像点、显点</p>
+<ul>
+<li>像点：CCD的成像单位</li>
+<li>像素：画面单位；像素越小，单位面积上的像素数目越多，图像越清晰</li>
+<li>显点：显示设备的单位</li>
+</ul>
+<p>帧：如25帧/s，100帧播4s</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zh.wikipedia.org/wiki/%E6%84%9F%E5%85%89%E8%80%A6%E5%90%88%E5%85%83%E4%BB%B6" target="_blank" rel="noopener">Wiki.CCD感光耦合组件</a></p>
+<p><a href="https://voachinabranch.files.wordpress.com/2013/02/e79086e8a7a3e69184e5838fe69cba.pdf" target="_blank" rel="noopener">理解摄像机</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Vision-Computer-Vision/" rel="tag"># Machine Vision & Computer Vision</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/09/AI-PM对技术的理解力分析/" rel="next" title="AI PM对技术的理解力分析">
+                <i class="fa fa-chevron-left"></i> AI PM对技术的理解力分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/21/Machine-Vision-vs-Computer-Vision/" rel="prev" title="Machine Vision vs Computer Vision">
+                Machine Vision vs Computer Vision <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摄像机"><span class="nav-number">1.</span> <span class="nav-text">摄像机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#光电系统转换原理"><span class="nav-number">2.</span> <span class="nav-text">光电系统转换原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CCD（Charge-coupled-Device-感光耦合组件）及其原理"><span class="nav-number">3.</span> <span class="nav-text">CCD（Charge-coupled Device/感光耦合组件）及其原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CCD成像与CMOS成像"><span class="nav-number">4.</span> <span class="nav-text">CCD成像与CMOS成像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

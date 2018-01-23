@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PM Communication,System Logic,Reading Notes," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：pm需要了解的产品研发过程中设计到的数据处理的基础知识。">
+<meta name="keywords" content="PM Communication,System Logic,Reading Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Interpret Technique to PM|Chapter2:Data Processing">
+<meta property="og:url" content="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter2-Data-Processing/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：pm需要了解的产品研发过程中设计到的数据处理的基础知识。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-30T12:42:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Interpret Technique to PM|Chapter2:Data Processing">
+<meta name="twitter:description" content="Abstract：pm需要了解的产品研发过程中设计到的数据处理的基础知识。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter2-Data-Processing/"/>
+
+
+
+
+
+  <title>Interpret Technique to PM|Chapter2:Data Processing | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter2-Data-Processing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Interpret Technique to PM|Chapter2:Data Processing</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T18:30:02+08:00">
+                2017-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/System-Logic/" itemprop="url" rel="index">
+                    <span itemprop="name">System Logic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：pm需要了解的产品研发过程中设计到的数据处理的基础知识。</p>
+<a id="more"></a>
+<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><ul>
+<li>关系型数据库：mySQL，Oracle，RDBMS；问题：1.数据高负荷运转时出现性能瓶颈，数据库操作会更慢；2.扩展性：要给数据增加一个字需要更改大量表结构；3.恢复数据的速度慢；</li>
+<li>非关系型数据库：NOSQL（Rediscovered，MongoDB，HBase）</li>
+<li>NOSQL：1.多台机器分担单一机器的高负荷，解决性能瓶颈；2.数据之间无依赖关系，可随时增删字段；3.结构简单，反应快；（高扩展性，分布式计算，低成本，架构灵活，半结构化数据）；</li>
+</ul>
+<h1 id="数据恢复原理"><a href="#数据恢复原理" class="headerlink" title="数据恢复原理"></a>数据恢复原理</h1><ul>
+<li>文件系统的设计——索引区+数据区；</li>
+<li>存入数据的流程——在索引区添加索引+在数据区写入文件的完整内容；</li>
+<li>删除文件的流程——索引信息被删且数据区里标记为无人使用+新文件存入时可能覆盖数据区的被删文件的位置；</li>
+</ul>
+<h1 id="非关系型数据库"><a href="#非关系型数据库" class="headerlink" title="非关系型数据库"></a>非关系型数据库</h1><ul>
+<li>关系型：=excel；字段指表头；</li>
+<li>非关系型：key-value形式（数据库不关心value到底是什么，每个key对应的value项可不一致），查询无需SQL语句，查询：输入key，返回json字符串；优点：不束缚在字段的设计；</li>
+</ul>
+<blockquote>
+<p>eg.1334389483{“name”:”zhang”,”male”:”female”,”age”:”13”}<br>    key:手机号；value：一个个json字符串；</p>
+</blockquote>
+<h1 id="分布式计算基础：Mapreduce"><a href="#分布式计算基础：Mapreduce" class="headerlink" title="分布式计算基础：Mapreduce"></a>分布式计算基础：Mapreduce</h1><ul>
+<li>mapreduce：Google提出的分布式计算模型；即总分单，单归总；（把大量数据分解成独立单单元执行map，然后将结果归并在一起reduce）</li>
+</ul>
+<blockquote>
+<p>eg.分析2.6TB数据找出最热单10个人名；<br>分布式方法：90台机器map（分别分析一个个单个文件得出key-value，key-人名，value-出现次数）+10台机器reduce（分析完的同key的结果丢到同一台机器里，什么key到什么机器要提前设好，最后获得最终的完全key-value，列出次数最多单前10个）</p>
+</blockquote>
+<h1 id="写SQL语句"><a href="#写SQL语句" class="headerlink" title="写SQL语句"></a>写SQL语句</h1><ul>
+<li>SQL语句：创建数据库，删除数据库，删除表，修改表，查询表（核心）；</li>
+<li>查询：select,根据条件筛选数据；</li>
+</ul>
+<blockquote>
+<p>表名：staff<br>select <em>from staff: 从staff表中选择<br>select </em>from staff Where sex=’female’:从staff整张表中选出sex为female的数据；<br>select <em>from staff Where name like ‘%江’  : 从表中选出名字中含有江的数据；<br>select </em>from staff ORDER BY cup DESC    :将整张表降序排列；<br>select *from staff ORDER BY cup ASC:    将整张表按升序排列；<br>select name, age from staff ORDER BY cup DESC:选出名字和年龄并按年龄降序排列；</p>
+</blockquote>
+<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><ul>
+<li>索引：</li>
+<li>事务：提供一种机制，即一件事必须做完，如果中间出了差错就会清除所有痕迹初始化，可保持数据单完整性；</li>
+<li>联合查询：几张表一起查；</li>
+<li>对数据库database的理解：table-表，record-每一行的记录，feature-特点，每条记录的N列；一个大文件里有许多excel表格，每张表格里存储了许多条记录；</li>
+<li>操作：增，删，改，查；</li>
+<li>why 数据库（比excel）：存取效率高，很多系统无用户界面用不了excel，SQL语句操作，事务系统，命令操作失误少；</li>
+<li>什么样的数据适合数据库存储：结构化的数据，即数据有方便查询的feature；</li>
+<li>设计数据库：excel思维+拆表；</li>
+</ul>
+<blockquote>
+<p>eg.user表和message表需拆开，否则会出现数据冗余／重复插入的结果，即低频与高频分开；<br>create_table user(姓名 varchar（20），昵称 varchar（20）)<br>create_table message(姓名 varchar（20，时间datetime，message text)<br>insert into message values（‘李晓华’，now（），‘xxxxx！’） ：把用户发的新消息插入表中；<br>select *from message  where 姓名=‘李晓华’   ：查询李晓华单所有消息；<br>select max（time）from user_table   :找出使用时长最长的用户；</p>
+</blockquote>
+<ul>
+<li>select是精髓，其执行速度直接关系到用户体验；</li>
+</ul>
+<h1 id="数据库索引"><a href="#数据库索引" class="headerlink" title="数据库索引"></a>数据库索引</h1><ul>
+<li>数据库索引：排序（对数据库里的某个属性的所有值排序以加快查询速度）+二分法（取大取小再取中点，重复）</li>
+</ul>
+<h2 id="1-聚簇索引"><a href="#1-聚簇索引" class="headerlink" title="1.聚簇索引"></a>1.聚簇索引</h2><ul>
+<li>按数据的物理存储顺序建立索引；</li>
+<li>缺点：会改变表的存储结构和数据排序；每张表只能建一个聚簇索引；</li>
+</ul>
+<h2 id="2-非聚簇索引"><a href="#2-非聚簇索引" class="headerlink" title="2.非聚簇索引"></a>2.非聚簇索引</h2><ul>
+<li>开辟一块存储区域保存索引，不改变表的存储结构和顺序；每张表可建多个聚簇索引；</li>
+<li>缺点：索引消耗硬盘存储空间；</li>
+</ul>
+<h1 id="ORM（一种轮子）"><a href="#ORM（一种轮子）" class="headerlink" title="ORM（一种轮子）"></a>ORM（一种轮子）</h1><ul>
+<li>能帮你把对象直接存入数据库，也能直接从数据库读取对象的工具；（对象-SQL语句-对象）</li>
+<li>调API</li>
+</ul>
+<h1 id="数据的来源"><a href="#数据的来源" class="headerlink" title="数据的来源"></a>数据的来源</h1><ul>
+<li>上报数据的流程：埋点——上报——后台记录日志——计算／入库——展示</li>
+<li>埋点：在正常功能逻辑里加统计逻辑；上报数据可采用key-value或数据组合的形式；key-value：key-区分不同事件，value-事件发生的次数／状态值；数据组合：描述一个事件或状态需要多种属性描述的场景；</li>
+</ul>
+<blockquote>
+<p>eg.数据组合：描述【下载成功】这个事件的数据组合包括：对应的下载地址，下载渠道／来源，耗时等。</p>
+</blockquote>
+<ul>
+<li>上报：不是每统计一次事件或状态就上报，客户端统计到的数据会暂时保存在内存或磁盘上，当用户启动／退出应用时或其他合适时机，将当前周期统计到的事件批量上报到服务器（减少性能损耗和流量损耗）</li>
+<li>后台记录日志：数据上报到服务器后，服务器将原始数据存到服务器磁盘里；非强实时性的数据不会立即参与计算，而是等服务器负载较低的时间段利用预先配置的计划任务进行离线处理（节约服务器资源／钱／不影响实时业务的处理效率）；</li>
+<li>计算／入库：对海量数据的计算需用到数据仓库（eg.hive处理工具），当数据仓库工具计算出最终结果后，计划任务会将最终结果保存到数据库里（入库）；</li>
+<li>展示：数据入库后报表系统通过前段页面用户的输入获取查询条件——通过后台数据查询获取结果——在前端展示；</li>
+</ul>
+<h1 id="数据统计"><a href="#数据统计" class="headerlink" title="数据统计"></a>数据统计</h1><h2 id="统计数据出问的原因和方案？"><a href="#统计数据出问的原因和方案？" class="headerlink" title="统计数据出问的原因和方案？"></a>统计数据出问的原因和方案？</h2><p><strong>1.报表数据为0</strong> </p>
+<ul>
+<li>在验证客户端埋点功能正常后，可能计算&amp;入库 和展示环节（与埋点功能相关，需根据不同的统计需求修改）出问题</li>
+<li>solution：确认功能正常——联系后台负责数据统计的人员跟进，恢复异常数据；发现功能不正常导致数据没有上报——等下个版本修复 或 热补丁；</li>
+</ul>
+<p><strong>2.报表数据大面积突降</strong>  </p>
+<ul>
+<li>可能是日志分析系统有策略调整或日志迁移导致只收录了部分数据</li>
+<li>solution：找运维确认</li>
+</ul>
+<p><strong>3.报表数据突增</strong>  </p>
+<ul>
+<li>可能是恶意刷量</li>
+<li>solution：找数据组查原始日志，看是否有个别IP或用户ID对应的PV数量明显异常；</li>
+</ul>
+<p><strong>4.报表数据明显低于预期</strong>  </p>
+<ul>
+<li>埋点功能出问题，漏报数据</li>
+<li>solution：找负责埋点的同学</li>
+</ul>
+<p><strong>5.业务流复杂的漏斗系统统计数据异常</strong></p>
+<ul>
+<li>solution：逐级找相关人员确认数据  </li>
+</ul>
+<p><strong>@pm要谨记</strong></p>
+<ul>
+<li>及时关注重要数据，有问题及时发现反馈；</li>
+<li>影响埋点的因素考虑清楚，如果数据异常是否原因可追溯，若有需要可多设置几个辅助埋点；</li>
+<li>除自己熟悉的业务，也要了解外围业务；</li>
+</ul>
+<h2 id="渠道号是怎么统计的"><a href="#渠道号是怎么统计的" class="headerlink" title="渠道号是怎么统计的"></a>渠道号是怎么统计的</h2><ul>
+<li>需要针对不同的渠道包在同一个逻辑里上报不同的数据</li>
+<li>如何实现：在apk里添加配置文件，注明当前apk对应的渠道号；当客户端启动时，首先从配置文件中读取渠道号信息，然后进行上报操作，即可实现用相同的代码来上报不同渠道号信息；</li>
+<li>针对每个需要统计的分发渠道，要提供单独的渠道包，且配置文件不同；</li>
+<li>可自动化生成；</li>
+</ul>
+<h2 id="无埋点统计系统（eg-Growing10）"><a href="#无埋点统计系统（eg-Growing10）" class="headerlink" title="无埋点统计系统（eg Growing10）"></a>无埋点统计系统（eg Growing10）</h2><ul>
+<li>下载sdk并植入，超方便！</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PM-Communication/" rel="tag"># PM Communication</a>
+          
+            <a href="/tags/System-Logic/" rel="tag"># System Logic</a>
+          
+            <a href="/tags/Reading-Notes/" rel="tag"># Reading Notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter1-Communication/" rel="next" title="Interpret Technique to PM|Chapter1:Communication">
+                <i class="fa fa-chevron-left"></i> Interpret Technique to PM|Chapter1:Communication
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter3-Hardware/" rel="prev" title="Interpret Technique to PM|Chapter3:Hardware">
+                Interpret Technique to PM|Chapter3:Hardware <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据处理"><span class="nav-number">1.</span> <span class="nav-text">数据处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据恢复原理"><span class="nav-number">2.</span> <span class="nav-text">数据恢复原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非关系型数据库"><span class="nav-number">3.</span> <span class="nav-text">非关系型数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分布式计算基础：Mapreduce"><span class="nav-number">4.</span> <span class="nav-text">分布式计算基础：Mapreduce</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写SQL语句"><span class="nav-number">5.</span> <span class="nav-text">写SQL语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库"><span class="nav-number">6.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库索引"><span class="nav-number">7.</span> <span class="nav-text">数据库索引</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-聚簇索引"><span class="nav-number">7.1.</span> <span class="nav-text">1.聚簇索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-非聚簇索引"><span class="nav-number">7.2.</span> <span class="nav-text">2.非聚簇索引</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ORM（一种轮子）"><span class="nav-number">8.</span> <span class="nav-text">ORM（一种轮子）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据的来源"><span class="nav-number">9.</span> <span class="nav-text">数据的来源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据统计"><span class="nav-number">10.</span> <span class="nav-text">数据统计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#统计数据出问的原因和方案？"><span class="nav-number">10.1.</span> <span class="nav-text">统计数据出问的原因和方案？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渠道号是怎么统计的"><span class="nav-number">10.2.</span> <span class="nav-text">渠道号是怎么统计的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无埋点统计系统（eg-Growing10）"><span class="nav-number">10.3.</span> <span class="nav-text">无埋点统计系统（eg Growing10）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

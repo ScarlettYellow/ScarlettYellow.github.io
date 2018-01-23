@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Artificial Intelligence,Machine Learning,Coursera ML," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：第一部分介绍如何用机器学习诊断法评价一个学习算法的可用性以及告知如何改进算法效果（面对机器学习问题，提高算法表现的方法）。第二部分讲怎样评价一个学习算法，以及如何用交叉验证法判断一个算法是偏差OR方差问题。第三部分讲如何操作偏斜数据。第四部分讲使用大数据集的必要性。">
+<meta name="keywords" content="Artificial Intelligence,Machine Learning,Coursera ML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Coursera Machine Learning|Week6:Advice for Applying Machine Learning">
+<meta property="og:url" content="http://yoursite.com/2017/10/06/Coursera-Machine-Learning-Week6-Advice-for-Applying-Machine-Learning/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：第一部分介绍如何用机器学习诊断法评价一个学习算法的可用性以及告知如何改进算法效果（面对机器学习问题，提高算法表现的方法）。第二部分讲怎样评价一个学习算法，以及如何用交叉验证法判断一个算法是偏差OR方差问题。第三部分讲如何操作偏斜数据。第四部分讲使用大数据集的必要性。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/001.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/002.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/005.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/06/37.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/006.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/06/38.png">
+<meta property="og:image" content="http://www.z4a.net/images/2017/10/06/39.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/008.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/010.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/011.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/012.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/013.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/014.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/018.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/019.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/020.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/021.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/022.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/024.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/025.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/026.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/027.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/028.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/029.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/030.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/031.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/033.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/032.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/034.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/035.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/036.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/037.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/038.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/039.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/040.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/041.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/043.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/044.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/047.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/048.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/049.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/050.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/051.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/052.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/054.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/055.png">
+<meta property="og:image" content="http://studyai.site/img/16_10_24/056.png">
+<meta property="og:image" content="http://studyai.site/img/17_01_19/001.png">
+<meta property="og:image" content="http://studyai.site/img/17_01_19/002.png">
+<meta property="og:image" content="http://studyai.site/img/17_01_19/005.png">
+<meta property="og:image" content="http://studyai.site/img/17_02_04/001.png">
+<meta property="og:updated_time" content="2017-10-07T08:38:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Coursera Machine Learning|Week6:Advice for Applying Machine Learning">
+<meta name="twitter:description" content="Abstract：第一部分介绍如何用机器学习诊断法评价一个学习算法的可用性以及告知如何改进算法效果（面对机器学习问题，提高算法表现的方法）。第二部分讲怎样评价一个学习算法，以及如何用交叉验证法判断一个算法是偏差OR方差问题。第三部分讲如何操作偏斜数据。第四部分讲使用大数据集的必要性。">
+<meta name="twitter:image" content="http://studyai.site/img/16_10_24/001.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/06/Coursera-Machine-Learning-Week6-Advice-for-Applying-Machine-Learning/"/>
+
+
+
+
+
+  <title>Coursera Machine Learning|Week6:Advice for Applying Machine Learning | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/06/Coursera-Machine-Learning-Week6-Advice-for-Applying-Machine-Learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Coursera Machine Learning|Week6:Advice for Applying Machine Learning</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-06T21:37:41+08:00">
+                2017-10-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：第一部分介绍如何用机器学习诊断法评价一个学习算法的可用性以及告知如何改进算法效果（面对机器学习问题，提高算法表现的方法）。第二部分讲怎样评价一个学习算法，以及如何用交叉验证法判断一个算法是偏差OR方差问题。第三部分讲如何操作偏斜数据。第四部分讲使用大数据集的必要性。<br><a id="more"></a></p>
+<h1 id="Evaluating-a-Learning-Algorithm-评价一个学习算法"><a href="#Evaluating-a-Learning-Algorithm-评价一个学习算法" class="headerlink" title="Evaluating a Learning Algorithm 评价一个学习算法"></a>Evaluating a Learning Algorithm 评价一个学习算法</h1><p>Core Problem：假如我们正在开发一个机器学习系统，或想试着改进一个机器学习系统的性能，应如何决定接下来应该选择哪条路？</p>
+<p>EG（预测房价）：</p>
+<p>假设在预测房价的例子中，我们已完成可正则化线性回归，即最小化代价函数J的值。</p>
+<p><img src="http://studyai.site/img/16_10_24/001.png" alt="1"></p>
+<p>假设我们通过训练训练集得到学习参数θ后，要将假设函数h(θ)放到一组新样本上测试，却发现测试新样本时预测出现巨大的误差，那么问题来了：如何改进这个算法？</p>
+<p>根本原因：</p>
+<p>改进算法的方法通常有3种：</p>
+<p>1.使用更多的训练样本；（但有时候不能解决问题）</p>
+<p>2.尝试使用更少的特征集；（可尝试从众多特征集中精选一小部分来防止过拟合）</p>
+<p>3.尝试使用更多的特征集；（也许目前的特征集对预测不是很有帮助，故可尝试获取更多有用的数据）</p>
+<p>4.尝试增加多项式特征(x1^2,x2^2,x1,x2,etc.)</p>
+<p>5.增大正则化参数λ；</p>
+<p>6.减小正则化参数λ；</p>
+<p>上面的方法耗时长且可能会白费功夫，下面介绍机器学学诊断法来评估算法性能。</p>
+<h2 id="机器学习诊断法-Machine-learning-diagnostic-引入"><a href="#机器学习诊断法-Machine-learning-diagnostic-引入" class="headerlink" title="机器学习诊断法(Machine learning diagnostic)引入"></a>机器学习诊断法(Machine learning diagnostic)引入</h2><p>作用：</p>
+<ul>
+<li>深入了解某种算法是否有用</li>
+<li>告诉你如何改进算法效果</li>
+</ul>
+<blockquote>
+<p>Diagnostic:A test that you can run to gain insight what is/isn’t working with a learning algorithm, and gain guidance as to how best to improve its performance.</p>
+</blockquote>
+<h2 id="评估假设函数"><a href="#评估假设函数" class="headerlink" title="评估假设函数"></a>评估假设函数</h2><p>为什么要评估：</p>
+<ul>
+<li>训练误差小不能说明假设是一个好的假设函数（可能过拟合），当推广到新训练集时可能不适用</li>
+</ul>
+<p>如何判断一个假设函数过拟合？</p>
+<p>情况1：单特征变量</p>
+<p><img src="http://studyai.site/img/16_10_24/002.png" alt="2"></p>
+<p>如上图，单特征变量时可画图，观察图形趋势与样本的拟合情况来判断是否过拟合。</p>
+<p>情况2：多特征变量（评估假设函数的标准方法）</p>
+<p><img src="http://studyai.site/img/16_10_24/005.png" alt="3"></p>
+<p>如上图，假设有一组数据组，将这10组数据三七分；</p>
+<p>70%为训练集(Training set)：(x(1),y(1))，(x(2),y(2))，……，(x(m),y(m)</p>
+<blockquote>
+<p>m表示训练样本的总数</p>
+</blockquote>
+<p>30%为测试集:(Test set):(x(1)test,y(1)test)(x(2)test,y(2)test)……(x(mtest)test,y(mtest)test)</p>
+<blockquote>
+<p>mtest 表示测试样本的总数，test表示这些样本是来自测试集。</p>
+<p>注：若数据有某种规律则按7:3的比例取数据时应随机选取。</p>
+</blockquote>
+<h2 id="评估步骤详解"><a href="#评估步骤详解" class="headerlink" title="评估步骤详解"></a>评估步骤详解</h2><h3 id="线性回归中"><a href="#线性回归中" class="headerlink" title="线性回归中"></a>线性回归中</h3><p>训练/测试流程：</p>
+<p>1.对训练集学习，得到学习参数θ；（即最小化训练误差，即使用70%的数据训练得到的结果）</p>
+<p>2.计算出测试误差；（将学习参数θ代入Jtest(θ)以计算测试误差）</p>
+<p><img src="http://www.z4a.net/images/2017/10/06/37.png" alt="5"></p>
+<blockquote>
+<p>上式实际上是计算测试机平方误差的平均值。</p>
+</blockquote>
+<h3 id="分类问题中"><a href="#分类问题中" class="headerlink" title="分类问题中"></a>分类问题中</h3><p>训练和测试逻时</p>
+<p>1.从训练数据中学习得到参数θ</p>
+<p>2.用下面的式子计算测试数据的误差值</p>
+<p><img src="http://studyai.site/img/16_10_24/006.png" alt="4"></p>
+<p>在分类问题中的测试误差Jtest(θ)——误分类率（0/1错分率）：表示预测到的正确或错误样本的情况。   </p>
+<p>比如说可以这样定义一次预测的误差：</p>
+<ul>
+<li>当hθ≥0.5时y=0</li>
+<li>或当hθ&lt;0.5时y=1</li>
+</ul>
+<p>这两种情况下我们的假设都对样本进行另外误判，否则其他情况下假设值都能正确的对样本y进行分类。</p>
+<p><img src="http://www.z4a.net/images/2017/10/06/38.png" alt="6"></p>
+<p>然后我们就能应用错分率误差来定义测试误差，也就是：</p>
+<p><img src="http://www.z4a.net/images/2017/10/06/39.png" alt="7"></p>
+<p>以上我们介绍了一套标准技术来评价一个已经学习过的假设，接下来，我们要应用这些方法来帮助我们进行诸如特征选择一类的问题（比如多项式次数的选择，或者正则化参数的选择）。</p>
+<h2 id="多项式模型的选择以及训练集-验证集-测试集的划分"><a href="#多项式模型的选择以及训练集-验证集-测试集的划分" class="headerlink" title="多项式模型的选择以及训练集/验证集/测试集的划分"></a>多项式模型的选择以及训练集/验证集/测试集的划分</h2><p>Abstract：模型选择问题：确定对于某组数据最合适的多项式次数是几次，怎样选用正确的特征来构造学习算法。以及，如何将数据分为三组：也就是训练集、验证集和测试集，而不仅仅是前面提到的两组数据。</p>
+<h3 id="选择合适的模型解决过拟合问题"><a href="#选择合适的模型解决过拟合问题" class="headerlink" title="选择合适的模型解决过拟合问题"></a>选择合适的模型解决过拟合问题</h3><p>Problem：充分拟合了的训练集误差通常不能准确预测出新样本。非常拟合训练集的参数不能推广到一般情况，或者说不能作为实际的泛化误差。</p>
+<p>模型选择问题：</p>
+<p><img src="http://studyai.site/img/16_10_24/008.png" alt="8"></p>
+<p>假设要选择最能拟合数据的多项式次数。d代表应选择的多项式次数（上图1-10）。具体地说，比如你想要选择一个模型，那就从这10个模型中，选择一个最适当的多项式次数，并且用这个模型进行估计，预测你的假设能否很好地推广到新的样本上。</p>
+<p>那么你可以这样做：</p>
+<p>1.对每一个模型求最小化训练误差，分别得到参数向量θ(1),θ(2),…,θ(10)；</p>
+<p>2.对所有模型求出测试误差，分别为Jtest(θ(1)) 、Jtest(θ(2))、Jtest(θ(3))…Jtest(θ(10))；</p>
+<p>3.比较，找出测试机误差最小的模型。</p>
+<p>假设最终选择了五次多项式模型：Choose  θ0+ … θ5x5.</p>
+<h3 id="正确评价某个假设函数的预测能力"><a href="#正确评价某个假设函数的预测能力" class="headerlink" title="正确评价某个假设函数的预测能力"></a>正确评价某个假设函数的预测能力</h3><p>Problem：使用最能拟合测试机的参数d可能导致在拟合测试机结构时出现比实际泛化误差更完美的预测结果。而我们更关心的实际是对新样本的拟合效果，故如果我们用训练集来拟合参数θ0,θ1等参数时，拟合后的模型在作用于训练集上的效果是不能预测出我们将这个假设推广到新样板上时效果如何的。这些参数能很好拟合训练集但不一定能很好拟合新样本。（我们实际是用测试机来拟合参数d，但这不能保证假设函数在遇到新样本时的表现）</p>
+<h4 id="方式（将数据集分成-训练集、验证集、测试集3段）"><a href="#方式（将数据集分成-训练集、验证集、测试集3段）" class="headerlink" title="方式（将数据集分成 训练集、验证集、测试集3段）"></a>方式（将数据集分成 训练集、验证集、测试集3段）</h4><p>为了解决上述问题，在模型选择中，如果我们要评价某个假设，我们通常采用以下的方法：</p>
+<p>1.给定某个数据集，我们要将其分为三段：训练集、交叉验证集（cross validation set）、测试集,典型分割比例为6：2：2。</p>
+<p><img src="http://studyai.site/img/16_10_24/010.png" alt="10"></p>
+<p><img src="http://studyai.site/img/16_10_24/011.png" alt="11"></p>
+<blockquote>
+<p>m是训练集个数，mcv是交叉验证集个数，mtest是测试集个数。</p>
+</blockquote>
+<p>2.得到 训练集/交叉验证集/测试集的误差：</p>
+<p><img src="http://studyai.site/img/16_10_24/012.png" alt="12"></p>
+<p>3.使用交叉验证集来选择合适的模型，即通过使用训练集对每一个假设函数依次去求最小化的代价函数minJ(θ)，并求得对应的参数向量θ(d)。</p>
+<p><img src="http://studyai.site/img/16_10_24/013.png" alt="13"></p>
+<p>4.是在交叉验证集中测试这些假设的表现，测出Jcv来看看这些假设在交叉验证集中表现如何。</p>
+<p>5.选择交叉验证集误差最小的那个假设模型，假如这个模型是Jcv(θ(4))对应的那个模型，因此我们就选择这个四次多项式模型：θ0+θ1x1+…+θ4x4，拟合出最好的系数d=4。</p>
+<p>注意：这个过程中，我们没有使用测试集进行拟合，即可回避测试集的嫌疑。则可光明正大使用测试集来估计所选模型的泛化误差。</p>
+<p>6.可使用测试集来评价模型的表现。</p>
+<p>总结：最佳评估方法是把数据分成 训练集、验证集、测试集三段。</p>
+<h1 id="偏差VS方差"><a href="#偏差VS方差" class="headerlink" title="偏差VS方差"></a>偏差VS方差</h1><h2 id="偏差VS方差-1"><a href="#偏差VS方差-1" class="headerlink" title="偏差VS方差"></a>偏差VS方差</h2><p>Problem：若算法表现不理想，多半是出现2种情况：1.偏差大（欠拟合）；2.方差大（过拟合）；</p>
+<p>Core Problem：搞清楚到底是和偏差还是方差有关，或两个都有关。</p>
+<p>Need to solve：弄清楚怎样评价一个学习算法，判断一个算法是偏差OR方差问题。</p>
+<p>用实例解释：</p>
+<p><img src="http://studyai.site/img/16_10_24/014.png" alt="21"></p>
+<p>如上图，若用2个很简单的假设来拟合数据，则会导致欠拟合；若用2个很复杂的假设来拟合，则会导致过拟合（拟合得过于完美）；而中间展示的中等复杂度的假设则对数据拟合得刚刚好，其对应的泛化误差也是三者中最小的。</p>
+<p>方差：平方误差，即对训练集或验证集数据进行预测所产生的平均平方误差。</p>
+<p>下面是示意图：</p>
+<p><img src="http://studyai.site/img/16_10_24/018.png" alt="22"></p>
+<p>如上图，横坐标表示多项式次数，纵坐标代表训练误差。蓝色线代表训练集误差的变化情况，红色线代表验证集误差的变化情况。</p>
+<p>可看到，随多项式次数增多，训练集误差呈下降趋势，验证机误差呈先降后升趋势。</p>
+<h3 id="如何分辨算法处于偏差还是方差？"><a href="#如何分辨算法处于偏差还是方差？" class="headerlink" title="如何分辨算法处于偏差还是方差？"></a>如何分辨算法处于偏差还是方差？</h3><p>Problem：假设得出一个学习算法，其交叉验证误差或测试集误差都很大，我们应如何判断此时的学习算法正处于高偏差 OR 高方差的问题呢？</p>
+<p><img src="http://studyai.site/img/16_10_24/019.png" alt="23"></p>
+<p>如上图，左边圈表示偏差bias情况，右边圈表示方差variance情况。</p>
+<h4 id="偏差情况"><a href="#偏差情况" class="headerlink" title="偏差情况"></a>偏差情况</h4><p>偏差情况下，测试集误差和验证集误差都很大，两者误差可能很接近。若是此情况，则说明算法正处于高偏差问题。如图：</p>
+<p><img src="http://studyai.site/img/16_10_24/020.png" alt="24"></p>
+<h4 id="方差情况"><a href="#方差情况" class="headerlink" title="方差情况"></a>方差情况</h4><p>若交叉验证集误差远大于训练集误差，这就预示着你的算法正处于高方差和过拟合的情况。如图：</p>
+<p><img src="http://studyai.site/img/16_10_24/021.png" alt="25"></p>
+<h2 id="正则化和偏差-方差"><a href="#正则化和偏差-方差" class="headerlink" title="正则化和偏差/方差"></a>正则化和偏差/方差</h2><p>Problem：偏差和方差之间是如何互相影响的，以及和算法的正则化之间的相互关系。</p>
+<p>假设我们要对这样一个高阶多项式进行拟合：</p>
+<p><img src="http://studyai.site/img/16_10_24/022.png" alt="26"></p>
+<p>为防止过拟合现象，需要使用一个正则化项（上式末位一项）来使参数值尽可能小。正则化项的求和范围照例取为j=1到j=m，而非j=0到j=m。</p>
+<h3 id="正则化参数λ对假设函数的影响"><a href="#正则化参数λ对假设函数的影响" class="headerlink" title="正则化参数λ对假设函数的影响"></a>正则化参数λ对假设函数的影响</h3><p>分析三种情形：</p>
+<p>情形1：正则化参数λ取一个比较大的值（比如λ的值取为10000甚至更大）</p>
+<p>在这种情况下，所有这些参数θ1,θ2,θ3θ1,θ2,θ3等等，将被大大惩罚。其结果是这些参数的值将近似于等于0，并且假设模型h(x)h(x)的值将等于或者近似等于θ0θ0。因此我们最后得到的假设函数应该是这个样子的：</p>
+<p><img src="http://studyai.site/img/16_10_24/024.png" alt="27"></p>
+<p>这对数据集来说，不是一个好假设。</p>
+<p>情形2：λ值很小（比如λ的值等于0）</p>
+<p>在这种情况下，如果我们要拟合一个高阶多项式的话，那么我们通常会处于过拟合（overfitting）的情况。</p>
+<p><img src="http://studyai.site/img/16_10_24/025.png" alt="28"></p>
+<p>在拟合一个高阶多项式时，若未进行正则化或正则化程度微小，则通常会得到高方差/过拟合的结果。因为λ的值等于0，相当于没有正则化项（正则化程度微小），因此会对假设过拟合。</p>
+<p>情形3：取一个中间大小的，既不大也不小的λ值时，我们才会得到一组合理的对数据刚好拟合的θ参数值。</p>
+<p><img src="http://studyai.site/img/16_10_24/026.png" alt="29"></p>
+<p>那么问题来了：如何自动选择出一个最合适的正则化参数λ？</p>
+<p>【重申】我们的模型和学习参数、最优化目标：</p>
+<p>假设在使用正则化的情形中，定义Jtrain(θ)Jtrain(θ)为另一种不同的形式，同样定义为最优化目标，但不使用正则化项。</p>
+<p><img src="http://studyai.site/img/16_10_24/027.png" alt="30"></p>
+<p>当我们没有使用正则化时，我们定义的JTrain(θ)就是代价函数J(θ)。</p>
+<p>当我们使用正则化，多出这个λ项时，就将训练误差Jtrain定义为训练集数据预测误差的平方求和。或者说是训练集的评价误差平方和，但不考虑正则化项。</p>
+<p>同理,交叉验证集误差和测试集误差定义为对交叉验证集合测试集进行预测的平均误差平方和。</p>
+<p><img src="http://studyai.site/img/16_10_24/028.png" alt="31"></p>
+<p>总结：我们对于训练误差Jtrain，Jcv，Jtest的定义，都是平均误差平方和。</p>
+<h3 id="选择一个正确的λ"><a href="#选择一个正确的λ" class="headerlink" title="选择一个正确的λ"></a>选择一个正确的λ</h3><p>下面是自动选取正则化参数λ的方法：</p>
+<p>1.选取一系列想要尝试的λ值，如从0.01,0.02,0.04开始，一直试下去，将步长设为2倍的速度增长，直到一个比较大的值。本例最终取值为10.24（实际上我们取的值是10，但已经非常接近了）。因此我们得到了12个不同的正则化参数λ，对应的12个不同的模型</p>
+<p><img src="http://studyai.site/img/16_10_24/029.png" alt="32"></p>
+<p>2.选用第一个模型，λ = 0，最小化代价函数J(θ)，得到某个参数向量θ</p>
+<blockquote>
+<p>使用θ(1)来表示第一个参数向量θ,然后再取第二个模型λ=0.01的模型，最小化代价方差，当然现在λ=0.01，那么会得到一个完全不同的参数向量θ，用θ(2)来表示。得到θ(3)对应于我的第三个模型，以此类推，一直到最后一个λ=10或λ=10.24的模型对应的θ(12)。</p>
+</blockquote>
+<p><img src="http://studyai.site/img/16_10_24/030.png" alt="33"></p>
+<p>3.用交叉验证集评价这些假设参数θ；从第一个模型开始，然后是第二个模型，对每一个不同的正则化参数λ进行拟合，然后用交叉验证集来评价每一个模型。测出每一个参数θ在交叉验证集上的评价误差平方和，然后选取这12个模型中交叉验证集误差最小的那个模型作为最终选择。</p>
+<p><img src="http://studyai.site/img/16_10_24/031.png" alt="34"></p>
+<blockquote>
+<p>对于本例而言，若最终选择了θ(5)，因为此时的交叉验证集误差最小，做完这些最后，如果想看该模型在测试集上的表现，可以用经过学习得到的模型θ(5)来测出它对测试集的预测效果是如何。重申：这里我们依然使用交叉验证集来拟合模型。</p>
+<p>用以上方法即可用这部分测试集比较准确地估算出参数向量θ对新样本的泛化能力，这就是模型选择在选取正则化参数λ时的应用。</p>
+</blockquote>
+<h3 id="正则化参数λ对交叉验证集误差和训练集误差产生的影响"><a href="#正则化参数λ对交叉验证集误差和训练集误差产生的影响" class="headerlink" title="正则化参数λ对交叉验证集误差和训练集误差产生的影响"></a>正则化参数λ对交叉验证集误差和训练集误差产生的影响</h3><p>Problem：当我们改变正则化参数λ的值时，交叉验证集误差和训练集误差会随之发生怎样的变化。</p>
+<blockquote>
+<p>最初的代价函数J(θ)J(θ)是包含正则化项的，但在这里我们把训练误差和交叉验证集误差定义为不包括正则化项。</p>
+</blockquote>
+<p><img src="http://studyai.site/img/16_10_24/033.png" alt="35"></p>
+<p>solution: 绘制出Jtrain(θ)和Jcv(θ)的曲线，表达的是随着增大正则化项参数λ，看假设在训练集上的是如何变化的，以及在交叉验证集上表现如何变化。</p>
+<blockquote>
+<p>若λ值很小，即说明几乎没有使用正则化，因此有很大可能处于过拟合；而如果λ值取的很大的时候，则很有可能处于高偏差的情况。</p>
+</blockquote>
+<h3 id="λ在训练集上的变化"><a href="#λ在训练集上的变化" class="headerlink" title="λ在训练集上的变化"></a>λ在训练集上的变化</h3><p>若画出Jtrain(θ)和Jcv(θ)的曲线，会发现：</p>
+<ul>
+<li>当λ的取值很小时，对训练集的拟合相对较好，因为没有使用正则化。</li>
+<li>当λ的值很大时，将处于高偏差问题，不能对训练集很好地拟合，训练集误差Jtrain(θ)的值会趋于上升。</li>
+</ul>
+<p><img src="http://studyai.site/img/16_10_24/032.png" alt="36"></p>
+<h3 id="λ在交叉验证集上的变化"><a href="#λ在交叉验证集上的变化" class="headerlink" title="λ在交叉验证集上的变化"></a>λ在交叉验证集上的变化</h3><p> <img src="http://studyai.site/img/16_10_24/034.png" alt="37"></p>
+<ul>
+<li>曲线右端，当λ值取很大时，则处于欠拟合/偏差问题，则此时交叉验证集误差将会很大，假设不能在交叉验证集上表现地比较好。</li>
+<li>曲线左端，对应高方差问题，此时λ值取得很小很小，则会对数据过度拟合，所以交叉验证集误差也会很大。</li>
+</ul>
+<blockquote>
+<p>这就是我们改变正则化参数λ值时，交叉验证集误差和训练集误差随之发生的变化。</p>
+</blockquote>
+<h2 id="学习曲线-Learning-Curves"><a href="#学习曲线-Learning-Curves" class="headerlink" title="学习曲线(Learning Curves)"></a>学习曲线(Learning Curves)</h2><p>绘制学习曲线：判断某一个学习算法是否处于偏差方差问题，或者二者皆有。</p>
+<p>1.先绘制出Jtrain(θ)（也就是训练集数据的平均误差平方和）或者Jcv(θ)（也就是交叉验证集数据的平均误差平方和）</p>
+<p><img src="http://studyai.site/img/16_10_24/035.png" alt="38"></p>
+<p>2.绘制成一个关于参数m的函数，即一个关于训练集样本总数的函数</p>
+<p><img src="http://studyai.site/img/16_10_24/036.png" alt="39"></p>
+<blockquote>
+<p>m一般都是一个常数，比如m=100，表示100组训练样本。但我要自己取一些m的值，比如说我取10，20，30或者40组训练集，然后绘制出训练集误差，以及交叉验证集误差。 </p>
+</blockquote>
+<p>假设我使用二次函数来拟合模型:hθ(x)=θ0+θ1x+θ2x2; 当只有一组训练样本，即m=1，假设函数对数据的拟合情况正如下图所示.由于只有一个训练样本，拟合的结果很明显会很好。对这一个训练样本拟合，其误差一定为0。</p>
+<p><img src="http://studyai.site/img/16_10_24/037.png" alt="40"></p>
+<p>若有两组训练样本，二次函数也能很好地拟合：</p>
+<p><img src="http://studyai.site/img/16_10_24/038.png" alt="40"></p>
+<p>若用三组训练样本，看起来依然能很好地用二次函数拟合：</p>
+<p><img src="http://studyai.site/img/16_10_24/039.png" alt="41"></p>
+<p>当m=1,m=2或m=3时，对训练集数据进行预测，得到的训练集误差都将等于0（这里假设不使用正则化，当然如果使用正则化那么误差就稍大于0）。</p>
+<p>总结：当训练样本容量m很小时，训练误差也会很小，因为若训练集很小，则很容易就能把训练集拟合到很好，甚至完全拟合。</p>
+<p>而当m=4时，二次函数似乎也能对数据拟合得很好：</p>
+<p><img src="http://studyai.site/img/16_10_24/040.png" alt="42"></p>
+<p>m = 5时：效果差强人意</p>
+<p><img src="http://studyai.site/img/16_10_24/041.png" alt="43"></p>
+<p>结论：</p>
+<ul>
+<li>随训练集容量增大，平均训练误差逐渐增大，训练集误差对假设进行预测的误差平均值随着m的增大而增大。（如下图）</li>
+<li>验证集误差和测试集误差都会随着训练集样本容量m的增加而减小，因为用的数据越多，能获得的泛化能力就越强，或者说对新样本的适应能力就越强。因此数据越多，越能拟合出合适的假设。</li>
+</ul>
+<p><img src="http://studyai.site/img/16_10_24/043.png" alt="44"></p>
+<p>若把Jtrain(θ)J和Jcv(θ)绘制出来，就应该得到这样的曲线：</p>
+<p><img src="http://studyai.site/img/16_10_24/044.png" alt="45"></p>
+<h2 id="高偏差-高方差下的学习曲线"><a href="#高偏差-高方差下的学习曲线" class="headerlink" title="高偏差/高方差下的学习曲线"></a>高偏差/高方差下的学习曲线</h2><p>Problem：当处于高偏差或者高方差的情况时，这些学习曲线会变成什么样。</p>
+<h3 id="高偏差下的学习曲线"><a href="#高偏差下的学习曲线" class="headerlink" title="高偏差下的学习曲线"></a>高偏差下的学习曲线</h3><p>绘制出交叉验证集误差：</p>
+<p><img src="http://studyai.site/img/16_10_24/047.png" alt="46"></p>
+<p>最左边表示训练集样本容量很小，比如只有一组样本，则表现当然很不好；当达到某一个容量值时，你就会找到那条最有可能拟合数据的那条直线，且此时即便你继续增大训练集的样本容量m，你基本上还是会得到一条差不多的直线。因此交叉验证集误差将会很快变为水平而不再变化。</p>
+<p>同样，训练误差一开始也是很小，而在高偏差的情形中，你会发现训练集误差会逐渐增大，一直趋于接近交叉验证集误差，这是因为你的参数很少。但当m很大的时候，数据太多，此时训练集和交叉验证集的预测结果将会非常接近：</p>
+<p><img src="http://studyai.site/img/16_10_24/048.png" alt="47"></p>
+<blockquote>
+<p>上图：学习算法处于高偏差情形时学习曲线的大致走向。</p>
+</blockquote>
+<p>注：高偏差的情形反映出的问题是交叉验证集和训练集误差都很大，也就是说，你最终会得到一个值比较大的Jcv(θ)和Jtrain(θ)</p>
+<p>结论：</p>
+<ul>
+<li>如果一个学习算法有很大的偏差，那么当我们选用更多的训练样本时，我们发现交叉验证集误差的值不会表现出明显的下降，实际上是变为水平了。</li>
+<li>如果学习算法正处于高偏差的情形，那么选用更多的训练集数据对于改善算法表现无益。</li>
+</ul>
+<h3 id="高方差下的学习曲线"><a href="#高方差下的学习曲线" class="headerlink" title="高方差下的学习曲线"></a>高方差下的学习曲线</h3><p>若训练集样本容量很小，如图：</p>
+<p><img src="http://studyai.site/img/16_10_24/049.png" alt="48"></p>
+<p>若用很高阶次的多项式来拟合：hθ(x)=θ0+θ1x+…+θ100x100；假设我们使用一个很小的λ，那么很显然，我们会对这组数据拟合的非常好：</p>
+<p><img src="http://studyai.site/img/16_10_24/050.png" alt="49"></p>
+<p>若训练集样本容量很小，训练集误差Jtrain(θ)将会很小，随着训练集样本容量的增加，可能这个假设函数任然会对数据或多或少有一点过拟合，但很明显此时要对数据很好地拟合显得更加困难和吃力了：</p>
+<p><img src="http://studyai.site/img/16_10_24/051.png" alt="50"></p>
+<p>随着训练集样本容量的增大，我们会发现Jtrain(θ)的值会随之增大，因为当训练样本越来越多的时候，我们就越难将训练集数据拟合得很好，但总体来说，训练集误差还是很小：</p>
+<p><img src="http://studyai.site/img/16_10_24/052.png" alt="51"></p>
+<p>交叉验证集误差：</p>
+<p>在高方差的情形中，假设函数对数据过拟合，因此交叉验证集误差将会一直都很大，即便我们选择一个比较合适恰当的训练集样本数：</p>
+<p><img src="http://studyai.site/img/16_10_24/054.png" alt="52"></p>
+<p>结论：</p>
+<ul>
+<li>算法处于高方差情形最明显的一个特点是在训练集误差和交叉验证集误差之间以一段很大的差距gap。</li>
+<li>高方差情形下使用更多的数量级对改进算法的表现事实上是有效果的。</li>
+</ul>
+<p>总结：在改进算法时，画出学习曲线将有助于看出偏差或方差的问题。</p>
+<h2 id="重新审视决定下一步做什么"><a href="#重新审视决定下一步做什么" class="headerlink" title="重新审视决定下一步做什么"></a>重新审视决定下一步做什么</h2><p>例子：Debugging 一个学习算法：假设你用正则化线性回归来预测房价。但当你尝试在一组新的数据上使用你的假设函数时，你发现它出现了很大的无法容忍的误差。你接下来要怎么做来改进这个算法呢？</p>
+<p>可选方案：</p>
+<ul>
+<li>通过使用更多的训练样本（对高方差问题有效）</li>
+<li>尝试选用更少的特征集（对高方差问题有效）</li>
+<li>尝试选用更多的特征集（对高偏差问题有效）</li>
+</ul>
+<blockquote>
+<p>如果你需要增加更多的特征时，一般是由于你现有的假设函数太简单，因此我们才决定增加一些别的特征来让假设函数更好地拟合训练集。</p>
+</blockquote>
+<ul>
+<li>尝试增加多项式特征的方法(x21,x22,x1x2,etc.)（对高偏差问题有效）</li>
+<li>通过增大正则化参数λ（对高方差问题有效）</li>
+<li>通过减小正则化参数λ（对高偏差问题有效）</li>
+</ul>
+<h2 id="和神经网络的联系"><a href="#和神经网络的联系" class="headerlink" title="和神经网络的联系"></a>和神经网络的联系</h2><p>当你在用一个相对比较简单的神经网络模型进行神经网络拟合的时候：</p>
+<p>1.其中有一种选择是选择相对简单的隐藏层结构，比如说只有一个隐藏层，或者相对来讲比较少的隐藏层单元：</p>
+<p><img src="http://studyai.site/img/16_10_24/055.png" alt="53"></p>
+<blockquote>
+<p>这种结构简单的神经网络参数就不会很多，很容易出现欠拟合。最大优势在于计算量较小。</p>
+</blockquote>
+<p>2.与之相对的另一种情况是相对较大型的神经网络结构：要么隐藏层单元比较多，要么隐藏层单元比较多：</p>
+<p><img src="http://studyai.site/img/16_10_24/056.png" alt="54"></p>
+<blockquote>
+<p>这种比较复杂的神经网络参数一般比较多，也更容易出现过拟合,计算量大。</p>
+</blockquote>
+<p>总结：</p>
+<ul>
+<li>若经常应用神经网络，特别是大型神经网络的话，就会发现越大型的网络性能越好，但如果发生了过拟合，可使用正则化的方法来修正过拟合。</li>
+</ul>
+<blockquote>
+<p>使用一个大型的神经网络并使用正则化来修正过拟合问题，通常比使用一个小型的神经网络效果更好。但主要问题可能出现在计算量相对较大。</p>
+</blockquote>
+<ul>
+<li>选择隐藏层的层数:默认使用一个隐藏层。但若想选多个隐藏层，可把数据分割为训练集、验证集和测试集，然后使用交叉验证的方法比较一个隐藏层的神经网络，然后试试两个三个隐藏层以此类推，看哪个神经网络在交叉验证集上表现得最理想，再对每一个模型都用交叉验证集数据进行测试，算出三种情况下（隐藏层分别为一层、两层、三层）的交叉验证集误差Jcv(θ)，然后选出你认为最好的神经网络结构。</li>
+</ul>
+<h1 id="操作偏斜数据"><a href="#操作偏斜数据" class="headerlink" title="操作偏斜数据"></a>操作偏斜数据</h1><p>Abstract：前面分析了误差分析和设定误差度量值的重要性。存在偏斜类问题，指训练集中正例和负例的比率非常接近于一个极端值的情况。此情况下我们需要一个合适的误差度量值来告诉我们分类模型的效果好坏。其中一种评估度量值是查准率（precision）和召回率（recall）。查准率是真阳性数量与预测为真阳性数量的比值，召回率是真阳性数量与实际阳性数量的比值。通过这两个度量值可避免被算法”欺骗”。但它仍存在一个问题：在高查准率低召回率情况 and 高召回率低查准率情况下，模型效果都不好，因此我们需要想办法排除这两种极端情况。我们需要权衡查准率和召回率，关键在于临界值的选取，即设定在可信度大于xx%的情况下才预测y = 1。通过变动临界值，可以控制权衡查准率和召回率。而选取合适的临界值的方式有F1Score，F1Score = 2*[PR/(P+R)]，如此即可排除上述两种极端情况。</p>
+<h2 id="偏斜类的错误度量"><a href="#偏斜类的错误度量" class="headerlink" title="偏斜类的错误度量"></a>偏斜类的错误度量</h2><p>Problem：误差分析和设定误差度量值的重要性。我们需要设置某个实数来评估学习算法并衡量它的表现。如果仅仅使用分类误差或分类精度，学习算法仍可能会出现偏移类问题，此时选择一个合适的误差度量值可以避免算法出现偏斜类问题。</p>
+<p>情景举例：癌症分类问题。我们拥有内科病人的特征变量，想知道他们是否患有癌症。类似恶性和良性肿瘤的分类问题，是二分问题。</p>
+<p>@ 偏斜类问题举例：</p>
+<p>假设：</p>
+<ul>
+<li>训练逻辑回归模型hθ(x)。(如果是癌症y=1，否则y=0)；</li>
+<li>发现你在测试集上有1%的错误率。(99%的诊断是正确的)；</li>
+<li>只有0.50%的病人患有癌症</li>
+</ul>
+<p>我们训练逻辑回归模型，假设用测试集检验了这个模型，发现它只有1%的错误，说明我们99%会做出正确判断。看起来是不错的效果。但问题在于测试集中只有0.5%的患者真正得了癌症。此时若一个算法总是预测y = 0，那么其错误率 = 0.5% &lt; 1%, 甚至比我们之前得到的1%还要好。这种情况叫偏斜类问题，发生在正例和负例的比率非常接近于一个极端值，此例中正样本的数量与负样本的数量相比，非常非常少。（因为样本数量极大地向某一类结果倾斜，故称为偏斜类）</p>
+<pre><code>function y = predictCancer(x)
+    y = 0; %ignore x!
+return
+// 忽略了输入值X，它让y总是等于0，因此它总是预测没有人得癌症，那么这个算法实际上只有0.5%的错误率.
+</code></pre><p>因为偏斜类问题的存在，我们不知道是否真的提升了分类模型的质量（y = 0 不是一个好的分类模型，但它会将误差降低到0.5%）。</p>
+<p>所以，我们应该寻找一个不同的误差度量值来评估模型的效果。</p>
+<h2 id="查准率（precision）和召回率（recall）"><a href="#查准率（precision）和召回率（recall）" class="headerlink" title="查准率（precision）和召回率（recall）"></a>查准率（precision）和召回率（recall）</h2><p>假设情景：一个二分问题，学习算法为每一个测试集中的实例做出预测，预测值也是等于0或1。</p>
+<p><img src="http://studyai.site/img/17_01_19/001.png" alt="01"></p>
+<p>上图将样本基于实际情况与预测情况分类。</p>
+<h3 id="查准率（Precision）"><a href="#查准率（Precision）" class="headerlink" title="查准率（Precision）"></a>查准率（Precision）</h3><p>查准率：对所有预测患有癌症的病人，有多大比率的病人是真正患有癌症的。分母是预测为阳的数量，分子是真阳性的数量。查准率越高就越好.高查准率说明对于这类病人我们对预测他们得了癌症有很高的准确率。</p>
+<p>真阳性的数量/预测值为阳性的数量 = 真阳性的数量/(真阳性的数量+假阳性的数量)</p>
+<h3 id="召回率（Recall）"><a href="#召回率（Recall）" class="headerlink" title="召回率（Recall）"></a>召回率（Recall）</h3><p>召回率：如果所有的在数据集中的病人（假设测试集中的病人，或者交叉验证集中的病人）确实得了癌症，有多大比率 我们正确预测他们得了癌症。分母是实际为阳性的值，分子是真阳性数量。召回率越高越好。</p>
+<p>真阳性的数量/实际阳性的数量 = 真阳性的数量/(真阳性的数量+假阴性的数量)</p>
+<p>通过计算查准率和召回率我们能更好的知道分类模型到底好不好。</p>
+<p>排除了偏斜类情况：总是预测y = 0的算法，其真阳性数量为0，则查准率和召回率 = 0.</p>
+<p>注：在查准率和召回率的定义中，我们总是习惯性地用y=1，因此如果我们试图检测某种很稀少的情况（比如癌症，我希望它是个很稀少的情况），查准率和召回率会被定义为y=1而不是y=0作为某种我们希望检测的出现较少的类。</p>
+<h3 id="查准率和召回率练习"><a href="#查准率和召回率练习" class="headerlink" title="查准率和召回率练习"></a>查准率和召回率练习</h3><p>癌症分类例子：</p>
+<p>假设我们用逻辑回归模型训练了数据，输出概率是在0-1之间的值：0≤hθ(x)≤1。设置临界值为0.5.</p>
+<p>因此可以得到：</p>
+<ul>
+<li>如果hθ(x)≥0.5，预测值为1</li>
+<li>如果hθ(x)&lt;0.5，预测值为0</li>
+</ul>
+<p>但我们希望只有在我们非常确信的情况下，才告诉这个人他得了癌症。因此需要修改算法。</p>
+<h3 id="高查准率低召回率情况"><a href="#高查准率低召回率情况" class="headerlink" title="高查准率低召回率情况"></a>高查准率低召回率情况</h3><p>若设置临界值为0.7，则表示：我们会在我们认为他有≥70%得癌症的概率情况下，告诉一个人他得了癌症。</p>
+<p>若临界值设为0.9,则这个模型是高查准率，低召回率。</p>
+<h3 id="高召回率低查准率情况"><a href="#高召回率低查准率情况" class="headerlink" title="高召回率低查准率情况"></a>高召回率低查准率情况</h3><p>目的：避免漏掉患有癌症的病人，即避免假阴性。</p>
+<p>方法：我们设置临界值很低，为0.3，表示：我们认为这些病人有&gt;30%的概率患有癌症，我们以更加保守的方式来告诉他们患有癌症，因此他们能够接受治疗。</p>
+<p>弊端：高召回率，低查准率。</p>
+<p>综上，我们需要权衡查准率和召回率。</p>
+<h3 id="临界值的选取"><a href="#临界值的选取" class="headerlink" title="临界值的选取"></a>临界值的选取</h3><p><img src="http://studyai.site/img/17_01_19/002.png" alt="02"></p>
+<p>如图为改变临界值时，查准率与召回率的变化曲线。</p>
+<p>曲线接近y轴时，为高查准率低召回率情况；接近x轴时，为高召回率低查准率情况。</p>
+<p>注：查准率-召回率曲线可以是各种不同的形状，如：</p>
+<p><img src="http://studyai.site/img/17_01_19/005.png" alt="03"></p>
+<p>solu：我们需要一个标准来帮助权衡查准率与召回率。</p>
+<h3 id="选取临界值的方式：F1Score-F-score"><a href="#选取临界值的方式：F1Score-F-score" class="headerlink" title="选取临界值的方式：F1Score(F score)"></a>选取临界值的方式：F1Score(F score)</h3><p>通过变动临界值，你可以控制权衡查准率和召回率。</p>
+<p>假设有3个算法：</p>
+<table>
+<thead>
+<tr>
+<th>Empty</th>
+<th>查准率P</th>
+<th>召回率R</th>
+<th>平均值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>算法1</td>
+<td>0.5</td>
+<td>0.4</td>
+<td>0.45</td>
+</tr>
+<tr>
+<td>算法2</td>
+<td>0.7</td>
+<td>0.1</td>
+<td>0.4</td>
+</tr>
+<tr>
+<td>算法3</td>
+<td>0.02</td>
+<td>1.0</td>
+<td>0.51</td>
+</tr>
+</tbody>
+</table>
+<p>结合查准率和召回率的方式之一:</p>
+<p>F1Score = 2*[PR/(P+R)]</p>
+<blockquote>
+<p>F score的定义会考虑一部分查准率和召回率的平均值，但是它会给查准率和召回率中较低的值更高的权重，因此你可以看到F score的分子是查准率和召回率的乘积，如果查准率等于0或者召回率等于0，F score也会等于0。因此它结合了查准率和召回率，对于一个较大的F score，查准率和召回率都必须较大。</p>
+<p>F score给出了你所需要的有效方法，因为无论是查准率等于0，还是召回率等于0，它都会得到一个很低的F score。因此，如果要得到一个很高的F score，你的算法的查准率和召回率都要接近于1。具体地说，如果P=0P=0或者R=0R=0，你的F score也会等于0。</p>
+</blockquote>
+<h1 id="使用大数据集"><a href="#使用大数据集" class="headerlink" title="使用大数据集"></a>使用大数据集</h1><p>Abstract：虽然增大数据集只能在某些情况下起到改进算法的作用。但研究证明，在特征值x包含足够多的用来准确预测y的信息时，获取大量的数据是提高算法性能的好方法。在这一前提下，可以说：取得成功的人不是因为拥有最好算法，而是因为拥有最多数据。</p>
+<p><img src="http://studyai.site/img/17_02_04/001.png" alt="04"></p>
+<p>上图是使用多种血虚算法到不同大小的训练数据集后得到的结果。横轴代表以百万为单位的数据集大小，即从0.1百万到1000百万（10亿）规模的数据集；纵轴代表精确度，范围是0到1。</p>
+<p>表明： </p>
+<ul>
+<li>大部分算法都具有相似的性能</li>
+<li>随着训练数据集的增大，这些算法的准确性也都对应增强</li>
+<li>若任意选择一个算法，如选择了一个”劣等的”算法，如果你给这个劣等算法更多的数据，那么从这些列子中看起来，它很有可能会其他算法更好，甚至会比”优等算法”更好。</li>
+</ul>
+<p>结论：取得成功的人不是因为拥有最好算法，而是因为拥有最多数据（前提情况：在特征值x包含足够多的用来准确预测y的信息时，获取大量的数据是提高算法性能的好方法。<br>）</p>
+<p>举例1：混淆词分类问题（监督学习问题，分类：什么样的词在一个英文句子特定的位置才是合适的）</p>
+<p>For breakfast I ate __ eggs.</p>
+<p>在这个句子中，空白处的可选词是：</p>
+<p>to<br>two<br>too</p>
+<p>在这个例子中应该填入two。</p>
+<p>分析：空白词附近的词就是我们需要捕捉的特征x，这些词中包含了大量的信息来告诉我空白处应该填写two而不是to或者too。实际上对于特征捕捉，哪怕是周围词语中的一个词，就能够给我足够的信息来确定出标签y是什么了。这就是通过一个有充足的信息的特征值x的来确定y的例子。</p>
+<p>举例2：房屋价格预测问题</p>
+<p>假设我们只知道房屋尺寸（而没有其他任何特征信息），则很难预测价格。因为影响价格的因素太多了。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Artificial-Intelligence/" rel="tag"># Artificial Intelligence</a>
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Coursera-ML/" rel="tag"># Coursera ML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/01/PM需要了解的行业技术名词/" rel="next" title="PM需要了解的行业技术名词">
+                <i class="fa fa-chevron-left"></i> PM需要了解的行业技术名词
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/08/Coursera-Machine-Learning-Week7-SVM-Kernels/" rel="prev" title="Coursera Machine Learning|Week7:SVM & Kernels">
+                Coursera Machine Learning|Week7:SVM & Kernels <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Evaluating-a-Learning-Algorithm-评价一个学习算法"><span class="nav-number">1.</span> <span class="nav-text">Evaluating a Learning Algorithm 评价一个学习算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习诊断法-Machine-learning-diagnostic-引入"><span class="nav-number">1.1.</span> <span class="nav-text">机器学习诊断法(Machine learning diagnostic)引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评估假设函数"><span class="nav-number">1.2.</span> <span class="nav-text">评估假设函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评估步骤详解"><span class="nav-number">1.3.</span> <span class="nav-text">评估步骤详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性回归中"><span class="nav-number">1.3.1.</span> <span class="nav-text">线性回归中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类问题中"><span class="nav-number">1.3.2.</span> <span class="nav-text">分类问题中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式模型的选择以及训练集-验证集-测试集的划分"><span class="nav-number">1.4.</span> <span class="nav-text">多项式模型的选择以及训练集/验证集/测试集的划分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择合适的模型解决过拟合问题"><span class="nav-number">1.4.1.</span> <span class="nav-text">选择合适的模型解决过拟合问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正确评价某个假设函数的预测能力"><span class="nav-number">1.4.2.</span> <span class="nav-text">正确评价某个假设函数的预测能力</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方式（将数据集分成-训练集、验证集、测试集3段）"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">方式（将数据集分成 训练集、验证集、测试集3段）</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#偏差VS方差"><span class="nav-number">2.</span> <span class="nav-text">偏差VS方差</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差VS方差-1"><span class="nav-number">2.1.</span> <span class="nav-text">偏差VS方差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何分辨算法处于偏差还是方差？"><span class="nav-number">2.1.1.</span> <span class="nav-text">如何分辨算法处于偏差还是方差？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#偏差情况"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">偏差情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方差情况"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">方差情况</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化和偏差-方差"><span class="nav-number">2.2.</span> <span class="nav-text">正则化和偏差/方差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正则化参数λ对假设函数的影响"><span class="nav-number">2.2.1.</span> <span class="nav-text">正则化参数λ对假设函数的影响</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择一个正确的λ"><span class="nav-number">2.2.2.</span> <span class="nav-text">选择一个正确的λ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则化参数λ对交叉验证集误差和训练集误差产生的影响"><span class="nav-number">2.2.3.</span> <span class="nav-text">正则化参数λ对交叉验证集误差和训练集误差产生的影响</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#λ在训练集上的变化"><span class="nav-number">2.2.4.</span> <span class="nav-text">λ在训练集上的变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#λ在交叉验证集上的变化"><span class="nav-number">2.2.5.</span> <span class="nav-text">λ在交叉验证集上的变化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习曲线-Learning-Curves"><span class="nav-number">2.3.</span> <span class="nav-text">学习曲线(Learning Curves)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高偏差-高方差下的学习曲线"><span class="nav-number">2.4.</span> <span class="nav-text">高偏差/高方差下的学习曲线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高偏差下的学习曲线"><span class="nav-number">2.4.1.</span> <span class="nav-text">高偏差下的学习曲线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高方差下的学习曲线"><span class="nav-number">2.4.2.</span> <span class="nav-text">高方差下的学习曲线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重新审视决定下一步做什么"><span class="nav-number">2.5.</span> <span class="nav-text">重新审视决定下一步做什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#和神经网络的联系"><span class="nav-number">2.6.</span> <span class="nav-text">和神经网络的联系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#操作偏斜数据"><span class="nav-number">3.</span> <span class="nav-text">操作偏斜数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#偏斜类的错误度量"><span class="nav-number">3.1.</span> <span class="nav-text">偏斜类的错误度量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查准率（precision）和召回率（recall）"><span class="nav-number">3.2.</span> <span class="nav-text">查准率（precision）和召回率（recall）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查准率（Precision）"><span class="nav-number">3.2.1.</span> <span class="nav-text">查准率（Precision）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#召回率（Recall）"><span class="nav-number">3.2.2.</span> <span class="nav-text">召回率（Recall）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查准率和召回率练习"><span class="nav-number">3.2.3.</span> <span class="nav-text">查准率和召回率练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高查准率低召回率情况"><span class="nav-number">3.2.4.</span> <span class="nav-text">高查准率低召回率情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高召回率低查准率情况"><span class="nav-number">3.2.5.</span> <span class="nav-text">高召回率低查准率情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#临界值的选取"><span class="nav-number">3.2.6.</span> <span class="nav-text">临界值的选取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选取临界值的方式：F1Score-F-score"><span class="nav-number">3.2.7.</span> <span class="nav-text">选取临界值的方式：F1Score(F score)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用大数据集"><span class="nav-number">4.</span> <span class="nav-text">使用大数据集</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

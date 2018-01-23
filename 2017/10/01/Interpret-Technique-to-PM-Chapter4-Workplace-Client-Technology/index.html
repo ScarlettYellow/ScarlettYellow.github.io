@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PM Communication,System Logic,Reading Notes," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：一些客户端技术原理，如APK，传感器，热补丁，系统权限等等。">
+<meta name="keywords" content="PM Communication,System Logic,Reading Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Interpret Technique to PM|Chapter4:Workplace Client Technology">
+<meta property="og:url" content="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter4-Workplace-Client-Technology/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：一些客户端技术原理，如APK，传感器，热补丁，系统权限等等。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-30T12:42:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Interpret Technique to PM|Chapter4:Workplace Client Technology">
+<meta name="twitter:description" content="Abstract：一些客户端技术原理，如APK，传感器，热补丁，系统权限等等。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter4-Workplace-Client-Technology/"/>
+
+
+
+
+
+  <title>Interpret Technique to PM|Chapter4:Workplace Client Technology | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter4-Workplace-Client-Technology/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Interpret Technique to PM|Chapter4:Workplace Client Technology</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T18:43:14+08:00">
+                2017-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/System-Logic/" itemprop="url" rel="index">
+                    <span itemprop="name">System Logic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：一些客户端技术原理，如APK，传感器，热补丁，系统权限等等。<br><a id="more"></a></p>
+<h1 id="广告追踪"><a href="#广告追踪" class="headerlink" title="广告追踪"></a>广告追踪</h1><ul>
+<li>pc端追踪：cookie标识下收集用户的个人浏览习惯</li>
+<li>移动端：GUID标识用户设备；</li>
+</ul>
+<h1 id="APK是怎样炼成的"><a href="#APK是怎样炼成的" class="headerlink" title="APK是怎样炼成的"></a>APK是怎样炼成的</h1><ul>
+<li>APK：安卓系统上的应用安装包；androidmanifest：包含软件的基本信息，包括版本号／协议，是程序间互相调用的基础；class.dex装载了所有代码；resource.arsc：设计资源，包括res：所有设计图，xml文件：描述动画效果和页面布局等；META-INF：签名信息（公钥私钥）；</li>
+</ul>
+<h1 id="xposed"><a href="#xposed" class="headerlink" title="xposed"></a>xposed</h1><ul>
+<li>安卓系统上的一套hook框架：在不改变原app情况下修改app中函数的行为，使第三方开发者也可以对app做定制化的改动；可拦截并改变一个函数的输入返回值；可hook应用里的每个函数；</li>
+</ul>
+<h1 id="安卓掉电快：push"><a href="#安卓掉电快：push" class="headerlink" title="安卓掉电快：push"></a>安卓掉电快：push</h1><ul>
+<li>各个软件以自己的节奏唤醒cpu来实现其push操作；</li>
+</ul>
+<h1 id="apple-pay"><a href="#apple-pay" class="headerlink" title="apple pay"></a>apple pay</h1><ul>
+<li>NFC技术：短距离高频无线通讯技术，允许电子设备间进行非接触式点对点数据传输；10cm内交换数据；</li>
+<li>安全单元secure element：独立电子芯片，有自己的微处理器／存储／加密硬件，只有授权的应用才能访问安全单元的数据；</li>
+<li>touch id：指纹识别，指纹传感器将单个指纹转化为一组数学表达式，用于解锁一些机密信息，只对活体指纹识别；</li>
+<li>secure enclave：cpu里集成的安全执行环境，用于处理敏感信息，信息用特殊密钥加密传输；</li>
+<li>流程：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">绑卡（用户扫描银行卡或输入</span><br><span class="line">——apple将信息加密传输给银行</span><br><span class="line">——银行鉴定信息的准确性——（正确）</span><br><span class="line">——以银行卡与绑定的ios设备为一个组合生成唯一的设备id喝交易动态密钥——系统将其储存在安全单元+apple pay读取设备id和交易动态密钥）</span><br><span class="line">——支付（apple pay通过NFC与pos机通信，传入收款商家信息与金额</span><br><span class="line">——激活设备并请求用户指纹授权——指纹识别转化为数学表达式传入secure enclave</span><br><span class="line">——secure enclave对比已存储的数据</span><br><span class="line">——一致则认为是同一个用户，授权 通过</span><br><span class="line">——secure enclave通知安全单元生成一个只对当前这笔交易有效的token</span><br><span class="line">——通过nfc将设备id和交易token发给pos机</span><br><span class="line">——pos机将数据传给银行——银行通过设备id查询到最初绑定的卡号并对比token的有效性</span><br><span class="line">——（token有效）交易可行</span><br><span class="line">——资金处理+通知pos机交易成功）</span><br></pre></td></tr></table></figure>
+<h1 id="android-应用的续命大法"><a href="#android-应用的续命大法" class="headerlink" title="android 应用的续命大法"></a>android 应用的续命大法</h1><ul>
+<li>监听系统事件：利用android系统的广播机制（把系统发生的事件通知给需要知道此事件的应用）唤醒自己；缺点：有的rom会对广播限制；</li>
+<li>守护进程：应用启动后创建守护进程，在本应用被杀死后复活它；</li>
+<li>全家桶系列：不同应用相互唤醒；</li>
+</ul>
+<h1 id="手机传感器"><a href="#手机传感器" class="headerlink" title="手机传感器"></a>手机传感器</h1><ul>
+<li>磁场传感器：获得收集在xyz三个方向上的磁场强度，旋转手机直到只有一个方向的值不为0时，手机指向正南方；可根据三方向上的磁场强度不同，计算出手机在三维空间的具体朝向；</li>
+<li>加速度传感器：返回手机在xyz三方向上的加速度值，若手机水平放置，则z值即当前的重力加速度G，通过判断G值不同推测用户是在南北极or赤道；应用：计步；</li>
+<li>三轴陀螺仪：可获取手机在xyz三方向上的角加速度，主要用来检测手机的旋转方向；应用：接听电话；</li>
+<li>近距离传感器：检测收集附近物体距离收集正面的距离（小型雷达），通过发送一些脉冲信号并检测返回事件来计算距离；</li>
+<li>光线传感器：检测收集正面接收到的光照强度，从而对应改变屏幕亮度；</li>
+<li>气压传感器：检测大气压强从而推测海拔高度；如计算爬了几层楼梯；</li>
+<li>温度传感器：获取当前环境的温度；</li>
+</ul>
+<h1 id="热补丁技术（android端）"><a href="#热补丁技术（android端）" class="headerlink" title="热补丁技术（android端）"></a>热补丁技术（android端）</h1><ul>
+<li>Q：app版本发布但发现bug，如何补救？</li>
+<li>1.线上推送一段修补bug的代码代替原代码插在运行队列的前面，由于同名代码段不能同时运行，故bug代码永远无法运行；</li>
+<li>2.dexposed：直接接管虚拟机的执行代码流程，执行任何我们想要的代码；限制：只能改自己的app，改别人的app需要root权限；且android5.0以上的系统不可用；  </li>
+<li>3.微信Tinker热更新：不修改系统加载程序的顺序，而是直接在客户端生成全新的程序文件加载；</li>
+</ul>
+<h1 id="超级APP诞生记"><a href="#超级APP诞生记" class="headerlink" title="超级APP诞生记"></a>超级APP诞生记</h1><h2 id="账号登陆"><a href="#账号登陆" class="headerlink" title="账号登陆"></a>账号登陆</h2><ul>
+<li>注册和登陆后密码会经过哈希变换再发送给服务器；哈希：把一串数字变成谁也不认识的文字，且过程不可逆推；</li>
+<li>服务器验证成功后不会记住你，但会返回给你一个票据代替密码（类比机票代替身份证）</li>
+<li>记住密码!=客户端真的记住密码，而是保存票据把票据拿给服务器做验证；</li>
+</ul>
+<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><ul>
+<li>GPS定位原理：（核心是参照物，已知参照物的位置和自己与参照物间的距离，即可定位自己的位置）卫星不断广播自己的位置，打开GPS信号接收器收集至少4颗卫星发出的信号，用收到信号的事件乘以光速即可算出自己与每颗卫星间的距离，再加上卫星位置已知，即可确定自己的位置；</li>
+<li>基站定位和Wi-Fi定位：参照物为手机连接的基站（查询基站位置）和路由器（查询路由器位置）；</li>
+</ul>
+<h2 id="版本更新——增量更新"><a href="#版本更新——增量更新" class="headerlink" title="版本更新——增量更新"></a>版本更新——增量更新</h2><ul>
+<li>增量更新：只更新发生改变的部分，而非下载完整安装包；</li>
+<li>实现：将最新安装包与历史发布的所有版本进行差异对比，得到相应差异包（服务器脚本批量完成）——下发差异包（将当前版本信息发送给服务端，服务端判断后选择相应差异包下发）——合成新包（取出历史安装包，合成）——校验完整性（校验当前历史包的hash值／差异包hash值／合成后新包hash值是否都与预期匹配）</li>
+<li>省流量：25%／100%</li>
+</ul>
+<h1 id="黑知识"><a href="#黑知识" class="headerlink" title="黑知识"></a>黑知识</h1><h2 id="Google黑科技：instant-app"><a href="#Google黑科技：instant-app" class="headerlink" title="Google黑科技：instant app"></a>Google黑科技：instant app</h2><ul>
+<li>从链接打开instant app，在native界面操作，用完即走；app+web；</li>
+</ul>
+<h2 id="点九图"><a href="#点九图" class="headerlink" title="点九图"></a>点九图</h2><ul>
+<li>利用draw9patch，在png图像四周点黑点，黑点平行对应的区域是可拉伸的，不对应的区域不可拉伸；原理：告诉程序这张图片上哪里（不）可拉伸，可拉伸的区域实际不是被拉伸，而是复制粘贴它本身来填充区域以达到拉伸的效果；</li>
+<li>作用：解决图片拉伸后的失真问题；</li>
+</ul>
+<h2 id="应用国际化"><a href="#应用国际化" class="headerlink" title="应用国际化"></a>应用国际化</h2><ul>
+<li>要中文配置文件——译成英文——查显示效果（文字过长？图片上的文字怎么改？）</li>
+</ul>
+<h2 id="android系统的65536"><a href="#android系统的65536" class="headerlink" title="android系统的65536"></a>android系统的65536</h2><ul>
+<li>class.dex文件行数不可超过65536；但可有多个class文件，但apk安装时会对class.dex做优化却不能对其他class文件（只能在程序首次启动时优化）优化，导致应用首次启动耗时长甚至首次启动无响应；</li>
+</ul>
+<h2 id="android系统权限"><a href="#android系统权限" class="headerlink" title="android系统权限"></a>android系统权限</h2><ul>
+<li>权限管理：用户选择是否授予程序权限；</li>
+<li>网络访问权限，修改或删除外置存储中的内容，读取手机状态和身份（用户标识），查看wlan连接，控制振动，检索正在运行的应用（瞅瞅竞品的活跃程度），防止手机休眠（维持后台运行），大致位置（基于网络），开机启动，相机，在其他应用之上显示内容（覆盖），精确位置，安装快捷方式，录音，卸载快捷方式（悄悄将竞品的快捷方式删掉），读取联系人信息，停用屏幕锁定，发送短信（花用户的钱给自己发短信），读取短信；</li>
+</ul>
+<h2 id="app的推送功能"><a href="#app的推送功能" class="headerlink" title="app的推送功能"></a>app的推送功能</h2><ul>
+<li>实现一个推送系统：需要服务器和终端的配合；</li>
+<li>方法：1.轮询（定期不断向服务器请求，此法低级），2.push（和后台维系一条通信通道，两端不定期互相通信以维持后台，但通道易被杀死）；</li>
+</ul>
+<h2 id="ADB（android-debug-bridge）"><a href="#ADB（android-debug-bridge）" class="headerlink" title="ADB（android debug bridge）"></a>ADB（android debug bridge）</h2><ul>
+<li>android调试桥接器：</li>
+</ul>
+<h2 id="图片缓存系统"><a href="#图片缓存系统" class="headerlink" title="图片缓存系统"></a>图片缓存系统</h2><ul>
+<li>分两级，一级缓存（内存缓存，存取速度更快，程序退出则数据消失，且多占内存，以空间换时间）+二级缓存（硬盘缓存，缓存容量更大，速度 慢，程序再启动后仍可用）；</li>
+<li>刷图片的流程：先占用一级缓存空间——一级满则将部分图片（不经常被使用的）清理到二级缓存——二级满则删除部分图片；</li>
+<li>微信与新闻app在列表滑动时图片显示的区别：滑动微信通讯录列表的主要目的是快速查找（若此时读取头像则会导致整个列表的华东掉帧卡顿，故舍弃滑动效果），滑动新闻app列表的目的是浏览新闻（慢速滑动，快速滑动的卡顿感被削弱）【同一操作行为背后的关键路径的不同导致技术方案的差异】</li>
+</ul>
+<h1 id="庖丁解牛"><a href="#庖丁解牛" class="headerlink" title="庖丁解牛"></a>庖丁解牛</h1><h2 id="安卓平台第三方市场的自动安装功能"><a href="#安卓平台第三方市场的自动安装功能" class="headerlink" title="安卓平台第三方市场的自动安装功能"></a>安卓平台第三方市场的自动安装功能</h2><ul>
+<li>利用root权限静默安装；</li>
+<li>利用安卓辅助功能（accessilility，为残障人士／感知受限人士提供的）自动安装；</li>
+</ul>
+<h2 id="android-accesibility"><a href="#android-accesibility" class="headerlink" title="android accesibility"></a>android accesibility</h2><ul>
+<li>一套接口，为特定人群开发定制的辅助功能，降低操作门槛，优化体验（基于用户对辅助功能的授权）；</li>
+<li>功能：获取用户当前界面的UI元素，界面改变时系统会将ui界面的变化信息传输给辅助软件（信息：当前展示的是哪款应用的UI界面+当前ui的结构和所有控件的信息+所有控件可执行的操作+对制定控件进行模拟操作）</li>
+<li>应用：自动安装app；微信抢红包神器+朗读控件文本内容（为听觉障碍人设计）+自动设置默认应用</li>
+<li>抢红包神器的实现：监测微信会话列表，发现列表中出现包含【微信红包】字样的控件时对该控件发送指令+ 进入会话详情，对包含【微信红包】字样的控件发送点击指令+进入红包开启页面找到【开】字样的控件发送点击指令——红包到手；</li>
+</ul>
+<h2 id="网易新闻客户端的UI结构"><a href="#网易新闻客户端的UI结构" class="headerlink" title="网易新闻客户端的UI结构"></a>网易新闻客户端的UI结构</h2><ul>
+<li>检查：系统开启显示布局边界（指UI控件所占区域的大小）</li>
+<li>主界面构成：标题栏+子导航栏（scrollview控件：外层为父控件，里层为子控件；实现上下左右滚动）+ 内容区域（listview：一批样式相同的题图和简介信息组成的父控件；特点：将用户滑出屏幕的子控件进行复用，绑定新的数据来展示新的内容，因为控件过多占用内存）</li>
+<li>结构化数据：有强管理需求的（用数据库）</li>
+</ul>
+<h2 id="hybrid-app"><a href="#hybrid-app" class="headerlink" title="hybrid app"></a>hybrid app</h2><ul>
+<li>通过开发者选项-显示布局边界来分辨UI控件；原生UI：由若干控件构成；H5:实际是webview控件，只有一个大红框；</li>
+<li>1.何时使用原生UI：流畅性要求高的场景+UI样式相对固定不会频繁变化+交互复杂；2.何时使用h5界面：较强的动态运营需求（highly accesible）+UI样式复杂多变+交互简单+多平台复用</li>
+<li>用显示布局边界法去分析app；</li>
+</ul>
+<h2 id="缓存的使用"><a href="#缓存的使用" class="headerlink" title="缓存的使用"></a>缓存的使用</h2><ul>
+<li>全屏的loading动画：loading内容来自本地的loading数据，将服务器下发的数据存储到终端的行为即缓存；</li>
+<li>自动的下拉刷新：数据是从服务器拉回的；当距上次刷新超过30min时，下次打开客户端就会触发这个刷新操作（若启动客户端前断开网络则不会触发）；刷新过程：将服务器的数据拉到本地+将新数据对应的内容更新到UI上+将新拉取的数据加入缓存中</li>
+<li>加快首屏显示速度的方法：优先展示本地缓存，然后拉取网络数据（读缓存比拉服务器要快得多）；</li>
+</ul>
+<h2 id="app卡顿"><a href="#app卡顿" class="headerlink" title="app卡顿"></a>app卡顿</h2><ul>
+<li>原因：1.过度绘制（开发者选项下界面蓝绿色多则未过度绘制，若红多则流畅度糟糕）；</li>
+</ul>
+<h2 id="微信授权登录"><a href="#微信授权登录" class="headerlink" title="微信授权登录"></a>微信授权登录</h2><ul>
+<li>白先生（用户）授权馆长（第三方应用）使用自己存放在库房（微信服务器）的藏品（用户数据／关系链等），库房给了馆长一个蓝色令牌以在有效期内借还藏品，一个红色令牌以在有效期结束后到库房换新的蓝色令牌；</li>
+<li>微信授权登录系统：基于OAUth2.0协议标准，让三方应用可在不知道用户登录名和密码的情况下访问用户再授权方服务器上的私密数据和资源；</li>
+<li>授权流程：用户请求三方应用用微信号登录——三方应用使用appID向微信开放平台（客户端）发送登录请求——客户端加载授权页面并请求用户确认——用户点击确认按钮——微信拉起三方应用并传递临时授权码（code）给三方应用——三方应用使用临时授权码（code）／appID／AppSecret通过https协议向微信开放平台（服务器）请求access_token（有效期2h） + refresh_token（有效期30days）——服务器返回access_token + refresh_token；</li>
+<li>临时授权码（code）+ appID +appsecret三者兼备才能获取授权；</li>
+</ul>
+<h2 id="获取安卓用户的app使用频率"><a href="#获取安卓用户的app使用频率" class="headerlink" title="获取安卓用户的app使用频率"></a>获取安卓用户的app使用频率</h2><ul>
+<li>目的：分析用户偏好，精准运营push；</li>
+<li>限制：无法直接获取，需要系统开发者的系统签名；</li>
+<li>方法：通过activity mananger提供的接口获取辅助信息；</li>
+<li>接口：1.getRecentTasks接口：获取用户最近使用过的应用程序列表（按使用的先后顺序逆序排列；2.getRunningTasks接口：获取当前正在运行的应用列表；</li>
+<li>实现的算法：1.每经过较长时间间隔获取一次最近使用列表，并对比相邻两次列表中应用的相对位置的改变／或出现新的应用，则标记新列表中位置前移或新出现的应用各使用过一次；2.每经过一个很短的时间间隔获取一次正在运行列表，对比相邻两次列表中的第一个应用有无变化，标记变化；</li>
+</ul>
+<h2 id="适配android屏幕"><a href="#适配android屏幕" class="headerlink" title="适配android屏幕"></a>适配android屏幕</h2><ul>
+<li>痛点：安卓设备碎片化严重（屏幕大小上万），需要通用度量单位；</li>
+<li>诉求：在不同分辨率／屏幕密度的手机上，同样dp大小的UI元素看起来是一样大的（即视觉上看到的物理尺寸）；</li>
+<li>像素（px），分辨率（共有像素总和），屏幕密度dpi（每英寸像素数）；</li>
+<li>dp（密度无关像素）：将px换算成dp；dp=（dpi／160）*px；屏幕密度越大，1dp可表示的px越多；</li>
+<li>（手机按密度分档次）【mdpi】密度为160dpi的屏幕：1dp=1px；【hdpi】320dpi：1dp=1.5px；【xhdpi】320dpi：1dp=2px；【xxhdpi】480dpi：1dp=3px；【xxxhdpi】1dp=4px；</li>
+<li>设计师出图（适配不同屏幕）的方式：1.再所有目录下各放置一份不同大小（换算）的相同图片，让系统自动去寻找最合适的（设计工作量大；增加安装包体积）；2.选一个基准屏幕（一般是xhdpi：720p），把所有图放里面，让系统自己去缩放；（小的占内存，大的会失真）；</li>
+<li>准则：1.尽量用dp；2.尽量用百分比和相对位置；</li>
+</ul>
+<h2 id="适配ios屏幕"><a href="#适配ios屏幕" class="headerlink" title="适配ios屏幕"></a>适配ios屏幕</h2><ul>
+<li>使用点（point）作为与px的换算单位；</li>
+<li>3GS：1point=1px；iphone4／5/6:1point=2px；iphone6 plus: 1point=3px；</li>
+<li>图片名加@3x表示是三倍资源；</li>
+</ul>
+<h2 id="安卓手机实现计步"><a href="#安卓手机实现计步" class="headerlink" title="安卓手机实现计步"></a>安卓手机实现计步</h2><ul>
+<li>计步传感器（只支持android4.4以上）；加速度传感器（用户携带手机行走，垂直方向上的加速度会有规律性的变化）</li>
+</ul>
+<h2 id="系统应用删不掉"><a href="#系统应用删不掉" class="headerlink" title="系统应用删不掉"></a>系统应用删不掉</h2><ul>
+<li>原因：应用存储在system/app里，可删除的放在data／app里；</li>
+<li>root权限可删；</li>
+</ul>
+<h2 id="关于图片失真"><a href="#关于图片失真" class="headerlink" title="关于图片失真"></a>关于图片失真</h2><ul>
+<li>插值算法：邻近插值 &amp; 双线性插值；在原有像素值基础上插入或修改一些像素值，并尽可能保证原图的特征；</li>
+</ul>
+<h2 id="听歌识曲"><a href="#听歌识曲" class="headerlink" title="听歌识曲"></a>听歌识曲</h2><ul>
+<li>关键：如何判断两个音频间的匹配；</li>
+<li>以图搜图：对图片进行缩放、灰度处理，提取出64位的哈希值作为特征码，再去匹配；——识曲：找到歌曲的特征（乐纹）；</li>
+<li>获取乐紋：把歌转化为单声道、低采样率的wav格式，即排除其他干扰只留歌曲的整体特征；</li>
+<li>乐紋比对</li>
+<li>乐紋获取流程：对数据库里的所有音乐提取乐紋（对每首：算出其频谱图—分成一段段，每段在频谱图上找几个特征点——特征点构成乐紋——乐紋以倒排索引形式存到数据库里）</li>
+<li>匹配流程：上传录音-检索已有乐紋-检索数据库-考虑乐紋排列／时间等因素；</li>
+</ul>
+<h2 id="android视图：view树"><a href="#android视图：view树" class="headerlink" title="android视图：view树"></a>android视图：view树</h2><ul>
+<li>viewgroup——view+view+viewgroup（——view+view+view）；（理解为控件？）</li>
+</ul>
+<h2 id="安卓与ios的系统响应顺序"><a href="#安卓与ios的系统响应顺序" class="headerlink" title="安卓与ios的系统响应顺序"></a>安卓与ios的系统响应顺序</h2><ul>
+<li>ios：touch-media-service-core</li>
+<li>安卓：application-framework-library-Kernal架构；</li>
+<li>影响：安卓手机抢红包慢；</li>
+</ul>
+<h2 id="为什么美颜app可以美颜"><a href="#为什么美颜app可以美颜" class="headerlink" title="为什么美颜app可以美颜"></a>为什么美颜app可以美颜</h2><ul>
+<li>原理：使用图像处理里的几个滤镜算法；</li>
+<li>灰度处理：把图片的RGB值全部改成150；</li>
+<li>磨皮：用特殊的高斯模糊（双边滤波），即在保留边缘的前提下进行高斯模糊处理；（+ 肤色检测+人脸识别等技术配合）</li>
+<li>视频直播美颜：实时对摄像头里采集到的视频画面应用滤镜；</li>
+<li>GPU而非CPU做图像处理；</li>
+<li>反美颜软件：只是用了丑化照片的滤镜（加工过的信息只会越来越少，是不可逆的）；</li>
+</ul>
+<h2 id="电池续航长短的原因"><a href="#电池续航长短的原因" class="headerlink" title="电池续航长短的原因"></a>电池续航长短的原因</h2><ul>
+<li>续航长的关键：开源节流【增大电池容量+节约用电（运行时用最少的电量做最多的事+待机时用最少的电量不做事）】</li>
+<li>后台任务：安卓——应用持续占领后台；ios——只有指定的几种类型的任务才能后台运行；</li>
+<li>唤醒：安卓——cpu持续不断被唤醒；</li>
+</ul>
+<h2 id="应用市场如何为软件显示更新提示"><a href="#应用市场如何为软件显示更新提示" class="headerlink" title="应用市场如何为软件显示更新提示"></a>应用市场如何为软件显示更新提示</h2><ul>
+<li>流程：市场软件提取用户手机上所有已安装文件的包名和对应的版本号——通过http等网络协议将数据上报给服务器——服务器通过客户端上报的信息再当前app市场上架的apk里查找比对出相同包名且版本号高的apk——服务器将apk数据通过网络协议返给手机——市场软件获取服务器返回的数据后出现更新提示；</li>
+</ul>
+<h2 id="应用的生命周期"><a href="#应用的生命周期" class="headerlink" title="应用的生命周期"></a>应用的生命周期</h2><ul>
+<li>指应用自身运行的生命周期（创建-运行-消亡）</li>
+<li>oncreat，onstart,onresume,onpause,onstop,ondestroy;</li>
+</ul>
+<h1 id="如何优化客户端性能"><a href="#如何优化客户端性能" class="headerlink" title="如何优化客户端性能"></a>如何优化客户端性能</h1><h2 id="启动速度优化："><a href="#启动速度优化：" class="headerlink" title="启动速度优化："></a>启动速度优化：</h2><ul>
+<li>启动：用户从【打开】到【可操作】的过程；</li>
+<li>优化的关键——数据分类：必须的（尽可能压缩），可延时加载的（降低其对UI操作的影响），不需要主动加载的；</li>
+</ul>
+<h2 id="操作和动画卡顿的优化"><a href="#操作和动画卡顿的优化" class="headerlink" title="操作和动画卡顿的优化"></a>操作和动画卡顿的优化</h2><ul>
+<li>影响因素：过度绘制；过深的UI层级（系统传递指令的过程过长）</li>
+<li>工具hierarchy viewer：检查绘制和应用程序的UI层级；</li>
+</ul>
+<h2 id="内存优化"><a href="#内存优化" class="headerlink" title="内存优化"></a>内存优化</h2><ul>
+<li>内存泄漏：导致app卡顿甚至异常退出；原因是”有人“把内存借走了不还（强占内存）；</li>
+<li>解决的关键：找到谁把内存借走了没还；</li>
+</ul>
+<h2 id="网络流量优化"><a href="#网络流量优化" class="headerlink" title="网络流量优化"></a>网络流量优化</h2><ul>
+<li>问题：（android易出现）异常后台流量</li>
+<li>解决的关键：抓包——分析抓包数据——找到可优化的点</li>
+<li>合并请求：把同一时刻相同包头的多个数据包合并成一个发过去，省流量；</li>
+</ul>
+<h2 id="做按钮不容易"><a href="#做按钮不容易" class="headerlink" title="做按钮不容易"></a>做按钮不容易</h2><ul>
+<li>按钮三要素：形状，背景，状态；</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PM-Communication/" rel="tag"># PM Communication</a>
+          
+            <a href="/tags/System-Logic/" rel="tag"># System Logic</a>
+          
+            <a href="/tags/Reading-Notes/" rel="tag"># Reading Notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter3-Hardware/" rel="next" title="Interpret Technique to PM|Chapter3:Hardware">
+                <i class="fa fa-chevron-left"></i> Interpret Technique to PM|Chapter3:Hardware
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter5-Computer-Network/" rel="prev" title="Interpret Technique to PM|Chapter5:Computer Network">
+                Interpret Technique to PM|Chapter5:Computer Network <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#广告追踪"><span class="nav-number">1.</span> <span class="nav-text">广告追踪</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#APK是怎样炼成的"><span class="nav-number">2.</span> <span class="nav-text">APK是怎样炼成的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#xposed"><span class="nav-number">3.</span> <span class="nav-text">xposed</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安卓掉电快：push"><span class="nav-number">4.</span> <span class="nav-text">安卓掉电快：push</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#apple-pay"><span class="nav-number">5.</span> <span class="nav-text">apple pay</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#android-应用的续命大法"><span class="nav-number">6.</span> <span class="nav-text">android 应用的续命大法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#手机传感器"><span class="nav-number">7.</span> <span class="nav-text">手机传感器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#热补丁技术（android端）"><span class="nav-number">8.</span> <span class="nav-text">热补丁技术（android端）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#超级APP诞生记"><span class="nav-number">9.</span> <span class="nav-text">超级APP诞生记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#账号登陆"><span class="nav-number">9.1.</span> <span class="nav-text">账号登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定位"><span class="nav-number">9.2.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本更新——增量更新"><span class="nav-number">9.3.</span> <span class="nav-text">版本更新——增量更新</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#黑知识"><span class="nav-number">10.</span> <span class="nav-text">黑知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Google黑科技：instant-app"><span class="nav-number">10.1.</span> <span class="nav-text">Google黑科技：instant app</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点九图"><span class="nav-number">10.2.</span> <span class="nav-text">点九图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用国际化"><span class="nav-number">10.3.</span> <span class="nav-text">应用国际化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#android系统的65536"><span class="nav-number">10.4.</span> <span class="nav-text">android系统的65536</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#android系统权限"><span class="nav-number">10.5.</span> <span class="nav-text">android系统权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#app的推送功能"><span class="nav-number">10.6.</span> <span class="nav-text">app的推送功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ADB（android-debug-bridge）"><span class="nav-number">10.7.</span> <span class="nav-text">ADB（android debug bridge）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片缓存系统"><span class="nav-number">10.8.</span> <span class="nav-text">图片缓存系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#庖丁解牛"><span class="nav-number">11.</span> <span class="nav-text">庖丁解牛</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安卓平台第三方市场的自动安装功能"><span class="nav-number">11.1.</span> <span class="nav-text">安卓平台第三方市场的自动安装功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#android-accesibility"><span class="nav-number">11.2.</span> <span class="nav-text">android accesibility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网易新闻客户端的UI结构"><span class="nav-number">11.3.</span> <span class="nav-text">网易新闻客户端的UI结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hybrid-app"><span class="nav-number">11.4.</span> <span class="nav-text">hybrid app</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓存的使用"><span class="nav-number">11.5.</span> <span class="nav-text">缓存的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#app卡顿"><span class="nav-number">11.6.</span> <span class="nav-text">app卡顿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信授权登录"><span class="nav-number">11.7.</span> <span class="nav-text">微信授权登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取安卓用户的app使用频率"><span class="nav-number">11.8.</span> <span class="nav-text">获取安卓用户的app使用频率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适配android屏幕"><span class="nav-number">11.9.</span> <span class="nav-text">适配android屏幕</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适配ios屏幕"><span class="nav-number">11.10.</span> <span class="nav-text">适配ios屏幕</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安卓手机实现计步"><span class="nav-number">11.11.</span> <span class="nav-text">安卓手机实现计步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统应用删不掉"><span class="nav-number">11.12.</span> <span class="nav-text">系统应用删不掉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于图片失真"><span class="nav-number">11.13.</span> <span class="nav-text">关于图片失真</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#听歌识曲"><span class="nav-number">11.14.</span> <span class="nav-text">听歌识曲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#android视图：view树"><span class="nav-number">11.15.</span> <span class="nav-text">android视图：view树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安卓与ios的系统响应顺序"><span class="nav-number">11.16.</span> <span class="nav-text">安卓与ios的系统响应顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么美颜app可以美颜"><span class="nav-number">11.17.</span> <span class="nav-text">为什么美颜app可以美颜</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电池续航长短的原因"><span class="nav-number">11.18.</span> <span class="nav-text">电池续航长短的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用市场如何为软件显示更新提示"><span class="nav-number">11.19.</span> <span class="nav-text">应用市场如何为软件显示更新提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用的生命周期"><span class="nav-number">11.20.</span> <span class="nav-text">应用的生命周期</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何优化客户端性能"><span class="nav-number">12.</span> <span class="nav-text">如何优化客户端性能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#启动速度优化："><span class="nav-number">12.1.</span> <span class="nav-text">启动速度优化：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作和动画卡顿的优化"><span class="nav-number">12.2.</span> <span class="nav-text">操作和动画卡顿的优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存优化"><span class="nav-number">12.3.</span> <span class="nav-text">内存优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络流量优化"><span class="nav-number">12.4.</span> <span class="nav-text">网络流量优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#做按钮不容易"><span class="nav-number">12.5.</span> <span class="nav-text">做按钮不容易</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

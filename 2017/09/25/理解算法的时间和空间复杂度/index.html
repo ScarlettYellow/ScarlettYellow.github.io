@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Computer Science,Data Structure," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：算法分析包括事后统计和事前分析估算。事后统计由于依赖于计算机软硬件环境等因素故不太好。事前分析估算是以估算算法的时间复杂度的方式来衡量算法优劣。时间复杂度T(n) = O(f(n))，计算结果只需关注n的最高次幂的数量级即可。而算法的空间复杂度则是对算法在运行过程中临时占用存储空间大小的量度。">
+<meta name="keywords" content="Computer Science,Data Structure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解算法的时间和空间复杂度">
+<meta property="og:url" content="http://yoursite.com/2017/09/25/理解算法的时间和空间复杂度/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：算法分析包括事后统计和事前分析估算。事后统计由于依赖于计算机软硬件环境等因素故不太好。事前分析估算是以估算算法的时间复杂度的方式来衡量算法优劣。时间复杂度T(n) = O(f(n))，计算结果只需关注n的最高次幂的数量级即可。而算法的空间复杂度则是对算法在运行过程中临时占用存储空间大小的量度。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-09-25T11:31:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="理解算法的时间和空间复杂度">
+<meta name="twitter:description" content="Abstract：算法分析包括事后统计和事前分析估算。事后统计由于依赖于计算机软硬件环境等因素故不太好。事前分析估算是以估算算法的时间复杂度的方式来衡量算法优劣。时间复杂度T(n) = O(f(n))，计算结果只需关注n的最高次幂的数量级即可。而算法的空间复杂度则是对算法在运行过程中临时占用存储空间大小的量度。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/25/理解算法的时间和空间复杂度/"/>
+
+
+
+
+
+  <title>理解算法的时间和空间复杂度 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/25/理解算法的时间和空间复杂度/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">理解算法的时间和空间复杂度</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T19:16:50+08:00">
+                2017-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Data-Structure/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Structure</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：算法分析包括事后统计和事前分析估算。事后统计由于依赖于计算机软硬件环境等因素故不太好。事前分析估算是以估算算法的时间复杂度的方式来衡量算法优劣。时间复杂度T(n) = O(f(n))，计算结果只需关注n的最高次幂的数量级即可。而算法的空间复杂度则是对算法在运行过程中临时占用存储空间大小的量度。<br><a id="more"></a> </p>
+<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><ul>
+<li>证明算法正确性</li>
+<li>分析算法时间复杂度：反映算法优劣，通过依据该算法编制的程序在计算机上运行时所消耗的时间来度量</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li>事后统计：依赖于计算机的软硬件环境等因素，易掩盖算法本身的优劣</li>
+<li>事前分析估算</li>
+</ul>
+<h1 id="事前分析估算"><a href="#事前分析估算" class="headerlink" title="事前分析估算"></a>事前分析估算</h1><p>一个用高级语言编写的程序在计算机上运行时所消耗的时间取决于下列因素：    </p>
+<ul>
+<li>算法采用的策略、方法；</li>
+<li>编译产生的代码质量；</li>
+<li>问题的输入规模；</li>
+<li>机器执行指令的速度。  </li>
+</ul>
+<h1 id="算法的时间量度"><a href="#算法的时间量度" class="headerlink" title="算法的时间量度"></a>算法的时间量度</h1><ul>
+<li>WHAT：以<strong>基本操作的重复执行次数</strong>为算法的时间量度，便于比较同一问题的不同算法</li>
+<li>WHY：算法由控制结构（顺序、分支、循环）和原操作（固有数据类型的操作）组成，算法时间取决于两者的综合效果</li>
+</ul>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>时间频度T(n)：算法中语句执行次数，n为问题规模   </p>
+<p><strong>时间复杂度：T(n) = O(f(n))</strong>,为算法的时间复杂度</p>
+<ul>
+<li>f(n)为辅助函数，使得当n趋近于无穷大时，T(n)/f(n)的极限值为不等于0的常数；<strong>该式表示存在一个常数C，使得在当n趋近于正无穷时总有T(n)&lt;=C * f(n)，即T(n)在n趋近于正无穷时最大，与f(n)差不多</strong>;</li>
+</ul>
+<blockquote>
+<p>eg.O(2n2+n +1) = O (3n2+n+3) = O (7n2 + n) = O ( n2 ) ，一般都只用O(n2)表示即可。注意到大O符号里隐藏着一个常数C，所<strong>以f(n)里一般不加系数，只保留主干</strong>。如果把T(n)当做一棵树，那么O(f(n))所表达的就是树干，只关心其中的主干，其他的细枝末节全都抛弃不管。   </p>
+</blockquote>
+<ul>
+<li>时间频度不同，时间复杂度有可能相同，如T(n)=n2+3n+4与T(n)=4n2+2n+1它们的频度不同，但时间复杂度相同，都为O(n2)。</li>
+<li>按数量级递增排列,常见的时间复杂度有：常数阶O(1),对数阶O(log2n),线性阶O(n),线性对数阶O(nlog2n),平方阶O(n2)，立方阶O(n3),…， k次方阶O(nk),指数阶O(2n)。</li>
+<li>随着问题规模n的不断增大，上述时间复杂度不断增大，算法的执行效率越低。应尽可能选用多项式阶O(nk)的算法，而不希望用指数阶的算法。</li>
+<li>常见的算法时间复杂度由小到大依次为：Ο(1)＜Ο(log2n)＜Ο(n)＜Ο(nlog2n)＜Ο(n2)＜Ο(n3)＜…＜Ο(2n)＜Ο(n!)</li>
+</ul>
+<h2 id="求解算法时间复杂度的步骤："><a href="#求解算法时间复杂度的步骤：" class="headerlink" title="求解算法时间复杂度的步骤："></a>求解算法时间复杂度的步骤：</h2><ul>
+<li>找出算法中的基本语句：即最内层循环的循环体</li>
+<li>计算基本语句的执行次数的数量级：<strong>只要保证基本语句执行次数的函数中的最高次幂正确即可</strong>，其他细枝末节可忽略</li>
+<li>得出O(n)<blockquote>
+<p>btw:1.如果算法中包含嵌套的循环，则基本语句通常是最内层的循环体，如果算法中包含并列的循环，则将并列循环的时间复杂度相加。<br>2.Ο(1)表示基本语句的执行次数是一个常数  </p>
+</blockquote>
+</li>
+</ul>
+<h2 id="计算时间复杂度的简单程序分析方法"><a href="#计算时间复杂度的简单程序分析方法" class="headerlink" title="计算时间复杂度的简单程序分析方法"></a>计算时间复杂度的简单程序分析方法</h2><ul>
+<li>简单I/O语句或赋值语句：O(1)</li>
+<li><p>顺序结构：求和法则；</p>
+<blockquote>
+<p>若T1(m)=O(f(m)), T2(n)=O(g(n)),则 T1(m)+T2(n)=O(f(m) + g(n))   </p>
+</blockquote>
+</li>
+<li><p>选择结构：时间主要耗费在then/else语句上，以及检验条件也需要O(1)时间</p>
+</li>
+<li><p>循环结构：乘法法则；运行时间主要体现在多次迭代中执行循环体以及检验循环条件的时间耗费</p>
+<blockquote>
+<p>若算法的2个部分时间复杂度分别为 T1(n)=O(f(n))和 T2(n)=O(g(n)),则 T1<em>T2=O(f(n)</em>g(n)).   </p>
+</blockquote>
+</li>
+<li><p>复杂算法:可以将它分成几个容易估算的部分,然后利用求和法则和乘法法则计算整个算法的时间复杂度</p>
+</li>
+</ul>
+<blockquote>
+<p>1.O(n^2)       </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sum=0；                 （一次）        </span><br><span class="line">for(i=1;i&lt;=n;i++)     （n+1次）         </span><br><span class="line">   for(j=1;j&lt;=n;j++) （n2次）       </span><br><span class="line">    sum++；            （n2次）             </span><br><span class="line">//Θ(2n2+n+1)=n^2;只保留主干得：T(n)= =O(n^2)</span><br></pre></td></tr></table></figure>
+<h1 id="算法的空间复杂度Space-Complexity"><a href="#算法的空间复杂度Space-Complexity" class="headerlink" title="算法的空间复杂度Space Complexity"></a>算法的空间复杂度Space Complexity</h1><p>定义：<strong>对算法在运行过程中临时占用存储空间大小的量</strong>度，包括存储算法本身所占用的存储空间，算法的输入输出数据所占用的存储空间和算法在运行过程中临时占用的存储空间这三个方面。  </p>
+<p>算法在运行过程中临时占用的存储空间随算法的不同而异，有的算法只需要占用少量的临时工作单元，而且<strong>不随问题规模的大小而改变</strong>    </p>
+<p>举例：    </p>
+<ul>
+<li>当算法的空间复杂度为常量，即不随被处理数据量n的大小而改变时，可表示为O(1)；</li>
+<li>当一个算法的空间复杂度与以2为底的n的对数成正比时，可表示为0(10g2n)；当算法的空间复杂度与n成线性比例关系时，可表示为0(n).</li>
+<li>若形参为数组，则只需要为它分配一个存储由实参传送来的一个地址指针的空间，即一个机器字长空间；</li>
+<li>若形参为引用方式，则也只需要为其分配存储一个地址的空间，用它来存储对应实参变量的地址，以便由系统自动引用实参变量</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Computer-Science/" rel="tag"># Computer Science</a>
+          
+            <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/25/数据结构-Chapter2：线性表/" rel="next" title="数据结构|Chapter2：线性表">
+                <i class="fa fa-chevron-left"></i> 数据结构|Chapter2：线性表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/27/新媒体标题写作：如何成为标题党？/" rel="prev" title="新媒体标题写作：如何成为标题党？">
+                新媒体标题写作：如何成为标题党？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#算法分析"><span class="nav-number">1.</span> <span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">1.1.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事前分析估算"><span class="nav-number">2.</span> <span class="nav-text">事前分析估算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法的时间量度"><span class="nav-number">3.</span> <span class="nav-text">算法的时间量度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度"><span class="nav-number">3.1.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求解算法时间复杂度的步骤："><span class="nav-number">3.2.</span> <span class="nav-text">求解算法时间复杂度的步骤：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算时间复杂度的简单程序分析方法"><span class="nav-number">3.3.</span> <span class="nav-text">计算时间复杂度的简单程序分析方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法的空间复杂度Space-Complexity"><span class="nav-number">4.</span> <span class="nav-text">算法的空间复杂度Space Complexity</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

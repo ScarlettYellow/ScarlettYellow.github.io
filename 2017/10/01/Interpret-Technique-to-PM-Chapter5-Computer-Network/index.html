@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PM Communication,System Logic,Reading Notes," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：产品研发过程中的关于计算机网络的一些基础知识。如服务器，网关，协议，长连接等。">
+<meta name="keywords" content="PM Communication,System Logic,Reading Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Interpret Technique to PM|Chapter5:Computer Network">
+<meta property="og:url" content="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter5-Computer-Network/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：产品研发过程中的关于计算机网络的一些基础知识。如服务器，网关，协议，长连接等。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-30T12:42:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Interpret Technique to PM|Chapter5:Computer Network">
+<meta name="twitter:description" content="Abstract：产品研发过程中的关于计算机网络的一些基础知识。如服务器，网关，协议，长连接等。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter5-Computer-Network/"/>
+
+
+
+
+
+  <title>Interpret Technique to PM|Chapter5:Computer Network | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter5-Computer-Network/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Interpret Technique to PM|Chapter5:Computer Network</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T18:46:54+08:00">
+                2017-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/System-Logic/" itemprop="url" rel="index">
+                    <span itemprop="name">System Logic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：产品研发过程中的关于计算机网络的一些基础知识。如服务器，网关，协议，长连接等。<br><a id="more"></a></p>
+<h1 id="网络基础之协议栈"><a href="#网络基础之协议栈" class="headerlink" title="网络基础之协议栈"></a>网络基础之协议栈</h1><ul>
+<li>数据传输的原理：分解——传输——还原；</li>
+<li>应用程序产生的数据经过五层协议栈模型自上而下逐层分解成可供物理介质传输的信号，当到达目的主机后再自下而上还原成应用程序数据；</li>
+<li>分层的好处：每层可被独立设计，只要保证上下层借口一致；</li>
+</ul>
+<h1 id="协议栈模型"><a href="#协议栈模型" class="headerlink" title="协议栈模型"></a>协议栈模型</h1><ul>
+<li>应用层（http，telent，FTP，TFTP）——传输层（TCP／UDP）——网络层（IP）——数据链路（Ethement，802.3，PPP）——物理层（借口和线缆）；</li>
+<li>应用层：为应用程序提供数据传输的网络接口，如网络协议；</li>
+<li>传输层：提供端到端的连接，即让A主机上的程序a找到B主机上的程序b，TCP／UDP协议，端口号的概念；</li>
+<li>数据链路层：网卡的工作地，负责将数字信号转化为可供物理层传输的电信号／光信号；</li>
+<li>物理层：信号传输的物理通道，如网线和配套的接口；</li>
+</ul>
+<h1 id="互联网一切皆下载"><a href="#互联网一切皆下载" class="headerlink" title="互联网一切皆下载"></a>互联网一切皆下载</h1><ul>
+<li>流的概念：从另外一个地方不间断的获取数据；</li>
+<li>获取=下载，只不过应用程序对获取到的数据的使用方式不同：播放／展示／存储；</li>
+</ul>
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><ul>
+<li>解决应用程序的环境依赖／大规模部署／应用间的相互依赖问题：Docker——相当于集装箱；</li>
+</ul>
+<h1 id="Google-GUIC协议传输快"><a href="#Google-GUIC协议传输快" class="headerlink" title="Google - GUIC协议传输快"></a>Google - GUIC协议传输快</h1><p>*基于UDP协议，增发校验数据包，再连无须确认，网连发生变化时无须重建连接；</p>
+<h1 id="IP地址枯竭的后悔药-网络地址转换NAT"><a href="#IP地址枯竭的后悔药-网络地址转换NAT" class="headerlink" title="IP地址枯竭的后悔药-网络地址转换NAT"></a>IP地址枯竭的后悔药-网络地址转换NAT</h1><ul>
+<li>私有网络访问internet的方式需要用到NAT技术，有3种实现方式：</li>
+<li>1.静态转换Static Nat：内外网地址一一对应；</li>
+<li>2.动态转换dynamic nat：内外网的对应关系不固定，一般ISP会使用这种方式给接入用户提供访问外网的能力；</li>
+<li>3.端口多路复用：让外网ip地址被多个内网ip同时共享；</li>
+</ul>
+<h1 id="P2P终结者的原理"><a href="#P2P终结者的原理" class="headerlink" title="P2P终结者的原理"></a>P2P终结者的原理</h1><ul>
+<li>原理：欺骗网内所有主机，让大家把数据先发给他，然后它控制数据的流向／传输速度吗，达到控制局域网内网速的目的；</li>
+<li>破解法：在网关上把客户端的ip和mac地址绑定，并在电脑上将网关的ip和mac地址绑定（这样arp就不能通过mac地址号称自己是网关了）</li>
+</ul>
+<h1 id="ping和网关"><a href="#ping和网关" class="headerlink" title="ping和网关"></a>ping和网关</h1><ul>
+<li>ping：网络诊断工具（packet internet groper），检测网络是否连通；ping是TCP/IP协议族的一部分，原理是向IP地址发送一个数据包，若对方返回同样大小的数据包，则证明连通，且可测试时延；</li>
+</ul>
+<blockquote>
+<p>eg.在命令行里输入ping baidu.com检测百度的连通，输入ping 127.0.0.1检测本机TCP／IP协议设置是否准确；字节=32表示发送出去的数据包是32个字节，时间表示发包到收包的耗时，TTL表示这个包可存活的数量单位；</p>
+</blockquote>
+<ul>
+<li>网关：网络的关卡，即两个网络之间的门；表示为IP地址；</li>
+</ul>
+<h1 id="session"><a href="#session" class="headerlink" title="session"></a>session</h1><ul>
+<li>session机制：解决协议无状态的问题，相当于给每个用户自动分配了一个身份，从而完成对用户身份的识别；指服务器记住用户的能力（通过cookie机制来辅助实现），客户端和服务端产生联系；</li>
+<li>场景：购物车的商品记录；</li>
+</ul>
+<h1 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h1><ul>
+<li>端口：终端留给外部的接口，是不同设备间通信的桥梁；</li>
+<li>驱动：外部硬件与计算机之间交流时的翻译；</li>
+<li>物理端口：如电脑的网孔，usb端口等；</li>
+<li>虚拟端口：如网络数据的收发；</li>
+<li>沟通的核心：软硬结合，分而治之；</li>
+</ul>
+<h1 id="TCP-UDP"><a href="#TCP-UDP" class="headerlink" title="TCP/UDP"></a>TCP/UDP</h1><ul>
+<li>TCP（transmission control protocol）传输控制协议，IP（internet protocol）因特网协议；TCP／IP是一个协议族，定义了整个互联网通信的基础，定义互联网如何连接／协商；</li>
+<li>TCP：需要对方确认的（即传输前需要进行三次握手，三次确认才能通信）；可靠带来效率下降（如时间大部分浪费在互相确认中，资源消耗多）</li>
+<li>UDP（user datagram protocol用户数据包协议)：粗暴，不管对方什么情况，直接发送，不需要确认过程；不可靠带来效率提升同时服务质量下降；udp不一定不可靠（如果可以通过校验算法保证数据质量的稳定），如QQ发送消息即用UDP；</li>
+<li>稳定性优先的场景优先选TCP，如浏览器访问网页，如微信（要维护一条稳定的信息传输通道）；</li>
+<li>TCP为什么可靠：尽最大可能把数据包传送给目的主机+即便传不到也会反馈失败信息；保证可靠的手段：顺序编号（数据包拆小且一一编号）+确认机制）（ACK，向发送方反馈成功接收的信号）+超时重传（发送方每发送一个数据包都会为数据包装定时器，当定时器归0而发送方仍未接收到成功信号，就会重传，直至接收到信号或连接断开）</li>
+<li>UDP无确认机制和超时重传机制，发出去的就像断了线的风筝；</li>
+</ul>
+<h1 id="HTTP／2新一代网络协议"><a href="#HTTP／2新一代网络协议" class="headerlink" title="HTTP／2新一代网络协议"></a>HTTP／2新一代网络协议</h1><ul>
+<li>http：hypertext transfer protocol超文本协议；</li>
+<li>http／2的进化点：多路复用（将多个http请求复用在一个TCP链路上，避免重复请求，提高效率）+二进制传输（可传输的东西变多，如加密后的数据／视频流）+使用HPACK压缩头部信息+ 服务器端push（服务器可直接将资源推给客户端）；</li>
+</ul>
+<h1 id="邮件协议（仅论客户端）"><a href="#邮件协议（仅论客户端）" class="headerlink" title="邮件协议（仅论客户端）"></a>邮件协议（仅论客户端）</h1><ul>
+<li>收邮件：1.POP（post office protocol邮局协议）：支持从邮件服务器上将用户邮件下载到本地；（可离线所有邮件）；2.IMAP：可先获取邮件标题和摘要+ （当想看正文时再拉取正文）+ 将邮件处理状态（标记已读，删除）同步给服务器；</li>
+<li>发邮件：1.SMTP（simple mail transfer protocol），将邮件推送给服务器；2.exchange activesync：微软的同步协议，同步内容包括邮件／日程／联系人等；</li>
+</ul>
+<h1 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h1><ul>
+<li>代理：客户端向外界发起请求不直接与目标服务器连接，而是经过代理服务器去连接外界目标服务器；（服务器隐藏客户端）</li>
+<li>反向代理：服务器接受客户端的请求——将请求分发到被代理的服务器上——服务器处理完请求后将结果转发给客户端；（服务器隐藏服务器；接口人角色：接洽所有客户端请求并进行简单处理而后分发到服务器）</li>
+<li>意义：负载均衡；减轻后端服务器压力；为后端服务器阻挡一些网络攻击；</li>
+</ul>
+<h1 id="CDN内容分发网络"><a href="#CDN内容分发网络" class="headerlink" title="CDN内容分发网络"></a>CDN内容分发网络</h1><ul>
+<li>CDN（content delivery network）:专注静态资源的分发和访问；动作是分发；落定于网络；</li>
+<li>CDN作用：一个基于互联网数量巨大的服务器，专注于内容和资源的分发，方便用户快速访问，提升用户体验的内容网络；资源的分布式存放和备份的方法；</li>
+<li>用户就近接入服务器：利用DNS判断用户位置；</li>
+</ul>
+<h1 id="push数据包"><a href="#push数据包" class="headerlink" title="push数据包"></a>push数据包</h1><ul>
+<li>车票（ip地址+端口号），高速列车（TCP／IP），ARP广播（获取下一个网关的mac地址，创建路由表，引文传输过程需要经过无数网关路由器的中转才能到达目的地）</li>
+</ul>
+<h1 id="长连接"><a href="#长连接" class="headerlink" title="长连接"></a>长连接</h1><ul>
+<li>连接：客户端通过TCP／IP协议从服务器上获取数据时需要一个连通服务器和客户端的连接，连接通过三次握手建立，四次握手释放；</li>
+<li>短连接：每次获取数据都创建一个独占的连接；</li>
+<li>长连接：一个能供多个请求多次传输数据并在数据传输后保活一段时间的连接；</li>
+<li>长连接的使用场景：1.短时间内对同一个服务器的多次数据请求；2.实现push功能（基于长连接的全双工的通信能力，push系统的客户端需要利用最低频率的心跳保证长连接的存活时长）；</li>
+</ul>
+<h1 id="免费电话"><a href="#免费电话" class="headerlink" title="免费电话"></a>免费电话</h1><ul>
+<li>将语音信息转化为能在互联网中传输的IP数据包——UDP协议传输；</li>
+</ul>
+<h1 id="HTTPS技术"><a href="#HTTPS技术" class="headerlink" title="HTTPS技术"></a>HTTPS技术</h1><ul>
+<li>https（安全超文本传输协议）：http协议的主要缺点是明文传输（易被篡改）；https在http与TCP间加了层SSL协议（保障网络数据传输安全的协议，在传输层对http封装加密，并将数据交由TCP协议发送到网络上）</li>
+<li>使用https服务器需要在受信任公司申请一套数字证书（即公私钥，进行非对称加密，公钥加密的数据需要私钥解密，私钥加密的数据需要公钥解密）</li>
+<li>https协议建立连接的过程：客户端发起https请求——服务器将公钥发送给客户端验证身份——客户端生成一个加密密钥，公钥加密后将蜜月传给服务器，服务器用私钥解密报文获得客户端密钥——服务器和客户端的数据传输都通过客户端密钥进行加解密；</li>
+</ul>
+<h1 id="就近接入"><a href="#就近接入" class="headerlink" title="就近接入"></a>就近接入</h1><ul>
+<li>问题：跨运营商的网络访问慢；</li>
+<li>解决思路：访同一运营商的网站；</li>
+<li>方案：就近接入，即利用DNS服务找到离用户最近的机器，从而达到最短路径提供服务，理论上可找到这个公司的所有机房和IP从而达到流量调度的目的；</li>
+</ul>
+<h1 id="网络带宽"><a href="#网络带宽" class="headerlink" title="网络带宽"></a>网络带宽</h1><ul>
+<li>带宽：单位时间能通过链路的数据量；</li>
+</ul>
+<h1 id="快播与p2p"><a href="#快播与p2p" class="headerlink" title="快播与p2p"></a>快播与p2p</h1><ul>
+<li>成功的原因：真实解决了痛点（免费视频消费需求+一整套的视频网站技术解决方案）；</li>
+<li>P2P：去中心化服务，无中心服务器，每个用户既是下载者又是下载服务提供者；（共享模式）</li>
+</ul>
+<h1 id="socket"><a href="#socket" class="headerlink" title="socket"></a>socket</h1><ul>
+<li>一套封装了TCP／IP的实现的API；实现和其他电脑的通信+作为进程间通信的一种方式；</li>
+</ul>
+<h1 id="搭服务器"><a href="#搭服务器" class="headerlink" title="搭服务器"></a>搭服务器</h1><ul>
+<li>安装Nginx</li>
+<li>测试</li>
+</ul>
+<h1 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h1><ul>
+<li>representational state transfer表现层状态转化；</li>
+<li>REST是一种定义API的风格，URL只表示资源，而对资源的操作一律用http协议自带的动词来完成；</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PM-Communication/" rel="tag"># PM Communication</a>
+          
+            <a href="/tags/System-Logic/" rel="tag"># System Logic</a>
+          
+            <a href="/tags/Reading-Notes/" rel="tag"># Reading Notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter4-Workplace-Client-Technology/" rel="next" title="Interpret Technique to PM|Chapter4:Workplace Client Technology">
+                <i class="fa fa-chevron-left"></i> Interpret Technique to PM|Chapter4:Workplace Client Technology
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter6-Front-End/" rel="prev" title="Interpret Technique to PM|Chapter6:Front End">
+                Interpret Technique to PM|Chapter6:Front End <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网络基础之协议栈"><span class="nav-number">1.</span> <span class="nav-text">网络基础之协议栈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#协议栈模型"><span class="nav-number">2.</span> <span class="nav-text">协议栈模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#互联网一切皆下载"><span class="nav-number">3.</span> <span class="nav-text">互联网一切皆下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker"><span class="nav-number">4.</span> <span class="nav-text">Docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Google-GUIC协议传输快"><span class="nav-number">5.</span> <span class="nav-text">Google - GUIC协议传输快</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IP地址枯竭的后悔药-网络地址转换NAT"><span class="nav-number">6.</span> <span class="nav-text">IP地址枯竭的后悔药-网络地址转换NAT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#P2P终结者的原理"><span class="nav-number">7.</span> <span class="nav-text">P2P终结者的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ping和网关"><span class="nav-number">8.</span> <span class="nav-text">ping和网关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#session"><span class="nav-number">9.</span> <span class="nav-text">session</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#端口"><span class="nav-number">10.</span> <span class="nav-text">端口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-UDP"><span class="nav-number">11.</span> <span class="nav-text">TCP/UDP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP／2新一代网络协议"><span class="nav-number">12.</span> <span class="nav-text">HTTP／2新一代网络协议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#邮件协议（仅论客户端）"><span class="nav-number">13.</span> <span class="nav-text">邮件协议（仅论客户端）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反向代理"><span class="nav-number">14.</span> <span class="nav-text">反向代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CDN内容分发网络"><span class="nav-number">15.</span> <span class="nav-text">CDN内容分发网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#push数据包"><span class="nav-number">16.</span> <span class="nav-text">push数据包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#长连接"><span class="nav-number">17.</span> <span class="nav-text">长连接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#免费电话"><span class="nav-number">18.</span> <span class="nav-text">免费电话</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTPS技术"><span class="nav-number">19.</span> <span class="nav-text">HTTPS技术</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#就近接入"><span class="nav-number">20.</span> <span class="nav-text">就近接入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络带宽"><span class="nav-number">21.</span> <span class="nav-text">网络带宽</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快播与p2p"><span class="nav-number">22.</span> <span class="nav-text">快播与p2p</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#socket"><span class="nav-number">23.</span> <span class="nav-text">socket</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭服务器"><span class="nav-number">24.</span> <span class="nav-text">搭服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#REST"><span class="nav-number">25.</span> <span class="nav-text">REST</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
