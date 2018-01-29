@@ -85,7 +85,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python,Public Opinion Analysis,Data Analysis and Visualization," />
+  <meta name="keywords" content="Python,Public Opinion Analysis,Data Mining and Analysis," />
 
 
 
@@ -102,14 +102,14 @@
 
 
 <meta name="description" content="Abstract：网络上数据大多是非结构性数据，需要对其进行预处理以便进行下一步的文本分析。本文用python提取微博用户的数据，将用户的名称、ID、性别、标签、地点等提取出来。">
-<meta name="keywords" content="Python,Public Opinion Analysis,Data Analysis and Visualization">
+<meta name="keywords" content="Python,Public Opinion Analysis,Data Mining and Analysis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据分析|Python提取微博用户信息和画像">
 <meta property="og:url" content="http://yoursite.com/2017/10/15/数据分析-Python提取微博用户信息和画像/index.html">
 <meta property="og:site_name" content="Scarlett Huang">
 <meta property="og:description" content="Abstract：网络上数据大多是非结构性数据，需要对其进行预处理以便进行下一步的文本分析。本文用python提取微博用户的数据，将用户的名称、ID、性别、标签、地点等提取出来。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-15T15:08:54.000Z">
+<meta property="og:updated_time" content="2018-01-29T12:48:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据分析|Python提取微博用户信息和画像">
 <meta name="twitter:description" content="Abstract：网络上数据大多是非结构性数据，需要对其进行预处理以便进行下一步的文本分析。本文用python提取微博用户的数据，将用户的名称、ID、性别、标签、地点等提取出来。">
@@ -371,8 +371,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Data-Analysis-and-Visualization/" itemprop="url" rel="index">
-                    <span itemprop="name">Data Analysis and Visualization</span>
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Data-Mining-and-Analysis/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Mining and Analysis</span>
                   </a>
                 </span>
 
@@ -423,6 +434,7 @@
         <p>Abstract：网络上数据大多是非结构性数据，需要对其进行预处理以便进行下一步的文本分析。本文用python提取微博用户的数据，将用户的名称、ID、性别、标签、地点等提取出来。<br><a id="more"></a></p>
 <h1 id="提取微博用户信息代码"><a href="#提取微博用户信息代码" class="headerlink" title="提取微博用户信息代码"></a>提取微博用户信息代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"> print &quot;开始获取粉丝 ID&quot;</span><br><span class="line"> fansurl = &quot;https://api.weibo.com/2/&#123;0&#125;.json?access_token=&#123;1&#125;&amp;&#123;2&#125;=&#123;3&#125;&amp;</span><br><span class="line">&#123;4&#125;=&#123;5&#125;&amp;&#123;6&#125;=&#123;7&#125;&quot;.format(fansmethod ,access_token,&apos;screen_name&apos;,&apos;大都会&apos;,&apos;count&apos;,2000,&apos;cursor&apos;,1) </span><br><span class="line"> fansurlfile = urllib2.urlopen(fansurl) </span><br><span class="line"> fansuid = fansurlfile.read() </span><br><span class="line"> fansidlist = eval(fansuid)[&apos;ids&apos;] </span><br><span class="line"> print &quot;获取粉丝 ID 成功&quot;</span><br><span class="line"></span><br><span class="line"> false = False </span><br><span class="line"> null = None </span><br><span class="line"> true = True </span><br><span class="line">    </span><br><span class="line"> print &quot;开始写入粉丝用户信息&quot;</span><br><span class="line"> outputfile = open(&quot;wbuserprofile.xml&quot;,&quot;w&quot;) </span><br><span class="line"> for id in fansidlist: </span><br><span class="line">    outputfile.write(&quot;&lt;user&gt;\n\t&lt;id&gt;&quot;+str(id)+&quot;&lt;/id&gt;\n&quot;) </span><br><span class="line">    print &quot;写入 uid&#123;&#125;&quot;.format(id) </span><br><span class="line">    try: </span><br><span class="line">        profile = urllib2.urlopen(&quot;https://api.weibo.com/2/&#123;0&#125;.json?access_token=&#123;1&#125;&amp;&#123;2&#125;=&#123;3&#125;&amp;&#123;4&#125;=&#123;5&#125;&amp;&#123;6&#125;=&#123;7&#125;&quot;.format(userprofmethod,access_token,&quot;uid&quot;,id,&apos;&apos;,&apos;&apos;,&apos;&apos;,&apos;&apos;)).read() </span><br><span class="line">        outputfile.writelines(&quot;\t&lt;screen_name&gt;&quot;+eval(profile)[&quot;screen_name&quot;]+&quot;&lt;/screen_name&gt;\n&quot;) </span><br><span class="line">        print &quot;写入 uid&#123;&#125; 微博名称完成&quot;.format(id) </span><br><span class="line">        outputfile.writelines(&quot;\t&lt;location&gt;&quot;+eval(profile)[&quot;location&quot;]+&quot;&lt;/location&gt;\n&quot;) </span><br><span class="line">        print &quot;写入 uid&#123;&#125; 微博地点完成&quot;.format(id) </span><br><span class="line">        outputfile.writelines(&quot;\t&lt;gender&gt;&quot;+eval(profile)[&quot;gender&quot;]+&quot;&lt;/gander&gt;\n&quot;) </span><br><span class="line">        print &quot;写入 uid&#123;&#125; 微博性别完成&quot;.format(id) </span><br><span class="line">        tags = urllib2.urlopen(&quot;https://api.weibo.com/2/&#123;0&#125;.json?access_token=&#123;1&#125;&amp;&#123;2&#125;=&#123;3&#125;&amp;&#123;4&#125;=&#123;5&#125;&amp;&#123;6&#125;=&#123;7&#125;&quot;.format(tagsmethod,access_token,&quot;uid&quot;,id,&apos;&apos;,&apos;&apos;,&apos;&apos;,&apos;&apos;)).read() </span><br><span class="line">        print &quot;开始写入 uid&#123;&#125; 标签&quot;.format(id) </span><br><span class="line">        outputfile.writelines(&quot;\t&lt;tags&gt;\n&quot;) </span><br><span class="line">        for tag in eval(tags): </span><br><span class="line">            for key in tag.keys(): </span><br><span class="line">                if key.isdigit(): </span><br><span class="line">                    outputfile.writelines(&quot;\t&quot;+tag[key]+&quot;\n&quot;) </span><br><span class="line">        outputfile.writelines(&quot;\t&lt;/tags&gt;\n&quot;) </span><br><span class="line">        print &quot;完成写入 uid&#123;&#125; 标签&quot;.format(id) </span><br><span class="line">    except: </span><br><span class="line">        print &quot;连接出错无法写入 , 跳过！&quot;</span><br><span class="line">        outputfile.write(&quot;&lt;/user&gt;&quot;) </span><br><span class="line">        print &quot;sleep 60 mins&quot;</span><br><span class="line">        time.sleep(3600) </span><br><span class="line">        continue </span><br><span class="line">    outputfile.write(&quot;&lt;/user&gt;&quot;) </span><br><span class="line">    outputfile.write(&quot;\n&quot;) </span><br><span class="line">    </span><br><span class="line"> outputfile.close() </span><br><span class="line"> print &quot;完成粉丝用户信息&quot;</span><br><span class="line"> print &quot;文件写入结束&quot;</span><br></pre></td></tr></table></figure>
 <h1 id="提取微博用户肖像"><a href="#提取微博用户肖像" class="headerlink" title="提取微博用户肖像"></a>提取微博用户肖像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"> &lt;user&gt; </span><br><span class="line"> &lt;id&gt;2863185903&lt;/id&gt; </span><br><span class="line"> &lt;screen_name&gt; 花开有季 xn&lt;/screen_name&gt; </span><br><span class="line"> &lt;location&gt; 北京 延庆县 &lt;/location&gt; </span><br><span class="line"> &lt;gender&gt;f&lt;/gander&gt; </span><br><span class="line"> &lt;tags&gt; </span><br><span class="line">星座命理</span><br><span class="line">娱乐</span><br><span class="line"> &lt;/tags&gt; </span><br><span class="line"> &lt;/user&gt; </span><br><span class="line"> &lt;user&gt; </span><br><span class="line"> &lt;id&gt;1246347253&lt;/id&gt; </span><br><span class="line"> &lt;screen_name&gt; 杰里 - 商 &lt;/screen_name&gt; </span><br><span class="line"> &lt;location&gt; 北京 房山区 &lt;/location&gt; </span><br><span class="line"> &lt;gender&gt;m&lt;/gander&gt; </span><br><span class="line"> &lt;tags&gt; </span><br><span class="line">搞笑幽默</span><br><span class="line"> &lt;/tags&gt; </span><br><span class="line"> &lt;/user&gt; </span><br><span class="line"> &lt;user&gt; </span><br><span class="line"> &lt;id&gt;3265394820&lt;/id&gt; </span><br><span class="line"> &lt;screen_name&gt; 小荷相公丶 &lt;/screen_name&gt; </span><br><span class="line"> &lt;location&gt; 重庆 &lt;/location&gt; </span><br><span class="line"> &lt;gender&gt;f&lt;/gander&gt; </span><br><span class="line"> &lt;tags&gt; </span><br><span class="line"> &lt;/tags&gt; </span><br><span class="line"> &lt;/user&gt; </span><br><span class="line"> &lt;user&gt; </span><br><span class="line"> &lt;id&gt;2036066523&lt;/id&gt; </span><br><span class="line"> &lt;screen_name&gt; 青春的 Dalin&lt;/screen_name&gt; </span><br><span class="line"> &lt;location&gt; 江西 南昌 &lt;/location&gt; </span><br><span class="line"> &lt;gender&gt;f&lt;/gander&gt; </span><br><span class="line"> &lt;tags&gt; </span><br><span class="line"> &lt;/tags&gt; </span><br><span class="line"> &lt;/user&gt; </span><br><span class="line"> &lt;user&gt; </span><br><span class="line"> &lt;id&gt;2013144111&lt;/id&gt; </span><br><span class="line"> &lt;screen_name&gt; 势必拿下会计证 _ 微微猫 &lt;/screen_name&gt; </span><br><span class="line"> &lt;location&gt; 北京 宣武区 &lt;/location&gt; </span><br><span class="line"> &lt;gender&gt;f&lt;/gander&gt; </span><br><span class="line"> &lt;tags&gt; </span><br><span class="line">旅游</span><br><span class="line"> WE </span><br><span class="line"> 90 后</span><br><span class="line"> &lt;/tags&gt; </span><br><span class="line"> &lt;/user&gt;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -467,7 +479,7 @@
           
             <a href="/tags/Public-Opinion-Analysis/" rel="tag"><i class="fa fa-tag"></i> Public Opinion Analysis</a>
           
-            <a href="/tags/Data-Analysis-and-Visualization/" rel="tag"><i class="fa fa-tag"></i> Data Analysis and Visualization</a>
+            <a href="/tags/Data-Mining-and-Analysis/" rel="tag"><i class="fa fa-tag"></i> Data Mining and Analysis</a>
           
         </div>
       
@@ -573,7 +585,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">133</span>
+                <span class="site-state-item-count">142</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -584,7 +596,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -595,7 +607,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">55</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -754,7 +766,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">共395.9k字</span>
+  <span class="post-count">共411.9k字</span>
 </div>
 
 

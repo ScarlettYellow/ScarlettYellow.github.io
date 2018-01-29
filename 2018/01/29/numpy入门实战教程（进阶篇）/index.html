@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,Numpy," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：numpy入门实战教程进阶篇，附代码。">
+<meta name="keywords" content="Python,Numpy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="numpy入门实战教程（进阶篇）">
+<meta property="og:url" content="http://yoursite.com/2018/01/29/numpy入门实战教程（进阶篇）/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：numpy入门实战教程进阶篇，附代码。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-01-29T13:03:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="numpy入门实战教程（进阶篇）">
+<meta name="twitter:description" content="Abstract：numpy入门实战教程进阶篇，附代码。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/29/numpy入门实战教程（进阶篇）/"/>
+
+
+
+
+
+  <title>numpy入门实战教程（进阶篇） | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/29/numpy入门实战教程（进阶篇）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">numpy入门实战教程（进阶篇）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-29T21:02:42+08:00">
+                2018-01-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Data-Mining-and-Analysis/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Mining and Analysis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/29/numpy入门实战教程（进阶篇）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/01/29/numpy入门实战教程（进阶篇）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：numpy入门实战教程进阶篇，附代码。<br><a id="more"></a></p>
+<h1 id="1-广播法则（Broadcast-Rule）"><a href="#1-广播法则（Broadcast-Rule）" class="headerlink" title="1.广播法则（Broadcast Rule）"></a>1.广播法则（Broadcast Rule）</h1><p>广播法则能<strong>使通用函数有意义地处理不具有相同形状的输入</strong>。</p>
+<ul>
+<li>第一法则：若所有的输入数组维度不都相同，<strong>一个“1”将被重复地添加在维度较小的数组上直至所有数据都拥有相同的维度</strong></li>
+<li>第二法则：确定长度为1的数组沿着特殊方向表现地好像它有沿着那个方向最大形状的大小。对数组来说，沿<strong>着那个维度的数组元素的值理应相同</strong>。</li>
+</ul>
+<p><strong>应用广播法则后，所有数组的大小必须匹配</strong>。</p>
+<h1 id="2-花哨的索引和索引技巧"><a href="#2-花哨的索引和索引技巧" class="headerlink" title="2.花哨的索引和索引技巧"></a>2.花哨的索引和索引技巧</h1><p>numpy比普通的python序列提供更多的索引功能。数组的索引功能：索引整数、切片、被整数数组和布尔数组索引。</p>
+<h2 id="2-1-通过数组索引（Indexed-by-Array）"><a href="#2-1-通过数组索引（Indexed-by-Array）" class="headerlink" title="2.1 通过数组索引（Indexed by Array）"></a>2.1 通过数组索引（Indexed by Array）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># indexed via array</span></span><br><span class="line">a = arange(<span class="number">12</span>)**<span class="number">2</span></span><br><span class="line"><span class="keyword">print</span> a</span><br><span class="line">i = array([<span class="number">1</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">5</span>]) </span><br><span class="line"><span class="keyword">print</span> i</span><br><span class="line"><span class="keyword">print</span> a[i] <span class="comment">#  # the elements of a at the positions i</span></span><br><span class="line"></span><br><span class="line">j = array([[<span class="number">3</span>,<span class="number">4</span>],[<span class="number">9</span>,<span class="number">7</span>]])</span><br><span class="line"><span class="keyword">print</span> a[j]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 当被索引数组a是多维的时，每一个唯一的索引数列指向a的第一维5。</span></span><br><span class="line"><span class="comment"># 以下示例通过将图片标签用调色版转换成色彩图像展示了这种行为</span></span><br><span class="line">palette = array([</span><br><span class="line">	[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],</span><br><span class="line">	[<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>],</span><br><span class="line">	[<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>],</span><br><span class="line">	[<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>],</span><br><span class="line">	[<span class="number">255</span>,<span class="number">0</span>,<span class="number">255</span>],</span><br><span class="line">	[<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>]])</span><br><span class="line">image = array([[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span>],</span><br><span class="line">	[<span class="number">0</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">0</span>]])</span><br><span class="line"><span class="keyword">print</span> palette[image]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 我们也可以给出不不止一维的索引，每一维的索引数组必须有相同的形状</span></span><br><span class="line">a = arange(<span class="number">12</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="keyword">print</span> a </span><br><span class="line">i = array([</span><br><span class="line">	[<span class="number">0</span>,<span class="number">1</span>],</span><br><span class="line">	[<span class="number">1</span>,<span class="number">2</span>]])</span><br><span class="line">j = array([[<span class="number">2</span>,<span class="number">1</span>],[<span class="number">3</span>,<span class="number">3</span>]])</span><br><span class="line"><span class="keyword">print</span> a[i,j]</span><br><span class="line"><span class="keyword">print</span> a[i,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">print</span> a[:,j]</span><br><span class="line"><span class="keyword">print</span> a[i,:]</span><br><span class="line">l = [i,j]</span><br><span class="line"><span class="keyword">print</span> a[l]  <span class="comment"># 与 a[i,j] 相等</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 搜索时间序列最大值6</span></span><br><span class="line">time = linspace(<span class="number">20</span>, <span class="number">145</span>, <span class="number">5</span>)                 <span class="comment"># time scale</span></span><br><span class="line">data = sin(arange(<span class="number">20</span>)).reshape(<span class="number">5</span>,<span class="number">4</span>)         <span class="comment"># 4 time-dependent series</span></span><br><span class="line"><span class="keyword">print</span> time</span><br><span class="line"><span class="keyword">print</span> data</span><br><span class="line"></span><br><span class="line">ind = data.argmax(axis=<span class="number">0</span>)	<span class="comment"># index of the maxima for each series</span></span><br><span class="line"><span class="keyword">print</span> ind </span><br><span class="line"></span><br><span class="line">time_max = time[ind]</span><br><span class="line">data_max = data[ind, range(data.shape[<span class="number">1</span>])]</span><br><span class="line"><span class="keyword">print</span> time_max</span><br><span class="line"><span class="keyword">print</span> data_max</span><br><span class="line"><span class="keyword">print</span> all(data_max == data.max(axis=<span class="number">0</span>)) <span class="comment"># True</span></span><br><span class="line">a = arange(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">print</span> a </span><br><span class="line"><span class="comment"># 当一个索引列表包含重复时，赋值被多次完成，保留最后的值</span></span><br><span class="line">a = arange(<span class="number">5</span>)</span><br><span class="line">a[[<span class="number">0</span>,<span class="number">0</span>,<span class="number">2</span>]] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
+<h2 id="2-2-通过布尔数组索引（Indexed-by-Boolean-Function）"><a href="#2-2-通过布尔数组索引（Indexed-by-Boolean-Function）" class="headerlink" title="2.2 通过布尔数组索引（Indexed by Boolean Function）"></a>2.2 通过布尔数组索引（Indexed by Boolean Function）</h2><p>当我们使用整数数组索引数组时，我们提供一个索引列表去选择。<strong>通过布尔数组索引法使我们可以显式地选择数组中我们想要和不想要的元素</strong>。</p>
+<p>我们能想到的使用布尔数组的索引最自然方式是<strong>使用和源数组一样形状的布尔数组</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># indexed via boolean array</span></span><br><span class="line">a = arange(<span class="number">12</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">b = a &gt; <span class="number">4</span></span><br><span class="line"><span class="keyword">print</span> b </span><br><span class="line"><span class="keyword">print</span> a[b]</span><br><span class="line">a[b] = <span class="number">0</span> <span class="comment"># All elements of 'a' higher than 4 become 0(取反)</span></span><br><span class="line"><span class="keyword">print</span> a </span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过布尔来索引的方法更近似于整数索引；对数组的每个维度我们给一个一维布尔数组来选择我们想要的切片</span></span><br><span class="line">a = arange(<span class="number">12</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">b1 = array([<span class="keyword">False</span>,<span class="keyword">True</span>,<span class="keyword">True</span>])</span><br><span class="line">b2 = array([<span class="keyword">True</span>,<span class="keyword">False</span>,<span class="keyword">True</span>,<span class="keyword">False</span>])</span><br><span class="line"><span class="keyword">print</span> a[b1,:]</span><br><span class="line"><span class="keyword">print</span> a[b1]</span><br><span class="line"><span class="keyword">print</span> a[:,b2]</span><br><span class="line"><span class="keyword">print</span> a[b1,b2]</span><br><span class="line"><span class="comment"># 注意一维数组的长度必须和你想要切片的维度或轴的长度一致，</span></span><br><span class="line"><span class="comment"># 在之前的例子中，b1是一个秩为1长度为三的数组(a的行数)，b2(长度为4)与a的第二秩(列)相一致</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-3-ix-函数"><a href="#2-3-ix-函数" class="headerlink" title="2.3 ix()函数"></a>2.3 ix<em>()函数</em></h2><p>ix<em>()函数可为了获得多元组的结果而用来结合不同向量。如，若你想要用所有向量a、b和c元素组成的 三元组来计算a+b*c：</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ix_() function</span></span><br><span class="line">a = array([<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line">b = array([<span class="number">8</span>,<span class="number">5</span>,<span class="number">4</span>])</span><br><span class="line">c = array([<span class="number">5</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">3</span>])</span><br><span class="line">ax,bx,cx = ix_(a,b,c)</span><br><span class="line"><span class="keyword">print</span> ax,bx,cx</span><br><span class="line"><span class="keyword">print</span> ax.shape,bx.shape,cx.shape</span><br><span class="line"></span><br><span class="line">result = ax+bx*cx</span><br><span class="line"><span class="keyword">print</span> result</span><br><span class="line"><span class="keyword">print</span> result[<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">result1 = ax*bx+cx</span><br><span class="line"><span class="keyword">print</span> result1</span><br><span class="line"><span class="keyword">print</span> result1[<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">print</span> result[<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">print</span> a[<span class="number">3</span>] + b[<span class="number">2</span>] + c[<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># second method</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ufunc_reduce</span><span class="params">(ufct, *vectors)</span>:</span></span><br><span class="line">	vs = ix_(*vectors)</span><br><span class="line">	r = ufct.identity</span><br><span class="line">	<span class="keyword">for</span> v <span class="keyword">in</span> vs:</span><br><span class="line">		r = ufct(r,v)</span><br><span class="line">	<span class="keyword">return</span> r </span><br><span class="line"><span class="keyword">print</span> ufunc_reduce(add,a,b,c)</span><br><span class="line"><span class="comment"># 这个reduce与ufunc.reduce(比如说add.reduce)相比的优势在于它利用了广播法则，</span></span><br><span class="line"><span class="comment"># 避免了创建一个输出大小乘以向量个数的参数数组。</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-4-字符串索引（Indexed-by-String）"><a href="#2-4-字符串索引（Indexed-by-String）" class="headerlink" title="2.4 字符串索引（Indexed by String）"></a>2.4 字符串索引（Indexed by String）</h2><p>参见<a href="https://docs.scipy.org/doc/numpy-1.13.0/user/basics.rec.html" target="_blank" rel="noopener">Structured arrays</a></p>
+<h1 id="3-线性代数（Linear-Algebra）"><a href="#3-线性代数（Linear-Algebra）" class="headerlink" title="3.线性代数（Linear Algebra）"></a>3.线性代数（Linear Algebra）</h1><h2 id="3-1-简单数组运算"><a href="#3-1-简单数组运算" class="headerlink" title="3.1 简单数组运算"></a>3.1 简单数组运算</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> numpy.linalg <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># Linear Algebra</span></span><br><span class="line">a = array([[<span class="number">1.0</span>,<span class="number">2.0</span>],[<span class="number">3.0</span>,<span class="number">4.0</span>]])</span><br><span class="line"><span class="keyword">print</span> (a)</span><br><span class="line"><span class="keyword">print</span> a.transpose()</span><br><span class="line"><span class="keyword">print</span> inv(a) <span class="comment"># 计算矩阵的（乘法）逆</span></span><br><span class="line">u = eye(<span class="number">2</span>) <span class="comment"># unit 2X2 matrix; "eye" represents "I",指元数组</span></span><br><span class="line"><span class="keyword">print</span> u </span><br><span class="line"><span class="comment"># j = array([[0.0, -1.0],[1.0, 0.0]])</span></span><br><span class="line"><span class="comment"># dot(i,j) # matrix product; dot():两个数组的点积</span></span><br><span class="line"><span class="keyword">print</span> trace(u) <span class="comment"># trace():沿数组的对角线返回总和</span></span><br><span class="line">y = array([[<span class="number">5.</span>],[<span class="number">7.</span>]])</span><br><span class="line"><span class="keyword">print</span> solve(a, y) <span class="comment"># solve():求解线性矩阵方程或线性标量方程组</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-2-矩阵类"><a href="#3-2-矩阵类" class="headerlink" title="3.2 矩阵类"></a>3.2 矩阵类</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> numpy.linalg <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># matrix</span></span><br><span class="line">A = matrix(<span class="string">'1.0 2.0; 3.0 4.0'</span>)</span><br><span class="line"><span class="keyword">print</span> A</span><br><span class="line"><span class="keyword">print</span> type(A)</span><br><span class="line"><span class="keyword">print</span> A.T <span class="comment"># transpose</span></span><br><span class="line">X = matrix(<span class="string">'5.0 7.0'</span>)</span><br><span class="line">Y = X.T</span><br><span class="line"><span class="keyword">print</span> Y</span><br><span class="line">matrix([[<span class="number">5.</span>],[<span class="number">7.</span>]])</span><br><span class="line"><span class="keyword">print</span> (A * Y)</span><br><span class="line"><span class="keyword">print</span> (A.I) <span class="comment"># inverse</span></span><br><span class="line"><span class="keyword">print</span> solve(A,Y)</span><br></pre></td></tr></table></figure>
+<h2 id="3-3-索引：比较矩阵和二维数组"><a href="#3-3-索引：比较矩阵和二维数组" class="headerlink" title="3.3 索引：比较矩阵和二维数组"></a>3.3 索引：比较矩阵和二维数组</h2><p>注意numpy中数组和矩阵有重要区别。numpy提供了2个基本对象：（其他对象都是建构在它们之上的）</p>
+<ul>
+<li><p>一个N维数组对象</p>
+</li>
+<li><p>一个通用函数对象</p>
+<p>​</p>
+</li>
+</ul>
+<p>矩阵：继承自numpy数组对象的二维数组对象。对数组和矩阵，索引都必须包含合适的一个或多个这些组合：整数标量、省略号、整数列表；布尔值，整数，布尔值构成的元组，和一个一维整数或布尔值数组。矩阵可被用作矩阵的索引，但通常需要数组、列表或其他形式来完成这个任务。</p>
+<ul>
+<li><p>索引从0开始</p>
+</li>
+<li><p>使用矩阵的行和列表示一个二维数组或矩阵。沿0轴的方向被穿过的称作行，沿1轴的方向被穿过的是列。</p>
+<p>​</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> numpy.linalg <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># index:compare matrix with 2d array</span></span><br><span class="line">A = arange(<span class="number">12</span>)</span><br><span class="line"><span class="keyword">print</span> A </span><br><span class="line">A.shape = (<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">M = mat(A.copy()) <span class="comment"># mat():将输入解释为矩阵</span></span><br><span class="line"><span class="keyword">print</span> (type(A),<span class="string">" "</span>,type(M)) </span><br><span class="line"><span class="keyword">print</span> (A)</span><br><span class="line"><span class="keyword">print</span> (M)</span><br><span class="line"><span class="keyword">print</span> (A[:])</span><br><span class="line"><span class="keyword">print</span> (A[:].shape)</span><br><span class="line"><span class="keyword">print</span> (M[:])</span><br><span class="line"><span class="keyword">print</span> (M[:].shape)</span><br><span class="line"><span class="keyword">print</span> (A[:,<span class="number">1</span>])</span><br><span class="line"><span class="keyword">print</span> (A[:,<span class="number">1</span>].shape)</span><br><span class="line"><span class="comment"># 注意最后两个结果的不同。对二维数组使用一个冒号产生一个一维数组，然而矩阵产生了一个二维矩阵。</span></span><br><span class="line"><span class="comment"># 例如，一个M[2,:]切片产生了一个形状为(1,4)的矩阵，相比之下，一个数组的切片总是产生一个最低可能维度11的数组。</span></span><br><span class="line"><span class="comment"># 例如，如果C是一个三维数组，C[...,1]产生一个二维的数组而C[1,:,1]产生一个一维数组。</span></span><br><span class="line"><span class="comment"># 从这时开始，如果相应的矩阵切片结果是相同的话，我们将只展示数组切片的结果。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 假如我们想要一个数组的第一列和第三列，一种方法是使用列表切片：</span></span><br><span class="line"><span class="keyword">print</span> A[:,[<span class="number">1</span>,<span class="number">3</span>]]</span><br><span class="line"><span class="comment"># 稍微复杂点的方法是使用 take() 方法 method:</span></span><br><span class="line"><span class="keyword">print</span> A[:,].take([<span class="number">1</span>,<span class="number">3</span>],axis=<span class="number">1</span>)  	<span class="comment"># take():从轴沿一个数组中取元素</span></span><br><span class="line"><span class="comment"># 如果我们想跳过第一行，我们可以这样：</span></span><br><span class="line"><span class="keyword">print</span> A[<span class="number">1</span>:,].take([<span class="number">1</span>,<span class="number">3</span>],axis=<span class="number">1</span>)</span><br><span class="line"><span class="keyword">print</span> A[ix_((<span class="number">1</span>,<span class="number">2</span>),(<span class="number">1</span>,<span class="number">3</span>))]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保留第一行大于1的列。一种方法是创建布尔索引：</span></span><br><span class="line"><span class="keyword">print</span> A[<span class="number">0</span>,:] &gt; <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> A[:,A[<span class="number">0</span>,:]] &gt; <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> M[<span class="number">0</span>,:] &gt; <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> M[:,M.A[<span class="number">0</span>,:]&gt;<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果我们想要在矩阵两个方向有条件地切片，我们必须稍微调整策略，代之以：</span></span><br><span class="line"><span class="keyword">print</span> A[A[:,<span class="number">0</span>] &gt; <span class="number">2</span>, A[<span class="number">0</span>,:] &gt; <span class="number">1</span>]</span><br><span class="line"><span class="keyword">print</span> M[M.A[:,<span class="number">0</span>]&gt;<span class="number">2</span>,M.A[<span class="number">0</span>,:]&gt;<span class="number">1</span>]</span><br><span class="line"><span class="keyword">print</span> A[ix_(A[:,<span class="number">0</span>] &gt; <span class="number">2</span>, A[<span class="number">0</span>,:] &gt; <span class="number">1</span>)]</span><br><span class="line"><span class="keyword">print</span> M[ix_(M.A[:,<span class="number">0</span>] &gt; <span class="number">2</span>, M.A[<span class="number">0</span>,:] &gt; <span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
+<h1 id="4-技巧和Tipps"><a href="#4-技巧和Tipps" class="headerlink" title="4.技巧和Tipps"></a>4.技巧和Tipps</h1><h2 id="4-1-“自动”改变形状"><a href="#4-1-“自动”改变形状" class="headerlink" title="4.1 “自动”改变形状"></a>4.1 “自动”改变形状</h2><p>更改数组的维度，你可以省略一个尺寸，它将被自动推导出来。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># change the shape automatically</span></span><br><span class="line">a = arange(<span class="number">30</span>)</span><br><span class="line">a.shape = <span class="number">2</span>,<span class="number">-1</span>,<span class="number">3</span> 	<span class="comment"># -1 means "whatever is needed"</span></span><br><span class="line"><span class="keyword">print</span> a.shape</span><br><span class="line"><span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
+<h2 id="4-2-向量组合（Vector-Stacking）"><a href="#4-2-向量组合（Vector-Stacking）" class="headerlink" title="4.2 向量组合（Vector Stacking）"></a>4.2 向量组合（Vector Stacking）</h2><p>我们如何用两个相同尺寸的行向量列表构建一个二维数组？在 <code>MATLAB</code> 中这非常简单：如果 <code>x</code> 和 <code>y</code> 是两个相同长度的向量，你仅仅需要做 <code>m=[x;y]</code>。在 <code>Numpy</code> 中这个过程通过函数 <code>column_stack</code> 、<code>dstack</code>、<code>hstack</code> 和 <code>vstack</code> 来完成，取决于你想要在那个维度上组合。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vector stacking</span></span><br><span class="line">x = arange(<span class="number">0</span>,<span class="number">10</span>,<span class="number">2</span>)</span><br><span class="line"><span class="keyword">print</span> x</span><br><span class="line"></span><br><span class="line">y = arange(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">print</span> y</span><br><span class="line"></span><br><span class="line">m = vstack([x,y])	<span class="comment"># 按行顺序堆叠数组</span></span><br><span class="line"><span class="keyword">print</span> m</span><br><span class="line"></span><br><span class="line">xy = hstack([x,y])	<span class="comment"># 按列顺序组合数组</span></span><br><span class="line"><span class="keyword">print</span> xy</span><br></pre></td></tr></table></figure>
+<h2 id="4-3-直方图（histogram）"><a href="#4-3-直方图（histogram）" class="headerlink" title="4.3 直方图（histogram）"></a>4.3 直方图（histogram）</h2><p><code>Numpy</code>中<code>histogram</code>函数应用到一个数组返回一对变量：直方图数组和箱式向量。注意：<code>matplotlib</code>也有一个用来建立直方图的函数(叫作<code>hist</code>,正如<code>matlab</code>中一样)与<code>Numpy</code>中的不同。<br><strong>主要的差别是pylab.hist自动绘制直方图，而numpy.histogram仅仅产生数据</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># histogram</span></span><br><span class="line"><span class="comment"># Build a vector of 10000 normal deviates with variance 0.5^2 and mean 2</span></span><br><span class="line">mu, sigma = <span class="number">2</span>, <span class="number">0.5</span></span><br><span class="line">v = numpy.random.normal(mu,sigma,<span class="number">10000</span>)</span><br><span class="line"><span class="comment"># Plot a normalized histogram with 50 bins</span></span><br><span class="line">pylab.hist(v, bins=<span class="number">50</span>, normed=<span class="number">1</span>)  </span><br><span class="line">pylab.title(<span class="string">'Matplotlib Version'</span>)<span class="comment"># matplotlib version (plot)</span></span><br><span class="line">pylab.show()</span><br><span class="line"><span class="comment"># Compute the histogram with numpy and then plot it</span></span><br><span class="line">(n, bins) = numpy.histogram(v, bins=<span class="number">50</span>, normed=<span class="keyword">True</span>)  <span class="comment"># NumPy version (no plot)</span></span><br><span class="line">pylab.plot(<span class="number">.5</span>*(bins[<span class="number">1</span>:]+bins[:<span class="number">-1</span>]), n)</span><br><span class="line">pylab.title(<span class="string">'Numpy Version'</span>)</span><br><span class="line">pylab.show()</span><br></pre></td></tr></table></figure>
+<h1 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h1><p><a href="http://python.usyiyi.cn/documents/NumPy_v111/index.html" target="_blank" rel="noopener">numpy v1.11手册</a></p>
+<p><a href="http://python.usyiyi.cn/documents/NumPy_v111/reference/index.html" target="_blank" rel="noopener">numpy参考手册</a></p>
+<p><a href="http://python.usyiyi.cn/documents/NumPy_v111/user/quickstart.html" target="_blank" rel="noopener">numpy快速入门教程</a></p>
+<p><a href="http://python.usyiyi.cn/documents/NumPy_v111/genindex.html" target="_blank" rel="noopener">numpy通用索引：所有函数、类、术语</a></p>
+<p><a href="http://python.usyiyi.cn/documents/NumPy_v111/contents.html" target="_blank" rel="noopener">numpy全目录</a></p>
+<p><a href="https://www.kesci.com/apps/home/project/59f0380e18ec724555ac7e0b" target="_blank" rel="noopener">kesci: Numpy快速上手指南 —- 进阶篇</a></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zhuanlan.zhihu.com/p/24988491" target="_blank" rel="noopener">【Python数据分析】Numpy的详细教程</a></p>
+<p><a href="https://docs.scipy.org/doc/numpy-dev/user/quickstart.html" target="_blank" rel="noopener">Scipy: Quickstart tutorial</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>拿钱去买猫粮和狗粮嗷 ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Scarlett Huang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/Numpy/" rel="tag"><i class="fa fa-tag"></i> Numpy</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/29/numpy入门实战教程（基础篇）/" rel="next" title="numpy入门实战教程（基础篇）">
+                <i class="fa fa-chevron-left"></i> numpy入门实战教程（基础篇）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/29/numpy实战小练习集锦附代码/" rel="prev" title="numpy实战小练习集锦附代码">
+                numpy实战小练习集锦附代码 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">142</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-dribbble"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              MyFriends
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Developer)" target="_blank">qzwlecr(Distributed Developer)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=27621672&auto=0&height=66"></iframe>
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-广播法则（Broadcast-Rule）"><span class="nav-number">1.</span> <span class="nav-text">1.广播法则（Broadcast Rule）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-花哨的索引和索引技巧"><span class="nav-number">2.</span> <span class="nav-text">2.花哨的索引和索引技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-通过数组索引（Indexed-by-Array）"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 通过数组索引（Indexed by Array）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-通过布尔数组索引（Indexed-by-Boolean-Function）"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 通过布尔数组索引（Indexed by Boolean Function）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-ix-函数"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 ix()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-字符串索引（Indexed-by-String）"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 字符串索引（Indexed by String）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-线性代数（Linear-Algebra）"><span class="nav-number">3.</span> <span class="nav-text">3.线性代数（Linear Algebra）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-简单数组运算"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 简单数组运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-矩阵类"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 矩阵类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-索引：比较矩阵和二维数组"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 索引：比较矩阵和二维数组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-技巧和Tipps"><span class="nav-number">4.</span> <span class="nav-text">4.技巧和Tipps</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-“自动”改变形状"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 “自动”改变形状</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-向量组合（Vector-Stacking）"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 向量组合（Vector Stacking）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-直方图（histogram）"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 直方图（histogram）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#学习资料"><span class="nav-number">5.</span> <span class="nav-text">学习资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
+<div class="copyright" >
+  
+  &copy;  2017.07 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共411.9k字</span>
+</div>
+
+
+
+
+<span id="busuanzi_container_site_pv">
+<div class="powered-by"></div>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  <div class="powered-by"></div>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100332, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100332, xid: "2018/01/29/numpy入门实战教程（进阶篇）/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100332/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+
+</body>
+</html>

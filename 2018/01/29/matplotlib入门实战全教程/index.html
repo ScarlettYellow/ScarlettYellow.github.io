@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,Matplotlib," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：matplotlib入门实战全教程，教你如何绘制条形图、饼图、箱线图，附代码和相关学习资料。">
+<meta name="keywords" content="Python,Matplotlib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="matplotlib入门实战全教程">
+<meta property="og:url" content="http://yoursite.com/2018/01/29/matplotlib入门实战全教程/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：matplotlib入门实战全教程，教你如何绘制条形图、饼图、箱线图，附代码和相关学习资料。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1fnxf497a18j30dv0583yw.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fnxfb6zmz2j30zk0qo3zu.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fnxf4ab3k6j30it05zdgt.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1fnxfb89x0bj30zk0qomyi.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fnxgfeueqgj315w0qh0tt.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fnxgffi0b5j31kw0lwwg7.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fnxh7nej5yj30zk0qo40l.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fnxj5o8j7tj30zk0qognt.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fnxk8wqfe1j30zk0qo74n.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fnxk7y9kuuj30zk0qowfc.jpg">
+<meta property="og:updated_time" content="2018-01-29T13:07:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="matplotlib入门实战全教程">
+<meta name="twitter:description" content="Abstract：matplotlib入门实战全教程，教你如何绘制条形图、饼图、箱线图，附代码和相关学习资料。">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1fnxf497a18j30dv0583yw.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/29/matplotlib入门实战全教程/"/>
+
+
+
+
+
+  <title>matplotlib入门实战全教程 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/29/matplotlib入门实战全教程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">matplotlib入门实战全教程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-29T21:06:16+08:00">
+                2018-01-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Data-Mining-and-Analysis/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Mining and Analysis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/29/matplotlib入门实战全教程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/01/29/matplotlib入门实战全教程/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：matplotlib入门实战全教程，教你如何绘制条形图、饼图、箱线图，附代码和相关学习资料。<br><a id="more"></a></p>
+<h1 id="1-Matplotlib"><a href="#1-Matplotlib" class="headerlink" title="1.Matplotlib"></a>1.Matplotlib</h1><p>Matplotlib的设计理念是能够用轻松简单的方式生成强大的可视化效果，是Python学习过程中核心库之一。</p>
+<ul>
+<li>用在python中绘制数组的2D图形库</li>
+<li>matplotlib代码在概念上分为3个部分：<ul>
+<li>1.pylab接口是由matplotlib.pylab提供的函数集，允许用户使用非常类似于MATLAB图生成代码的代码创建绘图</li>
+<li>2.matplotlib前端或API是一组重要的类，可创建和管理图形，文本，线条，图表等（<a href="http://matplotlib.org/users/artists.html#artist-tutorial" target="_blank" rel="noopener">艺术家教程</a>），是一个对输出无所了解的抽象接口</li>
+<li>3.后端是设备相关的绘图设备，也称为渲染器，将前端表示转换为打印件或显示设备；后端示例：PS 创建 <a href="http://www.adobe.com/products/postscript/" target="_blank" rel="noopener">PostScript®</a> 打印件，SVG 创建<a href="http://www.w3.org/Graphics/SVG/" target="_blank" rel="noopener">可缩放矢量图形</a>打印件，Agg 使用 Matplotlib 附带的高质量<a href="http://antigrain.com/" target="_blank" rel="noopener">反颗粒几何库</a>创建 PNG 输出，GTK 在 <a href="https://www.gtk.org/" target="_blank" rel="noopener">Gtk+</a> 应用程序中嵌入 Matplotlib，GTKAgg 使用反颗粒渲染器创建图形并将其嵌入到 Gtk+ 应用程序中，以及用于 <a href="https://acrobat.adobe.com/us/en/why-adobe/about-adobe-pdf.html" target="_blank" rel="noopener">PDF</a>，<a href="https://www.wxpython.org/" target="_blank" rel="noopener">WxWidgets</a>，<a href="https://docs.python.org/library/tkinter.html" target="_blank" rel="noopener">Tkinter</a> 等</li>
+</ul>
+</li>
+</ul>
+<h1 id="2-绘制条形图（Bar-Chart）"><a href="#2-绘制条形图（Bar-Chart）" class="headerlink" title="2.绘制条形图（Bar Chart）"></a>2.绘制条形图（Bar Chart）</h1><p>条形图实际上是用来表示分组（或离散）变量的可视化，可以使用matplotlib模块中的bar函数完成条形图的绘制。</p>
+<h2 id="2-1-简单垂直条形图"><a href="#2-1-简单垂直条形图" class="headerlink" title="2.1 简单垂直条形图"></a>2.1 简单垂直条形图</h2><p><strong>Example1</strong>: 2017世界国家GDP排名（见下图），我们需要用matplotlib绘制展现以下数据的条形图。后端示例：PS 创建 <a href="http://www.adobe.com/products/postscript/" target="_blank" rel="noopener">PostScript®</a> 打印件，SVG 创建<a href="http://www.w3.org/Graphics/SVG/" target="_blank" rel="noopener">可缩放矢量图形</a>打印件，Agg 使用 Matplotlib 附带的高质量<a href="http://antigrain.com/" target="_blank" rel="noopener">反颗粒几何库</a>创建 PNG 输出，GTK 在 <a href="https://www.gtk.org/" target="_blank" rel="noopener">Gtk+</a> 应用程序中嵌入 Matplotlib，GTKAgg 使用反颗粒渲染器创建图形并将其嵌入到 Gtk+ 应用程序中，以及用于 <a href="https://acrobat.adobe.com/us/en/why-adobe/about-adobe-pdf.html" target="_blank" rel="noopener">PDF</a>，<a href="https://www.wxpython.org/" target="_blank" rel="noopener">WxWidgets</a>，<a href="https://docs.python.org/library/tkinter.html" target="_blank" rel="noopener">Tkinter</a> 等</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fnxf497a18j30dv0583yw.jpg" alt="world GDP"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入绘图模块</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment"># 构建数据</span></span><br><span class="line">GDP = [<span class="number">12406.8</span>,<span class="number">13908.57</span>,<span class="number">9386.87</span>,<span class="number">9143.64</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 中文乱码的处理</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] =[<span class="string">'Microsoft YaHei'</span>]</span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.bar(range(<span class="number">4</span>), GDP, align = <span class="string">'center'</span>,color=<span class="string">'steelblue'</span>, alpha = <span class="number">0.8</span>)</span><br><span class="line"><span class="comment"># 添加轴标签</span></span><br><span class="line">plt.ylabel(<span class="string">'GDP'</span>)</span><br><span class="line"><span class="comment"># 添加标题</span></span><br><span class="line">plt.title(<span class="string">'四个直辖市GDP大比拼'</span>)</span><br><span class="line"><span class="comment"># 添加刻度标签</span></span><br><span class="line">plt.xticks(range(<span class="number">4</span>),[<span class="string">'北京市'</span>,<span class="string">'上海市'</span>,<span class="string">'天津市'</span>,<span class="string">'重庆市'</span>])</span><br><span class="line"><span class="comment"># 设置Y轴的刻度范围</span></span><br><span class="line">plt.ylim([<span class="number">5000</span>,<span class="number">15000</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 为每个条形图添加数值标签</span></span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> enumerate(GDP):</span><br><span class="line">    plt.text(x,y+<span class="number">100</span>,<span class="string">'%s'</span> %round(y,<span class="number">1</span>),ha=<span class="string">'center'</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 显示图形</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>以上是绘制图形的代码，运行代码得到的条形图如下：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fnxfb6zmz2j30zk0qo3zu.jpg" alt="Country Rank Graph"></p>
+<p><strong>Example2</strong>：2017中国城市GDP排名（见下图），同样我们用matplotlib绘制展现其数据的条形图。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fnxf4ab3k6j30it05zdgt.jpg" alt="China City GDP"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># World GDP Rank</span></span><br><span class="line">GDP = [<span class="number">185691</span>, <span class="number">112182.8</span>, <span class="number">49386.4</span>, <span class="number">34666.3</span>]</span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'Microsoft YaHei'</span>]</span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="keyword">False</span></span><br><span class="line">plt.bar(range(<span class="number">4</span>), GDP, align=<span class="string">'center'</span>,color=<span class="string">'purple'</span>,alpha=<span class="number">0.5</span>)</span><br><span class="line">plt.ylabel(<span class="string">'GDP'</span>)</span><br><span class="line">plt.title(<span class="string">'2017 World GDP Rank'</span>)</span><br><span class="line">plt.xticks(range(<span class="number">4</span>), [<span class="string">'USA'</span>, <span class="string">'China'</span>, <span class="string">'Japan'</span>, <span class="string">'Germany'</span>])</span><br><span class="line">plt.ylim([<span class="number">10000</span>, <span class="number">200000</span>])</span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> enumerate(GDP):</span><br><span class="line">	plt.text(x,y+<span class="number">100</span>,<span class="string">'%s'</span> %round(y,<span class="number">1</span>),ha=<span class="string">'center'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>以上是绘制图形的代码，运行代码得到的条形图如下：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fnxfb89x0bj30zk0qomyi.jpg" alt="City Rank Graph"></p>
+<p>代码解释：</p>
+<ul>
+<li>rcParams：由于matplotlib对中文的支持并不是很友好，所以需要提前对绘图进行字体的设置，即通过rcParams来设置字体，这里将字体设置为微软雅黑，同时为了避免坐标轴不能正常的显示负号，也需要进行设置；</li>
+<li>bar函数指定了条形图的x轴、y轴值，设置x轴刻度标签为水平居中，条形图的填充色color为铁蓝色，同时设置透明度alpha为0.8；</li>
+<li>添加y轴标签、标题、x轴刻度标签值，为了让条形图显示各柱体之间的差异，将y轴范围设置在5000~15000；</li>
+<li>通过循环的方式，添加条形图的数值标签；</li>
+</ul>
+<h2 id="2-2-简单水平条形图"><a href="#2-2-简单水平条形图" class="headerlink" title="2.2 简单水平条形图"></a>2.2 简单水平条形图</h2><p><strong>Example3</strong>：同一本书不同平台最低价比较</p>
+<p>很多人在买一本书的时候，都比较喜欢货比三家，例如《python数据分析实战》在亚马逊、当当网、中国图书网、京东和天猫的最低价格分别为39.5、39.9、45.4、38.9、33.34。针对这个数据，我们也可以通过条形图来完成，这里使用水平条形图来显示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 3.Book Price Comparsion</span></span><br><span class="line">price = [<span class="number">39.5</span>, <span class="number">39.9</span>, <span class="number">45.4</span>, <span class="number">38.9</span>, <span class="number">33.34</span>]</span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'Microsoft YaHei'</span>]</span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="keyword">False</span></span><br><span class="line">plt.barh(range(<span class="number">5</span>),price,align=<span class="string">'center'</span>,color=<span class="string">'black'</span>,alpha=<span class="number">0.5</span>)</span><br><span class="line">plt.xlabel(<span class="string">'price'</span>)</span><br><span class="line">plt.yticks(range(<span class="number">5</span>),[<span class="string">'Amazon'</span>,<span class="string">'Dangdang'</span>,<span class="string">'BooksChina'</span>,<span class="string">'Jingdong'</span>,<span class="string">'Tianmao'</span>])</span><br><span class="line">plt.xlim([<span class="number">32</span>,<span class="number">47</span>])</span><br><span class="line">plt.title(<span class="string">'Book Price Comparsion'</span>)</span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> enumerate(price):</span><br><span class="line">	plt.text(y+<span class="number">0.1</span>,x,<span class="string">'%s'</span> %y,va=<span class="string">'center'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>绘制结果：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fnxgfeueqgj315w0qh0tt.jpg" alt="book price"></p>
+<p>代码解读：</p>
+<ul>
+<li>水平条形图的绘制与垂直条形图的绘制步骤一致，只是调用了<strong>barh函数</strong>来完成。需要注意的是，条形图的数值标签设置有一些不一样，<strong>需要将标签垂直居中显示，使用va参数</strong>即可。</li>
+</ul>
+<p><strong>Example4</strong>: 同家宠物店不同品种犬价格比较</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Breed</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Husky（哈士奇）</td>
+<td>39099</td>
+</tr>
+<tr>
+<td>French Bulldog（法国斗牛犬）</td>
+<td>5899</td>
+</tr>
+<tr>
+<td>Golden Retriever（金毛寻回犬）</td>
+<td>13599</td>
+</tr>
+<tr>
+<td>Labrador Retriever（拉布拉多犬）</td>
+<td>12399</td>
+</tr>
+<tr>
+<td>Shiba Inu（日本柴犬）</td>
+<td>68599</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 4.Dog Price Comparsion</span></span><br><span class="line">price = [<span class="number">39099</span>, <span class="number">5899</span>, <span class="number">13599</span>, <span class="number">12399</span>, <span class="number">68599</span>]</span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'Microsoft YaHei'</span>]</span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="keyword">False</span></span><br><span class="line">plt.barh(range(<span class="number">5</span>),price,align=<span class="string">'center'</span>,color=<span class="string">'red'</span>,alpha=<span class="number">0.5</span>)</span><br><span class="line">plt.title(<span class="string">'Dog Price Comparsion'</span>)</span><br><span class="line">plt.xlabel(price)</span><br><span class="line">plt.yticks(range(<span class="number">5</span>),[<span class="string">'Husky'</span>,<span class="string">'French Bulldog'</span>,<span class="string">'Golden Retriever'</span>,<span class="string">'Labrador Retriever'</span>,<span class="string">'Shiba Inu'</span>])</span><br><span class="line">plt.xlim([<span class="number">3000</span>,<span class="number">80000</span>])</span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> enumerate(price):</span><br><span class="line">	plt.text(y+<span class="number">100</span>,x,<span class="string">'%s'</span> %y,va=<span class="string">'center'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>绘制结果：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fnxgffi0b5j31kw0lwwg7.jpg" alt="dog price"></p>
+<h2 id="2-3-水平交错条形图"><a href="#2-3-水平交错条形图" class="headerlink" title="2.3 水平交错条形图"></a>2.3 水平交错条形图</h2><p>以上的简单垂直和水平条形图是基于离散变量的情况，针对两种离散变量的条形图我们可以用水平交错条形图和堆叠条形图，下面看如何绘制：</p>
+<p><strong>Example5</strong>：胡润财富榜：亿万资产超高净值家庭数</p>
+<p>利用水平交错条形图对比2016年和2017年亿万资产超高净值家庭数（top5）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 5.胡润财富榜：亿万资产超高净值家庭数/Millions Family Amount Top5 City Distribution</span></span><br><span class="line"><span class="keyword">import</span> numpy  <span class="keyword">as</span> np </span><br><span class="line"></span><br><span class="line">Y2016 = [<span class="number">15600</span>,<span class="number">12700</span>,<span class="number">11300</span>,<span class="number">4270</span>,<span class="number">3620</span>]</span><br><span class="line">Y2017 = [<span class="number">17400</span>,<span class="number">14800</span>,<span class="number">12000</span>,<span class="number">5200</span>,<span class="number">4020</span>]</span><br><span class="line">labels = [<span class="string">'Beijing'</span>,<span class="string">'Shanghai'</span>,<span class="string">'Hongkong'</span>,<span class="string">'Shenzhen'</span>,<span class="string">'Guangzhou'</span>]</span><br><span class="line">bar_width = <span class="number">0.5</span></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] =[<span class="string">'Microsoft YaHei'</span>]</span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">plt.bar(np.arange(<span class="number">5</span>),Y2016,label=<span class="string">'2016'</span>,color=<span class="string">'steelblue'</span>,alpha=<span class="number">0.8</span>,width=bar_width)</span><br><span class="line">plt.bar(np.arange(<span class="number">5</span>) + bar_width, Y2017, label=<span class="string">'2017'</span>, color=<span class="string">'indianred'</span>,alpha=<span class="number">0.8</span>,width=bar_width)</span><br><span class="line">plt.xlabel(<span class="string">'Top5 City'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Family Amount'</span>)</span><br><span class="line">plt.xticks(np.arange(<span class="number">5</span>)+bar_width,labels)</span><br><span class="line">plt.ylim([<span class="number">2500</span>,<span class="number">20000</span>])</span><br><span class="line">plt.title(<span class="string">'Millions Family Amount Top5 City Distribution'</span>)</span><br><span class="line"><span class="comment"># 为每个条形图添加数值标签</span></span><br><span class="line"><span class="keyword">for</span> x2016,y2016 <span class="keyword">in</span> enumerate(Y2016):</span><br><span class="line">	plt.text(x2016,y2016+<span class="number">100</span>,<span class="string">'%s'</span>%y2016)</span><br><span class="line"><span class="keyword">for</span> x2017,y2017 <span class="keyword">in</span> enumerate(Y2017):</span><br><span class="line">	plt.text(x2017+bar_width, y2017+<span class="number">100</span>, <span class="string">'%s'</span> %y2017)</span><br><span class="line"><span class="comment"># 显示图例</span></span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>代码解读</p>
+<ul>
+<li>水平交错条形图绘制的思想很简单，就是在第一个条形图绘制好的基础上，往左移一定的距离，再去绘制第二个条形图，所以在代码中会出现两个bar函数；</li>
+<li>图例的绘制需要在bar函数中添加label参数；color和alpha参数分别代表条形图的填充色和透明度；</li>
+<li>给条形图添加数值标签，同样需要使用两次for循环的方式实现；</li>
+</ul>
+<p>绘制图形：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fnxh7nej5yj30zk0qo40l.jpg" alt="Million Family City"></p>
+<h1 id="3-饼图（Pie-Chart）"><a href="#3-饼图（Pie-Chart）" class="headerlink" title="3.饼图（Pie Chart）"></a>3.饼图（Pie Chart）</h1><h2 id="3-1-饼图"><a href="#3-1-饼图" class="headerlink" title="3.1 饼图"></a>3.1 饼图</h2><p>条形图：离散变量的分布呈现</p>
+<p><strong>饼图：离散变量各水平占比情况</strong>（使用matplotlib库里的pie函数绘制）</p>
+<h2 id="3-2-pie函数参数解读"><a href="#3-2-pie函数参数解读" class="headerlink" title="3.2 pie函数参数解读"></a>3.2 pie函数参数解读</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.pie(x, explode=<span class="keyword">None</span>, labels=<span class="keyword">None</span>, colors=<span class="keyword">None</span>, pctdistance=<span class="number">0.6</span>, shadow=<span class="keyword">False</span>, labeldistance=<span class="number">1.1</span>, startangle=<span class="keyword">None</span>, radius=<span class="keyword">None</span>, counterclock=<span class="keyword">True</span>, wedgeprops=<span class="keyword">None</span>, textprops=<span class="keyword">None</span>, center=(<span class="number">0</span>,<span class="number">0</span>), frame=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>x: 指定绘图的数据</li>
+<li>explode:指定饼图某些部分的突出显示，即呈现爆炸式</li>
+<li>labels：为饼图添加标签说明，类似于图例说明</li>
+<li>colors：指定饼图的填充色</li>
+<li>autopct：设置百分比格式，如’%.1f%%’为保留一位小数</li>
+<li>shadow：是否添加饼图的阴影效果</li>
+<li>pctdistance:设置百分比标签与圆心的距离</li>
+<li>labeldistance：设置各扇形标签（图例）与圆心的距离；</li>
+<li>startangle：设置饼图的初始摆放角度, 180为水平；</li>
+<li>radius：设置饼图的半径大小；</li>
+<li>counterclock：是否让饼图按逆时针顺序呈现, True / False；</li>
+<li>wedgeprops：设置饼图内外边界的属性，如边界线的粗细、颜色等, 如wedgeprops = {‘linewidth’: 1.5, ‘edgecolor’:’green’}</li>
+<li>textprops：设置饼图中文本的属性，如字体大小、颜色等；</li>
+<li>center：指定饼图的中心点位置，默认为原点</li>
+<li>frame：是否要显示饼图背后的图框，如果设置为True的话，需要同时控制图框x轴、y轴的范围和饼图的中心位置；</li>
+</ul>
+<h2 id="3-3-绘制饼图"><a href="#3-3-绘制饼图" class="headerlink" title="3.3 绘制饼图"></a>3.3 绘制饼图</h2><p><strong>Example6：</strong>芝麻信用失信用户分析</p>
+<p>我们使用芝麻信用近300万失信人群的样本统计数据来绘制饼图，该数据显示，从受教育水平上来看，中专占比25.15%，大专占比37.24%，本科占比33.36%，硕士占比3.68%，剩余的其他学历占比0.57%。对于这样一组数据，我们该如何使用饼图来呈现呢？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 6.Zhima Credit Discredited User Analysis</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置绘图的主题风格（不妨使用R中的ggplot分隔）</span></span><br><span class="line">plt.style.use(<span class="string">'ggplot'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构造数据</span></span><br><span class="line">edu = [<span class="number">0.2515</span>,<span class="number">0.3724</span>,<span class="number">0.3336</span>,<span class="number">0.0368</span>,<span class="number">0.0057</span>]</span><br><span class="line">labels = [<span class="string">'Secondary'</span>,<span class="string">'Junior College'</span>,<span class="string">'Bachelor'</span>,<span class="string">'Master'</span>,<span class="string">'Others'</span>]</span><br><span class="line"></span><br><span class="line">explode = [<span class="number">0</span>,<span class="number">0.1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]  <span class="comment"># 用于突出显示大专学历人群</span></span><br><span class="line">colors=[<span class="string">'#FEB748'</span>,<span class="string">'#EDD25D'</span>,<span class="string">'#FE4F54'</span>,<span class="string">'#51B4FF'</span>,<span class="string">'#dd5555'</span>] <span class="comment"># 自定义颜色</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 中文乱码和坐标轴负号的处理</span></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'Microsoft YaHei'</span>]</span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将横、纵坐标轴标准化处理，保证饼图是一个正圆，否则为椭圆</span></span><br><span class="line">plt.axes(aspect=<span class="string">'equal'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 控制x轴和y轴的范围</span></span><br><span class="line">plt.xlim(<span class="number">0</span>,<span class="number">4</span>)</span><br><span class="line">plt.ylim(<span class="number">0</span>,<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制饼图</span></span><br><span class="line">plt.pie(x = edu, <span class="comment"># 绘图数据</span></span><br><span class="line">        explode=explode, <span class="comment"># 突出显示大专人群</span></span><br><span class="line">        labels=labels, <span class="comment"># 添加教育水平标签</span></span><br><span class="line">        colors=colors, <span class="comment"># 设置饼图的自定义填充色</span></span><br><span class="line">        autopct=<span class="string">'%.1f%%'</span>, <span class="comment"># 设置百分比的格式，这里保留一位小数</span></span><br><span class="line">        pctdistance=<span class="number">0.8</span>,  <span class="comment"># 设置百分比标签与圆心的距离</span></span><br><span class="line">        labeldistance = <span class="number">1.15</span>, <span class="comment"># 设置教育水平标签与圆心的距离</span></span><br><span class="line">        startangle = <span class="number">180</span>, <span class="comment"># 设置饼图的初始角度</span></span><br><span class="line">        radius = <span class="number">1.5</span>, <span class="comment"># 设置饼图的半径</span></span><br><span class="line">        counterclock = <span class="keyword">False</span>, <span class="comment"># 是否逆时针，这里设置为顺时针方向</span></span><br><span class="line">        wedgeprops = &#123;<span class="string">'linewidth'</span>: <span class="number">1.5</span>, <span class="string">'edgecolor'</span>:<span class="string">'green'</span>&#125;,<span class="comment"># 设置饼图内外边界的属性值</span></span><br><span class="line">        textprops = &#123;<span class="string">'fontsize'</span>:<span class="number">12</span>, <span class="string">'color'</span>:<span class="string">'k'</span>&#125;, <span class="comment"># 设置文本标签的属性值</span></span><br><span class="line">        center = (<span class="number">1.8</span>,<span class="number">1.8</span>), <span class="comment"># 设置饼图的原点</span></span><br><span class="line">        frame = <span class="number">1</span>)<span class="comment"># 是否显示饼图的图框，这里设置显示</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除x轴和y轴的刻度</span></span><br><span class="line">plt.xticks(())</span><br><span class="line">plt.yticks(())</span><br><span class="line"><span class="comment"># 添加图标题</span></span><br><span class="line">plt.title(<span class="string">'Zhima Credit Discredited User Analysis'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示图形</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>绘制图形：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fnxj5o8j7tj30zk0qognt.jpg" alt="zhima Redit"></p>
+<h1 id="4-箱线图（Boxplot）"><a href="#4-箱线图（Boxplot）" class="headerlink" title="4.箱线图（Boxplot）"></a>4.箱线图（Boxplot）</h1><h2 id="4-1-箱线图"><a href="#4-1-箱线图" class="headerlink" title="4.1 箱线图"></a>4.1 箱线图</h2><p><strong>数值型变量可视化：箱线图、直方图、折线图、面积图、散点图</strong>等等。</p>
+<p><strong>箱线图一般用来展现数据的分布（如上下四分位值、中位数等）</strong>，同时，也可以用箱线图来<strong>反映数据的异常情况</strong>。</p>
+<h2 id="4-2-boxplot函数的参数解读"><a href="#4-2-boxplot函数的参数解读" class="headerlink" title="4.2 boxplot函数的参数解读"></a>4.2 boxplot函数的参数解读</h2><p>matplotlib包中boxplot函数的参数含义及使用方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.boxplot(x, notch=<span class="keyword">None</span>, sym=<span class="keyword">None</span>, vert=<span class="keyword">None</span>, whis=<span class="keyword">None</span>, positions=<span class="keyword">None</span>, widths=<span class="keyword">None</span>, patch_artist=<span class="keyword">None</span>, meanline=<span class="keyword">None</span>, showmeans=<span class="keyword">None</span>, showcaps=<span class="keyword">None</span>, showbox=<span class="keyword">None</span>, showfliers=<span class="keyword">None</span>, boxprops=<span class="keyword">None</span>, labels=<span class="keyword">None</span>, flierprops=<span class="keyword">None</span>, medianprops=<span class="keyword">None</span>, meanprops=<span class="keyword">None</span>, capprops=<span class="keyword">None</span>, whiskerprops=<span class="keyword">None</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>x：指定要绘制箱线图的数据；</li>
+<li>notch：是否是凹口的形式展现箱线图，默认非凹口；</li>
+<li>sym：指定异常点的形状，默认为+号显示；</li>
+<li>vert：是否需要将箱线图垂直摆放，默认垂直摆放；</li>
+<li>whis：指定上下须与上下四分位的距离，默认为1.5倍的四分位差；</li>
+<li>positions：指定箱线图的位置，默认为[0,1,2…]；</li>
+<li>widths：指定箱线图的宽度，默认为0.5；</li>
+<li>patch_artist：是否填充箱体的颜色；</li>
+<li>meanline：是否用线的形式表示均值，默认用点来表示；</li>
+<li>showmeans：是否显示均值，默认不显示；</li>
+<li>showcaps：是否显示箱线图顶端和末端的两条线，默认显示；</li>
+<li>showbox：是否显示箱线图的箱体，默认显示；</li>
+<li>showfliers：是否显示异常值，默认显示；</li>
+<li>boxprops：设置箱体的属性，如边框色，填充色等；</li>
+<li>labels：为箱线图添加标签，类似于图例的作用；</li>
+<li>filerprops：设置异常值的属性，如异常点的形状、大小、填充色等；</li>
+<li>medianprops：设置中位数的属性，如线的类型、粗细等；</li>
+<li>meanprops：设置均值的属性，如点的大小、颜色等；</li>
+<li>capprops：设置箱线图顶端和末端线条的属性，如颜色、粗细等；</li>
+<li>whiskerprops：设置须的属性，如颜色、粗细、线的类型等；</li>
+</ul>
+<h2 id="4-3-箱线图的绘制"><a href="#4-3-箱线图的绘制" class="headerlink" title="4.3 箱线图的绘制"></a>4.3 箱线图的绘制</h2><p><strong>Example7</strong>: titanic不同等级仓位的年龄箱线图</p>
+<p><strong>1.整体乘客的年龄箱线图</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 按舱级排序，为了后面正常显示分组盒形图的顺序</span></span><br><span class="line">titanic.sort_values(by = <span class="string">'Pclass'</span>, inplace=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过for循环将不同仓位的年龄人群分别存储到列表Age变量中</span></span><br><span class="line">Age = []</span><br><span class="line">Levels = titanic.Pclass.unique()</span><br><span class="line"><span class="keyword">for</span> Pclass <span class="keyword">in</span> Levels:</span><br><span class="line">    Age.append(titanic.loc[titanic.Pclass==Pclass,<span class="string">'Age'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.boxplot(x = Age, </span><br><span class="line">            patch_artist=<span class="keyword">True</span>,</span><br><span class="line">            labels = [<span class="string">'一等舱'</span>,<span class="string">'二等舱'</span>,<span class="string">'三等舱'</span>], <span class="comment"># 添加具体的标签名称</span></span><br><span class="line">            showmeans=<span class="keyword">True</span>, </span><br><span class="line">            boxprops = &#123;<span class="string">'color'</span>:<span class="string">'black'</span>,<span class="string">'facecolor'</span>:<span class="string">'#9999ff'</span>&#125;, </span><br><span class="line">            flierprops = &#123;<span class="string">'marker'</span>:<span class="string">'o'</span>,<span class="string">'markerfacecolor'</span>:<span class="string">'red'</span>,<span class="string">'color'</span>:<span class="string">'black'</span>&#125;,</span><br><span class="line">            meanprops = &#123;<span class="string">'marker'</span>:<span class="string">'D'</span>,<span class="string">'markerfacecolor'</span>:<span class="string">'indianred'</span>&#125;,</span><br><span class="line">            medianprops = &#123;<span class="string">'linestyle'</span>:<span class="string">'--'</span>,<span class="string">'color'</span>:<span class="string">'orange'</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示图形</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>绘制图形：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fnxk8wqfe1j30zk0qo74n.jpg" alt="Passenger Age"></p>
+<p>结果分析：</p>
+<p>对于所有乘客而言，从图中容易发现，乘客的平均年龄在30岁，有四分之一的人低于20岁，另有四分之一的人超过38岁，换句话说，有一半的人，年龄落在20~38岁之间；从均值（红色的菱形）略高于中位数（黄色虚线）来看，说明年龄是有偏的，并且是右偏；同时，我们也会发现一些红色的异常值，这些异常值的年龄均在64岁以上。</p>
+<p><strong>2.不同等级仓的年龄箱线图</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 8.Different Levels of Cabin</span></span><br><span class="line">titanic.sort_values(bu=<span class="string">'Pclass'</span>,inplace=<span class="keyword">True</span>)</span><br><span class="line">Age = []</span><br><span class="line">Levels = titanic.Pclass.unique()</span><br><span class="line"><span class="keyword">for</span> Pclass <span class="keyword">in</span> Levels:</span><br><span class="line">	Age.append(titanic.loc[titanic.Pclass==Pclass,<span class="string">'Age'</span>])</span><br><span class="line">plt.boxplot(x=Age,</span><br><span class="line">	patch_artist=<span class="keyword">True</span>,</span><br><span class="line">	labels=[<span class="string">'First Class'</span>,<span class="string">'Second Class'</span>,<span class="string">'Third Class'</span>],</span><br><span class="line">	boxprops = &#123;<span class="string">'color'</span>:<span class="string">'black'</span>,<span class="string">'facecolor'</span>:<span class="string">'#9999ff'</span>&#125;, </span><br><span class="line">            flierprops = &#123;<span class="string">'marker'</span>:<span class="string">'o'</span>,<span class="string">'markerfacecolor'</span>:<span class="string">'red'</span>,<span class="string">'color'</span>:<span class="string">'black'</span>&#125;,</span><br><span class="line">            meanprops = &#123;<span class="string">'marker'</span>:<span class="string">'D'</span>,<span class="string">'markerfacecolor'</span>:<span class="string">'indianred'</span>&#125;,</span><br><span class="line">            medianprops = &#123;<span class="string">'linestyle'</span>:<span class="string">'--'</span>,<span class="string">'color'</span>:<span class="string">'orange'</span>&#125;)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按舱级排序，为了后面正常显示分组盒形图的顺序</span></span><br><span class="line">titanic.sort_values(by = <span class="string">'Pclass'</span>, inplace=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过for循环将不同仓位的年龄人群分别存储到列表Age变量中</span></span><br><span class="line">Age = []</span><br><span class="line">Levels = titanic.Pclass.unique()</span><br><span class="line"><span class="keyword">for</span> Pclass <span class="keyword">in</span> Levels:</span><br><span class="line">    Age.append(titanic.loc[titanic.Pclass==Pclass,<span class="string">'Age'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.boxplot(x = Age, </span><br><span class="line">            patch_artist=<span class="keyword">True</span>,</span><br><span class="line">            labels = [<span class="string">'First Class'</span>,<span class="string">'Second Class'</span>,<span class="string">'Third Class'</span>], <span class="comment"># 添加具体的标签名称</span></span><br><span class="line">            showmeans=<span class="keyword">True</span>, </span><br><span class="line">            boxprops = &#123;<span class="string">'color'</span>:<span class="string">'black'</span>,<span class="string">'facecolor'</span>:<span class="string">'#9999ff'</span>&#125;, </span><br><span class="line">            flierprops = &#123;<span class="string">'marker'</span>:<span class="string">'o'</span>,<span class="string">'markerfacecolor'</span>:<span class="string">'red'</span>,<span class="string">'color'</span>:<span class="string">'black'</span>&#125;,</span><br><span class="line">            meanprops = &#123;<span class="string">'marker'</span>:<span class="string">'D'</span>,<span class="string">'markerfacecolor'</span>:<span class="string">'indianred'</span>&#125;,</span><br><span class="line">            medianprops = &#123;<span class="string">'linestyle'</span>:<span class="string">'--'</span>,<span class="string">'color'</span>:<span class="string">'orange'</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示图形</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>绘制图形：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fnxk7y9kuuj30zk0qowfc.jpg" alt="Pclass Age"></p>
+<p>结果分析：如果对人群的年龄按不同的舱位来看，会发现一个明显的趋势，就是舱位等级越高的乘客，他们的年龄越高，三种舱位的平均年龄为38、30和25，说明年龄越是偏大一点，他们的经济能力会越强一些，所买的舱位等级可能就会越高一些。同时，在二等舱和三等舱内，乘客的年龄上存在一些异常用户。</p>
+<h1 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h1><p><a href="https://wizardforcel.gitbooks.io/matplotlib-user-guide/3.1.html" target="_blank" rel="noopener">Gitbook：pyplot教程</a></p>
+<p><a href="https://wizardforcel.gitbooks.io/matplotlib-user-guide/3.2.html" target="_blank" rel="noopener">matplotlib图像教程</a></p>
+<p><a href="https://wizardforcel.gitbooks.io/matplotlib-user-guide/3.5.html" target="_blank" rel="noopener">matplotlib艺术家教程</a></p>
+<p><a href="https://liam0205.me/2014/09/11/matplotlib-tutorial-zh-cn/" target="_blank" rel="noopener">始终：Matplotlib 教程</a></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.kesci.com/apps/home/project/59ed8d7418ec724555a9b4c0/code" target="_blank" rel="noopener">从零开始学Python【1】—matplotlib(条形图)</a></p>
+<p><a href="https://www.kesci.com/apps/home/project/59f6de30c5f3f511952c1211" target="_blank" rel="noopener">从零开始学Python【2】—matplotlib(饼图)</a></p>
+<p><a href="https://www.kesci.com/apps/home/project/59f6ec6dc5f3f511952c228e" target="_blank" rel="noopener">从零开始学Python【3】—matplotlib(箱线图)</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>拿钱去买猫粮和狗粮嗷 ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Scarlett Huang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/Matplotlib/" rel="tag"><i class="fa fa-tag"></i> Matplotlib</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/29/Mac上TensorFlow安装指南/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/29/机器学习开发环境：PyTorch安装指南/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">142</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-dribbble"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              MyFriends
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Developer)" target="_blank">qzwlecr(Distributed Developer)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=27621672&auto=0&height=66"></iframe>
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Matplotlib"><span class="nav-number">1.</span> <span class="nav-text">1.Matplotlib</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-绘制条形图（Bar-Chart）"><span class="nav-number">2.</span> <span class="nav-text">2.绘制条形图（Bar Chart）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-简单垂直条形图"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 简单垂直条形图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-简单水平条形图"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 简单水平条形图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-水平交错条形图"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 水平交错条形图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-饼图（Pie-Chart）"><span class="nav-number">3.</span> <span class="nav-text">3.饼图（Pie Chart）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-饼图"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 饼图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-pie函数参数解读"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 pie函数参数解读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-绘制饼图"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 绘制饼图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-箱线图（Boxplot）"><span class="nav-number">4.</span> <span class="nav-text">4.箱线图（Boxplot）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-箱线图"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 箱线图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-boxplot函数的参数解读"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 boxplot函数的参数解读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-箱线图的绘制"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 箱线图的绘制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#学习资料"><span class="nav-number">5.</span> <span class="nav-text">学习资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
+<div class="copyright" >
+  
+  &copy;  2017.07 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共411.9k字</span>
+</div>
+
+
+
+
+<span id="busuanzi_container_site_pv">
+<div class="powered-by"></div>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  <div class="powered-by"></div>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100332, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100332, xid: "2018/01/29/matplotlib入门实战全教程/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100332/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+
+</body>
+</html>
