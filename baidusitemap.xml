@@ -4,15 +4,50 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/01/29/Mac%E4%B8%8ATensorFlow%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</loc>
-    <lastmod>2018-01-29T13:16:34.000Z</lastmod>
+    <loc>http://yoursite.com/2018/01/29/matplotlib%E5%85%A5%E9%97%A8%E5%AE%9E%E6%88%98%E5%85%A8%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2018-01-29T13:36:29.000Z</lastmod>
     <data>
         <display>
-        <title></title>
-        <pubTime>2018-01-29T13:05:35.000Z</pubTime>
+        <title>matplotlib入门实战全教程</title>
+        <pubTime>2018-01-29T13:06:16.000Z</pubTime>
         
+        <tag>Python</tag>
+         
+        <tag>Matplotlib</tag>
+         
          
            
+             
+              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Data Mining and Analysis" url="http://yoursite.com/categories/Computer-Science/Data-Mining-and-Analysis/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/01/29/Mac%E4%B8%8ATensorFlow%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2018-01-29T13:35:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>Mac上TensorFlow安装指南</title>
+        <pubTime>2018-01-29T13:05:35.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="Machine Learning" url="http://yoursite.com/categories/Artificial-Intelligence/Machine-Learning/"/>
+          
         </display>
     </data>
     </url>
@@ -20,29 +55,24 @@
     
   <url>
     <loc>http://yoursite.com/2018/01/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%EF%BC%9APyTorch%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</loc>
-    <lastmod>2018-01-29T13:16:14.000Z</lastmod>
+    <lastmod>2018-01-29T13:35:47.000Z</lastmod>
     <data>
         <display>
-        <title></title>
+        <title>机器学习开发环境：PyTorch安装指南</title>
         <pubTime>2018-01-29T13:11:37.000Z</pubTime>
         
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Machine Learning</tag>
+         
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/29/Mac%E7%B3%BB%E7%BB%9Fjupyter-notebook%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</loc>
-    <lastmod>2018-01-29T13:15:11.000Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2018-01-29T13:11:58.000Z</pubTime>
-        
-         
-           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="Machine Learning" url="http://yoursite.com/categories/Artificial-Intelligence/Machine-Learning/"/>
+          
         </display>
     </data>
     </url>
@@ -50,29 +80,99 @@
     
   <url>
     <loc>http://yoursite.com/2018/01/29/Mac%E7%B3%BB%E7%BB%9Fjupyter-notebook%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2018-01-29T13:14:46.000Z</lastmod>
+    <lastmod>2018-01-29T13:35:21.000Z</lastmod>
     <data>
         <display>
-        <title></title>
+        <title>Mac系统jupyter notebook报错解决方法</title>
         <pubTime>2018-01-29T13:12:20.000Z</pubTime>
         
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Machine Learning</tag>
+         
          
            
+             
+              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="Machine Learning" url="http://yoursite.com/categories/Artificial-Intelligence/Machine-Learning/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>http://yoursite.com/2018/01/29/jupyter-notebook%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
-    <lastmod>2018-01-29T13:14:07.000Z</lastmod>
+    <loc>http://yoursite.com/2018/01/29/Mac%E7%B3%BB%E7%BB%9Fjupyter-notebook%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2018-01-29T13:35:16.000Z</lastmod>
     <data>
         <display>
-        <title></title>
-        <pubTime>2018-01-29T13:12:41.000Z</pubTime>
+        <title>Mac系统jupyter notebook安装指南</title>
+        <pubTime>2018-01-29T13:11:58.000Z</pubTime>
         
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Machine Learning</tag>
+         
          
            
+             
+              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="Machine Learning" url="http://yoursite.com/categories/Artificial-Intelligence/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/01/29/Jupyter-Notebook%E6%96%B0%E6%89%8B%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2018-01-29T13:32:38.000Z</lastmod>
+    <data>
+        <display>
+        <title>Jupyter Notebook新手使用教程</title>
+        <pubTime>2018-01-29T13:12:41.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="Machine Learning" url="http://yoursite.com/categories/Artificial-Intelligence/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/01/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B02/</loc>
+    <lastmod>2018-01-29T13:29:04.000Z</lastmod>
+    <data>
+        <display>
+        <title>计算机组成原理复习笔记2</title>
+        <pubTime>2018-01-05T08:33:37.000Z</pubTime>
+        
+        <tag>Computer Science</tag>
+         
+        <tag>Basis of Computer Engineering</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Basis of Computer Engineering" url="http://yoursite.com/categories/Computer-Science/Basis-of-Computer-Engineering/"/>
+          
         </display>
     </data>
     </url>
@@ -147,31 +247,6 @@
           
              
               <breadCrumb title="Reinforcement Learning" url="http://yoursite.com/categories/Artificial-Intelligence/Reinforcement-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/29/matplotlib%E5%85%A5%E9%97%A8%E5%AE%9E%E6%88%98%E5%85%A8%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2018-01-29T13:07:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>matplotlib入门实战全教程</title>
-        <pubTime>2018-01-29T13:06:16.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>Matplotlib</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Data Mining and Analysis" url="http://yoursite.com/categories/Computer-Science/Data-Mining-and-Analysis/"/>
           
         </display>
     </data>
@@ -835,29 +910,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/09/04/PR-Illustration/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>PR-Illustration</title>
-        <pubTime>2017-09-04T04:57:10.000Z</pubTime>
-        
-        <tag>Public Relationship</tag>
-         
-         
-           
-             
-              <breadCrumb title="Communication Science" url="http://yoursite.com/categories/Communication-Science/"/>
-          
-             
-              <breadCrumb title="Public Relationship" url="http://yoursite.com/categories/Communication-Science/Public-Relationship/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/10/01/PM%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E8%A1%8C%E4%B8%9A%E6%8A%80%E6%9C%AF%E5%90%8D%E8%AF%8D/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
@@ -883,24 +935,22 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/10/30/Paper-Analysis-%E5%9F%BA%E4%BA%8EE-CNN%E7%9A%84%E6%83%85%E7%BB%AA%E5%BD%92%E5%9B%A0/</loc>
+    <loc>http://yoursite.com/2017/09/04/PR-Illustration/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>Paper Analysis|基于E-CNN的情绪归因</title>
-        <pubTime>2017-10-30T00:50:56.000Z</pubTime>
+        <title>PR-Illustration</title>
+        <pubTime>2017-09-04T04:57:10.000Z</pubTime>
         
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>Sentiment Analysis</tag>
+        <tag>Public Relationship</tag>
          
          
            
              
-              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
+              <breadCrumb title="Communication Science" url="http://yoursite.com/categories/Communication-Science/"/>
           
              
-              <breadCrumb title="Sentiment Analysis" url="http://yoursite.com/categories/Artificial-Intelligence/Sentiment-Analysis/"/>
+              <breadCrumb title="Public Relationship" url="http://yoursite.com/categories/Communication-Science/Public-Relationship/"/>
           
         </display>
     </data>
@@ -935,6 +985,31 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/10/30/Paper-Analysis-%E5%9F%BA%E4%BA%8EE-CNN%E7%9A%84%E6%83%85%E7%BB%AA%E5%BD%92%E5%9B%A0/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Paper Analysis|基于E-CNN的情绪归因</title>
+        <pubTime>2017-10-30T00:50:56.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Sentiment Analysis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="Sentiment Analysis" url="http://yoursite.com/categories/Artificial-Intelligence/Sentiment-Analysis/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/10/06/Coursera-Machine-Learning-Week6-Advice-for-Applying-Machine-Learning/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
@@ -956,21 +1031,6 @@
              
               <breadCrumb title="Machine Learning" url="http://yoursite.com/categories/Artificial-Intelligence/Machine-Learning/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/08/02/Welcome/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>Welcome</title>
-        <pubTime>2017-08-02T01:13:10.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
@@ -1002,27 +1062,15 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/10/08/Coursera-Machine-Learning-Week7-SVM-Kernels/</loc>
+    <loc>http://yoursite.com/2017/08/02/Welcome/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>Coursera Machine Learning|Week7:SVM & Kernels</title>
-        <pubTime>2017-10-08T13:41:11.000Z</pubTime>
+        <title>Welcome</title>
+        <pubTime>2017-08-02T01:13:10.000Z</pubTime>
         
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>Coursera ML</tag>
-         
          
            
-             
-              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
-          
-             
-              <breadCrumb title="Machine Learning" url="http://yoursite.com/categories/Artificial-Intelligence/Machine-Learning/"/>
-          
         </display>
     </data>
     </url>
@@ -1052,18 +1100,18 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/11/07/ELIT-NLP%E7%A0%94%E7%A9%B6%E5%B9%B3%E5%8F%B0%E6%B5%8B%E8%AF%95/</loc>
+    <loc>http://yoursite.com/2017/10/11/Coursera-Machine-Learning-Week8-Cluster-PCA/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>ELIT-NLP研究平台测试</title>
-        <pubTime>2017-11-07T11:27:10.000Z</pubTime>
+        <title>Coursera Machine Learning|Week8:Cluster & PCA</title>
+        <pubTime>2017-10-11T11:56:48.000Z</pubTime>
         
         <tag>Artificial Intelligence</tag>
          
-        <tag>Sentiment Analysis</tag>
+        <tag>Machine Learning</tag>
          
-        <tag>Natural Language Processing</tag>
+        <tag>Coursera ML</tag>
          
          
            
@@ -1071,7 +1119,7 @@
               <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
           
              
-              <breadCrumb title="Sentiment Analysis" url="http://yoursite.com/categories/Artificial-Intelligence/Sentiment-Analysis/"/>
+              <breadCrumb title="Machine Learning" url="http://yoursite.com/categories/Artificial-Intelligence/Machine-Learning/"/>
           
         </display>
     </data>
@@ -1079,12 +1127,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/10/11/Coursera-Machine-Learning-Week8-Cluster-PCA/</loc>
+    <loc>http://yoursite.com/2017/10/08/Coursera-Machine-Learning-Week7-SVM-Kernels/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>Coursera Machine Learning|Week8:Cluster & PCA</title>
-        <pubTime>2017-10-11T11:56:48.000Z</pubTime>
+        <title>Coursera Machine Learning|Week7:SVM & Kernels</title>
+        <pubTime>2017-10-08T13:41:11.000Z</pubTime>
         
         <tag>Artificial Intelligence</tag>
          
@@ -1187,12 +1235,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter11-Interpretation-of-some-Techniques/</loc>
+    <loc>http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter2-Data-Processing/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>Interpret Technique to PM|Chapter11:Interpretation of some Techniques</title>
-        <pubTime>2017-10-01T11:11:08.000Z</pubTime>
+        <title>Interpret Technique to PM|Chapter2:Data Processing</title>
+        <pubTime>2017-10-01T10:30:02.000Z</pubTime>
         
         <tag>PM Communication</tag>
          
@@ -1281,36 +1329,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/09/27/%E3%80%8A%E8%B5%B0%E8%BF%912050%EF%BC%9A%E6%B3%A8%E6%84%8F%E5%8A%9B%E3%80%81%E4%BA%92%E8%81%94%E7%BD%91%E5%92%8C%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter11-Interpretation-of-some-Techniques/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>《走近2050：注意力、互联网和人工智能》阅读笔记</title>
-        <pubTime>2017-09-27T07:49:15.000Z</pubTime>
-        
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>Reading Notes</tag>
-         
-        <tag>Communication Science</tag>
-         
-         
-           
-             
-              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter2-Data-Processing/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>Interpret Technique to PM|Chapter2:Data Processing</title>
-        <pubTime>2017-10-01T10:30:02.000Z</pubTime>
+        <title>Interpret Technique to PM|Chapter11:Interpretation of some Techniques</title>
+        <pubTime>2017-10-01T11:11:08.000Z</pubTime>
         
         <tag>PM Communication</tag>
          
@@ -1325,29 +1349,6 @@
           
              
               <breadCrumb title="System Logic" url="http://yoursite.com/categories/Product-Manager/System-Logic/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/12/03/%E4%B8%AD%E5%8D%B0%E5%AF%B9%E5%B3%99%E4%BA%8B%E4%BB%B6%E7%83%AD%E9%97%A8%E5%BE%AE%E5%8D%9A%E4%BC%A0%E6%92%AD%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>中印对峙事件热门微博传播分析</title>
-        <pubTime>2017-12-03T09:08:35.000Z</pubTime>
-        
-        <tag>Public Opinion Analysis</tag>
-         
-         
-           
-             
-              <breadCrumb title="Communication Science" url="http://yoursite.com/categories/Communication-Science/"/>
-          
-             
-              <breadCrumb title="Public Opinion Analysis" url="http://yoursite.com/categories/Communication-Science/Public-Opinion-Analysis/"/>
           
         </display>
     </data>
@@ -1380,6 +1381,53 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/09/27/%E3%80%8A%E8%B5%B0%E8%BF%912050%EF%BC%9A%E6%B3%A8%E6%84%8F%E5%8A%9B%E3%80%81%E4%BA%92%E8%81%94%E7%BD%91%E5%92%8C%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>《走近2050：注意力、互联网和人工智能》阅读笔记</title>
+        <pubTime>2017-09-27T07:49:15.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Reading Notes</tag>
+         
+        <tag>Communication Science</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/12/03/%E4%B8%AD%E5%8D%B0%E5%AF%B9%E5%B3%99%E4%BA%8B%E4%BB%B6%E7%83%AD%E9%97%A8%E5%BE%AE%E5%8D%9A%E4%BC%A0%E6%92%AD%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>中印对峙事件热门微博传播分析</title>
+        <pubTime>2017-12-03T09:08:35.000Z</pubTime>
+        
+        <tag>Public Opinion Analysis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Communication Science" url="http://yoursite.com/categories/Communication-Science/"/>
+          
+             
+              <breadCrumb title="Public Opinion Analysis" url="http://yoursite.com/categories/Communication-Science/Public-Opinion-Analysis/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/09/11/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E5%BF%B5%E5%88%9D%E5%AF%BC/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
@@ -1393,56 +1441,6 @@
            
              
               <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter5-Computer-Network/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>Interpret Technique to PM|Chapter5:Computer Network</title>
-        <pubTime>2017-10-01T10:46:54.000Z</pubTime>
-        
-        <tag>PM Communication</tag>
-         
-        <tag>System Logic</tag>
-         
-        <tag>Reading Notes</tag>
-         
-         
-           
-             
-              <breadCrumb title="Product Manager" url="http://yoursite.com/categories/Product-Manager/"/>
-          
-             
-              <breadCrumb title="System Logic" url="http://yoursite.com/categories/Product-Manager/System-Logic/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/17/%E4%BC%81%E4%B8%9A%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E4%BC%A0%E6%92%AD%E7%AD%96%E7%95%A5%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>企业社交网络传播策略框架设计</title>
-        <pubTime>2018-01-17T07:46:50.000Z</pubTime>
-        
-        <tag>Social Network Communication</tag>
-         
-         
-           
-             
-              <breadCrumb title="Communication Science" url="http://yoursite.com/categories/Communication-Science/"/>
-          
-             
-              <breadCrumb title="Social Network Communication" url="http://yoursite.com/categories/Communication-Science/Social-Network-Communication/"/>
           
         </display>
     </data>
@@ -1500,24 +1498,49 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/10/29/%E4%BC%97%E5%8C%85%E6%A8%A1%E5%BC%8F-%E5%AF%B9%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E2%80%9C%E6%96%B9%E8%A8%80%E4%BF%9D%E6%8A%A4%E8%AE%A1%E5%88%92%E2%80%9D%E7%9A%84%E5%88%86%E6%9E%90/</loc>
+    <loc>http://yoursite.com/2018/01/17/%E4%BC%81%E4%B8%9A%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E4%BC%A0%E6%92%AD%E7%AD%96%E7%95%A5%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>众包模式|对科大讯飞“方言保护计划”的分析</title>
-        <pubTime>2017-10-29T08:07:18.000Z</pubTime>
+        <title>企业社交网络传播策略框架设计</title>
+        <pubTime>2018-01-17T07:46:50.000Z</pubTime>
         
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>AI Application</tag>
+        <tag>Social Network Communication</tag>
          
          
            
              
-              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
+              <breadCrumb title="Communication Science" url="http://yoursite.com/categories/Communication-Science/"/>
           
              
-              <breadCrumb title="AI Application" url="http://yoursite.com/categories/Artificial-Intelligence/AI-Application/"/>
+              <breadCrumb title="Social Network Communication" url="http://yoursite.com/categories/Communication-Science/Social-Network-Communication/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter5-Computer-Network/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Interpret Technique to PM|Chapter5:Computer Network</title>
+        <pubTime>2017-10-01T10:46:54.000Z</pubTime>
+        
+        <tag>PM Communication</tag>
+         
+        <tag>System Logic</tag>
+         
+        <tag>Reading Notes</tag>
+         
+         
+           
+             
+              <breadCrumb title="Product Manager" url="http://yoursite.com/categories/Product-Manager/"/>
+          
+             
+              <breadCrumb title="System Logic" url="http://yoursite.com/categories/Product-Manager/System-Logic/"/>
           
         </display>
     </data>
@@ -1541,6 +1564,31 @@
           
              
               <breadCrumb title="Public Relationship" url="http://yoursite.com/categories/Communication-Science/Public-Relationship/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/10/29/%E4%BC%97%E5%8C%85%E6%A8%A1%E5%BC%8F-%E5%AF%B9%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E2%80%9C%E6%96%B9%E8%A8%80%E4%BF%9D%E6%8A%A4%E8%AE%A1%E5%88%92%E2%80%9D%E7%9A%84%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>众包模式|对科大讯飞“方言保护计划”的分析</title>
+        <pubTime>2017-10-29T08:07:18.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>AI Application</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="AI Application" url="http://yoursite.com/categories/Artificial-Intelligence/AI-Application/"/>
           
         </display>
     </data>
@@ -1611,54 +1659,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/11/30/%E5%A6%82%E4%BD%95%E5%9C%A8hexo%E4%B8%AD%E4%B9%A6%E5%86%99LaTex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%EF%BC%9F/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何在hexo中书写LaTex数学公式？</title>
-        <pubTime>2017-11-30T07:04:37.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Coding" url="http://yoursite.com/categories/Computer-Science/Coding/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/15/%E5%93%81%E7%89%8C%E4%BC%A0%E6%92%AD%E6%A6%82%E8%AE%BA%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>品牌传播概论复习笔记</title>
-        <pubTime>2018-01-15T08:47:42.000Z</pubTime>
-        
-        <tag>Communication Science</tag>
-         
-        <tag>Advertising and Brand</tag>
-         
-         
-           
-             
-              <breadCrumb title="Communication Science" url="http://yoursite.com/categories/Communication-Science/"/>
-          
-             
-              <breadCrumb title="Advertising and Brand" url="http://yoursite.com/categories/Communication-Science/Advertising-and-Brand/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/09/17/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E5%AE%8C%E7%BE%8E%E7%9A%84%E4%BB%AA%E5%BC%8F%E6%84%9F/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
@@ -1697,6 +1697,54 @@
           
              
               <breadCrumb title="C#" url="http://yoursite.com/categories/Computer-Science/C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/01/15/%E5%93%81%E7%89%8C%E4%BC%A0%E6%92%AD%E6%A6%82%E8%AE%BA%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>品牌传播概论复习笔记</title>
+        <pubTime>2018-01-15T08:47:42.000Z</pubTime>
+        
+        <tag>Communication Science</tag>
+         
+        <tag>Advertising and Brand</tag>
+         
+         
+           
+             
+              <breadCrumb title="Communication Science" url="http://yoursite.com/categories/Communication-Science/"/>
+          
+             
+              <breadCrumb title="Advertising and Brand" url="http://yoursite.com/categories/Communication-Science/Advertising-and-Brand/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/11/30/%E5%A6%82%E4%BD%95%E5%9C%A8hexo%E4%B8%AD%E4%B9%A6%E5%86%99LaTex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%EF%BC%9F/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何在hexo中书写LaTex数学公式？</title>
+        <pubTime>2017-11-30T07:04:37.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Coding" url="http://yoursite.com/categories/Computer-Science/Coding/"/>
           
         </display>
     </data>
@@ -1751,31 +1799,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/10/31/%E5%AE%9E%E9%99%85%E4%B8%9A%E5%8A%A1%E5%9C%BA%E6%99%AF%E4%B8%AD%E7%9A%84%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E6%B5%81%E7%A8%8B%E4%BB%A5%E5%8F%8APM%E7%9A%84%E5%B7%A5%E4%BD%9C/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>实际业务场景中的监督学习流程以及PM的工作</title>
-        <pubTime>2017-10-30T16:23:00.000Z</pubTime>
-        
-        <tag>AI PM</tag>
-         
-        <tag>Artificial Intelligence</tag>
-         
-         
-           
-             
-              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
-          
-             
-              <breadCrumb title="AI PM" url="http://yoursite.com/categories/Artificial-Intelligence/AI-PM/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter8-Development-Tools/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
@@ -1796,6 +1819,31 @@
           
              
               <breadCrumb title="System Logic" url="http://yoursite.com/categories/Product-Manager/System-Logic/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/10/31/%E5%AE%9E%E9%99%85%E4%B8%9A%E5%8A%A1%E5%9C%BA%E6%99%AF%E4%B8%AD%E7%9A%84%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E6%B5%81%E7%A8%8B%E4%BB%A5%E5%8F%8APM%E7%9A%84%E5%B7%A5%E4%BD%9C/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>实际业务场景中的监督学习流程以及PM的工作</title>
+        <pubTime>2017-10-30T16:23:00.000Z</pubTime>
+        
+        <tag>AI PM</tag>
+         
+        <tag>Artificial Intelligence</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="AI PM" url="http://yoursite.com/categories/Artificial-Intelligence/AI-PM/"/>
           
         </display>
     </data>
@@ -1928,14 +1976,16 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/11/21/%E6%91%84%E5%83%8F%E6%9C%BA%EF%BC%8C%E5%85%89%E7%94%B5%E8%BD%AC%E6%8D%A2%E5%8E%9F%E7%90%86%EF%BC%8CCCD%E6%84%9F%E5%85%89%E5%99%A8%E4%BB%B6/</loc>
+    <loc>http://yoursite.com/2017/10/31/%E6%95%99%E8%82%B2-AI-%E7%9B%AE%E5%89%8D%E8%A1%8C%E4%B8%9A%E5%BA%94%E7%94%A8/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>摄像机，光电转换原理，CCD感光器件</title>
-        <pubTime>2017-11-21T08:45:33.000Z</pubTime>
+        <title>教育+ AI 目前行业应用</title>
+        <pubTime>2017-10-31T01:33:56.000Z</pubTime>
         
-        <tag>Machine Vision &amp; Computer Vision</tag>
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>AI Application</tag>
          
          
            
@@ -1943,7 +1993,7 @@
               <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
           
              
-              <breadCrumb title="Machine Vision &amp; Computer Vision" url="http://yoursite.com/categories/Artificial-Intelligence/Machine-Vision-Computer-Vision/"/>
+              <breadCrumb title="AI Application" url="http://yoursite.com/categories/Artificial-Intelligence/AI-Application/"/>
           
         </display>
     </data>
@@ -1974,16 +2024,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/10/31/%E6%95%99%E8%82%B2-AI-%E7%9B%AE%E5%89%8D%E8%A1%8C%E4%B8%9A%E5%BA%94%E7%94%A8/</loc>
+    <loc>http://yoursite.com/2017/11/21/%E6%91%84%E5%83%8F%E6%9C%BA%EF%BC%8C%E5%85%89%E7%94%B5%E8%BD%AC%E6%8D%A2%E5%8E%9F%E7%90%86%EF%BC%8CCCD%E6%84%9F%E5%85%89%E5%99%A8%E4%BB%B6/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>教育+ AI 目前行业应用</title>
-        <pubTime>2017-10-31T01:33:56.000Z</pubTime>
+        <title>摄像机，光电转换原理，CCD感光器件</title>
+        <pubTime>2017-11-21T08:45:33.000Z</pubTime>
         
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>AI Application</tag>
+        <tag>Machine Vision &amp; Computer Vision</tag>
          
          
            
@@ -1991,7 +2039,7 @@
               <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
           
              
-              <breadCrumb title="AI Application" url="http://yoursite.com/categories/Artificial-Intelligence/AI-Application/"/>
+              <breadCrumb title="Machine Vision &amp; Computer Vision" url="http://yoursite.com/categories/Artificial-Intelligence/Machine-Vision-Computer-Vision/"/>
           
         </display>
     </data>
@@ -1999,26 +2047,26 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter9-Development-Technology/</loc>
+    <loc>http://yoursite.com/2017/10/30/AI-PM%E7%9A%84%E4%BA%BA%E6%96%87%E7%B4%A0%E5%85%BB%E5%92%8C%E7%B2%BE%E7%A5%9E%E5%A2%83%E7%95%8C%E7%9A%84%E8%AF%84%E5%88%A4%E6%A0%87%E5%87%86%EF%BC%9F/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>Interpret Technique to PM|Chapter9:Development Technology</title>
-        <pubTime>2017-10-01T11:04:16.000Z</pubTime>
+        <title>AI PM的人文素养和精神境界的评判标准？</title>
+        <pubTime>2017-10-30T01:04:43.000Z</pubTime>
         
-        <tag>PM Communication</tag>
+        <tag>AI PM</tag>
          
-        <tag>System Logic</tag>
+        <tag>Product Manager</tag>
          
-        <tag>Reading Notes</tag>
+        <tag>PM Ability</tag>
          
          
            
              
-              <breadCrumb title="Product Manager" url="http://yoursite.com/categories/Product-Manager/"/>
+              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
           
              
-              <breadCrumb title="System Logic" url="http://yoursite.com/categories/Product-Manager/System-Logic/"/>
+              <breadCrumb title="AI PM" url="http://yoursite.com/categories/Artificial-Intelligence/AI-PM/"/>
           
         </display>
     </data>
@@ -2078,13 +2126,15 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9A%E7%BB%AA%E8%AE%BA/</loc>
+    <loc>http://yoursite.com/2017/09/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-Chapter2%EF%BC%9A%E7%BA%BF%E6%80%A7%E8%A1%A8/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>数据结构第一章：绪论</title>
-        <pubTime>2017-12-08T08:51:24.000Z</pubTime>
+        <title>数据结构|Chapter2：线性表</title>
+        <pubTime>2017-09-25T03:43:30.000Z</pubTime>
         
+        <tag>Computer Science</tag>
+         
         <tag>Data Structure</tag>
          
          
@@ -2149,15 +2199,13 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/09/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-Chapter2%EF%BC%9A%E7%BA%BF%E6%80%A7%E8%A1%A8/</loc>
+    <loc>http://yoursite.com/2017/12/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9A%E7%BB%AA%E8%AE%BA/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>数据结构|Chapter2：线性表</title>
-        <pubTime>2017-09-25T03:43:30.000Z</pubTime>
+        <title>数据结构第一章：绪论</title>
+        <pubTime>2017-12-08T08:51:24.000Z</pubTime>
         
-        <tag>Computer Science</tag>
-         
         <tag>Data Structure</tag>
          
          
@@ -2243,12 +2291,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%8D%81%E7%AB%A0%EF%BC%9A%E6%8E%92%E5%BA%8F/</loc>
+    <loc>http://yoursite.com/2017/12/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E7%BA%BF%E6%80%A7%E8%A1%A8/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>数据结构第十章：排序</title>
-        <pubTime>2017-12-14T09:01:14.000Z</pubTime>
+        <title>数据结构第二章：线性表</title>
+        <pubTime>2017-12-09T08:52:37.000Z</pubTime>
         
         <tag>Data Structure</tag>
          
@@ -2289,29 +2337,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E7%BA%BF%E6%80%A7%E8%A1%A8/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构第二章：线性表</title>
-        <pubTime>2017-12-09T08:52:37.000Z</pubTime>
-        
-        <tag>Data Structure</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Data Structure" url="http://yoursite.com/categories/Computer-Science/Data-Structure/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/12/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%85%AB%E7%AB%A0%EF%BC%9A%E5%9B%BE/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
@@ -2335,19 +2360,22 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/09/29/%E6%96%B0%E5%AA%92%E4%BD%93%E6%8E%90%E6%9E%B6%E5%AE%9A%E5%BE%8B25%E6%9D%A1/</loc>
+    <loc>http://yoursite.com/2017/12/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%85%AD%E7%AB%A0%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>新媒体掐架定律25条</title>
-        <pubTime>2017-09-29T03:32:38.000Z</pubTime>
+        <title>数据结构第六章：二叉树</title>
+        <pubTime>2017-12-18T08:57:23.000Z</pubTime>
         
-        <tag>Communication Science</tag>
+        <tag>Data Structure</tag>
          
          
            
              
-              <breadCrumb title="Communication Science" url="http://yoursite.com/categories/Communication-Science/"/>
+              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Data Structure" url="http://yoursite.com/categories/Computer-Science/Data-Structure/"/>
           
         </display>
     </data>
@@ -2403,12 +2431,107 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/09/29/%E6%96%B0%E5%AA%92%E4%BD%93%E6%8E%90%E6%9E%B6%E5%AE%9A%E5%BE%8B25%E6%9D%A1/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>新媒体掐架定律25条</title>
+        <pubTime>2017-09-29T03:32:38.000Z</pubTime>
+        
+        <tag>Communication Science</tag>
+         
+         
+           
+             
+              <breadCrumb title="Communication Science" url="http://yoursite.com/categories/Communication-Science/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/12/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%8D%81%E7%AB%A0%EF%BC%9A%E6%8E%92%E5%BA%8F/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构第十章：排序</title>
+        <pubTime>2017-12-14T09:01:14.000Z</pubTime>
+        
+        <tag>Data Structure</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Data Structure" url="http://yoursite.com/categories/Computer-Science/Data-Structure/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/09/27/%E6%96%B0%E5%AA%92%E4%BD%93%E6%A0%87%E9%A2%98%E5%86%99%E4%BD%9C%EF%BC%9A%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E6%A0%87%E9%A2%98%E5%85%9A%EF%BC%9F/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
         <title>新媒体标题写作：如何成为标题党？</title>
         <pubTime>2017-09-27T06:33:45.000Z</pubTime>
+        
+        <tag>Communication Science</tag>
+         
+        <tag>Creative Writing and Planning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Communication Science" url="http://yoursite.com/categories/Communication-Science/"/>
+          
+             
+              <breadCrumb title="Creative Writing and Planning" url="http://yoursite.com/categories/Communication-Science/Creative-Writing-and-Planning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter6-Front-End/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Interpret Technique to PM|Chapter6:Front End</title>
+        <pubTime>2017-10-01T10:51:10.000Z</pubTime>
+        
+        <tag>PM Communication</tag>
+         
+        <tag>System Logic</tag>
+         
+        <tag>Reading Notes</tag>
+         
+         
+           
+             
+              <breadCrumb title="Product Manager" url="http://yoursite.com/categories/Product-Manager/"/>
+          
+             
+              <breadCrumb title="System Logic" url="http://yoursite.com/categories/Product-Manager/System-Logic/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/10/23/%E6%96%B0%E9%97%BB%E4%B8%BB%E4%BD%93%E7%9A%84%E5%A4%9A%E6%83%85%E5%A2%83%E5%86%99%E4%BD%9C%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>新闻主体的多情境写作技巧</title>
+        <pubTime>2017-10-23T13:34:37.000Z</pubTime>
         
         <tag>Communication Science</tag>
          
@@ -2451,47 +2574,26 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%85%AD%E7%AB%A0%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
+    <loc>http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter9-Development-Technology/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>数据结构第六章：二叉树</title>
-        <pubTime>2017-12-18T08:57:23.000Z</pubTime>
+        <title>Interpret Technique to PM|Chapter9:Development Technology</title>
+        <pubTime>2017-10-01T11:04:16.000Z</pubTime>
         
-        <tag>Data Structure</tag>
+        <tag>PM Communication</tag>
+         
+        <tag>System Logic</tag>
+         
+        <tag>Reading Notes</tag>
          
          
            
              
-              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
+              <breadCrumb title="Product Manager" url="http://yoursite.com/categories/Product-Manager/"/>
           
              
-              <breadCrumb title="Data Structure" url="http://yoursite.com/categories/Computer-Science/Data-Structure/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/10/23/%E6%96%B0%E9%97%BB%E4%B8%BB%E4%BD%93%E7%9A%84%E5%A4%9A%E6%83%85%E5%A2%83%E5%86%99%E4%BD%9C%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>新闻主体的多情境写作技巧</title>
-        <pubTime>2017-10-23T13:34:37.000Z</pubTime>
-        
-        <tag>Communication Science</tag>
-         
-        <tag>Creative Writing and Planning</tag>
-         
-         
-           
-             
-              <breadCrumb title="Communication Science" url="http://yoursite.com/categories/Communication-Science/"/>
-          
-             
-              <breadCrumb title="Creative Writing and Planning" url="http://yoursite.com/categories/Communication-Science/Creative-Writing-and-Planning/"/>
+              <breadCrumb title="System Logic" url="http://yoursite.com/categories/Product-Manager/System-Logic/"/>
           
         </display>
     </data>
@@ -2524,58 +2626,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/10/01/Interpret-Technique-to-PM-Chapter6-Front-End/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>Interpret Technique to PM|Chapter6:Front End</title>
-        <pubTime>2017-10-01T10:51:10.000Z</pubTime>
-        
-        <tag>PM Communication</tag>
-         
-        <tag>System Logic</tag>
-         
-        <tag>Reading Notes</tag>
-         
-         
-           
-             
-              <breadCrumb title="Product Manager" url="http://yoursite.com/categories/Product-Manager/"/>
-          
-             
-              <breadCrumb title="System Logic" url="http://yoursite.com/categories/Product-Manager/System-Logic/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/10/23/LOGO%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%80%83%E6%B5%81%E7%A8%8B%E5%92%8C%E8%AE%BE%E8%AE%A1%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3%EF%BC%88%E9%99%84%E6%A1%88%E4%BE%8B%EF%BC%89/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>LOGO设计思考流程和设计需求文档（附案例）</title>
-        <pubTime>2017-10-23T06:44:39.000Z</pubTime>
-        
-        <tag>UI Design</tag>
-         
-        <tag>PM Communication</tag>
-         
-         
-           
-             
-              <breadCrumb title="Product Manager" url="http://yoursite.com/categories/Product-Manager/"/>
-          
-             
-              <breadCrumb title="PM Communication" url="http://yoursite.com/categories/Product-Manager/PM-Communication/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/10/25/%E6%A1%88%E4%BE%8B-%E8%93%9D%E5%BD%AA%EF%BC%88BlueFocus%EF%BC%89%E6%B4%BB%E5%8A%A8%E7%AD%96%E5%88%92%E4%B9%A6/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
@@ -2592,26 +2642,6 @@
           
              
               <breadCrumb title="Public Relationship" url="http://yoursite.com/categories/Communication-Science/Public-Relationship/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/10/30/%E7%86%B5%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>熵是什么？</title>
-        <pubTime>2017-10-29T16:39:31.000Z</pubTime>
-        
-        <tag>Computer Science</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
           
         </display>
     </data>
@@ -2644,22 +2674,19 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/11/21/Machine-Vision-vs-Computer-Vision/</loc>
+    <loc>http://yoursite.com/2017/10/30/%E7%86%B5%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>Machine Vision vs Computer Vision</title>
-        <pubTime>2017-11-21T09:18:35.000Z</pubTime>
+        <title>熵是什么？</title>
+        <pubTime>2017-10-29T16:39:31.000Z</pubTime>
         
-        <tag>Machine Vision &amp; Computer Vision</tag>
+        <tag>Computer Science</tag>
          
          
            
              
-              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
-          
-             
-              <breadCrumb title="Machine Vision &amp; Computer Vision" url="http://yoursite.com/categories/Artificial-Intelligence/Machine-Vision-Computer-Vision/"/>
+              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
           
         </display>
     </data>
@@ -2685,128 +2712,6 @@
           
              
               <breadCrumb title="C#" url="http://yoursite.com/categories/Computer-Science/C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/09/08/%E7%90%86%E8%A7%A3%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>理解内存地址</title>
-        <pubTime>2017-09-07T16:57:11.000Z</pubTime>
-        
-        <tag>Computer Science</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/10/30/AI-PM%E7%9A%84%E4%BA%BA%E6%96%87%E7%B4%A0%E5%85%BB%E5%92%8C%E7%B2%BE%E7%A5%9E%E5%A2%83%E7%95%8C%E7%9A%84%E8%AF%84%E5%88%A4%E6%A0%87%E5%87%86%EF%BC%9F/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>AI PM的人文素养和精神境界的评判标准？</title>
-        <pubTime>2017-10-30T01:04:43.000Z</pubTime>
-        
-        <tag>AI PM</tag>
-         
-        <tag>Product Manager</tag>
-         
-        <tag>PM Ability</tag>
-         
-         
-           
-             
-              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
-          
-             
-              <breadCrumb title="AI PM" url="http://yoursite.com/categories/Artificial-Intelligence/AI-PM/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/09/07/%E7%90%86%E8%A7%A3%E7%9F%A9%E9%98%B5/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>理解矩阵</title>
-        <pubTime>2017-09-07T11:35:28.000Z</pubTime>
-        
-        <tag>Linear Algebra</tag>
-         
-         
-           
-             
-              <breadCrumb title="Math" url="http://yoursite.com/categories/Math/"/>
-          
-             
-              <breadCrumb title="Linear Algebra" url="http://yoursite.com/categories/Math/Linear-Algebra/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/09/25/%E7%90%86%E8%A7%A3%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%92%8C%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>理解算法的时间和空间复杂度</title>
-        <pubTime>2017-09-25T11:16:50.000Z</pubTime>
-        
-        <tag>Computer Science</tag>
-         
-        <tag>Data Structure</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Data Structure" url="http://yoursite.com/categories/Computer-Science/Data-Structure/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/11/09/AI-PM-VS-%E4%BA%92%E8%81%94%E7%BD%91PM-AI-VS-%E4%BA%92%E8%81%94%E7%BD%91/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>AI PM VS 互联网PM,AI VS 互联网</title>
-        <pubTime>2017-11-09T03:26:58.000Z</pubTime>
-        
-        <tag>AI PM</tag>
-         
-        <tag>Product Manager</tag>
-         
-        <tag>PM Ability</tag>
-         
-         
-           
-             
-              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
-          
-             
-              <breadCrumb title="AI PM" url="http://yoursite.com/categories/Artificial-Intelligence/AI-PM/"/>
           
         </display>
     </data>
@@ -2841,16 +2746,107 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/09/18/%E7%A4%BE%E4%BA%A4%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E5%88%9D%E5%AF%BC/</loc>
+    <loc>http://yoursite.com/2017/09/08/%E7%90%86%E8%A7%A3%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>社交情感分析与机器学习</title>
-        <pubTime>2017-09-18T09:33:25.000Z</pubTime>
+        <title>理解内存地址</title>
+        <pubTime>2017-09-07T16:57:11.000Z</pubTime>
         
-        <tag>Artificial Intelligence</tag>
+        <tag>Computer Science</tag>
          
-        <tag>Sentiment Analysis</tag>
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/10/23/LOGO%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%80%83%E6%B5%81%E7%A8%8B%E5%92%8C%E8%AE%BE%E8%AE%A1%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3%EF%BC%88%E9%99%84%E6%A1%88%E4%BE%8B%EF%BC%89/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>LOGO设计思考流程和设计需求文档（附案例）</title>
+        <pubTime>2017-10-23T06:44:39.000Z</pubTime>
+        
+        <tag>UI Design</tag>
+         
+        <tag>PM Communication</tag>
+         
+         
+           
+             
+              <breadCrumb title="Product Manager" url="http://yoursite.com/categories/Product-Manager/"/>
+          
+             
+              <breadCrumb title="PM Communication" url="http://yoursite.com/categories/Product-Manager/PM-Communication/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/09/25/%E7%90%86%E8%A7%A3%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%92%8C%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>理解算法的时间和空间复杂度</title>
+        <pubTime>2017-09-25T11:16:50.000Z</pubTime>
+        
+        <tag>Computer Science</tag>
+         
+        <tag>Data Structure</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Data Structure" url="http://yoursite.com/categories/Computer-Science/Data-Structure/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/09/07/%E7%90%86%E8%A7%A3%E7%9F%A9%E9%98%B5/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>理解矩阵</title>
+        <pubTime>2017-09-07T11:35:28.000Z</pubTime>
+        
+        <tag>Linear Algebra</tag>
+         
+         
+           
+             
+              <breadCrumb title="Math" url="http://yoursite.com/categories/Math/"/>
+          
+             
+              <breadCrumb title="Linear Algebra" url="http://yoursite.com/categories/Math/Linear-Algebra/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/11/21/Machine-Vision-vs-Computer-Vision/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Machine Vision vs Computer Vision</title>
+        <pubTime>2017-11-21T09:18:35.000Z</pubTime>
+        
+        <tag>Machine Vision &amp; Computer Vision</tag>
          
          
            
@@ -2858,7 +2854,54 @@
               <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
           
              
-              <breadCrumb title="Sentiment Analysis" url="http://yoursite.com/categories/Artificial-Intelligence/Sentiment-Analysis/"/>
+              <breadCrumb title="Machine Vision &amp; Computer Vision" url="http://yoursite.com/categories/Artificial-Intelligence/Machine-Vision-Computer-Vision/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/10/27/Markdown-X-LeTex-%E5%A6%82%E4%BD%95%E6%84%89%E5%BF%AB%E5%9C%B0%E4%B9%A6%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%EF%BC%9F/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Markdown X LeTex|如何愉快地书写数学公式？</title>
+        <pubTime>2017-10-27T05:56:12.000Z</pubTime>
+        
+        <tag>Math</tag>
+         
+         
+           
+             
+              <breadCrumb title="Math" url="http://yoursite.com/categories/Math/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/10/13/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E9%83%A8%E5%88%86%E6%A6%82%E5%BF%B5%E8%A7%A3%E9%87%8A/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>社交网络分析中的部分概念解释</title>
+        <pubTime>2017-10-13T09:19:52.000Z</pubTime>
+        
+        <tag>Computer Science</tag>
+         
+        <tag>Communication Science</tag>
+         
+        <tag>Social Network Analysis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Social Network Analysis" url="http://yoursite.com/categories/Computer-Science/Social-Network-Analysis/"/>
           
         </display>
     </data>
@@ -2914,26 +2957,24 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/10/13/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E9%83%A8%E5%88%86%E6%A6%82%E5%BF%B5%E8%A7%A3%E9%87%8A/</loc>
+    <loc>http://yoursite.com/2017/09/18/%E7%A4%BE%E4%BA%A4%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E5%88%9D%E5%AF%BC/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>社交网络分析中的部分概念解释</title>
-        <pubTime>2017-10-13T09:19:52.000Z</pubTime>
+        <title>社交情感分析与机器学习</title>
+        <pubTime>2017-09-18T09:33:25.000Z</pubTime>
         
-        <tag>Computer Science</tag>
+        <tag>Artificial Intelligence</tag>
          
-        <tag>Communication Science</tag>
-         
-        <tag>Social Network Analysis</tag>
+        <tag>Sentiment Analysis</tag>
          
          
            
              
-              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
+              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
           
              
-              <breadCrumb title="Social Network Analysis" url="http://yoursite.com/categories/Computer-Science/Social-Network-Analysis/"/>
+              <breadCrumb title="Sentiment Analysis" url="http://yoursite.com/categories/Artificial-Intelligence/Sentiment-Analysis/"/>
           
         </display>
     </data>
@@ -2991,6 +3032,29 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/09/15/%E7%BA%B8%E5%AA%92%E7%9A%84%E5%87%BA%E8%B7%AF%EF%BC%9A%E5%90%91%E6%AD%BB%E8%80%8C%E7%94%9F%EF%BC%9F/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>纸媒的出路：向死而生？</title>
+        <pubTime>2017-09-15T15:11:08.000Z</pubTime>
+        
+        <tag>Medium Study</tag>
+         
+         
+           
+             
+              <breadCrumb title="Communication Science" url="http://yoursite.com/categories/Communication-Science/"/>
+          
+             
+              <breadCrumb title="Medium Study" url="http://yoursite.com/categories/Communication-Science/Medium-Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/11/09/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84-VS-%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
@@ -3009,29 +3073,6 @@
           
              
               <breadCrumb title="Data Structure" url="http://yoursite.com/categories/Computer-Science/Data-Structure/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/09/15/%E7%BA%B8%E5%AA%92%E7%9A%84%E5%87%BA%E8%B7%AF%EF%BC%9A%E5%90%91%E6%AD%BB%E8%80%8C%E7%94%9F%EF%BC%9F/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>纸媒的出路：向死而生？</title>
-        <pubTime>2017-09-15T15:11:08.000Z</pubTime>
-        
-        <tag>Medium Study</tag>
-         
-         
-           
-             
-              <breadCrumb title="Communication Science" url="http://yoursite.com/categories/Communication-Science/"/>
-          
-             
-              <breadCrumb title="Medium Study" url="http://yoursite.com/categories/Communication-Science/Medium-Study/"/>
           
         </display>
     </data>
@@ -3059,19 +3100,26 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/10/27/Markdown-X-LeTex-%E5%A6%82%E4%BD%95%E6%84%89%E5%BF%AB%E5%9C%B0%E4%B9%A6%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%EF%BC%9F/</loc>
+    <loc>http://yoursite.com/2017/10/22/MongoDB-%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>Markdown X LeTex|如何愉快地书写数学公式？</title>
-        <pubTime>2017-10-27T05:56:12.000Z</pubTime>
+        <title>MongoDB|基本了解</title>
+        <pubTime>2017-10-22T10:59:14.000Z</pubTime>
         
-        <tag>Math</tag>
+        <tag>Computer Science</tag>
+         
+        <tag>Database System</tag>
+         
+        <tag>MongoDB</tag>
          
          
            
              
-              <breadCrumb title="Math" url="http://yoursite.com/categories/Math/"/>
+              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Database System" url="http://yoursite.com/categories/Computer-Science/Database-System/"/>
           
         </display>
     </data>
@@ -3156,31 +3204,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/01/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B01/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>计算机组成原理复习笔记1</title>
-        <pubTime>2018-01-04T08:29:23.000Z</pubTime>
-        
-        <tag>Computer Science</tag>
-         
-        <tag>Basis of Computer Engineering</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Basis of Computer Engineering" url="http://yoursite.com/categories/Computer-Science/Basis-of-Computer-Engineering/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/10/29/%E9%80%BB%E8%BE%91%E5%AD%A6X%E9%9B%86%E5%90%88%E8%AE%BA-%E5%86%85%E6%B6%B5%E4%B8%8E%E5%A4%96%E5%BB%B6%EF%BC%8C%E6%A6%82%E5%BF%B5%E7%9A%84%E5%A4%96%E5%BB%B6%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
@@ -3206,12 +3229,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/01/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B02/</loc>
+    <loc>http://yoursite.com/2018/01/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B01/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>计算机组成原理复习笔记2</title>
-        <pubTime>2018-01-05T08:33:37.000Z</pubTime>
+        <title>计算机组成原理复习笔记1</title>
+        <pubTime>2018-01-04T08:29:23.000Z</pubTime>
         
         <tag>Computer Science</tag>
          
@@ -3224,6 +3247,60 @@
           
              
               <breadCrumb title="Basis of Computer Engineering" url="http://yoursite.com/categories/Computer-Science/Basis-of-Computer-Engineering/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/11/09/AI-PM-VS-%E4%BA%92%E8%81%94%E7%BD%91PM-AI-VS-%E4%BA%92%E8%81%94%E7%BD%91/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>AI PM VS 互联网PM,AI VS 互联网</title>
+        <pubTime>2017-11-09T03:26:58.000Z</pubTime>
+        
+        <tag>AI PM</tag>
+         
+        <tag>Product Manager</tag>
+         
+        <tag>PM Ability</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="AI PM" url="http://yoursite.com/categories/Artificial-Intelligence/AI-PM/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/11/07/ELIT-NLP%E7%A0%94%E7%A9%B6%E5%B9%B3%E5%8F%B0%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>ELIT-NLP研究平台测试</title>
+        <pubTime>2017-11-07T11:27:10.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Sentiment Analysis</tag>
+         
+        <tag>Natural Language Processing</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="Sentiment Analysis" url="http://yoursite.com/categories/Artificial-Intelligence/Sentiment-Analysis/"/>
           
         </display>
     </data>
@@ -3253,12 +3330,37 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/10/22/MongoDB-%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/</loc>
+    <loc>http://yoursite.com/2017/09/26/%E9%9B%86%E5%90%88%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>MongoDB|基本了解</title>
-        <pubTime>2017-10-22T10:59:14.000Z</pubTime>
+        <title>集合覆盖问题</title>
+        <pubTime>2017-09-26T13:20:56.000Z</pubTime>
+        
+        <tag>Computer Science</tag>
+         
+        <tag>Discrete Mathematics</tag>
+         
+         
+           
+             
+              <breadCrumb title="Math" url="http://yoursite.com/categories/Math/"/>
+          
+             
+              <breadCrumb title="Discrete Mathematics" url="http://yoursite.com/categories/Math/Discrete-Mathematics/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/10/22/MongoDB-%E5%AE%89%E8%A3%85%E5%92%8C%E8%BF%90%E8%A1%8C/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>MongoDB|安装和运行</title>
+        <pubTime>2017-10-22T10:37:11.000Z</pubTime>
         
         <tag>Computer Science</tag>
          
@@ -3320,58 +3422,6 @@
            
              
               <breadCrumb title="Artificial Intelligence" url="http://yoursite.com/categories/Artificial-Intelligence/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/09/26/%E9%9B%86%E5%90%88%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>集合覆盖问题</title>
-        <pubTime>2017-09-26T13:20:56.000Z</pubTime>
-        
-        <tag>Computer Science</tag>
-         
-        <tag>Discrete Mathematics</tag>
-         
-         
-           
-             
-              <breadCrumb title="Math" url="http://yoursite.com/categories/Math/"/>
-          
-             
-              <breadCrumb title="Discrete Mathematics" url="http://yoursite.com/categories/Math/Discrete-Mathematics/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/10/22/MongoDB-%E5%AE%89%E8%A3%85%E5%92%8C%E8%BF%90%E8%A1%8C/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>MongoDB|安装和运行</title>
-        <pubTime>2017-10-22T10:37:11.000Z</pubTime>
-        
-        <tag>Computer Science</tag>
-         
-        <tag>Database System</tag>
-         
-        <tag>MongoDB</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://yoursite.com/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Database System" url="http://yoursite.com/categories/Computer-Science/Database-System/"/>
           
         </display>
     </data>
