@@ -123,7 +123,7 @@
 <meta property="og:image" content="http://img6.ph.126.net/XMQMZM78_NYTTqCXSE20Pw==/1555430721320348296.jpg">
 <meta property="og:image" content="http://img.voidcn.com/vcimg/000/006/438/288_b59_eb3.jpg">
 <meta property="og:image" content="http://img.voidcn.com/vcimg/000/006/438/289_739_166.jpg">
-<meta property="og:updated_time" content="2018-01-29T13:29:04.000Z">
+<meta property="og:updated_time" content="2018-01-31T15:10:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机组成原理复习笔记2">
 <meta name="twitter:description" content="Abstract: 计算机组成原理期末复习知识点总结 ~">
@@ -521,8 +521,10 @@
 <p>布尔表达式：</p>
 <ul>
 <li>变量与算符组合</li>
-<li>算符：AND，OR，NOT</li>
-<li>德摩根律：    ~（x · y） = ~x + ~y</li>
+<li>算符：AND，OR，NOT<ul>
+<li>德摩根律：~（x · y） = ~x + ~y</li>
+</ul>
+</li>
 </ul>
 <p>组合逻辑电路：可以用来构建包含基本布尔算符，输入输出的数字电路，组合逻辑的<strong>输出完全取决于给定的输入值</strong>。</p>
 <p>数字集成电路：</p>
@@ -681,9 +683,10 @@
 <p>实际设计中，通常会采用两到三种不同的指令长度，这样可以有不同的位的指令组合形式，便于简化指令的区分和译码。指令的长度必须配合机器字的长度，如果指令的长度严格等于机器字的长度，则将指令存储到主存储器时，指令间的对齐问题就会非常完美。因为存储器要编址，因此采用实际机器字长度的1/4，1/2，2倍或3倍长度的指令会浪费不少的存储空间。可变长度的指令同样也会造成存储空间的浪费。</p>
 </blockquote>
 <ul>
-<li>最常用的指令格式包括0，1，2或3个操作数。通常情况下，算术运算或逻辑运算需要2个操作数，如果将累加器作为一个隐藏的操作数，则两个操作数的操作可以按照一个操作数指令的方式执行。同理，使用一个堆栈结构可以允许有不带操作数的指令。</li>
+<li><p>最常用的指令格式包括0，1，2或3个操作数。通常情况下，算术运算或逻辑运算需要2个操作数，如果将累加器作为一个隐藏的操作数，则两个操作数的操作可以按照一个操作数指令的方式执行。同理，使用一个堆栈结构可以允许有不带操作数的指令。</p>
+<p>只有操作码       0地址<br>操作码+1个地址通常只有一个存储器地址<br>操作码+2个地址通常两个寄存器地址，或一个寄存器地址加上一个存储器地址<br>操作码+3个地址通常是三个寄存器地址或寄存器和存储器的某种组合</p>
+</li>
 </ul>
-<p>只有操作码           0地址<br>操作码+1个地址    通常只有一个存储器地址<br>操作码+2个地址    通常两个寄存器地址，或一个寄存器地址加上一个存储器地址<br>操作码+3个地址    通常是三个寄存器地址或寄存器和存储器的某种组合</p>
 <h2 id="指令类型"><a href="#指令类型" class="headerlink" title="指令类型"></a>指令类型</h2><ul>
 <li>数据移动：不同数据移动指令，MOVE，ADD</li>
 <li>算术运算：整数和浮点运算的各种指令</li>
@@ -982,7 +985,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">142</span>
+                <span class="site-state-item-count">143</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1163,7 +1166,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">共411.8k字</span>
+  <span class="post-count">共413.2k字</span>
 </div>
 
 
