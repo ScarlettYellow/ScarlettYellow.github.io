@@ -1085,17 +1085,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Non-Marriage Doctrine]]></title>
-    <url>%2F2017%2F10%2F14%2FNon-Marriage-Doctrine%2F</url>
-    <content type="text"><![CDATA[Abstract：不结婚的五大理由和结婚的唯一理由。不结婚的理由： 1.结婚离婚成本太高 2.新鲜感易逝，不想一辈子每天面对同一个人 3.结婚的经济必要性和性必要性不再明显：女人是自己的饭票，男人有更多的方式通向性 4.结婚束缚自由 5.对方不靠谱，出轨 结婚的理由： 不为钱，不为性，那就只有爱了（其实还有可能是为社会优越感） 七年前还是初中时，我跟同学说我是不婚主义 ，当时没有人认同，觉得很惊世骇俗；但现在，感觉社会认同感越来越多了。 不过，要好好学习，不然以后可能还是要结婚的。唔…]]></content>
-      <categories>
-        <category>Dairy</category>
-      </categories>
-      <tags>
-        <tag>Thougnts</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[社交网络分析中的部分概念解释]]></title>
     <url>%2F2017%2F10%2F13%2F%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E9%83%A8%E5%88%86%E6%A6%82%E5%BF%B5%E8%A7%A3%E9%87%8A%2F</url>
     <content type="text"><![CDATA[Abstract：介绍社交网络分析中的网络密度、层、集群、结构洞。 网络密度 （Network Density）一个网络的密度是在一个给定的网络中的关系（边）的数目在网络中的节点之间的可能的关系的总数的比率 公式： 可观测到的实际联系/全部潜在的联系＝关系密度 一个完全连通的网络密度为1 而下面的网络举例显示密度为0.83 如图，可见关系数为(5),可能关系数（6），所以关系密度 5/6 密度测度与跟踪，如信息扩散（eg.思想，谣言，疾病传播etc）的现象有关。假定，在紧密连接的网络中，信息传播的速度更快，达到更广泛的节点集。网络密度越大，越有可能被认为是一个有凝聚力的社区（即社会支持和有效传播的来源）。 层（Degree）指特定行动者对网络其他成员持有的关系数量和类型。 主要分： 单方向性关系 （directed relationship） 对称关系 （symmetric relationship） In-Degree： Out-Degree: 表明节点1和2之间的往复运动 基本上是一个衡量领带强度，这是同样相关的分析整个网络 （Weight Degree ） 测量权重可以：互动频率、交换项目数、个体对关系强度的感知 结构洞（structural holes）结构空洞的思想描述了网络密度的相反，即缺乏连接。 结构孔归因于节点，否则连接密集的网络部分，是分成重要的连接节点。连接网络部分的这些节点被称为“Brokers”。 弱联系的概念与结构空洞的概念密切相关 类似于结构孔，弱关系在网络中嵌入较少。 尽管如此，他们承担重要的职能： 他们促进信息流之间的集群（即从遥远的部分网络） 弱联系有助于整合社会系统，否则将支离破碎和语无伦次 集群（clustering）计算和识别网络中的集群，特别是大型网络可能很麻烦 预定义的算法有助于识别集群 Force Atlas 和 Force Altas 2：最常用的一种算法来确定在大型网络社区（在Gephi为例） 使用的算法的优势：没有现有的知识图理论需要可视化和分析集群网络 缺点：他们的准确性是高度依赖于我们正在分析的网络类型。]]></content>
@@ -1455,8 +1444,8 @@
         <category>AI Application</category>
       </categories>
       <tags>
-        <tag>Thoughts</tag>
         <tag>Artificial Intelligence</tag>
+        <tag>Thoughts</tag>
       </tags>
   </entry>
   <entry>
@@ -1804,8 +1793,8 @@
         <category>Dairy</category>
       </categories>
       <tags>
-        <tag>Thougnts</tag>
         <tag>Film</tag>
+        <tag>Thougnts</tag>
       </tags>
   </entry>
 </search>
