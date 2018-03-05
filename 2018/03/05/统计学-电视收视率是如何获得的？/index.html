@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Data Mining and Analysis," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="摘要：电视收视率是指某一时段内收看某电视频道（或某电视节目）的人数（或家户数）占电视观众总人数（或家户数）的百分比。电视收视率的获取过程运用到了很多统计学的方法，其流程为基础研究——&amp;gt;抽样和建立固定样组——&amp;gt; 数据采集——&amp;gt; 数据处理。 基础研究是为了得到被调查地区的详细资料而进行的抽样调查，是保证收视率数据质量的重要环节。目的是为固定样组的抽取提供一个抽样框，以及为固定样本的轮">
+<meta name="keywords" content="Data Mining and Analysis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="统计学| 电视收视率是如何获得的？">
+<meta property="og:url" content="http://yoursite.com/2018/03/05/统计学-电视收视率是如何获得的？/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="摘要：电视收视率是指某一时段内收看某电视频道（或某电视节目）的人数（或家户数）占电视观众总人数（或家户数）的百分比。电视收视率的获取过程运用到了很多统计学的方法，其流程为基础研究——&amp;gt;抽样和建立固定样组——&amp;gt; 数据采集——&amp;gt; 数据处理。 基础研究是为了得到被调查地区的详细资料而进行的抽样调查，是保证收视率数据质量的重要环节。目的是为固定样组的抽取提供一个抽样框，以及为固定样本的轮">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://www.csm.com.cn/UpLoadFile/images/2016/10/28/1144318944e976985-4.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1foxryih173j30t60i8q9o.jpg">
+<meta property="og:updated_time" content="2018-03-05T09:18:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="统计学| 电视收视率是如何获得的？">
+<meta name="twitter:description" content="摘要：电视收视率是指某一时段内收看某电视频道（或某电视节目）的人数（或家户数）占电视观众总人数（或家户数）的百分比。电视收视率的获取过程运用到了很多统计学的方法，其流程为基础研究——&amp;gt;抽样和建立固定样组——&amp;gt; 数据采集——&amp;gt; 数据处理。 基础研究是为了得到被调查地区的详细资料而进行的抽样调查，是保证收视率数据质量的重要环节。目的是为固定样组的抽取提供一个抽样框，以及为固定样本的轮">
+<meta name="twitter:image" content="http://www.csm.com.cn/UpLoadFile/images/2016/10/28/1144318944e976985-4.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/05/统计学-电视收视率是如何获得的？/"/>
+
+
+
+
+
+  <title>统计学| 电视收视率是如何获得的？ | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/05/统计学-电视收视率是如何获得的？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">统计学| 电视收视率是如何获得的？</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-05T16:04:07+08:00">
+                2018-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Data-Mining-and-Analysis/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Mining and Analysis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/05/统计学-电视收视率是如何获得的？/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/03/05/统计学-电视收视率是如何获得的？/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>摘要：电视收视率是指某一时段内收看某电视频道（或某电视节目）的人数（或家户数）占电视观众总人数（或家户数）的百分比。电视收视率的获取过程运用到了很多统计学的方法，其<strong>流程为基础研究——&gt;抽样和建立固定样组——&gt; 数据采集——&gt; 数据处理</strong>。</p>
+<p><strong>基础研究</strong>是为了得到被调查地区的详细资料而进行的抽样调查，是保证收视率数据质量的重要环节。目的是为固定样组的抽取提供一个抽样框，以及为固定样本的轮换提供依据。具体操作是对各项人口统计学特征和可能对用户收视行为产生影响的因素进行抽样调查。</p>
+<p><strong>抽样和建立固定样组</strong>：抽样采取固定样组的方式进行概率抽样；收视率调查是一种成数（比率）调查，样本量的设定需考虑允许误差的大小、所能承受调查成本的高低和所测量目标的个体行为差异；需要保证样本的代表性。建立固定样组需保证固定样组的代表性，以及采取一些措施维护和更替固定样本。</p>
+<p><strong>数据采集</strong>主要使用日记卡法或测量仪法。</p>
+<p><strong>收视数据处理流程</strong>包括三个环节：数据输入、数据清洗、数据分析。数据输入是将采集到的数据转换为二进制代码并传输到每个地区的服务器上进行全方位封闭式计算，数据安全性有保障。数据清洗时需要严格检验回收的日记卡数据的可用性，清洗后的收视数据与样本背景资料库及节目资料库合并形成一个更全面的“<strong>收视率资料库</strong>”。数据分析时，首先需要通过数据推及修正无回复误差；然后通过一整套的收视率分析指标体系，对受众的媒介使用情况进行全方位的分析和预测。收视率数据分析包括总体测量分析、累积测量分析和比较分析。收视率预测包括传统预测方法和机器学习模型预测。</p>
+<p>关键词：收视率获取流程，收视率调查，统计分析方法，机器学习模型预测</p>
+<a id="more"></a>
+<h1 id="1-收视率"><a href="#1-收视率" class="headerlink" title="1.收视率"></a>1.收视率</h1><h2 id="1-1-收视率"><a href="#1-1-收视率" class="headerlink" title="1.1 收视率"></a>1.1 收视率</h2><p>电视收视率是指某一时段内收看某电视频道（或某电视节目）的人数（或家户数）占电视观众总人数（或家户数）的百分比。作为“注意力经济”时代的重要量化指标，它是深入分析电视收视市场的科学基础，是节目制作、编排及调整的重要参考，是节目评估的主要指标，是制定与评估媒介计划、提高广告投放效益的有力工具。</p>
+<h2 id="1-2-收视率调查"><a href="#1-2-收视率调查" class="headerlink" title="1.2 收视率调查"></a>1.2 收视率调查</h2><p><strong>收视率调查</strong>是一种抽样调查，因而如何根据电视人口的总体特征，科学合理地设计抽样方案，以获得具有代表性的样本，就成为收视数据是否准确的决定性因素。</p>
+<h1 id="2-基础研究"><a href="#2-基础研究" class="headerlink" title="2.基础研究"></a>2.基础研究</h1><h2 id="2-1-基础研究的含义"><a href="#2-1-基础研究的含义" class="headerlink" title="2.1 基础研究的含义"></a>2.1 基础研究的含义</h2><p>基础研究是为了得到被调查地区的详细资料而进行的抽样调查，是保证收视率数据质量的重要环节。</p>
+<h2 id="2-2-基础研究的目的"><a href="#2-2-基础研究的目的" class="headerlink" title="2.2 基础研究的目的"></a>2.2 基础研究的目的</h2><p>（1）为固定样组的抽取提供一个抽样框.</p>
+<blockquote>
+<p>用一个例子说明在收视率调查中，基础研究为什么能够为固定样组的抽取提供一个抽样框：</p>
+<p>假定某个城市有100万户居民，现在要抽取300户进行收视率调查，那么如何抽取样本，才能保证这300户居民对整个城市的100万户居民具有代表性呢？</p>
+<p>很显然，如果抽取这300户样本时已经考虑了100万户居民中每一户关于对收视行为有重要影响作用的指标，如频道入户情况、家庭电视机拥有情况、家庭规模、家庭成员的性别、年龄、文化程度等，那么这300户样本对该城市总体肯定具有较好的代表性。但是问题是这100万户居民中每户居民的上述指标谁也不知道，这样就产生了一个抽样需求与信息短缺的矛盾。</p>
+<p>基础研究为解决这个矛盾提供了一个可行的办法，即先从这100万户居民中抽取一个大样本（比如3000户），调查每户有关对收视行为有重要影响作用的指标，而后在考虑这些指标的情况下，从3000户中再抽取300户作为固定样本进行连续的收视率调查。由于这300户是在考虑了对收视行为有重要影响作用因素的基础上抽取出来的，因而其对总体具有较好的代表性。在上述例子中，从城市总体中抽取3000户并进行调查，就是基础研究（基础调查），而进行收视率调查的300户固定样本是从基础研究样本（3000户）中抽取出来的，所以基础研究为固定样组的抽取提供了一个抽样框。</p>
+</blockquote>
+<p>（2）为固定样本的轮换提供依据.</p>
+<blockquote>
+<p>同其他大规模、连续性调查一样，收视率调查中同样也要进行样本轮换。</p>
+<p>样本轮换主要是为解决样本老化所造成的代表性降低和由于被访者厌倦造成的数据质量降低这两个问题。在样本轮换过程中，退出固定样组的样本户一般根据已参加调查的时间确定，即挑选那些被调查时间最长的样本户先退出，而进入固定样组的样本户就不是随便选取了，而必须要挑选那些能够保证固定样组的配额指标结构与总体指标结构相一致的户进入固定样组，这样才能保证固定样本组对总体的代表性。而这些配额指标的具体数值就来源于基础研究。</p>
+</blockquote>
+<h2 id="2-3-基础研究的过程"><a href="#2-3-基础研究的过程" class="headerlink" title="2.3 基础研究的过程"></a>2.3 基础研究的过程</h2><p><strong>基础研究的过程</strong>包括：在选取较大的样本量的前提下，对被调查区域内人群的各项人口统计学特征（如当地居民的性别比例、年龄分布、职业和收入情况等）以及可能对用户收视行为产生影响的因素（如收视设备的拥有情况、是否为有线用户、电视频道覆盖率情况及被调查者的常用语言及生活习惯等）进行抽样调查，为调查样本的抽取提供一个基础。基础研究的样本是固定样组的抽样框，基础研究的结果研究报告是对固定样组进行轮换和控制的重要依据依据。</p>
+<h2 id="2-4-收视率的调查对象"><a href="#2-4-收视率的调查对象" class="headerlink" title="2.4 收视率的调查对象"></a>2.4 收视率的调查对象</h2><p>收视率的调查对象一般被界定为<strong>目标区域内4岁及以上的电视家庭人口</strong>。这个界定包括以下三个要素：</p>
+<ul>
+<li>1.<strong>目标区域</strong>：目标区域由所要调查收视率的范围所决定，可以为全国、一个省，也可以为一个市或一个县；</li>
+<li>2.<strong>电视家庭人口</strong>：电视家庭人口是指拥有电视机的家庭人口。被调查者拥有电视机是进行收视调查的基本条件，而之所以必须还是家庭人口，主要是因为收视率调查是一种连续性调查，要求被调查者基本保持稳定，家庭人口的稳定性较强；</li>
+<li>3.<strong>年龄下限</strong>：在收视率调查中一般要求被调查者必须是4岁及以上，主要是考虑到收视率调查的两种主要方式――日记卡法和测量仪法，均要求被调查者具有一定的行为能力，如日记卡法要求填卡，而测量仪法也要求被访者在开始看电视和结束看电视时要按手控器，如果年龄太小，无法做到这一点。</li>
+</ul>
+<h1 id="3-抽样和建立固定样组"><a href="#3-抽样和建立固定样组" class="headerlink" title="3.抽样和建立固定样组"></a>3.抽样和建立固定样组</h1><h2 id="3-1-抽样"><a href="#3-1-抽样" class="headerlink" title="3.1 抽样"></a>3.1 抽样</h2><p><strong>抽样</strong>是收视率调查的基础环节，对样本是否具有代表性，能否保证收视率数据的准确具有十分重要的意义。电视收视率的调查一般<strong>采用固定样组的方式进行</strong>，除进行一定比例的样本轮换外，样本相对比较固定。<strong>一般采用多阶段、PPS、整群抽样等抽样方法，来抽取样本、建立固定样组</strong>。</p>
+<p><strong>具体过程</strong>包括：在基础研究的大样本中，按照随机原则抽取若干家庭作为固定样本，建立固定样组，参与收视率的调查。对电视收视率调查的合作样本1年365天，每天24小时的收视行为进行不间断检测，获得电视收视率数据。</p>
+<h3 id="3-1-1-概率抽样"><a href="#3-1-1-概率抽样" class="headerlink" title="3.1.1 概率抽样"></a>3.1.1 概率抽样</h3><p>抽样调查按照样本抽取时所遵循原则的不同分为概率抽样与非概率抽样两大类。</p>
+<ul>
+<li>概率抽样：又称随机抽样，是指调查者按照随机原则从总体中抽取样本的方法；</li>
+<li>非概率抽样：又称为非随机抽样，是指调查者根据自己的主观判断从总体中抽取样本的方法。</li>
+</ul>
+<p>概率抽样的优点</p>
+<ul>
+<li>1.样本按随机原则抽取，避免了抽样者主观偏好等因素的影响，使样本能够较大可能地反映总体情况，也即采用概率抽样方法抽取出来的样本对总体的代表性较好；</li>
+<li>2.基于概率抽样抽取出来的样本，可以对总体指标进行统计推断，而非概率抽样抽取出来的样本不能对总体指标进行统计推断；</li>
+<li>3.概率抽样可以计算所要调查指标的抽样误差，以明确反映该项抽样调查的精度，同时也可根据抽样调查所要达到的抽样精度进行样本量和具体抽样方案的设计，而非概率抽样无法做到这一点.</li>
+</ul>
+<p>正是由于概率抽样具有上述三大优点，同时收视率调查又是一种连续性调查，并且要通过对样本观众收视行为的调查数据，来对总体观众（如某一城市观众）的收视情况进行统计推断，所以收视率调查中样本的选取要采用概率抽样方法。</p>
+<h3 id="3-1-2-样本量的设定"><a href="#3-1-2-样本量的设定" class="headerlink" title="3.1.2 样本量的设定"></a>3.1.2 样本量的设定</h3><p>收视率是某个地区、某个时间段中收看某一频道（或节目）的人数占电视观众总人数的百分比，故<strong>收视率调查是一种成数（比率）调查</strong>。</p>
+<p>在成数（比率）调查中，样本量的确定主要考虑两个因素：</p>
+<p>（1）<strong>允许误差的大小</strong>：允许误差越小，所需调查的样本量就越大；</p>
+<p>（2）<strong>所能承受调查成本（包括人力、物力和财力）的高低</strong>：因为样本量越大，也就意味着调查成本越高；同其他抽样调查一样，<strong>收视率调查样本量是允许误差与调查成本之间平衡的结果</strong>；</p>
+<p>（3）<strong>所测量目标的个体行为差异</strong>：个体行为差异大，一般会抽取较大样本量；个体行为差异小，则可以抽取较小的样本量。 </p>
+<p>根据抽样理论，允许误差M、样本量n及成数（比率）P有如下关系式：</p>
+<blockquote>
+<p>其中：M为允许误差, t为概率度, P为成数（收视率），n为样本量，N为总体单位数（如某一城市观众总数）.</p>
+</blockquote>
+<p>由于收视率调查的区域一般至少是一个城市（或县），城市（或县）的人口规模N相对于收视率调查样本数量n而言很大，n/N非常小，故可忽略n/N，推导出<strong>收视率调查中所需样本量的计算公式</strong>：</p>
+<blockquote>
+<p>由上式可知，样本量与总体数量（观众规模）无关。</p>
+<p>在收视率调查样本量的计算中，收视率P一般取50%，这是因为此时P(1-P)在所有可能的收视水平中数值达到最大；置信水平（把握程度）一般取95％，此时对应的概率度t为1.96，这样在上述公式中，样本量n的多少就取决于允许误差M的大小。</p>
+<p>随着允许误差的降低，所需样本数量增大，但是样本数量的增加与允许误差的降低二者之间的关系并不是简单的线性关系。当允许误差较大时，随着允许误差的降低，所需样本量增加，但增加幅度不大；当允许误差较小时，随着允许误差的降低，所需样本量大幅上升。如将收视调查的允许误差由4％降为3％，所需样本量由600人增加到1067人，但如果将允许误差由3％降为2％，所需样本量则由1067人增加到2401人（增加了一倍多），如果将允许误差由2％降为1％，所需样本量由2401人增加为9604人（增加了三倍）。</p>
+<p>上述样本量与允许误差的变动关系说明，当允许误差降低到3％时，再降低允许误差，所需要的样本量成倍增加，样本量的成倍增加就意味着调查所需成本的大幅增加，换言之，样本量和成本的大幅增加所能带来的抽样误差的降低非常有限，这时再增加样本量是不经济的。权衡抽样误差（精度）和成本之间的关系，在收视率调查中，一个比较合理的样本规模是1067人，按约3.5左右的户规模计算，即300户。</p>
+<p>以CSM为例，其媒介研究在城市收视调查网中的样本规模一般为300户。对于部分中小城市，考虑到客户的经济负担能力，且个体收视行为差异较小，样本规模确定为100户或200户；对于部分大城市，由于客户经济实力较强，并且个体收视行为差异较大，为了取得精度更高的收视数据，样本规模确定为400户、500户或600户。</p>
+</blockquote>
+<h3 id="3-1-2-保证样本的代表性"><a href="#3-1-2-保证样本的代表性" class="headerlink" title="3.1.2 保证样本的代表性"></a>3.1.2 保证样本的代表性</h3><p>获得一个有代表性的固定样本组的关键：</p>
+<p>（1）采用一个可靠的概率样本设计，确保样本户随机地来自于总体；</p>
+<p>（2）保证固定样本组的一些关键特征与总体的分布保持一致。这些关键特征叫控制变量，在固定样本组组建以及维护过程中控制变量的选取非常重要。</p>
+<p>控制变量</p>
+<ul>
+<li>1.控制变量应是总体分布已知的一些特征变量；</li>
+<li>2.应选择跟测量目标（即收视率水平）高度关联的特征变量作为控制变量；</li>
+</ul>
+<h2 id="3-2-建立固定样组"><a href="#3-2-建立固定样组" class="headerlink" title="3.2 建立固定样组"></a>3.2 建立固定样组</h2><h3 id="3-2-1建立固定样组"><a href="#3-2-1建立固定样组" class="headerlink" title="3.2.1建立固定样组"></a>3.2.1建立固定样组</h3><p>建立固定样组的两阶段：</p>
+<p>（1）进行一个大样本的基础调查，用以收集所需要的电视市场信息；</p>
+<p>（2）通过分析基础调查数据以及其他来源的有关数据，就可以挑选相关控制变量，采用合适的抽样方法组建固定样本组</p>
+<h3 id="3-2-2-保证固定样本的代表性"><a href="#3-2-2-保证固定样本的代表性" class="headerlink" title="3.2.2 保证固定样本的代表性"></a>3.2.2 保证固定样本的代表性</h3><p><strong>保证固定样本代表性的方式</strong>：在现场抽取固定样本时，保持固定样组中样本的各个重要特征(如户规模、电视机数目、收入水平、日用品购买者年龄、有小孩家庭比例以及有线户比例)结构与基础研究的结果尽可能地相一致，以保证固定样本的代表性。</p>
+<h3 id="3-2-3-固定样本的维护和更替措施"><a href="#3-2-3-固定样本的维护和更替措施" class="headerlink" title="3.2.3 固定样本的维护和更替措施"></a>3.2.3 固定样本的维护和更替措施</h3><p>以CSM为例：</p>
+<p>1.样本轮换：平均每周轮换2%的样本户，以防止被调查户由于长期填写日记卡产生疲劳而导致的填写质量不稳或下降；</p>
+<p>2.样本结构的监测与调整：每周对样本的控制目标进行监测，看样本的结构特征是否与总体结构特征仍保持一致，如果样本结构与总体结构发生了偏离，则马上对固定样本进行调整；</p>
+<p>3.大规模的基础研究：每年进行一次基础研究，以便为样本轮换与调整提供最新的总体结构特征。</p>
+<h1 id="4-数据采集"><a href="#4-数据采集" class="headerlink" title="4.数据采集"></a>4.数据采集</h1><h2 id="4-1-日记卡法"><a href="#4-1-日记卡法" class="headerlink" title="4.1 日记卡法"></a>4.1 日记卡法</h2><h4 id="4-1-1-简介"><a href="#4-1-1-简介" class="headerlink" title="4.1.1 简介"></a>4.1.1 简介</h4><p>所谓日记卡法是指由样本户中所有4岁及以上的家庭成员，将每天收看电视的频道、时间段随时记录在日记卡上，以获取电视观众收视信息的方法。  </p>
+<h4 id="4-1-2-记录单位"><a href="#4-1-2-记录单位" class="headerlink" title="4.1.2 记录单位"></a>4.1.2 记录单位</h4><p>以15分钟为一个记录单位，当样本人员在15分钟内收看某一频道的累计时间超过8分钟时才可记录。</p>
+<h4 id="4-1-3-记录项目"><a href="#4-1-3-记录项目" class="headerlink" title="4.1.3 记录项目"></a>4.1.3 记录项目</h4><p>记录用户属性，如年龄、性别、职业、爱好等；所收看电视频道的代码和收视时段；还有可能记录用户对一些电视节目的评价 </p>
+<h4 id="4-1-4-测量过程"><a href="#4-1-4-测量过程" class="headerlink" title="4.1.4 测量过程"></a>4.1.4 测量过程</h4><p>以CSM使用的日记卡为例，日记卡中最重要的两个部分是收视率调查日记卡和日记卡专用夹。在收视率调查日记卡上有记录样本人员所收看电视频道的代码和收视时段的地方，一张日记卡可以记录一名样本人员一周七天的收视情况。  访问员每周一次上门收取已填好的日记卡，并给样本户留下下一周的空白日记卡，以记录下一周的收视情况。 </p>
+<h2 id="4-2-测量仪法"><a href="#4-2-测量仪法" class="headerlink" title="4.2 测量仪法"></a>4.2 测量仪法</h2><h4 id="4-2-1-简介"><a href="#4-2-1-简介" class="headerlink" title="4.2.1 简介"></a>4.2.1 简介</h4><p>测量仪法是指用测量仪来详细记录样本户中所有4岁及以上家庭成员收看电视的情况，从而获取电视观众收视信息的方法。</p>
+<h4 id="4-2-2-测量过程"><a href="#4-2-2-测量过程" class="headerlink" title="4.2.2 测量过程"></a>4.2.2 测量过程</h4><p>电视频道变化直接通过测量仪采集，没有任何影响。数据可以精确到秒，可以准确反映收视变化。</p>
+<h4 id="4-2-3-三种主要测量技术"><a href="#4-2-3-三种主要测量技术" class="headerlink" title="4.2.3 三种主要测量技术"></a>4.2.3 三种主要测量技术</h4><p>DFM；Si-code；声音匹配(Audio Matching)。       </p>
+<ul>
+<li>DFM(Direct Frequency Measurement)：用于模拟电视信号进行测量的技术。收看不同频道时，电视机高频头的本振频率不同，测量仪通过测量电视机高频头输入的本振频率结合频道对应关系掌握收看的频道。       </li>
+<li>Si-code：用于数字电视信号的一种操作性较强的方法，同时，准确度也是最高的。测量仪通过监测机顶盒输出的频道系统信息代码(Si-code)结合频道对应关系掌握收看的频道。由于是机顶盒直接给出的工作状态信息，不需要其它任何的转换或识别，因此这种方式是最准确的。 </li>
+<li>声音匹配(Audio Matching)：同时可以用于模拟电视和数字电视的测量技术。通过记录样本户家庭电视机播放的声音信号特征，与服务器记录的播出声音信号特征库进行比对，掌握样本户正在收看的频道。</li>
+</ul>
+<h4 id="4-2-4-日记卡法与测量仪法比较"><a href="#4-2-4-日记卡法与测量仪法比较" class="headerlink" title="4.2.4 日记卡法与测量仪法比较"></a>4.2.4 日记卡法与测量仪法比较</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>比较项目</th>
+<th>测量仪</th>
+<th>日记法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据采集方式</td>
+<td>测量仪跟踪记录，通过机顶盒、电话线或者电脑传输数据</td>
+<td>人员记录，访问员上门收取日记卡</td>
+</tr>
+<tr>
+<td>记录时间单位</td>
+<td>1分钟（或1秒）</td>
+<td>15分钟</td>
+</tr>
+<tr>
+<td>数据准确性</td>
+<td>好</td>
+<td>一般（可能受用户的记录状态、主观因素影响）</td>
+</tr>
+<tr>
+<td>资料丰富性</td>
+<td>一般（只能得到收视信息）</td>
+<td>较好（除收视信息外还可记录用户属性和用户评价）</td>
+</tr>
+<tr>
+<td>收视信息反馈速度</td>
+<td>迅速</td>
+<td>较慢</td>
+</tr>
+<tr>
+<td>样本稳定性</td>
+<td>高</td>
+<td>高</td>
+</tr>
+<tr>
+<td>样本排除性</td>
+<td>较大（数据获取前提时受访者家中有相应设备）</td>
+<td>小</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="5-数据处理"><a href="#5-数据处理" class="headerlink" title="5.数据处理"></a>5.数据处理</h1><p>收视数据处理流程包括三个环节：数据输入、数据清洗、数据分析。</p>
+<h2 id="5-1-数据输入"><a href="#5-1-数据输入" class="headerlink" title="5.1 数据输入"></a>5.1 数据输入</h2><p>通过日记卡或测量仪采集到的数据产生<strong>二进制代码</strong>，代码会传输到分布在不同地区的服务器，进行全封闭自动化计算，形成加密格式的<strong>观众数据包、节目数据包和广告数据包</strong>，分别记录观众的性别、年龄、职业、观看的节目和对应的观看时间、广告播出时间等等。然后将收视调查原始数据输入计算机（仅限日记卡法，测量仪法不需要数据录入）。</p>
+<blockquote>
+<p>数据的安全性保障：</p>
+<ul>
+<li>二进制代码表示，原始数据不可见，就无法被修改；</li>
+<li>服务器自带毁灭系统；</li>
+<li>三种数据包统一上传，所有用户只能从服务器下载，且只能用特殊软件打开数据包、查看软件计算后的结果;</li>
+</ul>
+</blockquote>
+<p>通过三组数据对比，可了解观看节目的人数、时长、哪种观众更多收看哪种节目、节目的观众构成比例、节目间的竞争情况。</p>
+<h2 id="5-2-数据清洗"><a href="#5-2-数据清洗" class="headerlink" title="5.2 数据清洗"></a>5.2 数据清洗</h2><p>原始数据输入后，要进行数据清洗，以确保原始数据的完整及合理。其中日记卡数据的加工整理过程最繁琐。需要严格<strong>检验回收的日记卡数据的可用性</strong>，由人或机器进行，主要包括以下工序：</p>
+<ul>
+<li>找出信息失效、不完整、缺乏前后一致性和逻辑性的日记卡</li>
+<li>在数据转换成电子形式的过程中，操作人员利用计算机程序辅助检查每个市场内的电视台代码、节目名称、电视台的宣传语及其他信息的正确性，纠正错误信息</li>
+<li>对于含缺失值的数据，采用“归因法（ascription）”填补缺失值，即利用计算机程序生成与缺失数据最接近的值</li>
+</ul>
+<p>清洗后的收视数据与样本背景资料库及节目资料库合并形成一个更全面的“<strong>收视率资料库</strong>”。</p>
+<h2 id="5-3-数据分析"><a href="#5-3-数据分析" class="headerlink" title="5.3 数据分析"></a>5.3 数据分析</h2><h4 id="5-3-1-数据推及：修正无回复误差"><a href="#5-3-1-数据推及：修正无回复误差" class="headerlink" title="5.3.1 数据推及：修正无回复误差"></a>5.3.1 数据推及：修正无回复误差</h4><p>收视率的计算根据样本信息对实际人口进行估计并提供观众规模及组成信息。但这只有在完全随机抽样（调查对象中各色人等均以适当的比例代表）的前提下才有效。<strong>无回复误差</strong>会使一部分人被过高估计，而对另一部分人估计不足。修正无回复误差最普遍的方式是对<strong>依据特定变量（如性别、年龄）对样本进行加权处理</strong>，赋予一部分样本以较高的权重，而另一部分以较低的权重。</p>
+<blockquote>
+<p>假如18至24岁的男性在有效样本中的数量不足,他们在有效样本的比例是4%而在实际人口中的比例是8%,那么这些男性的权重就是2.0(即8%/4%=2.0)。因此为了推断这部分观众的规模,每个年轻男性的每日记人值(PPDv)为2,000人(即1000x2.0)而非1,000人。相反，样本中数量过多的样本的每日记人值(PPDV)应为1,000人以下。</p>
+</blockquote>
+<h4 id="5-3-2-收视率分析指标体系"><a href="#5-3-2-收视率分析指标体系" class="headerlink" title="5.3.2 收视率分析指标体系"></a>5.3.2 收视率分析指标体系</h4><h5 id="1-收视率分析指标体系"><a href="#1-收视率分析指标体系" class="headerlink" title="1.收视率分析指标体系"></a>1.收视率分析指标体系</h5><p>在对观众收视行为、电视收视市场进行分析以及对电视节目的评估中，所采用的收视指标往往不止一个，而是一个<strong>完整的收视率分析的指标体系</strong>。</p>
+<p>就观众收看电视节目这一行为而言，包括两个基本要素，<strong>一是谁在看？二是看了多长时间？二者是构成收视率这一概念最基本的要素</strong>。因此，在描述收视率各指标之间的关系时，把“到达率”（反映谁在看）和“人均接触分钟数”（反映看了多长时间）作为收视率指标体系的“源头”，由它们得出收视率指标，并派生出更多的收视率分析指标。关于收视率指标体系以及各指标之间的关系如下图所示。</p>
+<p><img src="http://www.csm.com.cn/UpLoadFile/images/2016/10/28/1144318944e976985-4.jpg" alt="img"></p>
+<p><strong>收视率分析指标体系本质上是对受众媒介使用情况（exposure to media）的分析</strong>。依据是否对受众个体的媒体使用情况进行连续跟踪的标准，<strong>将测量和量化受众的方法分为两种，“总体测量（gross measures）”和“累计测量（cumulative measures）</strong>”。若不跟踪测量个体行为，则为总体测量；反之则为累计测量。</p>
+<h5 id="2-总体测量分析"><a href="#2-总体测量分析" class="headerlink" title="2.总体测量分析"></a>2.总体测量分析</h5><p><strong>总体测量</strong>的定义：指对受众使用媒体情况的总体测量包括在某一时间对受众规模和构成的估计，是对受众群体的一个概括，不涉及受众个体对某个媒体的重复使用情况。</p>
+<p><strong>总体测量数据</strong>包括：</p>
+<p><strong>（1）原始数据：</strong></p>
+<ul>
+<li>家庭开机率推及的开机户数总电视户数</li>
+<li>个人开机率推及的个人开机数总电视个数</li>
+</ul>
+<p><strong>（2）由原始数据计算生成的数据：</strong></p>
+<p>A.<strong>收视率</strong>：根据抽样调查所估计的，某个特定时段内收看电视的人口占所有电视渗透人口的平均百分比。其中电视渗透人口是指拥有电视收视手段或工具的人口（通常具有年龄下限）。</p>
+<p>收视率收视时长分钟权重该时段总时长分钟总体推及人口</p>
+<blockquote>
+<p>推及受众人口 =  收视率 x 总体人口</p>
+</blockquote>
+<p>B.<strong>衍生收视率</strong>：</p>
+<ul>
+<li>基本收视率收看节目或电视台的家户数总电视户数</li>
+<li>分钟收视率在分钟内看电视分钟以上的户数总电视户数</li>
+<li>分钟平均收视率分钟收视率总和分钟的个数</li>
+<li>平均收视率所有家庭户收看某节目的总分钟数节目时长总电视户数</li>
+<li>总收视率收看节目超过分钟的户数总电视户数</li>
+</ul>
+<p>C.<strong>市场份额</strong>：</p>
+<ul>
+<li>家庭市场份额收看某一频道或节目的家庭数家庭开机率</li>
+<li>节目推及受众数市场份额开机家庭户</li>
+<li>节目收视率市场份额家庭开机率</li>
+<li>平均分钟市场份额平均分钟视听率平均分钟家庭开机率</li>
+</ul>
+<p>D.<strong>成本计算</strong>：</p>
+<ul>
+<li>每千人成本插播点成本美元推及目标受众人数</li>
+<li>平均千人成本播放总成本美元目标总体影响</li>
+<li>每收视点成本广告插播成本目标受众收视率</li>
+</ul>
+<h5 id="3-累计测量分析"><a href="#3-累计测量分析" class="headerlink" title="3.累计测量分析"></a>3.累计测量分析</h5><p><strong>累计测量数据</strong>包括：</p>
+<ul>
+<li>电视台的累积受众（cume）：通过每个人在1周内使用媒体的情况，计算出有多少人至少接触过该媒体1次</li>
+<li>到达率（reach）</li>
+<li>非重叠受众（unduplicated audience）</li>
+<li>暴露频次（frequency）：受众个体在某段时期内接触某一广告信息的次数</li>
+</ul>
+<h5 id="4-比较分析"><a href="#4-比较分析" class="headerlink" title="4.比较分析"></a>4.比较分析</h5><p><strong>（1）到达率：分析观众规模</strong></p>
+<p><strong>观众规模</strong>是从观众数量的角度来反映所有频道/节目或一个频道/节目播出时获得的最大观众数量。在收视率分析中，可利用到达率这个指标来表示在某个时间段内收看所有频道/节目或某频道/某节目观众规模的大小，到达率高，观众规模大；到达率低，观众规模小。</p>
+<p><strong>到达率（Rch%）</strong>：指在特定时段内符合到达条件的接触总人数占总体电视推及人口的百分比，计算公式为：</p>
+<p>接触人特定时段权重总体推及人口</p>
+<blockquote>
+<p>在收视率分析中，到达率考虑的是人数而不是人次，不管观众在特定时间段内收看过这个频道或节目几次，到达率只计算观看过该节目的不重复人数的百分比。使用到达率时，最重要的一点是所考察的时间范围，是一周、一个月的到达率，还是黄金时间一小时内的到达率。不同时间范围内的到达率数值反映了不同阶段的观众规模。</p>
+</blockquote>
+<p><strong>（2）分析观众构成</strong></p>
+<p><strong>观众构成</strong>：指对于特定频道、时段或节目，目标观众平均每分钟的收视人数（千人）占参照观众平均每分钟收视人数（千人）的百分比。其中，参照观众一般为4岁及以上所有人，目标观众可按性别、年龄、职业、收入水平、教育程度等来进行划分。观众构成的计算公式为：</p>
+<p>观众构成目标观众收视时长分钟权重参照观众收视时长分钟权重</p>
+<blockquote>
+<p>观众构成反映的是某一时段内特定频道（节目）的观众收视结构，回答了“谁在看该频道（节目）”的问题，可以用来很好地描述频道（节目）的收视观众特征。目标观众比例较高的为多数观众，是构成频道（节目）收视的主要群体。</p>
+</blockquote>
+<p><strong>（3）分析观众人均收视时长</strong></p>
+<p><strong>人均收视时长（AvAud(All)）</strong>：收看电视观众的日平均收视时间（分钟）与总体电视推及人口的比值，可针对特定频道、时段或节目进行计算。人均收视时长是一个反映观众收看电视时间长度的指标，通常也用来描述一个电视收视市场的大小。计算公式为： </p>
+<p>人均收视时长收视分钟数权重总天数总体推及人口</p>
+<blockquote>
+<p>由于人均收视时长显示的是观众接触节目的时间长短，反映观众接触节目的深度，所以也是体现观众忠诚度的重要指标之一。对于播出时间长度相似的节目或节目类型，可以通过人均收视时长来比较它们获取观众收视的能力。对于播出长度相同或不同的节目和节目类型，也可以通过收视比重（基于收视时长计算）与播出比重的对比，来分析不同节目和节目类型的资源利用效率。</p>
+</blockquote>
+<p><strong>（4）分析观众收视倾向</strong></p>
+<p><strong>观众收视倾向</strong>：观众对于特定节目或者频道的收视倾向，可反映观众对该节目或频道的喜爱与热衷程度。对于观众收视倾向的分析，通常使用观众集中度这个指标。</p>
+<p><strong>观众集中度（TgAfin%）</strong>：指对于特定频道（或节目），目标观众（如15-34岁人群）收视率（%）与参照观众（如4岁及以上所有人）收视率（%）的比值，表示目标观众相对于参照观众的收视集中程度，以此来反映目标观众对特定频道（节目）的收看选择倾向。目标观众收视率和参照观众收视率须对应同一时段和同一频道（节目），两组观众均可自定义。计算公式为：</p>
+<p>观众集中度收视率目标观众收视率参照观众</p>
+<h3 id="5-3-3-收视率预测"><a href="#5-3-3-收视率预测" class="headerlink" title="5.3.3 收视率预测"></a>5.3.3 收视率预测</h3><p><strong>收视率预测</strong>：指基于历史收视率数据，对未来收视率趋势进行预测。</p>
+<h5 id="1-传统预测方法"><a href="#1-传统预测方法" class="headerlink" title="1.传统预测方法"></a>1.传统预测方法</h5><p><strong>Step1.预测广告插播时段的总体受众规模</strong>：即家庭开机率（HUT）或个人开机率（PUT）。最简单的方法是假设它会和1年前的这一天一样；复杂方法：根据几个月或几年的HUT、PUT分析受众规模的长期趋势或反常情况，找出其与未来开机率水平的影响关系。</p>
+<p><strong>Step2.预测媒体或节目能达到的市场份额</strong>：最简单是假设它与上一调查时期的市场份额相同；复杂一点则需要考虑各种因素对市场份额的影响，如节目编排的变化。</p>
+<p><strong>Step3：求出预估收视率</strong></p>
+<p>预估收视率预估开机率预估市场份额</p>
+<h5 id="2-机器学习-amp-深度学习模型预测"><a href="#2-机器学习-amp-深度学习模型预测" class="headerlink" title="2.机器学习&amp;深度学习模型预测"></a>2.机器学习&amp;深度学习模型预测</h5><p>电视节目收视率预测是一种典型的<strong>非线性预测</strong>，收视率在短时间内相对稳定。<strong>人工神经网络</strong>具有很好的容错性、自适应学习能力和非线性映射能力，采用人工神经网络做收视率预测精度较高。以BP神经网络为例。</p>
+<p><strong>BP神经网络</strong>：一种多层感知器结构，按照误差逆向传播算法训练的多层前馈神经网络。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1foxryih173j30t60i8q9o.jpg" alt="img"></p>
+<p>如上所示，X为输入向量，O为隐含层向量，Z为输出层向量。V为输入层到隐含层的权值矩阵，W为隐含层到输出层的权值矩阵，Y为输出层的期望输出向量。</p>
+<p>BP神经网络通过对样本的学习训练，不断改变连接网络的权值,从而使得实际的输出结果逐渐趋近期望结果。经过多次迭代学习，直到达到所要的精度为止。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>拿钱去买猫粮和狗粮嗷 ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Scarlett Huang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Data-Mining-and-Analysis/" rel="tag"><i class="fa fa-tag"></i> Data Mining and Analysis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/12/报告阅读笔记：bilibili-网综-旅游-新消费洞察-品牌传播-41stCNNIC/" rel="next" title="报告阅读笔记：bilibili, 网综, 旅游, 新消费洞察, 品牌传播, 41stCNNIC ">
+                <i class="fa fa-chevron-left"></i> 报告阅读笔记：bilibili, 网综, 旅游, 新消费洞察, 品牌传播, 41stCNNIC 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/05/阅读笔记：《Python机器学习及实战》/" rel="prev" title="阅读笔记：《Python机器学习及实战》">
+                阅读笔记：《Python机器学习及实战》 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">158</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-dribbble"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Zhuanlan">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Zhuanlan
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friend Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://unique-ailab.github.io/" title="Unique-AILab" target="_blank">Unique-AILab</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Developer)" target="_blank">qzwlecr(Distributed Developer)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wondervictor.github.io/" title="Vic Chan(AI Developer)" target="_blank">Vic Chan(AI Developer)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=27621672&auto=0&height=66"></iframe>
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-收视率"><span class="nav-number">1.</span> <span class="nav-text">1.收视率</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-收视率"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 收视率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-收视率调查"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 收视率调查</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-基础研究"><span class="nav-number">2.</span> <span class="nav-text">2.基础研究</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-基础研究的含义"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 基础研究的含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-基础研究的目的"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 基础研究的目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-基础研究的过程"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 基础研究的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-收视率的调查对象"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 收视率的调查对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-抽样和建立固定样组"><span class="nav-number">3.</span> <span class="nav-text">3.抽样和建立固定样组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-抽样"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 抽样</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-概率抽样"><span class="nav-number">3.1.1.</span> <span class="nav-text">3.1.1 概率抽样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-样本量的设定"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.1.2 样本量的设定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-保证样本的代表性"><span class="nav-number">3.1.3.</span> <span class="nav-text">3.1.2 保证样本的代表性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-建立固定样组"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 建立固定样组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1建立固定样组"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.2.1建立固定样组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-保证固定样本的代表性"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.2.2 保证固定样本的代表性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3-固定样本的维护和更替措施"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.2.3 固定样本的维护和更替措施</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-数据采集"><span class="nav-number">4.</span> <span class="nav-text">4.数据采集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-日记卡法"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 日记卡法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-1-简介"><span class="nav-number">4.1.0.1.</span> <span class="nav-text">4.1.1 简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-2-记录单位"><span class="nav-number">4.1.0.2.</span> <span class="nav-text">4.1.2 记录单位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-3-记录项目"><span class="nav-number">4.1.0.3.</span> <span class="nav-text">4.1.3 记录项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-4-测量过程"><span class="nav-number">4.1.0.4.</span> <span class="nav-text">4.1.4 测量过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-测量仪法"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 测量仪法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-1-简介"><span class="nav-number">4.2.0.1.</span> <span class="nav-text">4.2.1 简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-2-测量过程"><span class="nav-number">4.2.0.2.</span> <span class="nav-text">4.2.2 测量过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-3-三种主要测量技术"><span class="nav-number">4.2.0.3.</span> <span class="nav-text">4.2.3 三种主要测量技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-4-日记卡法与测量仪法比较"><span class="nav-number">4.2.0.4.</span> <span class="nav-text">4.2.4 日记卡法与测量仪法比较</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-数据处理"><span class="nav-number">5.</span> <span class="nav-text">5.数据处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-数据输入"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 数据输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-数据清洗"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 数据清洗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-数据分析"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 数据分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-1-数据推及：修正无回复误差"><span class="nav-number">5.3.0.1.</span> <span class="nav-text">5.3.1 数据推及：修正无回复误差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-2-收视率分析指标体系"><span class="nav-number">5.3.0.2.</span> <span class="nav-text">5.3.2 收视率分析指标体系</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-收视率分析指标体系"><span class="nav-number">5.3.0.2.1.</span> <span class="nav-text">1.收视率分析指标体系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-总体测量分析"><span class="nav-number">5.3.0.2.2.</span> <span class="nav-text">2.总体测量分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-累计测量分析"><span class="nav-number">5.3.0.2.3.</span> <span class="nav-text">3.累计测量分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-比较分析"><span class="nav-number">5.3.0.2.4.</span> <span class="nav-text">4.比较分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-3-收视率预测"><span class="nav-number">5.3.1.</span> <span class="nav-text">5.3.3 收视率预测</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-传统预测方法"><span class="nav-number">5.3.1.0.1.</span> <span class="nav-text">1.传统预测方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-机器学习-amp-深度学习模型预测"><span class="nav-number">5.3.1.0.2.</span> <span class="nav-text">2.机器学习&amp;深度学习模型预测</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
+<div class="copyright" >
+  
+  &copy;  2017.07 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共464.1k字</span>
+</div>
+
+
+
+
+<span id="busuanzi_container_site_pv">
+<div class="powered-by"></div>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  <div class="powered-by"></div>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100332, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100332, xid: "2018/03/05/统计学-电视收视率是如何获得的？/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100332/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+
+</body>
+</html>
