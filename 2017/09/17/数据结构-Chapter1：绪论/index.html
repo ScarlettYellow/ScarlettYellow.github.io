@@ -112,7 +112,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/566304-b280ee2693f02188.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/566304-6cc32b0ff892949c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/566304-13e414a0153b344a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-01-28T14:58:49.000Z">
+<meta property="og:updated_time" content="2018-03-06T14:09:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构|Chapter1：绪论">
 <meta name="twitter:description" content="摘要：今天《数据结构》开课，本文是第一章绪论的笔记。">
@@ -437,30 +437,25 @@
       
         <p>摘要：今天《数据结构》开课，本文是第一章绪论的笔记。<br><a id="more"></a></p>
 <h1 id="什么是数据结构"><a href="#什么是数据结构" class="headerlink" title="什么是数据结构"></a>什么是数据结构</h1><ul>
-<li>计算机中存储和组织数据的方式，意味着接口或封装：一个数据结构可被视为两个函数之间的接口，或者是由数据类型联合组成的存储内容的访问方法封装。</li>
+<li><strong><u>计算机中存储和组织数据的方式</u></strong>，意味着<u>接口或封装</u>：一个数据结构可被视为两个函数之间的接口，或者是由数据类型联合组成的存储内容的访问方法封装。</li>
 <li>相互之间存在一种或多种特定关系的数据元素的集合，数据元素间的关系为结构。</li>
 <li>程序设计 = 数据结构 + 算法</li>
 </ul>
 <h1 id="基本概念和术语"><a href="#基本概念和术语" class="headerlink" title="基本概念和术语"></a>基本概念和术语</h1><ul>
 <li>数据data：所有能输入到计算机中并被计算机程序加工、处理的符号的总称;如整数、实数、字符串、图像、声音等。</li>
 <li>数据元素data element：数据的基本单位（元素、记录、结点、顶点），在计算机程序中通常作为一个整体进行考虑和处理。</li>
-<li>数据项data item：一个数据元素可由若干个数据项组成，数据项是数据的不可分割的最小单位。如：姓名、年龄等；一个数据元素可由一个或多个数据项组成。如: (姓名、年龄)</li>
-<li>数据对象data object：由性质/类型相同的数据元素组成的集合；是数据的一个子集。    </li>
+<li>数据项data item：一个数据元素可由若干个数据项组成，数据项是数据的不可分割的最小单位。如：姓名、年龄等；一个数据元素可由一个或多个数据项组成。如: (姓名、年龄)<br>   数据对象data object：由性质/类型相同的数据元素组成的集合；是数据的一个子集。    </li>
 <li>数据结构data structure：相互之间存在一种或多种特定关系的数据元素的集合。数据元素间的关系为结构。四类基本结构：集合（元素同属于一个集合的关系），线性结构（一个对一个的关系），树状结构（一个对多个的关系）和图状结构（多个对多个的关系）。</li>
 <li>数据的逻辑结构：各元素间的逻辑关系</li>
 <li>物理结构：指数据的逻辑结构在计算机中的存储形式；逻辑结构面向问题，物理结构面向计算机，其基本目标是将数据及其逻辑关系存储到计算机的内存中。<img src="http://upload-images.jianshu.io/upload_images/566304-b280ee2693f02188.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="逻辑和物理结构"></li>
-<li>数据的存储结构：数据结构在计算机存储器中的映象(mapping)；存储结构也称为：存储表示,物理结构,物理表示。</li>
-<li>结点/元素：计算机中由若干位bit组成的一个位串表示一个元素，这个位串即元素或结点（node）。        </li>
+<li><p>数据的存储结构：数据结构在计算机存储器中的映象(mapping)；存储结构也称为：存储表示,物理结构,物理表示。<br>   结点/元素：计算机中由若干位bit组成的一个位串表示一个元素，这个位串即元素或结点（node）。        </p>
+<p>  1.顺序存储结构：用元素在存储器中的相对位置来表示数据元素之间的逻辑关系。<br>  .非顺序/链式存储结构：用指示元素存储地址的指针表示数据元素间的逻辑关系；把数据元素存放在任意的存储单元里，这组存储单元可以是连续的也可以是不连续的。数据元素的存储关系不反映其逻辑关系，用指针存放数据元素的地址，我们通过地址可以找到相关联数据元素的位置。如：<img src="http://upload-images.jianshu.io/upload_images/566304-6cc32b0ff892949c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="链式">    </p>
+</li>
+<li><p>数据类型data type：是一个值的集合和定义在这个值上的一组操作的总称。<br>   抽象数据类型(Abstract Data Type):与计算机的实现无关的数据类型，指一个数学模型以及定义在该模型上的一组操作，其定义只取决于它的一组逻辑特性，与其在计算机内部如何表示和实现无关。一个抽象数据类型定义了一个数据对象、数据对象中各数据元素之间的关系及对数据元素的操作。        </p>
+</li>
 </ul>
 <blockquote>
-<p>1.顺序存储结构：用元素在存储器中的相对位置来表示数据元素之间的逻辑关系。<br>2.非顺序/链式存储结构：用指示元素存储地址的指针表示数据元素间的逻辑关系；把数据元素存放在任意的存储单元里，这组存储单元可以是连续的也可以是不连续的。数据元素的存储关系不反映其逻辑关系，用指针存放数据元素的地址，我们通过地址可以找到相关联数据元素的位置。如：<img src="http://upload-images.jianshu.io/upload_images/566304-6cc32b0ff892949c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="链式">    </p>
-</blockquote>
-<ul>
-<li>数据类型data type：是一个值的集合和定义在这个值上的一组操作的总称。</li>
-<li>抽象数据类型(Abstract Data Type):与计算机的实现无关的数据类型，指一个数学模型以及定义在该模型上的一组操作，其定义只取决于它的一组逻辑特性，与其在计算机内部如何表示和实现无关。一个抽象数据类型定义了一个数据对象、数据对象中各数据元素之间的关系及对数据元素的操作。        </li>
-</ul>
-<blockquote>
-<p>抽象数据类型（Abstract Data Type, ADT）可用三元组表示（D，S，T）：<br>ADT抽象数据类型名{<br>    数据对象：（数据对象的定义）<br>    数据关系：（数据关系的定义）<br>    基本操作：（基本操作的定义）<br>}           </p>
+<p>抽象数据类型（Abstract Data Type, ADT）可用三元组表示（D，S，T）：<br>ADT抽象数据类型名{<br>    数据对象：（数据对象的定义）<br>    数据关系：（数据关系的定义）<br>    基本操作：（基本操作的定义）<br> ​           </p>
 <p>基本操作的定义格式：<br>基本操作名（参数表）<br>    初始条件：（初始条件描述）<br>    操作结果：（操作结果描述）    </p>
 </blockquote>
 <ul>
