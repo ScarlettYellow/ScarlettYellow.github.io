@@ -85,7 +85,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Computer Science,Distributed Computing,Meetup Records," />
+  <meta name="keywords" content="Computer Science,Distributed Computing," />
 
 
 
@@ -102,14 +102,14 @@
 
 
 <meta name="description" content="摘要：2017-9-15 苟兄关于SIMD的分享，次日查阅资料并整理成记录。并行计算是为了解决大批量数据的处理问题，使用时间并行或空间并行的方式实现数据的并行处理。而SIMD是通过采用单控制器控制多处理器从而实现空间并行的技术。流水线化是SIMD的重要思想，但其过程中可能会发生分支跳转问题，分支预测可通过预测分支是否会跳转从而较好地解决这一问题。">
-<meta name="keywords" content="Computer Science,Distributed Computing,Meetup Records">
+<meta name="keywords" content="Computer Science,Distributed Computing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="并行计算与SIMD">
 <meta property="og:url" content="http://yoursite.com/2017/09/16/并行计算与SIMD/index.html">
 <meta property="og:site_name" content="Scarlett Huang">
 <meta property="og:description" content="摘要：2017-9-15 苟兄关于SIMD的分享，次日查阅资料并整理成记录。并行计算是为了解决大批量数据的处理问题，使用时间并行或空间并行的方式实现数据的并行处理。而SIMD是通过采用单控制器控制多处理器从而实现空间并行的技术。流水线化是SIMD的重要思想，但其过程中可能会发生分支跳转问题，分支预测可通过预测分支是否会跳转从而较好地解决这一问题。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-28T14:58:49.000Z">
+<meta property="og:updated_time" content="2018-03-13T15:26:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="并行计算与SIMD">
 <meta name="twitter:description" content="摘要：2017-9-15 苟兄关于SIMD的分享，次日查阅资料并整理成记录。并行计算是为了解决大批量数据的处理问题，使用时间并行或空间并行的方式实现数据的并行处理。而SIMD是通过采用单控制器控制多处理器从而实现空间并行的技术。流水线化是SIMD的重要思想，但其过程中可能会发生分支跳转问题，分支预测可通过预测分支是否会跳转从而较好地解决这一问题。">
@@ -458,12 +458,12 @@
 <li>延时：单条指令从开始执行到执行结束所花的时钟周期数</li>
 <li>吞吐量（CPI：cycles per instruction）：平摊到每条指令所花费的时间</li>
 <li>优化方法：解除依赖，减少代码体积<blockquote>
-<p>形象举例：洗衣服的步骤<br>普通：洗第1件-烘干-洗第2件-烘干…<br>并行高效(流水线化)：洗第1件-洗第2件+烘干第1件-洗第2件+烘干第2件…</p>
+<p>形象举例：洗衣服的步骤<br>通：洗第1件-烘干-洗第2件-烘干…<br>并行高效(流水线化)：洗第1件-洗第2件+烘干第1件-洗第2件+烘干第2件…</p>
 </blockquote>
 </li>
 </ul>
 <blockquote>
-<p>以加法指令的处理流程为例说明：<br>单指令单数据流SISD：对加法指令译码——&gt;单处理器访问主存、取得第1个操作数——&gt;再访问主存、取得第2个操作数——&gt;求和运算；<br>SIMD：指令译码——&gt;几个处理器同时访问主存、一次性获取所有操作数——&gt;求和运算</p>
+<p>以加法指令的处理流程为例说明：<br>指令单数据流SISD：对加法指令译码——&gt;单处理器访问主存、取得第1个操作数——&gt;再访问主存、取得第2个操作数——&gt;求和运算；<br>IMD：指令译码——&gt;几个处理器同时访问主存、一次性获取所有操作数——&gt;求和运算</p>
 </blockquote>
 <h2 id="optimization"><a href="#optimization" class="headerlink" title="optimization"></a>optimization</h2><ul>
 <li>浮点转整型计算；尽量采用单精度浮点；（浮点数的表示方法,浮点数分离，消耗性能）</li>
@@ -536,8 +536,6 @@
             <a href="/tags/Computer-Science/" rel="tag"><i class="fa fa-tag"></i> Computer Science</a>
           
             <a href="/tags/Distributed-Computing/" rel="tag"><i class="fa fa-tag"></i> Distributed Computing</a>
-          
-            <a href="/tags/Meetup-Records/" rel="tag"><i class="fa fa-tag"></i> Meetup Records</a>
           
         </div>
       
@@ -643,7 +641,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">161</span>
+                <span class="site-state-item-count">162</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -665,7 +663,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -838,7 +836,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">共474.4k字</span>
+  <span class="post-count">共474.9k字</span>
 </div>
 
 
