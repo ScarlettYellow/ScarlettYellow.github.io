@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Artificial Intelligence,Natural Language Processing," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="摘要：中文分词是中文信息处理的重要基础，本文详细阐述了目前主要的几种中文分词算法的技术原理 、中文分词目前的瓶颈和评价准则，以及中文分词的具体应用。 中文分词指将一个汉字序列切分成一个个单独的词。现有的中文分词算法有五大类：基于词典的方法，基于统计的方法，基于规则的方法，基于字标注的方法，基于人工智能技术（基于理解）的方法。中文分词目前主要有四个瓶颈，分别是分词歧义、未登录词识别、分词粒度问题、错">
+<meta name="keywords" content="Artificial Intelligence,Natural Language Processing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NLP|中文分词技术及应用">
+<meta property="og:url" content="http://yoursite.com/2018/04/15/NLP-中文分词技术及应用/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="摘要：中文分词是中文信息处理的重要基础，本文详细阐述了目前主要的几种中文分词算法的技术原理 、中文分词目前的瓶颈和评价准则，以及中文分词的具体应用。 中文分词指将一个汉字序列切分成一个个单独的词。现有的中文分词算法有五大类：基于词典的方法，基于统计的方法，基于规则的方法，基于字标注的方法，基于人工智能技术（基于理解）的方法。中文分词目前主要有四个瓶颈，分别是分词歧义、未登录词识别、分词粒度问题、错">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fqa3xxdgkfj31dq0u644x.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fqa5nhexpmj312m0du40n.jpg">
+<meta property="og:updated_time" content="2018-04-16T15:10:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NLP|中文分词技术及应用">
+<meta name="twitter:description" content="摘要：中文分词是中文信息处理的重要基础，本文详细阐述了目前主要的几种中文分词算法的技术原理 、中文分词目前的瓶颈和评价准则，以及中文分词的具体应用。 中文分词指将一个汉字序列切分成一个个单独的词。现有的中文分词算法有五大类：基于词典的方法，基于统计的方法，基于规则的方法，基于字标注的方法，基于人工智能技术（基于理解）的方法。中文分词目前主要有四个瓶颈，分别是分词歧义、未登录词识别、分词粒度问题、错">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fqa3xxdgkfj31dq0u644x.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/15/NLP-中文分词技术及应用/"/>
+
+
+
+
+
+  <title>NLP|中文分词技术及应用 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/15/NLP-中文分词技术及应用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">NLP|中文分词技术及应用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-15T22:30:45+08:00">
+                2018-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/Natural-Language-Processing/" itemprop="url" rel="index">
+                    <span itemprop="name">Natural Language Processing</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/15/NLP-中文分词技术及应用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/04/15/NLP-中文分词技术及应用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>摘要：中文分词是中文信息处理的重要基础，本文详细阐述了目前主要的几种中文分词算法的技术原理 、中文分词目前的瓶颈和评价准则，以及中文分词的具体应用。</p>
+<p>中文分词指将一个汉字序列切分成一个个单独的词。现有的中文分词算法有五大类：基于词典的方法，基于统计的方法，基于规则的方法，基于字标注的方法，基于人工智能技术（基于理解）的方法。中文分词目前主要有四个瓶颈，分别是分词歧义、未登录词识别、分词粒度问题、错别字和谐音字规范化。中文分词有五大评价准则：分词正确率，切分速度，功能完备性，易扩充性和可维护性，可移植性。中文信息处理包括三个层次：词法分析，句法分析，语义分析，其中中文分词是词法分析的第一步，非常重要。中文分词是大部分下游应用的基础，这些下游应用小到POS词性标注、NER命名实体识别，大到自动分类、自动摘要、自动校对、语言模型、机器翻译、搜索引擎、语音合成等等。</p>
+<a id="more"></a>
+<h1 id="一、-中文分词是什么"><a href="#一、-中文分词是什么" class="headerlink" title="一、 中文分词是什么"></a>一、 中文分词是什么</h1><p><strong>中文分词是中文信息处理的基本技术，指将一个汉字序列切分成一个个单独的词</strong>。分词就是将连续的字序列按照一定的规范重新组合成词序列的过程。</p>
+<blockquote>
+<p>词是最小的能够独立活动的有意义的语言成分，英文单词之间是以空格作为自然分界符的，而汉语是以字为基本的书写单位，词语之间没有明显的区分标记。</p>
+</blockquote>
+<h1 id="二、中文分词的技术原理"><a href="#二、中文分词的技术原理" class="headerlink" title="二、中文分词的技术原理"></a>二、中文分词的技术原理</h1><h2 id="2-1-中文分词算法"><a href="#2-1-中文分词算法" class="headerlink" title="2.1 中文分词算法"></a>2.1 中文分词算法</h2><p><strong>现有的中文分词算法有五大类</strong>：基于词典的分词方法，基于统计的分词方法，基于规则的分词方法，基于字标注的分词方法，基于人工智能技术（基于理解）的分词方法。</p>
+<p>图1：中文分词算法总结</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqa3xxdgkfj31dq0u644x.jpg" alt="中文分词算法"></p>
+<h3 id="2-1-1-基于词典的方法"><a href="#2-1-1-基于词典的方法" class="headerlink" title="2.1.1 基于词典的方法"></a>2.1.1 基于词典的方法</h3><p>基于词典的方法：<strong>字符串匹配，机械分词方法</strong></p>
+<p>原理：按照一定策略将待分析的汉字串与一个“大机器词典”中的词条进行匹配，若在词典中找到某个字符串，则匹配成功。</p>
+<ul>
+<li>按照扫描方向的不同：正向匹配 &amp; 逆向匹配</li>
+<li>按照长度的不同：最大匹配 &amp; 最小匹配</li>
+<li>按照是否与词性标注过程相结合：单纯分词方法 &amp; 分词与标注相结合</li>
+</ul>
+<h4 id="1-正向最大匹配算法（MM）"><a href="#1-正向最大匹配算法（MM）" class="headerlink" title="1.正向最大匹配算法（MM）"></a>1.正向最大匹配算法（MM）</h4><p>步骤</p>
+<ul>
+<li><strong>从左向右</strong>取待切分汉语句的m个字符作为匹配字段，m为大机器词典中最长词条个数</li>
+<li>查找大机器词典并进行匹配，若匹配成功，则将这个匹配字段作为一个词切分出来；若匹配不成功，则将这个匹配字段的最后一个字去掉，剩下的字符串作为信我的匹配字段，进行再次匹配，重复以上过程直到切分出所有词为止</li>
+</ul>
+<h4 id="2-邻近匹配算法"><a href="#2-邻近匹配算法" class="headerlink" title="2.邻近匹配算法"></a>2.邻近匹配算法</h4><p>邻近匹配算法</p>
+<ul>
+<li>对正向最大匹配算法的改进，因为正向正向最大匹配算法对每个不存在的长字符串都要进行一次二分搜索，算法复杂度太高，可以利用同一个首字符下的词条按升序排列这一条件，在找到某个字符串后，在其后增加一个字得到一个新字串，如果新字串在词典中出现，那么新词一定在原字串的后面，且相隔位置不会太远</li>
+<li>优点：可以加快匹配进程</li>
+</ul>
+<h4 id="3-逆向最大匹配算法（RMM）"><a href="#3-逆向最大匹配算法（RMM）" class="headerlink" title="3.逆向最大匹配算法（RMM）"></a>3.逆向最大匹配算法（RMM）</h4><p>逆向最大匹配算法</p>
+<ul>
+<li>是正向最大匹配的逆向思维（最大匹配的顺序不是从首字母开始，而是从末尾开始，<strong>由右向左</strong>），匹配不成功，将匹配字段的最前一个字去掉</li>
+<li>优点：<strong>逆向最大匹配算法要优于正向最大匹配算法</strong>（实践证明）</li>
+</ul>
+<h4 id="4-双向最大匹配法-Bi-directction-Matching-method-BM"><a href="#4-双向最大匹配法-Bi-directction-Matching-method-BM" class="headerlink" title="4.双向最大匹配法(Bi-directction Matching method,BM)"></a>4.双向最大匹配法(Bi-directction Matching method,BM)</h4><p>双向最大匹配法：<strong>将正向最大匹配法得到的分词结果和逆向最大匹配法的到的结果进行比较</strong>，从而决定正确的分词方法。</p>
+<blockquote>
+<p>中文中90.0％左右的句子，正向最大匹配法和逆向最大匹配法完全重合且正确，只有大概9.0％的句子两种切分方法得到的结果不一样，但其中必有一个是正确的（歧义检测成功），只有不到1.0％的句子，或者正向最大匹配法和逆向最大匹配法的切分虽重合却是错的，或者正向最大匹配法和逆向最大匹配法切分不同但两个都不对（歧义检测失败）。这正是双向最大匹配法在实用中文信息处理系统中得以广泛使用的原因所在。</p>
+</blockquote>
+<h4 id="5-最短路径匹配算法（Shortest-path-match）"><a href="#5-最短路径匹配算法（Shortest-path-match）" class="headerlink" title="5.最短路径匹配算法（Shortest path match）"></a>5.最短路径匹配算法（Shortest path match）</h4><p>最短路径匹配算法</p>
+<ul>
+<li><strong>根据词典，找出字串中所有可能的词（也称全分词），然后构造词语切分有向无环图</strong></li>
+<li>每一个词对应图中的一条有向边。若赋给相应的边长一个权值（该权值可以是常数，也可以是构成的词的属性值），然后针对该切分图，在起点到终点的所有路径中，求出最短路径，该最短路径上包含的词就是该句子的切分结果</li>
+<li>最短路径匹配算法的规则是使切分处理的词数最少，符合汉语自身的语言规律</li>
+<li>缺点：在实际应用中，同样不能正确切分出许多不完全符合规则的句子。如果有多条最短路径，往往只能保留其中一个结果，这样对其他同样符合要求的结果不公平，也缺乏理论依据。</li>
+</ul>
+<h4 id="6-基于字符串匹配的分词方法的优缺点"><a href="#6-基于字符串匹配的分词方法的优缺点" class="headerlink" title="6.基于字符串匹配的分词方法的优缺点"></a>6.基于字符串匹配的分词方法的优缺点</h4><p>优点：简单，易于实现</p>
+<p>缺点</p>
+<ul>
+<li><strong>匹配速度慢</strong></li>
+<li><strong>存在交集型和组合型歧义切分问题</strong></li>
+<li>词本身没有一个标准的定义，没有统一标准的词集</li>
+<li>不同词典产生的歧义也不同</li>
+<li><strong>缺乏自学习的智能性</strong></li>
+</ul>
+<h3 id="2-1-2-基于统计的分词（无字典分词）"><a href="#2-1-2-基于统计的分词（无字典分词）" class="headerlink" title="2.1.2 基于统计的分词（无字典分词）"></a>2.1.2 基于统计的分词（无字典分词）</h3><p>主要思想</p>
+<ul>
+<li><strong>上下文中，相邻的字同时出现的次数越多，就越可能构成一个词。因此字与字相邻出现的概率或频率能较好的反映词的可信度</strong>。</li>
+<li>可以对训练文本中相邻出现的各个字的组合的频度进行统计，计算它们之间的互现信息。互现信息体现了汉字之间结合关系的紧密程度。当紧密程度高于某一个阈值时，便可以认为此字组可能构成了一个词。该方法又称为无字典分词。</li>
+</ul>
+<p>主要统计模型有：N 元文法模型、隐Markov 模型和最大熵模型等。</p>
+<p><strong>在实际应用中一般是将其与基于词典的分词方法结合起来</strong>，既发挥匹配分词切分速度快、效率高的特点，又利用了无词典分词结合上下文识别生词、自动消除歧义的优点。</p>
+<h4 id="1-N-gram模型思想"><a href="#1-N-gram模型思想" class="headerlink" title="1.N-gram模型思想"></a>1.N-gram模型思想</h4><p>N-gram模型思想：<strong>第n个词的出现只与前面N-1个词相关</strong>，而与其它任何词都不相关，整句的概率就是各个词出现概率的乘积 。</p>
+<h4 id="2-隐马尔科夫模型（HMM，HiddenMarkov-Model）"><a href="#2-隐马尔科夫模型（HMM，HiddenMarkov-Model）" class="headerlink" title="2.隐马尔科夫模型（HMM，HiddenMarkov Model）"></a>2.隐马尔科夫模型（HMM，HiddenMarkov Model）</h4><p>原理：<strong>根据观测值序列找到真正的隐藏状态值序列</strong>。</p>
+<h3 id="2-1-3-基于规则的分词（基于语义）"><a href="#2-1-3-基于规则的分词（基于语义）" class="headerlink" title="2.1.3 基于规则的分词（基于语义）"></a>2.1.3 基于规则的分词（基于语义）</h3><p>原理：<strong>通过模拟人对句子的理解，达到识别词的效果</strong>，基本思想是语义分析，句法分析<strong>，利用句法信息和语义信息对文本进行分词</strong>。</p>
+<p>优点：<strong>自动推理，并完成对未登录词的补充。</strong></p>
+<p>语义分词法引入了语义分析，对自然语言自身的语言信息进行更多的处理，如扩充转移网络法、知识分词语义分析法、邻接约束法、综合匹配法、后缀分词法、特征词库法、矩阵约束法、语法分析法等。</p>
+<ul>
+<li>扩充转移网络法：以有限状态机概念为基础。有限状态机只能识别正则语言，对有限状态机作的第一次扩充使其具有递归能力，形成递归转移网络 （RTN）。在RTN 中，弧线上的标志不仅可以是终极符（语言中的单词）或非终极符（词类），还可以调用另外的子网络名字分非终极符（如字或字串的成词条件）。这样，计算机在运行某个子网络时，就可以调用另外的子网络，还可以递归调用。词法扩充转移网络的使用， 使分词处理和语言理解的句法处理阶段交互成为可能，并且有效地解决了汉语分词的歧义。</li>
+<li>矩阵约束法：其基本思想是先建立一个语法约束矩阵和一个语义约束矩阵， 其中元素分别表明具有某词性的词和具有另一词性的词相邻是否符合语法规则， 属于某语义类的词和属于另一词义类的词相邻是否符合逻辑，机器在切分时以之约束分词结果。</li>
+</ul>
+<h3 id="2-1-4-基于字标注的中文分词方法"><a href="#2-1-4-基于字标注的中文分词方法" class="headerlink" title="2.1.4 基于字标注的中文分词方法"></a>2.1.4 基于字标注的中文分词方法</h3><p>基于字标注的中文分词方法</p>
+<ul>
+<li><strong>实质上是构词方法，即把分词过程视作字在字符串中的标注问题；分词的过程就成为字重组的简单过程</strong></li>
+<li>基于规则/统计的分词方法的弊端：一般都依赖于一个事先编制好的词典，而自动分词的过程就是通过词表和相关信息来做出词语切分的决策</li>
+<li>本分词法的优点：能够平衡地看待词表词和未登录词的识别问题。因为文本中的词表词和未登录词都是用统一的字标注过程来实现，在学习架构上，既可以不必专门强调词表词信息，也不用专门设计特定的未登录词(如人名、地名、机构名)识别模块。这使得分词系统的设计大大简化。在字标注过程中，所有的字根据预定义的特征进行词位特性的学习，获得一个概率模型。然后，在待分字串上，根据字与字之间的结合紧密程度，得到一个词位的标注结果。最后，根据词位定义直接获得最终的分词结果。</li>
+</ul>
+<h3 id="2-1-5-基于人工智能技术的中文分词方法（基于理解）"><a href="#2-1-5-基于人工智能技术的中文分词方法（基于理解）" class="headerlink" title="2.1.5 基于人工智能技术的中文分词方法（基于理解）"></a>2.1.5 基于人工智能技术的中文分词方法（基于理解）</h3><p>基于人工智能技术的中文分词方法</p>
+<ul>
+<li><p>原理：<strong>在分词的同时进行句法、语义分析，利用句法信息和语义信息来处理歧义现象</strong></p>
+</li>
+<li><p>通常包括三个部分： 分词子系统、句法语义子系统和总控部分。在总控部分的协调下，分词子系统可以获得有关词、句子等的句法和语义信息来对分词歧义进行判断，即它模拟了人对句子的理解过程</p>
+</li>
+<li><p>条件：<strong>需要使用大量的语言知识和信息</strong></p>
+</li>
+<li><p>目前基于理解的分词方法主要有：<strong>专家系统分词法，神经网络分词法，神经网络专家系统集成式分词法</strong>等</p>
+<p>​</p>
+</li>
+</ul>
+<h4 id="1-神经网络分词算法"><a href="#1-神经网络分词算法" class="headerlink" title="1.神经网络分词算法"></a>1.神经网络分词算法</h4><p>神经网络分词算法</p>
+<ul>
+<li>原理：<strong>以模拟人脑运行，分布处理和简历数值计算模型工作，将分词知识的隐式方法存入神经网内部，通过自学习和训练内部权值，以达到正确的分词结果</strong></li>
+<li><strong>关键在于知识库（权重链表）的组织和网络推理机制的建立</strong></li>
+<li>算法的分词过程是一个生成分词动态网的过程，该过程是分步进行的：首先以确定待处理语句的权字串为基础，来确定网络处理单元；然后根据链接权重表激活输入/输出单元之间的链接，该过程可以采用某种激活方式，取一个汉字作为关键字，确定其链接表，不断匹配</li>
+<li>优点：神经网络分词法具有自学习、自组织功能，可以进行并行、非线性处理，并且反应迅速、对外界变换敏感</li>
+<li>缺点：目前的基于神经网络的分词算法存在着网络模型表达复杂，学习算法收敛速度较慢，训练时间长，并且对已有的知识维护更新困难等不足。</li>
+</ul>
+<h4 id="2-专家系统分词算法"><a href="#2-专家系统分词算法" class="headerlink" title="2.专家系统分词算法"></a>2.专家系统分词算法</h4><p>专家系统分词算法</p>
+<ul>
+<li>原理：<strong>从模拟人脑功能出发，构造推理网络，将分词过程看做是知识推理过程</strong></li>
+<li>该方法将分词所需要的语法、语意以及句法知识从系统的结构和功能上分离处理，将知识的表示、知识库的逻辑结构与维护作为首要考虑的问题。知识库按常识性知识与启发性知识分别进行组织。知识库是专家系统具有“智能”的关键行部件</li>
+<li>优点：专家系统分词算法是一种统一的分词算法，不仅使整个分词处理过程简明，也使整个系统的运行效率提高</li>
+</ul>
+<h4 id="3-神经网络专家系统集成式分词法"><a href="#3-神经网络专家系统集成式分词法" class="headerlink" title="3.神经网络专家系统集成式分词法"></a>3.神经网络专家系统集成式分词法</h4><p>神经网络专家系统集成式分词法</p>
+<ul>
+<li>原理：首先启动神经网络进行分词，当神经网络对新出现的词不能给出准确切分时，激活专家系统进行分析判断，依据知识库进行推理，得出初步分析，并启动学习机制对神经网络进行训练</li>
+<li>优点：可以较充分<strong>发挥神经网络与专家系统二者优势，进一步提高分词效率</strong></li>
+</ul>
+<h2 id="2-2-中文分词瓶颈"><a href="#2-2-中文分词瓶颈" class="headerlink" title="2.2 中文分词瓶颈"></a>2.2 中文分词瓶颈</h2><h3 id="1-分词歧义"><a href="#1-分词歧义" class="headerlink" title="1.分词歧义"></a>1.分词歧义</h3><p><strong>分词歧义：指在一个句子中，一个字串可以有多种不同的切分方法</strong>，一个句子经常对应几个合法词序列，因此，汉语分词中的一个重要问题就是在所有这些可能的序列中选出一个正确的结果。</p>
+<ul>
+<li>分词歧义是中文分词的主要困难</li>
+<li>交集性歧义：可用动态规划来解决</li>
+</ul>
+<blockquote>
+<p>e.g. “北京大学生前来报到”，容易被划分成“北京大学/生前/来/报到”</p>
+</blockquote>
+<ul>
+<li>组合型歧义：指同一个子串既可合又可分；可用统计语言模型来解决</li>
+</ul>
+<blockquote>
+<p>eg.“学生会宣传部”中的“学生会”是一个词，“学生会主动完成作业”里的“学生 会”就必须拆开</p>
+<p>统计语言模型：对于任意两个词语 w1、 w2 ，统计在语料库中词语 w1 后面恰好是 w2 的概率 P(w1, w2) 。这样便会生成一个很大的二维表。再定义一个句子的划分方案的得分为 P(∅, w1) · P(w1, w2) · … · P(wn-1, wn) ，其中 w1, w2, …, wn 依次表示分出的词。我们同样可以利用动态规划求出得分最高的分词方案。</p>
+</blockquote>
+<h3 id="2-未登录词识别"><a href="#2-未登录词识别" class="headerlink" title="2.未登录词识别"></a>2.未登录词识别</h3><p>未登录词识别</p>
+<ul>
+<li><strong>未登录词包括：中外人名、中国地名、机构组织名、事件名、货币名、缩略语、派生词、各种专业术语以及在不断发展和约定俗成的一些新词语</strong>，是种类繁多，形态组合各异，规模宏大的一个领域。对这些词语的自动辨识，是一件非常困难的事。</li>
+</ul>
+<ul>
+<li><p><strong>中文没有首字母大写，计算机很难分辨人名地名等专有名词</strong></p>
+<ul>
+<li>人名刚好与上下文组合成词：比如“高通向人大常委会提交报告”</li>
+<li>人名刚好是常用词：比如“汪洋”</li>
+<li>品牌名、机构名、地名等专有名词的识别</li>
+<li>缩略词的识别</li>
+<li>网络新词更难识别：甚至没有固定的生产机制</li>
+</ul>
+<p>​</p>
+</li>
+</ul>
+<h3 id="3-错别字、谐音字规范化"><a href="#3-错别字、谐音字规范化" class="headerlink" title="3.错别字、谐音字规范化"></a>3.错别字、谐音字规范化</h3><p>当处理不规范文本（如网络文本和语音转录文本）时，输入的句子中不可避免会存在一些错别字或刻意的谐音字（如香菇—&gt;想哭），这些词对分词系统造成很大干扰。</p>
+<h3 id="4-分词粒度问题"><a href="#4-分词粒度问题" class="headerlink" title="4.分词粒度问题"></a>4.分词粒度问题</h3><p>对“词语的最小单位”的定义存在主观性，导致多人标注的语料存在大量不一致现象，即<strong>表达相同意思的同一字串，在语料中存在不同的切分方式</strong>。</p>
+<h2 id="2-3-中文分词的评价准则"><a href="#2-3-中文分词的评价准则" class="headerlink" title="2.3 中文分词的评价准则"></a>2.3 中文分词的评价准则</h2><p>中文分词主要有五项评价准则：分词正确率，切分速度，功能完备性，易扩充性和可维护性，可移植性。</p>
+<h3 id="1-分词正确率"><a href="#1-分词正确率" class="headerlink" title="1.分词正确率"></a>1.分词正确率</h3><p>中文分词是中文信息处理的重要基础，因此分词准确性对整体的信息处理任务来说十分重要。</p>
+<p>为了获得分词系统切分正确率，应该进行整体测试，歧义测试和专业词测试。自动分词系统的切分正确率的基本公式为：</p>
+<script type="math/tex; mode=display">
+s=\sum^3_{i=1}\beta_iS_i</script><p>其中，S1，S2，S3。分别为总体测试、歧义测试和专业词测试的正确率；Bi(i=1，2，3)为三种测试加的权值。</p>
+<h3 id="2-切分速度"><a href="#2-切分速度" class="headerlink" title="2.切分速度"></a>2.切分速度</h3><p>切分速度对中文信息处理任务也非常重要。比如对于搜索引擎来说，如果分词速度太慢，即使准确性再高，也是不可用的，因为搜索引擎需要处理数以亿计的网页，如果分词耗用的时间过长，会严重影响搜索引擎内容更新的速度。</p>
+<p>切分速度</p>
+<ul>
+<li>指单位时间内所处理的汉字个数</li>
+<li>在分词正确率基本满足要求的情况下，切分速度是另一个很重要的指标，特别对于算法不单一，使用辅助手段， 诸如联想，基于规则，神经网络，专家系统等方法更应注意这一点</li>
+<li>通常中文信息处理的文本数量是相当大的，因此必须考虑方法是否能使系统总开销合理。在人机交互方式下处理歧义问题的策略和人机接口的设计，有时会严重影响切分速度，这也是应考虑的因素</li>
+</ul>
+<h3 id="3-功能完备性"><a href="#3-功能完备性" class="headerlink" title="3.功能完备性"></a>3.功能完备性</h3><p>自动分词方法除了完成分词功能外，还应具备词库增删、修改、查询和批处理等功能。</p>
+<h3 id="4-易扩充性和可维护性"><a href="#4-易扩充性和可维护性" class="headerlink" title="4.易扩充性和可维护性"></a>4.易扩充性和可维护性</h3><p>易扩充性和可维护性是提供数据存储和计算功能扩充要求的软件属性，包括词库的存储结构，输入/输出形式的变化等方面的扩展和完善。这项指标与系统清晰性、模块性、简 单性、结构性、完备性以及自描述性等软件质量准则有直接的联系，对于研究实验性质的软件是非常重要的，因为这类软件需要不断提高与改进，使之适应中文信息 处理的各种应用。</p>
+<h3 id="5-可移植性"><a href="#5-可移植性" class="headerlink" title="5.可移植性"></a>5.可移植性</h3><p>可移植性：指方法能从一个计算机系统或环境转移到另一个系统或环境的容易程度。一个好的分词方法不应该只能在一个环境下运行，而应该稍作修改便可在另一种环境下运行，使它更便于推广。</p>
+<h2 id="三、中文分词技术的应用"><a href="#三、中文分词技术的应用" class="headerlink" title="三、中文分词技术的应用"></a>三、中文分词技术的应用</h2><h2 id="3-1-中文分词是中文信息处理的基础"><a href="#3-1-中文分词是中文信息处理的基础" class="headerlink" title="3.1 中文分词是中文信息处理的基础"></a>3.1 中文分词是中文信息处理的基础</h2><p><strong>中文分词是中文信息处理的基础，是自然语言处理的基础模块，中文信息处理包括三个层次：词法分析，句法分析，语义分析。中文分词是词法分析的第一步。</strong></p>
+<p>图2：自然语言句子级分析技术</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqa5nhexpmj312m0du40n.jpg" alt="自然语言句子级分析技"></p>
+<p><strong>Level1：词法分析</strong> （Lexical Analysis）</p>
+<ul>
+<li><strong>分词（word segmentation）：将输出的子串切分成单独的词语</strong></li>
+<li>词性标注（part-of-speech tag）：为每个词赋予一个类别，如名词、动词、形容词 etc.；一般属于相同词性的词，在句子中承担类似的角色</li>
+</ul>
+<p><strong>Level2：句法分析</strong>（synactic parsing）：对输入的文本句子进行分析以得到句子的句法结构的处理过程；句法分析的输出结果常作为语义分析的输入</p>
+<ul>
+<li>短语结构句法分析（phrase-structure syntactic parsing）：识别出句子中的酸雨结果以及短语间的层次句法关系</li>
+<li>依存句法分析（dependency syntactic parsing）：识别句子中词汇与词汇之间的相互依存关系，属于浅层句法分析</li>
+<li>深层文法句法分析：利用深层文法，如词汇化树邻接文法、词汇功能文法、组合范畴文法等，对句子进行深层的句法和语义分析</li>
+</ul>
+<p><strong>Level3：语义分析</strong>（semantic parsing）：理解句子表达的真实语义</p>
+<ul>
+<li>语义角色标注（semantic role labeling）：属于浅层语义分析技术</li>
+</ul>
+<p><strong>三个层级的联合方式</strong></p>
+<ul>
+<li><strong>级联</strong>：分词、词性标注、句法分析、语义分析分别训练模型；实际使用时，逐一使用各模块进行分析，最终得到所有结果</li>
+<li><strong>联合模型</strong>：多任务联合学习和解码，如分词词性联合、词性句法联合、分析词性句法联合、句法语义联合等，联合模型通常可显著提高分析质量（但复杂度高，速度慢）</li>
+</ul>
+<h2 id="3-2-具体应用（以搜索引擎为例）"><a href="#3-2-具体应用（以搜索引擎为例）" class="headerlink" title="3.2 具体应用（以搜索引擎为例）"></a>3.2 具体应用（以搜索引擎为例）</h2><p><strong>中文分词是大部分下游应用的基础，这些下游应用小到POS词性标注、NER命名实体识别，大到自动分类、自动摘要、自动校对、语言模型、机器翻译、搜索引擎、语音合成等等</strong>。</p>
+<p>下面以搜索引擎为例，具体阐述<strong>中文分词在搜索引擎中的应用</strong>。</p>
+<p><strong>搜索引擎针对用户提交查询的关键词串进行的查询处理后，根据用户的关键词串用各种匹配方法进行分词</strong>。</p>
+<p>搜索引擎的查询处理</p>
+<ul>
+<li>1.首先到数据库里索引相关信息<ul>
+<li>若用户提交的字符串不超过3个汉字，则直接去数据库索引</li>
+<li><strong>分词</strong>：若超过4个字符串，则用分隔符（如空格、标点）把用户提交的字符串分割成N个子查询串</li>
+</ul>
+</li>
+<li>2.再检测用户提供的字符串里有无重复词汇<ul>
+<li>若有，则丢弃，默认为一个词汇 </li>
+<li>检查用户提交的字符串有无字母和数字，若有则把字母和数字当做一个词</li>
+</ul>
+</li>
+</ul>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://dsqiu.iteye.com/blog/1704960" target="_blank" rel="noopener">中文分词算法基本介绍</a></p>
+<p><a href="http://www.williamlong.info/archives/333.html" target="_blank" rel="noopener">中文分词技术介绍-月光博客</a></p>
+<p><a href="404">中文信息处理发展报告</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>拿钱去买猫粮和狗粮嗷 ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Scarlett Huang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Artificial-Intelligence/" rel="tag"><i class="fa fa-tag"></i> Artificial Intelligence</a>
+          
+            <a href="/tags/Natural-Language-Processing/" rel="tag"><i class="fa fa-tag"></i> Natural Language Processing</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/12/算法推荐带来的“信息茧房”效应研究/" rel="next" title="算法推荐带来的“信息茧房”效应研究">
+                <i class="fa fa-chevron-left"></i> 算法推荐带来的“信息茧房”效应研究
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/16/我的AI-PM实习面经-腾讯AILAB，商汤，旷视，网易/" rel="prev" title="我的AI PM实习面经(腾讯AILAB，商汤，旷视，网易)">
+                我的AI PM实习面经(腾讯AILAB，商汤，旷视，网易) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">177</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">61</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Column">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Column
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-dribbble"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friend Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://unique-ailab.github.io/" title="Unique-AILab" target="_blank">Unique-AILab</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mr-why.com/" title="MR WHY(AI Dev. & AI PM)" target="_blank">MR WHY(AI Dev. & AI PM)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wondervictor.github.io/" title="Vic Chan(AI Dev.)" target="_blank">Vic Chan(AI Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Dev.)" target="_blank">qzwlecr(Distributed Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://alisahhh.github.io/" title="Alisa(Alg. Dev.)" target="_blank">Alisa(Alg. Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://llag9810.github.io/" title="yifan(Android Dev.)" target="_blank">yifan(Android Dev.)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、-中文分词是什么"><span class="nav-number">1.</span> <span class="nav-text">一、 中文分词是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、中文分词的技术原理"><span class="nav-number">2.</span> <span class="nav-text">二、中文分词的技术原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-中文分词算法"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 中文分词算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-基于词典的方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1.1 基于词典的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-正向最大匹配算法（MM）"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">1.正向最大匹配算法（MM）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-邻近匹配算法"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">2.邻近匹配算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-逆向最大匹配算法（RMM）"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">3.逆向最大匹配算法（RMM）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-双向最大匹配法-Bi-directction-Matching-method-BM"><span class="nav-number">2.1.1.4.</span> <span class="nav-text">4.双向最大匹配法(Bi-directction Matching method,BM)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-最短路径匹配算法（Shortest-path-match）"><span class="nav-number">2.1.1.5.</span> <span class="nav-text">5.最短路径匹配算法（Shortest path match）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-基于字符串匹配的分词方法的优缺点"><span class="nav-number">2.1.1.6.</span> <span class="nav-text">6.基于字符串匹配的分词方法的优缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-基于统计的分词（无字典分词）"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.1.2 基于统计的分词（无字典分词）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-N-gram模型思想"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">1.N-gram模型思想</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-隐马尔科夫模型（HMM，HiddenMarkov-Model）"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">2.隐马尔科夫模型（HMM，HiddenMarkov Model）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3-基于规则的分词（基于语义）"><span class="nav-number">2.1.3.</span> <span class="nav-text">2.1.3 基于规则的分词（基于语义）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-4-基于字标注的中文分词方法"><span class="nav-number">2.1.4.</span> <span class="nav-text">2.1.4 基于字标注的中文分词方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-5-基于人工智能技术的中文分词方法（基于理解）"><span class="nav-number">2.1.5.</span> <span class="nav-text">2.1.5 基于人工智能技术的中文分词方法（基于理解）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-神经网络分词算法"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">1.神经网络分词算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-专家系统分词算法"><span class="nav-number">2.1.5.2.</span> <span class="nav-text">2.专家系统分词算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-神经网络专家系统集成式分词法"><span class="nav-number">2.1.5.3.</span> <span class="nav-text">3.神经网络专家系统集成式分词法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-中文分词瓶颈"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 中文分词瓶颈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-分词歧义"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.分词歧义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-未登录词识别"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.未登录词识别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-错别字、谐音字规范化"><span class="nav-number">2.2.3.</span> <span class="nav-text">3.错别字、谐音字规范化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-分词粒度问题"><span class="nav-number">2.2.4.</span> <span class="nav-text">4.分词粒度问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-中文分词的评价准则"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 中文分词的评价准则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-分词正确率"><span class="nav-number">2.3.1.</span> <span class="nav-text">1.分词正确率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-切分速度"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.切分速度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-功能完备性"><span class="nav-number">2.3.3.</span> <span class="nav-text">3.功能完备性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-易扩充性和可维护性"><span class="nav-number">2.3.4.</span> <span class="nav-text">4.易扩充性和可维护性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-可移植性"><span class="nav-number">2.3.5.</span> <span class="nav-text">5.可移植性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、中文分词技术的应用"><span class="nav-number">2.4.</span> <span class="nav-text">三、中文分词技术的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-中文分词是中文信息处理的基础"><span class="nav-number">2.5.</span> <span class="nav-text">3.1 中文分词是中文信息处理的基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-具体应用（以搜索引擎为例）"><span class="nav-number">2.6.</span> <span class="nav-text">3.2 具体应用（以搜索引擎为例）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
+<div class="copyright" >
+  
+  &copy;  2017.07 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共510.9k字</span>
+</div>
+
+
+
+
+<span id="busuanzi_container_site_pv">
+<div class="powered-by"></div>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  <div class="powered-by"></div>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100332, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100332, xid: "2018/04/15/NLP-中文分词技术及应用/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100332/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+
+</body>
+</html>

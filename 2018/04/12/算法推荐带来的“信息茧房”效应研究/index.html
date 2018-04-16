@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Medium Study,Recommended System," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="摘要：本文基于桑斯坦的“信息茧房”理论，以今日头条为实例，研究新媒体时代下算法推荐带来的“信息茧房”效应。在此基础上剖析了今日头条的“信息茧房”效应的具体成因以及危害，并给出规避这种危害的建议。">
+<meta name="keywords" content="Medium Study,Recommended System">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法推荐带来的“信息茧房”效应研究">
+<meta property="og:url" content="http://yoursite.com/2018/04/12/算法推荐带来的“信息茧房”效应研究/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="摘要：本文基于桑斯坦的“信息茧房”理论，以今日头条为实例，研究新媒体时代下算法推荐带来的“信息茧房”效应。在此基础上剖析了今日头条的“信息茧房”效应的具体成因以及危害，并给出规避这种危害的建议。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-16T15:10:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法推荐带来的“信息茧房”效应研究">
+<meta name="twitter:description" content="摘要：本文基于桑斯坦的“信息茧房”理论，以今日头条为实例，研究新媒体时代下算法推荐带来的“信息茧房”效应。在此基础上剖析了今日头条的“信息茧房”效应的具体成因以及危害，并给出规避这种危害的建议。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/12/算法推荐带来的“信息茧房”效应研究/"/>
+
+
+
+
+
+  <title>算法推荐带来的“信息茧房”效应研究 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/12/算法推荐带来的“信息茧房”效应研究/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法推荐带来的“信息茧房”效应研究</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-12T22:26:37+08:00">
+                2018-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/Recommended-System/" itemprop="url" rel="index">
+                    <span itemprop="name">Recommended System</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/12/算法推荐带来的“信息茧房”效应研究/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/04/12/算法推荐带来的“信息茧房”效应研究/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>摘要：本文基于桑斯坦的“信息茧房”理论，以今日头条为实例，研究新媒体时代下算法推荐带来的“信息茧房”效应。在此基础上剖析了今日头条的“信息茧房”效应的具体成因以及危害，并给出规避这种危害的建议。</p>
+<a id="more"></a>
+<h1 id="一、信息茧房"><a href="#一、信息茧房" class="headerlink" title="一、信息茧房"></a>一、信息茧房</h1><p><strong>信息茧房（Information Cocoons）</strong>，由美国学者凯斯·桑斯坦于2006年提出，指<strong>公众会按照个人偏好有选择性地接触媒介信息，会无形中被自己的兴趣所引导，从而将自己的信息获取桎梏在像蚕茧一般的 “茧房”中的现象</strong>。桑斯坦认为<strong>“信息茧房”主要以“个人日报”的形式展现</strong>，个人日报是一个完全私人订制的日报，公众可以按照自己的兴趣选择要关注的话题。信息茧房的出现体现了信息传播从传者本位向受众本位的转变，媒体呈现出不断迎合受众需求的趋势，尤其是如今大数据时代下，为“个人日报”的实现提供了强大的技术和内容保障。但是，在享受个性化推荐内容带来的便利的同时，我们需要警惕陷入“信息茧房”的陷阱。</p>
+<h1 id="二、今日头条的“信息茧房”效应"><a href="#二、今日头条的“信息茧房”效应" class="headerlink" title="二、今日头条的“信息茧房”效应"></a>二、今日头条的“信息茧房”效应</h1><p>随着互联网的发展，手机新闻客户端竞争日益激烈，以用户体验为中心的传播模式成为主导，<strong>以今日头条为代表的新闻客户端通过强大的推荐算法根据用户个人喜好不断为用户提供个性化的内容信息，相当于为用户量身定做了一份个人化日报。但在满足用户对信息的个性化需求的同时，也将用户困在了一个个“信息茧房”中</strong>。</p>
+<h2 id="今日头条“信息茧房”效应的成因"><a href="#今日头条“信息茧房”效应的成因" class="headerlink" title="今日头条“信息茧房”效应的成因"></a>今日头条“信息茧房”效应的成因</h2><h3 id="1-技术基础：今日头条强大的智能推荐算法"><a href="#1-技术基础：今日头条强大的智能推荐算法" class="headerlink" title="1.技术基础：今日头条强大的智能推荐算法"></a>1.技术基础：今日头条强大的智能推荐算法</h3><p>以推荐算法为核心的新媒体技术是今日头条的信息茧房形成的技术基础。</p>
+<p>今日头条主张“你关心的，才是头条”。与传统新闻媒体相比，今日头条最大的特点就在于为用户打造了“千人千面”的阅读场景 ，这背后是一套强大的个性化推荐系统。推荐算法实质上是一个拟合用户对内容满意度的函数，这个函数需要输入三个维度的变量：</p>
+<p>1.<strong>内容特征</strong>：头条现在俨然已是一个综合性内容媒体平台，图文、视频、UGC短视频、问答、微头条，每种内容有很多自己的特征，需要考虑怎样提取不同内容类型的特征做好推荐。</p>
+<p>2.<strong>用户特征</strong>：包括职业、年龄、性别、兴趣等，以及很多模型刻画出的隐式用户兴趣。</p>
+<p>3.<strong>环境特征</strong>：移动互联网时代推荐的一大特点在于“随时随地”，用户在工作场合、通勤、旅游等不同的场景下的信息偏好会有所差异。</p>
+<p>结合三方面的特征，推荐模型会给出一个预估，即预测推荐内容是否适合在这一场景下被推荐给这一用户。</p>
+<p>但是，技术是一把双刃剑。虽然推荐算法能计算出用户的信息需求，按照用户的浏览记录、个人兴趣等特点自动为用户设置议程，使用户更精准地接触到符合个人兴趣的信息；但是<strong>实际上基于用户表现出的行为特点计算出的用户需求是不够深入的，并不能全面系统地洞察用户最本质真实的需求</strong>。<strong>一味信奉“算法至上”、机械地利用算法判定用户的信息需求和过分迎合用户喜好，也使得今日头条首页宛如桑斯坦所描述的“个人日报”一样</strong>，用户只能接触到自己感兴趣的信息，无形中被自己的喜好所固化，于是不自觉地被禁锢在算法所编织的信息茧房里。</p>
+<h3 id="2-用户对信息选择性接触心理"><a href="#2-用户对信息选择性接触心理" class="headerlink" title="2.用户对信息选择性接触心理"></a>2.用户对信息选择性接触心理</h3><p><strong>受众对信息的选择具有能动性</strong>。拉扎斯菲尔德曾通过伊里调査验证了受众的选择性接触理论，即<strong>受众在接收大众传播的信息时不是无差别地对待所有媒介和内容，而是更愿意选择接触那些与自己立场和态度一致或类似的媒介或内容，而倾向于回避与自己立场观点对立或冲突的内容</strong>。</p>
+<p>在现在的新媒体时代，媒体更加注重以用户需求为核心。今日头条的个性化推荐机制实际上也是在迎合受众对信息的选择性接触心理。传统媒体时代，信息的传播主要是“广播机制”，用户是被动地接受信息的一方。而在新媒体时代，信息通过算法技术被过滤，按照用户兴趣进行个性化推送，为用户提供其“选择性接触理”下预期的信息，大大提高了信息分发的效率，但是也更容易产生“个人日报”，导致“信息茧房”效应的形成。</p>
+<h1 id="三、“信息茧房”的不良影响"><a href="#三、“信息茧房”的不良影响" class="headerlink" title="三、“信息茧房”的不良影响"></a>三、“信息茧房”的不良影响</h1><p><strong>1.“回音室”和“拟态环境”：导致信息窄化压缩认知空间</strong></p>
+<p>“回声室”效应是个体处于一个相对封闭的虚拟环境中，意见相近的声音不断积聚，分歧的意见被屏蔽在圈外，这些声音被夸张和扭曲，并且封闭环境中的人认为这些扭曲的故事就是事实的全部。。在今日头条为用户构造的“个人日报”里，用户获取到的信息会会越来越符合个人喜好，而屏蔽掉了与个人爱好无关或相异的信息，如此则用户的个人视野在无形中被局限在特定的范围之内，信息来源变得窄化，个体沉浸在自己所建构的信息茧房内，就像身处封闭的“回音室”，自己为自己设置议程，听到的永远只有自己的回音，难以听到外界的声音，从而容易陷入极端主义和盲目自信。</p>
+<p>沃尔特·李普曼在“拟态环境”的概念中提出，大众传播所形成的信息环境源于真实环境，却又不尽一致的媒介环境。个人通过对象征性事件的信息加工形成媒介环境，因此个人所接收到的信息环境就是媒介构成的虚拟环境。用户通过“个人日报”所认知的世界就是一个由个人兴趣为主导所营造的“拟态环境”，因为他们认识到的世界是建立在他们所希望见到的图景之上的。沉浸于这种自我认知的环境中，会丧失个人判断能力和对外界的真实了解，造成个体对世界认知的偏差，会加强传播领域的“马太效应”，甚至导致极端的认知现象。</p>
+<p><strong>2.公众的意见自由表达受阻，隐性的言论自由被剥夺</strong></p>
+<p>网络没有主动给用户提供他们应当获得的内容，但人们意识不到需求这些内容，这是一种对用户隐性的言论自由权利的“合理化剥夺”。</p>
+<p><strong>3.泛低质内容的负面影响</strong></p>
+<p>今日头条的“蜘蛛抓取”式内容生成方式对泛低质内容的识别效果较差。虚假新闻、黑稿、标题党、低俗涉黄内容等很难被机器识别，需要提供大量的比对信息文本和人工审核。面对大体量的内容，人工编辑产出有限，因而有较大一部分泛低质内容流向用户。这些虚假、低俗的内容给用户带来错误的引导，也造成个性化推荐内容的“越描越黑”。若“信息茧房”中的用户缺乏独立的思考和理性的甄别，则易会受到泛低质内容的误导。</p>
+<p><strong>4.价值迷失陷阱：坏内容影响用户的价值观</strong></p>
+<p>马克思·韦伯通过理性二分法将理性分解为价值理性和工具理性两个思想维度，并赋予其解释社会现象的功能。价值理性强调行为不计后果地遵从某些价值信念，如“真善美”；而工具理性则从效用最大化的角度考虑实现目的所采取的手段的合适性和有效性。算法推荐充分体现了工具理性，然而由于用户兴趣中充斥着大量的低级趣味，尤其是在当前拜金主义、功利主义、享乐主义等盛行的社会环境下，仅以用户兴趣为主要内容衡量标准往往会造成隐含负面价值取向的内容被大量推送。这很容易为用户造成“很多人都有这种价值取向”的印象。根据“沉默的螺旋”理论，一旦用户认为这种价值取向受到广泛欢迎，那么与之相符的声音就会高涨，与之相反的声音则会陷入沉默。正面价值意见的沉默造成负面价值意见的增势，由此陷人恶性循环，带坏社会风，令越来越多的人迷失正确的价值追求。</p>
+<p><strong>5.助推群体极化现象，导致公众理性批判的缺失</strong></p>
+<p>群体极化（ Group polarization）是社会心理学里的术语，最早由传媒学者詹姆斯·斯托纳于1961年发现群体讨论时的现象而提出。群体极化指在个人决策由于受到群体的影响从而容易做出比独自一个人决策时更极端的决定，偏离最佳决策。互联网中群体极化现象十分普遍，较常见的就是“水军”和粉丝现象。社交网络通过分享、转发、点赞等方式来划定相同意见的群体，而今日头条作为资讯平台虽然并不具备较高的社交性，但每条新闻的评论、点赞、回复、关注等功能能够将意见同一的人聚集起来，从而独立存在的茧房通过信息平台上的互动成为有外在纽带连结的茧房群。并且匿名的特点加剧了茧房群之间信息交换的畅通性，在突发性事件发生时，极端行为很容易被激发。当公众以相同的立场发表自己的观点，势必会造成强势意见无限膨胀，群情激愤往往会转化为一种舆论压力，但这种舆论压力缺乏理性精神的指引，实际上对社会公共领域的建构起消极作用。</p>
+<p><strong>6.削弱社会粘性，破坏共同体维系</strong></p>
+<p>社会黏性是由一定的经验、知识和任务分享而来的，处于社会中的人们需要有一些共同的记忆和关心，需要由经验分享而构建的共同联盟。桑斯坦在《网络共和国》中提出，一个容许观点自由表达的完善机制通常包含两个条件：首先，人们必须处在不被主观筛选、没有人为干预的任何信息之中。这种计划之外、难以预期的信息接触，是民主的一个关键条件；其次,是一定程度上为大多数公民所共享的社会经验。倘若经验无法彼此分享，完全异质性的社会将难以相互理解、达成共识。桑斯坦坚信，剥离了共同经验的传播机制，必然会带来一系列问题，最终致使社会黏性的丧失。</p>
+<p>但是算法推荐下用户身处各自的“信息茧房”中，共同经验减少了，不同意见群之间的冲突将会上升。缺少共同经验的个体容易沉浸在各自的舆论场中自说自话，脱离整个社会的发展。异见被在用户接触前就已被算法过滤掉，于是用户就很难理解和同情异己的观点和价值观，因此社会黏性便会减少，共同体的维系也会出现问题。</p>
+<h1 id="四、如何规避“信息茧房”的危害"><a href="#四、如何规避“信息茧房”的危害" class="headerlink" title="四、如何规避“信息茧房”的危害"></a>四、如何规避“信息茧房”的危害</h1><p><strong>1.协调工具理性和价值理性，建立“更快更准、更好”的内容分发机制</strong></p>
+<p>算法推荐是新媒体时代内容分发方式的革命，信息的精准、快速、个性化投递是其能够获得用户青睐，持续占领市场的根本原因。为了获得长远发展，新媒体产品应继续坚持技术创新，打通与搜索引擎、社交平台、电商平台、生活服务平台、视频音乐游戏平台等网络服务运营商的用户数据壁垒，推进用户网络行为追踪技术和用户兴趣洞察技术的进步，为用户提供更快、更准的个性化信息分发服务。</p>
+<p>同时，也必须协调工具理性与价值理性，尤其需要承担起传播正面价值观的媒体责任，关注人的健康发展。拓宽对用户需求的定义，从客观层面将人类的多元化信息需求考虑在内，推送多元优质内容，改善信息茧房带来的信息窄化问题。此外，可以引入人工干预，发挥编辑的信息“把关人”的作用，筛选出符合社会价值追求的高质量内容，剔除低质内容，充分发挥其作为媒体的正面教化作用，推动内容服务向更好的方向发展。</p>
+<p><strong>2.用户需要提高自身的媒介素养，培养“多元、开放”思维</strong></p>
+<p>对于“信息茧房”现象，个人应努力提升媒介素养，认识到个性化推荐技术的弊端，合理运用推荐技术，理性对待被推荐给自己的信息。做到不轻信一家之言，不把自己局限于具有相同或相似标签的群体。培养多元思维，在获取信息时要有意识地打破自己的固有思维，主动扩展信息获取渠道，多接触多元化的信息。以开放的眼光洞察社会，多倾听一些不同于自己价值观的声音，从而提高认知能力，减少信息的不对称性。</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>[1]“信息茧房”对网络公共领域建构的影响</p>
+<p>[2]喻国明.信息茧房的负面效应及改善之道</p>
+<p>[3]邓倩.新媒体的“信息茧房”现象研究</p>
+<p>[4]大数据时代的新闻客户端的信息茧房效应</p>
+<p>[5]戴维·迈尔斯.《社会心理学》</p>
+<p>[6]何婷.新闻客户端个性化推荐引发的信息茧房现象</p>
+<p>[7]刘华栋.社交媒体“信息茧房”的隐忧与对策</p>
+<p>[8]算法推送：信息私人定制的“个性化”圈套</p>
+<p>[9]桑斯坦.《信息乌托邦:众人如何生产知识》</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>拿钱去买猫粮和狗粮嗷 ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Scarlett Huang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Medium-Study/" rel="tag"><i class="fa fa-tag"></i> Medium Study</a>
+          
+            <a href="/tags/Recommended-System/" rel="tag"><i class="fa fa-tag"></i> Recommended System</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/08/ofo产品分析-共享单车为何能快速成长/" rel="next" title="ofo产品分析|共享单车为何能快速成长">
+                <i class="fa fa-chevron-left"></i> ofo产品分析|共享单车为何能快速成长
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/15/NLP-中文分词技术及应用/" rel="prev" title="NLP|中文分词技术及应用">
+                NLP|中文分词技术及应用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/large/0060lm7Tly1fjedv9s2pcj30iw0ixgpf.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">177</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">61</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Column">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Column
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-dribbble"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friend Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://unique-ailab.github.io/" title="Unique-AILab" target="_blank">Unique-AILab</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mr-why.com/" title="MR WHY(AI Dev. & AI PM)" target="_blank">MR WHY(AI Dev. & AI PM)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wondervictor.github.io/" title="Vic Chan(AI Dev.)" target="_blank">Vic Chan(AI Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Dev.)" target="_blank">qzwlecr(Distributed Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://alisahhh.github.io/" title="Alisa(Alg. Dev.)" target="_blank">Alisa(Alg. Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://llag9810.github.io/" title="yifan(Android Dev.)" target="_blank">yifan(Android Dev.)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、信息茧房"><span class="nav-number">1.</span> <span class="nav-text">一、信息茧房</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、今日头条的“信息茧房”效应"><span class="nav-number">2.</span> <span class="nav-text">二、今日头条的“信息茧房”效应</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#今日头条“信息茧房”效应的成因"><span class="nav-number">2.1.</span> <span class="nav-text">今日头条“信息茧房”效应的成因</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-技术基础：今日头条强大的智能推荐算法"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.技术基础：今日头条强大的智能推荐算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-用户对信息选择性接触心理"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.用户对信息选择性接触心理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、“信息茧房”的不良影响"><span class="nav-number">3.</span> <span class="nav-text">三、“信息茧房”的不良影响</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、如何规避“信息茧房”的危害"><span class="nav-number">4.</span> <span class="nav-text">四、如何规避“信息茧房”的危害</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
+<div class="copyright" >
+  
+  &copy;  2017.07 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共510.9k字</span>
+</div>
+
+
+
+
+<span id="busuanzi_container_site_pv">
+<div class="powered-by"></div>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  <div class="powered-by"></div>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100332, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100332, xid: "2018/04/12/算法推荐带来的“信息茧房”效应研究/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100332/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+
+</body>
+</html>
