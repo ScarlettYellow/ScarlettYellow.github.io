@@ -4,6 +4,33 @@
 
     
   <url>
+    <loc>http://ScarlettHuang.cn/2018/04/20/Python-Numpy-%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97-%E9%99%84%E5%AE%9E%E4%BE%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%9D%90%E6%96%99/</loc>
+    <lastmod>2018-04-26T07:47:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>Python Numpy 矩阵运算(附实例和学习材料)</title>
+        <pubTime>2018-04-20T06:25:04.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Numpy</tag>
+         
+        <tag>Data Mining and Analysis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Data Mining and Analysis" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Mining-and-Analysis/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ScarlettHuang.cn/2017/10/23/%E6%96%B0%E9%97%BB%E4%B8%BB%E4%BD%93%E7%9A%84%E5%A4%9A%E6%83%85%E5%A2%83%E5%86%99%E4%BD%9C%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2018-04-26T06:58:58.000Z</lastmod>
     <data>
@@ -1018,33 +1045,6 @@
         <tag>Data Mining and Analysis</tag>
          
         <tag>SPSS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Data Mining and Analysis" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Mining-and-Analysis/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2018/04/20/Python-Numpy-%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97-%E9%99%84%E5%AE%9E%E4%BE%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%9D%90%E6%96%99/</loc>
-    <lastmod>2018-04-26T06:28:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>Python Numpy 矩阵运算(附实例和学习材料)</title>
-        <pubTime>2018-04-20T06:25:04.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>Numpy</tag>
-         
-        <tag>Data Mining and Analysis</tag>
          
          
            
@@ -2924,26 +2924,22 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2017/10/11/Coursera-Machine-Learning-Week8-Cluster-PCA/</loc>
+    <loc>http://ScarlettHuang.cn/2017/12/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%85%AD%E7%AB%A0%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>Coursera Machine Learning|Week8:Cluster & PCA</title>
-        <pubTime>2017-10-11T11:56:48.000Z</pubTime>
+        <title>数据结构第六章：二叉树</title>
+        <pubTime>2017-12-18T08:57:23.000Z</pubTime>
         
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>Coursera ML</tag>
+        <tag>Data Structure</tag>
          
          
            
              
-              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
+              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
           
              
-              <breadCrumb title="Machine Learning" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/Machine-Learning/"/>
+              <breadCrumb title="Data Structure" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Structure/"/>
           
         </display>
     </data>
@@ -2951,18 +2947,39 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2017/09/27/Coursera-Machine-Learning-Week4%EF%BC%9ANeural-Networks/</loc>
+    <loc>http://ScarlettHuang.cn/2017/10/25/%E5%8D%B1%E6%9C%BA%E5%85%AC%E5%85%B3-%E5%A6%82%E4%BD%95%E5%8C%96%E8%A7%A3%E4%BC%81%E4%B8%9A%E5%8D%B1%E6%9C%BA%EF%BC%9F/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>Coursera Machine Learning|Week4：Neural Networks</title>
-        <pubTime>2017-09-27T15:49:31.000Z</pubTime>
+        <title>危机公关|如何化解企业危机？</title>
+        <pubTime>2017-10-25T07:37:57.000Z</pubTime>
+        
+        <tag>Public Relationship</tag>
+         
+         
+           
+             
+              <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
+          
+             
+              <breadCrumb title="Public Relationship" url="http://ScarlettHuang.cn/categories/Communication-Science/Public-Relationship/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/10/29/%E4%BC%97%E5%8C%85%E6%A8%A1%E5%BC%8F-%E5%AF%B9%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E2%80%9C%E6%96%B9%E8%A8%80%E4%BF%9D%E6%8A%A4%E8%AE%A1%E5%88%92%E2%80%9D%E7%9A%84%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>众包模式|对科大讯飞“方言保护计划”的分析</title>
+        <pubTime>2017-10-29T08:07:18.000Z</pubTime>
         
         <tag>Artificial Intelligence</tag>
          
-        <tag>Machine Learning</tag>
-         
-        <tag>Coursera ML</tag>
+        <tag>AI Application</tag>
          
          
            
@@ -2970,7 +2987,7 @@
               <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
           
              
-              <breadCrumb title="Machine Learning" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/Machine-Learning/"/>
+              <breadCrumb title="AI Application" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/AI-Application/"/>
           
         </display>
     </data>
@@ -3003,46 +3020,6 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2017/12/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%8D%81%E7%AB%A0%EF%BC%9A%E6%8E%92%E5%BA%8F/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构第十章：排序</title>
-        <pubTime>2017-12-14T09:01:14.000Z</pubTime>
-        
-        <tag>Data Structure</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Data Structure" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Structure/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/10/22/%E5%9B%A2%E9%98%9F%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>团队技术博客设计</title>
-        <pubTime>2017-10-22T02:20:26.000Z</pubTime>
-        
-        <tag>blog/website</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://ScarlettHuang.cn/2017/12/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%85%AB%E7%AB%A0%EF%BC%9A%E5%9B%BE/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
@@ -3066,22 +3043,22 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2017/12/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%94%E7%AB%A0%EF%BC%9A%E6%95%B0%E7%BB%84/</loc>
+    <loc>http://ScarlettHuang.cn/2017/12/03/%E4%B8%AD%E5%8D%B0%E5%AF%B9%E5%B3%99%E4%BA%8B%E4%BB%B6%E7%83%AD%E9%97%A8%E5%BE%AE%E5%8D%9A%E4%BC%A0%E6%92%AD%E5%88%86%E6%9E%90/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>数据结构第五章：数组</title>
-        <pubTime>2017-12-10T08:56:40.000Z</pubTime>
+        <title>中印对峙事件热门微博传播分析</title>
+        <pubTime>2017-12-03T09:08:35.000Z</pubTime>
         
-        <tag>Data Structure</tag>
+        <tag>Public Opinion Analysis</tag>
          
          
            
              
-              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
+              <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
           
              
-              <breadCrumb title="Data Structure" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Structure/"/>
+              <breadCrumb title="Public Opinion Analysis" url="http://ScarlettHuang.cn/categories/Communication-Science/Public-Opinion-Analysis/"/>
           
         </display>
     </data>
@@ -3089,26 +3066,19 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2017/09/29/Coursera-Machine-Learning-Week5-BackPropagation-Algorithm/</loc>
+    <loc>http://ScarlettHuang.cn/2017/09/11/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E5%BF%B5%E5%88%9D%E5%AF%BC/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>Coursera Machine Learning|Week5:BackPropagation Algorithm</title>
-        <pubTime>2017-09-29T09:44:25.000Z</pubTime>
+        <title>人工智能概念初导</title>
+        <pubTime>2017-09-10T16:04:04.000Z</pubTime>
         
         <tag>Artificial Intelligence</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>Coursera ML</tag>
          
          
            
              
               <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
-          
-             
-              <breadCrumb title="Machine Learning" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/Machine-Learning/"/>
           
         </display>
     </data>
@@ -3139,22 +3109,23 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2017/11/30/%E5%A6%82%E4%BD%95%E5%9C%A8hexo%E4%B8%AD%E4%B9%A6%E5%86%99LaTex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%EF%BC%9F/</loc>
+    <loc>http://ScarlettHuang.cn/2017/09/27/%E3%80%8A%E8%B5%B0%E8%BF%912050%EF%BC%9A%E6%B3%A8%E6%84%8F%E5%8A%9B%E3%80%81%E4%BA%92%E8%81%94%E7%BD%91%E5%92%8C%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>如何在hexo中书写LaTex数学公式？</title>
-        <pubTime>2017-11-30T07:04:37.000Z</pubTime>
+        <title>《走近2050：注意力、互联网和人工智能》阅读笔记</title>
+        <pubTime>2017-09-27T07:49:15.000Z</pubTime>
         
-        <tag>Hexo</tag>
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Reading Notes</tag>
+         
+        <tag>Communication Science</tag>
          
          
            
              
-              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Coding" url="http://ScarlettHuang.cn/categories/Computer-Science/Coding/"/>
+              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
           
         </display>
     </data>
@@ -3185,6 +3156,28 @@
 
     
   <url>
+    <loc>http://ScarlettHuang.cn/2017/07/10/%E4%B8%89%E5%8D%81%E4%BA%8C/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>三十二</title>
+        <pubTime>2017-07-10T01:31:46.000Z</pubTime>
+        
+        <tag>Film</tag>
+         
+        <tag>Thougnts</tag>
+         
+         
+           
+             
+              <breadCrumb title="Dairy" url="http://ScarlettHuang.cn/categories/Dairy/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ScarlettHuang.cn/2017/10/25/%E6%A1%88%E4%BE%8B-%E8%93%9D%E5%BD%AA%EF%BC%88BlueFocus%EF%BC%89%E6%B4%BB%E5%8A%A8%E7%AD%96%E5%88%92%E4%B9%A6/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
@@ -3208,19 +3201,22 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2017/10/27/Markdown-X-LeTex-%E5%A6%82%E4%BD%95%E6%84%89%E5%BF%AB%E5%9C%B0%E4%B9%A6%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%EF%BC%9F/</loc>
+    <loc>http://ScarlettHuang.cn/2017/11/08/%E6%80%9D%E8%80%83-%E6%96%B0%E6%8A%80%E6%9C%AF%E5%A6%82%E4%BD%95%E5%8A%A9%E5%8A%9B%E4%B8%AD%E5%9B%BD%E5%B9%BF%E7%94%B5%E8%A1%8C%E4%B8%9A%E7%9A%84%E5%8F%91%E5%B1%95-1/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>Markdown X LeTex|如何愉快地书写数学公式？</title>
-        <pubTime>2017-10-27T05:56:12.000Z</pubTime>
+        <title>思考|新技术如何助力中国广电行业的发展</title>
+        <pubTime>2017-11-08T15:35:36.000Z</pubTime>
         
-        <tag>Math</tag>
+        <tag>Medium Study</tag>
          
          
            
              
-              <breadCrumb title="Math" url="http://ScarlettHuang.cn/categories/Math/"/>
+              <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
+          
+             
+              <breadCrumb title="Medium Study" url="http://ScarlettHuang.cn/categories/Communication-Science/Medium-Study/"/>
           
         </display>
     </data>
@@ -3248,75 +3244,22 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2017/10/22/MongoDB-%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/</loc>
+    <loc>http://ScarlettHuang.cn/2017/09/07/%E5%B0%B1%E6%B5%B7%E5%BA%95%E6%8D%9E%E5%8D%B1%E6%9C%BA%E6%B5%85%E8%B0%88%E5%8D%B1%E6%9C%BA%E5%85%AC%E5%85%B3/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>MongoDB|基本了解</title>
-        <pubTime>2017-10-22T10:59:14.000Z</pubTime>
+        <title>就海底捞危机浅谈危机公关</title>
+        <pubTime>2017-09-07T00:31:24.000Z</pubTime>
         
-        <tag>Computer Science</tag>
-         
-        <tag>Database System</tag>
-         
-        <tag>MongoDB</tag>
+        <tag>Public Relationship</tag>
          
          
            
              
-              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
+              <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
           
              
-              <breadCrumb title="Database System" url="http://ScarlettHuang.cn/categories/Computer-Science/Database-System/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/10/22/MongoDB-%E5%AE%89%E8%A3%85%E5%92%8C%E8%BF%90%E8%A1%8C/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>MongoDB|安装和运行</title>
-        <pubTime>2017-10-22T10:37:11.000Z</pubTime>
-        
-        <tag>Computer Science</tag>
-         
-        <tag>Database System</tag>
-         
-        <tag>MongoDB</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Database System" url="http://ScarlettHuang.cn/categories/Computer-Science/Database-System/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/07/10/%E4%B8%89%E5%8D%81%E4%BA%8C/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>三十二</title>
-        <pubTime>2017-07-10T01:31:46.000Z</pubTime>
-        
-        <tag>Film</tag>
-         
-        <tag>Thougnts</tag>
-         
-         
-           
-             
-              <breadCrumb title="Dairy" url="http://ScarlettHuang.cn/categories/Dairy/"/>
+              <breadCrumb title="Public Relationship" url="http://ScarlettHuang.cn/categories/Communication-Science/Public-Relationship/"/>
           
         </display>
     </data>
@@ -3337,6 +3280,29 @@
            
              
               <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/11/30/%E5%A6%82%E4%BD%95%E5%9C%A8hexo%E4%B8%AD%E4%B9%A6%E5%86%99LaTex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%EF%BC%9F/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何在hexo中书写LaTex数学公式？</title>
+        <pubTime>2017-11-30T07:04:37.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Coding" url="http://ScarlettHuang.cn/categories/Computer-Science/Coding/"/>
           
         </display>
     </data>
@@ -3387,121 +3353,36 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2017/09/27/%E3%80%8A%E8%B5%B0%E8%BF%912050%EF%BC%9A%E6%B3%A8%E6%84%8F%E5%8A%9B%E3%80%81%E4%BA%92%E8%81%94%E7%BD%91%E5%92%8C%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://ScarlettHuang.cn/2017/10/22/%E5%9B%A2%E9%98%9F%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>《走近2050：注意力、互联网和人工智能》阅读笔记</title>
-        <pubTime>2017-09-27T07:49:15.000Z</pubTime>
+        <title>团队技术博客设计</title>
+        <pubTime>2017-10-22T02:20:26.000Z</pubTime>
         
-        <tag>Artificial Intelligence</tag>
+        <tag>blog/website</tag>
          
-        <tag>Reading Notes</tag>
          
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/09/05/%E5%AA%92%E4%BD%93%E5%88%86%E6%9E%90%E7%9A%84%E5%AF%B9%E8%B1%A1%E9%80%89%E5%8F%96/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>媒体分析的对象选取</title>
+        <pubTime>2017-09-05T12:02:35.000Z</pubTime>
+        
         <tag>Communication Science</tag>
          
          
            
              
-              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/10/06/Coursera-Machine-Learning-Week6-Advice-for-Applying-Machine-Learning/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>Coursera Machine Learning|Week6:Advice for Applying Machine Learning</title>
-        <pubTime>2017-10-06T13:37:41.000Z</pubTime>
-        
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>Coursera ML</tag>
-         
-         
-           
-             
-              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
-          
-             
-              <breadCrumb title="Machine Learning" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/Machine-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/09/07/%E5%B0%B1%E6%B5%B7%E5%BA%95%E6%8D%9E%E5%8D%B1%E6%9C%BA%E6%B5%85%E8%B0%88%E5%8D%B1%E6%9C%BA%E5%85%AC%E5%85%B3/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>就海底捞危机浅谈危机公关</title>
-        <pubTime>2017-09-07T00:31:24.000Z</pubTime>
-        
-        <tag>Public Relationship</tag>
-         
-         
-           
-             
               <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
-          
-             
-              <breadCrumb title="Public Relationship" url="http://ScarlettHuang.cn/categories/Communication-Science/Public-Relationship/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/09/25/%E7%90%86%E8%A7%A3%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%92%8C%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>理解算法的时间和空间复杂度</title>
-        <pubTime>2017-09-25T11:16:50.000Z</pubTime>
-        
-        <tag>Computer Science</tag>
-         
-        <tag>Data Structure</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Data Structure" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Structure/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/12/03/%E4%B8%AD%E5%8D%B0%E5%AF%B9%E5%B3%99%E4%BA%8B%E4%BB%B6%E7%83%AD%E9%97%A8%E5%BE%AE%E5%8D%9A%E4%BC%A0%E6%92%AD%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>中印对峙事件热门微博传播分析</title>
-        <pubTime>2017-12-03T09:08:35.000Z</pubTime>
-        
-        <tag>Public Opinion Analysis</tag>
-         
-         
-           
-             
-              <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
-          
-             
-              <breadCrumb title="Public Opinion Analysis" url="http://ScarlettHuang.cn/categories/Communication-Science/Public-Opinion-Analysis/"/>
           
         </display>
     </data>
@@ -3518,369 +3399,6 @@
         
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/09/11/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E5%BF%B5%E5%88%9D%E5%AF%BC/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>人工智能概念初导</title>
-        <pubTime>2017-09-10T16:04:04.000Z</pubTime>
-        
-        <tag>Artificial Intelligence</tag>
-         
-         
-           
-             
-              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/10/08/Coursera-Machine-Learning-Week7-SVM-Kernels/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>Coursera Machine Learning|Week7:SVM & Kernels</title>
-        <pubTime>2017-10-08T13:41:11.000Z</pubTime>
-        
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>Coursera ML</tag>
-         
-         
-           
-             
-              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
-          
-             
-              <breadCrumb title="Machine Learning" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/Machine-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/11/21/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%EF%BC%9A%E6%A0%BC%E4%B8%8E%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>离散数学：格与布尔代数</title>
-        <pubTime>2017-11-21T11:13:44.000Z</pubTime>
-        
-        <tag>Math</tag>
-         
-        <tag>Discrete Mathematics</tag>
-         
-         
-           
-             
-              <breadCrumb title="Math" url="http://ScarlettHuang.cn/categories/Math/"/>
-          
-             
-              <breadCrumb title="Discrete Mathematics" url="http://ScarlettHuang.cn/categories/Math/Discrete-Mathematics/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/11/08/%E6%80%9D%E8%80%83-%E6%96%B0%E6%8A%80%E6%9C%AF%E5%A6%82%E4%BD%95%E5%8A%A9%E5%8A%9B%E4%B8%AD%E5%9B%BD%E5%B9%BF%E7%94%B5%E8%A1%8C%E4%B8%9A%E7%9A%84%E5%8F%91%E5%B1%95-1/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>思考|新技术如何助力中国广电行业的发展</title>
-        <pubTime>2017-11-08T15:35:36.000Z</pubTime>
-        
-        <tag>Medium Study</tag>
-         
-         
-           
-             
-              <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
-          
-             
-              <breadCrumb title="Medium Study" url="http://ScarlettHuang.cn/categories/Communication-Science/Medium-Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/09/15/%E7%BA%B8%E5%AA%92%E7%9A%84%E5%87%BA%E8%B7%AF%EF%BC%9A%E5%90%91%E6%AD%BB%E8%80%8C%E7%94%9F%EF%BC%9F/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>纸媒的出路：向死而生？</title>
-        <pubTime>2017-09-15T15:11:08.000Z</pubTime>
-        
-        <tag>Medium Study</tag>
-         
-         
-           
-             
-              <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
-          
-             
-              <breadCrumb title="Medium Study" url="http://ScarlettHuang.cn/categories/Communication-Science/Medium-Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/11/09/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84-VS-%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>线性结构 VS 非线性结构</title>
-        <pubTime>2017-11-09T03:09:01.000Z</pubTime>
-        
-        <tag>Computer Science</tag>
-         
-        <tag>Data Structure</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Data Structure" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Structure/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/11/07/%E7%BB%88%E7%AB%AF%E6%98%AF%E4%BB%80%E4%B9%88/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>终端是什么</title>
-        <pubTime>2017-11-07T12:01:47.000Z</pubTime>
-        
-        <tag>Computer Science</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2018/01/14/%E5%B9%BF%E6%92%AD%E7%94%B5%E8%A7%86%E6%A6%82%E8%AE%BA%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>广播电视概论知识点总结</title>
-        <pubTime>2018-01-14T08:09:57.000Z</pubTime>
-        
-        <tag>Medium Study</tag>
-         
-         
-           
-             
-              <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
-          
-             
-              <breadCrumb title="Medium Study" url="http://ScarlettHuang.cn/categories/Communication-Science/Medium-Study/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/11/21/Machine-Vision-vs-Computer-Vision/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>Machine Vision vs Computer Vision</title>
-        <pubTime>2017-11-21T09:18:35.000Z</pubTime>
-        
-        <tag>Machine Vision &amp; Computer Vision</tag>
-         
-         
-           
-             
-              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
-          
-             
-              <breadCrumb title="Machine Vision &amp; Computer Vision" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/Machine-Vision-Computer-Vision/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/10/13/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E9%83%A8%E5%88%86%E6%A6%82%E5%BF%B5%E8%A7%A3%E9%87%8A/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>社交网络分析中的部分概念解释</title>
-        <pubTime>2017-10-13T09:19:52.000Z</pubTime>
-        
-        <tag>Computer Science</tag>
-         
-        <tag>Communication Science</tag>
-         
-        <tag>Social Network Analysis</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Social Network Analysis" url="http://ScarlettHuang.cn/categories/Computer-Science/Social-Network-Analysis/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/09/04/PR-Illustration/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>PR-Illustration</title>
-        <pubTime>2017-09-04T04:57:10.000Z</pubTime>
-        
-        <tag>Public Relationship</tag>
-         
-         
-           
-             
-              <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
-          
-             
-              <breadCrumb title="Public Relationship" url="http://ScarlettHuang.cn/categories/Communication-Science/Public-Relationship/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/10/30/AI-PM%E7%9A%84%E4%BA%BA%E6%96%87%E7%B4%A0%E5%85%BB%E5%92%8C%E7%B2%BE%E7%A5%9E%E5%A2%83%E7%95%8C%E7%9A%84%E8%AF%84%E5%88%A4%E6%A0%87%E5%87%86%EF%BC%9F/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>AI PM的人文素养和精神境界的评判标准？</title>
-        <pubTime>2017-10-30T01:04:43.000Z</pubTime>
-        
-        <tag>AI PM</tag>
-         
-        <tag>Product Manager</tag>
-         
-        <tag>PM Ability</tag>
-         
-         
-           
-             
-              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
-          
-             
-              <breadCrumb title="AI PM" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/AI-PM/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/10/30/%E8%8B%A5%E6%9C%89%E5%AE%8C%E7%BE%8E%EF%BC%8C%E5%BF%85%E6%9C%89%E8%B0%8E%E8%A8%80-%E4%BA%A7%E5%93%81%E7%AD%96%E7%95%A5%E6%A8%A1%E5%9E%8B%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%85%B3%E9%94%AE%E7%82%B9/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>若有完美，必有谎言|产品策略模型设计的关键点</title>
-        <pubTime>2017-10-30T03:21:26.000Z</pubTime>
-        
-        <tag>AI PM</tag>
-         
-        <tag>Product Manager</tag>
-         
-        <tag>Product Pattern Design</tag>
-         
-         
-           
-             
-              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
-          
-             
-              <breadCrumb title="AI PM" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/AI-PM/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/09/12/%E8%A7%82%E7%82%B9%EF%BC%9A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%9F%E8%AE%B8%E8%BF%9C%E9%9D%9E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E6%9C%AA%E6%9D%A5/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>观点：深度学习也许远非人工智能的未来</title>
-        <pubTime>2017-09-12T05:03:50.000Z</pubTime>
-        
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>Deep Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
-          
-             
-              <breadCrumb title="Deep Learning" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/Deep-Learning/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/10/29/%E4%BC%97%E5%8C%85%E6%A8%A1%E5%BC%8F-%E5%AF%B9%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E2%80%9C%E6%96%B9%E8%A8%80%E4%BF%9D%E6%8A%A4%E8%AE%A1%E5%88%92%E2%80%9D%E7%9A%84%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>众包模式|对科大讯飞“方言保护计划”的分析</title>
-        <pubTime>2017-10-29T08:07:18.000Z</pubTime>
-        
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>AI Application</tag>
-         
-         
-           
-             
-              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
-          
-             
-              <breadCrumb title="AI Application" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/AI-Application/"/>
-          
         </display>
     </data>
     </url>
@@ -3935,6 +3453,81 @@
 
     
   <url>
+    <loc>http://ScarlettHuang.cn/2017/09/25/%E7%90%86%E8%A7%A3%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%92%8C%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>理解算法的时间和空间复杂度</title>
+        <pubTime>2017-09-25T11:16:50.000Z</pubTime>
+        
+        <tag>Computer Science</tag>
+         
+        <tag>Data Structure</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Data Structure" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Structure/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2018/01/14/%E5%B9%BF%E6%92%AD%E7%94%B5%E8%A7%86%E6%A6%82%E8%AE%BA%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>广播电视概论知识点总结</title>
+        <pubTime>2018-01-14T08:09:57.000Z</pubTime>
+        
+        <tag>Medium Study</tag>
+         
+         
+           
+             
+              <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
+          
+             
+              <breadCrumb title="Medium Study" url="http://ScarlettHuang.cn/categories/Communication-Science/Medium-Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/10/13/%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90%E4%B8%AD%E7%9A%84%E9%83%A8%E5%88%86%E6%A6%82%E5%BF%B5%E8%A7%A3%E9%87%8A/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>社交网络分析中的部分概念解释</title>
+        <pubTime>2017-10-13T09:19:52.000Z</pubTime>
+        
+        <tag>Computer Science</tag>
+         
+        <tag>Communication Science</tag>
+         
+        <tag>Social Network Analysis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Social Network Analysis" url="http://ScarlettHuang.cn/categories/Computer-Science/Social-Network-Analysis/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ScarlettHuang.cn/2017/10/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%AF%E8%A7%86%E5%8C%96%E8%BD%AF%E4%BB%B6-MangoDB-Compass%E5%88%9D%E6%8E%A2/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
@@ -3962,19 +3555,22 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2017/09/05/%E5%AA%92%E4%BD%93%E5%88%86%E6%9E%90%E7%9A%84%E5%AF%B9%E8%B1%A1%E9%80%89%E5%8F%96/</loc>
+    <loc>http://ScarlettHuang.cn/2017/09/04/PR-Illustration/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>媒体分析的对象选取</title>
-        <pubTime>2017-09-05T12:02:35.000Z</pubTime>
+        <title>PR-Illustration</title>
+        <pubTime>2017-09-04T04:57:10.000Z</pubTime>
         
-        <tag>Communication Science</tag>
+        <tag>Public Relationship</tag>
          
          
            
              
               <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
+          
+             
+              <breadCrumb title="Public Relationship" url="http://ScarlettHuang.cn/categories/Communication-Science/Public-Relationship/"/>
           
         </display>
     </data>
@@ -3982,16 +3578,43 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2018/01/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B01/</loc>
+    <loc>http://ScarlettHuang.cn/2017/11/21/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%EF%BC%9A%E6%A0%BC%E4%B8%8E%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>计算机组成原理复习笔记1</title>
-        <pubTime>2018-01-04T08:29:23.000Z</pubTime>
+        <title>离散数学：格与布尔代数</title>
+        <pubTime>2017-11-21T11:13:44.000Z</pubTime>
+        
+        <tag>Math</tag>
+         
+        <tag>Discrete Mathematics</tag>
+         
+         
+           
+             
+              <breadCrumb title="Math" url="http://ScarlettHuang.cn/categories/Math/"/>
+          
+             
+              <breadCrumb title="Discrete Mathematics" url="http://ScarlettHuang.cn/categories/Math/Discrete-Mathematics/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/10/22/MongoDB-%E5%AE%89%E8%A3%85%E5%92%8C%E8%BF%90%E8%A1%8C/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>MongoDB|安装和运行</title>
+        <pubTime>2017-10-22T10:37:11.000Z</pubTime>
         
         <tag>Computer Science</tag>
          
-        <tag>Basis of Computer Engineering</tag>
+        <tag>Database System</tag>
+         
+        <tag>MongoDB</tag>
          
          
            
@@ -3999,7 +3622,122 @@
               <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
           
              
-              <breadCrumb title="Basis of Computer Engineering" url="http://ScarlettHuang.cn/categories/Computer-Science/Basis-of-Computer-Engineering/"/>
+              <breadCrumb title="Database System" url="http://ScarlettHuang.cn/categories/Computer-Science/Database-System/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/09/15/%E7%BA%B8%E5%AA%92%E7%9A%84%E5%87%BA%E8%B7%AF%EF%BC%9A%E5%90%91%E6%AD%BB%E8%80%8C%E7%94%9F%EF%BC%9F/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>纸媒的出路：向死而生？</title>
+        <pubTime>2017-09-15T15:11:08.000Z</pubTime>
+        
+        <tag>Medium Study</tag>
+         
+         
+           
+             
+              <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
+          
+             
+              <breadCrumb title="Medium Study" url="http://ScarlettHuang.cn/categories/Communication-Science/Medium-Study/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/11/07/%E7%BB%88%E7%AB%AF%E6%98%AF%E4%BB%80%E4%B9%88/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>终端是什么</title>
+        <pubTime>2017-11-07T12:01:47.000Z</pubTime>
+        
+        <tag>Computer Science</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/10/22/MongoDB-%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>MongoDB|基本了解</title>
+        <pubTime>2017-10-22T10:59:14.000Z</pubTime>
+        
+        <tag>Computer Science</tag>
+         
+        <tag>Database System</tag>
+         
+        <tag>MongoDB</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Database System" url="http://ScarlettHuang.cn/categories/Computer-Science/Database-System/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/11/09/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84-VS-%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>线性结构 VS 非线性结构</title>
+        <pubTime>2017-11-09T03:09:01.000Z</pubTime>
+        
+        <tag>Computer Science</tag>
+         
+        <tag>Data Structure</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Data Structure" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Structure/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/10/27/Markdown-X-LeTex-%E5%A6%82%E4%BD%95%E6%84%89%E5%BF%AB%E5%9C%B0%E4%B9%A6%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%EF%BC%9F/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Markdown X LeTex|如何愉快地书写数学公式？</title>
+        <pubTime>2017-10-27T05:56:12.000Z</pubTime>
+        
+        <tag>Math</tag>
+         
+         
+           
+             
+              <breadCrumb title="Math" url="http://ScarlettHuang.cn/categories/Math/"/>
           
         </display>
     </data>
@@ -4032,137 +3770,26 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2017/10/29/%E9%80%BB%E8%BE%91%E5%AD%A6X%E9%9B%86%E5%90%88%E8%AE%BA-%E5%86%85%E6%B6%B5%E4%B8%8E%E5%A4%96%E5%BB%B6%EF%BC%8C%E6%A6%82%E5%BF%B5%E7%9A%84%E5%A4%96%E5%BB%B6%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</loc>
+    <loc>http://ScarlettHuang.cn/2017/10/30/%E8%8B%A5%E6%9C%89%E5%AE%8C%E7%BE%8E%EF%BC%8C%E5%BF%85%E6%9C%89%E8%B0%8E%E8%A8%80-%E4%BA%A7%E5%93%81%E7%AD%96%E7%95%A5%E6%A8%A1%E5%9E%8B%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%85%B3%E9%94%AE%E7%82%B9/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>逻辑学X集合论|内涵与外延，概念的外延间的关系</title>
-        <pubTime>2017-10-29T11:39:55.000Z</pubTime>
+        <title>若有完美，必有谎言|产品策略模型设计的关键点</title>
+        <pubTime>2017-10-30T03:21:26.000Z</pubTime>
         
-        <tag>Discrete Mathematics</tag>
+        <tag>AI PM</tag>
          
-        <tag>Logic</tag>
+        <tag>Product Manager</tag>
          
-         
-           
-             
-              <breadCrumb title="Math" url="http://ScarlettHuang.cn/categories/Math/"/>
-          
-             
-              <breadCrumb title="Discrete Mathematics" url="http://ScarlettHuang.cn/categories/Math/Discrete-Mathematics/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2018/01/23/Hexo-Error-Deployer-not-found-git/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo Error|Deployer not found:git</title>
-        <pubTime>2018-01-23T07:14:34.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Coding" url="http://ScarlettHuang.cn/categories/Computer-Science/Coding/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/12/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9A%E7%BB%AA%E8%AE%BA/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构第一章：绪论</title>
-        <pubTime>2017-12-08T08:51:24.000Z</pubTime>
-        
-        <tag>Data Structure</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Data Structure" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Structure/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/09/08/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E3%80%8A%E7%BD%91%E7%BB%9C%E4%BC%A0%E6%92%AD%E5%AF%BC%E8%AE%BA%E3%80%8B/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>阅读笔记《网络传播导论》</title>
-        <pubTime>2017-09-07T16:12:01.000Z</pubTime>
-        
-        <tag>Reading Notes</tag>
-         
-        <tag>Communication Science</tag>
-         
-         
-           
-             
-              <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/09/11/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E3%80%8A%E6%BC%AB%E8%B0%88%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E3%80%8B/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>阅读笔记《漫谈人工智能》</title>
-        <pubTime>2017-09-10T16:12:34.000Z</pubTime>
-        
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>Reading Notes</tag>
+        <tag>Product Pattern Design</tag>
          
          
            
              
               <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/12/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E6%A0%88/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构第三章：栈</title>
-        <pubTime>2017-12-16T08:53:31.000Z</pubTime>
-        
-        <tag>Data Structure</tag>
-         
-         
-           
              
-              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
-          
-             
-              <breadCrumb title="Data Structure" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Structure/"/>
+              <breadCrumb title="AI PM" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/AI-PM/"/>
           
         </display>
     </data>
@@ -4195,6 +3822,276 @@
 
     
   <url>
+    <loc>http://ScarlettHuang.cn/2017/09/12/%E8%A7%82%E7%82%B9%EF%BC%9A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B9%9F%E8%AE%B8%E8%BF%9C%E9%9D%9E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E6%9C%AA%E6%9D%A5/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>观点：深度学习也许远非人工智能的未来</title>
+        <pubTime>2017-09-12T05:03:50.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Deep Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="Deep Learning" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/Deep-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/10/30/AI-PM%E7%9A%84%E4%BA%BA%E6%96%87%E7%B4%A0%E5%85%BB%E5%92%8C%E7%B2%BE%E7%A5%9E%E5%A2%83%E7%95%8C%E7%9A%84%E8%AF%84%E5%88%A4%E6%A0%87%E5%87%86%EF%BC%9F/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>AI PM的人文素养和精神境界的评判标准？</title>
+        <pubTime>2017-10-30T01:04:43.000Z</pubTime>
+        
+        <tag>AI PM</tag>
+         
+        <tag>Product Manager</tag>
+         
+        <tag>PM Ability</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="AI PM" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/AI-PM/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/11/21/Machine-Vision-vs-Computer-Vision/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Machine Vision vs Computer Vision</title>
+        <pubTime>2017-11-21T09:18:35.000Z</pubTime>
+        
+        <tag>Machine Vision &amp; Computer Vision</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="Machine Vision &amp; Computer Vision" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/Machine-Vision-Computer-Vision/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2018/01/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>数据库系统概论复习笔记</title>
+        <pubTime>2018-01-05T09:05:18.000Z</pubTime>
+        
+        <tag>Database System</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Database System" url="http://ScarlettHuang.cn/categories/Computer-Science/Database-System/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/12/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9A%E7%BB%AA%E8%AE%BA/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构第一章：绪论</title>
+        <pubTime>2017-12-08T08:51:24.000Z</pubTime>
+        
+        <tag>Data Structure</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Data Structure" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Structure/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/10/11/Coursera-Machine-Learning-Week8-Cluster-PCA/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Coursera Machine Learning|Week8:Cluster & PCA</title>
+        <pubTime>2017-10-11T11:56:48.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>Coursera ML</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="Machine Learning" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/10/06/Coursera-Machine-Learning-Week6-Advice-for-Applying-Machine-Learning/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Coursera Machine Learning|Week6:Advice for Applying Machine Learning</title>
+        <pubTime>2017-10-06T13:37:41.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>Coursera ML</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="Machine Learning" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2018/01/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B01/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>计算机组成原理复习笔记1</title>
+        <pubTime>2018-01-04T08:29:23.000Z</pubTime>
+        
+        <tag>Computer Science</tag>
+         
+        <tag>Basis of Computer Engineering</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Basis of Computer Engineering" url="http://ScarlettHuang.cn/categories/Computer-Science/Basis-of-Computer-Engineering/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2018/01/23/Hexo-Error-Deployer-not-found-git/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo Error|Deployer not found:git</title>
+        <pubTime>2018-01-23T07:14:34.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
+          
+             
+              <breadCrumb title="Coding" url="http://ScarlettHuang.cn/categories/Computer-Science/Coding/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/10/29/%E9%80%BB%E8%BE%91%E5%AD%A6X%E9%9B%86%E5%90%88%E8%AE%BA-%E5%86%85%E6%B6%B5%E4%B8%8E%E5%A4%96%E5%BB%B6%EF%BC%8C%E6%A6%82%E5%BF%B5%E7%9A%84%E5%A4%96%E5%BB%B6%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>逻辑学X集合论|内涵与外延，概念的外延间的关系</title>
+        <pubTime>2017-10-29T11:39:55.000Z</pubTime>
+        
+        <tag>Discrete Mathematics</tag>
+         
+        <tag>Logic</tag>
+         
+         
+           
+             
+              <breadCrumb title="Math" url="http://ScarlettHuang.cn/categories/Math/"/>
+          
+             
+              <breadCrumb title="Discrete Mathematics" url="http://ScarlettHuang.cn/categories/Math/Discrete-Mathematics/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/09/08/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E3%80%8A%E7%BD%91%E7%BB%9C%E4%BC%A0%E6%92%AD%E5%AF%BC%E8%AE%BA%E3%80%8B/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>阅读笔记《网络传播导论》</title>
+        <pubTime>2017-09-07T16:12:01.000Z</pubTime>
+        
+        <tag>Reading Notes</tag>
+         
+        <tag>Communication Science</tag>
+         
+         
+           
+             
+              <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ScarlettHuang.cn/2017/12/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%83%E7%AB%A0%EF%BC%9A%E6%A0%91/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
@@ -4218,6 +4115,82 @@
 
     
   <url>
+    <loc>http://ScarlettHuang.cn/2017/10/08/Coursera-Machine-Learning-Week7-SVM-Kernels/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Coursera Machine Learning|Week7:SVM & Kernels</title>
+        <pubTime>2017-10-08T13:41:11.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>Coursera ML</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="Machine Learning" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/09/29/Coursera-Machine-Learning-Week5-BackPropagation-Algorithm/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Coursera Machine Learning|Week5:BackPropagation Algorithm</title>
+        <pubTime>2017-09-29T09:44:25.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>Coursera ML</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="Machine Learning" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/09/11/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%E3%80%8A%E6%BC%AB%E8%B0%88%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E3%80%8B/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>阅读笔记《漫谈人工智能》</title>
+        <pubTime>2017-09-10T16:12:34.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Reading Notes</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ScarlettHuang.cn/2017/12/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B9%9D%E7%AB%A0%EF%BC%9A%E6%9F%A5%E6%89%BE/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
@@ -4234,31 +4207,6 @@
           
              
               <breadCrumb title="Data Structure" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Structure/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ScarlettHuang.cn/2017/11/07/%E9%98%BF%E9%87%8CAI%E9%B2%81%E7%8F%AD%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/</loc>
-    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>阿里AI鲁班技术原理详解</title>
-        <pubTime>2017-11-07T03:42:57.000Z</pubTime>
-        
-        <tag>Artificial Intelligence</tag>
-         
-        <tag>AI Application</tag>
-         
-         
-           
-             
-              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
-          
-             
-              <breadCrumb title="AI Application" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/AI-Application/"/>
           
         </display>
     </data>
@@ -4291,14 +4239,66 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2018/01/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://ScarlettHuang.cn/2017/11/07/%E9%98%BF%E9%87%8CAI%E9%B2%81%E7%8F%AD%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>数据库系统概论复习笔记</title>
-        <pubTime>2018-01-05T09:05:18.000Z</pubTime>
+        <title>阿里AI鲁班技术原理详解</title>
+        <pubTime>2017-11-07T03:42:57.000Z</pubTime>
         
-        <tag>Database System</tag>
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>AI Application</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="AI Application" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/AI-Application/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/09/27/Coursera-Machine-Learning-Week4%EF%BC%9ANeural-Networks/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Coursera Machine Learning|Week4：Neural Networks</title>
+        <pubTime>2017-09-27T15:49:31.000Z</pubTime>
+        
+        <tag>Artificial Intelligence</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>Coursera ML</tag>
+         
+         
+           
+             
+              <breadCrumb title="Artificial Intelligence" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/"/>
+          
+             
+              <breadCrumb title="Machine Learning" url="http://ScarlettHuang.cn/categories/Artificial-Intelligence/Machine-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ScarlettHuang.cn/2017/12/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E6%A0%88/</loc>
+    <lastmod>2018-01-28T14:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构第三章：栈</title>
+        <pubTime>2017-12-16T08:53:31.000Z</pubTime>
+        
+        <tag>Data Structure</tag>
          
          
            
@@ -4306,7 +4306,7 @@
               <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
           
              
-              <breadCrumb title="Database System" url="http://ScarlettHuang.cn/categories/Computer-Science/Database-System/"/>
+              <breadCrumb title="Data Structure" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Structure/"/>
           
         </display>
     </data>
@@ -4337,12 +4337,12 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2017/12/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%85%AD%E7%AB%A0%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
+    <loc>http://ScarlettHuang.cn/2017/12/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%94%E7%AB%A0%EF%BC%9A%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>数据结构第六章：二叉树</title>
-        <pubTime>2017-12-18T08:57:23.000Z</pubTime>
+        <title>数据结构第五章：数组</title>
+        <pubTime>2017-12-10T08:56:40.000Z</pubTime>
         
         <tag>Data Structure</tag>
          
@@ -4360,22 +4360,22 @@
 
     
   <url>
-    <loc>http://ScarlettHuang.cn/2017/10/25/%E5%8D%B1%E6%9C%BA%E5%85%AC%E5%85%B3-%E5%A6%82%E4%BD%95%E5%8C%96%E8%A7%A3%E4%BC%81%E4%B8%9A%E5%8D%B1%E6%9C%BA%EF%BC%9F/</loc>
+    <loc>http://ScarlettHuang.cn/2017/12/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E5%8D%81%E7%AB%A0%EF%BC%9A%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2018-01-28T14:58:49.000Z</lastmod>
     <data>
         <display>
-        <title>危机公关|如何化解企业危机？</title>
-        <pubTime>2017-10-25T07:37:57.000Z</pubTime>
+        <title>数据结构第十章：排序</title>
+        <pubTime>2017-12-14T09:01:14.000Z</pubTime>
         
-        <tag>Public Relationship</tag>
+        <tag>Data Structure</tag>
          
          
            
              
-              <breadCrumb title="Communication Science" url="http://ScarlettHuang.cn/categories/Communication-Science/"/>
+              <breadCrumb title="Computer Science" url="http://ScarlettHuang.cn/categories/Computer-Science/"/>
           
              
-              <breadCrumb title="Public Relationship" url="http://ScarlettHuang.cn/categories/Communication-Science/Public-Relationship/"/>
+              <breadCrumb title="Data Structure" url="http://ScarlettHuang.cn/categories/Computer-Science/Data-Structure/"/>
           
         </display>
     </data>
