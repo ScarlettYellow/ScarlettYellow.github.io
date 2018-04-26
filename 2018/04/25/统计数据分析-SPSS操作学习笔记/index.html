@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Data Mining and Analysis,SPSS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：灰常全面的SPSS 学习笔记 ~ // 最近传播统计学课程要进行 SPSS 实操了 w">
+<meta name="keywords" content="Data Mining and Analysis,SPSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="统计数据分析|SPSS操作学习笔记">
+<meta property="og:url" content="http://ScarlettHuang.cn/2018/04/25/统计数据分析-SPSS操作学习笔记/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：灰常全面的SPSS 学习笔记 ~ // 最近传播统计学课程要进行 SPSS 实操了 w">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fqowddbnewj313m0r0dkt.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fqowfm84cxj31080hm79e.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fqowi10xpgj31jo0sk0va.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fqowm9r4odj31ie0qctb0.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fqownl6yyqj30zu0eijrt.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fqowr3mdjuj30yo0ckgmr.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fqowsqe02wj313m0mugqd.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fqowvoam7bj30q60fqwii.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fqox71lx14j30va0nwtcy.jpg">
+<meta property="og:updated_time" content="2018-04-26T06:36:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="统计数据分析|SPSS操作学习笔记">
+<meta name="twitter:description" content="Abstract：灰常全面的SPSS 学习笔记 ~ // 最近传播统计学课程要进行 SPSS 实操了 w">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fqowddbnewj313m0r0dkt.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ScarlettHuang.cn/2018/04/25/统计数据分析-SPSS操作学习笔记/"/>
+
+
+
+
+
+  <title>统计数据分析|SPSS操作学习笔记 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2018/04/25/统计数据分析-SPSS操作学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">统计数据分析|SPSS操作学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-25T14:29:17+08:00">
+                2018-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Data-Mining-and-Analysis/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Mining and Analysis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/25/统计数据分析-SPSS操作学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/04/25/统计数据分析-SPSS操作学习笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：灰常全面的SPSS 学习笔记 ~</p>
+<p>// 最近传播统计学课程要进行 SPSS 实操了 w</p>
+<a id="more"></a>
+<h1 id="一、SPSS工具简介"><a href="#一、SPSS工具简介" class="headerlink" title="一、SPSS工具简介"></a>一、SPSS工具简介</h1><h2 id="1-1-SPSS-介绍"><a href="#1-1-SPSS-介绍" class="headerlink" title="1.1 SPSS 介绍"></a>1.1 SPSS 介绍</h2><ol>
+<li>SPSS（Statistical Product and Service Solutions，统计产品与服务解决方案软件）</li>
+</ol>
+<ul>
+<li>提供的服务：统计学分析运算、数据挖掘、预测分析和决策支持任务</li>
+<li>特点：<ul>
+<li>图形界面进行统计分析，操作简单</li>
+<li>包含几乎全部尖端统计分析方法（包括机器学习、神经网络等），具备完善的数据定义，操作管理和开放的数据接口，灵活美观的统计图表制作</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2-SPSS-的运行模式"><a href="#1-2-SPSS-的运行模式" class="headerlink" title="1.2 SPSS 的运行模式"></a>1.2 SPSS 的运行模式</h2><ol>
+<li>批处理模式</li>
+</ol>
+<p>这种模式把已编写好的程序（语句程序）存为一个文件，提交给[开始]菜单上[SPSS for Windows]→[Production Mode Facility]程序运行。</p>
+<ol>
+<li>完全窗口菜单运行模式</li>
+</ol>
+<p>这种模式通过选择窗口菜单和对话框完成各种操作。用户无须学会编程，简单易用。</p>
+<ol>
+<li>程序运行模式</li>
+</ol>
+<p>这种模式是在语句（Syntax）窗口中直接运行编写好的程序或者在脚本（script）窗口中运行脚本程序的一种运行方式。这种模式要求掌握SPSS的语句或脚本语言。</p>
+<ol>
+<li>混合运行模式</li>
+</ol>
+<p>以上各种方法的综合运行方式。</p>
+<h2 id="1-3-SPSS主要窗口介绍"><a href="#1-3-SPSS主要窗口介绍" class="headerlink" title="1.3 SPSS主要窗口介绍"></a>1.3 SPSS主要窗口介绍</h2><ol>
+<li>数据编辑窗口</li>
+</ol>
+<ul>
+<li><p>构成：标题栏、菜单栏、工具栏、编辑栏、变量名栏、观测序号、窗口切换标签、状态栏</p>
+<p>​</p>
+</li>
+</ul>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqowddbnewj313m0r0dkt.jpg" alt="数据编辑窗口构成"></p>
+<p>窗口切换标签：用于“数据视图”和“变量视图”的切换，即数据浏览窗口与变量浏览窗口。数据浏览窗口用于样本数据的查看、录入和修改。变量浏览窗口用于变量属性定义的输入和修改。</p>
+<p>SPSS菜单功能简介：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fqowfm84cxj31080hm79e.jpg" alt="SPSS菜单功能简介"></p>
+<ol>
+<li>结果输出窗口</li>
+</ol>
+<ul>
+<li>作用：在 SPSS 中大多数统计分析结果都将以表和图的形式在结果观察窗口中显示。</li>
+<li>构成：窗口右边部分显示统计分析结果，左边是导航窗口，用来显示输出结果的目录，可以通过单击目录来展开右边窗口中的统计分析结果。</li>
+<li>调出：当用户对数据进行某项统计分析，结果输出窗口将被自动调出。用户也可以通过双击后缀名为.spv 的 SPSS 输出结果文件来打开该窗口。</li>
+</ul>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqowi10xpgj31jo0sk0va.jpg" alt="结果输出窗口"></p>
+<ol>
+<li>语法窗口</li>
+</ol>
+<ul>
+<li>用户可以在语句窗口中直接编写SPSS命令程序，也可以使用Paste按钮把菜单运行方式下的各种命令和选项粘贴到命令窗口中，再进行进一步修改，然后通过运行主菜单的运行命令将编写好的程序一次性地提交给计算机执行。</li>
+</ul>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqowm9r4odj31ie0qctb0.jpg" alt="语法窗口"></p>
+<ol>
+<li>脚本窗口</li>
+</ol>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqownl6yyqj30zu0eijrt.jpg" alt="脚本窗口"></p>
+<h1 id="二、数据文件创建"><a href="#二、数据文件创建" class="headerlink" title="二、数据文件创建"></a>二、数据文件创建</h1><h2 id="2-1-数据文件介绍"><a href="#2-1-数据文件介绍" class="headerlink" title="2.1 数据文件介绍"></a>2.1 数据文件介绍</h2><ol>
+<li>SPSS数据文件是一种结构性数据文件，由数据的结构和数据的内容两部分构成，也可以说由变量和观测两部分构成。一个典型的SPSS数据文件如下表所示：</li>
+</ol>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqowr3mdjuj30yo0ckgmr.jpg" alt="SPSS数据文件"></p>
+<ol>
+<li>SPSS变量的属性</li>
+</ol>
+<ul>
+<li>SPSS中的变量共有11个属性，分别是变量名（Name）、变量类型（Type）、长度（Width）、小数点位置（Decimals）、变量名标签（Label）、变量名值标签（Value）、缺失值（Missing）、数据列的显示宽度（Columns）、对其方式（Align）、度量尺度（Measure）和角色。</li>
+<li>定义一个变量至少要定义它的两个属性，即变量名和变量类型，其他属性可以暂时采用系统默认值，待以后分析过程中如果有需要再对其进行设置。</li>
+<li>在spss数据编辑窗口中单击变量视图标签，进入变量视窗界面（如图1.5所示）即可对变量的各个属性进行设置。</li>
+</ul>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqowsqe02wj313m0mugqd.jpg" alt="变量视窗"></p>
+<h2 id="2-2-数据文件创建操作"><a href="#2-2-数据文件创建操作" class="headerlink" title="2.2 数据文件创建操作"></a>2.2 数据文件创建操作</h2><ol>
+<li><p>创建文件</p>
+</li>
+<li><p>读取外部数据</p>
+</li>
+<li><p>数据编辑</p>
+<p>对数据进行基本编辑操作的功能集中在Edit菜单中。Edit菜单中的数据编辑功能如下表所示：</p>
+</li>
+</ol>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fqowvoam7bj30q60fqwii.jpg" alt="Edit菜单项功能说明"></p>
+<ol>
+<li><p>数据保存</p>
+<p>​</p>
+</li>
+<li><p>数据整理</p>
+</li>
+</ol>
+<p>（1）数据排序（Sort Case）</p>
+<ul>
+<li>作用：对数据按照某一个或多个变量的大小排序将有利于对数据的总体浏览。</li>
+<li>操作：选择菜单 Data→Sort Case</li>
+</ul>
+<p>（2）抽样（Select Case）</p>
+<ul>
+<li>作用：在统计分析中，有时不需要对所有的观测进行分析，而可能只对某些特定的对象有兴趣。利用SPSS的Select Case命令可以实现这种样本筛选的功能。</li>
+<li>操作：选择菜单 Data→Select Case命令</li>
+</ul>
+<p>（3）增加样品的数据合并（Merge File→Add cases）</p>
+<ul>
+<li>作用：将新数据文件中的观测合并到原数据文件中</li>
+<li>操作：选择菜单Data→Merge Files→Add Cases</li>
+</ul>
+<p>（4）增加变量的数据合并（Merge File→Add variables）</p>
+<ul>
+<li>作用：增加变量时指把两个或多个数据文件实现横向对接。例如将不同课程的成绩文件进行合并，收集来的数据被放置在一个新的数据文件中。</li>
+<li>操作：选择菜单Data→Merge Files→Add Variables</li>
+</ul>
+<p>（5）数据拆分（Split File）</p>
+<ul>
+<li>作用：对文件中的观测进行分组，按组分别进行分析。</li>
+<li>操作：选择菜单Data→Split File</li>
+</ul>
+<p>（6）计算新变量</p>
+<ul>
+<li>作用：在对数据文件中的数据进行统计分析的过程中，为了更有效地处理数据和反映事务的本质，有时需要对数据文件中的变量加工产生新的变量。比如经常需要把几个变量加总或取加权平均数，SPSS中通过Compute命令来产生这样的新变量。</li>
+<li>操作：选择菜单Transform→Compute</li>
+</ul>
+<h2 id="2-3-实操小练习"><a href="#2-3-实操小练习" class="headerlink" title="2.3 实操小练习"></a>2.3 实操小练习</h2><p>下表为某大学的一个问卷调查，主要内容是关于教师的基本情况调查，以及对学校科研管理和服务的意向调查。请利用SPSS软件，将问卷调查结果显示成SPSS可识别的数据文件，如图：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqox71lx14j30va0nwtcy.jpg" alt="表数据"></p>
+<p>注意：</p>
+<ol>
+<li><p>通过编辑变量值标签，使得表中有备选的项目，只需从下拉菜单选择即可。没有备选项的需自行填入数据。</p>
+</li>
+<li><p>请区分变量类型和变量尺度。</p>
+</li>
+<li><p>对数据进行排序、转置、拆分操作。</p>
+</li>
+</ol>
+<h1 id="三、描述统计"><a href="#三、描述统计" class="headerlink" title="三、描述统计"></a>三、描述统计</h1><h2 id="3-1-描述统计介绍"><a href="#3-1-描述统计介绍" class="headerlink" title="3.1 描述统计介绍"></a>3.1 描述统计介绍</h2><ol>
+<li><p>描述性统计分析是统计分析的第一步，做好这一步是进行正确统计推断的先决条件。通过描述性统计分析可以大致了解<strong>数据的分布类型和特点、数据分布的集中趋势和离散程度</strong>，或对数据进行<strong>初步的探索性分析</strong>（包括检查数据是否有错误，对数据分布特征和规律进行初步观察）。</p>
+<p>​</p>
+</li>
+<li><p>统计原理</p>
+</li>
+</ol>
+<ul>
+<li>描述统计是统计分析的基础，它包括数据的收集、整理、显示，对数据中有用信息的提取和分析，通常用一些<strong>描述统计量</strong>来进行分析。</li>
+<li><strong>集中趋势的特征值</strong>：均值、众数、中位数等。其中均值适用于正态分布和对称分布资料，中位数适用于所有分布类型的资料。</li>
+<li><strong>离散趋势的特征值</strong>：全距、内距、方差、标准差、离散系数等。其中标准差、方差适用于正态分布资料。</li>
+<li><strong>分布特征值</strong>：偏态系数、峰度系数、他们反映了数据偏离正态分布的程度。</li>
+</ul>
+<h2 id="3-2-描述统计操作"><a href="#3-2-描述统计操作" class="headerlink" title="3.2 描述统计操作"></a>3.2 描述统计操作</h2><h3 id="3-2-1-频数分析（Frequenccies）"><a href="#3-2-1-频数分析（Frequenccies）" class="headerlink" title="3.2.1 频数分析（Frequenccies）"></a>3.2.1 频数分析（Frequenccies）</h3><ol>
+<li>基本统计分析往往从频数分析开始。通过频数分析能够了解变量取值的状况，对把握数据的分布特征是非常有用的。比如，在某项调查中，想要知道被调查者的性别分布状况。频数分析的第一个基本任务是编制频数分布表。SPSS中的频数分布表包括的内容有：</li>
+</ol>
+<ul>
+<li>频数（Frequency）即变量值落在某个区间中的次数。</li>
+<li>百分比（Percent）即各频数占总样本数的百分比。</li>
+<li>有效百分比（Valid Percent）即各频数占有效样本数的百分比。这里有效样本数＝总样本－缺失样本数。</li>
+<li>累计百分比（Cumulative Percent）即各百分比逐级累加起来的结果。最终取值为百分之百。</li>
+</ul>
+<ol>
+<li>频数分析的第二个基本任务是绘制统计图。统计图是一种最为直接的数据刻画方式，能够非常清晰直观地展示变量的取值状况。频数分析中常用的统计图包括：条形图，饼图，直方图等。</li>
+</ol>
+<ol>
+<li>操作：选择菜单 分析—&gt;描述统计—&gt;频率</li>
+</ol>
+<h3 id="3-2-2-描述统计（Descriptives）"><a href="#3-2-2-描述统计（Descriptives）" class="headerlink" title="3.2.2 描述统计（Descriptives）"></a>3.2.2 描述统计（Descriptives）</h3><p>操作：选择菜单 分析—&gt;描述统计—&gt;描述</p>
+<h3 id="3-2-3-探索分析（Explore）"><a href="#3-2-3-探索分析（Explore）" class="headerlink" title="3.2.3 探索分析（Explore）"></a>3.2.3 探索分析（Explore）</h3><ol>
+<li>调用此过程可对变量进行更为深入详尽的描述性统计分析，故称之为探索分析。它在一般描述性统计指标的基础上，增加有关数据其他特征的文字与图形描述，显得更加细致与全面，对数据分析更进一步。</li>
+</ol>
+<ol>
+<li>探索分析一般通过数据文件在分组与不分组的情况下获得常用统计量和图形。一般以图形方式输出，直观帮助研究者确定奇异值、影响点、还可以进行假设检验，以及确定研究者要使用的某种统计方式是否合适。</li>
+</ol>
+<ol>
+<li>操作：选择菜单 分析—&gt;描述统计—&gt;探索</li>
+</ol>
+<ul>
+<li>因变量列表；待分析的变量名称，例如将每股收益率作为研究变量。</li>
+<li>因子列表：从源变量框中选择一个或多个变量进入因子列表，分组变量可以将数据按照该观察值进行分组分析。</li>
+<li>标准个案：在源变量表中指定一个变量作为观察值的标识变量。</li>
+<li>在输出栏中，选择“两者都”，表示输出图形及描述统计量。</li>
+</ul>
+<ol>
+<li>输出结果</li>
+</ol>
+<ul>
+<li>Case Processing Summary 表</li>
+<li>Descriptives 表 </li>
+<li>直方图</li>
+<li>茎叶图描述</li>
+</ul>
+<blockquote>
+<p>茎叶图自左向右可以分为3 大部分：频数（Frequency）、茎（Stem）和叶（Leaf）。茎表示数值的整数部分，叶表示数值的小数部分。每行的茎和每个叶组成的数字相加再乘以茎宽（Stem Width），即茎叶所表示的实际数值的近似值。</p>
+</blockquote>
+<ul>
+<li>箱图</li>
+</ul>
+<blockquote>
+<p>方箱中的中心粗线为中位数。箱图中的触须线是中间的纵向直线，上端截至线为变量的最大值，下端截至线为变量的最小值。</p>
+</blockquote>
+<h2 id="3-3-实操小练习"><a href="#3-3-实操小练习" class="headerlink" title="3.3 实操小练习"></a>3.3 实操小练习</h2><p>1.打开SPSS自带的<code>Employee data.sav</code>文件，依照上述操作自行完成一次分析。</p>
+<p>2.在财经网站调查如下几个公司的业绩报表，依照前面的例子完成描述性分析。</p>
+<p>（000725，000735，002507，600016）</p>
+<p>3.表2.7为某班级16位学生的身高数据，对其进行频数分析，并对实验结果做出说明。</p>
+<p>表2.7 某班16位学生的身高数据</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>学号</th>
+<th>性别</th>
+<th>身高（cm）</th>
+<th>学号</th>
+<th>性别</th>
+<th>身高（cm）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>M</td>
+<td>170</td>
+<td>9</td>
+<td>M</td>
+<td>150</td>
+</tr>
+<tr>
+<td>2</td>
+<td>F</td>
+<td>173</td>
+<td>10</td>
+<td>M</td>
+<td>157</td>
+</tr>
+<tr>
+<td>3</td>
+<td>F</td>
+<td>169</td>
+<td>11</td>
+<td>F</td>
+<td>177</td>
+</tr>
+<tr>
+<td>4</td>
+<td>M</td>
+<td>155</td>
+<td>12</td>
+<td>M</td>
+<td>160</td>
+</tr>
+<tr>
+<td>5</td>
+<td>F</td>
+<td>174</td>
+<td>13</td>
+<td>F</td>
+<td>169</td>
+</tr>
+<tr>
+<td>6</td>
+<td>F</td>
+<td>178</td>
+<td>14</td>
+<td>M</td>
+<td>154</td>
+</tr>
+<tr>
+<td>7</td>
+<td>M</td>
+<td>156</td>
+<td>15</td>
+<td>F</td>
+<td>172</td>
+</tr>
+<tr>
+<td>8</td>
+<td>F</td>
+<td>171</td>
+<td>16</td>
+<td>F</td>
+<td>180</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>4.测量18台电脑笔记重量，见表2.8，对其进行描述统计量分析，并对试验结果做出说明。</p>
+<p>表2.8 18台笔记本电脑重量表</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>重量</td>
+<td>1.75</td>
+<td>1.92</td>
+<td>1.59</td>
+<td>1.85</td>
+<td>1.83</td>
+<td>1.68</td>
+<td>1.89</td>
+<td>1.70</td>
+<td>1.79</td>
+</tr>
+<tr>
+<td>序号</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+</tr>
+<tr>
+<td>重量</td>
+<td>1.66</td>
+<td>1.80</td>
+<td>1.83</td>
+<td>2.05</td>
+<td>1.91</td>
+<td>1.76</td>
+<td>1.88</td>
+<td>1.83</td>
+<td>1.79</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="四、统计推断"><a href="#四、统计推断" class="headerlink" title="四、统计推断"></a>四、统计推断</h1><p>统计原理</p>
+<ul>
+<li>参数估计的基本原理</li>
+<li>假设检验的基本原理</li>
+</ul>
+<h2 id="4-1-统计推断操作"><a href="#4-1-统计推断操作" class="headerlink" title="4.1 统计推断操作"></a>4.1 统计推断操作</h2><h3 id="4-1-1-单个总体均值的区间估计"><a href="#4-1-1-单个总体均值的区间估计" class="headerlink" title="4.1.1 单个总体均值的区间估计"></a>4.1.1 单个总体均值的区间估计</h3><ol>
+<li>例子：为研究在黄金时段中,即每晚8:30-9:00 内,电视广告所占时间的多少。美国广告协会抽样调查了20个最佳电视时段中广告所占的时间（单位：分钟）。请给出每晚8:30 开始的半小时内广告所占时间区间估计，给定的置信度为95％。</li>
+</ol>
+<ol>
+<li>操作：进行探索分析</li>
+</ol>
+<h3 id="4-1-2-两个总体均值之差的区间估计（独立样本-T-检验）"><a href="#4-1-2-两个总体均值之差的区间估计（独立样本-T-检验）" class="headerlink" title="4.1.2 两个总体均值之差的区间估计（独立样本 T 检验）"></a>4.1.2 两个总体均值之差的区间估计（独立样本 T 检验）</h3><ol>
+<li><p>例题：The WallStreet Journal（1994,7）声称在制造业中，参加工会的妇女比未参加工会的妇女的报酬要多2.5 美元。想通过统计方法，对这个观点是否正确给出检验。 </p>
+<p>假设抽取了7位女性工会会员与8位非工会会员女性报酬数据。要求对制造业中参加工会会员的女性报酬与未参加工会的女性报酬平均工资之差进行区间估计，预设的置信度为95％。 </p>
+</li>
+</ol>
+<ol>
+<li>操作：菜单——分析——比较均值——独立样本 T 检验</li>
+</ol>
+<h3 id="4-1-3-单个总体均值的假设检验-（单样本T检验）"><a href="#4-1-3-单个总体均值的假设检验-（单样本T检验）" class="headerlink" title="4.1.3 单个总体均值的假设检验 （单样本T检验）"></a>4.1.3 单个总体均值的假设检验 （单样本T检验）</h3><ol>
+<li>例子：某种品牌的沐浴肥皂制造程序的设计规格中要求每批平均生产120 块肥皂，高于或低于该数量均被认为是不合理的，在由10 批产品所组成的一个样本中，每批肥皂的产量数据见下表，在0.05 的显著水平下，检验该样本结果能否说明制造过程运行良好？ </li>
+</ol>
+<ol>
+<li>操作：菜单——分析——比较均值——单样本 T 检验</li>
+</ol>
+<h3 id="4-1-4-两独立样本的假设检验（两独立样本T检验）"><a href="#4-1-4-两独立样本的假设检验（两独立样本T检验）" class="headerlink" title="4.1.4 两独立样本的假设检验（两独立样本T检验）**"></a>4.1.4 两独立样本的假设检验（两独立样本T检验）**</h3><ol>
+<li><p>例题：The WallStreet Journal（1994,7）声称在制造业中，参加工会的妇女比未参加工会的妇女的报酬要多2.5 美元。想通过统计方法，对这个观点是否正确给出检验。 </p>
+<p>假设抽取了7位女性工会会员与8位非工会会员女性报酬数据。要求对制造业中参加工会会员的女性报酬与未参加工会的女性报酬平均工资之差进行区间估计，预设的置信度为95％。 </p>
+</li>
+</ol>
+<ol>
+<li>操作：菜单——分析——比较均值——独立样本 T 检验</li>
+</ol>
+<h3 id="4-1-5-配对样本T检验"><a href="#4-1-5-配对样本T检验" class="headerlink" title="4.1.5 配对样本T检验"></a>4.1.5 配对样本T检验</h3><ol>
+<li>配对样本是对应独立样本而言的，配对样本是指一个样本在不同时间做了两次试验，或者具有两个类似的记录，从而比较其差异；独立样本检验是指不同样本平均数的比较，而配对样本检验往往是对相同样本二次平均数的检验。</li>
+<li>配对样本T检验的前提条件为：第一，两样本必须是配对的。即两样本的观察值数目相同，两样本的观察值顺序不随意更改。第二，样本来自的两个总体必须服从正态分布。例如针对试验前学习成绩何智商相同的两组学生，分别进行不同教学方法的训练，进行一段时间试验教学后，比较参与试验的两组学生的学习成绩是否存在显著性差异。</li>
+<li>例子：假设某校为了检验进行新式培训前后学生的学习成绩是否有了显著提高，从全校学生中随机抽出30名进行测试，这些学生培训前后的考试成绩放置于数据文件“学生培训.sav”中。</li>
+<li>操作：菜单——分析——比较均值——配对样本 T 检验</li>
+</ol>
+<h2 id="4-2-实操小练习"><a href="#4-2-实操小练习" class="headerlink" title="4.2 实操小练习"></a>4.2 实操小练习</h2><p>1．某省大学生四级英语测验平均成绩为65，现从某高校随机抽取20份试卷，其分数为：72、76、68、78、62、59、64、85、70、75、61、74、87、83、54、76、56、66、68、62，问该校英语水平与全区是否基本一致？设α＝0.05</p>
+<p>2．分析某班级学生的高考数学成绩是否存在性别上的差异。数据如表所示：</p>
+<p>某班级学生的高考数学成绩</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>性别</th>
+<th>数学成绩</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>男（n＝18）</td>
+<td>85   89  75  58   86  80  78  76   84  89  99   95  82  87   60  85  75   80</td>
+</tr>
+<tr>
+<td>女（n＝12）</td>
+<td>92   96  86  83   78  87  70   65  70  65   70  78  72   56</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>SPSS自带的数据文件world95.sav中，保存了1995年世界上109个国家和地区的部分指标的数据，其中变量“lifeexpf”,“lifeexpm”分别为各国或地区女性和男性人口的平均寿命。假设将这两个指标数据作为样本，试用配对样本T检验，女性人口的平均寿命是否确实比男性人口的平均寿命长，并给出差异的置信区间。（设α＝0.05）</li>
+</ol>
+<h1 id="五、Mac-SPSS-破解版安装"><a href="#五、Mac-SPSS-破解版安装" class="headerlink" title="五、Mac SPSS 破解版安装"></a>五、Mac SPSS 破解版安装</h1><ol>
+<li>SPSS中文版：<a href="https://pan.baidu.com/s/1eSOaAII" target="_blank" rel="noopener">https://pan.baidu.com/s/1eSOaAII</a> （百度网盘下载，密码：w59n）</li>
+<li>激活方法</li>
+</ol>
+<ul>
+<li>需安装java环境：apple官方下载地址 <a href="https://support.apple.com/kb/DL1572?locale=zh_CN&amp;viewlocale=zh_CN" target="_blank" rel="noopener">https://support.apple.com/kb/DL1572?locale=zh_CN&amp;viewlocale=zh_CN</a></li>
+<li>打开SPSS Statistics License Authorization Wizard,在弹出的界面中输入 SN.txt 中的激活码</li>
+<li>所有dmg、zip的解压密码：xclient.info </li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>拿钱去买猫粮和狗粮嗷 ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Scarlett Huang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Data-Mining-and-Analysis/" rel="tag"><i class="fa fa-tag"></i> Data Mining and Analysis</a>
+          
+            <a href="/tags/SPSS/" rel="tag"><i class="fa fa-tag"></i> SPSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/20/Python-Numpy-矩阵运算-附实例和学习材料/" rel="next" title="Python Numpy 矩阵运算(附实例和学习材料)">
+                <i class="fa fa-chevron-left"></i> Python Numpy 矩阵运算(附实例和学习材料)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/26/阅读笔记：《人生是剧场》/" rel="prev" title="阅读笔记：《人生是剧场》">
+                阅读笔记：《人生是剧场》 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">180</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Column">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Column
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                  
+                    <i class="fa fa-fw fa-dribbble"></i>
+                  
+                    
+                      Dribbble
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friend Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://unique-ailab.github.io/" title="Unique-AILab" target="_blank">Unique-AILab</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mr-why.com/" title="MR WHY(AI Dev. & AI PM)" target="_blank">MR WHY(AI Dev. & AI PM)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wondervictor.github.io/" title="Vic Chan(AI Dev.)" target="_blank">Vic Chan(AI Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Dev.)" target="_blank">qzwlecr(Distributed Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://alisahhh.github.io/" title="Alisa(Alg. Dev.)" target="_blank">Alisa(Alg. Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://llag9810.github.io/" title="yifan(Android Dev.)" target="_blank">yifan(Android Dev.)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、SPSS工具简介"><span class="nav-number">1.</span> <span class="nav-text">一、SPSS工具简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-SPSS-介绍"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 SPSS 介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-SPSS-的运行模式"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 SPSS 的运行模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-SPSS主要窗口介绍"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 SPSS主要窗口介绍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数据文件创建"><span class="nav-number">2.</span> <span class="nav-text">二、数据文件创建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-数据文件介绍"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 数据文件介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-数据文件创建操作"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 数据文件创建操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-实操小练习"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 实操小练习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、描述统计"><span class="nav-number">3.</span> <span class="nav-text">三、描述统计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-描述统计介绍"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 描述统计介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-描述统计操作"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 描述统计操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-频数分析（Frequenccies）"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.2.1 频数分析（Frequenccies）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-描述统计（Descriptives）"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.2.2 描述统计（Descriptives）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3-探索分析（Explore）"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.2.3 探索分析（Explore）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-实操小练习"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 实操小练习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、统计推断"><span class="nav-number">4.</span> <span class="nav-text">四、统计推断</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-统计推断操作"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 统计推断操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-1-单个总体均值的区间估计"><span class="nav-number">4.1.1.</span> <span class="nav-text">4.1.1 单个总体均值的区间估计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-2-两个总体均值之差的区间估计（独立样本-T-检验）"><span class="nav-number">4.1.2.</span> <span class="nav-text">4.1.2 两个总体均值之差的区间估计（独立样本 T 检验）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-3-单个总体均值的假设检验-（单样本T检验）"><span class="nav-number">4.1.3.</span> <span class="nav-text">4.1.3 单个总体均值的假设检验 （单样本T检验）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-4-两独立样本的假设检验（两独立样本T检验）"><span class="nav-number">4.1.4.</span> <span class="nav-text">4.1.4 两独立样本的假设检验（两独立样本T检验）**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-5-配对样本T检验"><span class="nav-number">4.1.5.</span> <span class="nav-text">4.1.5 配对样本T检验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-实操小练习"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 实操小练习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、Mac-SPSS-破解版安装"><span class="nav-number">5.</span> <span class="nav-text">五、Mac SPSS 破解版安装</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
+<div class="copyright" >
+  
+  &copy;  2017.07 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共522.4k字</span>
+</div>
+
+
+
+
+<span id="busuanzi_container_site_pv">
+<div class="powered-by"></div>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  <div class="powered-by"></div>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100332, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100332, xid: "2018/04/25/统计数据分析-SPSS操作学习笔记/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100332/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+
+</body>
+</html>
