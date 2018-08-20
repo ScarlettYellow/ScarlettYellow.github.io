@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Artificial Intelligence,Machine Learning," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：吴恩达2018的新书，主要讲解了机器学习模型训练过程中的一些重要的技巧，可帮助提升机器学习工程的准确率和效率，挺实用的 ~">
+<meta name="keywords" content="Artificial Intelligence,Machine Learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Machine Learning Yearning》阅读笔记">
+<meta property="og:url" content="http://ScarlettHuang.cn/2018/08/20/《Machine-Learning-Yearning》阅读笔记/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：吴恩达2018的新书，主要讲解了机器学习模型训练过程中的一些重要的技巧，可帮助提升机器学习工程的准确率和效率，挺实用的 ~">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1ft19rwzd9lj31fc0zaavl.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1ft1hwrlnabj31460dkdgw.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1ft1hx2ihuaj311s0e0t9o.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1ft2ih6x5abj318m0pudie.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1ft2iodopiaj31ao0lotbc.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1ft2ip8yj9hj31bo0mwwh3.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1ft2ixed01mj31ba0lcjuq.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1ft2jeuaycnj31bs0mgadd.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1ft2k6r1hklj31g40oygpn.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1ft2k93p11pj31hc0qiaec.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1ft4liubo0rj30h302fdfx.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1ft4liukwfnj30gj02baa4.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1ft4q560u90j318g0stq7p.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1ft4qisnj39j309f02ct8i.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1ft4qjyqpm4j30fj02sq2s.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1ft4w425yd4j30j402u3ye.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1ftqt43ygzmj309202rglf.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1ftqt736nkhj30er05p3yi.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1ftqtalu21pj30a7028web.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1ftqtby9i8wj30j402u3yg.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1ftqt43ygzmj309202rglf.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1ftqt736nkhj30er05p3yi.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1ftqtalu21pj30a7028web.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1ftqtxew6jpj30a401t746.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1ftqtx9f4dsj30ep0240so.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1ftqtyit7ikj318g0nux37.jpg">
+<meta property="og:updated_time" content="2018-08-20T11:08:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《Machine Learning Yearning》阅读笔记">
+<meta name="twitter:description" content="Abstract：吴恩达2018的新书，主要讲解了机器学习模型训练过程中的一些重要的技巧，可帮助提升机器学习工程的准确率和效率，挺实用的 ~">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1ft19rwzd9lj31fc0zaavl.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ScarlettHuang.cn/2018/08/20/《Machine-Learning-Yearning》阅读笔记/"/>
+
+
+
+
+
+  <title>《Machine Learning Yearning》阅读笔记 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2018/08/20/《Machine-Learning-Yearning》阅读笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《Machine Learning Yearning》阅读笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-20T19:07:12+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/20/《Machine-Learning-Yearning》阅读笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/08/20/《Machine-Learning-Yearning》阅读笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：吴恩达2018的新书，主要讲解了机器学习模型训练过程中的一些重要的技巧，可帮助提升机器学习工程的准确率和效率，挺实用的 ~</p>
+<a id="more"></a>
+<h1 id="Part1-Getting-Started"><a href="#Part1-Getting-Started" class="headerlink" title="Part1 Getting Started"></a>Part1 Getting Started</h1><h2 id="1-1-机器学习应用的改进策略"><a href="#1-1-机器学习应用的改进策略" class="headerlink" title="1.1 机器学习应用的改进策略"></a>1.1 机器学习应用的改进策略</h2><p>1.数据方面：</p>
+<ul>
+<li>数据量 ++</li>
+<li>数据多样性 ++：收集更加多样化的训练数据集，比如处于不常见位置的猫的图片，颜色奇异的猫的图片，以及使用不同相机参数拍摄的猫的图片</li>
+</ul>
+<p>2.算法方面：</p>
+<ul>
+<li>迭代：增加梯度下降的迭代次数，使算法训练得久一些</li>
+<li>NN：尝试一个拥有更多层（layer）/更多隐藏元（hidden units）/更多参数（parameters）的，规模更大的神经网络</li>
+<li>正则化：尝试加入正则化（例如 L2 正则化）</li>
+<li>改变神经网络的架构（激活函数，隐藏元数量等等）</li>
+</ul>
+<h2 id="1-2-策略选择的重要性"><a href="#1-2-策略选择的重要性" class="headerlink" title="1.2 策略选择的重要性"></a>1.2 策略选择的重要性</h2><p>时间、效率，领先与被领先</p>
+<h2 id="1-3-Key-Value-of-this-book"><a href="#1-3-Key-Value-of-this-book" class="headerlink" title="1.3 Key Value of  this book"></a>1.3 Key Value of  this book</h2><p>Key Value of  this book：深层次了解“如何在机器学习项目中设定一个技术方向”。</p>
+<h2 id="1-4【补充】线性回归-vs-逻辑回归"><a href="#1-4【补充】线性回归-vs-逻辑回归" class="headerlink" title="1.4【补充】线性回归 vs 逻辑回归"></a>1.4【补充】线性回归 vs 逻辑回归</h2><p>1.回归算法：通过最小化预测值与实际结果值之间的差距，而得到输入特征之间的最佳组合方式的一类算法</p>
+<ul>
+<li>线性回归：对连续值的预测，一元或多元</li>
+<li>逻辑回归：对离散值、类别值的预测，解决分类问题</li>
+</ul>
+<p>2.线性回归（linear regression）：</p>
+<ul>
+<li>损失函数：衡量参数选择的准确性，值越小，损失越小；凸函数，可使用凸优化方法最小化损失函数的值</li>
+<li>梯度下降：逐步最小化损失函数的过程，如同下山的过程，找准下山方向（梯度），每次迈进一步，直至山底。<ul>
+<li>学习率α：决定下降节奏的快慢；过大则可能导致震荡，过小则导致收敛很慢</li>
+</ul>
+</li>
+<li>欠拟合：函数假设太简单导致无法覆盖足够的原始数据，可能造成数据预测的不准确</li>
+<li>过拟合：函数假设太复杂导致泛化能力变差，无法有效预测新样本。解决方法：<ul>
+<li>减少特征个数：手工选择保留特征、模型选择的算法选择特征</li>
+<li>正则化：L2正则化即在原来的损失函数中加入θθ的平方项，来防止波动太大，留下所有的特征，但是减少参数的大小</li>
+</ul>
+</li>
+</ul>
+<p>3.逻辑回归（logistic regression）：</p>
+<ul>
+<li>sigmoid 函数：可以把任何连续值映射到[0,1]之间，数越大越趋向于0，越小越趋向于1。$g(z)=\frac{1}{1+e^{-z}}$</li>
+<li>以概率的形式输出结果，不只是0和1的判定</li>
+</ul>
+<h2 id="1-4-规模驱动机器学习发展"><a href="#1-4-规模驱动机器学习发展" class="headerlink" title="1.4 规模驱动机器学习发展"></a>1.4 规模驱动机器学习发展</h2><p>规模：</p>
+<ul>
+<li>数据规模：数据可用性（data availability）</li>
+<li>计算规模（computational scale）</li>
+</ul>
+<p>学习算法的学习曲线：</p>
+<ul>
+<li>海量数据对旧算法的性能提升作用不明显（趋于平稳，瓶颈，学习曲线变平缓），如 logistic regression；而NN 则可能获得较好的性能表现</li>
+<li>对于小数据集，旧算法和 小型 NN 的性能表现可能差不多，此时特征工程对旧算法的表现的影响会更大</li>
+<li>NN 规模越大，性能表现会越好</li>
+</ul>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1ft19rwzd9lj31fc0zaavl.jpg" alt="algo比较"></p>
+<p>如何获得最佳性能表现：</p>
+<ul>
+<li>训练大型 NN</li>
+<li>拥有海量数据</li>
+<li>其他细节：NN 的架构</li>
+</ul>
+<h1 id="Part2-Setting-up-development-and-test-sets（建立开发集和测试集）"><a href="#Part2-Setting-up-development-and-test-sets（建立开发集和测试集）" class="headerlink" title="Part2 Setting up development and test sets（建立开发集和测试集）"></a>Part2 Setting up development and test sets（建立开发集和测试集）</h1><h2 id="2-1-开发集和测试集"><a href="#2-1-开发集和测试集" class="headerlink" title="2.1 开发集和测试集"></a>2.1 开发集和测试集</h2><p>1.如果训练和测试数据集与实际数据的差异较大，则算法可能<strong>无法很好地泛化</strong>到实际数据的分布（actual distribution）</p>
+<p>2.训练集（training set）：运行学习算法</p>
+<p>开发集（development set）：又称留出交叉验证集（hold-out cross validation set），用来对训练集训练出来的模型进行测试，通过测试结果来不断地优化模型（用于调整参数、选择特征、以及对学习算法作出其他决定）</p>
+<p>测试集：最终评估算法性能，但不会据此决定使用什么学习算法或参数</p>
+<p>3.划分比例：小数据——7：3或8：2；大数据——98：1：1</p>
+<p>4.处理方法：合理地设置开发集和测试集，使之<strong>近似模拟可能的实际数据情况</strong>，并处理得到一个好的结果；使用实际的用户数据对开发集和测试集进行更新。</p>
+<h2 id="2-2-开发集和测试集应该服从同一分布"><a href="#2-2-开发集和测试集应该服从同一分布" class="headerlink" title="2.2 开发集和测试集应该服从同一分布"></a>2.2 开发集和测试集应该服从同一分布</h2><p>1.一旦定义了开发集和测试集，你的团队将专注于提高开发集的性能表现</p>
+<p>2.开发集和测试集的分布不同将导致：</p>
+<ul>
+<li>在开发集上过拟合</li>
+<li>测试集比开发集更难进行预测，尽管算法做得足够好了，却很难有进一步的改进空间</li>
+<li>测试集不一定更难预测，但与开发集性质不同（分布不同）。因此在开发集上表现良好的算法不一定在测试集上也能够表现良好。如果是这种情况，大量改进开发集性能的工作将会是徒劳的</li>
+</ul>
+<ul>
+<li>策略：选择服从相同分布的开发集和测试集数据，这会让你的团队更有效率</li>
+</ul>
+<h2 id="2-3-开发集和测试集应该有多大"><a href="#2-3-开发集和测试集应该有多大" class="headerlink" title="2.3 开发集和测试集应该有多大"></a>2.3 开发集和测试集应该有多大</h2><p>1.开发集规模</p>
+<ul>
+<li>考虑区分度：开发集的规模应该大到<strong>足以区分出你所尝试的不同算法间的性能差异</strong>。例如，如果分类器 A 的准确率为 90.0% ，而分类器 B 的准确率为 90.1% ，那么仅有 100 个样本的开发集将无法检测出这 0.1% 的差异。</li>
+<li>统计显著性检验：从理论上说，还可以检测算法的变化是否会在开发集上造成统计学意义上的显著差异，但通常没有发现有多大差异</li>
+<li>提高开发集规模：有利于检测到不易察觉的效果提升</li>
+</ul>
+<p>2.测试集规模</p>
+<ul>
+<li>规模应该大到使你<strong>能够对整体系统的性能进行一个高度可信的评估</strong></li>
+<li>一种常见的启发式策略是将 30% 的数据用作测试集，这适用于数据量规模一般的情况（比如 100 至 10,000 个样本）</li>
+<li>我们并不需要远超过评估算法性能所需的开发集和测试集规模，即开发集和测试集的规模并不是越大越好</li>
+</ul>
+<h2 id="2-4-使用单值评估指标进行优化"><a href="#2-4-使用单值评估指标进行优化" class="headerlink" title="2.4 使用单值评估指标进行优化"></a>2.4 使用单值评估指标进行优化</h2><p><strong>1.单值评估指标（single-number evaluation metric）</strong>：</p>
+<ul>
+<li>如分类准确率：你在开发集（或测试集）上运行分类器后，它将返回单个数值，代表着被正确分类的样本比例。根据这个指标，如果分类器 A 的准确率为 97％，而分类器 B 的准确率为 90%，那么我们可以认为分类器 A 更优秀。</li>
+<li>优点：使算法优劣的评价更直观简单</li>
+</ul>
+<p>2.多值评估指标：</p>
+<ul>
+<li>如查准率（precision）和查全率（recall）</li>
+<li>缺点：使算法之间的优劣比较变得更加困难</li>
+<li>Solution：使用合并的单值指标来评估，比如取简单平均或加权平均、调和评价。例： F1 Score是计算二者的调和平均数，为2/((1/Precision)+(1/Recall))</li>
+</ul>
+<h2 id="2-5-优化指标和满意度指标"><a href="#2-5-优化指标和满意度指标" class="headerlink" title="2.5 优化指标和满意度指标"></a>2.5 优化指标和满意度指标</h2><p>1.当多值属于不同类型的值时，则不太合适将它们合并成单个指标，如准确率与运行时间。</p>
+<p>2.Solution：先设置阈值，在阈值的范围内最大程度优化指标</p>
+<ul>
+<li>首先定义一个“可接受的”运行时间，一般低于 100ms 。接着在限定的运行时间范围内最大化分类器的准确率。此处的运行时间是一个“满意度指标” —— 你的分类器必须在这个指标上表现得“足够好”，这儿指的是它应该至多需要 100ms，而准确度是一个“优化指标”。</li>
+<li>如果考虑 N 项不同的标准，比如模型的二进制文件大小（这对移动端 app 尤为重要，因为用户不想下载体积很大的 app）、运行时间和准确率。你或许会考虑设置 N-1 个“满意度”指标，即要求它们满足一定的值，下一步才是定义一个“优化”指标。例如为二进制文件的大小和运行时间分别设定可接受的阈值，并尝试根据这些限制来优化准确率指标。</li>
+</ul>
+<ul>
+<li>举例：假设你正在设计一个硬件设备，该设备可以根据用户设置的特定“唤醒词”来唤醒系统，类似于Amazon Echo 监听词为 “Alexa”，苹果（Apple） Siri 监听词为 “Hey Siri”，安卓（Android） 监听词为 “Okay Google”，以及百度（Baidu）应用监听 “Hello Baidu.” 我们关心的是假正例率（false positive rate）—— 用户没有说出唤醒词，系统却被唤醒了，以及假反例率（false negative rate）——用户说出了唤醒词，系统却没能正确被唤醒。这个系统的一个较为合理的优化对象是最小化假反例率（优化指标），同时受到每24小时不超过一次误报的约束（满意度指标）。</li>
+</ul>
+<h2 id="2-6-通过开发集和度量指标加速迭代"><a href="#2-6-通过开发集和度量指标加速迭代" class="headerlink" title="2.6 通过开发集和度量指标加速迭代"></a>2.6 通过开发集和度量指标加速迭代</h2><p>开始建立一个 ML 系统：idea——&gt;code——&gt;experiment</p>
+<ul>
+<li>尝试一些关于系统构建的<strong>想法（idea）</strong>。</li>
+<li>使用<strong>代码（code）</strong>实现想法。</li>
+<li>根据<strong>实验（experiment）</strong>结果判断想法是否行得通（<strong><u>在开发集上验证 idea 的可行性，判断依据就是度量指标</u></strong>）。（第一个想到的点子一般都行不通！）在此基础上学习总结，从而产生新的想法，并保持这一迭代过程。</li>
+</ul>
+<h2 id="2-7-何时修改开发集、测试集和度量指标"><a href="#2-7-何时修改开发集、测试集和度量指标" class="headerlink" title="2.7 何时修改开发集、测试集和度量指标"></a>2.7 何时修改开发集、测试集和度量指标</h2><p>1.度量开发集和测试集的选择的重要性，从而确定其优先级。准备初始开发集和测试集的时间长短可按优先级来确定，一周到数月不等。</p>
+<p>2.快速选好开发集和测试集，可以帮助团队尽快制定明确 的研发目标</p>
+<p>3.若发现<strong><u>初始开发集、测试集和度量指标与期望有一定差距</u></strong>，一定要快速想办法改进它们。</p>
+<p>例如你的开发集与度量指标在排序时将分类器 A 排在 B 的前面，然而你的团队认为分类器 B 在实际产品上的表现更加优异，这个时候就需要考虑修改开发集和测试集，或者是你的评估指标了。</p>
+<p>在上面的例子里，<strong>有三个主要原因可能导致开发集/评估指标错误地将分类器A排在B前面</strong>：</p>
+<p>1）数据分布差异：你需要处理的实际数据的分布和开发集/测试集数据的分布情况不同。Solu：更新开发集和测试集，使之更具代表性。</p>
+<blockquote>
+<p>假设你的初始开发集和测试集主要是成年猫的图片，然而你在 app 上发现用户上传的更多是小猫的图片，这就导致了开发集和测试集的分布与你需要处理的实际分布情况不同。</p>
+</blockquote>
+<p>2）开发集上过拟合了：在开发集上反复评估想法会导致算法“过拟合”到开发集上。Solu：获取一个新的开发集。</p>
+<blockquote>
+<p>当你完成开发后，应该在测试集上评估你的系统。如果你发现算法在开发集上的性能比测试集好得多，则表明你很有可能在开发集上过拟合了。</p>
+<p>如果需要跟踪团队的进度，你可以<strong>每周或者每月在测试集上对系统进行一次定期评估</strong>。但<strong>不要根据测试集对算法做任何决定</strong>，<strong>包括是否将系统回滚到前一周的状态</strong>。坚持这样做会导致算法在测试集上开始过拟合，且不要再指望根据它对你的系统性能进行完全无偏估计（这对发表研究论文以及需要做出商业决策的人来说影响很大）。</p>
+</blockquote>
+<p>3）该指标所度量的不是项目应当优化的目标。</p>
+<blockquote>
+<p>假设你的猫咪应用当前的度量指标为分类准确率，而该指标认为分类器 A 优于分类器 B。然而在尝试了两种算法后，你发现分类器 A 竟然允许出现一些色情图片，这实在难以容忍。应该怎么办呢？</p>
+<p>此时的度量指标并不能辨别出算法 B 在实际产品的表现比 A 更好，因此根据该指标来选择算法就不那么可靠了，说明是时候改变现有的评估指标了。你可以修改指标，使之对出现色情图片的情况进行严重惩罚。强烈建议你选择一个新的指标并为你的团队制定一个新的目标，而不是在不可信的指标上耗费太多的时间后，最终回过头对分类器进行人工选择。</p>
+</blockquote>
+<p>4.总结：及时修改开发集、测试集或者度量指标：在项目中改变开发集、测试集或者度量指标是很常见的。一个初始的开发集、测试集和度量指标能够帮助团队进行快速迭代，当你发现它们对团队的导向不正确时，不要担心，你只需要对其进行修改并确保团队了解新的方向是什么。</p>
+<h2 id="2-8-小结：建立开发集和测试集"><a href="#2-8-小结：建立开发集和测试集" class="headerlink" title="2.8 小结：建立开发集和测试集"></a>2.8 小结：建立开发集和测试集</h2><p>1.数据集与实际数据分布一致：</p>
+<p>选择作为开发集和测试集的数据，应当与你预期在将来获取并良好处理的数据有着相同的分布，而不一定和训练集数据的分布一致。</p>
+<p>2.开发集和测试集的分布应当尽可能一致</p>
+<p>3.使用单值评估指标进行优化：</p>
+<p>为你的团队选择一个单值评估指标进行优化。需要考虑多项目标时，不妨将它们整合到一个表达式里（比如对多个误差指标取平均），或者定义满意度指标和优化指标。</p>
+<p>4.多次尝试不怕失败：</p>
+<p>机器学习是一个高度迭代的过程：在最终令人满意的方案出现前，你可能要尝试很多想法。</p>
+<p>5.通过开发集和度量指标加速迭代</p>
+<p>拥有开发集、测试集和单值评估指标可以帮你快速评估一个算法，从而加速迭代过程。</p>
+<p>6.根据重要性和项目排期确定“建立开发集、测试集和指标”的优先级</p>
+<p>当你探索一个全新的应用时，尽可能在一周内建立你的开发集、测试集和指标，而在成熟的应用上则可以花费更长的时间。</p>
+<p>7.训练集、开发集和测试集的比例划分</p>
+<p>传统的 70% / 30% 训练集/测试集划分对大规模数据并不适用，实际上开发集和测试集的比例会远低于 30%。</p>
+<p>8.开发集、测试集的规模需要足够做出高度可信且精确的评估</p>
+<p>开发集的规模应当大到能够检测出算法精度的细微改变，但也不用太大；测试集的规模应该大到能够使你对系统的最终性能作出一个充分的估计。</p>
+<p>9.有问题就及时修改开发集、测试集和评估指标：</p>
+<p>当开发集和评估指标不再能给团队一个正确的导向时，就尽快修改它们：</p>
+<ul>
+<li>如果你在开发集上过拟合，则获取更多的开发集数据。</li>
+<li>如果开发集和测试集的数据分布和实际关注的数据分布不同，则获取新的开发集和测试集。</li>
+<li>如果评估指标不能够对最重要的任务目标进行度量，则需要修改评估指标。</li>
+</ul>
+<h1 id="Part3-Basic-Error-Analysis（基本误差分析）"><a href="#Part3-Basic-Error-Analysis（基本误差分析）" class="headerlink" title="Part3 Basic Error Analysis（基本误差分析）"></a>Part3 Basic Error Analysis（基本误差分析）</h1><h2 id="3-1-快速构建并迭代你的第一个系统"><a href="#3-1-快速构建并迭代你的第一个系统" class="headerlink" title="3.1 快速构建并迭代你的第一个系统"></a>3.1 快速构建并迭代你的第一个系统</h2><h2 id="3-2-误差分析：根据开发集样本评估想法"><a href="#3-2-误差分析：根据开发集样本评估想法" class="headerlink" title="3.2 误差分析：根据开发集样本评估想法"></a>3.2 误差分析：根据开发集样本评估想法</h2><p><strong>1.误差分析：检查算法误分类的开发集样本的过程，以便你找到造成这些误差的原因</strong>。这将帮助你<strong>确定项目优先级</strong>并且获得关于新方向的灵感。</p>
+<p>2.提升效果预估：在进行一项任务的开发前，先预估该任务能提升多少系统精度，更加理性判断是否值得花 xx 久的时间去做这件事，还是将这段时间用于其他任务。</p>
+<p>例如，你在使用猫咪 app 时注意到它将一些狗误分类为猫了，因为有些狗的确很像猫的样子。团队中有人建议加入第三方软件来帮助系统更好地处理狗的样本，这需要一个月的时间去完成。</p>
+<p><strong>【判断是否进行一项减少误差的任务的策略 —— 误差分析】</strong>：</p>
+<p>1）人为收集误分类样本：收集 100 个开发集中被误分类的样本，即造成系统误差的样本。</p>
+<p>2）人为查看这些样本，并计算其中狗的比例。</p>
+<p>3）这个比例即反映消除误差能带来的系统精度的提升程度，根据这个提升程度大小来判断是否要做这项任务。</p>
+<ul>
+<li>若只有5%误分类的图像是狗，则说明无论你在狗的问题上做多少的算法改进，最终都不会消除超过原有的 5% 误差 . 也即是说 5% 是该计划项目所能起到帮助的“上限”（最大可能值）。所以如果整个系统的当前精度为 90%（对应误差为 10%），那么这种改进最多能将精度提升到 90.5% （对应误差下降到 9.5% ， 改进了原有 10% 误差其中的 5%）。</li>
+<li>相反，如果你发现 50% 的误分类图像是狗，那就可以自信地说这个项目将效果明显，它可以将精度从 90% 提升到 95% （相对误差减少 50%，整体误差由 10% 下降到 5%）。</li>
+</ul>
+<blockquote>
+<p>人为检查 100 个样本并不会占用太多的时间。即使你每分钟只检查一张图片，也可以在两小时内完成，而这两个小时可能帮你节省一个月的工作。</p>
+</blockquote>
+<h2 id="3-3-在误差分析时并行评估多个想法"><a href="#3-3-在误差分析时并行评估多个想法" class="headerlink" title="3.3 在误差分析时并行评估多个想法"></a>3.3 在误差分析时并行评估多个想法</h2><p>你的团队有一些关于改进猫检测器的想法：</p>
+<ul>
+<li>修正算法将狗误分类为猫的问题。</li>
+<li>修正算法将大型猫科动物（比如狮子、黑豹等等,下面用大猫代指）误分类为家猫的问题。</li>
+<li>改善系统在模糊图像上的表现。</li>
+<li>…</li>
+</ul>
+<p>这些想法都可在误差分析阶段并行评估。可创建一个 excel 表（如图），然后对误分类样本进行人为标注，最后计算出各项比例，从而判断处理这一类别的误差会带来多少精度的提升。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1ft1hwrlnabj31460dkdgw.jpg" alt="mage-20180707185527"></p>
+<h2 id="3-4-清洗误标注的开发集和测试集样本"><a href="#3-4-清洗误标注的开发集和测试集样本" class="headerlink" title="3.4 清洗误标注的开发集和测试集样本"></a>3.4 清洗误标注的开发集和测试集样本</h2><p>1.发现误标注的样本：在进行误差分析时，可能会发现一些开发集的样本被误标注（mislabeled ）了。此处的“误标注”指的是图像在使用算法处理前，已经被负责标注的人员进行了错误的标注，也即是说某个样本的分类标签（label） 的值并不正确。比如一些不是猫的图片被误标注为猫，反之亦然。</p>
+<p>2.跟踪记录误标注样本的比例：如果你不确定误这些标注的图片是否很关键，可以添加一个类别来跟踪记录误标注样本的比例：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1ft1hx2ihuaj311s0e0t9o.jpg" alt="mage-20180707185544"></p>
+<p>3.修正误标注的标签：回忆一下设立开发集的目标，是为了帮助你快速评估算法性能，从而判断算法 A 和 B 哪一个更好。如果开发集中误标注的部分影响了你的判断，那便值得去花时间改正这些标签。</p>
+<p>例如，假设你的分类器表现如下：</p>
+<ul>
+<li>开发集整体精度…………….. 90% （10% 整体误差）</li>
+<li>误标注样本造成的误差…… 0.6% （6% 开发集误差）</li>
+<li>其它原因造成的误差………. 9.4% （94% 开发集误差）</li>
+</ul>
+<p>相对于你正在改进的 9.4% 误差，误标记的 0.6% 误差就不那么重要了。</p>
+<p>假设你不断地改进猫分类器，并达到了以下性能：</p>
+<ul>
+<li>开发集整体精度…………….. 98.0% （2.0% 整体误差）</li>
+<li>误标注样本造成的误差…… 0.6% （30% 开发集误差）</li>
+<li>其它原因造成的误差………. 1.4% （70% 开发集误差）</li>
+</ul>
+<p>此时 30% 的开发集误差是由误标注样本造成的，这对精度估计造成了显著的影响。这时就应该考虑改进开发集样本中的标签质量。处理这些误标注的样本将帮助你找出分类器的误差是接近 1.4% 还是 2.0% ，之间的差异是显著的。</p>
+<p>在初始阶段容许一些误标注的开发集/测试集样本并不罕见，你<strong>可以选择在系统改进到一定程度时再来考虑误标注的样本，因为这些误差在整体误差中的占比会逐渐增大</strong>。</p>
+<p>4.注意：</p>
+<ul>
+<li>同步修改测试集：不论你使用什么方式修正开发集标签，请记住要将同样的方式应用于你的测试集，这可以保持二者服从相同的分布。</li>
+<li>同步修改算法预测的标签：请仔细检查系统中误分类和正确分类的样本的标签。对于某个样本，可能原始标注和算法预测的标签都是错误的。如果你仅修复系统误分类的样本标签，则有可能在评估中引入偏差。</li>
+</ul>
+<h2 id="3-5-将大型开发集拆分为两个子集，专注其一"><a href="#3-5-将大型开发集拆分为两个子集，专注其一" class="headerlink" title="3.5 将大型开发集拆分为两个子集，专注其一"></a>3.5 将大型开发集拆分为两个子集，专注其一</h2><p><strong>把大型开发集拆分成 Eyeball 开发集和 Blackbox 开发集。Eyeball —— 人为检查误分类，Blackbox —— 验证评估</strong>。</p>
+<p>假设你有一个含有 5000 个样本的大型开发集，并有着 20% 的误差，这表示算法将误分类 1000 张开发集图片。手动检查这 1000 张图片会花费很长时间，所以我们在误差分析时没必要使用所有的图片。</p>
+<p>在这种情况下，我会明确地将开发集分成两个子集，并只手动检查其中的一个。你将会更快地过拟合手动查看的那些图片，而另一部分没有被手动查看的图片可以拿来调参。</p>
+<p>继续上面的例子，在该例子中算法将误分类 5000 个开发集样本中的 1000 个。假设我们想手动检查约 100 个错误样本（整体的10%）进行误差分析。你应该随机选择 10% 的开发集，并将其放入 <strong>Eyeball 开发集</strong>中（译者注：直译为眼球不妥，保留原文），以提醒我们自己，我们正在用眼睛看它。（对于语音识别项目，你可能需要听一些音频的剪辑，此时则将数据集称为 Ear 开发集）。因此 Eyeball 开发集将有 500 个样本，其中预计的算法误分类样本约 100 个。</p>
+<p>第二个子集叫做 <strong>Blackbox 开发集</strong>（直译为黑箱，保留原文），它有着剩余的 4500 个样本。你可以使用 Blackbox 开发集，通过测量错误率来自动评估分类器，也可以使用它来选择算法或调整超参数。但是，你应该避免将目光聚焦于此。我们使用术语“ Blackbox ”是因为我们只使用该子集来获得分类器的“ Blackbox ”评价。</p>
+<p>为什么我们将开发集明确分为 Eyeball 开发集和 Blackbox 开发集呢？因为你在 Eyeball 开发集中建立对样本的直观认识之后，则容易更快地过拟合到Eyeball开发集上。如果你发现 Eyeball 开发集的性能比 Blackbox 开发集提升得更快，说明已经过拟合到 Eyeball 开发集了。此时可能需要丢弃它并寻找一个新的 Eyeball 开发集，比如可以将更多 Blackbox 开发集中的样本移到 Eyeball 开发集中，也可以获取新的标注数据。</p>
+<p>将开发集明确地分为 Eyeball 和 Blackbox 开发两个子集将很有帮助，它使你了解在人为的误差分析过程中 Eyeball 开发集何时开始发生过拟合。</p>
+<h2 id="3-6-Eyeball-和-Blackbox-开发集该设置多大？"><a href="#3-6-Eyeball-和-Blackbox-开发集该设置多大？" class="headerlink" title="3.6 Eyeball 和 Blackbox 开发集该设置多大？"></a>3.6 Eyeball 和 Blackbox 开发集该设置多大？</h2><p>1.Eyeball 开发集应该大到能够让你对算法主要的错误类别有所察觉。</p>
+<p>1）如果你正在处理一项人类表现良好的任务（比如识别图像中的猫），下面是一些粗略的指导方案：</p>
+<ul>
+<li>如果分类器在 Eyeball 开发集上只犯错 10 次，这个开发集就有点小了。只有 10 个错误样本的话，很难准确估计不同错误类别的影响。但如果数据非常少且不能提供更多的 Eyeball 开发集样本时，聊胜于无，这将有助于确立项目的优先级。</li>
+<li>如果分类器在 Eyeball 开发集样本上犯了约 20 次错误，你将会开始大致了解主要的误差来源。</li>
+<li>如果有约 50 个错误样本，你将会比较好地了解主要的误差来源。</li>
+<li>如果有约 100 个错误样本，你将会很清楚主要的误差来源。</li>
+</ul>
+<p>假设你的分类器有 5% 的错误率。为了确保在 Eyeball 开发集中有约 100 个误分类的样本，样本开发集应该有约 2000 个样本（因为 0.05 * 2000 = 100）。分类器的错误率越低，为了获得足够多的错误样本进行误差分析，需要的 Eyeball 开发集就越大。</p>
+<p>2）如果你正在处理一个人类也做不好的任务，那么检查 Eyeball 开发集将不会有大的帮助，因为很难找出算法不能正确分类一个样本的原因。此时你可能也不需要建立 Eyeball 开发集。</p>
+<p>2.Blackbox 开发集的大小：</p>
+<p>一个有 1000-10000 个样本的 Blackbox 开发集通常会为你提供足够的数据去调超参和选择模型，即使数据再多一些也无妨。而含有 100 个样本的 Blackbox 开发集虽然比较小，但仍然有用。</p>
+<p>如果开发集较小，那么你可能没有足够的数据将其分成足够大的 Eyeball 开发集和 Blackbox 开发集来满足目的。相反，你的整个开发集可能需要用作 Eyeball 开发集——即你将手动检查所有的开发集数据。</p>
+<p>3.Eyeball 开发集 比 Blackbox更加重要。</p>
+<p>假设你正在研究一个人类能够很好解决的问题，检查这些样本能帮你更有洞悉力。如果你只有一个 Eyeball 开发集，你可以在这个开发集上进行误差分析、模型选择和超参数调整，缺点是<strong>过拟合开发集的风险更大</strong>。</p>
+<p>如果你有充足的数据，那么 Eyeball 开发集的大小将主要取决于你能够手动分析样本的时间。实际上很少有人手动分析超过 1000 个错误样本。</p>
+<h2 id="3-7-小结：基础误差分析"><a href="#3-7-小结：基础误差分析" class="headerlink" title="3.7 小结：基础误差分析"></a>3.7 小结：基础误差分析</h2><p>1.当你开始一个新项目，尤其是在一个你不擅长领域时，很难正确猜测出最有前景的方向。</p>
+<p>所以，<strong>不要在一开始就试图设计和构建一个完美的系统。相反，应尽可能快（可能在短短几天内）地构建和训练一个基本系统。然后使用误差分析去帮助你识别出最有前景的方向，并据此不断迭代改进你的算法</strong>。</p>
+<p>2.误差分析：通过手动检查约 100 个算法错误分类的开发集样本来执行误差分析，并计算主要的错误类别。用这些信息来确定优先修正哪种类型的错误。</p>
+<p>3.考虑将开发集分为人为检查的 Eyeball 开发集和非人为检查的 Blackbox 开发集。如果在 Eyeball 开发集上的性能比在 Blackbox 开发集上好很多，那么你已经过拟合 Eyeball 开发集，并且应该考虑为其获得更多的数据。</p>
+<p>4.Eyeball 开发集应该足够大，以便于算法有足够多的错误分类样本供你分析。对很多应用来说，含有1000-10000个样本的 Blackbox 开发集已足够。</p>
+<p>5.如果你的开发集不够大到可以按照这种方式进行拆分，那么就不用分出 Blackbox，而是使用 Eyeball 开发集来用于人工误差分析、模型选择和调超参。</p>
+<h1 id="Part4-Bias-and-Variance（偏差和方差）"><a href="#Part4-Bias-and-Variance（偏差和方差）" class="headerlink" title="Part4 Bias and Variance（偏差和方差）"></a>Part4 Bias and Variance（偏差和方差）</h1><h2 id="4-1-偏差和方差：误差的两大来源"><a href="#4-1-偏差和方差：误差的两大来源" class="headerlink" title="4.1 偏差和方差：误差的两大来源"></a>4.1 偏差和方差：误差的两大来源</h2><p>1.不一定获取更多训练数据就一定能提升性能，因为数据不一定如期望那样有帮助。</p>
+<blockquote>
+<p>假设你希望构建一个误差为 5% 的猫识别器。而目前的训练集错误率为 15%，开发集错误率为 16%。在这种情况下，添加数据可能不会有太多帮助。你应该关注其他改变。实际上，在你的训练集上添加更多的样本只会让你的算法难以在训练集上做的更好。</p>
+</blockquote>
+<p>2.分析误差的来源：</p>
+<p>如果你在训练集上的错误率是 15%（即 85% 的精度），但你的目标是 5% 错误率（95% 精度），那么第一个要解决的问题是提高算法在训练集上的性能。<u>算法在开发/测试集上的性能通常比在训练集上要差</u>。所以，如果算法在已知样本上只达到 85% 的精度，则不可能在未知的样本上达到 95% 精度。</p>
+<p>如上所述，假设你的算法在开发集上有 16% 的错误率（84% 精度），我们将这 16% 的错误率分为两部分：</p>
+<p>1）<strong>偏差（bias）：算法在大型训练集上的错误率</strong>。在本例中，它是 15%。</p>
+<p>2）<strong>方差（variance）：算法在测试集上的表现低于训练集的程度。</strong>在本例中，开发集表现比训练集差 1%。</p>
+<p>3.分析要优先解决哪种误差：</p>
+<ul>
+<li>优先级：一些学习算法的改变能解决误差来源的第一个部分——偏差，并且提高算法在训练集上的性能；而一些改变能解决第二个部分——方差，并帮助算法从训练集到开发/测试集上更好地泛化。为了选择最有成效的改变，了解二者哪一方更需解决是很有用的。</li>
+<li>系统架构改进：还有一些方法能够对系统架构做出较大改变，同时减少偏差和方差。但是这些方法往往难以鉴定和实现。</li>
+<li>建立直觉：建立对偏差和方差的良好直觉将帮助你为算法选择出有效的改变。</li>
+</ul>
+<h2 id="4-2-偏差和方差举例"><a href="#4-2-偏差和方差举例" class="headerlink" title="4.2 偏差和方差举例"></a>4.2 偏差和方差举例</h2><p>1.训练错误率=1%，开发错误率=11%。则偏差=1%，方差=10%，说明分类器的训练误差很低但没能成功泛化到开发集上 —— <strong>过拟合（overfitting）</strong>。</p>
+<p>2.训练错误率=15%，开发错误率=16%。则偏差=15%，方差=1%，说明分类器的训练误差较高（high bias），方差较低 —— <strong>欠拟合（underfitting）</strong>。</p>
+<p>3.训练错误率 = 15%，开发错误率 = 30%。估计偏差为 15%，方差为 15%。该分类器有高偏差和高方差（<strong>high bias and high variance</strong>）。说明它在训练集上表现得很差，因此有较高的偏差，而它在开发集上表现更差，因此具有较高的方差。由于分类器同时过拟合和欠拟合，所以过拟合/欠拟合术语很难应用与此。</p>
+<p>4.训练错误率 = 0.5%，开发错误率 = 1%。低偏差和低方差，说明该分类器做得很好。</p>
+<h2 id="4-3-与最优错误率比较"><a href="#4-3-与最优错误率比较" class="headerlink" title="4.3 与最优错误率比较"></a>4.3 与最优错误率比较</h2><p>1.与最优错误率比较：如果偏差接近最优错误率，则说明偏差的改善空间就很小了，同时如果方差很大，那么说明在方差造成的误差上还有很大的提升空间。</p>
+<blockquote>
+<p>假设你正在构建一个语音识别系统，并发现 14% 的音频片段有太多的背景噪声，或者太难以理解，导致即使是人类也无法识别出所说的内容。在这种情况下，即使是“最优”的语音识别系统也可能有约为 14% 的误差。</p>
+<p>假设在这个语音识别问题上，你的算法达到：</p>
+<ul>
+<li>训练错误率 = 15%</li>
+<li>开发错误率 = 30%</li>
+</ul>
+<p>算法在训练集上的表现已经接近最优错误率 14%，因此在偏差上或者说在训练集表现上没有太大的提升空间。然而，算法没有很好地泛化到开发集上，在方差造成的误差上还有很大的提升空间。</p>
+<p>如果最优错误率接近 0%，那么 15% 的训练错误率则留下了很大的提升空间，这表明降低偏差可能有益。但如果最优错误率是 14%，那么 15% 的训练错误率表现告诉我们，在分类器的偏差方面几乎没有改进的余地。</p>
+</blockquote>
+<p>2.误差分解：</p>
+<p>1）偏差 = 最佳误差率（“不可避免偏差”）+ 可避免的偏差</p>
+<ul>
+<li><strong>最优错误率（“不可避免偏差”）/ 贝叶斯错误率</strong>：14%。假设我们决定，即使是世界上最好的语音系统，仍会有 14% 的误差。我们可以将其认为是学习算法的偏差“不可避免”的部分。</li>
+<li><strong>可避免偏差</strong>：1%。即训练错误率和最优误差率之间的差值。</li>
+</ul>
+<blockquote>
+<p>过拟合训练集：如果可避免偏差值是负的，即你在训练集上的表现比最优错误率要好。这意味着你正在过拟合训练集，并且算法已经过度记忆（over-memorized）训练集。你应该专注于减少方差的方法，而不是进一步减少偏差的方法。</p>
+</blockquote>
+<p>2）<strong>方差</strong>：15%。即开发错误和训练错误之间的差值。</p>
+<p>理论上来说，我们可以通过训练一个大规模训练集将方差减少到接近零。因此只要拥有足够大的数据集，所有的方差都是可以“避免的”，所以不存在所谓的“不可避免方差”。</p>
+<p>3.如何知道最优错误率：与人类表现进行比较</p>
+<ul>
+<li>对于人类擅长的任务，例如识别图片或转录音频剪辑，可以让普通人提供标签，然后测量这些人为标签相对于训练集标签的精度，这将给出最优错误率的估计</li>
+<li>如果你正在解决甚至人也很难解决的问题（例如预测推荐什么电影，或向用户展示什么广告），这将很难去估计最优错误率。</li>
+</ul>
+<h2 id="4-4-处理偏差和方差"><a href="#4-4-处理偏差和方差" class="headerlink" title="4.4 处理偏差和方差"></a>4.4 处理偏差和方差</h2><p>1.处理偏差和方差问题最简单的形式：</p>
+<ul>
+<li><strong>高可避免偏差 —— 改进算法</strong>：如果具有较高的可避免偏差，那么加大模型的规模（例如通过添加层/神经元数量来增加神经网络的大小）。</li>
+<li><strong>高方差 —— 增加数据</strong>：如果具有较高的方差，那么向训练集增加数据</li>
+</ul>
+<p>注：如果你可以加大神经网络的规模且无限制地增加训练集数据，那么在很多学习问题上都可以做的很好。</p>
+<p>2.加大 NN 模型规模</p>
+<p>1）作用：通常可减少偏差，但也可能会增加方差和过拟合风险。</p>
+<blockquote>
+<p>这种过拟合问题通常只在你不使用正则化技术的时候出现。如果你的算法含有了一个精心设计的正则化方法，通常可以安全地加大模型的规模，而不会增加过拟合风险。</p>
+</blockquote>
+<p>2）存在的问题：</p>
+<ul>
+<li>算力：计算力问题，因为训练大的模型很慢。</li>
+<li>数据：你可能会耗尽获取更多训练数据的能力。</li>
+</ul>
+<p>3）不同的模型架构（例如不同的神经网络架构）对于你的问题将有不同的偏差/方差值。尝试新架构的结果要比简单地加大模型规模和添加数据的形式更难以预测。</p>
+<p>4）总结：假设你正在应用深度学习，使用了 L2 正则化和 dropout 技术，并且设置了在开发集上表现最好的正则化参数。如果你加大模型规模，算法的表现往往会保持不变或提升；它不太可能明显地变差。避免使用更大模型的唯一原因就是这将使得计算代价变大。</p>
+<h2 id="4-5-偏差和方差间的权衡"><a href="#4-5-偏差和方差间的权衡" class="headerlink" title="4.5 偏差和方差间的权衡"></a>4.5 偏差和方差间的权衡</h2><p>1.为什么要权衡 —— 此消彼长的可能性：</p>
+<p>大部分对学习算法进行的更改中，有一些能够减少偏差，但代价是增大方差，反之亦然。</p>
+<p>例如，加大模型的规模（在神经网络中增加神经元/层，或增加输入特征），通常可以减少偏差，但可能会增加方差。另外，加入正则化一般会增加偏差，但是能减少方差。</p>
+<p>2）需要权衡的情况比较少：</p>
+<ul>
+<li>我们往往能够获取充足的数据，并且可以使用非常大的神经网络。</li>
+<li>现在有更多的选择可以在不损害方差的情况下减少偏差，反之亦然。</li>
+</ul>
+<p>例如，你通常可以增加神经网络的规模大小，并调整正则化方法去减少偏差，而不会明显的增加方差。通过增加训练数据，你通常也可以在不影响偏差的情况下减少方差。</p>
+<blockquote>
+<p>注：加入正则化可抵消方差的增加 。</p>
+</blockquote>
+<p>3）策略：如果你选择了一个很适合你任务的模型架构，那么你也可以同时减少偏差和方差。只是选择这样的架构可能有点难度。</p>
+<h2 id="4-6-减少可避免偏差的技术"><a href="#4-6-减少可避免偏差的技术" class="headerlink" title="4.6 减少可避免偏差的技术"></a>4.6 减少可避免偏差的技术</h2><p>如果你的学习算法存在着很高的可避免偏差，你可能可以尝试下面的技术：</p>
+<ul>
+<li><strong>加大模型规模</strong>（例如神经元/层的数量）：这项技术能够使算法更好地拟合训练集，从而减少偏差。当你发现这样做会增大方差时，加入正则化，这可以抵消方差的增加。</li>
+<li><strong>根据误差分析结果修改输入特征</strong>：假设误差分析的结果鼓励你创建额外的特征，从而帮助算法消除某个特定类别的误差。这些新的特征对处理偏差和方差都有所帮助。理论上，添加更多的特征将增大方差；然而当你发现这种情况时，加入正则化，这可以抵消方差的增加。</li>
+<li><strong>减少或者去除正则化</strong>（L2 正则化，L1 正则化，dropout）：这将减少可避免偏差，但会增大方差。</li>
+<li><strong>修改模型架构</strong>（比如神经网络架构）使之更适用于你的问题：这项技术将同时影响偏差和方差。</li>
+</ul>
+<p>有一种方法并不能奏效：</p>
+<ul>
+<li><strong>添加更多的训练数据</strong>：这项技术可以帮助解决方差问题，但它对于偏差通常没有明显的影响。</li>
+</ul>
+<h2 id="4-7-训练集误差分析"><a href="#4-7-训练集误差分析" class="headerlink" title="4.7 训练集误差分析"></a>4.7 训练集误差分析</h2><p>1.对训练集做误差分析的必要性：</p>
+<p>你的算法必须在训练集上表现得很好，才能期望它在开发集和测试集上能够有着良好的表现。</p>
+<p>2.策略：</p>
+<p>1）类似于在开发集上设置一个 Eyeball 开发集。当你的算法有着高偏差时（例如算法没有很好拟合训练集的时候）这将有所帮助。</p>
+<p>2）然后分析 Eyeball 开发集中的各种误差原因的比例，从而发现提升方向。</p>
+<p>3）注意检查正常人是否也能很好地识别这些样本。如果正常人都不能正确识别，那么期望算法正确地识别这样的话语就不太合理。</p>
+<h2 id="4-8-减少方差的技术"><a href="#4-8-减少方差的技术" class="headerlink" title="4.8 减少方差的技术"></a>4.8 减少方差的技术</h2><p>1.如果你的学习算法存在着高方差，则可以尝试下面的技术：</p>
+<ul>
+<li><strong>添加更多的训练数据</strong>：这是最简单也是最可靠的一种方式来处理方差，只要你能访问大量的数据并有足够的计算能力来处理它们。</li>
+<li><strong>加入正则化</strong>（L2 正则化，L1 正则化，dropout）：这项技术可以降低方差，但却增大了偏差。</li>
+<li><strong>加入提前终止</strong>（比如根据开发集误差提前终止梯度下降）：这项技术可以降低方差但却增大了偏差。提前终止（Early stopping）有点像正则化理论，一些学者认为它是正则化技术之一。</li>
+<li><strong>通过特征选择减少输入特征的数量和种类</strong>：这种技术可能有助于解决方差问题，但也可能增加偏差。稍微减少特征的数量（比如从 1000 个特征减少到 900 个）不太可能会对偏差产生很大的影响，但显著地减少它们（比如从 1000 个特征减少到 100 个，10 倍地降低）则很有可能产生很大的影响，你可能排除了太多有用的特征。在现代深度学习中，当数据充足时，特征选择的比重就有所改变，现在我们更有可能将拥有的所有特征提供给算法，并让算法根据数据来确定哪些特征可以使用。但当你的训练集很小的时候，特征选择是非常有用的。</li>
+<li><strong>减小模型规模</strong>（比如神经元/层的数量）：<em>谨慎使用。</em>这种技术可以减少方差，同时可能增加偏差。然而我不推荐这种处理方差的方法，添加正则化通常会提供更好的分类性能。 减少模型规模的好处是降低了计算成本，从而加快了你对模型进行训练的速度。如果加速模型训练是有用的，那么无论如何都要考虑减少模型的规模。但如果你的目标是减少方差，并且不关心计算成本，那么考虑添加正则化会更好。</li>
+</ul>
+<p>2.下面是两种额外的策略，和解决偏差问题章节所提到的方法重复：</p>
+<ul>
+<li><strong>根据误差分析结果修改输入特征</strong>：假设误差分析的结果鼓励你创建额外的特征，从而帮助算法消除某个特定类别的误差。这些新的特征对处理偏差和方差都有所帮助。理论上，添加更多的特征将增大方差；然而当你发现这种情况时，加入正则化，这可以消除方差的增加。</li>
+<li><strong>修改模型架构</strong>（比如神经网络架构）使之更适用于你的问题：这项技术将同时影响偏差和方差。</li>
+</ul>
+<h1 id="Part5-Learning-Curves（学习曲线）"><a href="#Part5-Learning-Curves（学习曲线）" class="headerlink" title="Part5 Learning Curves（学习曲线）"></a>Part5 Learning Curves（学习曲线）</h1><h2 id="5-1-诊断偏差与方差：学习曲线"><a href="#5-1-诊断偏差与方差：学习曲线" class="headerlink" title="5.1 诊断偏差与方差：学习曲线"></a>5.1 诊断偏差与方差：学习曲线</h2><p>1.<strong>学习曲线：可以将<u>开发集的误差与训练集样本的数量</u>进行关联比较</strong></p>
+<ul>
+<li>绘制方法：需要设置不同大小的训练集运行算法。假设有 1000 个样本，你可以选择在规模为 100、200、300 … 1000 的样本集中分别运行算法，接着便可以得到开发集误差随训练集大小变化的曲线。</li>
+<li>随着训练集大小的增加，开发集误差应该降低。</li>
+</ul>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1ft2ih6x5abj318m0pudie.jpg" alt="mage-20180708160032"></p>
+<p>2.期望错误率：希望算法能达到的值</p>
+<ul>
+<li>对标人类错误率：如果希望达到人类水平的表现，那么人类错误率可能就是“期望错误率”。</li>
+<li>主观感受：如果学习算法为某些产品提供服务（如提供猫图），我们可能将主观感受到需什么样的水平才能给用户提供出色的体验。</li>
+<li>直觉：如果你已经从事一项应用很长时间，那么你可能会有一种直觉，那就是在下一个季度里你会有多大的进步。</li>
+</ul>
+<p>3.可以将期望的表现水平添加到你的学习曲线中：来判断趋势和做决策</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1ft2iodopiaj31ao0lotbc.jpg" alt="mage-20180708160733"></p>
+<p>可以根据红色的“开发误差”曲线的走势来推测，添加一定的数据时曲线距离期望的性能接近了多少。在上面的例子中，将训练集的大小增加一倍可能会让你达到期望的性能，这看起来是合理的。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1ft2ip8yj9hj31bo0mwwh3.jpg" alt="mage-20180708160824"></p>
+<p>观察学习曲线可能会帮助你避免花几个月的时间去收集两倍的训练数据，结果却发现这并不管用（如上图）。</p>
+<p>4.缺点：</p>
+<p>如果只关注开发错误曲线，当数据量变得越来越多时，将很难预测后续红色曲线的走向。因此我们会选择额外的一条曲线来<strong>帮助评估添加数据所带来的影响：即训练误差曲线</strong>。</p>
+<h2 id="5-2-绘制训练误差曲线"><a href="#5-2-绘制训练误差曲线" class="headerlink" title="5.2 绘制训练误差曲线"></a>5.2 绘制训练误差曲线</h2><p>1.必要性：随着训练集大小的增加，开发集（和测试集）误差应该会降低，但训练集误差往往会同时增加。</p>
+<p>举例说明一下这个影响：</p>
+<p>假设你的训练集只有两个样本：一张猫图和一张非猫图。学习算法将很容易“记住”训练集中这两个样本，并且训练集错误率为 0%. 即使有一张或两张的样本图片被误标注了，算法也会轻松地记住它们。</p>
+<p>现在假设你的训练集有 100 个样本，可能有一些样本是误标记的，或者模棱两可的（图像非常模糊），所以即使是人类也无法分辨是否有一只猫。或许学习算法仍然可以“记住”大部分或全部的训练集，但现在很难获得 100% 的准确率。通过将训练集样本数量从 2 个增加到 100 个，你会发现训练集的准确率会略有下降。</p>
+<p>2.将训练误差曲线添加到原有的学习曲线中：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1ft2ixed01mj31ba0lcjuq.jpg" alt="mage-20180708161615"></p>
+<p>可以发现：</p>
+<p>1）蓝色的“训练误差”曲线随着训练集大小的增加而增加；</p>
+<p>2）算法在训练集上通常比在开发集上做得更好，故红色的开发误差曲线通常严格位于蓝色训练错误曲线之上。</p>
+<h2 id="5-3-解读学习曲线：高偏差"><a href="#5-3-解读学习曲线：高偏差" class="headerlink" title="5.3  解读学习曲线：高偏差"></a>5.3  解读学习曲线：高偏差</h2><p>1.<strong>在同一张图中检查开发误差曲线和训练误差曲线</strong>可以让我们更有信心地推测开发误差曲线的走势。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1ft2jeuaycnj31bs0mgadd.jpg" alt="mage-20180708163300"></p>
+<p>对于上图，可以肯定：添加更多的数据并不奏效。原因：</p>
+<ul>
+<li>随着我们添加更多的训练数据，训练误差只会变得更糟。因此蓝色的训练误差曲线只会保持不动或上升，这表明它只会远离期望的性能水平。</li>
+<li>红色的开发误差曲线通常要高于蓝色的训练误差曲线。因此只要训练误差高于期望性能水平，通过添加更多数据来让红色开发误差曲线下降到期望性能水平之下也基本没有可能。</li>
+</ul>
+<p>看上图可发现：</p>
+<ul>
+<li>方差小：因为训练曲线和开发曲线之间的间隙小</li>
+<li>可避免偏差大：因为训练误差和期望性能之间有大的间隙</li>
+</ul>
+<h2 id="5-4-解读学习曲线：其他情况"><a href="#5-4-解读学习曲线：其他情况" class="headerlink" title="5.4 解读学习曲线：其他情况"></a>5.4 解读学习曲线：其他情况</h2><p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1ft2k6r1hklj31g40oygpn.jpg" alt="mage-20180708165948"></p>
+<p>例1：蓝色训练误差曲线相对较低，红色的开发误差曲线比蓝色训练误差高得多。故偏差很小，但方差很大。添加更多的训练数据可能有助于缩小开发误差和训练误差之间的差距。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1ft2k93p11pj31hc0qiaec.jpg" alt="mage-20180708170203"></p>
+<p>例2：训练误差很大，因为它比期望的性能水平要高得多。开发误差也比训练误差大得多，因此有着明显的偏差和方差。此时你必须找到一种方法来减少算法中的偏差和方差。</p>
+<h2 id="5-5-绘制学习曲线"><a href="#5-5-绘制学习曲线" class="headerlink" title="5.5 绘制学习曲线"></a>5.5 绘制学习曲线</h2><p>1.假设你有一个非常小的训练集，仅有 100 个样本 。那么你可以从中随机选择 10 个样本来训练你的算法，然后是 20 个，30 个，100 个，每次增加 10 个样本。然后<strong>使用 10 个数据点来绘制你的学习曲线</strong>。你可能会发现，在较小规模的训练集上，曲线看起来带有点噪声（这意味着这些值比预期的要高/低）。</p>
+<p>2.当只使用 10 个随机选择的样本进行训练时，你可能会不幸碰到特别“糟糕”的训练集，比如含有很模糊的或者误标记的样本。你当然也有可能会幸运地碰到特别“棒”的训练集。<strong>训练集的规模较小意味着开发和训练误差将随机波动</strong>。</p>
+<p>3.如果你的机器学习应用程序很倾向于某一个类（如猫分类任务的负面样本比例远远大于正面样本），或者说有大量的类（如识别 100 种不同的动物物种），那么选择一个“非代表性”或糟糕的特殊训练集的几率也将更大 。例如，假设你的整个样本中有 80% 是负样本（y=0），只有 20% 是正样本（y=1），那么一个含有 10 个样本的训练集就有可能只包含负样本，因而算法很难从中学到有意义的东西。</p>
+<p>4.<strong>存在训练集噪声致使难以正确理解曲线的变化</strong>时（前置条件），有两种解决方案：</p>
+<ul>
+<li>与其只使用 10 个样本训练单个模型，不如<strong>从你原来的 100 个样本中进行随机有放回抽样</strong>，<strong>选择几批（比如 3-10 ）不同的 10 个样本进行组合</strong>。<strong>在这些数据上训练不同的模型，并计算每个模型的训练和开发错误</strong>。最终，计算和绘制平均训练集误差和平均开发集误差。</li>
+<li><strong>如果你的训练集偏向于一个类，或者它有许多类，那么选择一个“平衡”子集，而不是从 100 个样本中随机抽取 10 个训练样本</strong>。例如，你可以确保这些样本中的 2/10是正样本，8/10 是负样本。更常见的做法是，<strong>确保每个类的样本比例尽可能地接近原始训练集的总体比例</strong>。</li>
+</ul>
+<blockquote>
+<p>此处<strong>有放回抽样</strong>的意思是：你会从 100 个样本中随机选择 10 个不同的样本来生成第一个训练集，在生成第二个训练集时，你需要再次选择 10 个样本，且抽样来源仍需包括第一次选择的 10 个样本在内。因此，某一个样本可能在第一个训练集和第二个训练集都有出现。相反，如果你在无放回的情况下进行抽样，那么第二个训练集将从第一次没有被选择的 90 个样本中选出。在实践中，用有放回抽样和无放回抽样的差异不大，但是前者更为常见。</p>
+</blockquote>
+<p>除非你已经尝试过绘制学习曲线，并得出了曲线太过嘈杂且无法看到潜在趋势的结论，否则我将不会考虑使用这两种技术。因为当你的训练集规模很大——比如超过 10000 个样本——而且类分布不是很倾斜时，你可能就不需要这些技巧了。</p>
+<p>5.绘制一个学习曲线的成本可能非常高（计算成本、时间成本）：</p>
+<p>例如，你可能需要训练 10 个模型，其中样本规模可以是 1000 个，然后是 2000 个，一直到 10000 个。使用小数据集训练模型比使用大型数据集要快得多。因此，你可以用 1000、2000、4000、6000 和 10000 个样本来训练模型，而不是像上面那样将训练集的大小均匀地间隔在一个线性的范围内。这仍然可以让你对学习曲线的变化趋势有一个清晰的认识。当然，这种技术只有在训练所有额外模型所需的计算成本很重要时才有意义。</p>
+<h1 id="Part6-Comparing-to-human-level-performance（与人类表现水平相比较）"><a href="#Part6-Comparing-to-human-level-performance（与人类表现水平相比较）" class="headerlink" title="Part6 Comparing to human-level performance（与人类表现水平相比较）"></a>Part6 Comparing to human-level performance（与人类表现水平相比较）</h1><h2 id="6-1-为何与人类表现水平进行对比"><a href="#6-1-为何与人类表现水平进行对比" class="headerlink" title="6.1 为何与人类表现水平进行对比"></a>6.1 为何与人类表现水平进行对比</h2><p>1.许多机器学习系统的设计目的：自动化一些人类可以处理得很好的事情，如图像识别、语音识别、垃圾邮件分类等。</p>
+<p>2.在处理人类擅长的任务时，构建一个机器学习系统会更加简单：</p>
+<ul>
+<li><strong>易于从人为标签中获取数据</strong>：如由于人类可以很好地识别图片中的猫，因此让人们为你的学习算法提供高精度的带标签数据也很方便。</li>
+<li><strong>可基于人类直觉进行误差分析</strong>：假设某个语音识别系统的表现要低于人类的表现水平。比如错误地将音频片段 “This recipe calls for a <em>pear</em> of apples” 中的 “<em>pair</em>” 认为是 “<em>pear</em>”. 此时你可以利用人类的直觉来尝试理解，普通人会利用何种信息来获取正确的转录内容，并且试着修改你的学习算法，使它在相同的知识点上有着更好的表现。</li>
+<li><strong>使用人类表现水平来估计最优错误率，并设置可达到的“期望错误率”：</strong>假设你的算法在某个任务上达到了 10% 的误差，但普通人所能达到的误差是 2% . 由此我们就可以知道最优错误率是 2% 或更低，这也表明可避免偏差至少是 8% . 所以你应当尝试一下降低偏差的技术。更一般地说，<u>有一个合理可实现的“期望错误率”可以帮助你去估计学习算法的可避免偏差。这反过来也帮你决定是否使用误差降低技术</u>。</li>
+</ul>
+<p>3.对于人类不擅长的任务，如广告推荐、书籍推荐、股票预测等，主要面临以下问题：</p>
+<ul>
+<li><strong>获取标签数据很难。</strong> 比如很难去获取用户数据库，并要求人工标记者使用“最优”的书籍标签对数据库进行注释，从而向用户推荐书籍。如果你正在负责一个书籍销售网站或者是 APP 的运营，你可以通过向用户展示书籍并查看他们的购买记录来获取数据。可当你没有这样一个网站时，就需要去找到一些更具创意的方法来获取数据了。</li>
+<li><strong>人类的直觉难以依靠。</strong>例如，几乎没有人能准确地预测股票市场。因此当我们的股票预测算法比随机猜测的表现还要差时，很难弄清楚要如何去改进它。</li>
+<li><strong>最优错误率和合理的期望错误率难以确定。</strong>假设你已经有了一个很好的图书推荐系统。<u>如果没有人类水平作为参考，你怎么知道它还能改善多少呢？</u></li>
+</ul>
+<h2 id="6-2-如何定义人类表现水平"><a href="#6-2-如何定义人类表现水平" class="headerlink" title="6.2 如何定义人类表现水平"></a>6.2 如何定义人类表现水平</h2><p>1.假设你正在做一个医学成像应用程序，它可以自动依据X射线图像进行诊断。 除了一些基础的训练外，一个没有任何医学背景的人在该任务上的错误率为 15% . 一名新手医生的错误率为 10% ，而经验丰富的医生可以达到 5% . 如果由小型的医生团队对每一幅图像进行单独的讨论，错误率将降低至 2% . 上述的哪一种错误率可以定义为“人类表现水平”呢？</p>
+<p>在该情景下，我将使用 2% 作为人类表现水平的代表来获得最优错误率。 你还可以将 2% 设置为期望的性能水平。</p>
+<p>2.按能力合理分工：当需要获得标签数据时，你可能不希望与整个团队讨论每一张图片，因为他们的时间很宝贵。或许你可以让新手医生给绝大多数的病例贴上标签，而把那些较难分析的病例交给更有经验的医生或医生团队。</p>
+<p>3.如果你的系统目前的误差为 40%，那么不论是让初级医生（10% 误差）还是有经验的医生（5% 误差误）来给你的数据贴上标签，那都没有关系。是如果你的系统误差已经是 10%，那么将人类表现水平定义为 2% 将为你提供更好的途径来改进你的系统。</p>
+<h2 id="6-3-超越人类表现水平"><a href="#6-3-超越人类表现水平" class="headerlink" title="6.3 超越人类表现水平"></a>6.3 超越人类表现水平</h2><p>1.<strong>当整体算法表现已经优于人类表现水平时</strong>：现在你在做一个语音识别项目，并且有一个音频片段数据集。假设数据集里有许多的噪声，导致即使是人类来识别也会有 10% 的误差。同时假设你的算法已经达到了 8% 的误差，你能够使用第 33 章中提到的三种技术来继续取得快速的进展吗？</p>
+<p>2.<strong>找到人类表现水平远超系统的数据子集，利用数据子集继续优化算法性能：</strong>如果你能找到人类表现水平远超现有系统的数据子集，使用那些技术来驱动进则仍然可行。举个例子，假设你的系统在处理识别含有噪音的音频任务时表现已经优于人类，然而在转录语速很快的语音时人类仍然占有优势。</p>
+<p>对于语速很快的语音数据子集：</p>
+<ol>
+<li>你仍可以从输出质量比你的算法高的人那儿获取转录数据。</li>
+<li>你可以利用人类的直觉来理解，为什么你的系统没能够识别这些数据，而人类做到了。</li>
+<li>你可以使用该子集上的人类表现水平作为期望表现目标。</li>
+</ol>
+<p>3.<strong>只要在开发集上存在着一些人类能正确处理而算法不能的样本，前面提到的技术就能够被应用</strong>。即使你的算法在整个开发集或是测试集上的表现已经超过了人类，这样做也是正确的。</p>
+<h1 id="Part7-Training-and-testing-on-different-distributions（在不同的分布上训练和测试）"><a href="#Part7-Training-and-testing-on-different-distributions（在不同的分布上训练和测试）" class="headerlink" title="Part7 Training and testing  on different distributions（在不同的分布上训练和测试）"></a>Part7 Training and testing  on different distributions（在不同的分布上训练和测试）</h1><h2 id="7-1-何时在不同的分布上训练与测试"><a href="#7-1-何时在不同的分布上训练与测试" class="headerlink" title="7.1 何时在不同的分布上训练与测试"></a>7.1 何时在不同的分布上训练与测试</h2><p>1.<strong><u>选择开发集和测试集的首要原则：服从统一的实际分布</u></strong></p>
+<ul>
+<li>实际分布：即反映你在将来实际应用时想要处理的数据</li>
+</ul>
+<p>2.例：假设用户已经向你的猫咪图片程序上传了 10000 张图片，且图片已被人为标记为含有猫与不含猫两类。同时你也从互联网上下载了规模更大的 200000 张图片集，此时训练集、测试集与开发集应该如何定义呢？</p>
+<p>1）分析：</p>
+<ul>
+<li>10000张：用户提交的图片，密切反映实际概率分布</li>
+<li>200000张：自己从互联网上下载的图片，无法反映实际概率分布</li>
+</ul>
+<p>2）策略：</p>
+<ol>
+<li>仅使用10000张作为开发集和测试集</li>
+<li>整合210000张并随机打乱后再划分：不建议使用这种方法，因为绝大部分数据将来自互联网图片，不能反映实际分布</li>
+</ol>
+<h2 id="7-2-如何决定是否使用你所有的数据"><a href="#7-2-如何决定是否使用你所有的数据" class="headerlink" title="7.2 如何决定是否使用你所有的数据"></a>7.2 如何决定是否使用你所有的数据</h2><p>假设你的猫咪检测器的训练集包括 10000 张用户上传的图片，这些数据来自相同的数据分布且将作为单独的开发/测试集，同时也代表着你关心的将要处理的数据分布。你还从互联网下载了额外的 20000 张图片。此时你是否应该为你的学习算法提供所有的 20000 + 10000 张图片作为它的训练集，或者丢弃这 20000 张网络图片，以免它会影响你的学习算法呢？</p>
+<p>1.在上面的例子中若合并所有数据：</p>
+<ul>
+<li>使用传统学习算法，会导致算法表现更差</li>
+<li>使用大型NN，风险大大降低，更可能提升算法的性能</li>
+</ul>
+<p>2.WHY使用大型 NN 可以不关心数据分布：关键在于算法“大脑”的容量</p>
+<ul>
+<li>添加额外的不同分布的数据会迫使 NN 花费部分容量来学习网络图像的特定属性（如更高的分辨率、不同画面结构图像的分布等），若这些属性与移动应用图像有很大的不同，那么它将“耗尽”神经网络的一些表征能力，导致从移动应用图像的分布识别数据的能力就会降低，于是会损害算法性能。</li>
+<li>但若你有足够的计算能力来构建一个足够大的神经网络，就有足够的能力从互联网和移动应用图像中学习，而不会存在两种类型的数据在容量上的竞争。</li>
+<li>但是，如果你没有足够大的神经网络（或者另一个高度灵活的学习算法），那么你应该更加关注训练数据，需要与开发集/测试集的分布相匹配。</li>
+</ul>
+<p>3.使用大型 NN 最好不加无用的样本到训练集里：</p>
+<p>因为你的神经网络几乎没有任何东西可以从这些无用的数据中学习，加入它们将会浪费计算资源和神经网络的表征能力，但它们可以应用到开发/测试集中作为负样本。</p>
+<h2 id="7-3-如何决定是否添加不一致的数据"><a href="#7-3-如何决定是否添加不一致的数据" class="headerlink" title="7.3 如何决定是否添加不一致的数据"></a>7.3 如何决定是否添加不一致的数据</h2><p>如果一定要加不一致的数据，请尽量保证开发集和测试集的数据服从实际分布。</p>
+<h2 id="7-4-给数据加权重"><a href="#7-4-给数据加权重" class="headerlink" title="7.4 给数据加权重"></a>7.4 给数据加权重</h2><p>假设你有 20 万张来自互联网的图片，还有来自移动应用用户的 5000 张照片。数据集的大小之间有一个 40:1 的比率。</p>
+<p>1.从理论上讲，只要你建立了一个庞大的神经网络，并在所有 205000 张图片上进行足够长的时间训练，那么在网络图像和移动图像上将算法都训练得很好是没有害处的。</p>
+<p>2.但在实际操作中，拥有 40 倍的网络图像可能意味着，相比只使用 5000 张图片，你<u>需要花费 40 倍（或更多）的计算资源来对两者进行建模</u>。</p>
+<p>3.<strong><u>如果你没有巨大的计算资源，你可以给互联网图片一个较低的权重作为妥协</u></strong>。</p>
+<p>例如：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1ft4liubo0rj30h302fdfx.jpg" alt="img"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1ft4liukwfnj30gj02baa4.jpg" alt="img"></p>
+<p>权重为β，若设置β=1/40，则这个算法会对 5000 个移动图像和 20 万个互联网图像给予同等的权重。</p>
+<p>4.赋予权重的意义：</p>
+<p>通过对额外的网络图像赋予更少的权重，你不需要构建一个庞大的神经网络来确保算法在这两种类型的任务上都能很好地完成。</p>
+<p>但注意：只有当你怀疑这些额外的数据（网络图像）与开发/测试集分布不一致，或者额外的数据规模比与相同分布的开发/测试集（手机图像）数据规模大得多时，才需要加这种类型的权重。</p>
+<h2 id="7-4-从训练集泛化到开发集"><a href="#7-4-从训练集泛化到开发集" class="headerlink" title="7.4 从训练集泛化到开发集"></a>7.4 从训练集泛化到开发集</h2><p>1.假设你正在将机器学习应用于不同分布的训练集和开发/测试集上。例如，训练集包含了互联网图像+移动应用图像，而开发/测试集只包含移动应用图像。然而，该算法运行得不太好：它的开发/测试集误差比想要的要高得多。以下是一些可能出现问题的情况：</p>
+<ul>
+<li>高偏差问题：在训练集上表现不佳</li>
+<li>高方差问题：在训练集上表现很好，但无法很好地泛化到未知数据上</li>
+<li>数据不匹配问题：能很好地泛化到与训练集相同分布的未知数据，但不能很好地泛化到与开发/测试集相同分布的未知数据</li>
+</ul>
+<p>2.数据不匹配问题的举例：假设人类在猫识别任务上取得近乎完美的表现。你的算法实现了：</p>
+<ul>
+<li>1% 的训练集误差</li>
+<li>1.5% 的与训练集分布相同的未知数据上的误差</li>
+<li>10% 的开发集误差</li>
+</ul>
+<p>显然存在数据不匹配问题。</p>
+<p>Solu：使训练数据更接近开发和测试数据。</p>
+<p>3.诊断一个算法在上面3个问题上受到了多大程度的影响：从训练集中分出一个训练开发集的子集，用于评估是否存在数据不匹配问题。</p>
+<ul>
+<li>训练集：这是算法将学习的数据（例如，互联网图像+移动应用图像）。这<strong>并不需要我们从与真正关心的相同分布（开发/测试集分布）的数据中提取</strong>。</li>
+<li><strong><u>训练开发集</u></strong>：这些数据来自与训练集相同的分布（例如，互联网图像+移动应用图像）。它<strong>通常比训练集要小；它只需要足够大到来评估和跟踪我们的学习算法的进展</strong>。</li>
+<li>开发集：这是从与测试集相同分布的数据中抽取出来的，它<strong>反映了我们最终关心的数据的分布</strong>（例如，移动应用图像） 。</li>
+<li>测试集：这是<strong>从与开发集相同分布的数据中抽取出来的</strong>（例如，移动应用图像）。</li>
+</ul>
+<p>有了这四个独立的数据集，就可以评估：</p>
+<ul>
+<li>训练误差：对训练集进行评估。</li>
+<li>该算法能够泛化到与训练集相同分布数据的能力，并对训练开发集进行评估。</li>
+<li>算法在你实际关心的任务上的性能，通过对开发集 和/或 测试集评估。</li>
+</ul>
+<h2 id="7-4-辨别偏差、方差和数据不匹配误差"><a href="#7-4-辨别偏差、方差和数据不匹配误差" class="headerlink" title="7.4 辨别偏差、方差和数据不匹配误差"></a>7.4 辨别偏差、方差和数据不匹配误差</h2><h2 id="7-5-解决数据不匹配问题"><a href="#7-5-解决数据不匹配问题" class="headerlink" title="7.5 解决数据不匹配问题"></a>7.5 解决数据不匹配问题</h2><p>1.解决方法：</p>
+<ul>
+<li>尝试理解数据属性在训练集和开发集分布之间的差异</li>
+<li>尝试找到更多接近实际分布的训练数据，以便更好地匹配你的算法碰到的开发集样本</li>
+<li>域适应：研究如何在一个分布上训练算法，并将其推广到不同的分布（但只适用于特殊类型问题，且使用得很少）</li>
+</ul>
+<p>2.<strong>误差分析：目的是了解训练集和开发集之间的显著差异</strong>，这正是导致数据不匹配的原因。</p>
+<h2 id="7-6-人工合成数据"><a href="#7-6-人工合成数据" class="headerlink" title="7.6 人工合成数据"></a>7.6 人工合成数据</h2><p>1.人工合成数据：可以快速创建巨大数据集。</p>
+<p>例如：</p>
+<p>1）将在安静空间里说话的音频数据与汽车/道路噪音的音频数据合成到一起，从而获取到嘈杂环境中人说话的音频数据，这样比直接在开车时收集大量数据要更节省时间。</p>
+<p>2）模拟合成：将模拟的动态模糊加到清晰的图像上，从而获取到模糊图像。</p>
+<p>2.人工合成数据的挑战：<strong>“过拟合”风险</strong></p>
+<p>例如：</p>
+<p>1）假设你有 1000 小时的语音训练数据，但只有 1 小时的汽车噪音。如果你反复使用相同的 1 小时的汽车噪音来合成数据，那么虽然听这段音频的人可能无法分辨噪音的区别，但某种学习算法可能会“过拟合”这一小时的汽车噪音，从而可能无法很好地泛化到一个新的音频剪辑片段。</p>
+<p>2）假设你有 1000 个小时的汽车噪音片段，但所有的噪音都是从 10 辆不同的车上提取的。在这种情况下，一种算法可能会“过拟合”这 10 辆车，如果在不同的汽车上进行音频测试，性能则会很差。但这些问题通常很难被发现。</p>
+<p>3）假设你正在建立一个计算机视觉系统来识别汽车：你正与一家电脑游戏公司合作，该公司拥有20辆汽车的计算机图形模型。如果你的 10 万个训练样本都由这 20 辆车合成而来，那么你的系统将会“过拟合”这 20 款特定的汽车设计，而且它将无法很好地泛化到包含其他汽车设计在内的开发/测试集。</p>
+<p>3.合成数据需要考虑：<strong>样本的代表性</strong>，样本的分布需要尽可能接近实际数据分布。</p>
+<h1 id="Part8-Debugging-inference-algorithms"><a href="#Part8-Debugging-inference-algorithms" class="headerlink" title="Part8 Debugging  inference algorithms"></a>Part8 Debugging  inference algorithms</h1><h2 id="8-1-优化验证测试"><a href="#8-1-优化验证测试" class="headerlink" title="8.1 优化验证测试"></a>8.1 优化验证测试</h2><h2 id="8-3-强化学习举例"><a href="#8-3-强化学习举例" class="headerlink" title="8.3 强化学习举例"></a>8.3 强化学习举例</h2><p>假设你正在用机器学习来教直升机复杂的飞行动作。下面是一张延时照片，照片上是一台电脑控制器的直升机正在引擎关闭的情况下执行着陆。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1ft4q560u90j318g0stq7p.jpg" alt="img"></p>
+<p>这被称为“自旋”策略，即使引擎意外故障了，它也允许直升机着陆。这也是人类飞行员经常进行的训练。</p>
+<p>而你的目标是使用一种学习算法，让直升机通过一个轨迹$T$安全地着陆。</p>
+<p>要应用强化学习策略，你必须设计一个 “奖励函数”$R(.)$ ，它给出一个分数来衡量每一个可能轨迹$T$的好坏。例如，如果 $T$导致直升机坠毁，那么奖励也许是$R(T)=-1000$  ，这是一个巨大的负反馈；而一个导致安全着陆的轨迹 $T$ 可能会产生一个正的$R(T)$  值，它的精确值取决于着陆过程的平稳程度。奖励函数$R(.)$   通常是人为选择的，以量化不同轨迹 $T$ 的理想程度。它必须权衡考虑着陆的颠簸程度，直升机是否降落在理想的位置，乘客的降落体验等因素。设计一个好的建立函数并非易事。</p>
+<p>给定一个奖励函数$R(T)$   ，强化学习算法的工作是控制直升机，使其达到$max_TR(T)$   . 然而，强化学习算法原理内部有许多近似操作，可能无法成功实现这种最大化需求。</p>
+<p>假设你已经选择了某些奖励函数$R(T)$   作为反馈，并运行了学习算法。然而它的表现似乎比人类飞行员要糟糕得多——它更加颠簸，而且似乎不那么安全。你如何判断错误是否由强化学习算法造成——它试图找到一个轨迹$T$  ，满足  $max_TR(T)$ ——或者错误来自于你的奖励函数——它尝试衡量并且指定一种在颠簸程度和着陆精度之间权衡的理想结果。</p>
+<p>为了应用优化验证测试，让$T<em>{human}$  表示人类飞行员所选择的轨迹，并让$T</em>{out}$代表算法所选择的轨迹。根据我们上面的描述，  $T<em>{human}$是优于$T</em>{out}$  的发展轨迹。因此，关键的测试点在于：不等式$R(T<em>{human})&gt;R(T</em>{out})$是否成立？</p>
+<p>情况1：如果不等式成立，奖励函数$R(.)$   正确地使$T<em>{human}$   优于$T</em>{out}$  ，但这表明我们的强化学习算法找到的 $T_{out}$ 仍不够好，花时间去改进算法是很值得的。</p>
+<p>情况2：如果上面不等式不成立，而是$R(T<em>{human})&lt;=R(T</em>{out})$  . 这表明$R(.)$   的设计使得理应是更优策略的$T_{human}$  得到了一个更糟的评分。你应当致力于改进$R(.)$   ，以更好地获得与良好着陆情况相对应的权衡。</p>
+<p>许多机器学习应用程序使用这种优化某个近似的 “模式” 来确定得分函数$Score_X(.)$  . 有时没有特定的输入$x$  ，形式简化为  $Score_X(.)$。在上面的例子中，得分函数即是奖励函数，$Score(T)=R(T)$，而采用的优化算法是强化学习算法，目的是找到好的轨迹$T$ .</p>
+<p>这和前面的例子有一个区别，那就是，与其比较 “最优” 输出，不如将其与人类水平的表现进行比较。我们认为，即使$T<em>{human}$ 不是最优的，它也是相当不错的。一般而言，只要有一个比当前学习算法性能更好的输出  （在这个例子中即是指$T</em>{human}$ ），即使它不是 “最优” 的，优化验证测试也能够反映改进学习算法与改进得分函数之间哪一个更具前途。</p>
+<h1 id="Part9-End-to-end-deep-learning"><a href="#Part9-End-to-end-deep-learning" class="headerlink" title="Part9 End-to-end deep learning"></a>Part9 End-to-end deep learning</h1><h2 id="9-1-端到端学习的兴起"><a href="#9-1-端到端学习的兴起" class="headerlink" title="9.1 端到端学习的兴起"></a>9.1 端到端学习的兴起</h2><p>1.端到端：要求学习算法直接从输入得到期望的输出，即学习算法将系统的 “输入端” 连接到 “输出端” 。</p>
+<p>例如：“情感分类”端到端学习算法</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1ft4qisnj39j309f02ct8i.jpg" alt="img"></p>
+<p>2.上述算法是下面算法的替代：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1ft4qjyqpm4j30fj02sq2s.jpg" alt="img"></p>
+<p>要实现一个情感分类系统，流水线模块需要2个组件：</p>
+<ul>
+<li>解析器（parser）：一种通过识别关键词汇来对文本进行注释的系统。例如，你可以使用解析器对所有的形容词和名词做标记。</li>
+<li>情感分类器（sentiment classifier）：一种学习算法，它可以输入带注释的文本，并预测整体的情感。解析器的注释将对这个算法起到极大的帮助：通过给形容词一个较高的权重，你的算法将能很快地找到像 “非常” 这样的重要词汇，并忽视像 “这个” 这样的非关键词。</li>
+</ul>
+<p>3.在数据量非常丰富的情况下，端到端系统很有效，但并非总是一个好选择。</p>
+<h2 id="9-2-例子"><a href="#9-2-例子" class="headerlink" title="9.2 例子"></a>9.2 例子</h2><p>1.【非端到端】假设你正在构建一个语音识别系统，你的系统可能需要三个组件：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1ft4w425yd4j30j402u3ye.jpg" alt="img"></p>
+<ul>
+<li>计算特征（compute features）：提取人工设计的特征，如 MFCC（Mel-frequency cepstrum coefficients，频谱系数）特征，以此来捕捉对话的内容而忽略不太相关的属性，如说话者的音高。</li>
+<li>音素识别器（phoneme Recognitizer）：识别出音频中的所有音素，音素是最基本的声音单元。</li>
+<li>最终识别器（final Recognitizer）：以已识别音素的序列为序，将它们串在一起，形成转录输出。</li>
+</ul>
+<p>【端到端系统】输入一个音频片段，直接输出文字。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1ftqt43ygzmj309202rglf.jpg" alt="mage-20180729162208"></p>
+<p>2.机器学习流水线：纯线性 &amp; 非纯线性（复杂流水线）</p>
+<p>1）下图是一个自动驾驶汽车的简单流水架构：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1ftqt736nkhj30er05p3yi.jpg" alt="mage-20180729162507"> </p>
+<p>2）并非所有组件都需要进行学习。</p>
+<p>3）端到端方法可能尝试从传感器获取输入并直接输出转向方向：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1ftqtalu21pj30a7028web.jpg" alt="mage-20180729162828"></p>
+<h2 id="9-3-端到端学习的优缺点"><a href="#9-3-端到端学习的优缺点" class="headerlink" title="9.3 端到端学习的优缺点"></a>9.3 端到端学习的优缺点</h2><p>1.【非端到端】人工设计的利弊</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1ftqtby9i8wj30j402u3yg.jpg" alt="mage-20180729162947"></p>
+<p>缺点—人工设计：限制了语音系统的潜在性能</p>
+<ul>
+<li>频谱系数：人工设计的一套特征；合理，但通过抛弃一些信息简化了输入信号</li>
+<li>音素：语言学家的发明，本身是对语言声音的不完备表示，是对现实语音的很差的近似，故迫使算法使用音素进行表示将限制语音系统的性能。</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>频谱系数的特性对于处理一些不影响内容的音频属性是很有效的，比如说话者的音高。因此它们有助于讲话学习算法面临的问题。</li>
+<li>在一定程度上，音素是一种合理的语音表示方法，它们也可以帮助学习算法理解基本的声音成分，从而提高其性能。</li>
+<li>拥有更多的人工设计成分通常可以让语音系统学习更少的数据，由频谱系数和音素所捕获的人工设计的知识对算法从数据中获取的知识进行了补充。当我们的数据量不是很多时，这些知识是非常有用的。</li>
+</ul>
+<p>2.【端到端】数据量很重要</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1ftqt43ygzmj309202rglf.jpg" alt="mage-20180729162208"></p>
+<ul>
+<li>需要大训练集：缺乏人工设计知识，故当数据集很小时，表现可能比非端到端糟糕；训练集很大时，模型不会受到频谱系数或语音表示方法的限制。若学习算法是一个足够大的神经网络，且喂进去许多的训练数据，就有可能做得更好，甚至达到最优错误率。</li>
+<li>需要大量标记数据：端到端学习系统在 “两端” —— 输入端和输出端拥有大量标记数据时，往往做得更好。在这个例子中，我们需要一个大数据集（包含&lt;音频,文本&gt;对）。当这种类型的数据不可用时，使用端到端学习则需非常谨慎。</li>
+</ul>
+<h2 id="9-4-流水线组件的选择——数据可用性-任务简单性"><a href="#9-4-流水线组件的选择——数据可用性-任务简单性" class="headerlink" title="9.4 流水线组件的选择——数据可用性 + 任务简单性"></a>9.4 流水线组件的选择——数据可用性 + 任务简单性</h2><p>1.流水线系统：对流水线的设计将极大影响整个系统的性能</p>
+<p><strong>流水线组件选择的重要因素：</strong></p>
+<p><strong>1）数据可用性：是否能够轻松收集到数据来训练每个组件；</strong></p>
+<p><strong>2）任务简单性：独立组件使得任务简单了多少？尽可能选择那些易于构建或学习的独立流水线组件。</strong></p>
+<p>2.数据可用性</p>
+<p>数据集的不同：数据可获得性不同</p>
+<p>1）非端到端：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1ftqt736nkhj30er05p3yi.jpg" alt="mage-20180729162507"></p>
+<p>需要大量带车辆和行人标记的计算机视觉数据集，易获取。</p>
+<p>2）端到端：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1ftqtalu21pj30a7028web.jpg" alt="mage-20180729162828"></p>
+<p>需要一个包含&lt;图像，操纵方向&gt;的大型数据集。</p>
+<p>但让人们在驾驶汽车时收集汽车的操纵方向的数据是非常费时费力的，你需要一辆特殊配置的汽车，且需要巨大的驾驶量来涵盖各种可能的场景。这就使得端到端系统难以进行训练。</p>
+<p>3）更常见的情况是，如果有大量的数据可以被用来训练流水线的 “中间模块” （例如汽车检测器或行人检测器），你便可以考虑使用多段的流水线架构。因为可以使用所有可用数据进行训练，所以这种结构可能是更优的。</p>
+<p>在更多端到端数据变得可用之前，我相信非端到端的方法对于自动驾驶而言是更有希望的——它的体系架构更匹配于数据的可用性。</p>
+<p>3.任务简单性：</p>
+<p>复杂任务分解：如果你能够完成一个复杂的任务，并将其分解为更简单的子任务，然后显式编写子任务步骤代码，那么你就会给算法一些先验知识，从而<u>帮助它更有效地学习任务</u>，并且<u>每个组件都是相对简单的功能故只需要少量数据来学习</u>。</p>
+<p>1）举例：暹罗猫检测器</p>
+<p>端到端：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1ftqtxew6jpj30a401t746.jpg" alt="mage-20180729165024"></p>
+<p>非端到端：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1ftqtx9f4dsj30ep0240so.jpg" alt="mage-20180729165015"></p>
+<p>Step1：猫咪检测器，检测图像中所有的猫</p>
+<p>Step2：将每一块被检测到的猫的图像传送给猫种类分类器（每次一张），如果其中任何一只猫是暹罗猫，则在最后输出 1.</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1ftqtyit7ikj318g0nux37.jpg" alt="mage-20180729165129"></p>
+<p>与仅仅使用标签 0/1 来训练一个纯粹的端到端分类器相比，流水线中的两个组件——猫咪检测器和猫种类分类器——似乎更容易进行学习，而且需要更少的数据。</p>
+<h2 id="9-5-直接学习更为丰富的输出"><a href="#9-5-直接学习更为丰富的输出" class="headerlink" title="9.5 直接学习更为丰富的输出"></a>9.5 直接学习更为丰富的输出</h2><p>深度学习拥有更丰富的输出形式：</p>
+<p>1）传统的监督学习应用学得一个函数：$h: X—&gt;Y$ ，其中输出$Y$通常是一个整数或者实数。如二分类问题。</p>
+<p>2）端到端深度学习：它让我们直接学习比数字复杂得多的$Y$  ，如在图像配字的课题中，你可以使用一个神经网络输入一个图像（$X$），并直接输出一个标题（$Y$）。如图像生成描述，机器翻译，QA，语音识别，文本转语音。</p>
+<h1 id="10-Error-Analysis-by-Parts"><a href="#10-Error-Analysis-by-Parts" class="headerlink" title="10. Error Analysis by Parts"></a>10. Error Analysis by Parts</h1><p>暂无</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://accepteddoge.github.io/machine-learning-yearning-cn/docs/home/" target="_blank" rel="noopener">《Machine Learning Yearning》 文档</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>拿钱去买猫粮和狗粮嗷 ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Scarlett Huang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Artificial-Intelligence/" rel="tag"><i class="fa fa-tag"></i> Artificial Intelligence</a>
+          
+            <a href="/tags/Machine-Learning/" rel="tag"><i class="fa fa-tag"></i> Machine Learning</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/26/阅读笔记：《人生是剧场》/" rel="next" title="阅读笔记：《人生是剧场》">
+                <i class="fa fa-chevron-left"></i> 阅读笔记：《人生是剧场》
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/20/《谷歌和亚马逊如何做产品》阅读笔记/" rel="prev" title="《谷歌和亚马逊如何做产品》阅读笔记">
+                《谷歌和亚马逊如何做产品》阅读笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">192</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Column">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Column
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://book.douban.com/people/ScarlettYellow/" target="_blank" title="Douban">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Douban
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friend Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://unique-ailab.github.io/" title="Unique-AILab" target="_blank">Unique-AILab</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mr-why.com/" title="MR WHY(AI Dev. & AI PM)" target="_blank">MR WHY(AI Dev. & AI PM)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wondervictor.github.io/" title="Vic Chan(AI Dev.)" target="_blank">Vic Chan(AI Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Dev.)" target="_blank">qzwlecr(Distributed Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://alisahhh.github.io/" title="Alisa(Alg. Dev.)" target="_blank">Alisa(Alg. Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://llag9810.github.io/" title="yifan(Android Dev.)" target="_blank">yifan(Android Dev.)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Part1-Getting-Started"><span class="nav-number">1.</span> <span class="nav-text">Part1 Getting Started</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-机器学习应用的改进策略"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 机器学习应用的改进策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-策略选择的重要性"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 策略选择的重要性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Key-Value-of-this-book"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 Key Value of  this book</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4【补充】线性回归-vs-逻辑回归"><span class="nav-number">1.4.</span> <span class="nav-text">1.4【补充】线性回归 vs 逻辑回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-规模驱动机器学习发展"><span class="nav-number">1.5.</span> <span class="nav-text">1.4 规模驱动机器学习发展</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part2-Setting-up-development-and-test-sets（建立开发集和测试集）"><span class="nav-number">2.</span> <span class="nav-text">Part2 Setting up development and test sets（建立开发集和测试集）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-开发集和测试集"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 开发集和测试集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-开发集和测试集应该服从同一分布"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 开发集和测试集应该服从同一分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-开发集和测试集应该有多大"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 开发集和测试集应该有多大</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-使用单值评估指标进行优化"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 使用单值评估指标进行优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-优化指标和满意度指标"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 优化指标和满意度指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-通过开发集和度量指标加速迭代"><span class="nav-number">2.6.</span> <span class="nav-text">2.6 通过开发集和度量指标加速迭代</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-何时修改开发集、测试集和度量指标"><span class="nav-number">2.7.</span> <span class="nav-text">2.7 何时修改开发集、测试集和度量指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-小结：建立开发集和测试集"><span class="nav-number">2.8.</span> <span class="nav-text">2.8 小结：建立开发集和测试集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part3-Basic-Error-Analysis（基本误差分析）"><span class="nav-number">3.</span> <span class="nav-text">Part3 Basic Error Analysis（基本误差分析）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-快速构建并迭代你的第一个系统"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 快速构建并迭代你的第一个系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-误差分析：根据开发集样本评估想法"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 误差分析：根据开发集样本评估想法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-在误差分析时并行评估多个想法"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 在误差分析时并行评估多个想法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-清洗误标注的开发集和测试集样本"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 清洗误标注的开发集和测试集样本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-将大型开发集拆分为两个子集，专注其一"><span class="nav-number">3.5.</span> <span class="nav-text">3.5 将大型开发集拆分为两个子集，专注其一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-Eyeball-和-Blackbox-开发集该设置多大？"><span class="nav-number">3.6.</span> <span class="nav-text">3.6 Eyeball 和 Blackbox 开发集该设置多大？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-小结：基础误差分析"><span class="nav-number">3.7.</span> <span class="nav-text">3.7 小结：基础误差分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part4-Bias-and-Variance（偏差和方差）"><span class="nav-number">4.</span> <span class="nav-text">Part4 Bias and Variance（偏差和方差）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-偏差和方差：误差的两大来源"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 偏差和方差：误差的两大来源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-偏差和方差举例"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 偏差和方差举例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-与最优错误率比较"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 与最优错误率比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-处理偏差和方差"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 处理偏差和方差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-偏差和方差间的权衡"><span class="nav-number">4.5.</span> <span class="nav-text">4.5 偏差和方差间的权衡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-减少可避免偏差的技术"><span class="nav-number">4.6.</span> <span class="nav-text">4.6 减少可避免偏差的技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7-训练集误差分析"><span class="nav-number">4.7.</span> <span class="nav-text">4.7 训练集误差分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8-减少方差的技术"><span class="nav-number">4.8.</span> <span class="nav-text">4.8 减少方差的技术</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part5-Learning-Curves（学习曲线）"><span class="nav-number">5.</span> <span class="nav-text">Part5 Learning Curves（学习曲线）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-诊断偏差与方差：学习曲线"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 诊断偏差与方差：学习曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-绘制训练误差曲线"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 绘制训练误差曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-解读学习曲线：高偏差"><span class="nav-number">5.3.</span> <span class="nav-text">5.3  解读学习曲线：高偏差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-解读学习曲线：其他情况"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 解读学习曲线：其他情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-绘制学习曲线"><span class="nav-number">5.5.</span> <span class="nav-text">5.5 绘制学习曲线</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part6-Comparing-to-human-level-performance（与人类表现水平相比较）"><span class="nav-number">6.</span> <span class="nav-text">Part6 Comparing to human-level performance（与人类表现水平相比较）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-为何与人类表现水平进行对比"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 为何与人类表现水平进行对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-如何定义人类表现水平"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 如何定义人类表现水平</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-超越人类表现水平"><span class="nav-number">6.3.</span> <span class="nav-text">6.3 超越人类表现水平</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part7-Training-and-testing-on-different-distributions（在不同的分布上训练和测试）"><span class="nav-number">7.</span> <span class="nav-text">Part7 Training and testing  on different distributions（在不同的分布上训练和测试）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-何时在不同的分布上训练与测试"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 何时在不同的分布上训练与测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-如何决定是否使用你所有的数据"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 如何决定是否使用你所有的数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-如何决定是否添加不一致的数据"><span class="nav-number">7.3.</span> <span class="nav-text">7.3 如何决定是否添加不一致的数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-4-给数据加权重"><span class="nav-number">7.4.</span> <span class="nav-text">7.4 给数据加权重</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-4-从训练集泛化到开发集"><span class="nav-number">7.5.</span> <span class="nav-text">7.4 从训练集泛化到开发集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-4-辨别偏差、方差和数据不匹配误差"><span class="nav-number">7.6.</span> <span class="nav-text">7.4 辨别偏差、方差和数据不匹配误差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-5-解决数据不匹配问题"><span class="nav-number">7.7.</span> <span class="nav-text">7.5 解决数据不匹配问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-6-人工合成数据"><span class="nav-number">7.8.</span> <span class="nav-text">7.6 人工合成数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part8-Debugging-inference-algorithms"><span class="nav-number">8.</span> <span class="nav-text">Part8 Debugging  inference algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-优化验证测试"><span class="nav-number">8.1.</span> <span class="nav-text">8.1 优化验证测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-强化学习举例"><span class="nav-number">8.2.</span> <span class="nav-text">8.3 强化学习举例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part9-End-to-end-deep-learning"><span class="nav-number">9.</span> <span class="nav-text">Part9 End-to-end deep learning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-1-端到端学习的兴起"><span class="nav-number">9.1.</span> <span class="nav-text">9.1 端到端学习的兴起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-2-例子"><span class="nav-number">9.2.</span> <span class="nav-text">9.2 例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-3-端到端学习的优缺点"><span class="nav-number">9.3.</span> <span class="nav-text">9.3 端到端学习的优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-4-流水线组件的选择——数据可用性-任务简单性"><span class="nav-number">9.4.</span> <span class="nav-text">9.4 流水线组件的选择——数据可用性 + 任务简单性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-5-直接学习更为丰富的输出"><span class="nav-number">9.5.</span> <span class="nav-text">9.5 直接学习更为丰富的输出</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-Error-Analysis-by-Parts"><span class="nav-number">10.</span> <span class="nav-text">10. Error Analysis by Parts</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">11.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
+<div class="copyright" >
+  
+  &copy;  2017.07 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共597.8k字</span>
+</div>
+
+
+
+
+<span id="busuanzi_container_site_pv">
+<div class="powered-by"></div>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  <div class="powered-by"></div>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100332, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100332, xid: "2018/08/20/《Machine-Learning-Yearning》阅读笔记/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100332/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+
+</body>
+</html>

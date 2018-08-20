@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Computer Science,Basis of Computer Engineering," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：数字媒体技术课的课堂笔记，按课程流记录的，不全，没怎么整理。">
+<meta name="keywords" content="Computer Science,Basis of Computer Engineering">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《数字媒体技术》课程笔记">
+<meta property="og:url" content="http://ScarlettHuang.cn/2018/08/20/《数字媒体技术》课程笔记/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：数字媒体技术课的课堂笔记，按课程流记录的，不全，没怎么整理。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-08-20T11:19:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《数字媒体技术》课程笔记">
+<meta name="twitter:description" content="Abstract：数字媒体技术课的课堂笔记，按课程流记录的，不全，没怎么整理。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ScarlettHuang.cn/2018/08/20/《数字媒体技术》课程笔记/"/>
+
+
+
+
+
+  <title>《数字媒体技术》课程笔记 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2018/08/20/《数字媒体技术》课程笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《数字媒体技术》课程笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-20T19:16:38+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Basis-of-Computer-Engineering/" itemprop="url" rel="index">
+                    <span itemprop="name">Basis of Computer Engineering</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/20/《数字媒体技术》课程笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/08/20/《数字媒体技术》课程笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：数字媒体技术课的课堂笔记，按课程流记录的，不全，没怎么整理。</p>
+<a id="more"></a>
+<h1 id="Chapter1-多媒体技术基本概念"><a href="#Chapter1-多媒体技术基本概念" class="headerlink" title="Chapter1 多媒体技术基本概念"></a>Chapter1 多媒体技术基本概念</h1><p>2M+2O：Multi-media，多机并行处理，object（面向对象），open</p>
+<p>计算机三大能力：计算能力，存储能力，传输能力</p>
+<p>媒体的定义和分类</p>
+<ul>
+<li>媒体的分类<ul>
+<li>感觉媒体</li>
+<li>表示媒体：给计算机看的，编码方式</li>
+<li>显示/表现媒体：显示器，扫描仪</li>
+<li>存储媒体：外存，HDD，磁盘阵列</li>
+<li>传输媒体</li>
+</ul>
+</li>
+<li>多媒体的特征：集成  &amp; 交互 &amp; 多维性<ul>
+<li>交互性：用户获取信息是主动而非纯被动</li>
+</ul>
+</li>
+</ul>
+<h2 id="多媒体软硬件平台"><a href="#多媒体软硬件平台" class="headerlink" title="多媒体软硬件平台"></a>多媒体软硬件平台</h2><p>多媒体硬件</p>
+<ul>
+<li>视频信号IO接口卡</li>
+<li>音频信号IO接口卡</li>
+<li>视频、音频压缩解压缩</li>
+<li>视频、音频信号实时处理</li>
+</ul>
+<p>驱动软件（Driver）：在初始化引导程序作用下把它安装到系统RAM中常驻内存；一个驱动器对应一种硬件设备的接口</p>
+<p>驱动器接口模板：AB（地址总线）+ DB（数据总线）+ CB（控制总线）</p>
+<p>视频/音频支持系统或视频/音频核心部件：多媒体计算机的核心软件</p>
+<p>专用芯片的类型</p>
+<ul>
+<li>固定功能的芯片</li>
+<li>可编程的处理器</li>
+</ul>
+<p>数字化后的音视频处理：数据量大，需要高速度和输入实时性</p>
+<p>片上系统 （SOC，System on a  chip）</p>
+<p>单核 &amp; 多核处理器</p>
+<p>处理：CPU，GPU，OPU（加速处理器）， ASIC（专门集成电路），FPGA（现场可编程逻辑门阵列），Gate，TPU（张量处理器，专为TensorFlow设计）</p>
+<p>传输：总线（CPU内部，系统总线，I/O总线）</p>
+<p>数据压缩和编码技术</p>
+<ul>
+<li>计算机三大板块：处理，存储，传输</li>
+<li>多媒体压缩：必要性（有需求），可能性（大量冗余）</li>
+<li>统计冗余的分类：时间冗余，空间冗余</li>
+</ul>
+<p>多媒体网络与分布式处理</p>
+<ul>
+<li>分布式：分布而自治，逻辑上整体</li>
+</ul>
+<p>超媒体=多媒体+超文本</p>
+<p>SAN：存域网</p>
+<p>虚拟现实技术</p>
+<ul>
+<li>生成</li>
+<li>交互：人用自然技能与虚拟实体进行交互</li>
+<li>集成各领域：计算机图形学，AI，人机交互，传感与测量技术，仿真，微电子</li>
+</ul>
+<p>网购：事务处理，I/O密集型任务</p>
+<p>ISDN：综合业务数字网络</p>
+<p>人擅长形象思维：通过视听获取信息</p>
+<h1 id="Chapter2-多媒体计算机系统的组成"><a href="#Chapter2-多媒体计算机系统的组成" class="headerlink" title="Chapter2 多媒体计算机系统的组成"></a>Chapter2 多媒体计算机系统的组成</h1><p>组成：声卡，视频编码卡，图像采集卡</p>
+<h2 id="常用I-O设备"><a href="#常用I-O设备" class="headerlink" title="常用I/O设备"></a>常用I/O设备</h2><p>鼠标</p>
+<ul>
+<li>点输入，伴随GUI（图形用户接口）的普及；机械鼠标 、光学鼠标</li>
+<li>性能指标：分辨率，与计算机的接口（串口，USB口，PS/2口）</li>
+</ul>
+<p>条码设备</p>
+<p>图像扫描仪</p>
+<ul>
+<li>图像输入设备</li>
+</ul>
+<p>触摸屏</p>
+<ul>
+<li>电阻式</li>
+<li>电容式</li>
+<li>红外线式</li>
+<li>声表面波式</li>
+</ul>
+<p>显卡</p>
+<ul>
+<li>作用：对图形函数进行加速</li>
+<li>显存：32MB或64MB</li>
+</ul>
+<p>绘图仪</p>
+<p>打印机</p>
+<h2 id="通信设备"><a href="#通信设备" class="headerlink" title="通信设备"></a>通信设备</h2><p>调制解调器（Modem）</p>
+<ul>
+<li>利用模拟信号传输线路传输数字信号</li>
+</ul>
+<p>网卡（NIC，网络接口卡）</p>
+<ul>
+<li>工作原理：整理主机发往网线上的数据，并将数据分解为适当大小的数据包之后向网络发送出去</li>
+<li>局域网最基本的部件之一</li>
+<li>作用：流量控制，矫形</li>
+</ul>
+<p>传真卡</p>
+<h2 id="存储设备"><a href="#存储设备" class="headerlink" title="存储设备"></a>存储设备</h2><p>云计算 ：并行计算+虚拟化</p>
+<p>并行不容易实现：比如若程序是串行的，必须顺序实现，故很难实现</p>
+<p>虚拟存储：软件实现，把<u>物理</u>上相互独立的存储模块用软硬件集中起来管理，形成<u>逻辑上</u>的虚拟存储单元从而使主机访问。</p>
+<ul>
+<li>物理：面向计算机，逻辑：面向用户</li>
+<li>虚拟存储分为对称式和非对称式</li>
+<li>作用：提高存储利用率，降低成本，简化存储管理</li>
+</ul>
+<h2 id="USB设备"><a href="#USB设备" class="headerlink" title="USB设备"></a>USB设备</h2><p>USB（Universal Serial Bus，通用串行总线）：</p>
+<ul>
+<li>主要特点：即插即用，可热插拔，自动配置</li>
+<li>硬件结构</li>
+<li>软件结构</li>
+<li>数据流传输</li>
+</ul>
+<p>数字摄像设备</p>
+<ul>
+<li>CCD（Charge Coupled Device，电路耦合元件）</li>
+<li>CMOS（金属氧化物半导体元件，Complementary Metal-Oxide）</li>
+</ul>
+<h1 id="Chapter3-数字图像处理技术"><a href="#Chapter3-数字图像处理技术" class="headerlink" title="Chapter3 数字图像处理技术"></a>Chapter3 数字图像处理技术</h1><h2 id="信号处理的基本术语"><a href="#信号处理的基本术语" class="headerlink" title="信号处理的基本术语"></a>信号处理的基本术语</h2><p>采样与量化</p>
+<ul>
+<li>信号的数字化处理包括2个步骤：<ul>
+<li>采样：信号在时间上的离散化</li>
+<li>量化：信号在幅度上的离散化，用二进制描述</li>
+</ul>
+</li>
+</ul>
+<p>DFT和IDFT</p>
+<ul>
+<li>DFT（Discrete…，离散傅里叶变换）：将时域信号转变成频域信号的一种数学方法</li>
+<li>IDFT（Inverse）：反变换</li>
+</ul>
+<p>小波变换</p>
+<ul>
+<li>小波：在有限周期内的波形，它的平均值为0</li>
+<li>正弦波是傅里叶变换的基础，无限定周期，平滑且可预测；而小波信号是不规则不对称的 </li>
+<li>小波变换：将信号转变成很多不同比例的小波的叠加</li>
+<li>优点：解决锯齿效应和噪声</li>
+</ul>
+<h2 id="图像数据压缩基础"><a href="#图像数据压缩基础" class="headerlink" title="图像数据压缩基础"></a>图像数据压缩基础</h2><p>色彩</p>
+<ul>
+<li>从人的视觉系统来看，色彩：<u>色调，饱和度，亮度</u>【H(hues)表示色相，S(saturation)表示饱和度，B（brightness）】</li>
+<li>图像深度：位图中记录每个像素点所占的位数，决定彩图中可出现的最多颜色数</li>
+<li>真彩色（RGB）：图像深度为24位；</li>
+<li>伪彩色：</li>
+<li>调配色：通过每个像素点的RGB分量分别作为单独的索引值进行变换，经相应的色彩变换表找出 各自的基色强度，用变换后的RGB强度值产生的色彩；与伪彩色一样都是采用查找表</li>
+<li>显示深度：屏幕上显示的点的位数</li>
+<li>色调和色相</li>
+</ul>
+<p>视觉系统对颜色的感知</p>
+<p>彩色空间及其变换</p>
+<ul>
+<li>RGB颜色模式：对RGB进行8位数编码可形成16万种颜色</li>
+<li>Lab颜色模式：发光率（luminance）+两个颜色轴（a,b）</li>
+<li>HSB</li>
+<li>彩色空间的线性变换标准：<ul>
+<li>YUV颜色模式</li>
+<li>YIQ：适合计算机编码使用 ，Y是亮度信号</li>
+<li>CMYK（把四种混合色作为颜色空间的基础，cyan、magenta、yellow、black）：靠颜色相减 ；彩色打印系统</li>
+</ul>
+</li>
+<li>颜色模型的色域：一个色系能够打印的颜色范围</li>
+</ul>
+<p>图像的种类</p>
+<ul>
+<li>标准单色图，标准灰度图</li>
+<li>256色标准图像，24位标准图像</li>
+</ul>
+<p>图像数据压缩的可能性：冗余（rebundancy）</p>
+<ul>
+<li>统计冗余：统计特征上的冗余；<ul>
+<li>动态图像序列——时间冗余（帧与帧的重复）</li>
+<li>静态单帧图像——空间冗余</li>
+</ul>
+</li>
+<li>信息熵冗余：<ul>
+<li>熵（entropy）</li>
+<li>信息熵：定义为一组数据所表示的信息量，$E=\sum_{i=0}^{N-1}p_ilog_2p_i$，N为数据的种类(码元)个数</li>
+</ul>
+</li>
+<li>结构冗余</li>
+<li>知识冗余</li>
+<li>视觉冗余：图像中存在很多人眼感知不到的细节，人眼的分辨力为64灰度级，而图像为256灰度级</li>
+</ul>
+<p>图像压缩算法</p>
+<ul>
+<li>评价压缩算法的指标：<ul>
+<li>压缩比：压缩前后数据大小的比值</li>
+<li>算法复杂性和运算速度</li>
+<li>失真度</li>
+</ul>
+</li>
+<li>压缩算法分类：</li>
+<li>无损编码：无任何失真</li>
+<li>有损编码：有一定偏差或失真，但不影响视觉或听觉效果 </li>
+<li>行程长度编码</li>
+<li>香农-范诺算法</li>
+<li>哈夫曼编码（需要统计概率；没有香农精确）</li>
+<li>算术编码</li>
+<li>词典编码</li>
+<li>预测编码：根据像素间的相关性来预测像素的灰度；分为线性预测编码（DPCM——差分脉冲编码调制） + 非线性预测编码</li>
+<li>变换编码：将时域信号变换到频域信号上进行处理</li>
+<li>模型法编码：利用CV和计算机图形学知识对图像信号的分析与合成，对特定图像建模，并根据模型确定特征参数</li>
+</ul>
+<p>图像文件的一般结构</p>
+<ul>
+<li>图像图形格式都是代码组成的：文件头+文件体（压缩算法，图像数据）+文件尾</li>
+</ul>
+<p>常用图像、图形文件的格式</p>
+<ul>
+<li>矢量图和位图：</li>
+<li>矢量图：指令绘图</li>
+<li>位图：点阵绘图</li>
+<li>GIF</li>
+<li>TIF格式：Tagged Image Format File文件，支持任意大小的图像，从单色二值图到24色真彩图</li>
+<li>PNG：把图像文件压缩到极限以利于网络传输，但能保证图像品质</li>
+<li>JPEG标准：变换编码<ul>
+<li>2种工作方式：顺序方式 &amp; 渐进方式</li>
+<li>实现方式：谱选择法；逐次逼近；阶梯方式</li>
+<li>3种级别编码算法：基本系统、扩展系统、无失真系统</li>
+<li>基本系统算法：DCT（离散余弦变换）</li>
+<li>JPEG2000：高压缩率——离散小波变换（DWT）；无损压缩——预测法；渐进传输；感兴趣区域压缩</li>
+</ul>
+</li>
+</ul>
+<p>动态图像压缩</p>
+<ul>
+<li>动态图像分类：<ul>
+<li>视频</li>
+<li>动画</li>
+</ul>
+</li>
+<li>特点：连续性，时延性，相关性</li>
+<li>MPEG1标准：<ul>
+<li>用于多媒体存储与再现，如VCD</li>
+<li>MPEG数据流采用分层结构：<ul>
+<li>采用2种帧间编码技术：预测 &amp; 插值</li>
+<li>MPEG算法的2个基础：基于16x16的运动补偿的缩短时间冗余；基于DCT的缩短空间冗余</li>
+<li>MPEG考虑3种画面：内帧（I） &amp; 预测帧（P） &amp; 内插帧（B）<ul>
+<li>P通过I获得（前向预测），B通过I和P获得（双向预测）</li>
+<li>原因：考虑随机访问视频的重要性；运动补偿插值可显著降低位速率</li>
+</ul>
+</li>
+<li>运动补偿预测</li>
+<li>缩短空间冗余度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MPEG2标准：<ul>
+<li>支持DVD</li>
+<li>基本算法与MPEG1一致</li>
+<li>与MPEG1的区别：支持电视的隔行扫描格式；支持可分级的可调视频编码，可提供多种质量的视频业务</li>
+</ul>
+</li>
+<li>H.261 标准：H系列主要用于视频电话会议<ul>
+<li>视频压缩算法核心：运动估值预测 &amp; DCT编码</li>
+<li>用于视听业务</li>
+<li>CIF格式</li>
+</ul>
+</li>
+<li>H.263 标准：<ul>
+<li>在现有的电话网上传输动态图像</li>
+<li>基于预测差分块编码系统</li>
+<li>帧内编码——DCT变换、哈夫曼码</li>
+<li>帧间编码——运动估计和补偿，只对预测误差编码</li>
+<li>QCIF格式</li>
+</ul>
+</li>
+</ul>
+<h1 id="Chapter4-音频"><a href="#Chapter4-音频" class="headerlink" title="Chapter4 音频"></a>Chapter4 音频</h1><h2 id="音频编码基础"><a href="#音频编码基础" class="headerlink" title="音频编码基础"></a>音频编码基础</h2><p>音频处理</p>
+<ul>
+<li>音频传播媒体特征</li>
+<li>音频信号：数字 &amp; 分析-合成</li>
+</ul>
+<p>音频编码基础</p>
+<ul>
+<li>频带宽度：频带越宽音质越好<ul>
+<li>人耳听到的频率：20HZ ~22KHZ</li>
+</ul>
+</li>
+<li>信噪比（SNR）：有用信号与噪声之比<ul>
+<li>度量方法：主观度量法</li>
+</ul>
+</li>
+<li>音频信息分类：不规则声音（指不携带信息的噪声） &amp; 规则声音（语音、音乐、音效）</li>
+<li>声波：模拟信号，可分解为一系列正弦波的线性叠加</li>
+</ul>
+<p>基频与音调：</p>
+<ul>
+<li>音频三要素：音调，音色</li>
+</ul>
+<ul>
+<li>音调由频率 w 决定</li>
+<li>谐波</li>
+<li>泛音：$nw_0$ 称为$ w_0$的高次谐波分量</li>
+<li>音色由混入基音的泛音所决定</li>
+<li>频带：频带宽度</li>
+<li>音频信号处理方法：采样（时间离散化）——量化（频率离散化）</li>
+<li>音频存储格式：.wav（波形格式）</li>
+<li>声音质量的度量：用<u>带宽</u>度量<ul>
+<li>DAT——CD——FM——AM——数字电话（由高到低）</li>
+<li>度量方法：<ul>
+<li>信噪比（SNR）：客观度量</li>
+<li>平均意见得分（MOS，mean opinion score）：主观意见得分，1~5（失真级别反映质量）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="音频信号压缩技术"><a href="#音频信号压缩技术" class="headerlink" title="音频信号压缩技术"></a>音频信号压缩技术</h2><p>脉冲编码调制（PCM）</p>
+<ul>
+<li>声音数字化：采样——量化</li>
+<li>量化：均匀量化  &amp;  非均匀量化</li>
+</ul>
+<p>增量调制（DM，data modulation）：属于预测编码技术</p>
+<ul>
+<li>原理：对实际采样信号与预测采样信号之差的极性值进行编码，编码值只有0或1，故又称1比特编码</li>
+<li>存在的问题：斜率过载，粒状噪声</li>
+</ul>
+<p>自适应脉冲编码调制（APCM）：</p>
+<ul>
+<li>根据输入信号</li>
+</ul>
+<p>差分脉冲编码调制（DPCM，Differential Pulse code modulation）</p>
+<p>自适应差分脉冲编码调制（ADPCM）：预测编码</p>
+<ul>
+<li>原理</li>
+</ul>
+<p>子带编码（ SBC）</p>
+<h2 id="音频编码标准"><a href="#音频编码标准" class="headerlink" title="音频编码标准"></a>音频编码标准</h2><p>ITU-TG （国际电信同盟）系列声音压缩标准</p>
+<ul>
+<li>G.711：1972，为电话质量的语音压缩而制定，使用 PCM</li>
+<li>G.722：1988，为调幅广播质量的音频信号压缩而制定，使用 SBC + ADPCM 相继编码</li>
+<li>G.723：1996，使用多脉冲激励最大似然量化算法（MP-MLQ），用于可视电话和 IP 电话系统</li>
+<li>G.728</li>
+<li>G.729</li>
+<li>比较</li>
+</ul>
+<p>MP3（MPEG-Layer3）压缩技术标准</p>
+<ul>
+<li>可伸缩性</li>
+</ul>
+<p>MP4 压缩技术</p>
+<ul>
+<li>以“知觉编码”为关键技术的 a2b 音乐压缩技术，压缩比达15：1</li>
+</ul>
+<p>MIDI（乐器数字接口）</p>
+<ul>
+<li>MIDI 是一个协议，只包含用于产生特定声音的指令（调用乐器音色、声音强弱、持续时间等）</li>
+</ul>
+<p>声卡</p>
+<ul>
+<li>多媒体：集成 + 交互</li>
+<li>声道：单声道，立体声，四声道环绕（左声道、右声道、左环绕、右环绕），5.1声道</li>
+</ul>
+<p>语音识别（sound Recognition）</p>
+<ul>
+<li>难点：非特定人群、特殊场景的识别（如感冒患者的声音、各种口音、噪音环境）</li>
+<li>发展历程 </li>
+<li>技术：特征提取，模式匹配</li>
+<li>语音识别单元的选取：单词，音节，音素</li>
+<li>模式匹配技术：<ul>
+<li>动态时间规正技术</li>
+<li>ANN </li>
+</ul>
+</li>
+<li>语音识别系统的类型：<ul>
+<li>根据对说话人的依赖程度可分为：特定人识别识别系统（加语音签名），非特定人识别系统</li>
+<li>孤立词识别，连续词识别</li>
+</ul>
+</li>
+<li>应用：数据库输入和询问应用，语音命令和控制应用</li>
+</ul>
+<h1 id="Chapter5-光盘存储原理和相关标准"><a href="#Chapter5-光盘存储原理和相关标准" class="headerlink" title="Chapter5 光盘存储原理和相关标准"></a>Chapter5 光盘存储原理和相关标准</h1><p>CD-ROM</p>
+<p>VCD：更小的坑道，更紧密的空间轨道</p>
+<p>DVD</p>
+<p>BD-ROM</p>
+<p> 操作系统：文件，进程</p>
+<p>超文本：以非线性的网状结构组织信息</p>
+<p>基于内容的信息检索（CBR）：</p>
+<ul>
+<li>根据媒体对象的语义和上下文联系进行检索</li>
+<li>信息：图像，视频，音频</li>
+<li>基于内容的视频检索：<ul>
+<li>基于关键帧的检索</li>
+<li>基于运动的检索</li>
+</ul>
+</li>
+</ul>
+<p>人的敏感声频：20 HZ ~ 20/22 KHZ</p>
+<p>PC 机处理人耳能听到的音频的频率范围是20HZ ~ 44.1KHZ（PC 机要乘以2）</p>
+<p>MIDI：乐器数字接口，一种通信协议</p>
+<p>采用多媒体技术的主要目的：增强计算机的处理能力</p>
+<p>Wavelet：小波变换</p>
+<p>JPEG 编码：</p>
+<ul>
+<li>DCT——离散余弦变换；变换编码，时域变频域</li>
+<li>在量化环节会损失数据：当频率系数经过量化后，将频率系数由浮点数转变为整数，这才便于执行最后的编码。不过，经过量化阶段后，所有数据只保留整数近似值，也就再度损失了一些数据内容</li>
+</ul>
+<p>DCT 变换是最小均方误差准则下得出的次<em>最佳正交变换</em></p>
+<p>动态图像 —— 采用运动估计：运动估计的基本思想是将图像序列的每一帧分成许多互不重叠的宏块，并认为宏块内所有象素的位移量都相同，然后对每个宏块到<a href="https://baike.baidu.com/item/%E5%8F%82%E8%80%83%E5%B8%A7" target="_blank" rel="noopener">参考帧</a>某一给定特定搜索范围内根据一定的匹配准则找出与当前块最相似的块，即匹配块，匹配块与当前块的相对位移即为运动矢量。视频压缩的时候，只需保存运动矢量和残差数据就可以完全恢复出当前块。</p>
+<p>MPEG：音视频的压缩标准（不是传输标准）；高达200：1的压缩比；帧间编码和运动补偿</p>
+<p>MPEG4：最大特点是更强的交互能力，允许用户加入其中</p>
+<p>视频点播：</p>
+<ul>
+<li>VOD：使用 RAID 技术（磁盘阵列）</li>
+<li>提供实时数据流：流调度算法</li>
+</ul>
+<p>Huffman：无损编码</p>
+<p>图像三要素：色调（由波长决定），饱和度，亮度</p>
+<p>声音三要素：音调（与频率有关），音强，音色（由混入基音的泛音决定）</p>
+<p>YUV：数字化位数为8：4：4</p>
+<p>CMYK：相减色</p>
+<p>MP3：MPEG-1 Audio Layer3</p>
+<p>声卡 MIDI 音效合成的方式：FM 合成 ，波表合成</p>
+<p>RGB 4：4：2可生成的颜色数为：1024（2的10次方，4+4+2=10）</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>拿钱去买猫粮和狗粮嗷 ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Scarlett Huang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Computer-Science/" rel="tag"><i class="fa fa-tag"></i> Computer Science</a>
+          
+            <a href="/tags/Basis-of-Computer-Engineering/" rel="tag"><i class="fa fa-tag"></i> Basis of Computer Engineering</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/20/《技术的本质》阅读笔记/" rel="next" title="《技术的本质》阅读笔记">
+                <i class="fa fa-chevron-left"></i> 《技术的本质》阅读笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/20/《新媒体与社会》课程笔记/" rel="prev" title="《新媒体与社会》课程笔记">
+                《新媒体与社会》课程笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">192</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Column">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Column
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://book.douban.com/people/ScarlettYellow/" target="_blank" title="Douban">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Douban
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friend Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://unique-ailab.github.io/" title="Unique-AILab" target="_blank">Unique-AILab</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mr-why.com/" title="MR WHY(AI Dev. & AI PM)" target="_blank">MR WHY(AI Dev. & AI PM)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wondervictor.github.io/" title="Vic Chan(AI Dev.)" target="_blank">Vic Chan(AI Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Dev.)" target="_blank">qzwlecr(Distributed Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://alisahhh.github.io/" title="Alisa(Alg. Dev.)" target="_blank">Alisa(Alg. Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://llag9810.github.io/" title="yifan(Android Dev.)" target="_blank">yifan(Android Dev.)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter1-多媒体技术基本概念"><span class="nav-number">1.</span> <span class="nav-text">Chapter1 多媒体技术基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多媒体软硬件平台"><span class="nav-number">1.1.</span> <span class="nav-text">多媒体软硬件平台</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter2-多媒体计算机系统的组成"><span class="nav-number">2.</span> <span class="nav-text">Chapter2 多媒体计算机系统的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用I-O设备"><span class="nav-number">2.1.</span> <span class="nav-text">常用I/O设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通信设备"><span class="nav-number">2.2.</span> <span class="nav-text">通信设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储设备"><span class="nav-number">2.3.</span> <span class="nav-text">存储设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#USB设备"><span class="nav-number">2.4.</span> <span class="nav-text">USB设备</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter3-数字图像处理技术"><span class="nav-number">3.</span> <span class="nav-text">Chapter3 数字图像处理技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#信号处理的基本术语"><span class="nav-number">3.1.</span> <span class="nav-text">信号处理的基本术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像数据压缩基础"><span class="nav-number">3.2.</span> <span class="nav-text">图像数据压缩基础</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter4-音频"><span class="nav-number">4.</span> <span class="nav-text">Chapter4 音频</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#音频编码基础"><span class="nav-number">4.1.</span> <span class="nav-text">音频编码基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#音频信号压缩技术"><span class="nav-number">4.2.</span> <span class="nav-text">音频信号压缩技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#音频编码标准"><span class="nav-number">4.3.</span> <span class="nav-text">音频编码标准</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter5-光盘存储原理和相关标准"><span class="nav-number">5.</span> <span class="nav-text">Chapter5 光盘存储原理和相关标准</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
+<div class="copyright" >
+  
+  &copy;  2017.07 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共597.8k字</span>
+</div>
+
+
+
+
+<span id="busuanzi_container_site_pv">
+<div class="powered-by"></div>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  <div class="powered-by"></div>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100332, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100332, xid: "2018/08/20/《数字媒体技术》课程笔记/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100332/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+
+</body>
+</html>

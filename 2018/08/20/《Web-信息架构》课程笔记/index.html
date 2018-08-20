@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Internet & Product," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：李卫东老师的 Web 信息架构课，李老师是一位教学严谨且非常负责的好老师。这门课非常系统地讲解了information Architechture以及以之为基点的互联网产品设计，让我受益良多 ~">
+<meta name="keywords" content="Internet &amp; Product">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Web 信息架构》课程笔记">
+<meta property="og:url" content="http://ScarlettHuang.cn/2018/08/20/《Web-信息架构》课程笔记/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：李卫东老师的 Web 信息架构课，李老师是一位教学严谨且非常负责的好老师。这门课非常系统地讲解了information Architechture以及以之为基点的互联网产品设计，让我受益良多 ~">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fqozl5usfzj31kw16g79t.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fqozl560msj31kw1cfgph.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fr2kn1x9dmj31kw10odjj.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fr57bxufc9j31kw13dgqf.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fr57c0ovhzj31kw14w0xr.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fr57uirckaj31kw19nn2w.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fr57ug868cj31kw18j0wh.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fr58nra3ebj31kw16n46q.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1franpmq22rj31kw17udm9.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1frap19hp5xj30la05a746.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1frapfkyjznj30kk0eg74f.jpg">
+<meta property="og:image" content="http://scarletthuang.cn/Downloads/IMG_20180516_170551.jpg">
+<meta property="og:image" content="http://scarletthuang.cn/Downloads/IMG_20180516_173640.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1frirw13r8wj31kw12y79s.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1frisqwppcaj31kw1didjm.jpg">
+<meta property="og:updated_time" content="2018-08-20T11:27:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《Web 信息架构》课程笔记">
+<meta name="twitter:description" content="Abstract：李卫东老师的 Web 信息架构课，李老师是一位教学严谨且非常负责的好老师。这门课非常系统地讲解了information Architechture以及以之为基点的互联网产品设计，让我受益良多 ~">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fqozl5usfzj31kw16g79t.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ScarlettHuang.cn/2018/08/20/《Web-信息架构》课程笔记/"/>
+
+
+
+
+
+  <title>《Web 信息架构》课程笔记 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2018/08/20/《Web-信息架构》课程笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《Web 信息架构》课程笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-20T19:23:30+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/Internet-Product/" itemprop="url" rel="index">
+                    <span itemprop="name">Internet & Product</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/20/《Web-信息架构》课程笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/08/20/《Web-信息架构》课程笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：李卫东老师的 Web 信息架构课，李老师是一位教学严谨且非常负责的好老师。这门课非常系统地讲解了information Architechture以及以之为基点的互联网产品设计，让我受益良多 ~</p>
+<a id="more"></a>
+<h1 id="Part1-原理篇"><a href="#Part1-原理篇" class="headerlink" title="Part1 原理篇"></a>Part1 原理篇</h1><h1 id="Chapter1-Web信息架构（Information-Architechture）"><a href="#Chapter1-Web信息架构（Information-Architechture）" class="headerlink" title="Chapter1 Web信息架构（Information Architechture）"></a>Chapter1 Web信息架构（Information Architechture）</h1><p>洞察 + 灵性</p>
+<p>APP用户体验存在的问题（易用性，舒适度）</p>
+<ul>
+<li>查找信息困难<ul>
+<li>信息超载</li>
+<li>信息异质</li>
+<li>搜索问题</li>
+<li>成本问题</li>
+</ul>
+</li>
+</ul>
+<p>信息架构（Information Architechture）</p>
+<ul>
+<li>易理解性：使信息易于理解 ——&gt;使用通俗易懂的语言</li>
+<li>化繁为简：将复杂的信息简单地传达给用户 ——&gt;寻找合适的方法来组织信息</li>
+</ul>
+<p>类比</p>
+<ul>
+<li>构造——建筑——城镇</li>
+<li>页面——APP/Web——互联网</li>
+</ul>
+<p>速度分层（依据变化速度来分层的思维方法）</p>
+<p>产品架构的三个层次</p>
+<ul>
+<li>业务架构：产品概念设计 应用模式 </li>
+<li>信息架构：产品详细设计 设计文档 </li>
+<li>技术架构：产品实现设计 程序代码</li>
+</ul>
+<p>产品构成的三个要素</p>
+<ul>
+<li>视觉传达</li>
+<li>信息架构</li>
+<li>技术平台</li>
+</ul>
+<p>信息架构 —（可视化）—&gt; 界面设计</p>
+<p>隐藏层——&gt;表现层  </p>
+<p>广义IA与狭义IA</p>
+<h2 id="互联网整体的信息架构"><a href="#互联网整体的信息架构" class="headerlink" title="互联网整体的信息架构"></a>互联网整体的信息架构</h2><ol>
+<li>Web 信息架构设计的层级</li>
+</ol>
+<ul>
+<li>互联网整体的 IA：互联网中各站点互联互通</li>
+<li>企业级 IA</li>
+<li>网站 IA：网站结构，导航，标签</li>
+<li>页面中的 IA（页面结构设计）</li>
+</ul>
+<ol>
+<li>智能终端的 IA</li>
+</ol>
+<h1 id="Chapter2-信息架构有哪些内容"><a href="#Chapter2-信息架构有哪些内容" class="headerlink" title="Chapter2 信息架构有哪些内容"></a>Chapter2 信息架构有哪些内容</h1><p>组织系统，导航系统，标识系统，搜索系统</p>
+<h2 id="组织系统"><a href="#组织系统" class="headerlink" title="组织系统"></a>组织系统</h2><p>深度与广度的平衡</p>
+<p>层级式 &amp; 辐射式</p>
+<h2 id="导航系统"><a href="#导航系统" class="headerlink" title="导航系统"></a>导航系统</h2><p>层级之间如何链接</p>
+<h2 id="标识系统"><a href="#标识系统" class="headerlink" title="标识系统"></a>标识系统</h2><p>Labeling Systems</p>
+<ul>
+<li>为内容确定名称、描述等一系列标识方案</li>
+</ul>
+<h2 id="搜索系统"><a href="#搜索系统" class="headerlink" title="搜索系统"></a>搜索系统</h2><p><strong><u>WEB信息框架的完整结构</u></strong></p>
+<ul>
+<li>静态框架<ul>
+<li>数据对象模型：数据对象是什么</li>
+<li>数据显示模型：如何显示数据；组织系统，导航系统，标识系统，搜索系统</li>
+</ul>
+</li>
+<li>动态框架<ul>
+<li>数据处理模型：如何动态处理数据</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqozl5usfzj31kw16g79t.jpg" alt="web完整结构"></p>
+<h1 id="Chapter3-如何设计信息架构"><a href="#Chapter3-如何设计信息架构" class="headerlink" title="Chapter3 如何设计信息架构"></a>Chapter3 如何设计信息架构</h1><p>微信之前版本的搜索功能的导航系统设计得不科学（用关键词搜索公众号，关注后想再继续看那个公众号列表）</p>
+<h2 id="IA设计需要具备的知识基础"><a href="#IA设计需要具备的知识基础" class="headerlink" title="IA设计需要具备的知识基础"></a>IA设计需要具备的知识基础</h2><p>Who Design IA：系统分析师，系统设计师</p>
+<p>IA 需要的知识能力</p>
+<ul>
+<li>知识：社会学，商业战略，人类工程学，认知科学，HCI，页面设计</li>
+<li>能力：抽象理解能力，组织协调能力</li>
+</ul>
+<h2 id="IA-设计的理念、系统和模式"><a href="#IA-设计的理念、系统和模式" class="headerlink" title="IA 设计的理念、系统和模式"></a>IA 设计的理念、系统和模式</h2><ol>
+<li>理念</li>
+</ol>
+<ul>
+<li>复杂系统：<ul>
+<li>用户：受众，任务，需求，信息搜索行为，体验</li>
+<li>情境：用户使用场景</li>
+<li>内容：内容对象、数量、类型，现存架构</li>
+</ul>
+</li>
+<li>无形的工作：信息架构，操作界面</li>
+<li>知识网络</li>
+<li>信息搜寻行为</li>
+</ul>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqozl560msj31kw1cfgph.jpg" alt="理念"></p>
+<h2 id="信息架构的用户思维"><a href="#信息架构的用户思维" class="headerlink" title="信息架构的用户思维"></a>信息架构的用户思维</h2><p>IA 设计原则</p>
+<ul>
+<li>简洁性：信息内容化繁为简</li>
+<li>习惯性：符合用户操作习惯（eg. 上下左右滑动）</li>
+<li>可理解性：用户永远不会出错</li>
+<li>高效性：减少用户操作量</li>
+<li>引导性：让用户能确定自己当前所在的位置</li>
+</ul>
+<p>UCD（User Centered Design）</p>
+<ul>
+<li>以用户为中心</li>
+<li>你永远无法满足所有人</li>
+<li>用户永远是对的，但也不能完全听信用户的言语，用户说的需求不一定是真需求</li>
+<li>妥善管理用户的需求变化</li>
+<li>把握用户需求的优先级</li>
+</ul>
+<p>确定需求优先级的方法：MoSCow</p>
+<ul>
+<li>必须有（Must  Have）</li>
+<li>应该有（Should Have）</li>
+<li>可以有（Could Have）</li>
+<li>这次不会有（Wont have this time）：当现有产品已经可以打败绝大多数对手，就没必要把能想到的好 功能全部推出，否则容易“黔驴技穷”，所以需要有所保留，持续不断给用户新鲜感</li>
+</ul>
+<p>以用户为中心的难点</p>
+<ul>
+<li>用户目标与我的目标不一致：鱼和熊掌可以兼得，但不是马上</li>
+<li>用户的关注点与我的关注点不一样</li>
+<li>用户和用户不一样</li>
+</ul>
+<p>Web信息架构的建构</p>
+<ul>
+<li>情境分析+用户分析：应用模式</li>
+<li>——&gt;数据对象建模：数据内容结构，用例图</li>
+<li>——&gt;数据显示建模：四大系统</li>
+<li>——&gt;数据处理建模：功能逻辑模型，活动图，序列图</li>
+</ul>
+<p>区分：</p>
+<ul>
+<li>页面层次结构图</li>
+<li>功能结构图</li>
+</ul>
+<h1 id="Chapter4-面向对象的方法——用户建模分析"><a href="#Chapter4-面向对象的方法——用户建模分析" class="headerlink" title="Chapter4 面向对象的方法——用户建模分析"></a>Chapter4 面向对象的方法——用户建模分析</h1><p>当你面对的应用很复杂，深入了解面向对象的思想，可以提升你的抽象能力和分类能力，用这种方法描绘的网站结构图也更容易被开发团队所理解。——张小龙</p>
+<p>面向对象的方法</p>
+<p>面向对象的用例视图</p>
+<ul>
+<li>详细的<strong><u>用例归约</u></strong>相当于详细的产品设计文档</li>
+<li><p>获取需求——&gt;建立用户用例图</p>
+<p>活字印刷，面向对象</p>
+</li>
+<li><p>可维护性：要改只需改特定的字</p>
+</li>
+<li>可复用性：每个字都可以重复使用</li>
+<li>可扩展性</li>
+<li>灵活性：可灵活排列</li>
+</ul>
+<p>设计产品要考虑面对需求的易变性的程序设计的可拓展性、可复用性</p>
+<h2 id="面向对象分析（OOA）理论概述"><a href="#面向对象分析（OOA）理论概述" class="headerlink" title="面向对象分析（OOA）理论概述"></a>面向对象分析（OOA）理论概述</h2><p>面向对象分析（OOA，ObjectedOriented Analysis）</p>
+<ul>
+<li>作用：需求分析</li>
+<li>关键概念：<ul>
+<li>问题域：应用领域</li>
+<li>系统边界：能做什么不能做什么的分界线</li>
+<li>参与者：与系统进行交互的任何事物</li>
+</ul>
+</li>
+<li>系统分析面临的主要问题<ul>
+<li>问题域与系统责任</li>
+<li>交流</li>
+<li>需求的不断变化</li>
+<li>复用的要求</li>
+</ul>
+</li>
+<li>OOA方法的主要原则<ul>
+<li>抽象，封装，继承，分类，聚合，关联</li>
+<li>消息通讯，粒度控制，行为分析</li>
+</ul>
+</li>
+</ul>
+<h2 id="面向对象分析建模原理"><a href="#面向对象分析建模原理" class="headerlink" title="面向对象分析建模原理"></a>面向对象分析建模原理</h2><p>需求分析阶段 + 系统分析阶段</p>
+<p>1.需求分析阶段</p>
+<ul>
+<li><strong><u>用例模型</u></strong>：描述功能需求；包括：业务用例，业务场景，系统用例，用例归约</li>
+</ul>
+<p>2.系统分析阶段</p>
+<ul>
+<li>根据用例创建<strong><u>分析模型</u></strong>：<ul>
+<li>使用UML图描述；采用分析类，是高层次的系统视图</li>
+<li>包括：<strong>静态视图</strong>（描述事物的静态结构，包括类图、包图），<strong>动态视图</strong>（描述事物的动态行为，包括序列图、状态图、协作图、活动图等）</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fr2kn1x9dmj31kw10odjj.jpg" alt="分析模型"></p>
+<p>建模之<strong><u>用例图</u></strong>（UserCaseDiagram）</p>
+<ul>
+<li>包括的要素：参与者，用例，关联，系统边界</li>
+<li><strong>参与者</strong>：以某种方式参与用例的执行过程；<strong>触发</strong><ul>
+<li>分类：发起参与者；参加参与者（分为主要参与者+次要参与者）</li>
+<li>用例：外部可见的系统功能单元；定义连贯的行为；包含它做必需的所有行为（执行用例的主线次序，标准行为的不同变形，一般行为下的所有异常情况和预期反应）</li>
+</ul>
+</li>
+<li>识别用例：从参与者开始分析<ul>
+<li>Q：<ul>
+<li>参与者希望系统提供什么功能</li>
+<li>系统是否存储和检索信息，如果是，由哪个参与者触发</li>
+<li>当系统改变状态时，是否通知参与者</li>
+<li>是否存在影响系统的外部事件</li>
+<li>哪个参与者通知系统这些事件</li>
+</ul>
+</li>
+<li>用例粒度：功能单元的大小和数量</li>
+<li>用例间关系：包含关系，扩展关系，泛化关系<ul>
+<li>包含关系：将包含用例的事件流插入到基本用例中（必然发生）</li>
+<li>扩展关系：（可能发生）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- **泛化关系（继承）**：将多个用例的共性抽象为**父用例**，而其他用例作为泛化关系中的子用例；eg1.文字阅后即焚、音频阅后即焚、视频阅后即焚三个子用例的共同父用例是阅后即焚；eg2.验证登录是父用例，其子用例有账户密码验证、人脸识别验证、指纹识别、声纹识别 ...</span><br></pre></td></tr></table></figure>
+<ul>
+<li>系统边界：系统之间的界限</li>
+<li>系统的组合递归进化性，系统模块化（划分）</li>
+</ul>
+<h3 id="用例模型设计实例"><a href="#用例模型设计实例" class="headerlink" title="用例模型设计实例"></a>用例模型设计实例</h3><p>1.准备工作：</p>
+<ul>
+<li>了解问题领域（需求）</li>
+<li>确定参与者：业主，业务提出者，业务管理者，业务执行者，第三方，用户<ul>
+<li>发现业务参与者</li>
+</ul>
+</li>
+</ul>
+<p>2.需求分析：</p>
+<ul>
+<li>获取业务用例</li>
+<li>建立业务模型</li>
+</ul>
+<p>3.系统分析：</p>
+<ul>
+<li>建立系统用例：从业务用例扩展而来</li>
+<li>用例归约：<ul>
+<li>简要说明：简要介绍用例的作用和目的</li>
+<li>事件流：基本流（用例正常运行时的场景） + 备选流（描述异常或偶然情况）<ul>
+<li>基本路径</li>
+<li>可选路径</li>
+</ul>
+</li>
+<li>用例场景：</li>
+<li>特殊需求：描述与该用例相关的非功能性需求</li>
+<li>前置条件：执行用例前系统必须所处的状态</li>
+<li>后置条件：执行用例前系统可能所处的状态</li>
+</ul>
+</li>
+</ul>
+<p>业务用例实例：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fr57bxufc9j31kw13dgqf.jpg" alt="1"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fr57c0ovhzj31kw14w0xr.jpg" alt="2"></p>
+<p>系统用例实例：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fr57uirckaj31kw19nn2w.jpg" alt="1"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fr57ug868cj31kw18j0wh.jpg" alt="2"></p>
+<p>用例说明实例：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fr58nra3ebj31kw16n46q.jpg" alt="1"></p>
+<h2 id="面向对象分析——静态视图类图"><a href="#面向对象分析——静态视图类图" class="headerlink" title="面向对象分析——静态视图类图"></a>面向对象分析——静态视图类图</h2><p><u><strong>静态视图是在用例图的基础上设计！</strong></u></p>
+<p>类图：</p>
+<ul>
+<li>描述类、接口、协作和它们之间关系的集合体</li>
+<li>静态结构，展示类与类之间的关系</li>
+<li><strong><u>类图七元素：类、接口、协作、依赖关系、泛化关系、关联关系、实现关系</u></strong></li>
+<li>在类图基础上，可使用状态图、协作图、组件图、配置图等进一步描述系统特性</li>
+</ul>
+<p>对象图：</p>
+<ul>
+<li>类图的实例</li>
+</ul>
+<p>类图与对象图的区别：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1franpmq22rj31kw17udm9.jpg" alt="类 vs 对象"></p>
+<p>类图的组成：</p>
+<ul>
+<li><p>1.类：</p>
+<ul>
+<li>包括：物理实体，逻辑事物，商业事物，应用事物，行为事物，纯粹概念性的事物 etc.</li>
+<li>描述类：名称，属性，操作（<u>设计依据：用例图</u>），职责，约束，注释</li>
+</ul>
+</li>
+<li><p>2.接口：</p>
+<ul>
+<li>含义：在没有给出对象的实现和状态的情况下对对象行为的描述</li>
+</ul>
+</li>
+<li><p>3.类之间的关系：</p>
+<ul>
+<li><p>依赖关系：</p>
+<ul>
+<li>类之间的使用关系；指两个或多个模型元素之间语义上的关系，被依赖元素的变化会要求或指示依赖元素的改变</li>
+<li>用虚线箭头表示，箭头上可加关键词指明依赖的种类</li>
+<li>依赖种类：use，Access …</li>
+</ul>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1frap19hp5xj30la05a746.jpg" alt="eg"></p>
+</li>
+<li><p>泛化关系：类间“一般——特殊关系”，父类与子类</p>
+</li>
+<li><p>关联关系：二元关联，三元关联</p>
+<ul>
+<li>重数：表示有多少个对象与对方对象相连接，如“0..1”表示0或1</li>
+<li>有序关联与导航</li>
+<li>使用箭头</li>
+<li>聚合关系：关联关系的一种强化，需满足：<ul>
+<li>表示整体和部分的关系（所属）</li>
+<li>部分可被多个整体同时共享</li>
+<li>整体消失，部分实例依然存在</li>
+<li>如班级——学生</li>
+</ul>
+</li>
+<li>组合关系：是进一步强化的聚合关系<ul>
+<li>必须同时存在，且整体不能共享部分的实例，比如活人&lt;——跳动的心脏</li>
+</ul>
+</li>
+<li>关联的约束：各种模型元素的一种语义条件或限制，一条约束只能应用于同一类元素<ul>
+<li>用一对花括号括起来，eg.{ordered}，括号里为约束内容</li>
+<li>对泛化的约束：complete；disjoint；incomplete；overlapping</li>
+<li>关联的约束：implicit（概念性关联，但在模型精化时不再关联）；ordered（信息显示有序）；changeable（关系是可变、可修改的）；addonly（可在任意时刻增加新的链接）；frozen（冻结已创建的对象，不能再修改）；xor（或约束，当前时刻只有一个当前关联实例）</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1frapfkyjznj30kk0eg74f.jpg" alt="gl"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>建立静态模型：</p>
+<ul>
+<li><strong>分析类</strong>：分析类是业务需求向系统设计转化过程中最重要的元素；分析类代表“<u>系统中具备职责和行为的事物”</u>；包括边界类、控制类、实体类<ul>
+<li>边界类：用于对系统外部环境与其内部运作之间的<strong><u>交互</u></strong>进行建模的类；包括：用户窗口、通信协议、打印机接口、传感器、终端等</li>
+<li>控制类：对一个或几个用例所特有的控制行为进行建模；控制对象通常控制其他对象，因此他们的行为具有<strong><u>协调</u></strong>性质</li>
+<li>实体类：对<u>必须存储的信息和相关行为</u>建模的类；源于业务模型中的业务实体</li>
+</ul>
+</li>
+</ul>
+<p><img src="../../../../../Downloads/IMG_20180516_170551.jpg" alt="MG"></p>
+<p><img src="../../../../../Downloads/IMG_20180516_173640.jpg" alt="MG_20180516_17364"></p>
+<ul>
+<li>包图</li>
+</ul>
+<p>面向对象分析：动态视图</p>
+<ul>
+<li>描述事物的动态行为，在静态视图的基础上</li>
+<li>序列图、协作图、状态图、活动图</li>
+<li><strong><u>序列图</u></strong>：描述系统中各个对象<u>按照时间顺序</u>的交互过程<ul>
+<li>构成：对象，生命线，激活，消息</li>
+<li>注意：边界类发送消息到控制类，控制类发送信息到实体类，然后实体类返回消息到控制类，控制类返回消息到边界类</li>
+<li>图中的序号是对消息的编号</li>
+</ul>
+</li>
+<li><strong><u>协作图</u></strong>：描述<u>控制类内部的实现逻辑</u><ul>
+<li>构成：对象，消息，链</li>
+<li>强调对象之间的关系</li>
+<li>图中的序号是对消息的编号</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1frirw13r8wj31kw12y79s.jpg" alt="1"></p>
+<ul>
+<li><strong><u>状态图</u></strong>：通过建立类对象的<u>生存周期模型</u>来描述对象<u>随时间变化</u>的动态行为，描述<u>事件如何引起对象的状态变迁</u><ul>
+<li>构成：状态，触发事件</li>
+<li>状态转换：两状态之间的关系<ul>
+<li>状态转换的组成：源状态；事件触发；监护条件（guard Condition）；动作；目标状态</li>
+</ul>
+</li>
+<li>状态内部构成：进入/退出动作；活动（在一个状态内执行的处理过程）；内部转换（响应）；子状态（状态间的包含关系）</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1frisqwppcaj31kw1didjm.jpg" alt="2"></p>
+<ul>
+<li><strong><u>活动图</u></strong>：即流程图，描述工作流<ul>
+<li>要素：活动，活动之间的转移，判断，保证条件，同步条</li>
+<li>活动图——泳道：</li>
+<li>活动图——对象流：可显示对象的角色、状态、属性值的改变</li>
+<li>分叉与分支的区别：分叉——子路径是都需要做的，分支——可选路径、选了一个就不选另一个</li>
+</ul>
+</li>
+</ul>
+<h2 id="静态模型设计实例"><a href="#静态模型设计实例" class="headerlink" title="静态模型设计实例"></a>静态模型设计实例</h2><p>1.提取业务对象</p>
+<p>2.对象的属性设计</p>
+<p>3.基本操作设计</p>
+<p>4.关系设计</p>
+<ul>
+<li>关联关系设计</li>
+</ul>
+<p>业务对象模型：一定要模块化设计</p>
+<h1 id="Chapter5-信息架构之内容分析"><a href="#Chapter5-信息架构之内容分析" class="headerlink" title="Chapter5 信息架构之内容分析"></a>Chapter5 信息架构之内容分析</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>内容分析的任务——建立组织体系      </p>
+<p>五帽架法则：按不同标准对同一集合进行分类（类别、时间、位置、层次、名称字母顺序）</p>
+<p>内容模型化：</p>
+<ul>
+<li>模型化：分析整理内容间的语义关系，本质是建立<u>叙词表</u></li>
+<li>语义关系：等价，等级 ，相关</li>
+<li>​</li>
+</ul>
+<p>叙词表 refer：<a href="http://cdc.tencent.com/2011/06/13/%E5%8F%99%E8%AF%8D%E8%A1%A8/" target="_blank" rel="noopener">http://cdc.tencent.com/2011/06/13/%E5%8F%99%E8%AF%8D%E8%A1%A8/</a></p>
+<h1 id="Chapter6-情景分析"><a href="#Chapter6-情景分析" class="headerlink" title="Chapter6 情景分析"></a>Chapter6 情景分析</h1><h2 id="目标设定"><a href="#目标设定" class="headerlink" title="目标设定"></a>目标设定</h2><p>目标设定：明确产品能为用户提供什么价值</p>
+<p>项目蓝图：项目的长远设计</p>
+<h2 id="现状分析"><a href="#现状分析" class="headerlink" title="现状分析"></a>现状分析</h2><p>修改方案：</p>
+<ul>
+<li>启发式评估 </li>
+<li>可用性测试</li>
+<li>日志分析</li>
+<li>标杆分析：竞品分析</li>
+</ul>
+<h1 id="Chapter7-网站结构设计"><a href="#Chapter7-网站结构设计" class="headerlink" title="Chapter7  网站结构设计"></a>Chapter7  网站结构设计</h1><p>网站结构设计的任务：</p>
+<ul>
+<li>用户动线设计</li>
+<li>网站内信息的分类整理：层级型，分面分类型</li>
+<li>目录主页，列表页面，详细页面等页面形式的定义</li>
+<li>内容量（页面数量）的确定</li>
+</ul>
+<p>网站结构模式：</p>
+<ul>
+<li>层级型</li>
+<li>分面分类型：根据信息的各个侧面的性质来识别和分类信息；适合用户根据自身的观点来检索信息</li>
+<li>web 型：各种信息通过超链接平等连接</li>
+<li>辐射型</li>
+<li>直线型</li>
+<li>综合型：融合多种模式 </li>
+</ul>
+<p>视觉辞典：</p>
+<ul>
+<li>连接节点</li>
+</ul>
+<h1 id="Chapter8-界面设计"><a href="#Chapter8-界面设计" class="headerlink" title="Chapter8 界面设计"></a>Chapter8 界面设计</h1><p>页面类型：</p>
+<ul>
+<li>门户页面</li>
+<li>列表页面：文本，缩略图，缩略图+文本</li>
+<li>内容页面</li>
+<li>功能页面</li>
+</ul>
+<p>设计流程：</p>
+<ul>
+<li>交互流程设计</li>
+<li>风格定位：色彩</li>
+<li>功能 icon 设计</li>
+<li>界面视觉的整体优化</li>
+</ul>
+<h1 id="Chapter8-导航系统设计"><a href="#Chapter8-导航系统设计" class="headerlink" title="Chapter8 导航系统设计"></a>Chapter8 导航系统设计</h1><p>文字导航条 vs 图片导航条</p>
+<p>浏览器导航压力测试方法：随机进入任一页面，测试能否进入其他任何页面</p>
+<p>设计原则： </p>
+<ul>
+<li>强化信息层次：使用户对内容组织方式越来越熟悉</li>
+<li>便捷性，直接可达性</li>
+<li>避免信息冗余</li>
+</ul>
+<p>分类 &amp; 索引：满足不同需求</p>
+<h1 id="Chapter9-标签系统设计"><a href="#Chapter9-标签系统设计" class="headerlink" title="Chapter9 标签系统设计"></a>Chapter9 标签系统设计</h1><p>标签：网站内的索引文本</p>
+<p>标签设计注意事项：</p>
+<ul>
+<li>避免专用、网络流行语、情景式表达</li>
+<li>注重词语粒度：粒度太大容易模糊用户的行为导向（比如美女定义“漂亮”没有任何意义，关键是如何漂亮，可以使用“细眉”、“大眼”…）</li>
+<li>避免使用动词：名词和形容词更合适，因为动作描述过于精准反而不利于内容组织</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>拿钱去买猫粮和狗粮嗷 ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Scarlett Huang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Internet-Product/" rel="tag"><i class="fa fa-tag"></i> Internet & Product</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/20/《新媒体与社会》课程笔记/" rel="next" title="《新媒体与社会》课程笔记">
+                <i class="fa fa-chevron-left"></i> 《新媒体与社会》课程笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/20/《传播统计学》课程笔记/" rel="prev" title="《传播统计学》课程笔记">
+                《传播统计学》课程笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">192</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Column">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Column
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://book.douban.com/people/ScarlettYellow/" target="_blank" title="Douban">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Douban
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friend Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://unique-ailab.github.io/" title="Unique-AILab" target="_blank">Unique-AILab</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mr-why.com/" title="MR WHY(AI Dev. & AI PM)" target="_blank">MR WHY(AI Dev. & AI PM)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wondervictor.github.io/" title="Vic Chan(AI Dev.)" target="_blank">Vic Chan(AI Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Dev.)" target="_blank">qzwlecr(Distributed Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://alisahhh.github.io/" title="Alisa(Alg. Dev.)" target="_blank">Alisa(Alg. Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://llag9810.github.io/" title="yifan(Android Dev.)" target="_blank">yifan(Android Dev.)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Part1-原理篇"><span class="nav-number">1.</span> <span class="nav-text">Part1 原理篇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter1-Web信息架构（Information-Architechture）"><span class="nav-number">2.</span> <span class="nav-text">Chapter1 Web信息架构（Information Architechture）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网整体的信息架构"><span class="nav-number">2.1.</span> <span class="nav-text">互联网整体的信息架构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter2-信息架构有哪些内容"><span class="nav-number">3.</span> <span class="nav-text">Chapter2 信息架构有哪些内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#组织系统"><span class="nav-number">3.1.</span> <span class="nav-text">组织系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导航系统"><span class="nav-number">3.2.</span> <span class="nav-text">导航系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标识系统"><span class="nav-number">3.3.</span> <span class="nav-text">标识系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索系统"><span class="nav-number">3.4.</span> <span class="nav-text">搜索系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter3-如何设计信息架构"><span class="nav-number">4.</span> <span class="nav-text">Chapter3 如何设计信息架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IA设计需要具备的知识基础"><span class="nav-number">4.1.</span> <span class="nav-text">IA设计需要具备的知识基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IA-设计的理念、系统和模式"><span class="nav-number">4.2.</span> <span class="nav-text">IA 设计的理念、系统和模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信息架构的用户思维"><span class="nav-number">4.3.</span> <span class="nav-text">信息架构的用户思维</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter4-面向对象的方法——用户建模分析"><span class="nav-number">5.</span> <span class="nav-text">Chapter4 面向对象的方法——用户建模分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象分析（OOA）理论概述"><span class="nav-number">5.1.</span> <span class="nav-text">面向对象分析（OOA）理论概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象分析建模原理"><span class="nav-number">5.2.</span> <span class="nav-text">面向对象分析建模原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用例模型设计实例"><span class="nav-number">5.2.1.</span> <span class="nav-text">用例模型设计实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象分析——静态视图类图"><span class="nav-number">5.3.</span> <span class="nav-text">面向对象分析——静态视图类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态模型设计实例"><span class="nav-number">5.4.</span> <span class="nav-text">静态模型设计实例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter5-信息架构之内容分析"><span class="nav-number">6.</span> <span class="nav-text">Chapter5 信息架构之内容分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">6.1.</span> <span class="nav-text">概述</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter6-情景分析"><span class="nav-number">7.</span> <span class="nav-text">Chapter6 情景分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标设定"><span class="nav-number">7.1.</span> <span class="nav-text">目标设定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#现状分析"><span class="nav-number">7.2.</span> <span class="nav-text">现状分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter7-网站结构设计"><span class="nav-number">8.</span> <span class="nav-text">Chapter7  网站结构设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter8-界面设计"><span class="nav-number">9.</span> <span class="nav-text">Chapter8 界面设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter8-导航系统设计"><span class="nav-number">10.</span> <span class="nav-text">Chapter8 导航系统设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter9-标签系统设计"><span class="nav-number">11.</span> <span class="nav-text">Chapter9 标签系统设计</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
+<div class="copyright" >
+  
+  &copy;  2017.07 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共597.8k字</span>
+</div>
+
+
+
+
+<span id="busuanzi_container_site_pv">
+<div class="powered-by"></div>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  <div class="powered-by"></div>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100332, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100332, xid: "2018/08/20/《Web-信息架构》课程笔记/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100332/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+
+</body>
+</html>

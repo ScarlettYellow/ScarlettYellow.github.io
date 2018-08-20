@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Internet & Product,Reading Notes," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：比较完整地介绍了 PM 工作的流程和经验，算是PM 入门级的书籍。">
+<meta name="keywords" content="Internet &amp; Product,Reading Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《谷歌和亚马逊如何做产品》阅读笔记">
+<meta property="og:url" content="http://ScarlettHuang.cn/2018/08/20/《谷歌和亚马逊如何做产品》阅读笔记/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：比较完整地介绍了 PM 工作的流程和经验，算是PM 入门级的书籍。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fr626s1bc5j31kw2nkqpv.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fr4bwpwhjxj30y40is0yd.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fr4vrlzagdj31ak0960zu.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fr5508k0ovj315o0p2n66.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fr55043y6bj315o19s7kx.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fr5ag6bhb4j311c0tq7h3.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1fr5xt009p3j30jg0fm76p.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fr61fc3mcuj310e0aaq7b.jpg">
+<meta property="og:updated_time" content="2018-08-20T11:12:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《谷歌和亚马逊如何做产品》阅读笔记">
+<meta name="twitter:description" content="Abstract：比较完整地介绍了 PM 工作的流程和经验，算是PM 入门级的书籍。">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fr626s1bc5j31kw2nkqpv.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ScarlettHuang.cn/2018/08/20/《谷歌和亚马逊如何做产品》阅读笔记/"/>
+
+
+
+
+
+  <title>《谷歌和亚马逊如何做产品》阅读笔记 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2018/08/20/《谷歌和亚马逊如何做产品》阅读笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《谷歌和亚马逊如何做产品》阅读笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-20T19:09:10+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/Internet-Product/" itemprop="url" rel="index">
+                    <span itemprop="name">Internet & Product</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/20/《谷歌和亚马逊如何做产品》阅读笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/08/20/《谷歌和亚马逊如何做产品》阅读笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：比较完整地介绍了 PM 工作的流程和经验，算是PM 入门级的书籍。</p>
+<a id="more"></a>
+<p>Main Points：软件交付</p>
+<ul>
+<li>亚马逊和谷歌如何交付软件：按照项目流程顺序，包括用户需求研究、用户体验设计、项目管理、测试、发布</li>
+<li>团队主管带领团队成功交付所需要的技术积累、最佳实践、技能</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fr626s1bc5j31kw2nkqpv.jpg" alt="Mindnote"></p>
+<h1 id="Part1-交付卓越产品，步步为“赢”"><a href="#Part1-交付卓越产品，步步为“赢”" class="headerlink" title="Part1 交付卓越产品，步步为“赢”"></a>Part1 交付卓越产品，步步为“赢”</h1><p>框定了研究范围和对象，</p>
+<h1 id="Chapter1-赢在使命和策略"><a href="#Chapter1-赢在使命和策略" class="headerlink" title="Chapter1 赢在使命和策略"></a>Chapter1 赢在使命和策略</h1><p>使命：能够唤起兴趣 + 指明方向 + 适合印在T恤上</p>
+<p>策略：在竞争对手的压力下，利用公司独特优势来争取目标用户的粗略计划。</p>
+<p>Google Talk：使人与人之间在任何地点均能通过任何终端沟通。</p>
+<p>必须想清楚：如何长期为客户提供比竞争对手更优质的产品（长期的竞争优势）。否则，竞争对手会迅速模仿一个跟你一模一样而价格更低的新产品打败你。</p>
+<h1 id="Chapter2-产品定义"><a href="#Chapter2-产品定义" class="headerlink" title="Chapter2 产品定义"></a>Chapter2 产品定义</h1><p>产品定义</p>
+<ul>
+<li>撰写公开稿：使各方了解产品</li>
+<li>创建并不断更新FAQ文档：记录争议点和重要细节</li>
+<li>绘制流程图和线框图</li>
+<li>撰写产品单页或10min演示文稿：写给老板、投资人看的</li>
+<li>写API文档</li>
+<li>PRD</li>
+<li>邀请设计和技术来参与产品评审：找出边界情况</li>
+<li>找客户测试产品概念</li>
+<li>命名、定价和收益</li>
+</ul>
+<p>收益模型</p>
+<ul>
+<li>1.估算买家总体市场规模</li>
+<li>2.预估市场规模的增速：市场规模扩大时，销售规模也随之扩大</li>
+<li>3.估算你的目标市场占总体市场的比率</li>
+<li>4.估算通过市场推广你能触碰到的用户规模</li>
+<li>5.预估触碰触碰的人中有多少会转化成产品用户</li>
+<li>6.找到其他新用户增长渠道并加入到模型中</li>
+<li>7.将产品定价乘以每个时期的用户数 =  收益；若产品是付费订阅类，还可预估一个续费率然后计算利润</li>
+</ul>
+<p>用户体验（UX）：关注用户如何完成任务和如何优化向用户展现信息的方式 </p>
+<ul>
+<li>信息架构（IA）：研究信息如何在用户界面中呈现，而不关心底层数据结构</li>
+</ul>
+<p>视觉设计（Visual Design）：根据既定的信息架构美化界面</p>
+<p>用户体验研究（UXR）：研究用户如何看待产品</p>
+<ul>
+<li>通过研究获得关于产品成败的统计显著性数据</li>
+<li>但不提供解决方案</li>
+</ul>
+<p>6个用户体验问题</p>
+<ul>
+<li>该用户界面要求用户完成的最重要的任务是什么?</li>
+<li>这是最筒单的解决方案吗?</li>
+<li>信息是否组织得当?</li>
+<li>设计是否易用且一目了然?</li>
+<li>标准是否一致?</li>
+<li>能否减少用户点击次数?</li>
+</ul>
+<p>如何与设计师沟通</p>
+<ul>
+<li>1.以用户的口吻说话</li>
+<li>2.以提问的方式建立共识</li>
+<li>3.反复讲述业务目标，若有些目标相互冲突，则反复江苏它们之间的相对优先级</li>
+</ul>
+<h1 id="Chapter4-项目管理"><a href="#Chapter4-项目管理" class="headerlink" title="Chapter4 项目管理"></a>Chapter4 项目管理</h1><p>1.创建一张简单的计划表并持续维护</p>
+<ul>
+<li>包含：任务列表 + 每个任务的工程评估量（即完成所需时间）</li>
+<li>将任务按优先级顺序分配</li>
+</ul>
+<p>2.跟踪BUG，观察燃尽图，计算实现零bug率的日期</p>
+<ul>
+<li>反映bug数量随时间变化情况图，可预测产品何时能够交付</li>
+<li>需要为不同严重等级的bug各绘制一条曲线</li>
+<li>bug修复率：当修复率 &lt; 1 时，即每天修复的bug数量超过发现的bug数量时，才能 确定bug的具体规模并精准预测发布日期</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fr4bwpwhjxj30y40is0yd.jpg" alt="bug燃尽图"></p>
+<p>3.谨慎管理你的依赖：最小化可能由依赖引发的风险</p>
+<ul>
+<li>如果去除它也可以运转，那就去除它</li>
+<li>如果内部能构建没救内部 构建</li>
+<li>如果必须添加一个依赖，那就趁早添加</li>
+<li>如果必须添加一些 依赖，那就依靠它上一个已构建的版本</li>
+<li>如果交付的早，被依赖伤害的可能性就小</li>
+</ul>
+<h1 id="Chapter5-测试"><a href="#Chapter5-测试" class="headerlink" title="Chapter5 测试"></a>Chapter5 测试</h1><p><strong>检查测试用例</strong>是否包含以下描述性要素</p>
+<ul>
+<li><strong>领域</strong>：描述哪部分用户 体验将被测试</li>
+<li><strong>严重性</strong>：定义若测试失败，你将会将此归为哪个级别的bug，通常1~4级</li>
+<li><strong>前置条件</strong>：指定测试人员在测试前必须做的事，比如测试购物车中信用卡验证过程，前置条件应该是用户已登录、购物车已添加货品、送货地址已填写，然后测试才能开始</li>
+<li><strong>需执行的任务</strong>：任务由多个步骤组成，是测试的主要内容。任何步骤失败测试都失败。</li>
+<li><strong>后置条件</strong>：描述应用程序在任务执行完毕后所处的状态。以上一个例子为例，后置条件可能是用户看到一个包含确认编号的确认页面，同时信用卡会在10秒内扣除相应的金额。</li>
+</ul>
+<p>测试用例表格：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fr4vrlzagdj31ak0960zu.jpg" alt="测试用例表格"></p>
+<p>若时间不够宽裕，可每轮测试只执行高严重性的测试用例。</p>
+<p>关键评审内容：</p>
+<ul>
+<li>1.关键用户体验 </li>
+<li>2.安全和隐私</li>
+<li>3.依赖：一定要严格测试一些非内部构建的数据库、第三方服务和软件</li>
+</ul>
+<p>自动化测试：</p>
+<ul>
+<li>搭建一套独立于产品代码的测试系统，事半功倍，大大节省人力</li>
+</ul>
+<p>推行内部试用：</p>
+<ul>
+<li>观点：<ul>
+<li>欲卖狗食，必先食之</li>
+<li>强制性试用</li>
+<li>悬赏奖励发现bug的人（T恤之类的奖励很吸引人）</li>
+</ul>
+</li>
+<li>实践操作：<ul>
+<li>计划一次内部试用发布</li>
+<li>使其他使用者能方便地提交bug报告</li>
+<li>让内部试用成为团队文化</li>
+<li>软件发布后应继续进行内部试用</li>
+</ul>
+</li>
+</ul>
+<p>准确且有条理地处理bug</p>
+<ul>
+<li>基于频率、严重性、解决成本对bug分级</li>
+<li>每天与开发和测试主管碰一次，评审新增bug</li>
+<li>不断施压以减少bug出现</li>
+</ul>
+<p>bug评审会议</p>
+<ul>
+<li>确定通用的bug评判标准：比如我的大学同学遇到这个bug后我会因此羞愧吗？遇到这个bug后会对它们产生持久伤害吗</li>
+<li>先处理最严重的bug</li>
+<li>限定会议时长：若会议超出时长则将剩下的安排在明天继续讨论</li>
+<li>只围绕频率、严重性、修复成本来讨论</li>
+<li>讨论每个bug的世界不要超过一分钟：避免过于细节的讨论，没人喜欢处理bug这件事</li>
+</ul>
+<p>发挥可信测试者的作用</p>
+<ul>
+<li>可信测试者：产品发布前的试用用户 </li>
+<li>操作实践：<ul>
+<li>签署保密协议：主要保证你有权在产品中使用来自客户的改进建议</li>
+<li>制作粗略的新手指南文档</li>
+<li>创建一个包含整个工程团队的邮件组：让工程团队尽可能接近用户</li>
+<li>让用户使用与工程师同版本的试用产品</li>
+<li>调研可信测试者：做问卷调研</li>
+<li>通知可信测试者产品新版本</li>
+</ul>
+</li>
+</ul>
+<p>以新用户的方式来使用整个产品</p>
+<h1 id="Chapter6-量化"><a href="#Chapter6-量化" class="headerlink" title="Chapter6 量化"></a>Chapter6 量化</h1><p>一个优秀的量化指标需具备的5个关键特点：</p>
+<ul>
+<li>测量成本低廉</li>
+<li>测量可靠且可重复检验</li>
+<li>能频繁测量，最好能实时测量</li>
+<li>团队能根据它做出明智的改变：能够知道在一个量化数据发生变化后知道该做些什么</li>
+<li>专注于客户：尽可能选取贴近客户的数据和指标，尽可能测量客户体验的末端（如软件启动量 优于 下载量，因为下载量只反映产品营销做得如何，但启动量反映用户参与度和增长情况）</li>
+</ul>
+<p>执行力指标：零bug到达如期（反映开发进度，可实时更新，为团队指明方向）</p>
+<p>三类需要跟踪的关键量化指标：</p>
+<ul>
+<li>1.<strong>目标进度</strong>：反映目标的完成进度<ul>
+<li>比如：7天活跃用户数（有时比日均用户数更合理，因为你很少会做一个预期用户每天使用的产品），30天活跃用户数，利润，注册量，下载量，安装量</li>
+</ul>
+</li>
+<li>2.<strong>经营绩效</strong>：反映产品问题在哪里以及如何提升用户体验，通常以比率表示<ul>
+<li>比如：<strong>转化率</strong>、参与度；7天平均发帖量，7天用户平均停留时间</li>
+<li>避免虚荣指标：即总是在增长的指标，因为它们不会帮助你发现产品的问题在哪儿</li>
+</ul>
+</li>
+<li>3.<strong>系统性能</strong>：性能指标，说明产品的实时健康度<ul>
+<li>比如：99.9%平均延迟、每秒请求数、并发用户数、每秒下单数、其他基于时间的指标</li>
+<li>从统计过程控制（SPC，Statistical  Process Control）视角考察性能指标</li>
+</ul>
+</li>
+</ul>
+<p>专注于目标本身，忽略细枝末节</p>
+<ul>
+<li>几乎所有的指标都可以通过一些巧妙的手法进行操纵。以之前举过的发布日期这个例子为例，为了将发布日期提前，我们可以将更多Bug归到“不影响发布”这一类去，也可以简单地终止测试(表面上看还是一个“双赢”的做法)。</li>
+</ul>
+<h1 id="Chapter7-发布"><a href="#Chapter7-发布" class="headerlink" title="Chapter7 发布"></a>Chapter7 发布</h1><p>几个主要的发布步骤确保发布质量：</p>
+<p>1.对改动说不</p>
+<ul>
+<li>“发布手中有的（即使不完美），而非脑中想的”，否则永远完成不了交付</li>
+<li>通过核查团队是否对目前的产品抱有自豪感来确定产品是否可以发布</li>
+<li>建立一个发布后第一时间（IPL，immediately post-launch）修改的需求清单：认知到有些改动不一定要在发布前完成；这样做可以让团队更有信心，因为他们知道他们顾虑的东西会很快被解决</li>
+<li>对改动说不的主要原因：几乎所有对代码的改动 都会引发新的风险，如引入新bug或重新引入老bug（回归bug）</li>
+<li>可以维护一套发布分支：则有两个需要并行维护的分支（开发分支+发布分支），打算发布的版本在发布分支上，新特性的开发则在开发分支上进行；当出现安全、隐私或重大性能问题时可以基于发布分支短时间开发一个“热修补补丁”</li>
+</ul>
+<p>2.开启作战室</p>
+<ul>
+<li>效率，可以每日例会，紧迫气氛</li>
+<li>狗屎三明治：当给员工反馈时，可以先表扬他们（第一片面包），再给他们一些难以完成的挑战（狗屎 夹心），最后提醒他们你有多么看好他们的能力（第二片面包）</li>
+</ul>
+<p>3.营造紧迫的气氛</p>
+<p>4.核查发布清单</p>
+<ul>
+<li>发布清单：确保软件发布中所有需要跟进的事项都被有序安排且被详细描述 </li>
+<li>清单项：领域，事项，负责人，状态，预期完成时间，参考信息</li>
+</ul>
+<p>5.撰写博文</p>
+<ul>
+<li>阐述你的使命、目标可和和你能解决的问题</li>
+</ul>
+<p>6.发布软件</p>
+<ul>
+<li>实验性框架：部署实验发布版测试新特性</li>
+<li>不要选择在周五或临近假期发布：若要改bug，则会让员工和自己牺牲假期时间</li>
+</ul>
+<p>7.亲自验证软件</p>
+<ul>
+<li>一轮验证：版本验证测试（BVT，Build Verification Test）<ul>
+<li>一般在新版本发布后进行</li>
+<li>目的：确保推送到生产服务器上的版本是正确的，且所有配置文件都已推送成功并安装正确</li>
+</ul>
+</li>
+<li>二轮验证：以新用户的身份亲自体验整个产品，确保所有功能都能正常使用，有些功能常会出现问题，如注册流程、上传数据、搜索、表单提交 …</li>
+</ul>
+<p>8.应对发布后带来的各种影响</p>
+<ul>
+<li>应对回滚：<ul>
+<li>回滚：指把软件撤回到预发布状态</li>
+<li>只要成功回滚，没有对用户产生明显伤害，就还没失败</li>
+<li>最好的防守是制定周详的撤退计划</li>
+<li>若可回滚，则撤回对产品的改动，从容地修复问题，然后再试一次</li>
+</ul>
+</li>
+<li>处理产品危机<ul>
+<li>比如网站被瞬间大规模的流量冲垮，安全漏洞，隐私侵害，定价事故</li>
+<li>建立有效的沟通渠道</li>
+<li>不要惊慌 —— 评估影响范围</li>
+<li>尝试回滚</li>
+<li>推迟任何产品推广计划</li>
+<li>知会相关方</li>
+<li>知会用户社区</li>
+<li>保持BUG的更新</li>
+<li>危机收尾：撰写事故调查报告（发生了什么？谁受到了影响？问题是何时出现、何时解决？为什么会发生这个事情？如何防止问题的再次发生？） </li>
+</ul>
+</li>
+<li>演示产品：<ul>
+<li>必须简洁，不超过 10 min</li>
+<li>强调使命</li>
+<li>以讲故事的方式</li>
+</ul>
+</li>
+<li>应对媒体</li>
+<li>庆祝发布：<ul>
+<li>感谢整个团队</li>
+<li>公开嘉奖要谨慎，防止打击其他团队的信心</li>
+</ul>
+</li>
+</ul>
+<p>危机事故调查报告示例：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fr5508k0ovj315o0p2n66.jpg" alt="危机事故调查报告示例1"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fr55043y6bj315o19s7kx.jpg" alt="危机2"></p>
+<h1 id="Part2-掌握卓越技能，更胜一筹"><a href="#Part2-掌握卓越技能，更胜一筹" class="headerlink" title="Part2 掌握卓越技能，更胜一筹"></a>Part2 掌握卓越技能，更胜一筹</h1><h1 id="Chapter8-胜在团队"><a href="#Chapter8-胜在团队" class="headerlink" title="Chapter8 胜在团队"></a>Chapter8 胜在团队</h1><h2 id="雇佣主管"><a href="#雇佣主管" class="headerlink" title="雇佣主管"></a>雇佣主管</h2><p>Key：组建一个杰出的团队</p>
+<p>优秀的人总是聚集在一起工作。</p>
+<p>雇佣PM至关重要：雇佣错误的PM会让整个团队痛不欲生，就像有一把撒了盐的刀每天捅一次工程团队的集体肾脏。这个错误的人选会将产品带向糟糕的方向，会欺上瞒下，会拖延任务，或者虽然完成得很快但质量奇差，还会引发工程团队内部的极大焦虑。不消说，你一定要谨慎地选择，宁可不雇，也不能雇佣错误的PM。</p>
+<p>软件业务的四种角色：</p>
+<ul>
+<li>1.项目集经理：比PM更少关注业务，比项目经理更少关注项目的技术 角色；key function是黏合和润滑整个团队</li>
+<li>2.PM：侧重软件业务；做除了写工程代码之外的任何事<ul>
+<li>MBA出身的PM：专注品牌管理、定价、市场 进入策略等</li>
+</ul>
+</li>
+<li>3.项目经理：排定项目计划和协调团队</li>
+<li>4.工程经理</li>
+</ul>
+<p>雇佣主管的5个原则：</p>
+<ul>
+<li>1.雇佣比你聪明的人<ul>
+<li>核查简历</li>
+<li>绩点</li>
+<li>关键加分项：实际推出过很多产品</li>
+</ul>
+</li>
+<li>2.雇佣懂得自己不是来当老板的人</li>
+<li>3.雇佣表达清晰、言之有物的人 </li>
+<li>4.雇佣习惯用数据说话的人</li>
+<li>5.雇佣充满活力的人</li>
+</ul>
+<p>用数据说话实例：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fr5ag6bhb4j311c0tq7h3.jpg" alt="data"></p>
+<h2 id="收购公司"><a href="#收购公司" class="headerlink" title="收购公司"></a>收购公司</h2><p>收购一家公司的目的：</p>
+<ul>
+<li>知识产权：需要计算是自己研发的成本低还是收购别人的成本低，计算出可接受的收购额；必须检查让一个未来不会涉足这个业务 的高级工程师去检查这家公司的代码质量和架构</li>
+<li>人才：关键人才，好的雇员，多余人才</li>
+<li>客户：客户转移的过程可能会流失</li>
+<li>防御（让别人没法买它或让它不再跟自己竞争）</li>
+</ul>
+<p>收购建议：</p>
+<ul>
+<li>将你的团队的部分人员调入他们团队：商业文化、商业实践的感染；确保新老团队紧密融合；调入最优秀的主管很有利</li>
+<li>计划整合产品</li>
+<li>了解之前所有的交易和负债 </li>
+</ul>
+<h1 id="Chapter9-技术"><a href="#Chapter9-技术" class="headerlink" title="Chapter9 技术"></a>Chapter9 技术</h1><p>四个S ：服务器（Server），服务（Service），速度（Speed），扩容（scaling）</p>
+<h2 id="1-服务器（Server）"><a href="#1-服务器（Server）" class="headerlink" title="1.服务器（Server）"></a>1.服务器（Server）</h2><p>服务器（Server）</p>
+<ul>
+<li>优秀的工程师会学习如何避免去做运维的琐事，因为任何学到的关于服务器的知识都会在6个月内过时</li>
+<li>尽量不要买服务器，采用托管主机更省心</li>
+</ul>
+<p>系统的三层架构：</p>
+<ul>
+<li>展现层（JavaScript，CSS，HTML）</li>
+<li>业务逻辑（Java，C++）</li>
+<li>数据（SQL，S3）</li>
+</ul>
+<h2 id="2-服务（Service）"><a href="#2-服务（Service）" class="headerlink" title="2.服务（Service）"></a>2.服务（Service）</h2><p>API</p>
+<p>PRC（Remote Procedure Call）：远程过程调用</p>
+<p>SOA（Service-Oriented Achitechture）：面向服务的架构</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fr5xt009p3j30jg0fm76p.jpg" alt="SOA"></p>
+<h2 id="3-速度"><a href="#3-速度" class="headerlink" title="3.速度"></a>3.速度</h2><p>Key：解决服务链的速度问题</p>
+<p>封装（Encapsulation）：将不相关的功能分开封装，则可以并行加载，提高速度</p>
+<p>缓存（Caching）： </p>
+<ul>
+<li>缓存是数据源的一份副本，比如页面缓存、XML缓存、硬盘缓存，可以缓存任何东西</li>
+<li>缓存可从后备存储器中复制数据</li>
+<li>缓存缺失：即服务所需的数据不在缓存里</li>
+<li>优秀的缓存机制：会通读后备存储器<u>并传回数据</u>，而劣质的不会传回任何数据</li>
+<li>缓存更新：当数据存储中的某个值发生 变化，它必须先写入后备存储器，然后后备存储器必须更新所有缓存。在劣质缓存机制中，这会导致缓存的不一致性。</li>
+</ul>
+<h2 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h2><h2 id="如何询问正确的技术问题"><a href="#如何询问正确的技术问题" class="headerlink" title="如何询问正确的技术问题"></a>如何询问正确的技术问题</h2><p>1.能请你给我画张系统图么？</p>
+<ul>
+<li>目的：理解系统图中的所有方框都是干什么的</li>
+<li>存放了什么数据 ，干了什么，接收和发送了什么数据</li>
+</ul>
+<p>2.结果从这个方框传到那个方框的延迟是多少？</p>
+<ul>
+<li>通过系统图识别服务链，询问这类设计的必要性，并 弄清楚整体相应时间是多少和最坏的情况下是多少</li>
+<li>​</li>
+</ul>
+<p>3.可以扩容到N吗？</p>
+<p>4.去掉B方框有什么影响？</p>
+<ul>
+<li>了解系统会如何出错并如何恢复</li>
+<li>了解系统的哪些部分会产生致命错误，并让工程团队优先考虑对保证这部分的稳定性进行投入</li>
+</ul>
+<p>5.能通过缓存什么数据来提升性能？</p>
+<p>6.能通过独立加载什么数据来提升性能？</p>
+<ul>
+<li>比如独立加载广告系统，则即便广告系统坏了也不影响用户体验</li>
+</ul>
+<h1 id="Chapter10-沟通"><a href="#Chapter10-沟通" class="headerlink" title="Chapter10 沟通"></a>Chapter10 沟通</h1><p>1.尽可能少开会，但不要不开会</p>
+<ul>
+<li>能通过邮件解决的事情就不要开会</li>
+<li>如果不能将事物简单地表达出来，你就没有真正理解它</li>
+</ul>
+<p>2.写清爽的邮件</p>
+<ul>
+<li>用建议取代质疑</li>
+<li>主次分明，分点阐述</li>
+</ul>
+<p>3.如何组织会议</p>
+<ul>
+<li>会后立即发出会议纪要</li>
+<li>允许改变开会的目的</li>
+<li>不要发泄负面情绪</li>
+</ul>
+<p>4.如何做好演示</p>
+<ul>
+<li>控制在15min内</li>
+<li>永远只传达一个核心信息</li>
+<li>讲故事：<ul>
+<li>创意与生活联系</li>
+<li>让观众跟着你的节奏走</li>
+<li>例子必须使观众能够理解</li>
+<li>描述你要解决的问题和你的解决方案、价值</li>
+</ul>
+</li>
+<li>制作综述单页</li>
+<li>重点演示用户体验</li>
+<li>极度专注倾听</li>
+</ul>
+<p>讲故事实例：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fr61fc3mcuj310e0aaq7b.jpg" alt="story"></p>
+<p>5.团队合作沟通</p>
+<ul>
+<li>不说你或我，聚焦在产品上</li>
+<li>使用客观指标：比如决策矩阵（多项&lt;带权重的&gt;标准打分，然后取总分值最高的选择）</li>
+</ul>
+<p>6.合理管理时间精力</p>
+<ul>
+<li>分优先级，重要性</li>
+</ul>
+<h1 id="十大交付原则"><a href="#十大交付原则" class="headerlink" title="十大交付原则"></a>十大交付原则</h1><p>1.你不是来当老板的团队主管是仆人，他们存在的目的就是为了伺候工程团队</p>
+<p>2.从用户角度出发。</p>
+<p>3.用独特的方法解决很多人都有的大问题。</p>
+<p>4.坏的消息就是好的消息。—杰克·韦尔奇</p>
+<p>5.先寻求理解，再寻求被理解。——史蒂芬·柯维</p>
+<p>6.构建最简洁的可用的产品。</p>
+<p>7.交付手中有的，而非脑中想的。</p>
+<p>8.无法测量的东西也就无法提升。—开尔文勋爵</p>
+<p>9.你不可能做完所有工作，所以你应首先做那些只有你能做的工作。</p>
+<p>10.永远走在交付的康庄大道上。</p>
+<h1 id="必须的工件"><a href="#必须的工件" class="headerlink" title="必须的工件"></a>必须的工件</h1><p>■轮值表—将寻呼器号码和手机号码的清单复制到一张钱包大小的纸上。</p>
+<p>■使用Wiki搭建的“联络簿”，用于遇到故障、突发事件或问题时寻找相关负责</p>
+<p>人。这个列表应该包括法务、公关、市场、产品团队、工程团队和网络运维(或</p>
+<p>者任何负责生产基础设施的部门)的负责人和联系信息。</p>
+<p>■描述使命的语句。</p>
+<p>■关于未来两年的清晰策略。</p>
+<p>页简要说明产品的人物/事件/原因/时间/方法的文档</p>
+<p>■产品需求文档，或者叫功能规格说明。</p>
+<p>口新闻稿。</p>
+<p>■线框原型图或者餐巾纸草图。</p>
+<p>■内部FAQ文档，其中部分间答打上外部FAQ标签以作为客户支持内容的原始</p>
+<p>素材。</p>
+<p>■沟通文档，包括关键信息、有潜在危险的问题和对这些问题的回应</p>
+<p>■发布时穿的T恤衫。</p>
+<p>■包含测试时间的开发计划表。</p>
+<p>■未来两年的路线图。</p>
+<p>■内部用户列表和迁移时间表(适用于基础设施项目)。</p>
+<p>■可信测试者列表(适用于面向外部的产品)</p>
+<p>特性需求列表，并将内部和外部客户中呼声最高的三个特性需求高亮。</p>
+<p>■开放问题列表，并清晰标记这些问题的状态。</p>
+<p>进行中的会议纪要。最好建一个文档保存项目所有的历史会议纪要。</p>
+<p>发布计划或发布规程。</p>
+<p>■记录什么特性在什么时间发布的生成变更列表。在排查客户问题时特别有用。</p>
+<p>■对增长预测和硬件配置需求提前进行计划的生产设计文档。</p>
+<p>■专利注册文件、商标注册文件和版权申明文件</p>
+<p>■隐私说明。</p>
+<p>■出色的数据指标—包含内部的状态面板和一些供外部消费的清洗过的数据指标。</p>
+<p>■为幻灯片、演示、评审、发布准备的产品截图。</p>
+<p>口团队本季度目标以及上季度目标完成情况。</p>
+<p>■Bug状态面板和阻碍每个发布的Bug列表。</p>
+<p>■错误原因报告或事后调查报告。</p>
+<p>■会议纪要和团队周会、用户界面评审、产品评审、工程评审、Bug处理、法务</p>
+<p>评审、业务拓展周会以及客户支持碰头会的时间计划表。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>拿钱去买猫粮和狗粮嗷 ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Scarlett Huang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Internet-Product/" rel="tag"><i class="fa fa-tag"></i> Internet & Product</a>
+          
+            <a href="/tags/Reading-Notes/" rel="tag"><i class="fa fa-tag"></i> Reading Notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/20/《Machine-Learning-Yearning》阅读笔记/" rel="next" title="《Machine Learning Yearning》阅读笔记">
+                <i class="fa fa-chevron-left"></i> 《Machine Learning Yearning》阅读笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/20/《技术的本质》阅读笔记/" rel="prev" title="《技术的本质》阅读笔记">
+                《技术的本质》阅读笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">192</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Column">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Column
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://book.douban.com/people/ScarlettYellow/" target="_blank" title="Douban">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Douban
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friend Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://unique-ailab.github.io/" title="Unique-AILab" target="_blank">Unique-AILab</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mr-why.com/" title="MR WHY(AI Dev. & AI PM)" target="_blank">MR WHY(AI Dev. & AI PM)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wondervictor.github.io/" title="Vic Chan(AI Dev.)" target="_blank">Vic Chan(AI Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Dev.)" target="_blank">qzwlecr(Distributed Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://alisahhh.github.io/" title="Alisa(Alg. Dev.)" target="_blank">Alisa(Alg. Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://llag9810.github.io/" title="yifan(Android Dev.)" target="_blank">yifan(Android Dev.)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Part1-交付卓越产品，步步为“赢”"><span class="nav-number">1.</span> <span class="nav-text">Part1 交付卓越产品，步步为“赢”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter1-赢在使命和策略"><span class="nav-number">2.</span> <span class="nav-text">Chapter1 赢在使命和策略</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter2-产品定义"><span class="nav-number">3.</span> <span class="nav-text">Chapter2 产品定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter4-项目管理"><span class="nav-number">4.</span> <span class="nav-text">Chapter4 项目管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter5-测试"><span class="nav-number">5.</span> <span class="nav-text">Chapter5 测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter6-量化"><span class="nav-number">6.</span> <span class="nav-text">Chapter6 量化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter7-发布"><span class="nav-number">7.</span> <span class="nav-text">Chapter7 发布</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Part2-掌握卓越技能，更胜一筹"><span class="nav-number">8.</span> <span class="nav-text">Part2 掌握卓越技能，更胜一筹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter8-胜在团队"><span class="nav-number">9.</span> <span class="nav-text">Chapter8 胜在团队</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#雇佣主管"><span class="nav-number">9.1.</span> <span class="nav-text">雇佣主管</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收购公司"><span class="nav-number">9.2.</span> <span class="nav-text">收购公司</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter9-技术"><span class="nav-number">10.</span> <span class="nav-text">Chapter9 技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-服务器（Server）"><span class="nav-number">10.1.</span> <span class="nav-text">1.服务器（Server）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-服务（Service）"><span class="nav-number">10.2.</span> <span class="nav-text">2.服务（Service）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-速度"><span class="nav-number">10.3.</span> <span class="nav-text">3.速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩容"><span class="nav-number">10.4.</span> <span class="nav-text">扩容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何询问正确的技术问题"><span class="nav-number">10.5.</span> <span class="nav-text">如何询问正确的技术问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter10-沟通"><span class="nav-number">11.</span> <span class="nav-text">Chapter10 沟通</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十大交付原则"><span class="nav-number">12.</span> <span class="nav-text">十大交付原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#必须的工件"><span class="nav-number">13.</span> <span class="nav-text">必须的工件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
+<div class="copyright" >
+  
+  &copy;  2017.07 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共597.8k字</span>
+</div>
+
+
+
+
+<span id="busuanzi_container_site_pv">
+<div class="powered-by"></div>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  <div class="powered-by"></div>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100332, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100332, xid: "2018/08/20/《谷歌和亚马逊如何做产品》阅读笔记/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100332/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+
+</body>
+</html>

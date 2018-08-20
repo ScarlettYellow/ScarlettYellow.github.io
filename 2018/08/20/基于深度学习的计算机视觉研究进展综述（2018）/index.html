@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Machine Vision & Computer Vision," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="摘要：近年来，基于深度学习的计算机视觉领域研究取得了巨大的进步。本文结合已现有文献资料，对深度学习在计算机视觉中的应用进行综述。首先，简要概述计算机视觉及其发展历史。第二，简要概述深度学习及其发展历史，再着重梳理基于深度学习的计算机视觉研究进展，本文将这一过程划分为三个阶段，分别为“RBM/AE阶段”、“CNN 阶段”和“RNN 阶段”，以及介绍了视觉领域的十大重要深度学习架构。第三，介绍基于深度">
+<meta name="keywords" content="Machine Vision &amp; Computer Vision">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于深度学习的计算机视觉研究进展综述（2018）">
+<meta property="og:url" content="http://ScarlettHuang.cn/2018/08/20/基于深度学习的计算机视觉研究进展综述（2018）/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="摘要：近年来，基于深度学习的计算机视觉领域研究取得了巨大的进步。本文结合已现有文献资料，对深度学习在计算机视觉中的应用进行综述。首先，简要概述计算机视觉及其发展历史。第二，简要概述深度学习及其发展历史，再着重梳理基于深度学习的计算机视觉研究进展，本文将这一过程划分为三个阶段，分别为“RBM/AE阶段”、“CNN 阶段”和“RNN 阶段”，以及介绍了视觉领域的十大重要深度学习架构。第三，介绍基于深度">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1frs1aihkshj30xg0n4ad8.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1frqr7tcwb0j30xe0bk4e2.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1frsh5j76mfj30ik0j4761.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1frte8clp1wj30td07vmzl.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1frtelio5o2j31140is7fh.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1frteqi6jyvj31es0q011i.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1frtfc7q5l5j31340eeafc.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1frtftwtjr9j31ag0iodjx.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1frqsqfsie7j30nx07rmzp.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1frqsr0gw43j30hs0b3dg2.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1frqsrhygu8j31800ngtih.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1frqsrt1z9hj307b0op74r.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1frqss3pyyaj30dc07yaaj.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1frqssjfpybj30hs07974q.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1frqssijr2fj30e10etq37.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1frqst6vphdj30hs057t94.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1frqsthq729j30d00m83z0.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1frqstk6dn1j30hs05j74l.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1frqstmeemuj30gy07q74i.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1frtm7n1nd3j312i07qwgm.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1frtlonleabj30t506vjx2.jpg">
+<meta property="og:updated_time" content="2018-08-20T11:39:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于深度学习的计算机视觉研究进展综述（2018）">
+<meta name="twitter:description" content="摘要：近年来，基于深度学习的计算机视觉领域研究取得了巨大的进步。本文结合已现有文献资料，对深度学习在计算机视觉中的应用进行综述。首先，简要概述计算机视觉及其发展历史。第二，简要概述深度学习及其发展历史，再着重梳理基于深度学习的计算机视觉研究进展，本文将这一过程划分为三个阶段，分别为“RBM/AE阶段”、“CNN 阶段”和“RNN 阶段”，以及介绍了视觉领域的十大重要深度学习架构。第三，介绍基于深度">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1frs1aihkshj30xg0n4ad8.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ScarlettHuang.cn/2018/08/20/基于深度学习的计算机视觉研究进展综述（2018）/"/>
+
+
+
+
+
+  <title>基于深度学习的计算机视觉研究进展综述（2018） | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2018/08/20/基于深度学习的计算机视觉研究进展综述（2018）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基于深度学习的计算机视觉研究进展综述（2018）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-20T19:38:00+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/Machine-Vision-Computer-Vision/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Vision & Computer Vision</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/20/基于深度学习的计算机视觉研究进展综述（2018）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/08/20/基于深度学习的计算机视觉研究进展综述（2018）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>摘要：近年来，基于深度学习的计算机视觉领域研究取得了巨大的进步。本文结合已现有文献资料，对深度学习在计算机视觉中的应用进行综述。首先，简要概述计算机视觉及其发展历史。第二，简要概述深度学习及其发展历史，再着重梳理基于深度学习的计算机视觉研究进展，本文将这一过程划分为三个阶段，分别为“RBM/AE阶段”、“CNN 阶段”和“RNN 阶段”，以及介绍了视觉领域的十大重要深度学习架构。第三，介绍基于深度学习的计算机视觉的细分领域研究进展，以目标检测和人脸识别为例。最后，讨论计算机视觉领域利用深度学习可能带来的未来研究方向。</p>
+<p>关键词：深度学习；计算机视觉；卷积神经网络；循环神经网络；</p>
+<a id="more"></a>
+<h1 id="1-计算机视觉"><a href="#1-计算机视觉" class="headerlink" title="1 计算机视觉"></a>1 计算机视觉</h1><h2 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述"></a>1.1 概述</h2><p><strong>计算机视觉（Computer Vision，CV）是一门研究如何利用计算机模拟人类视觉的科学，其主要任务是通过对采集到的图像或视频进行分析和理解，从而做出判断或决策</strong>。计算机视觉可以看作是研究如何使人工系统从图像或多维数据中“感知”的科学，其本质是在人工系统中实现人类的感知与观察。</p>
+<p>人类了解世界的信息中 70%以上 来自视觉，同理计算机视觉成为机器认知世界的基础，终极目标是使计算机能够像人一样“看懂世界”。<strong>目前计算机视觉主要应用在人脸识别、图像识别方面（包括静态、动态两类信息）</strong>。</p>
+<h2 id="1-2-发展历程"><a href="#1-2-发展历程" class="headerlink" title="1.2 发展历程"></a>1.2 发展历程</h2><p>在过去几十年间，计算机视觉取得了巨大的进步，尤其是21世纪后深度学习对计算机视觉的发展起到重要作用。本文将计算机视觉的发展历程分为两个时期。</p>
+<p><strong>萌生期：</strong></p>
+<p>20世纪50年代，计算机视觉被归入模式识别——主要集中在二维图像分析和识别上。</p>
+<p>1966年，人工智能学者 Marvin 令学生写出程序，让计算机自动“了解”所连接摄像头的内容，计算机视觉序幕被拉开。</p>
+<p>20世纪60年代 MIT 的 Roberts 通过计算机程序从数字图像中提取诸如立方体、棱柱体等多面三位机构，并对物体形状及空间关系进行描述。</p>
+<p><strong>高速发展期：</strong></p>
+<p>20世纪80年代中期，计算机视觉蓬勃发展，新概念、新方法、新理论不断涌现，如专家推理系统。</p>
+<p>1999年，Nivida 公司在推销自己的 Geforce256芯片时，提出了GPU 这个概念。GPU 是专为执行复杂的数学和集合计算而设计的数据处理芯片，它的出现让并行计算成为可能，对数据处理规模、数据运算速度带来了指数级的增长与改善，极大地促进计算机视觉的发展。</p>
+<p>21世纪后，<strong>数据量的上涨（如图1）、运算力的提升和深度学习算法的出现</strong>促进了计算机视觉的发展，计算机视觉理论逐步成熟。</p>
+<p>图1：2009-2000年全球总体数据量</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1frs1aihkshj30xg0n4ad8.jpg" alt="img"></p>
+<h2 id="1-3-主要任务"><a href="#1-3-主要任务" class="headerlink" title="1.3 主要任务"></a>1.3 主要任务</h2><p>计算机视觉任务的主要任务可分为四类：</p>
+<p>1.<strong>物体识别/分类（Classification）</strong>：给出一张原始图像，识别出该图像中的物体属于哪个类别；</p>
+<p>2.<strong>定位（Localization）</strong>：确定该物体在图像中的位置；</p>
+<p>3.<strong>物体检测（Object Detection）</strong>：检测和定位图像中包含的物体或目标；</p>
+<p>4.<strong>图像分割（Instance Segmentation）</strong>：目标是将每个像素映射到正确的分类。</p>
+<p>图2：计算机视觉的主要任务</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1frqr7tcwb0j30xe0bk4e2.jpg" alt="img"></p>
+<h2 id="1-4-通用视觉识别技术流程"><a href="#1-4-通用视觉识别技术流程" class="headerlink" title="1.4 通用视觉识别技术流程"></a>1.4 通用视觉识别技术流程</h2><p>通用视觉识别技术流程可分为三类：</p>
+<p>1.<strong>目标检测</strong>：<strong>解决“去背景”的问题</strong>，即祛除背景中的不相关信息从而找出感兴趣的目标。</p>
+<p>1）图像预处理：图像去噪、平滑、标准化配准、缺失值/异常值处理 …</p>
+<p>2）图像分割：灰度分割、专家经验分割、统计分布分割。</p>
+<p>2.<strong>目标识别</strong>：<strong>解决“是什么”的问题</strong>。</p>
+<p>1）特征提取：特征选择（纹理，灰度，形状，结构等特征）；</p>
+<p>2）判断匹配：分类、聚类。</p>
+<p>3.<strong>行为识别：解决“干什么”的问题</strong>。</p>
+<p>1）模型建立；</p>
+<p>2）行为识别。</p>
+<h1 id="2-深度学习"><a href="#2-深度学习" class="headerlink" title="2 深度学习"></a>2 深度学习</h1><h2 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述"></a>2.1 概述</h2><p>通常认为，<strong>深度学习是指具有多层非线性转换函数的网络结构</strong>。而深度神经网络（Deep Neural Network，DNN）是一种特殊的深度学习模型，也是目前大多数深度学习方法的主要实现手段，它通过学习深层的非线性神经网络结构，实现任意复杂函数的逼近。为了从大规模数据中建立有效模型，DNN自动学习多层信息表示，高层的特征利用低层的特征进行构建，并且以一种级联的方式逐层构成深度结构。因此，DNN能够自动学习从底层特征到高层特征的组合，从而有效减少对人工提取特征的依赖。</p>
+<h2 id="2-2-发展历史"><a href="#2-2-发展历史" class="headerlink" title="2.2 发展历史"></a>2.2 发展历史</h2><p>深度学习的历史最早可以追溯到20世纪40年代。概括来讲，深度学习经历了3次发展浪潮：20世纪40年代到60年代，称为控制论主义；20世纪80年代到90年代，称为连接主义；2006年之后，称之为深度学习第1次发展：代表性的算法为人工神经网络，由于其借鉴了生物大脑的方式，因此称之为神经网络。感知机模型是第一个被提出的神经网络模型，用于区分两种类别。原始的感知机的连接权重需要手工设定，后来发展为可以自动学习。同时期的模型，还包括自适应线性单元（adaptive linear neuron， ADALINE）用于预测实数值。该时期的学习算法深刻地影响了现在的机器学习领域。比如 ADALINE 算法采用的权重修正训练方法实际上就是现在普遍采用的随机梯度下降法的一个特例。然而，由于感知机模型是一种线性模型，当它被发现不能解决著名的异或（XOR）函数问题时，神经网络陷入了第1次衰落期。</p>
+<p>第2次发展：神经网络的第2次发展，是随着连接主义的浪潮和分布式处理技术的流行而发展起来的。连接主义是基于简单的计算单元，通过网络连接的形式实现复杂的功能，其等价于在神经元中，引入隐藏层单元。该时期提出的很多概念至今依然有着重要的作用。比如，分布式表示的思想，其通过组合不同的特征表示进行学习并利用反向传播算法（backpropagation，BP）训练神经网络。第2次深度学习发展浪潮持续到了20世纪90年代中期。但是由于当时对神经网络抱有过大的预期，所以当实际效果没有达到预期的时候，引起了人们的质疑。与此同时，其他浅层的机器学习算法，包括核机器学习和图模型等快速发展，在许多计算机视觉任务中都表现出良好的性能。上述两个原因导致了这一阶段神经网络的衰落。但是在这个时期，神经网络依然在一些领域取得了不错的成绩，比如卷积神经网络（Convolutional Neural Network，CNN）被提出并用于手写体识别等问题中</p>
+<p>第3次发展：2006年， Hinton等提出了逐层贪婪预训练的方法来高效训练神经网络，有效地解决了直以来多层深度网络难以训练的问题。在这一阶段，人们开始使用深度学习来表示多层神经网络.这一阶段发展初期，人们集中研究无监督深度模型。而今天深度学习的研究者更多研究基于海量的数据并利用有监督的深度学习方法进一步提高机器学习的性能目前，常见的深度学习模型包括:基于限制玻尔兹曼机的深度模型，基于自编码器（autoencoder，AE）的深度模型，基于卷积的深度模型以及基于递归的深度模型等。</p>
+<h1 id="3-基于深度学习的计算机视觉研究进展"><a href="#3-基于深度学习的计算机视觉研究进展" class="headerlink" title="3 基于深度学习的计算机视觉研究进展"></a>3 基于深度学习的计算机视觉研究进展</h1><p>深度学习近几年成为国际上非常流行的重要的数据分析工具，在计算机视觉领域得到了广泛应用。</p>
+<p>对于传统的视觉信息处理而言，一般首先要做特征提取然后利用特征进行模型学习，比如分类等。在这个过程中，涉及到模式识别研究中两个经典的问题，即特征的提取与表示和模型的学习。</p>
+<p>传统算法通常利用经验知识来手工设置视觉特征，缺少与环境的信息交互以及知识库的决策支持。举个例子，给定一幅图像，我们希望知道这幅图像的目标类别（比如斑马）。按照传统的视觉模式分析流程，首先要提取特征，然后再和用SVM等进行模式分类。</p>
+<p>而对于<strong>深度学习而言，它可以解决端到端的模式识别问题，即给定一幅图像，经过黑匣子式的学习，直接给出最终识别结果</strong>。在端到端模式识别过程中，不再区分特征提取和模式分类，而是把特征提取和分类模型学习体化；即通过深度神经网络来非线性模拟从直接图像像素级别到语义标签，实现了从数据直接到概念要素的变革性思路。</p>
+<p>深度神经网络是采用脑启发机制设计的网络模型，它模拟了人脑层级化的信息处理机制。深度模型学习是大数据时代下计算机视觉的一个重要突破，尤其2012年后，深度学习推动了计算机视觉众多应用的飞速发展。</p>
+<p><strong>按照模型划分，深度学习在视觉领域经历了三个阶段</strong>。从2006年开始的RBM/AE第一阶段。第二个阶段是CNN，从2012年 Imagenet竞赛以后CNN引起了研究者的广泛关注，并且在视觉领域得到了广泛应用，在这个阶段更多是处理静态图像的建模问题。第三个阶段是从2014年开始RNN进入了大家的视野，它的出现能够更好地解决现实生活中很多时序数据的处理数问题。</p>
+<h2 id="3-1-第一阶段：RBM-AE-阶段（2006-—）"><a href="#3-1-第一阶段：RBM-AE-阶段（2006-—）" class="headerlink" title="3.1 第一阶段：RBM / AE  阶段（2006 —）"></a>3.1 第一阶段：RBM / AE  阶段（2006 —）</h2><h3 id="3-1-1-AE-概述"><a href="#3-1-1-AE-概述" class="headerlink" title="3.1.1 AE 概述"></a>3.1.1 AE 概述</h3><p><strong>自编码器（AutoEncoder，AE）</strong>是神经网络的一种应用，一种数据压缩算法，其中数据的压缩和解压缩函数是数据相关的、有损的、从样本中自动学习的，目的是将大量的数据压缩、分配至较小维度的向量之中。</p>
+<p>AE 通常包括输入层、输出层和隐藏层。在前向传递方面，有两个步骤：编码和解码。用于编码隐藏层中的特征的相同权重会被用于重建输出层中的图像。训练使用损失度量网络尝试重建输入时丢失的信息量。</p>
+<h3 id="3-1-2-RBM-概述"><a href="#3-1-2-RBM-概述" class="headerlink" title="3.1.2 RBM 概述"></a>3.1.2 RBM 概述</h3><p><strong>受限玻尔兹曼机（Restricted Boltzmann Machine，RBM）是一种可通过输入数据集学习概率分布的随机生成神经网络</strong>，本质是一种无监督机器学习（Unsumervised Machine Learning）模型，用于对 input 数据进行重构，即有效地提取数据特征，构建新的数据结构进行预测分析。</p>
+<p>受限玻兹曼机是玻兹曼机的一种变体，限定模型必须为二分图。模型中包含对应输入参数的输入可见单元和对应训练结果的隐单元，图中的每条边必须连接一个可见单元和一个隐单元。这一限定使得相比一般玻兹曼机更高效的训练算法成为可能，特别是基于梯度的对比分歧（contrastive divergence）算法。</p>
+<p>受限玻兹曼机在降维、分类、协同过滤、特征学习和主题建模中得到了应用。根据任务的不同，受限玻兹曼机可以使用监督学习或无监督学习的方法进行训练。</p>
+<p>RBM 和 AE 一样，可以不断堆叠实现深层神经网络挖掘数据的特征。<strong>深层信念网络（DBN）由多个 RBM 堆叠而成，并可使用梯度下降法和反向传播算法进行调优</strong>。</p>
+<p>图3：包含3个可见单元和4个隐单元的 RBM 示意图</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1frsh5j76mfj30ik0j4761.jpg" alt="img"></p>
+<h3 id="3-1-3-基于RBM-AE-的计算机视觉"><a href="#3-1-3-基于RBM-AE-的计算机视觉" class="headerlink" title="3.1.3 基于RBM / AE 的计算机视觉"></a>3.1.3 基于RBM / AE 的计算机视觉</h3><p><strong>RBM 和 AE 都是深度神经网络里的经典模型</strong>。2006年 Science的文章重新让深度学习引起了大家的注意。这里的“深度”主要是指模型层数的增加。传统的感知机一般就是3层的神经网络，现在很多网络可以增加5层、8层、19层，甚至达到了152层的深度。2006年后，各种RBM或者AE的变体出现。</p>
+<p><strong>对 “RBM / AE” 阶段而言，模型特点更多是生成式的模型，使用的数据基本上是中等规模的数据库，采用相对较深层次的网络。</strong>而<strong>热点问题就是替代传统的手工设计特征，来自动进行数据的表示学习（representation learning）</strong>。<strong>深度学习或者说深度神经网络最大的功能就是具有分层地学习目标特征表示的能力，层级越高，学习到的特征越接近于目标的语义信息，这与大脑处理信息的流程是一致的，大脑的视觉信息处理是从视网膜到V1区、V2区，再到V4区</strong>。比如输入衣服人脸图像，首先是像素级别特征，经过一定层数以后可以学习到边界级别的特征，再学习就可以看到眼睛、鼻子等Part特征，更高层就更接近语义信息（比如类似人脸的特征表示）。也就说，深度神经网终的最大优点是能够层级化的分层学习特征，渐渐逼近于语义信息表示。<strong>深度学习在 representation learning方面具有较强的能力</strong>。</p>
+<h2 id="3-2-第二阶段：CNN-阶段（2012-—）"><a href="#3-2-第二阶段：CNN-阶段（2012-—）" class="headerlink" title="3.2 第二阶段：CNN 阶段（2012 —）"></a>3.2 第二阶段：CNN 阶段（2012 —）</h2><h3 id="3-2-1-CNN-概述"><a href="#3-2-1-CNN-概述" class="headerlink" title="3.2.1 CNN 概述"></a>3.2.1 CNN 概述</h3><p><strong>卷积神经网络（Convolutional Neural Network，CNN）是一种前馈神经网络，它的人工神经元可以响应一部分覆盖范围内的周围单元，对于大型图像处理有出色表现。</strong></p>
+<p>卷积神经网络由一个或多个卷积层和顶端的全连通层组成，同时也包括关联权重和池化层（pooling layer）。这一结构使得卷积神经网络能够利用输入数据的二维结构。与其他深度学习结构相比，卷积神经网络在图像和语音识别方面能够给出更好的结果。这一模型也可以使用反向传播算法进行训练。相比较其他深度、前馈神经网络，卷积神经网络需要考量的参数更少，使之成为一种颇具吸引力的深度学习结构。下图是一种经典的 CNN 结构——LeNet-5网络。</p>
+<p>图4：经典 CNN 结构——LeNet-5网络</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1frte8clp1wj30td07vmzl.jpg" alt="img"></p>
+<h3 id="3-2-2-基于-CNN-的计算机视觉"><a href="#3-2-2-基于-CNN-的计算机视觉" class="headerlink" title="3.2.2 基于 CNN 的计算机视觉"></a>3.2.2 基于 CNN 的计算机视觉</h3><p>“CNN 阶段”源于2012年的 ImageNet竞赛。当时 Hinton团队组织参加了 ImageNet竞赛，使用的模型就是基于GPU的CNN网络。在此之前，传统方法在该图像分类竞赛中最高的识别率是2011年的74%；CNN的使用将分类准确度提升了11个点。在此后几年里，所有参加 Imagenet竞赛的团队，基本上都是使用CNN模型，准确度在逐年提升，比如2013年的89%、20144年的92%、2015年的95%等。所以说2012年是CNN进入视觉计算领域的重要转折点。</p>
+<p>自2012年 Imagenet竞赛之后，CNN受到了大量关注，其强大的学习能力也在不同视觉应用中得到证明。比如 <strong>Deepface人脸识别、 Deeppose姿势估计、 Deep Ranking 图像检索、 Deep video 视频分类、 Deepedge 边界检测、 Deep Segmentation 图像分割等</strong>。对“CNN阶段”而言，模型特点可以简单地归纳为判别式的模型、深层网络、并行分布式计算。这个阶段的热点问题更多侧重于处理静态图像相关的各种任务，在很多领域刷新了当前最好的性能。</p>
+<p><strong>CNN 本质上是层次抽象的滤波型局部特征，主要作用在特征学习环节，是一种数据驱动的权值学习，最有利于目标函数达成</strong>。理想的深度卷积神经网络是从数据中学习多层特征，如对图像中人脸的学习，可从底层的像素特征学习到第一层的边的特征，然后再到第2层基本脸部部位器官（如鼻子，嘴）等特征，再到高维的特征脸特征。图5展示 CNN 从图像中学习高维特征的例子。</p>
+<p>图5：CNN 从图像中学习到有用的高维特征</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1frtelio5o2j31140is7fh.jpg" alt="img"></p>
+<h2 id="3-3-第三阶段：RNN-阶段（2014-—）"><a href="#3-3-第三阶段：RNN-阶段（2014-—）" class="headerlink" title="3.3 第三阶段：RNN 阶段（2014 —）"></a>3.3 第三阶段：RNN 阶段（2014 —）</h2><h3 id="3-3-1-RNN-概述"><a href="#3-3-1-RNN-概述" class="headerlink" title="3.3.1 RNN 概述"></a>3.3.1 RNN 概述</h3><p><strong>递归神经网络</strong>（Recurrent Neural Networks，RNN）是两种人工神经网络的总称：时间递归神经网络（recurrent neural network）和结构递归神经网络（recursive neural network）。时间递归神经网络的神经元间连接构成有向图，而结构递归神经网络利用相似的神经网络结构递归构造更为复杂的深度网络。</p>
+<p><strong>RNN 一般指代时间递归神经网络</strong>。单纯递归神经网络因为无法处理随着递归，权重指数级爆炸或消失的问题（Vanishing gradient problem），难以捕捉长期时间关联；而结合不同的LSTM可以很好解决这个问题。时间递归神经网络可以描述动态时间行为，因为和前馈神经网络（feedforward neural network）接受较特定结构的输入不同，RNN将状态在自身网络中循环传递，因此可以接受更广泛的时间序列结构输入。图6是一个典型 RNN 网络。</p>
+<p>图6：典型 RNN 网络</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1frteqi6jyvj31es0q011i.jpg" alt="img"></p>
+<h3 id="3-3-2-双向-RNN-概述"><a href="#3-3-2-双向-RNN-概述" class="headerlink" title="3.3.2 双向 RNN 概述"></a>3.3.2 双向 RNN 概述</h3><p>单向RNN的问题在于时刻进行分类的时候只能利用时刻之前的信息， 但是在时刻进行分类的时候可能也需要利用未来时刻的信息。双向RNN（bi-directional RNN）模型正是为了解决这个问题， 双向RNN在任意时刻都保持两个隐藏层，一个隐藏层用于从左往右的信息传播， 另一个隐藏层用于从右往左的信息传播。</p>
+<p>图7：双向 RNN</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1frtfc7q5l5j31340eeafc.jpg" alt="img"></p>
+<h3 id="3-3-3-LSTM-概述"><a href="#3-3-3-LSTM-概述" class="headerlink" title="3.3.3 LSTM 概述"></a>3.3.3 LSTM 概述</h3><p><strong>长短时记忆性神经网络</strong>（Long Short-Term Memory networks，LSTM）是时间递归神经网络中的一种，每个神经元是一个“记忆细胞”，细胞里面有一个“输入门”（input gate）， 一个“遗忘门”（forget gate）， 一个“输出门”（output gate）。在“输入门”中，根据当前的数据流来控制接受细胞记忆的影响；接着，在 “遗忘门”里，更新这个细胞的记忆和数据流；然后在“输出门”里产生输出更新后的记忆和数据流。由于具有时间记忆性，故 <strong>LSTM 适合于处理和预测时间序列中间隔和延迟非常长的重要事件</strong>。</p>
+<p>图8：LSTM 网络结构</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1frtftwtjr9j31ag0iodjx.jpg" alt="img"></p>
+<h3 id="3-3-4-基于-RNN-的计算机视觉"><a href="#3-3-4-基于-RNN-的计算机视觉" class="headerlink" title="3.3.4 基于 RNN 的计算机视觉"></a>3.3.4 基于 RNN 的计算机视觉</h3><p>前面两个阶段没有考虑如何对序列数据进行建模，特别是对序列数据中的时间相依关系进行建模。而我们周围很多数据都是时间变化数据，比如视频数据、天气数据等。因此，迫切需要能够处理时序数据建模的一些模型。RNN可以对时序数据进行建模，时刻的隐含层不仅接受时刻的输入，同时接受此前时刻的隐含层输入，因此<strong>RNN能够更好地解决序列数据中时间依赖关系的建模问题</strong>。<strong>“RNN 阶段”的模型特点是时序模型，热点问题是对序列数据中的时间相依关系进行建模。</strong></p>
+<p>自2014年后，RNN在计算视觉领域得到了广泛的应用，比如<strong>行为识别、场景理解、图像生成</strong>，以及最近流行的<strong>图像视频描述</strong>等方向。</p>
+<h2 id="3-4-10大重要深度学习架构"><a href="#3-4-10大重要深度学习架构" class="headerlink" title="3.4 10大重要深度学习架构"></a>3.4 10大重要深度学习架构</h2><p>应用在计算机视觉领域的10大重要深度学习架构：</p>
+<p><strong>1.AlexNet：</strong></p>
+<p>首个深度学习架构，简单却功能强大，由深度学习先驱 Geoffrey Hinton 及其同僚共同引入。AlexNet 早在 80 年代已被概念化，突出特征是执行任务的规模大和使用 GPU 训练，AlexNet 借助  GPU 将训练提速了 10x。图9是架构示图。</p>
+<p>论文：ImageNet Classification with  Deep Convolutional Neural Networks</p>
+<p>图9：AlexNet 网络架构</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1frqsqfsie7j30nx07rmzp.jpg" alt="img"></p>
+<p><strong>2.VGG Net：</strong></p>
+<p>由牛津可视化图形组（Visual Graphics Group）开发。特点是金字塔形 ，与图像最近的底层较宽，顶层较深；适合在特定任务上进行基准测试。图10是VGG Net 网络架构示图。</p>
+<p>论文：Very Deep Convolutional Networks for Large-Scale Image Recognition</p>
+<p>图10：VGG Net 网络架构</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1frqsr0gw43j30hs0b3dg2.jpg" alt="img"></p>
+<p><strong>3.GoogleNet（Inception Net）：</strong></p>
+<p>谷歌研究者设计的网络架构，2014年 ImageNet 冠军，当时最强大的模型。训练速度快于 VGG，预训练规模小于 VGG。图11是序列架构示图。</p>
+<p>论文：Rethinking the Inception Architecture for Computer Vision</p>
+<p>图11：GoogleNet 序列架构</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1frqsrhygu8j31800ngtih.jpg" alt="img"></p>
+<p><strong>4.ResNet：</strong></p>
+<p>残差网络，包含多个后续残差模块，残差模块一个个堆叠组成完整的端到端网络。图12是架构示图。</p>
+<p>论文：Deep Residual Learning for Image Recognition</p>
+<p>图12：ResNet 网络架构</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1frqsrt1z9hj307b0op74r.jpg" alt="img"></p>
+<p><strong>5.ResNeXt：</strong></p>
+<p>建立在 Inception 和 ResNet  的概念上进行改进的新架构，据说是解决目标识别问题的最先进技术。图13是对 ResNeXt 模块中的残差模块的总结。</p>
+<p>论文：Aggregated Residual Transformations for Deep Neural Networks</p>
+<p>图13：ResNeXt 模块中的残差模块</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1frqss3pyyaj30dc07yaaj.jpg" alt="img"></p>
+<p><strong>6.RCNN（基于区域的 CNN）：</strong></p>
+<p>据说是所有深度学习架构中对目标检测问题最有影响力的架构。为了解决检测问题，RCNN 尝试在图像中所有物体上画出边界框，然后识别图像中的物体。图14是工作原理示意，图15是架构示图。</p>
+<p>论文：Faster R-CNN： Towards Real-Time Object Detection with Region Proposal Networks</p>
+<p>图14：RCNN 工作原理示意</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1frqssjfpybj30hs07974q.jpg" alt="img"></p>
+<p>图15：RCNN 网络架构</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1frqssijr2fj30e10etq37.jpg" alt="img"></p>
+<p><strong>7.YOLO（You Only Look Once）：</strong></p>
+<p>当前深度学习领域解决图像检测问题最先进的实时系统。YOLO 首先将图像划分为规定的边界框，然后对所有边界框并行运行识别算法，来确定物体所属的类别。确定类别之后，yolo 继续智能地合并这些边界框，在物体周围形成最优边界框。这些步骤全部并行进行，因此 YOLO 能够实现实时运行，并且每秒处理多达 40 张图像。图16是工作原理示意。</p>
+<p>论文：You Only Look Once： Unified， Real-Time Object Detection</p>
+<p>图16：YOLO 工作原理示意</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1frqst6vphdj30hs057t94.jpg" alt="img"></p>
+<p><strong>8.SqueezeNet：</strong></p>
+<p>在移动平台这样的低宽带场景中极其强大的一种架构，它只占用 4.9 MB 的空间，而 Inception 架构大小为 100MB。图17是完整架构示图。</p>
+<p>论文：SQUEEZENET： ALEXNET-LEVEL ACCURACY WITH 50X FEWER PARAMETERS AND &lt;0.5MB MODEL SIZE</p>
+<p>图17：SqueezeNet 网络架构</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1frqsthq729j30d00m83z0.jpg" alt="img"></p>
+<p><strong>9.SegNet：</strong></p>
+<p>一个用于解决图像分割问题的深度学习架构。它包含处理层（编码器）序列，之后是对应的解码器序列，用于分类像素。一个主要特征是在编码器网络的池化指标与解码器网络的池化指标连接时，分割图像保留高频细节。简言之，直接进行信息迁移，而非卷积它们。在处理图像分割问题时，SgeNet 是最好的模型之一。图18是 SegNet 解析图。</p>
+<p>论文：SegNet： A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation</p>
+<p>图18：SegNet 解析</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1frqstk6dn1j30hs05j74l.jpg" alt="img"></p>
+<p><strong>10.GAN（Generative Adversarial Network）：</strong></p>
+<p>无监督学习模型，通过让两个神经网络相互博弈的 方式进行学习，常用于生成以假乱真的图片、视频、三维物体模型等。图19是工作原理解析图。</p>
+<p>论文：Generative Adversarial Networks</p>
+<p>图19：GAN 工作原理示意</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1frqstmeemuj30gy07q74i.jpg" alt="img"></p>
+<h1 id="4-基于深度学习的计算机视觉细分领域研究进展"><a href="#4-基于深度学习的计算机视觉细分领域研究进展" class="headerlink" title="4 基于深度学习的计算机视觉细分领域研究进展"></a>4 基于深度学习的计算机视觉细分领域研究进展</h1><p>计算机视觉本身包括许多不同的研究方向，比如物体识别和检测（Object Detection），语义分割（Semantic Segmentation），运动和跟踪（Motion &amp; Tracking），三维重建（3D Reconstruction），视觉问答（Visual Question &amp; Answering），动作识别（Action Recognition）等。本文选取目标检测和人脸识别（目标检测的一种狭义类型）为例介绍基于深度学习的计算机视觉细分领域研究。</p>
+<h2 id="4-1-目标检测（OBJECT-DETECTION）"><a href="#4-1-目标检测（OBJECT-DETECTION）" class="headerlink" title="4.1 目标检测（OBJECT DETECTION）"></a>4.1 目标检测（OBJECT DETECTION）</h2><p>目标检测是将定位和识别合而为一，既要检测出物体在图像中的位置，还需要识别出物体的类别。最终需要同时检测和分类多个目标。目标检测是在图像上定位和分类数量可变的对象的问题。准确性和实时性是衡量其算法效果的标准。</p>
+<p>目标检测领域使用的深度学习算法课划分为两类：</p>
+<p>1）two-stage detector：以R-CNN为代表；首先找到可能存在物体的候选框，然后对候选框进行类别预测和边界调整，检测准确度高但检测速度慢。主要算法：R-CNN、Fast R-CNN、Faster R-CNN、R-FCN等。</p>
+<p>2）one-stage detector：以YOLO为代表；是以回归的方式直接预测固定数量的候选框，检测准确度较低但检测速度快，能实时检测。主要算法：YOLO、YOLOv2、SSD等。</p>
+<p>图20：基于深度学习的目标检测算法</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1frtm7n1nd3j312i07qwgm.jpg" alt="img"></p>
+<p>目标检测使用的基准数据集主要有 MS COCO，Caltech，ImageNet，通用类别物体检测场景（PASCAL、VOC等），智能驾驶场景（KITTI）。</p>
+<p>目标检测领域的进展主要存在三个问题：</p>
+<p>1）目标的可变数量问题：</p>
+<p>训练机器学习模型时，通常需要将数据表示成固定大小的向量。由于事先不知道图像中目标的数量，所以我们不知道正确的输出数量。正因为如此，我们需要一些后续处理，这也增加了模型的复杂度。</p>
+<p>这种输出数量不定的问题已经使用<strong>基于滑动窗口的方法得到了解决</strong>，在图片的不同位置得到滑窗的固定大小特征。在得到所有的预测值之后，一些滑窗被丢弃，一些被合并，从而得到最终输出。</p>
+<p>2）目标的大小不一致问题：</p>
+<p>当进行简单分类时，我们希望能对占图像比例最大的目标进行分类。另一方面，想要找到的目标可能只有几个像素大小(或只占原始图像的很小一部分)。传统方法<strong>使用不同大小的滑动窗口解决了这一问题</strong>，这种方法<strong>虽然简单但是效率很低</strong>。</p>
+<p>3）同时解决分类和定位问题：</p>
+<p>如何将定位和分类这两种不同类型的问题最理想地结合进一个单一模型。</p>
+<h2 id="4-2-人脸识别（FACE-RECOGNITION）"><a href="#4-2-人脸识别（FACE-RECOGNITION）" class="headerlink" title="4.2 人脸识别（FACE RECOGNITION）"></a>4.2 人脸识别（FACE RECOGNITION）</h2><p>人脸识别的研究历史较长，一直以来都是计算机视觉领域的一个热点研究方向。人脸识别是目标检测的一种狭义类型，问题可描述为：输入场景中的图像或视频，使用人脸数据库辨识或验证场景中的一个或多个人。人脸识别的关键在于是否拥有尖端的核心算法，并使识别结果具有实用化的识别率和识别速度。</p>
+<p>人脸图像中包含的模式特征十分丰富，如直方图特征、颜色特征、模板特征、结构特征及Haar特征等。人脸检测就是把这其中有用的信息挑出来，并利用这些特征实现人脸检测。</p>
+<p>人脸识别的进展有两大主要难题，一是环境光照发生变化时，识别效果会急剧下降。解决光照问题的方案有三维图像人脸识别，和热成像人脸识别。但这两种技术还远不成熟，识别效果不尽人意。二是相似性、易变性，即人脸作为生物特征的特点所带来的的困难。</p>
+<p>人脸识别常用算法有：基于人脸特征点的识别算法（Feature-based recognition algorithms），基于整幅人脸图像的识别算法（Appearance-based recognition algorithms），基于模板的识别算法（Template-based recognition algorithms），利用神经网络进行识别的算法（Recognition algorithms using neural network）。</p>
+<p>1）深度学习方法流行前：人脸识别的研究主要集中在特征提取（如 Gabor小波特征、局部二值模式特征等）、降维（如主成分分析、鉴别成分分析等子空间学习方法）和分类器设计（如最近邻、k最近邻等）。</p>
+<p>2）基于SOM和CNN的人脸识别方法：1997年由 Lawrence等提出；通过SOM保持输入输出空间的邻域结构，利用CNN逐层自动学习特征；但是由于训练数据有限，故限制了该方法的推广。</p>
+<p>3）  基于深度CNN的人脸识别方法：如 Deep face 算法（Facebook 提出）、Deep ID 算法（港中文多媒体实验室.Sun 等提出）；目前在测试集上准确率非常高，甚至超过人类水平，最高准确率超过99%。但是最新研究结果表明，当数据库中存在大量的干扰人脸(即非查询人脸)时，人脸辨识率和验证率仍然比较低，尤其是在姿态和年龄变化情况下识别性能下降严重。</p>
+<h2 id="4-3-视频识别（VIDEO-RECOGNITION）"><a href="#4-3-视频识别（VIDEO-RECOGNITION）" class="headerlink" title="4.3 视频识别（VIDEO  RECOGNITION）"></a>4.3 视频识别（VIDEO  RECOGNITION）</h2><p>视频识别即定位视频中的目标，并确定目标是什么。视频识别技术在互联网视频中应用需求很大。短视频、直播视频中大部分承载的是人物+场景+动作+语音的内容信息，如何用有效的特征对其内容进行表达是进行该类视频理解的关键。</p>
+<p>目前主要的视频识别技术有：</p>
+<p>1）基于单帧的识别方法：即先将视频进行截帧，然后基于图像粒度（单帧）进行深度学习表达，视频的每一帧会通过网络获得一个识别结果。学习视频时间域上的表达是提高视频识别的主要因素。</p>
+<p>2）基于 CNN 扩展网络的识别方法：在 CNN 框架中寻找时间域上的某个模式来表达局部运动信息，从而获得总体识别性能的提升。</p>
+<p>3）双路 CNN 的识别方法：使用两个独立的神经网络，再把两个模型的结果平均。</p>
+<p>4）基于 LSTM 的识别方法：用LSTM对帧的CNN最后一层的激活在时间轴上进行整合。通过LSTM引入的记忆单元，可以有效地表达帧的先后顺序。</p>
+<p>5）3维卷积核（3D CNN）法：3D CNN 应用于一个视频帧序列图像集合，不是简单地把图像集合作为多通道来看待输出多个图像（这种方式在卷积和池化后就丢失了时间域的信息）， 而是让卷积核扩展到时域，卷积在空域和时域同时进行，输出仍然是有机的图像集合。与单帧图特征在视频测试集上进行对比，3D CNN有更强的区分度。</p>
+<h1 id="5-未来研究方向预想"><a href="#5-未来研究方向预想" class="headerlink" title="5 未来研究方向预想"></a>5 未来研究方向预想</h1><p>计算机视觉领域利用深度学习带来的未来研究方向主要可能有六个：</p>
+<p><strong>1.深度图像分析。</strong></p>
+<p>目前基于深度学习的图像算法在实验数据库上效果还是不错的，但是远远不能够满足实际大规模应用需求，需要<strong>进一步的提升算法性能从而能够转化相应的实际应用</strong>。比如这个基于图片的应用，可以估计性别和年龄，但是其实经常会犯错，因此需要进一步提升深度图像分析的性能。</p>
+<p><strong>2.深度视频分析。</strong></p>
+<p>视频分析牵扯到大量的数据和计算量，所以做起来更加麻烦。当前<strong>深度视频分析还处于起步的阶段</strong>，然而视频应用非常广泛，比如人机交互智能监控（<strong>行为识别</strong>）等，所以加强深度视频分析是个重要的方向。</p>
+<p>图21：深度视频分析</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1frtlonleabj30t506vjx2.jpg" alt="img"></p>
+<p><strong>3.大规模深度学习。</strong></p>
+<p>随着时间的推移，数据量将呈指数级增长。为了<strong>处理更大规模的数据</strong>，需要进行<strong>多GPU并行及分布式计算</strong>。开发大规模深度学习算法是相当必要的。</p>
+<p><strong>4.无监督(半监督)学习。</strong></p>
+<p>这个方向是很明显的，因为<strong>实际应用中监督信息可能常常是缺失</strong>的，在大数据时代背景下要想<strong>标注所有的数据代价也是昂贵</strong>的。为了充分应用无标记的数据，进行无监督(或半监督)学习是非常重要的。近来的预测学习本质上与无监督学习是对应的。</p>
+<p><strong>5.大规模多模态学习。</strong></p>
+<p>多模态数据无处不在，尤其在互联网时代，网络上的图像、文本、语音等同时存在。<strong>多模态数据具有语义一致性、信息互补性的特点</strong>，互补性可做多模态数据的融合，一致性可做跨模态关联(如跨模态检索)。多模态学习研究的重点是对模态间的关联关系进行建模。视觉信息的有效理解离不开周边文本等其他模态数据，因此多模态学习是非常有意义的研究方向。</p>
+<p><strong>6.类脑智能研究。</strong></p>
+<p>神经网络本身是<strong>模拟大脑认知机理</strong>提出的网络结构。当前部分生物机制已经被应用到深度学习中，比如<strong>注意机制、神经元跨层连接机制</strong>等。在全球推动脑计划的大背景下，研究类脑智能显得尤为迫切和必要。</p>
+<h1 id="6-结论"><a href="#6-结论" class="headerlink" title="6 结论"></a>6 结论</h1><p>计算机视觉领域在深度学习的加持下取得了很大的发展，且仍有非常巨大的发展空间。本文主要对深度学习在计算机视觉中的应用进行了深入的介绍，全面综述了基于深度学习的计算机视觉研究进展，包括视觉领域的重要深度学习架构，以及选取目标检测和人脸识别这两个细分方向为例进行具体介绍。最后对计算机视觉领域利用深度学习可能带来的未来研究方向提出了构想。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] IAN G， YOSHUA B， ARON C.Deep learning[M].Massachusetts:2013,  5(8):1798-1828.</p>
+<p>[2] ROSENBLATT F.The perception:a probabilistic model for information storage and organization in the brain[J]</p>
+<p>Psychological Review, 1958,65(6): 386-408.</p>
+<p>[3] MINSKY M L, PAPERT S A Perceptrons: expanded</p>
+<p>edition[M].Massachusetts: MIT Press, 1988:1-308.</p>
+<p>[4] LAWRENCE S. GILES C L, TSOI A C, et al.Face recognition: a convolutional neural-network approach</p>
+<p>IEEE Transactions on Neural Networks, 1997, 8(1): 98-113.</p>
+<p>[5] 尹宝才, 王文通, 王立春.深度学习研究综述[J].北京工</p>
+<p>业大学学报, 2015, 41(1):48-59.</p>
+<p>[6] 严严, 陈日伟, 王菡子.基于深度学习的人脸分析研究进展[D].厦门大学: 2015.</p>
+<p>[7] 王亮.深度学习与视觉计算[J].中国科学院自动化研究所中国人工智能学会通讯, 2017, 7(4), 41-56.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>拿钱去买猫粮和狗粮嗷 ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Scarlett Huang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Vision-Computer-Vision/" rel="tag"><i class="fa fa-tag"></i> Machine Vision & Computer Vision</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/20/基于场景的新零售商品推荐研究/" rel="next" title="基于场景的新零售商品推荐研究">
+                <i class="fa fa-chevron-left"></i> 基于场景的新零售商品推荐研究
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/20/《顾客为什么购买》阅读笔记/" rel="prev" title="《顾客为什么购买》阅读笔记">
+                《顾客为什么购买》阅读笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">192</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Column">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Column
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://book.douban.com/people/ScarlettYellow/" target="_blank" title="Douban">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Douban
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friend Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://unique-ailab.github.io/" title="Unique-AILab" target="_blank">Unique-AILab</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mr-why.com/" title="MR WHY(AI Dev. & AI PM)" target="_blank">MR WHY(AI Dev. & AI PM)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wondervictor.github.io/" title="Vic Chan(AI Dev.)" target="_blank">Vic Chan(AI Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Dev.)" target="_blank">qzwlecr(Distributed Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://alisahhh.github.io/" title="Alisa(Alg. Dev.)" target="_blank">Alisa(Alg. Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://llag9810.github.io/" title="yifan(Android Dev.)" target="_blank">yifan(Android Dev.)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-计算机视觉"><span class="nav-number">1.</span> <span class="nav-text">1 计算机视觉</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-概述"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-发展历程"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 发展历程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-主要任务"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 主要任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-通用视觉识别技术流程"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 通用视觉识别技术流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-深度学习"><span class="nav-number">2.</span> <span class="nav-text">2 深度学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-概述"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-发展历史"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 发展历史</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-基于深度学习的计算机视觉研究进展"><span class="nav-number">3.</span> <span class="nav-text">3 基于深度学习的计算机视觉研究进展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-第一阶段：RBM-AE-阶段（2006-—）"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 第一阶段：RBM / AE  阶段（2006 —）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-AE-概述"><span class="nav-number">3.1.1.</span> <span class="nav-text">3.1.1 AE 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-RBM-概述"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.1.2 RBM 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-3-基于RBM-AE-的计算机视觉"><span class="nav-number">3.1.3.</span> <span class="nav-text">3.1.3 基于RBM / AE 的计算机视觉</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-第二阶段：CNN-阶段（2012-—）"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 第二阶段：CNN 阶段（2012 —）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-CNN-概述"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.2.1 CNN 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-基于-CNN-的计算机视觉"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.2.2 基于 CNN 的计算机视觉</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-第三阶段：RNN-阶段（2014-—）"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 第三阶段：RNN 阶段（2014 —）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1-RNN-概述"><span class="nav-number">3.3.1.</span> <span class="nav-text">3.3.1 RNN 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-2-双向-RNN-概述"><span class="nav-number">3.3.2.</span> <span class="nav-text">3.3.2 双向 RNN 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-3-LSTM-概述"><span class="nav-number">3.3.3.</span> <span class="nav-text">3.3.3 LSTM 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-4-基于-RNN-的计算机视觉"><span class="nav-number">3.3.4.</span> <span class="nav-text">3.3.4 基于 RNN 的计算机视觉</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-10大重要深度学习架构"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 10大重要深度学习架构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-基于深度学习的计算机视觉细分领域研究进展"><span class="nav-number">4.</span> <span class="nav-text">4 基于深度学习的计算机视觉细分领域研究进展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-目标检测（OBJECT-DETECTION）"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 目标检测（OBJECT DETECTION）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-人脸识别（FACE-RECOGNITION）"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 人脸识别（FACE RECOGNITION）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-视频识别（VIDEO-RECOGNITION）"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 视频识别（VIDEO  RECOGNITION）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-未来研究方向预想"><span class="nav-number">5.</span> <span class="nav-text">5 未来研究方向预想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-结论"><span class="nav-number">6.</span> <span class="nav-text">6 结论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
+<div class="copyright" >
+  
+  &copy;  2017.07 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共597.8k字</span>
+</div>
+
+
+
+
+<span id="busuanzi_container_site_pv">
+<div class="powered-by"></div>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  <div class="powered-by"></div>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100332, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100332, xid: "2018/08/20/基于深度学习的计算机视觉研究进展综述（2018）/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100332/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+
+</body>
+</html>

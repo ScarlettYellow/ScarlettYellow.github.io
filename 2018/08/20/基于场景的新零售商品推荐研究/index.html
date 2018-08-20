@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Internet & Product," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="摘要：新零售是以消费者体验为中心的数据驱动的零售新模式，是中国实体经济增长的新动力。而智能商品推荐则是新零售消费者购物体验的重要突破点。在移动互联与传播时代，场景是新零售业务的一大关键要素，基于场景特征和数据的智能商品推荐将成为新零售商品推荐的重要研究和应用方向。消费者对新零售的了解程度、线下购物月支出、对店内智能导航服务的需求等因素影响消费者对智能商品推荐服务的需求。空间与环境、实时状态、生活习">
+<meta name="keywords" content="Internet &amp; Product">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于场景的新零售商品推荐研究">
+<meta property="og:url" content="http://ScarlettHuang.cn/2018/08/20/基于场景的新零售商品推荐研究/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="摘要：新零售是以消费者体验为中心的数据驱动的零售新模式，是中国实体经济增长的新动力。而智能商品推荐则是新零售消费者购物体验的重要突破点。在移动互联与传播时代，场景是新零售业务的一大关键要素，基于场景特征和数据的智能商品推荐将成为新零售商品推荐的重要研究和应用方向。消费者对新零售的了解程度、线下购物月支出、对店内智能导航服务的需求等因素影响消费者对智能商品推荐服务的需求。空间与环境、实时状态、生活习">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fsogkk4linj31kw0obtbl.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fsogl62bztj30kt0gb752.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fsogl4w0jwj30ly0iv0ts.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fsogm5dk93j30qy0pmjun.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fss23d01ylj31hc0fkabp.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fsokrfu1x4j31hc0pk41n.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fsokrrmncdj31hc0pk77g.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fsojxlz263j30jp0fbgmc.jpg">
+<meta property="og:updated_time" content="2018-08-20T11:38:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于场景的新零售商品推荐研究">
+<meta name="twitter:description" content="摘要：新零售是以消费者体验为中心的数据驱动的零售新模式，是中国实体经济增长的新动力。而智能商品推荐则是新零售消费者购物体验的重要突破点。在移动互联与传播时代，场景是新零售业务的一大关键要素，基于场景特征和数据的智能商品推荐将成为新零售商品推荐的重要研究和应用方向。消费者对新零售的了解程度、线下购物月支出、对店内智能导航服务的需求等因素影响消费者对智能商品推荐服务的需求。空间与环境、实时状态、生活习">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fsogkk4linj31kw0obtbl.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ScarlettHuang.cn/2018/08/20/基于场景的新零售商品推荐研究/"/>
+
+
+
+
+
+  <title>基于场景的新零售商品推荐研究 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2018/08/20/基于场景的新零售商品推荐研究/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基于场景的新零售商品推荐研究</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-20T19:35:52+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/Internet-Product/" itemprop="url" rel="index">
+                    <span itemprop="name">Internet & Product</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/20/基于场景的新零售商品推荐研究/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/08/20/基于场景的新零售商品推荐研究/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>摘要：新零售是以消费者体验为中心的数据驱动的零售新模式，是中国实体经济增长的新动力。而智能商品推荐则是新零售消费者购物体验的重要突破点。在移动互联与传播时代，场景是新零售业务的一大关键要素，基于场景特征和数据的智能商品推荐将成为新零售商品推荐的重要研究和应用方向。消费者对新零售的了解程度、线下购物月支出、对店内智能导航服务的需求等因素影响消费者对智能商品推荐服务的需求。空间与环境、实时状态、生活习惯、社交元素是新零售场景的四个基本特征，基于对这些场景特征和数据的深度挖掘可以实现更加精准的新零售商品推荐。</p>
+<p>关键词：新零售，智能商品推荐，场景</p>
+<a id="more"></a>
+<h1 id="一、研究设计与数据来源"><a href="#一、研究设计与数据来源" class="headerlink" title="一、研究设计与数据来源"></a>一、研究设计与数据来源</h1><p>本文采用定量研究与定性研究相结合的方法，研究的主题是基于场景的新零售商品推荐。本文具体阐述三个方面：场景是新零售商品推荐的关键要素，消费者对智能商品推荐服务的需求的影响因素，新零售场景的四个基本特征。</p>
+<p>定量研究方面，本文于2018年6月对173位受访者进行了较为深入全面的问卷调研，回收有效问卷173份。受访者的男女比为4：6，年龄主要分布在10-25岁、31-50岁之间，学历主要为本科、专科、专科以下，是否婚配的比例为3：7，从事的行业主要有 IT 行业、媒体、金融、文化教育、卫生服务、工业制造建筑电力水利，工资/生活费主要在1000-5000之间。</p>
+<h1 id="二、场景：新零售商品推荐的关键要素"><a href="#二、场景：新零售商品推荐的关键要素" class="headerlink" title="二、场景：新零售商品推荐的关键要素"></a>二、场景：新零售商品推荐的关键要素</h1><h2 id="1-新零售：零售业的未来"><a href="#1-新零售：零售业的未来" class="headerlink" title="1.新零售：零售业的未来"></a>1.新零售：零售业的未来</h2><p>2016年10月阿里云栖大会上，阿里巴巴董事长马云在演讲中第一次提出了新零售，“未来的十年、二十年，没有电子商务一说，只有新零售。” 2016年11月11日国务院印发了《关于推动实体零售创新转型的意见》，从总体要求、调整商业结构、优化发展环境、创新发展方式、促进跨界融合、强化政策支持六大部分、总计18个方面为新零售发展指明了方向。</p>
+<p>新零售的诞生恰逢其时，有其特殊的时代背景，以下将依次从行业、技术、消费者三个层面分析新零售的诞生原因。</p>
+<p>行业层面。根据 MobData 于2017年12月发布的《2017年中国新零售研究报告》^[1]^，如图1，2012年-2016年中国网络零售用户规模持续上涨，但用户增长速度下降明显，说明中国网络购物人口的红利基本结束，实体零售的发展遭遇天花板，亟待寻找新的增长动力。此外，中国30年间相继出现百货、购物中心和连锁超市业态，实体零售仍处于追赶式发展的初级阶段，发展不均衡，且盈利模式自身存在问题；流通效率整体偏低；传统零售地位严重下滑。</p>
+<p>图1 2012-2016年网络零售用户规模（亿人）</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fsogkk4linj31kw0obtbl.jpg" alt="网络零售增速放缓"></p>
+<p>技术层面。互联网的发展逐步释放经济与社会价值，推动全球化3.0进程。同时，中国新商业基础设施已经初具规模，大数据、云计算、移动互联网、物联网、人工智能等发展迅速，助推新的商业模式诞生。</p>
+<p>消费者层面。根据普华永道2015年发布的研究报告《2015年全零售：零售商与变革的时代》，85%的中国消费者会首先利用数字化渠道研究新商品，51%的消费者会通过数字化渠道购买，超过全球34%的平均水平，说明中国消费者数字化程度非常高。^[2]^ 2016年，麦肯锡在其发布的研究报告《重塑全球消费格局的中国力量》中预测，未来15年中国将贡献全世界消费市场增量的30%，中国消费者消费模式正在发生转变，消费结构与发达国家日益相像。中国消费升级将引领全球消费增长，新一代消费价值主张出现。^[3]^</p>
+<p>从内容来看，新零售涉及零售服务、平台、科技与业态等全方位的创新发展，而不单单是一个流通消费问题。因此，对于新零售的研究需要全方位 、多视角地进行深入探讨。然而，目前国内外学界对新零售的研究仍处于起步 阶段，缺乏系统性研究和特定的分析框架，国内学界以基础性研究为主，主要包括新零售的内涵、发展动因、模式、发展路径等。国外对新零售的学术研究更是少之又少，且主要聚焦于已设立企业生存与保持竞争力的关键要素，并没有侧重新零售。基于此，我们可认为新零售不仅具有广阔的实践发展前景，还可为国内外学者提供巨大的研究空间。^[4]^</p>
+<p>对于新零售的概念，学界与业界从不同的角度作出了不同的界定。综合这些学者的定义，本文将新零售的概念界定为：新零售是依托人工智能、互联网、物联网、云计算等技术驱动，对商品生产、流通与销售环节进行全方位升级改造，进而重塑零售业态结构和生态圈，并深度融合线上服务、线下体验和现代物流，以消费者体验为中心的数据驱动的零售新模式。</p>
+<p>新零售本质上是渠道、技术变革带来的经济效率提升与社会效益增加。区别于以往任何一次零售变革，新零售将通过数据与商业逻辑的深度结合，真正实现消费方式逆向牵引生产变革。它将为传统零售业态插上数据的翅膀，重塑价值链，引领消费升级，形成零售新业态，是中国零售大发展的新契机，亦是实体经济增长的新动力。</p>
+<h2 id="2-智能商品推荐：新零售消费者购物体验的重要突破点"><a href="#2-智能商品推荐：新零售消费者购物体验的重要突破点" class="headerlink" title="2.智能商品推荐：新零售消费者购物体验的重要突破点"></a>2.智能商品推荐：新零售消费者购物体验的重要突破点</h2><p>在消费者端，新零售的目标是依托技术和基于数据去感知消费者的消费习惯，甚至预测消费趋势、引导生产制造，为消费者提供多样化、个性化的产品和服务。其中的关键问题是新零售环境下的智能商品推荐。</p>
+<p>购物模式从搜寻到推荐。传统零售时代，消费者需要在琳琅满目的商品中去寻找自己所需要的商品，是一种主动搜寻的行为，比较耗时耗力。根据本研究的问卷调查，在173名受访者中，14.5%的受访者在线下购物中最关注的因素包含“商品的易找程度”；如图2，67.6%的受访者表示在线下购物过程中希望被提供智能动态导航服务以帮助节省自己的时间。这些数据都表明，传统零售的消费者主动搜寻商品的购物模式给用户体验造成不便，是一种较为低效的购物模式。而这种不便和低效正可成为新零售消费者购物体验提升的一大突破点。解决这一问题，一方面固然可以通过提供智能导航服务来导引消费者快速精准地找到所需的商品，但这只能做到满足用户的期望，而无法做到超出用户期望。</p>
+<p>新零售的本质应该是无时无刻地始终为消费者提供超出期望的“内容”。本文认为，智能商品推荐可以通过挖掘消费者潜在需求，从而针对客户进行个性化商品推荐，做到持续为消费者提供超出期望的“内容”，并将成为新零售消费者购物体验提升的重要突破点，而新零售场景下消费者的购物模式也将会从传统的搜寻模式升级为“主动搜寻与智能推荐并重”的模式。</p>
+<p>图2 新零售场景中消费者对智能动态导航的需求情况</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fsogl62bztj30kt0gb752.jpg" alt="导航需求"></p>
+<p>根据本文的调查，如图3，50.9%的受访者表示，在线下购物过程中希望被提供实时的智能商品推荐服务。这表明尽管还未在线下购物场景中体验过智能商品推荐服务，消费者已经对之存在较强的期待和需求。</p>
+<p>图3 新零售场景中消费者对智能商品推荐服务的需求情况</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fsogl4w0jwj30ly0iv0ts.jpg" alt="推荐需求"></p>
+<p>本文认为，智能商品推荐本质上是基于对消费者、商品、场景三大特征的挖掘与分析，找到隐含的适配关系，然后在合适的地点、合适的时间将合适的商品推荐给合适的人。这里的商品既包括有形的产品，也包括无形的服务。智能商品推荐不仅能够通过快速匹配用户偏好为用户推荐个性化商品，从而提升消费者的购物体验，也能使商家实现更加精准的营销，从而提高经济效益。</p>
+<p>机器学习、深度学习是推荐系统的技术发展方向，而特征和数据决定机器学习的上限。所以要构造良好的基于机器学习的推荐系统，最首要和最关键的工作是构建有效的特征并获取到特征对应的数据。而构建特征最关键的是挖掘到业务背后的规律。本文认为，在移动互联与传播时代，场景是新零售业务的一大关键要素，基于场景特征和数据的智能商品推荐将成为新零售商品推荐的重要研究和应用方向。</p>
+<h2 id="3-场景：移动传播时代的价值凸显"><a href="#3-场景：移动传播时代的价值凸显" class="headerlink" title="3.场景：移动传播时代的价值凸显"></a>3.场景：移动传播时代的价值凸显</h2><p>移动互联网时代来临为新媒介提供了更加广阔的平台，越来越多地影响着人们的生活时间、生活场景的分配与重构，对于场景的研究日渐成为学界关注的热点。</p>
+<p>“场景”的概念由罗伯特·思考博和谢尔·伊斯雷尔于2014年出版的《即将到来的场景时代：移动、传感、数据和未来隐私》中提出，书中指出大数据、移动设备、社交媒体、传感器、定位系统是与场景时代相关的五个要素，合称为“场景五力”，并认为“五种原力正在改变你作为消费者、患者、观众或者在线旅行者的体验，它们同样改变着大大小小的企业”。^[5]^该书的英文标题是“Age of Context”，“Context”一词一般译为情境，而国内则主要用“场景”一词。</p>
+<p>从不同的角度出发，场景可以有不同的概念化定义。2015年，彭兰认为，广义的场景包含情境，场景同时涵盖基于空间和基于行为与心理的环境氛围，其基本构成要素包括：空间与环境、用户实时状态、用户生活惯性和社交氛围。^[6]^ 同年，Guanqing Liang 和 Jiannang Gao 在技术层面上对场景尤其是社会场景进行定义，认为社会纽带指的是不同用户相互关联的特征，如社会纽带和群体行为。2017年，喻国明认为，场景是社会与个人双重作用下的人为构设且“被建立”的环境，其生成要素包括社会条件、个人条件两个维度，受众行为意向的产生主要受到社会性要素、象征性要素的影响；其基本类型包括基于有形环境的现实场景、基于行为活动和心理氛围的虚拟场景、基于新媒介技术和虚拟环境创设的现实增强场景，不同维度下有不同的类属划分；并且，主要由认同感、归属感和社交支持干构成的场景印象会影响用户/消费者的行为意向，包括停留意向、消费意向、推荐意向和重构意向。^[7]^</p>
+<p>在新零售消费环境下，场景对智能商品推荐有关键作用。更广泛地来说，场景是智能信息推荐的关键要素。智能商品推荐是一种以用户为对象的个性化商品推荐。故本文研究的场景是一种以用户为中心的场景，是基于用户的个人特征、行为特征和心理特征而构建起的环境氛围。场景分析的直接目的是寻找并构建场景特征、获取到场景特征对应的数据，从而用于商品推荐系统的构建。最终目的是通过基于场景挖掘和适配用户个性化的消费需求，从而影响用户的信息选择意向和行为，以及基于场景适配设计出满足用户需求的产品和服务。</p>
+<p>图4 基于场景的新零售商品推荐的流程框架</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fsogm5dk93j30qy0pmjun.jpg" alt="框架"></p>
+<p>图4是本文构建的基于场景的新零售商品推荐的流程框架。场景提供数据，从下至上经过数据采集、数据分析、智能推荐三大环节，然后将商品个性化适配给特定的消费者。</p>
+<h1 id="三、消费者对智能商品推荐服务的需求的影响因素"><a href="#三、消费者对智能商品推荐服务的需求的影响因素" class="headerlink" title="三、消费者对智能商品推荐服务的需求的影响因素"></a>三、消费者对智能商品推荐服务的需求的影响因素</h1><p>上文中提到超过一半的受访者表示在线下购物过程中希望被提供实时的智能商品推荐服务，表明消费者已经对之存在较强的期待和需求。研究消费者对智能商品推荐服务的需求的影响因素，对于零售商如何推广和优化智能商品推荐服务有实际价值。本文将影响因素分为三类，即消费者的个人基本特征、个人媒介和终端接触情况、线下购物态度和行为，逐一量化分析相关性。</p>
+<h2 id="1-消费者个人基本特征"><a href="#1-消费者个人基本特征" class="headerlink" title="1.消费者个人基本特征"></a>1.消费者个人基本特征</h2><p>表1 消费者个人基本特征与其对智能商品推荐服务的需求的相关性</p>
+<p>如表1， 本文将受访者的四项个人基本特征与其对智能商品推荐服务的需求做交叉分析，发现：受访者的性别、年龄、学历、月工资/生活费水平、婚配状况与其对智能商品推荐服务的需求之间的相关性系数分别为-0.038、-0.038、-0.005、-0.073、-0.038，显著性分别为0.603、0.951、0.341、0.202、0.603，均没有太过显著的影响，且均为负面的倾向，说明这四项消费者的个人基本特征与其对智能商品推荐服务的需求基本无关。</p>
+<h2 id="2-消费者个人媒介和终端接触情况"><a href="#2-消费者个人媒介和终端接触情况" class="headerlink" title="2.消费者个人媒介和终端接触情况"></a>2.消费者个人媒介和终端接触情况</h2><p>表2 消费者个人媒介和终端接触情况与其对智能商品推荐服务的需求的相关性</p>
+<p>如表2， 本文将受访者的获取资讯的媒介接触渠道、拥有的智能设备数与其对智能商品推荐服务的需求做交叉分析，发现：媒介接触渠道、拥有的智能设备数与其对智能商品推荐服务的需求之间的相关性系数分别为0.050、0.119，显著性分别为0.513、0.118，均没有太过显著的影响，说明消费者个人媒介和终端接触情况与其对智能商品推荐服务的需求也基本无关。</p>
+<h2 id="3-消费者线下购物态度和行为"><a href="#3-消费者线下购物态度和行为" class="headerlink" title="3.消费者线下购物态度和行为"></a>3.消费者线下购物态度和行为</h2><p>表3 消费者线下购物态度和行为与其对智能商品推荐服务的需求的相关性</p>
+<p>如表3，本文将多项反映受访者线下购物的态度和行为的因素与其对智能商品推荐服务的需求做交叉分析。</p>
+<p>（1）对新零售的了解程度：问卷中要求受访者对其对新零售的概念和模式的了解程度进行评分，从5到1，5为非常了解，1为完全不了解。数据显示，受访者对新零售的了解程度均值为2.43，其中82.8%的受访者表示对新零售的了解程度在3分及以上。对新零售的了解程度与其对智能商品推荐服务的需求之间的相关性系数为0.144，显著性分别为0.050，二者显著正相关。即对新零售越了解的消费者，越希望被提供智能商品推荐的服务。</p>
+<p>（2）购物倾向性（线上还是线下）、线下购物频率、线下购物逗留时间与其对智能商品推荐服务的需求的相关性系数分别为-0.026、0.040、-0.014，显著性分别为0.737、0.598、0.857，均没有显著相关关系。</p>
+<p>（3）线下购物月支出对其对智能商品推荐服务的需求的相关性系数为0.128，显著性为0.044，二者显著正相关。即线下购物月支出越高的消费者，越希望被提供智能商品推荐的服务。</p>
+<p>（5）对店内智能导航服务的需求与其对智能商品推荐服务的需求之间的相关性系数为0.522，显著性为0.000，二者显著正相关。即越希望被提供店内智能导航服务的消费者，同时也越希望被提供智能商品推荐的服务。</p>
+<p>综上，对于零售商来说，若想推广智能商品推荐服务，可以通过加强对新零售概念和模式的宣传，提高消费者对新零售的了解水平；可以先从对购物体验要求高的消费者入手，因为可能比起额外消费支出他们更加在意优化的购物体验；可以先从月购物支出水平高的消费者入手，因为他们可能不太介意购买被推荐的商品带来的额外消费支出。</p>
+<h1 id="四、新零售场景的四个基本特征：空间与环境、实时状态、生活习惯、社交元素"><a href="#四、新零售场景的四个基本特征：空间与环境、实时状态、生活习惯、社交元素" class="headerlink" title="四、新零售场景的四个基本特征：空间与环境、实时状态、生活习惯、社交元素"></a>四、新零售场景的四个基本特征：空间与环境、实时状态、生活习惯、社交元素</h1><p>智能推荐的本质可以说是对用户、信息、场景三者的匹配，但目前的推荐系统设计主要挖掘的是用户特征（如性别、年龄、地域、职业、行业、兴趣爱好、社交标签等）和信息特征（如内容标签等），而远远还未做到对场景特征的挖掘，使得目前的智能推荐仍停留在较为浅层次的匹配阶段。这由浅及深的关键就在于对场景特征的挖掘。并且，新零售是一种场景的重要性更为突出的领域，所以研究场景特征至关重要。新零售场景的基本特征应该包括：空间与环境、实时状态、生活习惯、社交元素。</p>
+<h2 id="1-“空间与环境”特征"><a href="#1-“空间与环境”特征" class="headerlink" title="1. “空间与环境”特征"></a>1. “空间与环境”特征</h2><p>场景既是一种空间位置指向，也包含着与特定空间或行为相关的环境特征，以及在此环境中的人的行为模式和互动模式，空间与环境互相联系，不可分割，故将二者当作一个整体看待。^[8]^</p>
+<p>从空间与环境这个变量来看，新零售的场景可分两种：固定场景和移动场景。</p>
+<p>固定场景指的是人们在相对静止的状态下所处的空间环境，是与人们日常活动规律相关联的环境，这些场景通常是相对稳定的，人在这些场景下的行为模式、心理模式、互动模式也通常是相对稳定的。比如家里、公司、餐厅、图书馆、健身房等。</p>
+<p>图5 消费者最喜欢的新零售模式</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fss23d01ylj31hc0fkabp.jpg" alt="购物模式"></p>
+<p>新零售是一种线上与线下深度融合的泛零售形态，具有多种不同的购物模式，可提供给用户全渠道的购物体验。本文调查了消费者最喜欢的新零售模式，如图5。其中59%的受访者表示最喜欢“线上下单，线下物流快速送达”模式，22%表示最喜欢“线下购买，线下付款”模式，19.1%表示最喜欢“线下购买，线上付款”模式。</p>
+<p>固定场景关注的是人们当前所处的场景。在特定的固定场景下，人们会自觉或不自觉地调整到处于该场景下自己对应的行为模式、心理模式，故会具有不同的购物需求。比如，你在图书馆里看中了几本经典著作，可能会想产生想购买它们的精装版并且期望马上到手的冲动；你在健身房锻炼时，可能会更倾向于购买健身相关的书籍、器材用具、服饰等 … 这些在固定场景下产生的购物需求都可以通过“线上下单—线下物流快速送达”、或者将用户从线上导流到线下零售店”的“线下购买—线下/线上付款”的购物模式得到满足。商家可通过分析消费者当前所处的固定场景，针对性向他推荐在此场景下他可能会需要的商品。</p>
+<p>移动场景指的是人们在活动中不断遭遇的环境变量，即人们的空间移动轨迹。移动场景着眼的是人们所处的空间场景切换的前后逻辑性和关联性，实际上是分析与人们的移动轨迹和空间切换相交互的固定场景的使用。更具体来说就是分析用户“从哪来”、“正在哪”、“到哪去”。</p>
+<p>移动场景的分析与应用涉及三个阶段，分别是“从哪来”、“正在哪”、“到哪去”。</p>
+<p>“从哪来”阶段分析用户此前的空间与当前空间的关联性、此前行为与当前行为的关联性。“正在哪”阶段分析与满足用户此时此刻在此场景中的需求。分析用户从何处到达此处，能够更好地理解和推断用户在此时此地的目的、可能的心理特点和行为特点。例如，同样是逛书店，用户是在逛完商场后顺便去看一下旁边的书店，与他从离这里很远的家特地过来这个书店，二者有本质的差异。顺带逛书店是一种偶然性行为，意味着他的需求可能是漫无目的的，对自己的购买需求没有提前的思考和期望，所以在书店停留的时间可能是短暂的，对书的浏览可能是漫不经心的。要想留住他并让他发生购买行为，就需要主动挖掘他的潜在需求。一方面，如果书店有这个用户的历史数据，则可基于对其历史数据的分析发掘他的兴趣，针对性推荐他可能会感兴趣的书籍。另一方面，如果是一个没有历史数据的新用户，则可使用计算机视觉技术对用户的外观年龄、性别、着装等进行分析，预测他可能会感兴趣的书籍，或者通过推送排行榜、打折信息等来留住用户。而特意来书店的用户，往往是提前已经对书店有较为明确的需求，可能是想购买特定的书，也可能是想感受书店的氛围。这种情况下，需要注重的主要不是对其需求的诱导，而是对其现有需求的更好满足。</p>
+<p>“到哪去”阶段为用户提供行动路线的导航和新的需求的诱导。在满足了用户此时此刻的需求后，商家可以通过预测用户下一步的行动方向，从而及时提供相应产品或服务；或者可以通过理解用户此时的行为，从而诱导他们的未来需求和行动方向。例如，对于在电影院的顾客，可以引导他们接下来去附近的餐馆就餐，或者去附近的电玩城玩玩游戏、去旁边的咖啡厅喝杯咖啡，等等。</p>
+<p>图6 消费者去往零售店的此前场景</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fsokrfu1x4j31hc0pk41n.jpg" alt="前一场景"></p>
+<p>图7 消费者离开零售店的此后场景</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fsokrrmncdj31hc0pk77g.jpg" alt="后一场景"></p>
+<p>根据本文对于“消费者去往零售店的此前场景”的调查，如图6、图7，受访者去往零售店的前一场景主要是家/住所（81.5%）、公司/单位（31.2%）、学习场所（44.5%）、饮食场所（15%）；完成购物、离开零售店去往的此后场景主要是家/住所（86.1%）、学习场所（36.4%）、公司/单位（26%）、文化场所（18.5%）。这说明，消费者去往零售店的此前场景通常是满足其居住、工作、学习、饮食需求的场景；此后场景通常是满足其居住、工作、学习、文化需求的场景。当然，这样的调查只是一种基于用户共性的研究，而在新零售场景中我们需要实时获知每个用户的动态数据和计算他们的个性。</p>
+<h2 id="2-“用户实时状态”特征"><a href="#2-“用户实时状态”特征" class="headerlink" title="2. “用户实时状态”特征"></a>2. “用户实时状态”特征</h2><p>用户实时状态，指的是用户在当前零售场景下的各种身体、行为、需求等动态变化的特征和数据。</p>
+<p>新零售是线上与线下全渠道融合的零售新模式。按购物渠道的不同，可将用户实时状态分为线上实时状态和线下实时状态。</p>
+<p>用户的线上实时状态，既包括用户在网络中留下的历史行为痕迹，即用户曾经使用网络做过哪些事情；又包括用户在网络中的实时行为状态，即用户此时此刻正在使用网络干什么。通过分析历史行为痕迹，可以挖掘用户的兴趣偏好。通过对用户线上实时行为状态的实时分析，可以从用户此时此刻正在关注的事物上挖掘用户潜在的购物需求，从而诱导用户进行“场景触发式购物”。</p>
+<p>场景触发式购物是一种由场景实时生发出的购物欲望和继而马上实施的购物行为，一大关键特征是顾客能即时买到心仪的商品，具有“冲动性”、“随时随地随性购物”、“乘兴之所至”的特点。比如，当看到网络偶像剧中明星穿的时装、使用的美容产品，瞬间就会被点燃购物欲望，而这正是商家可诱导用户快速进行冲动性消费的契机。购物的冲动来去如风，零售商必须在消费者改变主意前快速打动他们，才能增加销量。足够快的速度可以实现这个目的。一方面，在用户还未脱离当前场景、犹沉浸在这种购物欲的时候，快速及时进行线上的实时推荐，诱导用户快速下单购买；另一方面，高效即时送达货品（如1小时内），在用户可能产生后悔情绪之前将商品马上送至眼前，如此还可大幅提高客户满意度。这种“即时达”是可以实现的，因为O2O送餐平均用时不到30分钟，其他商品当然也可借此即时送达。新零售商需要打破传统电商“次日达已经足够快”的理念，可借鉴甚至利用 O2O 送餐平台的半小时内高效送货服务，通过加快商品物流配送，从而提升冲动性消费的转化率。</p>
+<p>用户的线下实时状态，指的是用户在零售店内的行动路径、行为动作、眼球等动态特征数据，包括路线移动、视线移动、身体和视线在特定品类或商品前的停留时长、身体动作等。通过分析这些数据，一方面可以获知特定顾客查看了哪些商品，身体和目光在哪些地方停留过和停留过多久，把哪些商品放进了购物车以及所花的时间等，以及顾客在零售店活动的一般规律；另一方面可以分析出哪些商品受到过顾客的关注，特定品牌受到关注的程度等。通过这些分析而得的信息，第一，可以继续分析出用户的商品偏好，从而进行实时精准的商品推荐。第二，可以分析出用户的购物行为特点，从而针对性采取个性化措施诱导和促进用户的消费，比如当用户的视线在一件昂贵的裙子上停留许久但迟迟没有购买，那么她可能是因裙子的价格过于昂贵而心生纠结，此时可通过推送打折信息、优惠券的方式诱导用户下决心购买这条裙子，还可以将同款式但价格相对低一些的裙子推荐给该用户，同样可促进用户的消费行为。第三，购物篮分析，可以根据用户已经放入购物车的商品，分析用户的个人特征，将可能会愿意购买的相关联商品推荐给用户，比如数据挖掘界的经典案例“啤酒与尿布”，即在美国有婴儿的家庭中，一般是母亲在家中照看婴儿，年轻父亲前去超市购买尿布，父亲在购买尿布的同时往往会顺便为自己购买啤酒，所以“啤酒”与“尿布”这两件看上去毫无关系的商品会经常出现在同一个购物篮中。</p>
+<p>对于用户线下实时状态数据的实时采集，可以通过各种传感器设备实现，可分为移动设备和固定设备。移动设备包括智能手机、智能可穿戴设备、零售店的智能会员卡等；固定设备包括零售店的智能采集摄像头、智能面板等监测设备。而对这些采集到的数据进行实时处理和计算，则需要强大的云计算能力。</p>
+<h2 id="3-“用户生活习惯”特征"><a href="#3-“用户生活习惯”特征" class="headerlink" title="3.“用户生活习惯”特征"></a>3.“用户生活习惯”特征</h2><p>用户生活习惯，指的是用户过往的生活经验和习惯。用户在各种场景下的需求和行为模式往往是相对稳定的，具有一定的惯性。用户生活习惯，既包括用户的购物习惯，比如历史购物偏好，往次购物时间、时长和商品类型及数量，往次购物的前一场景和后一场景等；又包括用户的日常行为习惯，比如出行路线信息、阅读偏好等。</p>
+<p>通过分析用户的生活习惯，可以了解他们的行为特点和走向，以及个人特质，从而实现对用户更加精准个性化的商品推荐。例如，用户每天都在中午12点来超市都购买某几个品类的食品，且全部都是低热量食品，说明用户可能是正在进行减肥计划，那么明天用户再来购买时可以尝试给用户推荐其他的低热量食品。</p>
+<h2 id="4-“用户社交元素”特征"><a href="#4-“用户社交元素”特征" class="headerlink" title="4.“用户社交元素”特征"></a>4.“用户社交元素”特征</h2><p>社交元素，包括用户在各种场景中所表现出的社交关系、社交特征及社交标签。人们身处于各种场景之中，一般会与场景本身和场景中的人事物发生一定的交互，场景本身带有一定的互动性。通过对这些社交元素的分析，可以对用户的需求进行更深层次的洞察，从而更加精准的商品推荐。</p>
+<p>社交关系，指的是用户在线上和线下场景中体现出的个人人际关系。线上社交关系，是一种完全虚拟或虚实结合的关系，既包括用户与真实的人在线上发生的互动关系，也包括用户与虚拟世界中的虚拟人或事物发生的互动关系。例如，用户在某游戏世界里饲养了一只很可爱的上古猫兽作为宠物，在这只虚拟猫兽身上花费了很多钱，并且每天都坚持“喂养”它，说明该用户可能是一个不折不扣的猫奴，那么零售店可以利用对用户的这一社交特性背后潜在的购物需求的洞察，在线上或线下向用户推荐各种符合该用户审美的宠物猫。而线下社交关系，则是一种与真实的人事物之间发生的社交关系。例如，用户牵着着一个5岁的小男孩来超市购物，超市的智能设备通过对这一画面的采集与分析，判断用户与该小孩可能是亲子关系，于是基于对这一亲子关系的洞察可以向用户推荐各种5岁小男孩可能会喜欢的玩具和零食。</p>
+<p>社交特征，指的是用户在线上的社交媒体或线下行为里表现出的在社交方面的个人特征。例如，用户在社交媒体上表现出乐善好施的富有公益心和爱心的形象，经常在微博上晒自己的一些公益行动，说明该用户努力想塑造自己的公益爱心形象且具有一定的表现欲。那么零售店可基于对用户这些社交特征的洞察，向用户推荐带有公益色彩的商品，比如“买一捐一”，如此则既满足了用户行公益的需求，又提供给用户在社交媒体上“晒公益行为”的材料。</p>
+<p>社交标签，指的是用户因其所处的社群、圈子而无形中给自己贴上的标签，比如果粉、二次元、文艺青年等。本文的问卷中要求受访者对他们所处的社群/圈子对他们的线下购物行为的影响程度进行评分，从5到1，5为影响很大，1为完全没有影响。如图8，数据显示，所处的社群/圈子对消费者线下购物行为的影响程度均值为2.77，接近于中值3，并且表示影响程度在一般及以上的比例为61.3%，远远超过50%，这说明目前社群/圈子对消费者线下购物行为有较大的影响。未来新零售场景下线上线下更加深度融合，相信社群、圈子等社交标签对消费者购物行为的影响会越来越大。</p>
+<p>图8 社群/圈子对消费者线下购物行为的影响</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fsojxlz263j30jp0fbgmc.jpg" alt="圈子"></p>
+<h1 id="五、总结与展望"><a href="#五、总结与展望" class="headerlink" title="五、总结与展望"></a>五、总结与展望</h1><p>本文围绕基于场景的新零售商品推荐主题，主要阐述了“场景是新零售商品推荐的关键要素”，“消费者对智能商品推荐服务的需求的影响因素”，“新零售场景包含的四类基本特征”这三个问题。</p>
+<p>本研究的局限性与未来研究方向主要表现在：第一，在研究方法上，问卷调查的样本数量较为有限，且样本的代表性可能不足，未来的研究可以扩大样本容量和提高样本的代表性。第二，本文详细阐述了新零售场景的四个基本特征，未来的研究可对每个场景特征分别进行更为深入的定性或定量研究，比如建立每个场景特征的特征体系框架，以及研究它们在新零售产品和服务设计方面的应用。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] MobData.线上线下拥抱融合 2017年中国新零售研究报告[R].上海.MobData大数据云平台，2017.</p>
+<p>[2] 普华永道.2015年全零售：零售商与变革的时代[R].伦敦.普华永道会计师事务所，2015.</p>
+<p>[3] 王玮,卜览,廖念玲,徐雷.重塑全球消费格局的中国力量[R].上海.麦肯锡公司，2017.</p>
+<p>[4] 王坤,相峰.“新零售”的理论架构与研究范式[J].中国流通经济,2018,32(01):3-11.</p>
+<p>[5] 即将到来的场景时代[M]. 北京联合出版公司 , 斯考伯, 2014</p>
+<p>[6] 彭兰.场景:移动时代媒体的新要素[J].新闻记者,2015(03):20-27.</p>
+<p>[7] 喻国明,梁爽.移动互联时代:场景的凸显及其价值分析[J].当代传播,2017(01):10-13+56.</p>
+<p>[8] 彭兰.场景:移动时代媒体的新要素[J].新闻记者,2015(03):20-27.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>拿钱去买猫粮和狗粮嗷 ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Scarlett Huang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Internet-Product/" rel="tag"><i class="fa fa-tag"></i> Internet & Product</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/20/粤传媒2017年度财报分析报告/" rel="next" title="粤传媒2017年度财报分析报告">
+                <i class="fa fa-chevron-left"></i> 粤传媒2017年度财报分析报告
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/20/基于深度学习的计算机视觉研究进展综述（2018）/" rel="prev" title="基于深度学习的计算机视觉研究进展综述（2018）">
+                基于深度学习的计算机视觉研究进展综述（2018） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">192</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Column">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Column
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://book.douban.com/people/ScarlettYellow/" target="_blank" title="Douban">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Douban
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friend Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://unique-ailab.github.io/" title="Unique-AILab" target="_blank">Unique-AILab</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mr-why.com/" title="MR WHY(AI Dev. & AI PM)" target="_blank">MR WHY(AI Dev. & AI PM)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wondervictor.github.io/" title="Vic Chan(AI Dev.)" target="_blank">Vic Chan(AI Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Dev.)" target="_blank">qzwlecr(Distributed Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://alisahhh.github.io/" title="Alisa(Alg. Dev.)" target="_blank">Alisa(Alg. Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://llag9810.github.io/" title="yifan(Android Dev.)" target="_blank">yifan(Android Dev.)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、研究设计与数据来源"><span class="nav-number">1.</span> <span class="nav-text">一、研究设计与数据来源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、场景：新零售商品推荐的关键要素"><span class="nav-number">2.</span> <span class="nav-text">二、场景：新零售商品推荐的关键要素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-新零售：零售业的未来"><span class="nav-number">2.1.</span> <span class="nav-text">1.新零售：零售业的未来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-智能商品推荐：新零售消费者购物体验的重要突破点"><span class="nav-number">2.2.</span> <span class="nav-text">2.智能商品推荐：新零售消费者购物体验的重要突破点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-场景：移动传播时代的价值凸显"><span class="nav-number">2.3.</span> <span class="nav-text">3.场景：移动传播时代的价值凸显</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、消费者对智能商品推荐服务的需求的影响因素"><span class="nav-number">3.</span> <span class="nav-text">三、消费者对智能商品推荐服务的需求的影响因素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-消费者个人基本特征"><span class="nav-number">3.1.</span> <span class="nav-text">1.消费者个人基本特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-消费者个人媒介和终端接触情况"><span class="nav-number">3.2.</span> <span class="nav-text">2.消费者个人媒介和终端接触情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-消费者线下购物态度和行为"><span class="nav-number">3.3.</span> <span class="nav-text">3.消费者线下购物态度和行为</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、新零售场景的四个基本特征：空间与环境、实时状态、生活习惯、社交元素"><span class="nav-number">4.</span> <span class="nav-text">四、新零售场景的四个基本特征：空间与环境、实时状态、生活习惯、社交元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-“空间与环境”特征"><span class="nav-number">4.1.</span> <span class="nav-text">1. “空间与环境”特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-“用户实时状态”特征"><span class="nav-number">4.2.</span> <span class="nav-text">2. “用户实时状态”特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-“用户生活习惯”特征"><span class="nav-number">4.3.</span> <span class="nav-text">3.“用户生活习惯”特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-“用户社交元素”特征"><span class="nav-number">4.4.</span> <span class="nav-text">4.“用户社交元素”特征</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、总结与展望"><span class="nav-number">5.</span> <span class="nav-text">五、总结与展望</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">6.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
+<div class="copyright" >
+  
+  &copy;  2017.07 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共597.8k字</span>
+</div>
+
+
+
+
+<span id="busuanzi_container_site_pv">
+<div class="powered-by"></div>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  <div class="powered-by"></div>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100332, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100332, xid: "2018/08/20/基于场景的新零售商品推荐研究/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100332/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+
+</body>
+</html>

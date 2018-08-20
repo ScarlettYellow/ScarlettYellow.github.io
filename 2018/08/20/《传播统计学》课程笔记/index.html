@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Data Mining and Analysis," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：传播统计学，主要教授统计学的方法以及如何将统计学的方法应用到解决社会科学问题中。主要参考教材是祝建华老师的同名专著。">
+<meta name="keywords" content="Data Mining and Analysis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《传播统计学》课程笔记">
+<meta property="og:url" content="http://ScarlettHuang.cn/2018/08/20/《传播统计学》课程笔记/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：传播统计学，主要教授统计学的方法以及如何将统计学的方法应用到解决社会科学问题中。主要参考教材是祝建华老师的同名专著。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fp3z8josxxj30r4074402.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fp49rwectyj30to0f2tbu.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fp49rvulguj310i0iiwjo.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fp4a855ra0j313m0ag40o.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fp4awh5ssij30r20min1y.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fp4b2gt6dxj311m0ian2p.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fp4b3cf8vaj30r60h8agt.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fp4bdvkm4lj313u0byju4.jpg">
+<meta property="og:updated_time" content="2018-08-20T11:30:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《传播统计学》课程笔记">
+<meta name="twitter:description" content="Abstract：传播统计学，主要教授统计学的方法以及如何将统计学的方法应用到解决社会科学问题中。主要参考教材是祝建华老师的同名专著。">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fp3z8josxxj30r4074402.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ScarlettHuang.cn/2018/08/20/《传播统计学》课程笔记/"/>
+
+
+
+
+
+  <title>《传播统计学》课程笔记 | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2018/08/20/《传播统计学》课程笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《传播统计学》课程笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-20T19:28:12+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/Data-Mining-and-Analysis/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Mining and Analysis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/20/《传播统计学》课程笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/08/20/《传播统计学》课程笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p> Abstract：传播统计学，主要教授统计学的方法以及如何将统计学的方法应用到解决社会科学问题中。主要参考教材是祝建华老师的同名专著。</p>
+<a id="more"></a>
+<h1 id="Chapter1-初导"><a href="#Chapter1-初导" class="headerlink" title="Chapter1 初导"></a>Chapter1 初导</h1><h2 id="1-1-统计数据与统计学"><a href="#1-1-统计数据与统计学" class="headerlink" title="1.1 统计数据与统计学"></a>1.1 统计数据与统计学</h2><p>统计学</p>
+<ul>
+<li>探索数据内在规律性</li>
+<li>搜集，整理，分析，显示，解读数据</li>
+</ul>
+<p>统计研究对象的特点</p>
+<ul>
+<li>数量性</li>
+<li>总体性：研究总体中各单位普遍存在的事实，<strong>更关注总体的普遍特征</strong></li>
+<li>变异性：总体各单位的特征表现存在差异，且无法提前预知差异</li>
+</ul>
+<p>统计学的应用领域</p>
+<ul>
+<li>企业发展战略，产品质量管理，市场研究，财务分析，经济预测，人力资源管理</li>
+</ul>
+<h2 id="1-2-统计学的产生和发展"><a href="#1-2-统计学的产生和发展" class="headerlink" title="1.2 统计学的产生和发展"></a>1.2 统计学的产生和发展</h2><p>萌芽时期</p>
+<ul>
+<li>德国</li>
+<li>算术</li>
+<li>古典概率论</li>
+</ul>
+<p>近代时期</p>
+<ul>
+<li>数理统计</li>
+<li>社会统计</li>
+</ul>
+<p>现代时期</p>
+<ul>
+<li>数学关系密切</li>
+<li>与计算机结合</li>
+</ul>
+<h2 id="1-3-数据分析方法"><a href="#1-3-数据分析方法" class="headerlink" title="1.3 数据分析方法"></a>1.3 数据分析方法</h2><ul>
+<li>描述统计：收集、可视化描述数据（统计学的基础）</li>
+<li><strong>推断统计</strong>：对样本进行估计、假设检验、预测或其他推断（<strong>统计学的核心</strong>），<strong>利用部分数据推断全局</strong></li>
+</ul>
+<p>课程内容</p>
+<ul>
+<li>传播统计学概论</li>
+<li>描述统计</li>
+<li>推断统计</li>
+<li>实践</li>
+</ul>
+<h2 id="1-4-统计学的研究分支"><a href="#1-4-统计学的研究分支" class="headerlink" title="1.4 统计学的研究分支"></a>1.4 统计学的研究分支</h2><ul>
+<li>按研究阶段</li>
+<li>按研究方向</li>
+<li>按研究环节<ul>
+<li>收集数据：抽样调查，实验设计</li>
+<li>分析数据<ul>
+<li>统计推断形式：参数估计，假设检验</li>
+<li>统计观点：贝叶斯统计，统计决策理论</li>
+<li>理论模型：非参数统计，多元统计分析，时间序列分析 etc</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>按应用领域:宏观，微观</li>
+</ul>
+<p>推断统计学内容体系</p>
+<h2 id="1-5-传播统计学"><a href="#1-5-传播统计学" class="headerlink" title="1.5 传播统计学"></a>1.5 传播统计学</h2><p>传播研究：人类传播行为</p>
+<h3 id="1-应用领域"><a href="#1-应用领域" class="headerlink" title="1.应用领域"></a>1.应用领域</h3><ul>
+<li>受众研究</li>
+<li>印刷媒体研究</li>
+<li>视听率研究</li>
+<li>传播效果研究<ul>
+<li>方法：因子分析法，多元方差分析，多元回归分析，路径分析，结构方程式模型 etc.</li>
+</ul>
+</li>
+<li>广告与公共关系研究<ul>
+<li>广告文案测试：测试消费者对广告的印象、认知、感情投入、购买意图、广告效果</li>
+<li>媒体研究：传播到达率、传播频次、视听率、受众规模和构成媒体计划、竞争分析</li>
+<li>公共关系研究：监测和评估</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-什么是统计数据？"><a href="#2-什么是统计数据？" class="headerlink" title="2.什么是统计数据？"></a>2.什么是统计数据？</h3><ul>
+<li><p>对现象进行计算的结果</p>
+</li>
+<li><p>数据集</p>
+</li>
+<li><p>统计数据的分类</p>
+<ul>
+<li><p>按计量尺度：分类的，顺序的，数值的；定性数据（定序，定类）+ 定类数据（定比，定距）</p>
+</li>
+<li><p>按收集方法：观察数据（直接+间接）+ 实验数据（直接数据）</p>
+<blockquote>
+<p>直接：直接获取的原始数据；</p>
+<p>间接：通过统计计算得出的数据.</p>
+</blockquote>
+</li>
+<li><p>按时间状况：横剖面数据（静态数据）+ 纵剖面数据（动态数据）</p>
+<blockquote>
+<p>静态数据：在相同或近似的时间收集到的数据；</p>
+<p>动态数据（引入时间维度）：在不同时间上收集到的数据；描述现象随时间的变化</p>
+</blockquote>
+</li>
+<li><p>按数据的表现形式：</p>
+<ul>
+<li>绝对数，相对数（通过对比），平均数</li>
+<li>时期数据（现象在某一时期内的数量;eg.人口出生数），时点数据（反映现象在某一时刻的数量；eg.人口数，学生人数）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-统计学基本概念"><a href="#3-统计学基本概念" class="headerlink" title="3.统计学基本概念"></a>3.统计学基本概念</h3><p>1.变量</p>
+<ul>
+<li>分类<ul>
+<li>确定性变量  + 随机变量（无法确定其精准的值）</li>
+<li>定性变量 + 定量变量</li>
+</ul>
+</li>
+</ul>
+<p>2.<u>总体、个体与样本</u></p>
+<ul>
+<li>总体与总体分布<ul>
+<li>总体：研究对象的整体；同质性+大量性+差异性</li>
+<li>个体：总体中的每个成员</li>
+<li>总体量：个数</li>
+<li>有限总体 &amp; 无限总体</li>
+<li>总体分布中的参数：总体的某种特征值</li>
+</ul>
+</li>
+<li>样本与样本分布<ul>
+<li>简单随机样本：可用与总体独立同分布的n个相互独立的随机变量$X<em>{1}X</em>{2},…,X_{n}$ 表示</li>
+<li>联合分布函数$F(x<em>{1},x</em>{2},…,x<em>{n})=\prod$，联合概率密度函数 $f(x</em>{1},x<em>{2},…,x</em>{n})=\prod$</li>
+</ul>
+</li>
+<li>总体、样本、样本值的关系<ul>
+<li>总体分布决定样本取到样本值的规律，故可<strong>用样本值推断总体</strong></li>
+</ul>
+</li>
+</ul>
+<p>3.统计量</p>
+<ul>
+<li><p>统计量是统计理论中用来对数据进行分析、检验的变量，<u><strong>不含任何未知参数</strong></u>的<strong>样本的函数</strong>(可直接有样本数据计算出来)</p>
+</li>
+<li><p>e.g.$\overline{X}=\frac{1}{n}\sum<em>{i=1}{n}X</em>{i}$</p>
+<p>​</p>
+</li>
+</ul>
+<h3 id="4-描述性统计-vs-推断性统计"><a href="#4-描述性统计-vs-推断性统计" class="headerlink" title="4.描述性统计 vs 推断性统计"></a>4.描述性统计 vs 推断性统计</h3><h4 id="描述性统计"><a href="#描述性统计" class="headerlink" title="描述性统计"></a>描述性统计</h4><p><u><strong>变量观测值的分布</strong></u></p>
+<p>分布的中心趋势：平均数，众数，中位数</p>
+<p>分布的伸展程度：极差，四分位数差，五数综合，方差和标准差</p>
+<blockquote>
+<p>五数综合(MIn,Q1,M,Q3,Max), Q1、Q3分别为第一、三四分位数，M为平均数</p>
+</blockquote>
+<p>分布的形状：斜度(skewed),峰度(kurtosis)</p>
+<p>变量观测值间的相关：相关系数</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fp3z8josxxj30r4074402.jpg" alt="公式"></p>
+<h4 id="推断性统计"><a href="#推断性统计" class="headerlink" title="推断性统计"></a>推断性统计</h4><p>What：根据数据对总体进行估计和推断；依据概率和概概率分布理论来推断总体</p>
+<p>1.总体与样本</p>
+<p>2.随机变量与概率</p>
+<ul>
+<li>随机现象</li>
+<li>随机变量与概率</li>
+</ul>
+<ul>
+<li>总体均值与方差</li>
+</ul>
+<p>4.常用概率分布</p>
+<ul>
+<li>二项分布</li>
+<li>正态分布</li>
+</ul>
+<p>5.参数估计和假设检验</p>
+<p>推断方法</p>
+<ul>
+<li>演绎论述</li>
+<li><strong><u>归纳论述</u></strong><ul>
+<li>A.<u>参数估计</u><ul>
+<li>点估计：直接用样本统计量的值去估计总体参数</li>
+<li>区间估计：用样本统计量构造的1个区间去估计总体参数的范围(置信区间)；置信度</li>
+</ul>
+</li>
+<li>B.<u>假设检验/显著性检验</u><ul>
+<li>即根据样本资料所提供的信息，推断对有关总体参数的某个断言或假设的不利证据</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>例如,在受众研究中,研究者猜测不同性别的受众接触媒介的行为是有显著差异的:男、女电视观众所喜欢的电视节目不同每日收看的时间也不同等等。这些研究者的猜测常常构造成所谓的理论假设H1。</p>
+<p>在统计推断的假设检验中,一般是先假设这些差异或效应不存在,即先提出一个“没有差异”或“没有效应”的所谓零假设(也叫原假设 null hypothesis)Ho例如:“不同性别的居民收看电视的平均时间长度之间没有显著的差异”。然后根据样本数据,去寻找不利于这个零假设H、即支持研究者的理论假设H1的证据,并利用概率值( probability-value)P来判定这种否定零假设的证据有多强.</p>
+<p>概率值P(或叫P值)是在原假设H0为真的前提下计算或查表得到的,它表示:“如果Ho为真,检验统计量大到(或小到)至少和实际观测值那么大(或小)的概率”。P值越小,说明样本资料所提供的对原假设H0的支持程度越小,即所提供的否定H的证据就越强。一般是将P值和一个事先确定的称之为检验水平level of test)或显著性水平( level of sigη lificance)的固定数值a相比较,通常取a=0.05或0.01:</p>
+<ul>
+<li>如果P≤a,则拒绝H0,或称该样本资料在a水平下具有统计显著性 statistical significance;</li>
+<li>如果P&gt;a,则不能拒绝H,即样本资料在a水平下不具有统计显著性</li>
+</ul>
+</blockquote>
+<h3 id="5-实验统计"><a href="#5-实验统计" class="headerlink" title="5.实验统计"></a>5.实验统计</h3><p>实验统计</p>
+<ul>
+<li>包括：实验设计 + 统计方法</li>
+<li>在一<u>受控制</u>的环境下，使其他因素<u>保持不变</u>，研究所控制的变量对某些变量的影响（<u>因果关系</u>）</li>
+<li><u><strong>实验设计</strong></u><ul>
+<li>规定实验单位，及如何分组</li>
+<li>要控制哪些自变量、因变量</li>
+<li>如何控制外来变量</li>
+</ul>
+</li>
+<li>重要术语<ul>
+<li>实验误差：外来变量和测量误差所导致的影响</li>
+<li>内部有效性：自变量对因变量的影响的准确性</li>
+<li>外部有效性：实验结果推广到实验环境意外的可能性</li>
+</ul>
+</li>
+<li>实验法分类<ul>
+<li>按实验场所分<ul>
+<li>实验室实验</li>
+<li>现场实验</li>
+</ul>
+</li>
+<li>按是否将实验单位随机分组<ul>
+<li>非随机化实验</li>
+<li>随机化实验</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>非随机化实验：按照是否将实验单位分成处置组和控制组,以及按照是否只做事后测量还是同时也做事前测量,可以分成四种:事后设计、有控制组的事后设计、事前事后设计有控制组的事前事后设计.</p>
+<p>随机化实验：根据自变量(处置变量或因子)的多少,外来因素的多少,以及是否考虑因子之间的交互作用,可以分为五种:完全随机化单因子设计随机区组单因子设计拉丁方单因子设计、多因子设计、正交实验设计,等等。</p>
+</blockquote>
+<h1 id="Chapter2-传播研究设计中的统计方法"><a href="#Chapter2-传播研究设计中的统计方法" class="headerlink" title="Chapter2 传播研究设计中的统计方法"></a>Chapter2 传播研究设计中的统计方法</h1><h2 id="2-1-研究主题、模型与假设"><a href="#2-1-研究主题、模型与假设" class="headerlink" title="2.1 研究主题、模型与假设"></a>2.1 研究主题、模型与假设</h2><h3 id="1-研究主题与统计方案的设计"><a href="#1-研究主题与统计方案的设计" class="headerlink" title="1.研究主题与统计方案的设计"></a>1.研究主题与统计方案的设计</h3><h3 id="2-传播模型的表示法"><a href="#2-传播模型的表示法" class="headerlink" title="2.传播模型的表示法"></a>2.传播模型的表示法</h3><p>What：通过模型对各种传播现象、传播理论和各种理论假设进行简洁的描述，勾画出理论框架中研究对象各要素间的联系(联系的结构，方向，强度)</p>
+<p>类型</p>
+<p><strong><u>图示模型</u></strong></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fp49rwectyj30to0f2tbu.jpg" alt="1"><br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fp49rvulguj310i0iiwjo.jpg" alt="2"></p>
+<p><strong><u>数学模型</u></strong></p>
+<ul>
+<li>包含待估计参数和误差</li>
+</ul>
+<blockquote>
+<p>例如,祝建华在一项关于“项目无回答”( Item ron一 response,简称INR)的研究中(详见本书第六部分),采用了一种称之为“逻辑斯蒂回归”( logistic regression)的统计数学模型,来描述“项目无回答”NR与可能影响NR的诸因素之间的联系,并以此模型估计14种因素对INR可能影响的强度(大小)和方向(正负)</p>
+<p>$logY=b<em>{0}+b</em>{1}Age+b<em>{2}Sex+b</em>{3} Education+…+b_{4}Setting$</p>
+<p>式中:</p>
+<p>log表示对Y取对数(以e为底);</p>
+<p>Y表示发生“项目无回答”(INR=1)的概率与不发生“项目无回答”(INR=0)的概率之比,即:</p>
+<p>$Y=Prob(INR=1)/Pob (INR=0)$</p>
+<p>在实际分析时,分别用INR=1(被访者表示“我不知道”、“我没有什么看法”、“我不想回答”或“没有回答”等)和INR=0被访者给出了实在的回答)比例来估计这两个概率</p>
+<p>Age为被访者年龄的标准化得分;</p>
+<p>Sex为被访者的性别,规定男性=1、女性=0</p>
+<p>education为被访者文化程度的标准化得分</p>
+<p>setting表示访问的地点,规定在工作地点或公共场所=1、在家中=0。</p>
+</blockquote>
+<h3 id="3-理论的假设与统计的假设"><a href="#3-理论的假设与统计的假设" class="headerlink" title="3.理论的假设与统计的假设"></a>3.理论的假设与统计的假设</h3><h2 id="2-2-分析单位的确定与设计"><a href="#2-2-分析单位的确定与设计" class="headerlink" title="2.2 分析单位的确定与设计"></a>2.2 分析单位的确定与设计</h2><h3 id="1-调查法与实验法中的分析单位"><a href="#1-调查法与实验法中的分析单位" class="headerlink" title="1.调查法与实验法中的分析单位"></a>1.调查法与实验法中的分析单位</h3><h3 id="2-内容分析法中的分析单位"><a href="#2-内容分析法中的分析单位" class="headerlink" title="2.内容分析法中的分析单位"></a>2.内容分析法中的分析单位</h3><h2 id="2-3-抽样设计与确定样本量的原则"><a href="#2-3-抽样设计与确定样本量的原则" class="headerlink" title="2.3 抽样设计与确定样本量的原则"></a>2.3 抽样设计与确定样本量的原则</h2><h3 id="1-抽样"><a href="#1-抽样" class="headerlink" title="1.抽样"></a>1.抽样</h3><h3 id="2-简单随机抽样"><a href="#2-简单随机抽样" class="headerlink" title="2.简单随机抽样"></a>2.简单随机抽样</h3><h3 id="3-实用抽样技术"><a href="#3-实用抽样技术" class="headerlink" title="3.实用抽样技术"></a>3.实用抽样技术</h3><h3 id="4-确定样本量的方法"><a href="#4-确定样本量的方法" class="headerlink" title="4.确定样本量的方法"></a>4.确定样本量的方法</h3><h2 id="2-4-调查表设计与信度、效度分析"><a href="#2-4-调查表设计与信度、效度分析" class="headerlink" title="2.4 调查表设计与信度、效度分析"></a>2.4 调查表设计与信度、效度分析</h2><h1 id="Chapter3-统计数据的收集、整理和显示"><a href="#Chapter3-统计数据的收集、整理和显示" class="headerlink" title="Chapter3 统计数据的收集、整理和显示"></a>Chapter3 统计数据的收集、整理和显示</h1><h2 id="2-1-数据收集"><a href="#2-1-数据收集" class="headerlink" title="2.1 数据收集"></a>2.1 数据收集</h2><h3 id="1-数据搜集方法"><a href="#1-数据搜集方法" class="headerlink" title="1.数据搜集方法"></a>1.数据搜集方法</h3><p>直接观察法</p>
+<p>报告法(通讯法)</p>
+<p><strong>采访法</strong>：口头问询法，自填法；电访，网络调查</p>
+<p>登记法</p>
+<p><strong>实验设计调查法</strong>：如设计分组对照实验</p>
+<blockquote>
+<p>调查数据 &amp; 实验数据</p>
+</blockquote>
+<h3 id="2-统计调查的组织形式"><a href="#2-统计调查的组织形式" class="headerlink" title="2.统计调查的组织形式"></a>2.统计调查的组织形式</h3><p>分类（1）</p>
+<ul>
+<li><p>普查：非经常性；全面性</p>
+</li>
+<li><p>非全面性调查：分为抽样调查、重点调查、典型调查</p>
+<ul>
+<li><p><u>抽样调查</u>：简单随机抽样 + 非简单随机抽样</p>
+</li>
+<li><p><u>最大抽样效果</u>：成本min——误差min 与 精度max</p>
+<blockquote>
+<p>精度与成本往往相矛盾.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>分类（2）</p>
+<ul>
+<li>连续性调查：随研究现象变化，连续不断地调查</li>
+<li>非连续性调查：有时间间隔；eg.普查</li>
+</ul>
+<p>统计报表</p>
+<p>统计调查体系</p>
+<h2 id="2-2-数据整理"><a href="#2-2-数据整理" class="headerlink" title="2.2 数据整理"></a>2.2 数据整理</h2><p><u>核心工作：统计分组和统计指标</u></p>
+<script type="math/tex; mode=display">
+步骤：设计整理方案、确定统计指标——>计算统计指标——>统计描述和可视化结果</script><script type="math/tex; mode=display">
+流程：审核——分组——制表作图</script><ul>
+<li>审核<ul>
+<li>完整性检查：资料是否齐全，答案是否完整</li>
+<li>准确性检查：逻辑性检查，计算方法等</li>
+</ul>
+</li>
+<li>分组<ul>
+<li>原则：穷尽 &amp; 互斥</li>
+<li>分组标准</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>平行分组体系：使用多种<u>平行标准</u>对同一总体进行分组</p>
+<p>复合分组体系：使用多种<u>重叠标准</u>对同一总体进行分组</p>
+</blockquote>
+<h2 id="2-3-频数分布"><a href="#2-3-频数分布" class="headerlink" title="2.3 频数分布"></a>2.3 频数分布</h2><p>1.what：把数据按某一标志进行归类排列(v.)，以反映数据的分布状况</p>
+<p>2.步骤</p>
+<ul>
+<li>1.求出极差$R=Xmax-Xmin$</li>
+<li>2.确定组数$n$、组距$d$、组段</li>
+<li>3.列表划记</li>
+</ul>
+<blockquote>
+<p>$n=1+3.3lg(N)$</p>
+<p>$d=R/n=(Xmax-Xmin)/n$</p>
+<p>N:总体单位数</p>
+</blockquote>
+<p>3.数量分组</p>
+<ul>
+<li>等距分组</li>
+<li>异距分组：如标志值分布很不均匀</li>
+</ul>
+<blockquote>
+<p>频率密度=频率/组距；各组频率密度与组距的乘积之和=1</p>
+</blockquote>
+<p>4.频数分布的类型</p>
+<ul>
+<li>钟形</li>
+<li>U形</li>
+<li>J形</li>
+</ul>
+<h2 id="2-4-数据描述-数据可视化"><a href="#2-4-数据描述-数据可视化" class="headerlink" title="2.4 数据描述(数据可视化)"></a>2.4 数据描述(数据可视化)</h2><h3 id="2-4-1-资料的初步展现"><a href="#2-4-1-资料的初步展现" class="headerlink" title="2.4.1 资料的初步展现"></a>2.4.1 资料的初步展现</h3><h4 id="1-频数表"><a href="#1-频数表" class="headerlink" title="1.频数表"></a>1.频数表</h4><h4 id="2-均值表"><a href="#2-均值表" class="headerlink" title="2.均值表"></a>2.均值表</h4><p>反映分布</p>
+<h4 id="3-饼形图和条形图"><a href="#3-饼形图和条形图" class="headerlink" title="3.饼形图和条形图"></a>3.饼形图和条形图</h4><p>描述定性类型的变量分布</p>
+<h4 id="4-折线图"><a href="#4-折线图" class="headerlink" title="4.折线图"></a>4.折线图</h4><p>反映变量随时间变化</p>
+<h3 id="2-4-2-单一变量的分布"><a href="#2-4-2-单一变量的分布" class="headerlink" title="2.4.2 单一变量的分布"></a>2.4.2 单一变量的分布</h3><h4 id="1-直方图"><a href="#1-直方图" class="headerlink" title="1.直方图"></a>1.直方图</h4><p>反映<u>定量类型</u>变量分布</p>
+<h4 id="2-茎叶图"><a href="#2-茎叶图" class="headerlink" title="2.茎叶图"></a>2.茎叶图</h4><p>数据规模较小时，可用茎叶图得到比直方图更多的信息</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp4a855ra0j313m0ag40o.jpg" alt="3"></p>
+<h4 id="3-盒形图-boxplot"><a href="#3-盒形图-boxplot" class="headerlink" title="3.盒形图(boxplot)"></a>3.盒形图(boxplot)</h4><p>表现数值型变量分布，<strong><u>利用五数综合进行作(min,Q1,M,Q3,max)</u></strong></p>
+<blockquote>
+<p>分位数是将总体的全部数据按大小顺序排列后，处于各等分位置的变量值。</p>
+<p>四分位数间距：第三四分位数与第一四分位数的差距，反映数据分布的分散程度</p>
+</blockquote>
+<ul>
+<li>纵轴表示变量的取值范围，横轴无用</li>
+<li><u>盒子下半部比上半部短，说明分布右偏</u></li>
+</ul>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fp4awh5ssij30r20min1y.jpg" alt="4"></p>
+<blockquote>
+<p>播出效果：晚上、上午&gt;中午&gt;下午</p>
+</blockquote>
+<h2 id="2-4-3-两个关联变量的资料展现"><a href="#2-4-3-两个关联变量的资料展现" class="headerlink" title="2.4.3 两个关联变量的资料展现"></a>2.4.3 两个关联变量的资料展现</h2><h4 id="1-变量的关联性和交互表"><a href="#1-变量的关联性和交互表" class="headerlink" title="1.变量的关联性和交互表"></a>1.变量的关联性和交互表</h4><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fp4b2gt6dxj311m0ian2p.jpg" alt="5"></p>
+<h4 id="2-条形图"><a href="#2-条形图" class="headerlink" title="2.条形图"></a>2.条形图</h4><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fp4b3cf8vaj30r60h8agt.jpg" alt="6"></p>
+<h4 id="3-散点图-scatterplot"><a href="#3-散点图-scatterplot" class="headerlink" title="3.散点图(scatterplot)"></a>3.散点图(scatterplot)</h4><p>定距或定比变量分析，反映两变量关联的方向和强度</p>
+<h4 id="4-相关系数和相关系数表"><a href="#4-相关系数和相关系数表" class="headerlink" title="4.相关系数和相关系数表"></a>4.相关系数和相关系数表</h4><p>相关系数$r$: 只能反映两变量<u>直线相关</u>的强度；会受到少数偏离值的严重影响 </p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fp4bdvkm4lj313u0byju4.jpg" alt="7"></p>
+<h1 id="Chapter-传播研究资料分析中的统计方法-一元和二元统计篇"><a href="#Chapter-传播研究资料分析中的统计方法-一元和二元统计篇" class="headerlink" title="Chapter 传播研究资料分析中的统计方法(一元和二元统计篇)"></a>Chapter 传播研究资料分析中的统计方法(一元和二元统计篇)</h1><h2 id="对总体的估算"><a href="#对总体的估算" class="headerlink" title="对总体的估算"></a>对总体的估算</h2><h3 id="统计推断的理论依据"><a href="#统计推断的理论依据" class="headerlink" title="统计推断的理论依据"></a>统计推断的理论依据</h3><p>统计推断——归纳（个别到一般）</p>
+<ul>
+<li>根据概率论所揭示的随机变量的一般规律性,利用抽样调查所获得的样本信息,对总体的某些性质或数值特征进行推断</li>
+<li>抽样分布是统计推断的基础</li>
+</ul>
+<h4 id="1-参数和统计量"><a href="#1-参数和统计量" class="headerlink" title="1.参数和统计量"></a>1.参数和统计量</h4><p>参数：描述总体的数字，如总体总量，总体均值，总体回归系数，总体相关系数等</p>
+<p>统计量：描述样本的数字，是样本$X<em>{1},X</em>{2},…,X{n}$的1个函数</p>
+<p><u>抽样分布：统计量的概率分布</u>，如均值、方差</p>
+<h4 id="2-样本均值的抽样分布"><a href="#2-样本均值的抽样分布" class="headerlink" title="2.样本均值的抽样分布"></a>2.样本均值的抽样分布</h4><p>所有可能样本的均值构成的概率分布</p>
+<script type="math/tex; mode=display">
+\sigma^{2}=\frac{1}{N}\sum_{i=1}^{N}(X_{i}-\mu)^{2}</script><h1 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h1><p>统计方法</p>
+<ul>
+<li>描述统计</li>
+<li><strong><u>推断统计</u></strong>：参数估计+假设检验（<u>用样本推断总体</u>）</li>
+</ul>
+<p>估计量与估计值</p>
+<ul>
+<li><p>估计量：估计总体参数的随机变量</p>
+<blockquote>
+<p>样本均值（总体均值$\mu$的一个估计量），样本比例，样本方差etc</p>
+</blockquote>
+</li>
+<li><p>估计值：计算出的估计量的值</p>
+<blockquote>
+<p>$\overline{x}=90$</p>
+</blockquote>
+</li>
+<li><p>参数量：总体参数$\theta$的估计量$\hat{theta}$</p>
+</li>
+</ul>
+<p>参数估计</p>
+<ul>
+<li>对已知分布类型的总体，利用样本去估计其未知参数</li>
+<li>估计方法：点估计（矩法，极大似然） ； 区间估计</li>
+</ul>
+<blockquote>
+<p>估计量是随机变量，期望是数值.</p>
+</blockquote>
+<h2 id="矩法"><a href="#矩法" class="headerlink" title="矩法"></a>矩法</h2><p>理论依据：大数定律</p>
+<p>总体k阶原点矩：$E{X^k}$</p>
+<p>样本k阶原点矩：$\frac{1}{n}\sumX^{k}$</p>
+<p>总体k阶中心距：$$</p>
+<p>样本k阶中心距：$$</p>
+<p><strong><u>矩法：用样本矩代替总体矩</u></strong></p>
+<ul>
+<li>前提：总体各节矩存在</li>
+<li>尽量用低阶矩估计</li>
+</ul>
+<h2 id="极大似然法（Maximum-Likelihood-Estimate，MLE）"><a href="#极大似然法（Maximum-Likelihood-Estimate，MLE）" class="headerlink" title="极大似然法（Maximum Likelihood Estimate，MLE）"></a>极大似然法（Maximum Likelihood Estimate，MLE）</h2><p>极大似然法：</p>
+<ul>
+<li><strong><u>选择1个参数使实验结果具有最大概率</u></strong></li>
+</ul>
+<script type="math/tex; mode=display">
+L(\theta)=f(x_{1},x_{2},...,x_{n};\theta)=\prod P(x_{n};\theta)</script><ul>
+<li><strong><u>用使$L(\theta)$达到最大值的$\theta$去估计$\theta$</u></strong>，$L(\theta)$是似然函数</li>
+</ul>
+<p><strong><u>求极大似然估计量：</u></strong></p>
+<p>1.构造$L(\theta)$</p>
+<p>2.取对数</p>
+<p>3.求偏导：令=0</p>
+<p>4.求解</p>
+<h2 id="估计量评价方法"><a href="#估计量评价方法" class="headerlink" title="估计量评价方法"></a>估计量评价方法</h2><blockquote>
+<p>原则上，任何统计量都可以作为估计量；不同估计方法得出的估计量可能不同</p>
+</blockquote>
+<p><strong><u>参数估计的评价标准</u></strong></p>
+<p>1.无偏性（unnbiasedness）</p>
+<ul>
+<li>用样本做的估计量=实际真值</li>
+</ul>
+<blockquote>
+<p>一个参数的无偏估计可以有很多，但无偏估计只能保证无系统误差，但却可能有极大的偏差。一个优良的估计量还需要有较小的方差（低偏差）。</p>
+</blockquote>
+<p>2.有效性（efficiency）</p>
+<ul>
+<li>均方误差：用偏差的平方的期望来衡量估计量偏差的程度</li>
+</ul>
+<p>3.一致性</p>
+<ul>
+<li>相合估计量：当样本逐渐增大时，估计量逐渐趋近于真值</li>
+</ul>
+<p>点估计的缺陷</p>
+<h2 id="区间估计"><a href="#区间估计" class="headerlink" title="区间估计"></a>区间估计</h2><h1 id="抽样分布"><a href="#抽样分布" class="headerlink" title="抽样分布"></a>抽样分布</h1><h2 id="t分布"><a href="#t分布" class="headerlink" title="t分布"></a>t分布</h2><h1 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h1><h1 id="Chapter5-分类数据统计分析"><a href="#Chapter5-分类数据统计分析" class="headerlink" title="Chapter5 分类数据统计分析"></a>Chapter5 分类数据统计分析</h1><p>数据</p>
+<ul>
+<li>数值型：离散 &amp; 连续</li>
+<li>分类型数据：连列分析（列联表：交叉分析）</li>
+</ul>
+<p>边缘分布</p>
+<ul>
+<li>行边缘分布：单行合计</li>
+<li>列边缘分布：单列合计</li>
+</ul>
+<p>百分比分布</p>
+<ul>
+<li>行百分比分布：行的每一个观察频数除以行合计数</li>
+<li>列百分比分布：列的每一个观察频数除以行合计数</li>
+</ul>
+<p>期望频数</p>
+<ul>
+<li>一个实际频数的期望频数$e_{ij}$，是总频数的个数n</li>
+</ul>
+<script type="math/tex; mode=display">
+e_{ij}=n*\frac{r_i}{n}\frac{c_i}{n}=\frac{r_i*c_j}{n}</script><p>$\chi^2$ 统计量</p>
+<ul>
+<li>用于测量两个分类变量之间的相关程度；检验列联表中变量间的<u>拟合优度和独立性</u></li>
+</ul>
+<script type="math/tex; mode=display">
+\chi^2=\sum(f_{ij}-e_{ij})^2/e_{ij}</script><p>分类数据的假设检验（对列联表的2种检验）</p>
+<p>1.拟合优度检验（$\chi^2$ 统计量）</p>
+<ul>
+<li>检验一个分类变量中各类别的期望频数和观察频数是否有显著差异</li>
+<li>实际为：假设检验</li>
+<li>检验步骤：确定假设——检验</li>
+</ul>
+<p>2.独立性检验</p>
+<ul>
+<li>根据次数资料判断两类因子彼此相关或相互独立的假设检验</li>
+</ul>
+<p>关联的测度</p>
+<p>对于分类变量，常用基于卡方统计量的各种统计量来进行关联性度量</p>
+<ul>
+<li>一组统计量，表示交叉表中两个变量之间的关联的紧密程度和方向</li>
+<li>对于2x2的列联表：$\phi$ 相关系数；$\phi=1$ 表示完全相关</li>
+</ul>
+<script type="math/tex; mode=display">
+\phi=\sqrt{\chi^2/n}</script><ul>
+<li>对于测度大于2x2的列联表：C系数表示相关程度</li>
+</ul>
+<script type="math/tex; mode=display">
+C=\sqrt{\chi^2/(\chi^2+n)}</script><ul>
+<li>V系数<script type="math/tex; mode=display">
+V=\sqrt{\chi^2/(n*min[(r-1)(c-1)])}</script></li>
+</ul>
+<ul>
+<li>一种定序的关联测度：$\gamma$<ul>
+<li>同序对Ns</li>
+<li>异序对Nd</li>
+</ul>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+\gamma= (Ns-Nd)/(Ns+Nd)</script><h1 id="Chapter6-方差分析"><a href="#Chapter6-方差分析" class="headerlink" title="Chapter6 方差分析"></a>Chapter6 方差分析</h1><h2 id="方差分析的基本原理"><a href="#方差分析的基本原理" class="headerlink" title="方差分析的基本原理"></a>方差分析的基本原理</h2><p>方差分析（ANOVA）</p>
+<ul>
+<li>作用：两个及两个以上样本<strong><u>均数有无差异</u></strong>的显著性检验</li>
+<li>What：利用试验观测值总偏差的可分解性，将不同条件所引起的偏差与随机误差分解开，按照一定规则进行比较，以<strong><u>确定各自偏差的影响程度和大小</u></strong>（去噪：去除随机误差的影响）</li>
+<li>又称：F检验，变异数分析</li>
+</ul>
+<p>几个常用术语</p>
+<ul>
+<li>试验指标：考察的对象的某种特征</li>
+<li>试验因素：影响试验指标的因素A,B,C,D,…<ul>
+<li>单因素试验</li>
+<li>多因素试验</li>
+</ul>
+</li>
+<li>因素水平：试验因素所处的不同水平</li>
+<li>试验处理：在试验单位上实施的具体项目</li>
+<li>试验单位：观测数据的单位</li>
+<li>重复</li>
+</ul>
+<p>3.误差</p>
+<ul>
+<li><p>随机误差：在<u>因素的同一水平</u>（同一个总体）下，样本的各观察值之间的差异</p>
+<blockquote>
+<p>如同种颜色的爽肤水在不同卖场的销售量差异可看成是随机误差</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>系统误差：在<u>因素的不同水平</u>下，各观察值之间的差异</p>
+<blockquote>
+<p>同一家卖场 ，不同颜色爽肤水的销售量差异若是由颜色差异引起，则是系统误差</p>
+</blockquote>
+</li>
+</ul>
+<p>4.比较</p>
+<ul>
+<li>比较的基础是<strong><u>方差比</u></strong>：组内方差  &amp; 组间方差</li>
+<li>组内方差：= 随机误差</li>
+<li>组间方差：在<u>因素的不同水平</u>下各样本之间的方差，包括随机误差 + 系统误差</li>
+</ul>
+<p>5.离均差平方和（SS）：反映变异大小情况</p>
+<ul>
+<li>总变异：组内变异 + 组间变异</li>
+<li>总变异：所有测量值之间总的变异程度 </li>
+</ul>
+<script type="math/tex; mode=display">
+SS_T=\sum^{a}_{i=1}\sum^{n_i}_{j=1}(Y_{ij}-\overline{Y})^2=\sum^{a}_{i=1}\sum^{n_i}_{j=1}Y^2_{ij}-C=\sum^N_{ij}Y_{ij}^2-C=N\sigma^2</script><ul>
+<li>组间变异：各组均数与总均数的离均差平方和</li>
+<li>组内变异：在同一处理组内的差异（随机误差），即组内各值与该组均值的差的平方和</li>
+<li>离均差平方和的分解：$SS<em>总=SS</em>{组内}+SS<em>{组间}$；$V</em>总=V<em>{组内}+V</em>{组间}$</li>
+</ul>
+<p>6.均方差，均方（MS，mean square）</p>
+<script type="math/tex; mode=display">
+MS_{组间}=SS_{组间}/v_{组间}</script><script type="math/tex; mode=display">
+MS_{组内}=SS_{组内}/v_{组内}</script><blockquote>
+<p>v是自由度 </p>
+</blockquote>
+<p>7.F值与F分布</p>
+<script type="math/tex; mode=display">
+F=MS_{组间}/MS_{组内}</script><script type="math/tex; mode=display">
+v_1=v_{组间}</script><ul>
+<li>F值接近于1，就没有理由拒绝$H_0$ ；反之F值越大，拒绝$H_0$的理由越充分。当$H_0$成立时，服从F分布</li>
+<li>是单尾检验/右尾检验</li>
+</ul>
+<p>8.方差分析的步骤</p>
+<ul>
+<li>1.建立假设：<ul>
+<li>H0：均值全相等</li>
+<li>H1：均值不全相等</li>
+</ul>
+</li>
+<li>2.计算检验统计量F<ul>
+<li>计算离均差平方和<ul>
+<li>总离差平方和：$SS<em>T=N\sigma</em>{ij}^2$</li>
+<li>组间离差平方和：$SS<em>A=N\sigma</em>{\overline{y_i}^2}$</li>
+<li>组内差平方和：$SS_E=SS_T-SS_A$</li>
+</ul>
+</li>
+<li>计算自由度<ul>
+<li>总自由度</li>
+<li>组间自由度</li>
+<li>组内自由度</li>
+</ul>
+</li>
+<li>计算均方（方差）<ul>
+<li>组间方差</li>
+<li>组内方差</li>
+</ul>
+</li>
+<li>计算机统计量F值</li>
+</ul>
+</li>
+<li>3.查表求临界值：F 值表（方差分析用单侧检验）；$F<em>{\alpha}=F</em>{\alpha}(组间自由度，组内自由度)$</li>
+<li>4.比较F值与临界值：$F&gt;=F_{\alpha}$，则拒绝H0</li>
+<li>5.列方差分析表<ul>
+<li>列：方差来源，平方和，自由度，均方，F比</li>
+<li>行：组间，组内，总和</li>
+</ul>
+</li>
+</ul>
+<p>列方差分析表：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>方差来源</th>
+<th>平方和</th>
+<th>自由度</th>
+<th>均方</th>
+<th>F比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>组间</td>
+<td>$SSA$</td>
+<td>$K-1$</td>
+<td>$MS_A=SS_A-df_A$</td>
+<td>$F=MS_A/MS_E$</td>
+</tr>
+<tr>
+<td>组内</td>
+<td>$SSE$</td>
+<td>$N-K$</td>
+<td>$MS_E=SS_E-df_E$</td>
+<td></td>
+</tr>
+<tr>
+<td>总和</td>
+<td>$SST$</td>
+<td>$N-1$</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>9.方差分析的前提条件</p>
+<ul>
+<li>每个总体都服从<u>正态分布</u></li>
+<li>总体的<u>方差必须相同</u></li>
+<li>不同水平的样本相互独立</li>
+</ul>
+<h2 id="单因素方差分析"><a href="#单因素方差分析" class="headerlink" title="单因素方差分析"></a>单因素方差分析</h2><h3 id="单因素完全随机方差分析"><a href="#单因素完全随机方差分析" class="headerlink" title="单因素完全随机方差分析"></a>单因素完全随机方差分析</h3><p>验后多重比较</p>
+<ul>
+<li>F检验否定H0，不表明任意两个均数间都存在显著差异</li>
+<li>功能：发现哪两个均数间存在显著差异</li>
+<li>常用方法：最小显著差数法，最小显著极差法</li>
+</ul>
+<h3 id="单因素随机区组设计方差分析"><a href="#单因素随机区组设计方差分析" class="headerlink" title="单因素随机区组设计方差分析"></a>单因素随机区组设计方差分析</h3><h2 id="两因素方差分析"><a href="#两因素方差分析" class="headerlink" title="两因素方差分析"></a>两因素方差分析</h2><p>多因素实验：实验因素不止一个</p>
+<p>数据的离差平方和分解形式：</p>
+<script type="math/tex; mode=display">
+SST=SSA+SSB+SSE</script><script type="math/tex; mode=display">
+SST=\sum\sum(X_{ij}-\overline{X})^2；df=nr-1</script><script type="math/tex; mode=display">
+SSA=\sum\sum(\overline{X_i}-\overline{X})^2</script><script type="math/tex; mode=display">
+SSB=\sum\sum(\overline{X_j}-\overline{X})^2</script><h1 id="Chapter7-简单线性回归"><a href="#Chapter7-简单线性回归" class="headerlink" title="Chapter7 简单线性回归"></a>Chapter7 简单线性回归</h1><p>回归 ：变量间在数量上有依存变化关系（针对连续变量）</p>
+<p>回归方程</p>
+<p>变量间的关系</p>
+<ul>
+<li>确定性关系：可用一个具体函数式表示出来</li>
+<li>非确定性关系：宏观有相关关系，但未精确到用具体函数式表示</li>
+</ul>
+<p>线性回归</p>
+<ul>
+<li>描述两变量在数量上有<strong><u>非确定性的线性变化关系</u></strong></li>
+<li>回归直线：</li>
+</ul>
+<script type="math/tex; mode=display">
+\widehat{Y}=a+bx</script><p>回归参数估计</p>
+<ul>
+<li>$\widehat{Y}$是由X推算的Y的估计值（实测点到回归直线的纵向线段与直线的交点对应的纵坐标），a是截距，b是回归系数，X变动一个单位时，Y平均变动b个单位</li>
+<li>计算原理：<strong><u>最小二乘法，即保证各实测点到回归直线的纵向距离的平方和最小</u></strong></li>
+</ul>
+<script type="math/tex; mode=display">
+\sum{(Y-\widehat{Y})}^2=\sum(Y-(a+bx))^2</script><script type="math/tex; mode=display">
+b=\sum(X-\overline{X})(Y-\overline{Y})/\sum(X-X)^2=l_{XY}/l_{XX}</script><script type="math/tex; mode=display">
+a=\overline{Y}-b\overline{X}</script><ul>
+<li>$Y-\overline{Y}$ 为残差</li>
+<li>\sum{(Y-\widehat{Y})}^2 残差平方和，最小二乘：残差平方和最小</li>
+</ul>
+<p>总体回归系数的假设检验</p>
+<ul>
+<li>对样本的回归系数b进行假设检验，以判断b是否是从回归系数为零的总体中抽得的</li>
+<li>key：b与0相差多少可以认为具有统计学意义</li>
+<li>步骤<ul>
+<li>建立假设：H0: $\beta=0$ 回归方程无意义；H1: …</li>
+<li>选择假设检验方法：方差分析或t检验，计算统计量</li>
+<li>计算概率值P</li>
+</ul>
+</li>
+</ul>
+<p>拟合优度（绝对系数）</p>
+<ul>
+<li>$R^2$取值0~1之间，反映回归贡献的相对程度</li>
+</ul>
+<script type="math/tex; mode=display">
+R^2=SS_{回}-SS_{总}</script><p>残差图</p>
+<ul>
+<li>标准残差：（残差-均值）/ 标准差</li>
+<li>残差图：以自变量或因变量为横坐标，标准残差为纵坐标</li>
+</ul>
+<h1 id="Chapter8-多元线性回归"><a href="#Chapter8-多元线性回归" class="headerlink" title="Chapter8 多元线性回归"></a>Chapter8 多元线性回归</h1><p>函数关系（确定性关系）</p>
+<p>相关关系（不确定关系）</p>
+<script type="math/tex; mode=display">
+Y_i=F(X_i,\delta)</script><ul>
+<li>因变量与自变量可单相关也可多相关</li>
+<li>分类：线性相关（直线形式） &amp; 非线性相关</li>
+<li>相关程度：完全相关，不完全相关，完全不相关</li>
+</ul>
+<p>多元线性回归的流程：采集样本信息——散点图——回归方程——回归方程的显著性检验——对现实进行预测和控制</p>
+<p>多元线性回归</p>
+<ol>
+<li>建立模型：回归方程</li>
+</ol>
+<script type="math/tex; mode=display">
+y=\beta_o+\beta_1x_1+\beta_2x_2+...+\beta_mx_m+\epsilon</script><ul>
+<li>$\beta_i$ ：回归系数，m+1个待定参数</li>
+<li>$x_{ij}$ ：观测值</li>
+<li>$\epsilon$ ：随机误差，$\epsilon$ ~$N(0,\sigma^2)$，即$y$无法用$x_i$表示的其他各种随机因素造成的误差</li>
+</ul>
+<script type="math/tex; mode=display">
+y=X\beta+\epsilon</script><script type="math/tex; mode=display">
+y=[Y_1,Y_2,...,Y_n]^T，\beta=[\beta_1,\beta_2,...,\beta_n]^T，\epsilon=[\epsilon_1,\epsilon_2,...,\epsilon_n]^T</script><ul>
+<li>X：自变量，观测值构成的$n * k$矩阵变量，注意：X矩阵前面有一列1</li>
+<li>Y：$n * 1$矩阵</li>
+<li>$\beta$：$k*1$</li>
+<li>$\epsilon$ ：$n*1$ </li>
+</ul>
+<ol>
+<li>基本假定</li>
+</ol>
+<p>假定1：零均值假定</p>
+<p>假定2和3：同方差和无自相关假定</p>
+<p>假定4：随机扰动项与假设解释变量不相关</p>
+<p>假定5：无多重共线性假定</p>
+<p>假定6：正态性假定</p>
+<p>$y_i - \hat{y}_i=…$：回归值与实际值间有误差</p>
+<p><strong><u>多元线性回归的最小二乘估计公式</u></strong>：</p>
+<script type="math/tex; mode=display">
+B=A^{-1}C=(X^TX)^{-1}X^TY</script><blockquote>
+<p>省略了随机误差项。</p>
+</blockquote>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">X = np.mat([[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>],</span><br><span class="line">            [<span class="number">41</span>, <span class="number">45</span>, <span class="number">51</span>, <span class="number">52</span>, <span class="number">59</span>, <span class="number">62</span>, <span class="number">69</span>,<span class="number">72</span>, <span class="number">78</span>, <span class="number">80</span>, <span class="number">90</span>, <span class="number">92</span>, <span class="number">98</span>, <span class="number">103</span>],</span><br><span class="line">            [<span class="number">49</span>, <span class="number">58</span>, <span class="number">62</span>, <span class="number">71</span>, <span class="number">62</span>, <span class="number">74</span>, <span class="number">71</span>, <span class="number">74</span>, <span class="number">79</span>, <span class="number">84</span>, <span class="number">85</span>, <span class="number">94</span>, <span class="number">91</span>, <span class="number">95</span>]])</span><br><span class="line"></span><br><span class="line">X=X.T</span><br><span class="line"></span><br><span class="line">Y = np.mat([<span class="number">28</span>, <span class="number">39</span>, <span class="number">41</span>, <span class="number">44</span>,  <span class="number">43</span>, <span class="number">50</span>, <span class="number">51</span>, <span class="number">57</span>, <span class="number">63</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">76</span>, <span class="number">80</span>, <span class="number">84</span>]).T</span><br><span class="line"></span><br><span class="line">B = (X.T * X).I * X.T * Y</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> B</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[[-15.93836228] <span class="comment"># beta0</span></span><br><span class="line"> [  0.52227044]<span class="comment"># beta1</span></span><br><span class="line"> [  0.47382726]] <span class="comment"># beta2</span></span><br></pre></td></tr></table></figure>
+<p>注意：X矩阵前面有一列1，指的是与$\beta$ 相乘后需要得到的$\beta_0$</p>
+<ol>
+<li>多元线性回归的拟合优度检验</li>
+</ol>
+<p>多重可决系数$R^2$  ：表示由多个解释变量联合解释了的Y的变差在Y的总变差中占的比重 </p>
+<p>修正的可决系数（调整后 R平方）</p>
+<script type="math/tex; mode=display">
+\overline{R^2}=1-(1-R^2)\frac{n-1}{n-k}</script><ol>
+<li><strong>回归方程的显著性检验（F检验）</strong></li>
+</ol>
+<p>原假设H0：$\beta_2=\beta_3=…=\beta_k=0$</p>
+<p>备择假设H1：不全为0</p>
+<blockquote>
+<p>目的：推翻原假设</p>
+</blockquote>
+<p>建立统计量</p>
+<script type="math/tex; mode=display">
+F = \frac{ESS/(k-1)}{ RSS/(n-k)} ~</script><p>当$R^2=0$，$F=0$$ （表示以概率为0拒绝H0）；当$R^2=1$，$F-&gt;无穷$（表示以概率为1拒绝H0）</p>
+<p>若F&lt;$F_{\alpha}$  ，接受原假设</p>
+<ol>
+<li><strong>各回归系数的显著性检验（t检验）</strong></li>
+</ol>
+<p>原假设H0：$\beta_j=0$</p>
+<p>备择假设H1：$\beta_j !=0$</p>
+<script type="math/tex; mode=display">
+t=\frac{}{}</script><p>应变量的均值估计</p>
+<p>Y均值的区间预测</p>
+<p>应变量个别值的预测</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://fishedee.com/2017/01/14/%E3%80%8A%E6%A6%82%E7%8E%87%E8%AE%BA%E3%80%8B%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8B%E4%B8%80/" target="_blank" rel="noopener">《概率论》的读书笔记</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>拿钱去买猫粮和狗粮嗷 ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Scarlett Huang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Data-Mining-and-Analysis/" rel="tag"><i class="fa fa-tag"></i> Data Mining and Analysis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/20/《Web-信息架构》课程笔记/" rel="next" title="《Web 信息架构》课程笔记">
+                <i class="fa fa-chevron-left"></i> 《Web 信息架构》课程笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/20/粤传媒2017年度财报分析报告/" rel="prev" title="粤传媒2017年度财报分析报告">
+                粤传媒2017年度财报分析报告 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">192</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Column">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Column
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://book.douban.com/people/ScarlettYellow/" target="_blank" title="Douban">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Douban
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friend Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://unique-ailab.github.io/" title="Unique-AILab" target="_blank">Unique-AILab</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mr-why.com/" title="MR WHY(AI Dev. & AI PM)" target="_blank">MR WHY(AI Dev. & AI PM)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wondervictor.github.io/" title="Vic Chan(AI Dev.)" target="_blank">Vic Chan(AI Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Dev.)" target="_blank">qzwlecr(Distributed Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://alisahhh.github.io/" title="Alisa(Alg. Dev.)" target="_blank">Alisa(Alg. Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://llag9810.github.io/" title="yifan(Android Dev.)" target="_blank">yifan(Android Dev.)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter1-初导"><span class="nav-number">1.</span> <span class="nav-text">Chapter1 初导</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-统计数据与统计学"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 统计数据与统计学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-统计学的产生和发展"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 统计学的产生和发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-数据分析方法"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 数据分析方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-统计学的研究分支"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 统计学的研究分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-传播统计学"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 传播统计学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-应用领域"><span class="nav-number">1.5.1.</span> <span class="nav-text">1.应用领域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-什么是统计数据？"><span class="nav-number">1.5.2.</span> <span class="nav-text">2.什么是统计数据？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-统计学基本概念"><span class="nav-number">1.5.3.</span> <span class="nav-text">3.统计学基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-描述性统计-vs-推断性统计"><span class="nav-number">1.5.4.</span> <span class="nav-text">4.描述性统计 vs 推断性统计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#描述性统计"><span class="nav-number">1.5.4.1.</span> <span class="nav-text">描述性统计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推断性统计"><span class="nav-number">1.5.4.2.</span> <span class="nav-text">推断性统计</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-实验统计"><span class="nav-number">1.5.5.</span> <span class="nav-text">5.实验统计</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter2-传播研究设计中的统计方法"><span class="nav-number">2.</span> <span class="nav-text">Chapter2 传播研究设计中的统计方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-研究主题、模型与假设"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 研究主题、模型与假设</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-研究主题与统计方案的设计"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.研究主题与统计方案的设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-传播模型的表示法"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.传播模型的表示法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-理论的假设与统计的假设"><span class="nav-number">2.1.3.</span> <span class="nav-text">3.理论的假设与统计的假设</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-分析单位的确定与设计"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 分析单位的确定与设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-调查法与实验法中的分析单位"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.调查法与实验法中的分析单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-内容分析法中的分析单位"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.内容分析法中的分析单位</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-抽样设计与确定样本量的原则"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 抽样设计与确定样本量的原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-抽样"><span class="nav-number">2.3.1.</span> <span class="nav-text">1.抽样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-简单随机抽样"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.简单随机抽样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-实用抽样技术"><span class="nav-number">2.3.3.</span> <span class="nav-text">3.实用抽样技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-确定样本量的方法"><span class="nav-number">2.3.4.</span> <span class="nav-text">4.确定样本量的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-调查表设计与信度、效度分析"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 调查表设计与信度、效度分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter3-统计数据的收集、整理和显示"><span class="nav-number">3.</span> <span class="nav-text">Chapter3 统计数据的收集、整理和显示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-数据收集"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 数据收集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-数据搜集方法"><span class="nav-number">3.1.1.</span> <span class="nav-text">1.数据搜集方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-统计调查的组织形式"><span class="nav-number">3.1.2.</span> <span class="nav-text">2.统计调查的组织形式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-数据整理"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 数据整理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-频数分布"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 频数分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-数据描述-数据可视化"><span class="nav-number">3.4.</span> <span class="nav-text">2.4 数据描述(数据可视化)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-1-资料的初步展现"><span class="nav-number">3.4.1.</span> <span class="nav-text">2.4.1 资料的初步展现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-频数表"><span class="nav-number">3.4.1.1.</span> <span class="nav-text">1.频数表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-均值表"><span class="nav-number">3.4.1.2.</span> <span class="nav-text">2.均值表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-饼形图和条形图"><span class="nav-number">3.4.1.3.</span> <span class="nav-text">3.饼形图和条形图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-折线图"><span class="nav-number">3.4.1.4.</span> <span class="nav-text">4.折线图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-2-单一变量的分布"><span class="nav-number">3.4.2.</span> <span class="nav-text">2.4.2 单一变量的分布</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-直方图"><span class="nav-number">3.4.2.1.</span> <span class="nav-text">1.直方图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-茎叶图"><span class="nav-number">3.4.2.2.</span> <span class="nav-text">2.茎叶图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-盒形图-boxplot"><span class="nav-number">3.4.2.3.</span> <span class="nav-text">3.盒形图(boxplot)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-3-两个关联变量的资料展现"><span class="nav-number">3.5.</span> <span class="nav-text">2.4.3 两个关联变量的资料展现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-变量的关联性和交互表"><span class="nav-number">3.5.0.1.</span> <span class="nav-text">1.变量的关联性和交互表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-条形图"><span class="nav-number">3.5.0.2.</span> <span class="nav-text">2.条形图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-散点图-scatterplot"><span class="nav-number">3.5.0.3.</span> <span class="nav-text">3.散点图(scatterplot)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-相关系数和相关系数表"><span class="nav-number">3.5.0.4.</span> <span class="nav-text">4.相关系数和相关系数表</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-传播研究资料分析中的统计方法-一元和二元统计篇"><span class="nav-number">4.</span> <span class="nav-text">Chapter 传播研究资料分析中的统计方法(一元和二元统计篇)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对总体的估算"><span class="nav-number">4.1.</span> <span class="nav-text">对总体的估算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#统计推断的理论依据"><span class="nav-number">4.1.1.</span> <span class="nav-text">统计推断的理论依据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-参数和统计量"><span class="nav-number">4.1.1.1.</span> <span class="nav-text">1.参数和统计量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-样本均值的抽样分布"><span class="nav-number">4.1.1.2.</span> <span class="nav-text">2.样本均值的抽样分布</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参数估计"><span class="nav-number">5.</span> <span class="nav-text">参数估计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#矩法"><span class="nav-number">5.1.</span> <span class="nav-text">矩法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#极大似然法（Maximum-Likelihood-Estimate，MLE）"><span class="nav-number">5.2.</span> <span class="nav-text">极大似然法（Maximum Likelihood Estimate，MLE）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#估计量评价方法"><span class="nav-number">5.3.</span> <span class="nav-text">估计量评价方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区间估计"><span class="nav-number">5.4.</span> <span class="nav-text">区间估计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#抽样分布"><span class="nav-number">6.</span> <span class="nav-text">抽样分布</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#t分布"><span class="nav-number">6.1.</span> <span class="nav-text">t分布</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#假设检验"><span class="nav-number">7.</span> <span class="nav-text">假设检验</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter5-分类数据统计分析"><span class="nav-number">8.</span> <span class="nav-text">Chapter5 分类数据统计分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter6-方差分析"><span class="nav-number">9.</span> <span class="nav-text">Chapter6 方差分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方差分析的基本原理"><span class="nav-number">9.1.</span> <span class="nav-text">方差分析的基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单因素方差分析"><span class="nav-number">9.2.</span> <span class="nav-text">单因素方差分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单因素完全随机方差分析"><span class="nav-number">9.2.1.</span> <span class="nav-text">单因素完全随机方差分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单因素随机区组设计方差分析"><span class="nav-number">9.2.2.</span> <span class="nav-text">单因素随机区组设计方差分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两因素方差分析"><span class="nav-number">9.3.</span> <span class="nav-text">两因素方差分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter7-简单线性回归"><span class="nav-number">10.</span> <span class="nav-text">Chapter7 简单线性回归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter8-多元线性回归"><span class="nav-number">11.</span> <span class="nav-text">Chapter8 多元线性回归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">12.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
+<div class="copyright" >
+  
+  &copy;  2017.07 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共597.8k字</span>
+</div>
+
+
+
+
+<span id="busuanzi_container_site_pv">
+<div class="powered-by"></div>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  <div class="powered-by"></div>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100332, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100332, xid: "2018/08/20/《传播统计学》课程笔记/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100332/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+
+</body>
+</html>

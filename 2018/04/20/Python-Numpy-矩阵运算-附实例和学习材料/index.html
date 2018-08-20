@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="Scarlett Huang">
 <meta property="og:description" content="Abstract：使用numpy进行矩阵的加减乘除、转置、求逆、求特征向量等运算。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-26T07:47:06.000Z">
+<meta property="og:updated_time" content="2018-04-27T00:57:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Numpy 矩阵运算(附实例和学习材料)">
 <meta name="twitter:description" content="Abstract：使用numpy进行矩阵的加减乘除、转置、求逆、求特征向量等运算。">
@@ -435,37 +435,30 @@
 <a id="more"></a>
 <h1 id="1-numpy矩阵运算语法"><a href="#1-numpy矩阵运算语法" class="headerlink" title="1.numpy矩阵运算语法"></a>1.numpy矩阵运算语法</h1><ol>
 <li>import numpy库：import numpy as np</li>
-<li>创建矩阵：$a = np.mat([[x1, x2,…,xn], [y1, y2, …, yn]])$</li>
+<li>创建矩阵：a = np.mat([[x1, x2,…,xn], [y1, y2, …, yn]])</li>
 <li>矩阵乘法：<ul>
-<li>$a * b$</li>
-<li>$np.dot(a, b )$ ：求两数组点积</li>
+<li>a * b</li>
+<li>np.dot(a, b )：求两数组点积</li>
 </ul>
 </li>
-</ol>
-<ol>
-<li><p>矩阵加减：a - b</p>
-</li>
+<li>矩阵加减：a - b</li>
 <li><p>矩阵转置：</p>
 <ul>
-<li>$a.T$</li>
-<li>$a.transpose()$</li>
+<li>a.T</li>
+<li>a.transpose()</li>
 </ul>
 </li>
 <li><p>矩阵除法：a/b</p>
 </li>
 <li><p>矩阵求逆：</p>
 <ul>
-<li>$a.I$</li>
+<li>a.I</li>
+<li>np.linalg.inv(a)</li>
 </ul>
 </li>
-</ol>
-<ul>
-<li>$np.linalg.inv(a)$</li>
-</ul>
-<ol>
-<li><p>求特征向量：$np.linalg.eig(a)$</p>
+<li><p>求特征向量：np.linalg.eig(a)</p>
 </li>
-<li><p>求迹：$np.trace(a)$</p>
+<li><p>求迹：np.trace(a)</p>
 </li>
 <li><p>求行列式的值：numpy.linalg.det()</p>
 </li>
@@ -483,14 +476,15 @@
 <li>维度数不符合要求，则不能执行矩阵乘法。</li>
 </ul>
 <h1 id="2-numpy-数组语法"><a href="#2-numpy-数组语法" class="headerlink" title="2.numpy 数组语法"></a>2.numpy 数组语法</h1><ol>
-<li>随机生成数组：$np.random.rand(m, n)$</li>
-<li>创建数组：$np.array([[x1, x2,…,xn], [y1, y2, …, yn]])$</li>
-<li>向数组添加元素：$np.append(A, a_i)$</li>
-<li>数组索引：$A[2:5]$ 表示索引数组 A 中第 3 到第 5 个元素</li>
+<li>随机生成数组：np.random.rand(m, n)</li>
+<li>创建数组：np.array([[x1, x2,…,xn], [y1, y2, …, yn]])</li>
+<li>向数组添加元素：np.append(A, a_i)</li>
+<li>​数组索引：A[2:5] 表示索引数组 A 中第 3 到第 5 个元素</li>
 </ol>
 <h1 id="3-实例（求多元回归最小二乘估计）"><a href="#3-实例（求多元回归最小二乘估计）" class="headerlink" title="3. 实例（求多元回归最小二乘估计）"></a>3. 实例（求多元回归最小二乘估计）</h1><p>多元回归方程参数最小二乘估计的公式：$B=(X^TX)^{-1}X^TY$</p>
 <p>代码实例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">X = np.mat([[<span class="number">41</span>, <span class="number">45</span>, <span class="number">51</span>, <span class="number">52</span>, <span class="number">59</span>, <span class="number">62</span>, <span class="number">69</span>,<span class="number">72</span>, <span class="number">78</span>, <span class="number">80</span>, <span class="number">90</span>, <span class="number">92</span>, <span class="number">98</span>, <span class="number">103</span>],</span><br><span class="line">	[<span class="number">49</span>, <span class="number">58</span>, <span class="number">62</span>, <span class="number">71</span>, <span class="number">62</span>, <span class="number">74</span>, <span class="number">71</span>, <span class="number">74</span>, <span class="number">79</span>, <span class="number">84</span>, <span class="number">85</span>, <span class="number">94</span>, <span class="number">91</span>, <span class="number">95</span>]])</span><br><span class="line"></span><br><span class="line">X=X.T</span><br><span class="line"></span><br><span class="line">Y = np.mat([<span class="number">28</span>, <span class="number">39</span>, <span class="number">41</span>, <span class="number">44</span>,  <span class="number">43</span>, <span class="number">50</span>, <span class="number">51</span>, <span class="number">57</span>, <span class="number">63</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">76</span>, <span class="number">80</span>, <span class="number">84</span>]).T</span><br><span class="line"></span><br><span class="line">B = (X.T * X).I * X.T * Y</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> B</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">X = np.mat([[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>],[<span class="number">41</span>, <span class="number">45</span>, <span class="number">51</span>, <span class="number">52</span>, <span class="number">59</span>, <span class="number">62</span>, <span class="number">69</span>,<span class="number">72</span>, <span class="number">78</span>, <span class="number">80</span>, <span class="number">90</span>, <span class="number">92</span>, <span class="number">98</span>, <span class="number">103</span>],</span><br><span class="line">	[<span class="number">49</span>, <span class="number">58</span>, <span class="number">62</span>, <span class="number">71</span>, <span class="number">62</span>, <span class="number">74</span>, <span class="number">71</span>, <span class="number">74</span>, <span class="number">79</span>, <span class="number">84</span>, <span class="number">85</span>, <span class="number">94</span>, <span class="number">91</span>, <span class="number">95</span>]])</span><br><span class="line"></span><br><span class="line">X=X.T</span><br><span class="line"></span><br><span class="line">Y = np.mat([<span class="number">28</span>, <span class="number">39</span>, <span class="number">41</span>, <span class="number">44</span>,  <span class="number">43</span>, <span class="number">50</span>, <span class="number">51</span>, <span class="number">57</span>, <span class="number">63</span>, <span class="number">66</span>, <span class="number">70</span>, <span class="number">76</span>, <span class="number">80</span>, <span class="number">84</span>]).T</span><br><span class="line"></span><br><span class="line">B = (X.T * X).I * X.T * Y</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> B</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[[-15.93836228]</span><br><span class="line"> [  0.52227044]</span><br><span class="line"> [  0.47382726]]</span><br></pre></td></tr></table></figure>
 <h1 id="Extender"><a href="#Extender" class="headerlink" title="Extender"></a>Extender</h1><p><a href="https://wizardforcel.gitbooks.io/ts-numpy-tut/content/22.html" target="_blank" rel="noopener">【非常全的教程】TutorialsPoint Numpy 教程</a></p>
 <p><a href="https://www.jianshu.com/p/301e6510517d" target="_blank" rel="noopener">运用numpy进行数组、向量、矩阵运算</a></p>
 <p><a href="https://www.itcodemonkey.com/article/2434.html" target="_blank" rel="noopener">70个NumPy练习：在Python下一举搞定机器学习矩阵运算</a></p>
@@ -646,7 +640,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">180</span>
+                <span class="site-state-item-count">192</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -726,12 +720,12 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://dribbble.com/" target="_blank" title="Dribbble">
+                <a href="https://book.douban.com/people/ScarlettYellow/" target="_blank" title="Douban">
                   
-                    <i class="fa fa-fw fa-dribbble"></i>
+                    <i class="fa fa-fw fa-globe"></i>
                   
                     
-                      Dribbble
+                      Douban
                     
                 </a>
               </span>
@@ -845,7 +839,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">共522.4k字</span>
+  <span class="post-count">共597.8k字</span>
 </div>
 
 

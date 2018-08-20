@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,zh-Hans,default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Artificial Intelligence,Natural Language Processing," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：对话系统领域研究综述，2018.">
+<meta name="keywords" content="Artificial Intelligence,Natural Language Processing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对话系统领域研究综述（2018）">
+<meta property="og:url" content="http://ScarlettHuang.cn/2018/08/20/对话系统领域研究综述（2018）/index.html">
+<meta property="og:site_name" content="Scarlett Huang">
+<meta property="og:description" content="Abstract：对话系统领域研究综述，2018.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fqmkdno0a0j31kw0eyjul.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fqmkextxigj31kw0ldgth.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fqs7o265iaj30mo09kglw.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fqscksafi2j30nc0fi0ue.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fqshuuquygj30ve0a8q3z.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fqshzyt3ioj316c0hc41o.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fqsj0vlxrbj30le0iujsb.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fqlpxrvrorj308c08r0sv.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fqlqdite9qj30k006xdga.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fqme2n9t4sj30k009iq40.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fqmegs93yhj309g0fjaar.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1fqvux76kmuj30yq0hqtla.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fqvux2if7xj30y80ieqfx.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fqvtx1iq1yj30tw0i01au.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1fqvt37gvilj31700fk7b0.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fqvt8wsj5wj31280iy7cr.jpg">
+<meta property="og:updated_time" content="2018-08-20T11:51:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="对话系统领域研究综述（2018）">
+<meta name="twitter:description" content="Abstract：对话系统领域研究综述，2018.">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fqmkdno0a0j31kw0eyjul.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ScarlettHuang.cn/2018/08/20/对话系统领域研究综述（2018）/"/>
+
+
+
+
+
+  <title>对话系统领域研究综述（2018） | Scarlett Huang</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Scarlett Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-me">
+          <a href="/Me/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2018/08/20/对话系统领域研究综述（2018）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">对话系统领域研究综述（2018）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-20T19:50:30+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/Natural-Language-Processing/" itemprop="url" rel="index">
+                    <span itemprop="name">Natural Language Processing</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/20/对话系统领域研究综述（2018）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/08/20/对话系统领域研究综述（2018）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Abstract：对话系统领域研究综述，2018.</p>
+<a id="more"></a>
+<h1 id="1-相关概念术语及解释"><a href="#1-相关概念术语及解释" class="headerlink" title="1.相关概念术语及解释"></a>1.相关概念术语及解释</h1><ol>
+<li><p>深度学习（Deep Learning ）：机器学习的分支，是一种试图使用包含复杂结构或由多重非线性变换构成的多个处理层对数据进行高层抽象的算法。含多隐层的多层感知器就是一种深度学习结构。</p>
+</li>
+<li><p>人工神经网络（Neural Network）：是一种模仿生物神经网络的结构和概念的数学模型，用于对函数进行估计和近似。</p>
+</li>
+<li><p>对话系统：即使得人与机器可以通过自然语言进行对话交互的系统。</p>
+</li>
+<li><p>问答系统（Question Answering System）：信息检索系统的一种高级形式，能用准确、简洁的自然语言回答用户用自然语言提出的问题。</p>
+</li>
+<li><p><strong>RNN（Recurrent Neural Network）</strong>：递归神经网络是两种人工神经网络的总称，分别是时间递归神经网络和结构递归神经网络，RNN一般指代时间递归神经网络。时间递归神经网络可以描述动态时间行为，因为和前馈神经网络（Feedforward Neural Network）接受较特定结构的输入不同，RNN将状态在自身网络中循环传递，故可接受更广泛的时间序列结构输入。RNN模型如下图：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqmkdno0a0j31kw0eyjul.jpg" alt="RNN"></p>
+<p>​</p>
+</li>
+<li><p><strong>Seq2Seq（Sequence to Sequence）模型</strong>：近几年比较热门的一个基于RNN的模型，主要应用在机器翻译、自动问答系统等领域，并且效果不错。seq2seq 模型利用 RNN 对时序序列天然的处理能力，试图建立一个能直接处理变长输入与变长输出的模型。</p>
+</li>
+<li><p><strong>LSTM（Long Short-Term Memory）模型</strong>：一种时间递归神经网络，适合处理和预测时间序列中间隔和延迟非常长的重要事件。LSTM模型如下图：</p>
+</li>
+</ol>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqmkextxigj31kw0ldgth.jpg" alt="LSTM"></p>
+<ol>
+<li><strong>Beam Search（集束搜索）</strong>：一种启发式图搜索算法，通常用在图的解空间比较大的情况下，为了减少搜索所占用的空间和时间，在每一步深度扩展的时候，剪掉一些质量比较差的结点，保留下一些质量较高的结点。这样减少了空间消耗，并提高了时间效率，但缺点就是有可能存在潜在的最佳方案被丢弃，因此Beam Search算法是不完全的，一般用于解空间较大的系统中。</li>
+</ol>
+<h1 id="2-国际对话系统领域分析"><a href="#2-国际对话系统领域分析" class="headerlink" title="2.国际对话系统领域分析"></a>2.国际对话系统领域分析</h1><h2 id="2-1-对话系统类型及方法"><a href="#2-1-对话系统类型及方法" class="headerlink" title="2.1 对话系统类型及方法"></a>2.1 对话系统类型及方法</h2><p>对话系统按应用场景类型可分为两类：</p>
+<p><strong>1.任务导向型（task-oriented）对话系统</strong>：</p>
+<p>A. 作用：帮助用户完成实际具体的任务，如电商智能客服、酒店智能客服等。</p>
+<p>B. 方法：</p>
+<p>（1）<strong>管道(Pipeline)方法</strong></p>
+<p>将对话响应视为一条管道（pipeline)，系统首先理解人类所传达的信息，将其作为一种内部状态，然后根据对话状态的策略采取一系列相应的行为，最后将动作转化为自然语言的表现形式。如下图所示：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqs7o265iaj30mo09kglw.jpg" alt="任务导向"></p>
+<p>（2）<strong>端到端（end-to-end）方法</strong></p>
+<p>端到端神经生成模型为面向任务的对话系统构建了端到端的可训练框架。与传统的管道模型不同，<strong>端到端模型使用一个模块，并与结构化的外部数据库交互</strong>。</p>
+<p>如下图的模型是一种<strong>基于网络的端到端可训练任务导向型对话系统，将对话系统的学习作为学习从对话历史到系统回复的映射问题，并应用encoder-decoder模型来训练</strong>。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqscksafi2j30nc0fi0ue.jpg" alt="端到端"></p>
+<p><strong>2.非任务导向型（non-task-oriented）对话系统</strong>（又可称为聊天机器人)</p>
+<p>A. 作用：专注于在开放的领域与人交谈，提供合理的回复和娱乐消遣功能。</p>
+<p>B. 主要有3种实现方法：</p>
+<p>（1）<strong>基于检索的方法</strong>：从事先定义好的索引中进行搜索，学习从当前对话中选择回复。关键是消息—回复匹配，匹配算法必须克服消息和回复之间的语义鸿沟。缺点在于过于依赖数据质量，如果选用的数据质量欠佳，那就很有可能前功尽弃。</p>
+<p>（2）<strong>生成方法</strong>：比如使用<strong>端到端的Seq2Seq模型</strong>，可在对话过程中产生合适的全新的回复，因此相对更为灵活，但有一些弊端，比如<strong>有时候会出现语法错误，或者生成一些没有意义的回复</strong>。</p>
+<p>（3）<strong>集成方法</strong>：基于检索的系统通常给出精确但是较为生硬的答案，基于生成的系统则倾向于给出流畅但却是毫无意义的回答。而将生成和检索方法结合起来能对系统性能起到显著的提升作用。在集成模型中，被抽取的候选对象和原始消息一起被输入到基于RNN的回复生成器中。这种方法结合了检索和生成模型的优点，这在性能上具备很大的优势。</p>
+<h2 id="2-2-非任务导向型对话系统——基于检索的方法"><a href="#2-2-非任务导向型对话系统——基于检索的方法" class="headerlink" title="2.2 非任务导向型对话系统——基于检索的方法"></a>2.2 非任务导向型对话系统——基于检索的方法</h2><p><strong>1.单轮回复匹配</strong></p>
+<p>检索聊天机器人的早期研究主要集中在反应选择单轮的谈话，只有消息用于选择一个合适的回复。</p>
+<p>目前比较新的方法如下图，利用<strong>深度卷积神经网络体系结构</strong>改进模型，学习消息和响应的表示，或直接学习两个句子的相互作用表示，然后用多层感知器来计算匹配的分数。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqshuuquygj30ve0a8q3z.jpg" alt="CNN-对话模型"></p>
+<p><strong>2.多轮回复匹配</strong></p>
+<p>基于检索的多轮对话，即在多轮回答选择中，将当前的消息和先前的话语作为输入。</p>
+<p>模型选择一个自然的、与整个上下文相关的响应。重要的是要在之前的话语中找出重要的信息，并恰当地模仿话语的关系，以确保谈话的连贯性。</p>
+<p>多轮对话的难点在于不仅要考虑当前的问题，也要考虑前几轮的对话情景。多轮对话的难点主要有两点：</p>
+<ul>
+<li>1.如何明确上下文的关键信息（关键词，关键短语或关键句）。</li>
+<li>2.在上下文中如何模拟多轮对话间的关系。</li>
+</ul>
+<p>现有检索模型的缺陷：在上下文中容易丢失重要信息，因为它们首先将整个上下文表示为向量，然后将该上下文向量与响应 sentence 向量进行匹配。</p>
+<p>下图是一个基于检索的多轮对话模型架构。此模型改进了话语关系和上下文信息的利用，通过将上下文中的语句与卷积神经网络的不同层级进行匹配，然后通过一个递归的神经网络在时间序列中堆积这些向量，以建立对话之间的关系。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqshzyt3ioj316c0hc41o.jpg" alt="基于检索的多轮对话模型架构"></p>
+<h2 id="2-3-非任务导向型对话系统——神经生成模型Neural-Generative-Models）"><a href="#2-3-非任务导向型对话系统——神经生成模型Neural-Generative-Models）" class="headerlink" title="2.3 非任务导向型对话系统——神经生成模型Neural Generative Models）"></a>2.3 非任务导向型对话系统——神经生成模型Neural Generative Models）</h2><p><strong>1.Sequence-to-Sequence Model</strong></p>
+<p>给定包含个词语的输入序列（message）和长度为<strong>T</strong>的目标序列（response），模型最大化<strong>Y</strong>在<strong>X</strong>下的条件概率：</p>
+<script type="math/tex; mode=display">
+p(y_1,...,y_{T'}|x_1,...,x_T)</script><p>Seq2Seq模型的encoder-decoder结构：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqsj0vlxrbj30le0iujsb.jpg" alt="encoder-decoder结构"></p>
+<p>编码器将X逐字读入，并通过递归神经网络（RNN）将其表示为上下文向量c, 然后解码器将 c 作为输入估计Y 的生成概率。</p>
+<p>（1）<strong>Encoder</strong></p>
+<p>Encoder过程很简单，一般直接使用RNN（一般用LSTM）进行语义向量生成：</p>
+<script type="math/tex; mode=display">
+h_t=f(x_t,h_{t-1})，c=\phi(h_1,...,h_T)</script><p>其中f 是非线性函数，例如LSTM,GRU是上一隐节点输出，是当前时刻的输入。向量c 通常为RNN中的最后一个隐节点(h, Hidden state)，或者是多个隐节点的加权和。</p>
+<p>（2）<strong>Decoder</strong></p>
+<p>模型的decoder过程是使用另一个RNN通过当前隐状态来预测当前的输出符号，这里的和都与其前一个隐状态和输出有关，Seq2Seq的目标函数定义为：</p>
+<script type="math/tex; mode=display">
+p((y_1,...,y_{T'}|x_1,...,x_T)=p(y_1|c)\prod^{T'}_{t=2}p(y_t|c,y_1,...,y_{t-1}))</script><p><strong>2.对话上下文（Dialogue Context）</strong></p>
+<p>考虑对话的上下文信息的是构建对话系统的关键所在，它可以使对话保持连贯和增进用户体验。使用层次化的RNN模型，捕捉个体语句的意义，然后将其整合为完整的对话。同时，分别用字级别和句子级别的注意力方法扩展层次化的结构。</p>
+<p>通常，层次化 RNNs的表现通常优于非层次化的RNNs；在考虑上下文相关的信息后，神经网络趋向于产生更长的、更有意义和多样性的回复；引入Attention机制，能够让模型能够自动的学到词语与句子级别的重要度信息，从而更好的生成新一轮的对话。</p>
+<p><strong>3.回复多样性（Response Diverisity）</strong></p>
+<p>在当前的Seq2Seq对话系统中，一个具有挑战性的问题是，它们倾向于产生无关紧要的或不明确的、普通的、几乎没有意义的回复，比如“I don’t know”，“I am OK”。解决这类问题的一个很有效的方法是找到并设置一个更好的目标函数，或者增加模型的复杂度。</p>
+<p><strong>4.主题和个性化（Topic and Personality）</strong></p>
+<p>明确对话的内在属性是提高对话多样性和保证一致性的另一种方法。</p>
+<p><strong>5.外部知识库（Outside Knowledge Base）</strong></p>
+<p>人类对话与对话系统之间的一个重要区别是它是否与现实相结合。结合外部知识库(KB)是一种很有前途的方法，可以弥补背景知识之间的差距，即对话系统和人之间的差距。记忆网络（Memory Network）是一种以知识库处理问题的经典方法。因此，它非常直接的别用于在对话生成中。</p>
+<p><strong>6.对话系统性能评价</strong></p>
+<p>评价生成回复的质量是对话系统的一个重要方面。任务导向型的对话系统可以基于人工生成的监督信号进行评估，例如任务完成测试或用户满意度评分等。然而，由于高回复的多样性，自动评估非任务导向的对话系统所产生的响应的质量仍然是一个悬而未决的问题。目前的方法有以下几种：</p>
+<p>（1）计算 BLEU 值，即直接计算 word overlap、ground truth和你生成的回复。由于一句话可能存在多种回复，因此从某些方面来看，BLEU 可能不太适用于对话评测。</p>
+<p>（2）计算 embedding的距离，这类方法分三种情况：直接相加求平均、先取绝对值再求平均和贪婪匹配。</p>
+<p>（3）衡量多样性，主要取决于 distinct-ngram 的数量和 entropy 值的大小。</p>
+<p>（4）进行图灵测试，用 retrieval 的 discriminator 来评价回复生成。</p>
+<h1 id="3-国际-Seq2Seq-框架学术进展分析"><a href="#3-国际-Seq2Seq-框架学术进展分析" class="headerlink" title="3. 国际 Seq2Seq 框架学术进展分析"></a>3. 国际 Seq2Seq 框架学术进展分析</h1><p>1.<strong>Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation</strong> </p>
+<p>（1）论文信息：</p>
+<ul>
+<li>发表时间：2014年6月</li>
+<li>作者：Cho、Bahdanau、Bengio</li>
+<li>引用量：2250（目前为止）</li>
+</ul>
+<p>（2）论文特色：该论文提出一种<strong>RNN Encoder-Decoder的网络结构</strong>；可以看作是<strong>Seq-to-Seq的前身</strong>，因为它并未实现end-to-end训练，而是作为SMT翻译框架中的一部分进行训练。</p>
+<p>图：RNN Encoder-Decoder网络结构</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqlpxrvrorj308c08r0sv.jpg" alt="seq2seq"></p>
+<p>由上图可看出，这个 RNN Encoder-Decoder 网络结构的逻辑流程是：</p>
+<ul>
+<li>1.先使用一个RNN模型将输入序列进行编码得到最终的隐藏层状态向量$C$作为输入序列的向量表示；</li>
+<li>2.再使用另一个RNN模型对向量$C$进行解码，解码过程中每一步的输入是上一步的输出$y<em>{t-1}$、上一时刻隐层状态$h</em>{t-1}$和向量$C$，公式如下：</li>
+</ul>
+<script type="math/tex; mode=display">
+h_{(t)}=f(h_{(t-1)},y_{t-1},c)</script><ul>
+<li>3.将所有输出$y_t$的概率相乘即是该序列的概率；</li>
+<li>4.计算loss、反向传播即可完成对模型的训练。</li>
+</ul>
+<p>（3）论文应用：该论文的应用场景是翻译系统，即将源语言翻译成另一目标语言，如“我爱你”—&gt;“I Love You”，这恰好是Seq-to-Seq的使用场景。在一开始的时候Seq-to-Seq也是用于翻译模型才慢慢被大家所重视，后来被应用到对话等领域中。</p>
+<p>2.<strong>Sequence to Sequence Learning with Neural Networks</strong></p>
+<p>（1）论文信息：</p>
+<ul>
+<li>发表时间：2014年9月</li>
+<li>作者：Ilya Sutskever</li>
+<li>引用量：3293（目前为止）</li>
+</ul>
+<p>（2）论文特色：<strong>第一篇提出 Seq2Seq模型</strong> 的论文，实现了端到端的训练，使得模型更加简单且不需要特定领域知识和人工提取特征；同样适用于翻译模型，摈弃SMT框架，极大促进了翻译模型的发展。</p>
+<p>图：Seq2Seq模型</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqlqdite9qj30k006xdga.jpg" alt="3"></p>
+<ul>
+<li>此模型里$Deocoder$部分的输入是前一时刻的目标值，而不是上一时刻的输出和向量$C$，优点是正确的输入能够指导模型快速收敛并产生正确的输出。当模型输出\<eos>时，表示翻译结束。模型的输入包括3个：encoder_input:”ABC\<eos>“，”encoder_input: “WXYZ”，decoder_label: “WXYZ\<eos>“。并使用目标函数进行训练，目标函数公式如下：</eos></eos></eos></li>
+</ul>
+<script type="math/tex; mode=display">
+p(y_1,...,y_{T'}|x_1,...,x_T)=\prod^{T'}_{t=1}p(y_t|v,y_1,...,y_{t-1})</script><ul>
+<li>深层LSTM模型：该论文使用4层LSTM神经网络作为encoder和decoder模型，且实验结果表明深层模型比浅层模型的效果更好；</li>
+<li>反序输入source：输入时将“ABC”变成“CBA”，如此可解决长序列的long-term依赖，使模型可学习到更多对应关系，从而得到较好的效果；</li>
+<li>Beam Search：这是一种测试技巧，在training过程中不会使用。通常会采用greedy贪婪式的序列生成方法，即每一步都取最大概率的元素作为当前output，但此法弊端在于“一步错步步错”（一旦某一步输出选错，可能会导致最终结果出错），故使用beam search的方法可改善这种弊端，即每一步都取概率最大的k个序列（beam size）并作为下一次的input。</li>
+</ul>
+<p>图：深层模型示例</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqme2n9t4sj30k009iq40.jpg" alt="深层模型示例"></p>
+<p>（3）论文应用：主要应用于翻译领域，目前Google翻译系统就是采用这种结构。</p>
+<p>3.<strong>Neural Machine Translation by Jointly Learning to Align and Translate</strong></p>
+<p>（1）论文信息：</p>
+<ul>
+<li>发表时间：2014年9月</li>
+<li>作者：Dzmitry Bahdanau</li>
+<li>引用量：2450（目前为止）</li>
+</ul>
+<p>（2）论文特色：提出Seq2Seq模型，最大亮点是<strong>融入了Attention机制</strong>，可很好地解决long-term长序列依赖问题，同样应用于翻译系统 ，可较大提高模型的准确度。</p>
+<p>对于长序列而言，传统Seq2Seq模型是将source序列通过一个RNN模型encode为一个固定维度的向量，但这是远远不够解决long-term依赖问题的，因为一个向量无法编码该序列包含的所有信息。故该论文提出将encoder RNN的每个隐藏状态都保存在一个list中，在每次decode时都取计算st-1与所有隐藏向量之间的相关程度，并对其进行家全球和得到ci向量，即ci每次解码使都是不一样的，它会自动寻找最相关的hi向量，计算公式如下图：</p>
+<p>图：Seq2Seq模型架构</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqmegs93yhj309g0fjaar.jpg" alt="Seq2Seq模型架构"></p>
+<p>4.本项目与上述3个论文的对比分析：</p>
+<p>上述三篇论文是学界Seq2Seq模型的开山之作，而本项目的最大特色是“举一反三”，即<strong>将学界前沿的 RNN Seq2Seq 模型从机器翻译领域推广应用到问答系统领域，用Seq2Seq进行对话生成任务</strong>。</p>
+<h1 id="4-国内外对话系统行业产品分析"><a href="#4-国内外对话系统行业产品分析" class="headerlink" title="4. 国内外对话系统行业产品分析"></a>4. 国内外对话系统行业产品分析</h1><p><strong>对话相关技术的逐步成熟引发了工业界研发对话产品的热潮</strong>。苹果公司率先发布了<strong>智能助理</strong>软件 Siri，用户可以通过自然语言完成搜索、信息查询、日历和闹铃设置等任务。百度于2015年推出的对话式智能秘书度秘，以索引真实世界的服务和信息为基础，为用户提供信息的同事也提供诸如叫车、订外卖、订票等服务，并满足用户的聊天需求。其他类似的系统还有 Google Assistant、微软 Cortana等。</p>
+<p>同时<strong>聊天类对话系统</strong>也得到快速发展。微软于2014年发布的智能伴侣机器人小冰，可以借助情感计算基数和用户进行情感交流。类似的对话系统还有 SimSimi（小黄鸡）和小影机器人等。</p>
+<p>随着智能硬件技术的兴趣，以 Amazon Alexa为代表的<strong>对话系统与硬件相结合的智能设备</strong>也日益增多。此外，问答类对话机器人也在近年得到飞速发展，IBM 的深度问答系统——Watson在电视节目中打败了人类选手，其技术潜力正在逐步转化为应用，推动行业转型。</p>
+<p>以下将分别分析微软小冰、百度度秘、阿里小蜜三款不同的对话系统。</p>
+<h2 id="4-1-微软小冰对话系统：数据驱动的对话系统"><a href="#4-1-微软小冰对话系统：数据驱动的对话系统" class="headerlink" title="4.1 微软小冰对话系统：数据驱动的对话系统"></a>4.1 微软小冰对话系统：数据驱动的对话系统</h2><p>传统对话系统基于规则，而随着处理大数据的深度学习平台和方法的成熟，对话系统构建的焦点转移到了数据驱动的方法，其中检索模型和生成模型是两种主流方法。</p>
+<h3 id="1-单轮回复生成模型"><a href="#1-单轮回复生成模型" class="headerlink" title="1.单轮回复生成模型"></a>1.单轮回复生成模型</h3><p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fqvux76kmuj30yq0hqtla.jpg" alt="单轮回复生成模型"></p>
+<p>此模型借鉴了机器翻译中的编码-解码模型，在此基础上将对话的话题信息引入到回复生成中。其工作原理是：首先利用一个 RNN（循环神经网络）将输入信息编码成向量，同时利用一个话题模型估计出回复可能用到的话题关键词。解码器是一个以编码向量和话题关键词为条件的通过 RNN 实现的语言模型。在生成回复中每一个词时，解码器都通过注意力机制对编码器中的每个向量和话题关键词进行加权处理。</p>
+<h3 id="2-生成式多轮对话模型"><a href="#2-生成式多轮对话模型" class="headerlink" title="2.生成式多轮对话模型"></a>2.生成式多轮对话模型</h3><p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqvux2if7xj30y80ieqfx.jpg" alt="生成式多轮对话模型"></p>
+<p>此模型通过两层 RNN 编码器来刻画词与词、句与句的关系，并在两层网络之间 搭载了两层的注意力模型，一个突出重要词对生成的影响，一个关注句子的重要性。通过量程编码器和两层注意力模型，一段对话上下文最终被表示为一个向量，用来作为生成回复中当前词的条件。</p>
+<h3 id="3-模型应用"><a href="#3-模型应用" class="headerlink" title="3.模型应用"></a>3.模型应用</h3><p><strong>模型应用在微软的对话系统架构中，比如微软小冰</strong>（微软开发的聊天机器人），它的任务是给用户陪聊，具体衡量指标是多轮对话的平均轮数，小冰现在可完成平均23轮对话，最长对话超过7000轮。</p>
+<h2 id="4-2-百度开放域对话系统：基于多视角的回复选取模型"><a href="#4-2-百度开放域对话系统：基于多视角的回复选取模型" class="headerlink" title="4.2 百度开放域对话系统：基于多视角的回复选取模型"></a>4.2 百度开放域对话系统：基于多视角的回复选取模型</h2><h3 id="1-模型介绍"><a href="#1-模型介绍" class="headerlink" title="1.模型介绍"></a>1.模型介绍</h3><p>百度提出一种<strong>基于多视角的回复选取模型</strong>，多视角包括词序列视角（Word-level）与话语序列视角（utterance-level），如下图所示：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fqvtx1iq1yj30tw0i01au.jpg" alt="基于多视角的回复选取模型"></p>
+<p>该方案基于以下假设：每个视角从特定角度表达了\<query+上下文>与候选回复之间的语义关系，并且基于不同视角构建的模型相互之间具有互补性，且基于两个具有互补性的模型的打分可得到更好的回复排序结果。</query+上下文></p>
+<p>使用 GRU（Gated Recurrent Unit Neural Network）为 Query 与候选回复构建次预计分布式向量表示，然后才有CNN（卷积模型）和 GRU 结合的方式构建话语级向量表示，以捕捉话语级别的语义和篇章信息。通过同时最小化以下两个因子来优化模型和参数：1.每个视角下打分模型的预测错误；2.两个视角下打分模型预测结果的不一致性。在训练过程中，两个视角下模型或向量表示网络的互补信息通过共享的词向量表进行互换。</p>
+<h3 id="2-模型应用"><a href="#2-模型应用" class="headerlink" title="2.模型应用"></a>2.模型应用</h3><p>该模型<strong>应用在百度 NLP  对话系统的聊天服务</strong>中，完成与用户的开放域聊天任务。</p>
+<h2 id="4-3-阿里小蜜：基于检索模型和深度学习模型相结合的智能对话系统"><a href="#4-3-阿里小蜜：基于检索模型和深度学习模型相结合的智能对话系统" class="headerlink" title="4.3 阿里小蜜：基于检索模型和深度学习模型相结合的智能对话系统"></a>4.3 阿里小蜜：基于检索模型和深度学习模型相结合的智能对话系统</h2><p>通常chatbot包括2个部分：IR 模块和生成模块。针对用户的问题，IR 模块从 QA 知识库中检索到对应的答案，生成模块再用预训练好的 Seq2Seq 模型生成最终的答案。</p>
+<p>但是已有的系统面临的问题是，对于一些长问句或复杂问句往往无法在 QA 知识库中检索到匹配的条目，并且生成模块也经常生成不匹配或无意义的答案。</p>
+<p>故<strong>阿里小蜜的方法是将 IR 和生成模块聚合在一起，用一个 Seq2Seq 模型来对搜索结果做评估，从而达到优化的效果</strong>。</p>
+<h3 id="1-模型介绍-1"><a href="#1-模型介绍-1" class="headerlink" title="1.模型介绍"></a>1.模型介绍</h3><p>整个模型方案如下图：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fqvt37gvilj31700fk7b0.jpg" alt="模型"></p>
+<p>（1）技术原理：阿里小蜜首先采用检索模型从 QA 知识库中找出候选答案集合，然后利用带注意力的 Seq2Seq 模型对候选答案进行排序，如果第一候选的得分超过某个阈值，则作为最终答案输出，否则利用生成模型生成答案。</p>
+<p>（2）QA知识库</p>
+<p>（3）IR 模块：利用倒排索引的方法将每个单词隐射到包含这个单词的一组问句中，并且对这些单词的同义词也做了索引，然后利用 BM25 算法来计算搜索到的问句和输入问句的相似度，取最相似问句的答案。 </p>
+<p>（4）生成模型：生成模型是一个 attentive seq2seq 的结构，如下图：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fqvt8wsj5wj31280iy7cr.jpg" alt="生成模型"></p>
+<p>采用了一个 GRU（Gated Recurrent Unit Neural Network），由 question 生成 answer，计算生成单词的概率： </p>
+<script type="math/tex; mode=display">
+p(y_i=w_i|\theta_i)=p(y_i=w_i|y_1,y_2,...,y_{i-1},c_i)=f(y_{i-1},s_{i-1},c_i)</script><p>其中加了 context 向量，它是由图中的 α 求得的，α 表示的是当前步的输入单词，和上一步的生成单词之间的匹配度，用了一个 alignment 模型计算。</p>
+<p>对于各个 QA 长度不等的情况，采用了 bucketing 和 padding 机制。另外用了 softmax 来随机采样词汇表中的单词，而不使用整个词汇表，从而加速了训练过程。还是用了 beam search decoder，每次维护 top-k 个输出，来取代一次一个输出的贪心搜索。</p>
+<p>（5）Rerank模块</p>
+<p>使用的模型和上面的一样，根据输入问题来为候选答案打分，使用平均概率作为评分函数：</p>
+<script type="math/tex; mode=display">
+Mean-prob=\frac{1}{n}\sum^n_{i-1}p(y_i=w_i|\theta_i)</script>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>拿钱去买猫粮和狗粮嗷 ~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Scarlett Huang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Artificial-Intelligence/" rel="tag"><i class="fa fa-tag"></i> Artificial Intelligence</a>
+          
+            <a href="/tags/Natural-Language-Processing/" rel="tag"><i class="fa fa-tag"></i> Natural Language Processing</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/20/《顾客为什么购买》阅读笔记/" rel="next" title="《顾客为什么购买》阅读笔记">
+                <i class="fa fa-chevron-left"></i> 《顾客为什么购买》阅读笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://ws1.sinaimg.cn/large/006tKfTcly1fqfzxxfc6bj30b40b4tal.jpg"
+               alt="Scarlett Huang" />
+          <p class="site-author-name" itemprop="name">Scarlett Huang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">192</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.woshipm.com/u/192348" target="_blank" title="WoShiPM">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WoShiPM
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Column">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu Column
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://book.douban.com/people/ScarlettYellow/" target="_blank" title="Douban">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Douban
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Friend Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://unique-ailab.github.io/" title="Unique-AILab" target="_blank">Unique-AILab</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mr-why.com/" title="MR WHY(AI Dev. & AI PM)" target="_blank">MR WHY(AI Dev. & AI PM)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wondervictor.github.io/" title="Vic Chan(AI Dev.)" target="_blank">Vic Chan(AI Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Dev.)" target="_blank">qzwlecr(Distributed Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://alisahhh.github.io/" title="Alisa(Alg. Dev.)" target="_blank">Alisa(Alg. Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://llag9810.github.io/" title="yifan(Android Dev.)" target="_blank">yifan(Android Dev.)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-相关概念术语及解释"><span class="nav-number">1.</span> <span class="nav-text">1.相关概念术语及解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-国际对话系统领域分析"><span class="nav-number">2.</span> <span class="nav-text">2.国际对话系统领域分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-对话系统类型及方法"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 对话系统类型及方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-非任务导向型对话系统——基于检索的方法"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 非任务导向型对话系统——基于检索的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-非任务导向型对话系统——神经生成模型Neural-Generative-Models）"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 非任务导向型对话系统——神经生成模型Neural Generative Models）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-国际-Seq2Seq-框架学术进展分析"><span class="nav-number">3.</span> <span class="nav-text">3. 国际 Seq2Seq 框架学术进展分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-国内外对话系统行业产品分析"><span class="nav-number">4.</span> <span class="nav-text">4. 国内外对话系统行业产品分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-微软小冰对话系统：数据驱动的对话系统"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 微软小冰对话系统：数据驱动的对话系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-单轮回复生成模型"><span class="nav-number">4.1.1.</span> <span class="nav-text">1.单轮回复生成模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-生成式多轮对话模型"><span class="nav-number">4.1.2.</span> <span class="nav-text">2.生成式多轮对话模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-模型应用"><span class="nav-number">4.1.3.</span> <span class="nav-text">3.模型应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-百度开放域对话系统：基于多视角的回复选取模型"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 百度开放域对话系统：基于多视角的回复选取模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-模型介绍"><span class="nav-number">4.2.1.</span> <span class="nav-text">1.模型介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-模型应用"><span class="nav-number">4.2.2.</span> <span class="nav-text">2.模型应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-阿里小蜜：基于检索模型和深度学习模型相结合的智能对话系统"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 阿里小蜜：基于检索模型和深度学习模型相结合的智能对话系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-模型介绍-1"><span class="nav-number">4.3.1.</span> <span class="nav-text">1.模型介绍</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>
+
+<div class="copyright" >
+  
+  &copy;  2017.07 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Scarlett Huang</span>
+
+  
+</div>
+
+
+ <!-- <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">共597.8k字</span>
+</div>
+
+
+
+
+<span id="busuanzi_container_site_pv">
+<div class="powered-by"></div>
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <span id="busuanzi_container_site_uv">
+  <div class="powered-by"></div>
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100332, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100332, xid: "2018/08/20/对话系统领域研究综述（2018）/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100332/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+
+</body>
+</html>
