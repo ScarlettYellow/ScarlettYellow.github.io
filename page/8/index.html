@@ -103,7 +103,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Scarlett Huang | Blog">
-<meta property="og:url" content="http://ScarlettHuang.cn/page/8/index.html">
+<meta property="og:url" content="http://blog.scarletthuang.cn/page/8/index.html">
 <meta property="og:site_name" content="Scarlett Huang | Blog">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
@@ -137,17 +137,26 @@
 
 
 
-  <link rel="canonical" href="http://ScarlettHuang.cn/page/8/"/>
+  <link rel="canonical" href="http://blog.scarletthuang.cn/page/8/"/>
 
 
 
 
 
-  <title>Scarlett Huang | Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Scarlett Huang | Blog</title>
   
 
 
 
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-141530033-1', 'auto');
+  ga('send', 'pageview');
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -180,7 +189,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description"></h1>
       
   </div>
 
@@ -220,12 +229,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-me">
-          <a href="/Me/" rel="section">
+        <li class="menu-item menu-item-know-me">
+          <a href="https://www.scarletthuang.cn" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            Me
+            Know Me
           </a>
         </li>
       
@@ -316,12 +325,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/10/06/Coursera-Machine-Learning-Week6-Advice-for-Applying-Machine-Learning/">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/30/了解客户端架构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Scarlett Huang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -333,9 +342,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/06/Coursera-Machine-Learning-Week6-Advice-for-Applying-Machine-Learning/" itemprop="url">Coursera Machine Learning|Week6:Advice for Applying Machine Learning</a></h1>
+                <a class="post-title-link" href="/2017/10/30/了解客户端架构/" itemprop="url">了解客户端架构</a></h2>
         
 
         <div class="post-meta">
@@ -347,8 +356,176 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-06T21:37:41+08:00">
-                2017-10-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-30T19:30:19+08:00">
+                2017-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/Technical-Logic-Knowledge/" itemprop="url" rel="index">
+                    <span itemprop="name">Technical Logic & Knowledge</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/30/了解客户端架构/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/30/了解客户端架构/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Abstract：在PM逻辑层里，对客户端架构的理解属于基础产品逻辑。客户端&lt;——&gt;API&lt;——&gt;服务端&lt;——&gt;数据层。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/30/了解客户端架构/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/30/若有完美，必有谎言-产品策略模型设计的关键点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang | Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/30/若有完美，必有谎言-产品策略模型设计的关键点/" itemprop="url">若有完美，必有谎言|产品策略模型设计的关键点</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-30T11:21:26+08:00">
+                2017-10-30
               </time>
             
 
@@ -381,8 +558,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Artificial-Intelligence/Machine-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Machine Learning</span>
+                  <a href="/categories/Artificial-Intelligence/AI-PM/" itemprop="url" rel="index">
+                    <span itemprop="name">AI PM</span>
                   </a>
                 </span>
 
@@ -399,9 +576,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/06/Coursera-Machine-Learning-Week6-Advice-for-Applying-Machine-Learning/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/30/若有完美，必有谎言-产品策略模型设计的关键点/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/06/Coursera-Machine-Learning-Week6-Advice-for-Applying-Machine-Learning/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/30/若有完美，必有谎言-产品策略模型设计的关键点/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -430,10 +607,10 @@
 
       
         
-          <p>Abstract：第一部分介绍如何用机器学习诊断法评价一个学习算法的可用性以及告知如何改进算法效果（面对机器学习问题，提高算法表现的方法）。第二部分讲怎样评价一个学习算法，以及如何用交叉验证法判断一个算法是偏差OR方差问题。第三部分讲如何操作偏斜数据。第四部分讲使用大数据集的必要性。<br>
+          <p>Abstract：<strong>产品策略模型是一个黑箱</strong>，包含输入输出和计算过程。模型设计过程中需要注意：<strong>模型不分高下分是否合适；处理高信息量的能力；需要衡量算法迭代的指标；以置信区间定计算的精度，不要让精度过犹不及；考虑多因素的涌现，和增强对失控的参数控制；人对业务的理解构成模型的边界</strong>。而<strong>最重要的是先想明白产品遇到了什么样的情境，再思考需要使用产品策略模型来解决什么问题（因时制宜）</strong>。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/06/Coursera-Machine-Learning-Week6-Advice-for-Applying-Machine-Learning/#more" rel="contents">
+            <a class="btn" href="/2017/10/30/若有完美，必有谎言-产品策略模型设计的关键点/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -484,12 +661,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/10/01/PM需要了解的行业技术名词/">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/30/AI-PM的人文素养和精神境界的评判标准？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Scarlett Huang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -501,9 +678,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/01/PM需要了解的行业技术名词/" itemprop="url">PM需要了解的行业技术名词</a></h1>
+                <a class="post-title-link" href="/2017/10/30/AI-PM的人文素养和精神境界的评判标准？/" itemprop="url">AI PM的人文素养和精神境界的评判标准？</a></h2>
         
 
         <div class="post-meta">
@@ -515,2024 +692,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T19:13:08+08:00">
-                2017-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
-                    <span itemprop="name">Product Manager</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/Technical-Logic-Knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">Technical Logic & Knowledge</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/01/PM需要了解的行业技术名词/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/01/PM需要了解的行业技术名词/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Abstract:这是一份来自互联网公司招聘网的职位清单。其涵盖了互联网行业中重要的技术名词。作为PM要对这些技术概念和原理有所了解。可以用平时零碎的时间慢慢加强技术理解，再选择深入的方向。但注意，对PM来说最重要的是痛点挖掘、提出solution和寻找产品关键路径.<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/01/PM需要了解的行业技术名词/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/10/01/Interpret-Technique-to-PM-Chapter11-Interpretation-of-some-Techniques/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Scarlett Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Scarlett Huang | Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/01/Interpret-Technique-to-PM-Chapter11-Interpretation-of-some-Techniques/" itemprop="url">Interpret Technique to PM|Chapter11:Interpretation of some Techniques</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T19:11:08+08:00">
-                2017-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
-                    <span itemprop="name">Product Manager</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/Technical-Logic-Knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">Technical Logic & Knowledge</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter11-Interpretation-of-some-Techniques/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/01/Interpret-Technique-to-PM-Chapter11-Interpretation-of-some-Techniques/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Abstract：对一些技术概念和原理的解释。如搜索引擎，推荐算法，贝塞尔曲线，A/B 测试等。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/01/Interpret-Technique-to-PM-Chapter11-Interpretation-of-some-Techniques/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/10/01/Interpret-Technique-to-PM-Chapter10-Noun-Interpretation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Scarlett Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Scarlett Huang | Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/01/Interpret-Technique-to-PM-Chapter10-Noun-Interpretation/" itemprop="url">Interpret Technique to PM|Chapter10:Noun Interpretation</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T19:07:38+08:00">
-                2017-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
-                    <span itemprop="name">Product Manager</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/Technical-Logic-Knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">Technical Logic & Knowledge</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter10-Noun-Interpretation/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/01/Interpret-Technique-to-PM-Chapter10-Noun-Interpretation/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Abstract：一些会经常碰到的技术名词的通俗解释。如抽象，封装，多态，SDK，API，架构，PAC，hook，哈希表等。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/01/Interpret-Technique-to-PM-Chapter10-Noun-Interpretation/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/10/01/Interpret-Technique-to-PM-Chapter9-Development-Technology/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Scarlett Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Scarlett Huang | Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/01/Interpret-Technique-to-PM-Chapter9-Development-Technology/" itemprop="url">Interpret Technique to PM|Chapter9:Development Technology</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T19:04:16+08:00">
-                2017-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
-                    <span itemprop="name">Product Manager</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/Technical-Logic-Knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">Technical Logic & Knowledge</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter9-Development-Technology/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/01/Interpret-Technique-to-PM-Chapter9-Development-Technology/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Abstract：产品研发过程中的一些基础的开发技术知识。如越界，动画开发，并行计算，程序与数据结构,MVC模式，敏捷开发模式等。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/01/Interpret-Technique-to-PM-Chapter9-Development-Technology/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/10/01/Interpret-Technique-to-PM-Chapter8-Development-Tools/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Scarlett Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Scarlett Huang | Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/01/Interpret-Technique-to-PM-Chapter8-Development-Tools/" itemprop="url">Interpret Technique to PM|Chapter8:Development Tools</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T18:59:29+08:00">
-                2017-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
-                    <span itemprop="name">Product Manager</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/Technical-Logic-Knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">Technical Logic & Knowledge</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter8-Development-Tools/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/01/Interpret-Technique-to-PM-Chapter8-Development-Tools/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Abstract：关于开发工具的一些基础知识。如编程语言，IDE，GitHub，SVN等。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/01/Interpret-Technique-to-PM-Chapter8-Development-Tools/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/10/01/Interpret-Technique-to-PM-Chapter7-Secure/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Scarlett Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Scarlett Huang | Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/01/Interpret-Technique-to-PM-Chapter7-Secure/" itemprop="url">Interpret Technique to PM|Chapter7:Secure</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T18:57:18+08:00">
-                2017-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
-                    <span itemprop="name">Product Manager</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/Technical-Logic-Knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">Technical Logic & Knowledge</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter7-Secure/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/01/Interpret-Technique-to-PM-Chapter7-Secure/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Abstract:产品研发过程中的一些计算机安全方面的知识。如web安全，信息攻击，加密，信息安全等。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/01/Interpret-Technique-to-PM-Chapter7-Secure/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/10/01/Interpret-Technique-to-PM-Chapter6-Front-End/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Scarlett Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Scarlett Huang | Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/01/Interpret-Technique-to-PM-Chapter6-Front-End/" itemprop="url">Interpret Technique to PM|Chapter6:Front End</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T18:51:10+08:00">
-                2017-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
-                    <span itemprop="name">Product Manager</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/Technical-Logic-Knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">Technical Logic & Knowledge</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter6-Front-End/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/01/Interpret-Technique-to-PM-Chapter6-Front-End/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Abstract：产品研发过程中的一些前端知识。如Ajax，PWA，H5,react,websocket,spider 等。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/01/Interpret-Technique-to-PM-Chapter6-Front-End/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/10/01/Interpret-Technique-to-PM-Chapter5-Computer-Network/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Scarlett Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Scarlett Huang | Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/01/Interpret-Technique-to-PM-Chapter5-Computer-Network/" itemprop="url">Interpret Technique to PM|Chapter5:Computer Network</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T18:46:54+08:00">
-                2017-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
-                    <span itemprop="name">Product Manager</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/Technical-Logic-Knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">Technical Logic & Knowledge</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter5-Computer-Network/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/01/Interpret-Technique-to-PM-Chapter5-Computer-Network/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Abstract：产品研发过程中的关于计算机网络的一些基础知识。如服务器，网关，协议，长连接等。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/01/Interpret-Technique-to-PM-Chapter5-Computer-Network/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/10/01/Interpret-Technique-to-PM-Chapter4-Workplace-Client-Technology/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Scarlett Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Scarlett Huang | Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/01/Interpret-Technique-to-PM-Chapter4-Workplace-Client-Technology/" itemprop="url">Interpret Technique to PM|Chapter4:Workplace Client Technology</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T18:43:14+08:00">
-                2017-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
-                    <span itemprop="name">Product Manager</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/Technical-Logic-Knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">Technical Logic & Knowledge</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter4-Workplace-Client-Technology/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/01/Interpret-Technique-to-PM-Chapter4-Workplace-Client-Technology/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Abstract：一些客户端技术原理，如APK，传感器，热补丁，系统权限等等。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/01/Interpret-Technique-to-PM-Chapter4-Workplace-Client-Technology/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/10/01/Interpret-Technique-to-PM-Chapter3-Hardware/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Scarlett Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Scarlett Huang | Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/01/Interpret-Technique-to-PM-Chapter3-Hardware/" itemprop="url">Interpret Technique to PM|Chapter3:Hardware</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T18:32:59+08:00">
-                2017-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
-                    <span itemprop="name">Product Manager</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/Technical-Logic-Knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">Technical Logic & Knowledge</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter3-Hardware/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/01/Interpret-Technique-to-PM-Chapter3-Hardware/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Abstract：一些产品研发过程中的硬件基础知识。注：由于有道云笔记突然bug，所以丢失了很多内容。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/01/Interpret-Technique-to-PM-Chapter3-Hardware/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/10/01/Interpret-Technique-to-PM-Chapter2-Data-Processing/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Scarlett Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Scarlett Huang | Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/01/Interpret-Technique-to-PM-Chapter2-Data-Processing/" itemprop="url">Interpret Technique to PM|Chapter2:Data Processing</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T18:30:02+08:00">
-                2017-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
-                    <span itemprop="name">Product Manager</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/Technical-Logic-Knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">Technical Logic & Knowledge</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter2-Data-Processing/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/01/Interpret-Technique-to-PM-Chapter2-Data-Processing/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Abstract：pm需要了解的产品研发过程中设计到的数据处理的基础知识。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/01/Interpret-Technique-to-PM-Chapter2-Data-Processing/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/10/01/Interpret-Technique-to-PM-Chapter1-Communication/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Scarlett Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Scarlett Huang | Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/01/Interpret-Technique-to-PM-Chapter1-Communication/" itemprop="url">Interpret Technique to PM|Chapter1:Communication</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-01T17:43:10+08:00">
-                2017-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
-                    <span itemprop="name">Product Manager</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Product-Manager/Technical-Logic-Knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">Technical Logic & Knowledge</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/01/Interpret-Technique-to-PM-Chapter1-Communication/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/01/Interpret-Technique-to-PM-Chapter1-Communication/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Abstract:基础篇，关于PM怎样愉快地跟程序员沟通。哪些话会惹恼程序员？提需求的正确姿势是什么？</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/01/Interpret-Technique-to-PM-Chapter1-Communication/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/09/29/Coursera-Machine-Learning-Week5-BackPropagation-Algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Scarlett Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Scarlett Huang | Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/29/Coursera-Machine-Learning-Week5-BackPropagation-Algorithm/" itemprop="url">Coursera Machine Learning|Week5:BackPropagation Algorithm</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-29T17:44:25+08:00">
-                2017-09-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-30T09:04:43+08:00">
+                2017-10-30
               </time>
             
 
@@ -2565,8 +726,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Artificial-Intelligence/Machine-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Machine Learning</span>
+                  <a href="/categories/Artificial-Intelligence/AI-PM/" itemprop="url" rel="index">
+                    <span itemprop="name">AI PM</span>
                   </a>
                 </span>
 
@@ -2583,9 +744,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/29/Coursera-Machine-Learning-Week5-BackPropagation-Algorithm/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/30/AI-PM的人文素养和精神境界的评判标准？/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/29/Coursera-Machine-Learning-Week5-BackPropagation-Algorithm/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/30/AI-PM的人文素养和精神境界的评判标准？/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -2614,11 +775,10 @@
 
       
         
-          <p>Abstract：本文讲在<strong>给定训练集下为神经网络拟合参数的学习算法</strong>。<strong>反向传播算法——让代价函数J(theta)最小化的算法。即，我们从输出层开始计算δ项，然后我们返回到上一层计算第三隐藏层的δ项，接着我们再往前一步来计算δ(2)</strong>。类似于<strong>把输出层的误差反向传播给了第3层，然后再传到第二层</strong>。这就是反向传播的意思。 <strong>反向传播其实就是计算所有δ项， δ是每层的激励值的误差项</strong>，δ = 这个单元的激励值 - 训练样本里的真实值。反向传播和前向传播很相似，只不过<strong>计算方向不同</strong>。反向传播的计算结果<strong>其实是δ值的加权和。权值是这些对应边的强度</strong>。    </p>
-<p>实现将参数从矩阵展开成向量，以便我们在高级最优化步骤中的使用需要。矩阵向量化：thetaVec；向量矩阵化：reshape命令。  而当使用反向传播时，易遇到很多细小的错误，梯度检验方法会帮助确定实现的向前传播和反向传播或者其他的什么算法是100%正确的。梯度检验的原理是双侧差分法求导数。随机初始化theta。以上方法都是训练神经网络的过程中需要用到的。本文后半段详细介绍了训练神经网络的步骤和方法。</p>
+          <p>Abstract：感性认知——独到的insight——化抽象认知为具象产品设计。// actually，仁者见仁智者见智。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/29/Coursera-Machine-Learning-Week5-BackPropagation-Algorithm/#more" rel="contents">
+            <a class="btn" href="/2017/10/30/AI-PM的人文素养和精神境界的评判标准？/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2669,12 +829,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/09/29/新媒体掐架定律25条/">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/30/Paper-Analysis-基于E-CNN的情绪归因/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Scarlett Huang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -2686,9 +846,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/29/新媒体掐架定律25条/" itemprop="url">新媒体掐架定律25条</a></h1>
+                <a class="post-title-link" href="/2017/10/30/Paper-Analysis-基于E-CNN的情绪归因/" itemprop="url">Paper Analysis|基于E-CNN的情绪归因</a></h2>
         
 
         <div class="post-meta">
@@ -2700,176 +860,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-29T11:32:38+08:00">
-                2017-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Communication-Science/" itemprop="url" rel="index">
-                    <span itemprop="name">Communication Science</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Communication-Science/Advertising-and-Marketing/" itemprop="url" rel="index">
-                    <span itemprop="name">Advertising and Marketing</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/29/新媒体掐架定律25条/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/29/新媒体掐架定律25条/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Abstract：最近在新媒体界很火的“新媒体掐架定律 ”，由南大新闻院院长杜骏飞老师提出。<strong>这25条定律从新媒体掐架的起端、过程、结果和掐架双方、掐架话题等维度，清晰阐释了掐架事件背后的一些普适性的定律</strong>。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/29/新媒体掐架定律25条/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/09/27/Coursera-Machine-Learning-Week4：Neural-Networks/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Scarlett Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Scarlett Huang | Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/27/Coursera-Machine-Learning-Week4：Neural-Networks/" itemprop="url">Coursera Machine Learning|Week4：Neural Networks</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-27T23:49:31+08:00">
-                2017-09-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-30T08:50:56+08:00">
+                2017-10-30
               </time>
             
 
@@ -2902,8 +894,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Artificial-Intelligence/Machine-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Machine Learning</span>
+                  <a href="/categories/Artificial-Intelligence/Natural-Language-Processing/" itemprop="url" rel="index">
+                    <span itemprop="name">Natural Language Processing</span>
                   </a>
                 </span>
 
@@ -2920,9 +912,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/27/Coursera-Machine-Learning-Week4：Neural-Networks/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/30/Paper-Analysis-基于E-CNN的情绪归因/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/27/Coursera-Machine-Learning-Week4：Neural-Networks/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/30/Paper-Analysis-基于E-CNN的情绪归因/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -2951,10 +943,10 @@
 
       
         
-          <p>Abstract：神经网络产生的原因是人们想尝试设计出模仿大脑的算法。<br>
+          <p>Abstract：情绪归因的意义在于抽取出出发情绪产生的原因信息，从而有助于针对性对策。看了篇paper，本文介绍下里面提出的基于E-CNN神经网络的情绪原因识别方法：通过词向量、卷积、池化等操作充分融合句子的语义信息，利用多个CNN集成降低数据不平衡性对情绪原因识别的影响，克服传统情绪原因识别方法的繁琐规则制定、特征抽取、特征空间降维等过程。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/27/Coursera-Machine-Learning-Week4：Neural-Networks/#more" rel="contents">
+            <a class="btn" href="/2017/10/30/Paper-Analysis-基于E-CNN的情绪归因/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3005,12 +997,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/09/27/《走近2050：注意力、互联网和人工智能》阅读笔记/">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/30/如何看出人的潜力？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Scarlett Huang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -3022,9 +1014,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/27/《走近2050：注意力、互联网和人工智能》阅读笔记/" itemprop="url">《走近2050：注意力、互联网和人工智能》阅读笔记</a></h1>
+                <a class="post-title-link" href="/2017/10/30/如何看出人的潜力？/" itemprop="url">如何看出人的潜力？</a></h2>
         
 
         <div class="post-meta">
@@ -3036,8 +1028,333 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-27T15:49:15+08:00">
-                2017-09-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-30T08:29:54+08:00">
+                2017-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/PM-Ability/" itemprop="url" rel="index">
+                    <span itemprop="name">PM Ability</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/30/如何看出人的潜力？/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/30/如何看出人的潜力？/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Abstract:仁者见仁智者见智。潜力是可以被观察出来的。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/30/如何看出人的潜力？/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/30/熵是什么？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang | Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/30/熵是什么？/" itemprop="url">熵是什么？</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-30T00:39:31+08:00">
+                2017-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/30/熵是什么？/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/30/熵是什么？/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Abstract：熵是什么？宇宙的能量总和是个常数，总的熵是不断增加的。每当能量从一种状态转化到另一种状态时，我们会“得到一定的惩罚”，此惩罚即熵，是无效的能量。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/30/熵是什么？/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/29/AlphaGo-Zero论文分析与模型可移植性的思考/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang | Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/29/AlphaGo-Zero论文分析与模型可移植性的思考/" itemprop="url">AlphaGo Zero论文分析与模型可移植性的思考</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-29T22:51:19+08:00">
+                2017-10-29
               </time>
             
 
@@ -3066,6 +1383,17 @@
 
                 
                 
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/Reinforcement-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Reinforcement Learning</span>
+                  </a>
+                </span>
+
+                
+                
               
             </span>
           
@@ -3077,9 +1405,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/27/《走近2050：注意力、互联网和人工智能》阅读笔记/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/29/AlphaGo-Zero论文分析与模型可移植性的思考/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/27/《走近2050：注意力、互联网和人工智能》阅读笔记/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/29/AlphaGo-Zero论文分析与模型可移植性的思考/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -3108,10 +1436,10 @@
 
       
         
-          <p>Abstract：本书主要讲互联网、注意力和人工智能三大方面。从长尾理论到注意力经济、计算广告学、体验经济，从注意力到占意理论；从众包和人类计算到游戏改变世界；最后阐述了占意与人工智能的关系。书还是不错的，适合对互联网、人工智能形成宏观的了解。其中占意理论是核心，以占意为核心去阐述各种概念。而占意的定义是人的外在注意力和内在意愿的集合。           </p>
+          <p>Abstract：从用棋谱到扔棋谱，阿元狗完败阿法狗显示强化学习（∈非监督学习）不依赖人的经验也可以通过自学做的很好。其意义在于做AI应用不再需要人工去标注大量样本（非监督学习之区别于监督学习），通过摆脱对人类经验和辅助的依赖，类似的深度强化学习算法或许能更容易地被广泛应用到其他人类缺乏了解或是缺乏大量标注数据的领域。<br>本文分析了Zero与旧版AlphaGo相比的改进，以及思考该模型是否具有可移植性？文末提出了自己的几个疑问，待解答。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/27/《走近2050：注意力、互联网和人工智能》阅读笔记/#more" rel="contents">
+            <a class="btn" href="/2017/10/29/AlphaGo-Zero论文分析与模型可移植性的思考/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3162,12 +1490,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/09/27/新媒体标题写作：如何成为标题党？/">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/29/PM的逻辑——详细阐述/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Scarlett Huang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -3179,9 +1507,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/27/新媒体标题写作：如何成为标题党？/" itemprop="url">新媒体标题写作：如何成为标题党？</a></h1>
+                <a class="post-title-link" href="/2017/10/29/PM的逻辑——详细阐述/" itemprop="url">PM的逻辑——详细阐述</a></h2>
         
 
         <div class="post-meta">
@@ -3193,8 +1521,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-27T14:33:45+08:00">
-                2017-09-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-29T20:56:28+08:00">
+                2017-10-29
               </time>
             
 
@@ -3216,8 +1544,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Communication-Science/" itemprop="url" rel="index">
-                    <span itemprop="name">Communication Science</span>
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
                   </a>
                 </span>
 
@@ -3227,8 +1555,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Communication-Science/Creative-Writing-and-Planning/" itemprop="url" rel="index">
-                    <span itemprop="name">Creative Writing and Planning</span>
+                  <a href="/categories/Product-Manager/Technical-Logic-Knowledge/" itemprop="url" rel="index">
+                    <span itemprop="name">Technical Logic & Knowledge</span>
                   </a>
                 </span>
 
@@ -3245,9 +1573,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/27/新媒体标题写作：如何成为标题党？/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/29/PM的逻辑——详细阐述/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/27/新媒体标题写作：如何成为标题党？/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/29/PM的逻辑——详细阐述/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -3276,10 +1604,10 @@
 
       
         
-          <p>Abstract：传统媒体标题以简洁直白明确为要，而新媒体时代的标题则以<strong>吸引人眼球</strong>为特征。尤其以咪蒙为代表的自媒体写作者常篇篇文案动不动10万+，且引起大规模转发，其中很重要的原因是其标题拟得精彩、<strong>戳中人心</strong>。一个好的标题可获取极高的点击率，价值千金。那么“标题党：究竟是怎样炼成的呢？<br>
+          <p>Abstract:我们总在说PM的核心能力之一是产品逻辑，但少有人能具体地解释产品逻辑到底是什么。本文将从what is logistic,how to evaluate,how to improve三方面阐述。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/27/新媒体标题写作：如何成为标题党？/#more" rel="contents">
+            <a class="btn" href="/2017/10/29/PM的逻辑——详细阐述/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3330,12 +1658,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/09/26/集合覆盖问题/">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/29/逻辑学X集合论-内涵与外延，概念的外延间的关系/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Scarlett Huang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -3347,9 +1675,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/26/集合覆盖问题/" itemprop="url">集合覆盖问题</a></h1>
+                <a class="post-title-link" href="/2017/10/29/逻辑学X集合论-内涵与外延，概念的外延间的关系/" itemprop="url">逻辑学X集合论|内涵与外延，概念的外延间的关系</a></h2>
         
 
         <div class="post-meta">
@@ -3361,8 +1689,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T21:20:56+08:00">
-                2017-09-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-29T19:39:55+08:00">
+                2017-10-29
               </time>
             
 
@@ -3413,9 +1741,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/26/集合覆盖问题/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/29/逻辑学X集合论-内涵与外延，概念的外延间的关系/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/26/集合覆盖问题/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/29/逻辑学X集合论-内涵与外延，概念的外延间的关系/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -3444,10 +1772,10 @@
 
       
         
-          <p>Abstract：集合覆盖问题是集合论里的一个知识点，这里做简要的概念解释。集合覆盖问题是要找到S的一个最小子集，使得其并集等于全集。<br>
+          <p>Abstract：一个词项同时具有内涵和外延，分别指规定对象本质属性的含义和具有这些本质属性的对象的集合。涉及到逻辑学和集合论。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/26/集合覆盖问题/#more" rel="contents">
+            <a class="btn" href="/2017/10/29/逻辑学X集合论-内涵与外延，概念的外延间的关系/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3498,12 +1826,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ScarlettHuang.cn/2017/09/25/理解算法的时间和空间复杂度/">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/29/众包模式-对科大讯飞“方言保护计划”的分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Scarlett Huang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/themes/next/source/images/icon.png">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -3515,9 +1843,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/25/理解算法的时间和空间复杂度/" itemprop="url">理解算法的时间和空间复杂度</a></h1>
+                <a class="post-title-link" href="/2017/10/29/众包模式-对科大讯飞“方言保护计划”的分析/" itemprop="url">众包模式|对科大讯飞“方言保护计划”的分析</a></h2>
         
 
         <div class="post-meta">
@@ -3529,8 +1857,669 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T19:16:50+08:00">
-                2017-09-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-29T16:07:18+08:00">
+                2017-10-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index">
+                    <span itemprop="name">Artificial Intelligence</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/AI-Application/" itemprop="url" rel="index">
+                    <span itemprop="name">AI Application</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/29/众包模式-对科大讯飞“方言保护计划”的分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/29/众包模式-对科大讯飞“方言保护计划”的分析/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Abstract：最近科大讯飞联合多方力量推出一项“方言保护计划”，本文对活动实质、设计等方面做了一些分析。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/29/众包模式-对科大讯飞“方言保护计划”的分析/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/27/Markdown-X-LeTex-如何愉快地书写数学公式？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang | Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/27/Markdown-X-LeTex-如何愉快地书写数学公式？/" itemprop="url">Markdown X LeTex|如何愉快地书写数学公式？</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T13:56:12+08:00">
+                2017-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Math/" itemprop="url" rel="index">
+                    <span itemprop="name">Math</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/27/Markdown-X-LeTex-如何愉快地书写数学公式？/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/27/Markdown-X-LeTex-如何愉快地书写数学公式？/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Abstract：如何在有道云笔记里愉快地用markdown写数学公式呢？本文告诉你懒人的秘诀 （w</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/27/Markdown-X-LeTex-如何愉快地书写数学公式？/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/25/危机公关-如何化解企业危机？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang | Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/25/危机公关-如何化解企业危机？/" itemprop="url">危机公关|如何化解企业危机？</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-25T15:37:57+08:00">
+                2017-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Communication-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Communication Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Communication-Science/Public-Relationship/" itemprop="url" rel="index">
+                    <span itemprop="name">Public Relationship</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/25/危机公关-如何化解企业危机？/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/25/危机公关-如何化解企业危机？/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Abstract:危机公关是公关领域的一大热门，很多人会误以为危机公关是替企业掩盖事实，但其实危机公关的核心目的并不是改变事实的真相，而只是改变人们对事件的看法。本文介绍了危机公关的5S原则和解决方案。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/25/危机公关-如何化解企业危机？/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/25/案例-蓝彪（BlueFocus）活动策划书/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang | Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/25/案例-蓝彪（BlueFocus）活动策划书/" itemprop="url">案例|蓝彪（BlueFocus）活动策划书</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-25T14:54:36+08:00">
+                2017-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Communication-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Communication Science</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Communication-Science/Public-Relationship/" itemprop="url" rel="index">
+                    <span itemprop="name">Public Relationship</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/25/案例-蓝彪（BlueFocus）活动策划书/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/25/案例-蓝彪（BlueFocus）活动策划书/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Abstract:蓝彪是中国最大的公关公司。本文告诉你如何以系统严密的思路做一份漂亮的公关活动提案。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/25/案例-蓝彪（BlueFocus）活动策划书/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/25/数据库系统概论-基础篇—Chapter1-绪论/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang | Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/25/数据库系统概论-基础篇—Chapter1-绪论/" itemprop="url">数据库系统概论|基础篇—Chapter1 绪论</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-25T13:18:02+08:00">
+                2017-10-25
               </time>
             
 
@@ -3563,8 +2552,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Computer-Science/Data-Structure/" itemprop="url" rel="index">
-                    <span itemprop="name">Data Structure</span>
+                  <a href="/categories/Computer-Science/Database-System/" itemprop="url" rel="index">
+                    <span itemprop="name">Database System</span>
                   </a>
                 </span>
 
@@ -3581,9 +2570,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/25/理解算法的时间和空间复杂度/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/25/数据库系统概论-基础篇—Chapter1-绪论/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/25/理解算法的时间和空间复杂度/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/25/数据库系统概论-基础篇—Chapter1-绪论/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -3612,10 +2601,178 @@
 
       
         
-          <p>Abstract：算法分析包括事后统计和事前分析估算。事后统计由于依赖于计算机软硬件环境等因素故不太好。事前分析估算是以估算算法的时间复杂度的方式来衡量算法优劣。时间复杂度T(n) = O(f(n))，计算结果只需关注n的最高次幂的数量级即可。而算法的空间复杂度则是对算法在运行过程中临时占用存储空间大小的量度。<br>
+          <p>Abstract：<strong>基础篇介绍数据库系统的基本概念和基础知识</strong>。第一章绪论，介绍数据库的额基本概念，数据模型的组成要素和常用数据模型，数据库系统的三季末世界观和其主要组成部分。<br><strong>数据库是数据管理的有效技术</strong>。越来越多的应用领域运用数据库技术来存储和处理信息资源。B端的企业管理、电子商务等，C端的网上购物、订票、网银存取款等，都是数据库的应用。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/25/理解算法的时间和空间复杂度/#more" rel="contents">
+            <a class="btn" href="/2017/10/25/数据库系统概论-基础篇—Chapter1-绪论/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.scarletthuang.cn/2017/10/25/《批判性思维原理和方法》阅读笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Scarlett Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://imgchr.com/i/V0KhWD">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Scarlett Huang | Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/25/《批判性思维原理和方法》阅读笔记/" itemprop="url">《批判性思维原理和方法》阅读笔记</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-25T10:36:07+08:00">
+                2017-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/" itemprop="url" rel="index">
+                    <span itemprop="name">Product Manager</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product-Manager/PM-Ability/" itemprop="url" rel="index">
+                    <span itemprop="name">PM Ability</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/25/《批判性思维原理和方法》阅读笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/25/《批判性思维原理和方法》阅读笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>摘要：本书是大学哲学批判性思维的经典教材。批判性思维是一种通过一定的评判标准来分析问题的思维方式，从而引导人避免盲从。本书讲了思维与逻辑的形式，如何进行严密的论证和推理，常见的逻辑推理误区，如何挖掘隐含假设，等等。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/25/《批判性思维原理和方法》阅读笔记/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -3657,7 +2814,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -3693,12 +2850,12 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/themes/next/source/images/icon.png"
+               src="https://imgchr.com/i/V0KhWD"
                alt="Scarlett Huang" />
           <p class="site-author-name" itemprop="name">Scarlett Huang</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
-          
+           
         </div>
         <nav class="site-state motion-element">
 
@@ -3741,6 +2898,17 @@
           
             
               <span class="links-of-author-item">
+                <a href="https://www.scarletthuang.cn" target="_blank" title="Biography">
+                  
+                    <i class="fa fa-fw fa-user"></i>
+                  
+                    
+                      Biography
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
                 <a href="https://github.com/ScarlettYellow" target="_blank" title="Github">
                   
                     <i class="fa fa-fw fa-globe"></i>
@@ -3758,39 +2926,6 @@
                   
                     
                       WoShiPM
-                    
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://zhuanlan.zhihu.com/scarlettyellow" target="_blank" title="Zhihu Column">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                    
-                      Zhihu Column
-                    
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/scarlettyellow/activities" target="_blank" title="Zhihu">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                    
-                      Zhihu
-                    
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://book.douban.com/people/ScarlettYellow/" target="_blank" title="Douban">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                    
-                      Douban
                     
                 </a>
               </span>
@@ -3815,23 +2950,27 @@
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="hubertwang.me/" title="MR WHY(AI Dev. & AI PM)" target="_blank">MR WHY(AI Dev. & AI PM)</a>
+                  <a href="hubertwang.me/" title="MR WHY (ML Dev. & AI PM)" target="_blank">MR WHY (ML Dev. & AI PM)</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://wondervictor.github.io/" title="Vic Chan(AI Dev.)" target="_blank">Vic Chan(AI Dev.)</a>
+                  <a href="https://zekangli.com/" title="Zekang Li (NLP Researcher)" target="_blank">Zekang Li (NLP Researcher)</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://blog.qzwlecr.com/" title="qzwlecr(Distributed Dev.)" target="_blank">qzwlecr(Distributed Dev.)</a>
+                  <a href="http://wondervictor.github.io/" title="Vic Chan (CV Dev.)" target="_blank">Vic Chan (CV Dev.)</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="https://alisahhh.github.io/" title="Alisa(Alg. Dev.)" target="_blank">Alisa(Alg. Dev.)</a>
+                  <a href="http://blog.qzwlecr.com/" title="qzwlecr (Alg. Dev.)" target="_blank">qzwlecr (Alg. Dev.)</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="https://llag9810.github.io/" title="yifan(Android Dev.)" target="_blank">yifan(Android Dev.)</a>
+                  <a href="https://alisahhh.github.io/" title="Alisa (Alg. Dev.)" target="_blank">Alisa (Alg. Dev.)</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://llag9810.github.io/" title="yifan (Android Dev.)" target="_blank">yifan (Android Dev.)</a>
                 </li>
               
             </ul>
@@ -3868,7 +3007,7 @@
 
 <div class="copyright" >
   
-  &copy;  2017.07 &mdash; 
+  &copy;  2017 &mdash; 
   <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -3906,6 +3045,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -3951,9 +3110,6 @@
 
 
 
-  
-  
-
 
 
 
@@ -3975,12 +3131,6 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
 
 
   
@@ -4383,6 +3533,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
